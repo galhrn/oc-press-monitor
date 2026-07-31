@@ -1,0 +1,221 @@
+{
+  "_provenance": "HAND-AUTHORED for P3.1, not captured from a live provider. Headlines are written to exercise specific pipeline behaviours (see each item's `note`), including the name collisions from project_context.md section 4.3 and the sentiment edge cases from section 6.2. P3.2 adds `--record` to capture a real GDELT corpus alongside this one; until then the README must not describe these as recorded traffic. Dates are relative (`-3d`) so the corpus never falls out of the rolling 90-day window (A1).",
+  "items": [
+    {
+      "url": "https://techcrunch.com/2026/07/28/hailo-series-d",
+      "title": "Hailo raises $180M Series D to scale edge AI processors",
+      "snippet": "The Israeli chipmaker Hailo said the round will fund production of its next-generation edge AI accelerator for automotive and industrial customers.",
+      "sourceName": "TechCrunch",
+      "publishedAt": "-4d",
+      "language": "en",
+      "note": "Hailo: unambiguous positive (funding). Baseline happy path."
+    },
+    {
+      "url": "https://www.calcalistech.com/article/hailo-datacenter-partnership?utm_source=newsletter&utm_campaign=daily",
+      "title": "Hailo partners with a European data centre operator on edge inference",
+      "snippet": "The deal puts Hailo silicon into regional inference nodes across four countries.",
+      "sourceName": "Calcalist",
+      "publishedAt": "-11d",
+      "language": "en",
+      "note": "Hailo: positive (partnership). Carries tracking params - the canonical-URL pair of the item below, for the P3.5 dedupe test."
+    },
+    {
+      "url": "https://calcalistech.com/article/hailo-datacenter-partnership/",
+      "title": "Hailo partners with a European data centre operator on edge inference",
+      "snippet": "The deal puts Hailo silicon into regional inference nodes across four countries.",
+      "sourceName": "Calcalist",
+      "publishedAt": "-11d",
+      "language": "en",
+      "note": "Same article as above with a www-less host and a trailing slash. Must collapse to ONE article row after canonicalisation (P3.5)."
+    },
+    {
+      "url": "https://www.theverge.com/2026/06/02/hailo-taxi-app-shutdown",
+      "title": "Hailo, the taxi-hailing app long since merged into mytaxi, finally disappears from app stores",
+      "snippet": "The Hailo brand was retired years ago after the merger, and the last regional listings have now been pulled.",
+      "sourceName": "The Verge",
+      "publishedAt": "-30d",
+      "language": "en",
+      "note": "COLLISION. Matches the bare name but is a different company entirely. The pre-filter (P3.6) or the LLM relevance gate (AD-06) must reject this."
+    },
+    {
+      "url": "https://www.reuters.com/business/lemonade-q2-results",
+      "title": "Lemonade beats expectations as in-force premium grows 29%",
+      "snippet": "The insurtech reported a narrower loss and raised full-year guidance.",
+      "sourceName": "Reuters",
+      "publishedAt": "-7d",
+      "language": "en",
+      "note": "Lemonade: positive (strong results)."
+    },
+    {
+      "url": "https://www.insurancejournal.com/news/lemonade-claims-suit",
+      "title": "Lemonade sued over automated claims-handling practices in three states",
+      "snippet": "The complaint alleges the insurer's AI-driven claims process denied valid claims without human review.",
+      "sourceName": "Insurance Journal",
+      "publishedAt": "-19d",
+      "language": "en",
+      "note": "Lemonade: negative (lawsuit). Sentiment rubric section 6.2."
+    },
+    {
+      "url": "https://www.bonappetit.com/recipe/classic-homemade-lemonade",
+      "title": "The only homemade lemonade recipe you need this summer",
+      "snippet": "Three ingredients, one pitcher, no lemonade stand required.",
+      "sourceName": "Bon Appetit",
+      "publishedAt": "-9d",
+      "language": "en",
+      "note": "COLLISION. Ordinary-word name. Must be rejected; a naive query for Lemonade returns a lot of this."
+    },
+    {
+      "url": "https://www.forbes.com/sites/peak-decision-intelligence-funding",
+      "title": "Peak lands new funding to push decision intelligence into supply-chain planning",
+      "snippet": "The Manchester-based company said its decision intelligence platform is now used by retailers across 12 markets.",
+      "sourceName": "Forbes",
+      "publishedAt": "-14d",
+      "language": "en",
+      "note": "Peak: genuine. Only reachable with the human-approved qualifier query; the bare name is hopeless."
+    },
+    {
+      "url": "https://www.nationalgeographic.com/adventure/everest-peak-season-record",
+      "title": "Record number of climbers reached the peak during a narrow weather window",
+      "snippet": "Guides reported the busiest peak season in a decade.",
+      "sourceName": "National Geographic",
+      "publishedAt": "-21d",
+      "language": "en",
+      "note": "COLLISION. Exactly why Peak is tier CRITICAL in the triage."
+    },
+    {
+      "url": "https://www.ft.com/content/peak-oil-demand-forecast",
+      "title": "Analysts push back peak oil demand forecast to the late 2030s",
+      "snippet": "The revision reflects slower EV adoption in emerging markets.",
+      "sourceName": "Financial Times",
+      "publishedAt": "-26d",
+      "language": "en",
+      "note": "COLLISION. Second Peak false positive, different domain, to keep the precision measurement honest."
+    },
+    {
+      "url": "https://www.datacenterdynamics.com/en/news/zutacore-two-phase-cooling-deployment",
+      "title": "ZutaCore two-phase liquid cooling deployed in a 40MW AI campus",
+      "snippet": "The waterless direct-on-chip system will cool high-density GPU racks.",
+      "sourceName": "DataCenter Dynamics",
+      "publishedAt": "-6d",
+      "language": "en",
+      "note": "ZutaCore: positive (customer win). Distinctive name - bare exact phrase is sufficient."
+    },
+    {
+      "url": "https://www.globes.co.il/en/article-innoviz-cfo-appointment",
+      "title": "Innoviz appoints a new chief financial officer",
+      "snippet": "The lidar maker said the appointment takes effect next quarter.",
+      "sourceName": "Globes",
+      "publishedAt": "-12d",
+      "language": "en",
+      "note": "Innoviz: NEUTRAL. Routine appointment - the rubric's neutral case, and the one models most often mislabel as positive."
+    },
+    {
+      "url": "https://www.autonews.com/suppliers/innoviz-program-delay",
+      "title": "Innoviz flags a delay in a flagship OEM lidar programme",
+      "snippet": "Deliveries slip to the following model year, pushing revenue recognition out two quarters.",
+      "sourceName": "Automotive News",
+      "publishedAt": "-33d",
+      "language": "en",
+      "note": "Innoviz: negative (missed targets)."
+    },
+    {
+      "url": "https://www.securityweek.com/morphisec-endpoint-report-leader",
+      "title": "Morphisec named a leader in an endpoint security evaluation",
+      "snippet": "The vendor was cited for its moving-target defence approach.",
+      "sourceName": "SecurityWeek",
+      "publishedAt": "-16d",
+      "language": "en",
+      "note": "Morphisec: positive (favourable analyst coverage)."
+    },
+    {
+      "url": "https://www.timesofisrael.com/cyabra-disinformation-report",
+      "title": "Cyabra report finds a coordinated bot network amplifying election claims",
+      "snippet": "The social-threat intelligence firm said roughly 18% of accounts in the sample were inauthentic.",
+      "sourceName": "The Times of Israel",
+      "publishedAt": "-8d",
+      "language": "en",
+      "note": "Cyabra: NEUTRAL for the company despite negative subject matter. Section 6.2 edge case: industry-negative, company-neutral."
+    },
+    {
+      "url": "https://www.bloomberg.com/news/oncohost-biomarker-study",
+      "title": "OncoHost study links a proteomic signature to immunotherapy response",
+      "snippet": "Results from a multi-centre cohort were presented at a clinical oncology meeting.",
+      "sourceName": "Bloomberg",
+      "publishedAt": "-23d",
+      "language": "en",
+      "note": "OncoHost: positive. Also the regression case for AD-26 - the model once proposed 'oncohost' as its own negative keyword, which would have removed exactly this item."
+    },
+    {
+      "url": "https://www.spacenews.com/spacex-starship-flight-report",
+      "title": "SpaceX completes another Starship test flight",
+      "snippet": "The vehicle achieved its primary objectives before a controlled splashdown.",
+      "sourceName": "SpaceNews",
+      "publishedAt": "-2d",
+      "language": "en",
+      "note": "SpaceX: high news volume, low ambiguity (AD-22). Exists so the MAX_ITEMS_PER_COMPANY cap has something to cap."
+    },
+    {
+      "url": "https://www.spacenews.com/spacex-launch-cadence-record",
+      "title": "SpaceX sets a new quarterly launch cadence record",
+      "snippet": "The company flew more missions in the quarter than in any prior three-month period.",
+      "sourceName": "SpaceNews",
+      "publishedAt": "-3d",
+      "language": "en",
+      "note": "SpaceX: second high-volume item, same provider and day range."
+    },
+    {
+      "url": "https://www.spacenews.com/spacex-static-fire-test",
+      "title": "SpaceX conducts a static fire test ahead of the next launch",
+      "snippet": "Routine pre-flight testing was completed at the pad.",
+      "sourceName": "SpaceNews",
+      "publishedAt": "-5d",
+      "language": "en",
+      "note": "SpaceX: third item. Three in five days is what makes the cap testable."
+    },
+    {
+      "url": "https://www.geektime.co.il/zutacore-cooling-hebrew-coverage",
+      "title": "ZutaCore expands its cooling deployments in Europe",
+      "snippet": "Hebrew-language coverage of the same expansion.",
+      "sourceName": "Geektime",
+      "publishedAt": "-13d",
+      "language": "he",
+      "note": "Non-English item. The language field must survive to the article row; language policy is a README limitation (R9), not a silent drop."
+    },
+    {
+      "url": "https://www.crunchbase.com/news/round-up-israeli-seed-rounds",
+      "title": "Weekly round-up: eight Israeli seed rounds, with OurCrowd among the investors",
+      "snippet": "Participants in this week's rounds included OurCrowd, alongside several local funds. Hailo was not involved.",
+      "sourceName": "Crunchbase News",
+      "publishedAt": "-10d",
+      "language": "en",
+      "note": "Section 6.2 edge case: the company is named only in passing / as an investor. Mentions Hailo explicitly to test that a negated passing mention is still not a story about Hailo."
+    },
+    {
+      "url": "https://www.ynet.co.il/archive/morphisec-old-funding-story",
+      "title": "Morphisec raises a Series B",
+      "snippet": "An older funding story, well outside the rolling window.",
+      "sourceName": "Ynet",
+      "publishedAt": "-200d",
+      "language": "en",
+      "note": "OUT OF WINDOW. Must never be returned for a 90-day query (A1)."
+    },
+    {
+      "url": "https://www.example-news.com/undated-cyabra-piece",
+      "title": "Cyabra profile piece with no publication date",
+      "snippet": "Some aggregators strip the date entirely.",
+      "sourceName": null,
+      "publishedAt": null,
+      "language": "en",
+      "note": "UNDATED. Cannot be placed in a quarter or drive last-mentioned, so the provider drops it rather than guessing."
+    },
+    {
+      "url": "https://www.jpost.com/business/peakhurst-development-approved",
+      "title": "Peakhurst mixed-use development wins planning approval",
+      "snippet": "The council approved the scheme after a lengthy consultation.",
+      "sourceName": "The Jerusalem Post",
+      "publishedAt": "-15d",
+      "language": "en",
+      "note": "NEAR MISS. Contains 'Peak' as a substring but not as a word. Whole-word matching must exclude it; substring matching would not."
+    }
+  ]
+}

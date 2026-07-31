@@ -12,6 +12,7 @@ export default defineConfig({
       '@oc/core': r('./packages/core/src/index.ts'),
       '@oc/ollama': r('./packages/ollama/src/index.ts'),
       '@oc/registry': r('./packages/registry/src/index.ts'),
+      '@oc/collector': r('./packages/collector/src/index.ts'),
     },
   },
   test: {
