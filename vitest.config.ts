@@ -16,7 +16,12 @@ export default defineConfig({
   },
   test: {
     environment: 'node',
-    include: ['packages/**/test/**/*.test.ts', 'apps/**/test/**/*.test.ts'],
+    include: [
+      'packages/**/test/**/*.test.ts',
+      'apps/**/test/**/*.test.ts',
+      // Root-level suite for the CLI entry points under scripts/.
+      'test/**/*.test.ts',
+    ],
     coverage: { reporter: ['text', 'lcov'], include: ['packages/**/src/**'] },
   },
 });

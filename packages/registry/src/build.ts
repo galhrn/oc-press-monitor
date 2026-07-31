@@ -11,6 +11,10 @@
  * The winning source is recorded on every row as `querySource`. Only tier 1 is labelled
  * `human-approved`: a row is not signed off merely because it came from the same file as
  * rows that were. Overstating provenance would defeat the point of tracking it.
+ *
+ * Model output passes through `sanitizeEnrichment` before it is allowed to influence
+ * tier 2 at all; an enrichment that does not survive that filter demotes the row to
+ * tier 3 rather than being recorded as an enrichment that contributed nothing.
  */
 import { companyId, slugify, type AmbiguityTier, type VolumeTier } from '@oc/core';
 import type { CompanyRecord, Enrichment, TriageEntry } from './schema.js';
@@ -49,6 +53,80 @@ export function buildQueryFromEnrichment(name: string, enrichment: Enrichment): 
   return `${quote(name)} AND (${terms.map(quote).join(' OR ')})`;
 }
 
+/** Lowercased, punctuation-free form used for all identity comparisons. */
+const squash = (s: string): string => s.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+/** Registrable label of a host: `https://www.opeven.com/x` -> `opeven`. */
+const domainLabel = (d: string): string =>
+  squash(
+    d
+      .replace(/^https?:\/\//, '')
+      .replace(/^www\./, '')
+      .split('/')[0]
+      ?.split('.')[0] ?? '',
+  );
+
+/** True when two strings are plausibly spellings of the same name (`Cerebras Systems` / `Cerebras`). */
+const sameName = (candidate: string, name: string): boolean => {
+  const a = squash(candidate);
+  const b = squash(name);
+  return a.length > 0 && b.length > 0 && (a.includes(b) || b.includes(a));
+};
+
+const PLACEHOLDER_SECTORS = new Set(['', 'null', 'undefined', 'unknown', 'n/a', 'na', 'none']);
+
+const dedupe = (values: readonly string[]): string[] => {
+  const seen = new Set<string>();
+  return values.filter((v) => {
+    const k = squash(v);
+    if (k.length === 0 || seen.has(k)) return false;
+    seen.add(k);
+    return true;
+  });
+};
+
+/**
+ * Filters an Ollama enrichment down to what it is safe to persist (AD-21: enrichment is
+ * advisory, never authoritative). Measured against `llama3.2:3b`, the failure modes are
+ * not random noise - they are systematic, and each rule below exists because the model
+ * actually produced the example next to it:
+ *
+ *   known: false      -> the whole record is dropped. A model that cannot name the company
+ *                        is guessing about everything else too ("Maolac" -> Vietnamese banking).
+ *   unrelated alias   -> dropped. Stripe came back with the alias "PayPal"; searching a
+ *                        competitor's name is worse than having no alias at all.
+ *   self-negation     -> dropped. OncoHost came back with the negative keyword "oncohost",
+ *                        which would make the pre-filter reject every genuine article.
+ *   unrelated domain  -> dropped. OpenEvidence came back as "opeven.com", which is nobody.
+ *   "null" as prose   -> dropped. The model writes the string "null" into `sector`.
+ *
+ * Returns `null` when nothing trustworthy survives, so the caller falls back to the
+ * reviewed triage rather than recording an empty enrichment as if it were a source.
+ */
+export function sanitizeEnrichment(name: string, raw: Enrichment): Enrichment | null {
+  if (!raw.known) return null;
+
+  const aliases = dedupe(raw.aliases.map((a) => a.trim())).filter(
+    (a) => sameName(a, name) && squash(a) !== squash(name),
+  );
+
+  const sectorRaw = raw.sector.trim();
+  const sector = PLACEHOLDER_SECTORS.has(sectorRaw.toLowerCase()) ? '' : sectorRaw;
+
+  const domain =
+    raw.domain && sameName(domainLabel(raw.domain), name) ? raw.domain.trim().toLowerCase() : null;
+
+  // A negative keyword contained *in* the company name would filter out real coverage.
+  // The test is deliberately one-directional: "Peak District" is a legitimate negative
+  // for "Peak", while "together" is not one for "Together AI".
+  const owned = [squash(name), ...aliases.map(squash)];
+  const negativeKeywords = dedupe(raw.negativeKeywords.map((k) => k.trim())).filter(
+    (k) => !owned.some((o) => o.includes(squash(k))),
+  );
+
+  return { ...raw, aliases, sector, domain, negativeKeywords };
+}
+
 const TIER_MAP: Record<TriageEntry['tier'], AmbiguityTier> = {
   CRITICAL: 'critical',
   HIGH: 'high',
@@ -81,7 +159,8 @@ export function buildRegistry({
 
   return seed.map(({ name }) => {
     const t = byName.get(name.toLowerCase());
-    const enrichment = enrichments.get(name);
+    const supplied = enrichments.get(name);
+    const enrichment = supplied ? (sanitizeEnrichment(name, supplied) ?? undefined) : undefined;
 
     // A human signed off on the query for every CRITICAL and HIGH name (P2.4).
     const humanApproved = t !== undefined && (t.tier === 'CRITICAL' || t.tier === 'HIGH');

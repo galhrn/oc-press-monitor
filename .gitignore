@@ -15,3 +15,6 @@ data/dev.sqlite
 
 # Ollama response cache (content-addressed, regenerable)
 .cache/
+
+# Partial-run registry samples (regenerable dev artifacts, not deliverables)
+data/companies.sample-*.json

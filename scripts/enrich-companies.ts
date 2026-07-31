@@ -26,6 +26,7 @@ import {
   TriageFileSchema,
   type Enrichment,
 } from '@oc/registry';
+import { parseArgs } from './args.js';
 
 const PROMPT_VERSION = 'enrich-company.v1';
 
@@ -65,30 +66,6 @@ Return JSON matching this shape:
   "negativeKeywords": string[]
 }`;
 
-interface Args {
-  offline: boolean;
-  noCache: boolean;
-  limit?: number;
-  seedPath: string;
-  outPath: string;
-}
-
-function parseArgs(argv: readonly string[]): Args {
-  const at = (flag: string): string | undefined => {
-    const i = argv.indexOf(flag);
-    return i >= 0 ? argv[i + 1] : undefined;
-  };
-  const limitRaw = at('--limit');
-  const here = (p: string) => fileURLToPath(new URL(p, import.meta.url));
-  return {
-    offline: argv.includes('--offline'),
-    noCache: argv.includes('--no-cache'),
-    limit: limitRaw ? Number.parseInt(limitRaw, 10) : undefined,
-    seedPath: at('--seed') ?? here('../packages/registry/data/ourcrowd_companies.txt'),
-    outPath: at('--out') ?? here('../data/companies.json'),
-  };
-}
-
 async function main(): Promise<void> {
   const args = parseArgs(process.argv.slice(2));
   const cfg = getConfig();
@@ -103,6 +80,14 @@ async function main(): Promise<void> {
 
   const targets = args.limit ? seed.slice(0, args.limit) : seed;
   log.info({ companies: targets.length, offline: args.offline }, 'building company registry');
+
+  if (args.redirected) {
+    log.warn({ out: args.outPath }, 'partial run - not writing the committed registry');
+    console.error(
+      `\n  --limit ${args.limit} is a partial run, so it will NOT overwrite data/companies.json.\n` +
+        `  Writing to ${args.outPath} instead. Pass --out to choose a different path.\n`,
+    );
+  }
 
   const enrichments = new Map<string, Enrichment>();
   let failures = 0;

@@ -3,8 +3,8 @@
 > **Project:** OurCrowd Press Mentions Monitoring & Dashboard
 > **Owner:** Gal Aharon
 > **Status:** `BUILDING` — M0, M1 reached. P2 code complete; M2 pending the owner's live Ollama pass.
-> **Last updated:** 2026-07-31
-> **Document version:** 0.8.0
+> **Last updated:** 2026-08-01
+> **Document version:** 0.8.1
 >
 > **Target hardware (dev + demo machine):** Windows 11 · Intel Core Ultra (Lunar Lake) ·
 > Intel Arc 140V iGPU, 16 GB addressable VRAM (shared) · 32 GB system RAM
@@ -170,6 +170,7 @@ Status: `PROPOSED` / `ACCEPTED` / `SUPERSEDED`. Long-form rationale lives in `do
 | AD-24 | The Ollama client (`packages/ollama`) is **pulled forward from P4.1 into P2** | **ACCEPTED** | Registry enrichment needs it too (AD-21). Building it once, shared, is better than a throwaway; it also de-risks the critical path by proving the LLM integration two days early. |
 | AD-21 | Company registry is **both** an Ollama-generated artifact and committed reviewed config: ship `scripts/enrich-companies.ts` (runs on Ollama) *and* commit its hand-reviewed output to `data/companies.json` | **ACCEPTED** | §4.1 mandates Ollama for "any other text understanding step". Enrichment arguably qualifies. Doing both satisfies the strict reading, keeps the repo cloud-free, and preserves human review of the 57 flagged names. |
 | AD-22 | **Query triage covers all 258 companies, not a sampled subset**, on two independent axes: *ambiguity* (query rewriting) and *news volume* (budget capping) | **ACCEPTED** | Conflating "generates noise" with "generates too much" would apply the wrong fix to 19 companies. SpaceX isn't ambiguous — it's just loud. |
+| AD-26 | **Model output is sanitised before it may influence the registry.** `sanitizeEnrichment` drops the entire enrichment when the model returns `known: false`, drops aliases and domains that do not resemble the company name, drops negative keywords contained in the company's own name, and treats the literal string `"null"` as absent. A discarded enrichment demotes the row to `triage-default` rather than being recorded as a source that contributed nothing. | **ACCEPTED** | The measured P2.3 pass produced systematic, not random, errors: Stripe → alias `"PayPal"`, OncoHost → negative keyword `"oncohost"` (which would have rejected 100% of its genuine coverage in the P3.6 pre-filter), OpenEvidence → `opeven.com`. A2/A3 say enrichment is advisory; this makes that mechanical rather than aspirational. |
 | AD-20 | Fine-tuned encoder classifiers (FinBERT/DistilBERT) **considered and rejected** — documented in an ADR, not silently omitted | **ACCEPTED** | The theoretically right tool for this task is a ~110M-param encoder, ~100× smaller than any LLM here. The task mandates Ollama. Saying so explicitly is the strongest possible right-sizing signal. |
 
 ---
@@ -353,7 +354,11 @@ oc-press-monitor/
 │   ├── web/                         # React + Vite dashboard (R1, R4, R18)
 │   └── scheduler/                   # node-cron wrapper around the daily CLI (R19)
 │
+├── test/                            # Root suite for the CLI entry points under scripts/
+│   └── enrich-args.test.ts          # Guards the "--limit must not clobber the registry" rule
+│
 ├── scripts/
+│   ├── args.ts                      # Enrich CLI argument parsing (pure, unit-tested)
 │   ├── seed-companies.ts            # ourcrowd_companies.txt → enriched registry
 │   ├── run-backfill.ts              # Full 90-day historical run
 │   ├── job-daily.ts                 # The daily check + alert (idempotent CLI)
@@ -747,6 +752,7 @@ Budget ≈30 focused hours; descope rungs 1–3 already cut (§8.3).
 
 | Date | Version | Change |
 |---|---|---|
+| 2026-08-01 | 0.8.1 | **First live Ollama enrichment pass (P2.3) run on `llama3.2:3b`, and two defects it exposed, fixed.** (1) `npm run enrich -- --limit 10` wrote to the default `--out`, truncating `data/companies.json` from 258 records to 10 — a graded deliverable (R8/R24) silently destroyed by a dev loop. A partial run now writes `data/companies.sample-<n>.json` and says so; the guard is unit-tested in `test/enrich-args.test.ts`. (2) **AD-26 added** — model output is now sanitised before it can reach the registry. The pass returned `known: false` for 4 of 10 companies while still emitting confident aliases, sectors and negative keywords for them; among the survivors, Stripe was aliased to `"PayPal"`, OncoHost's negative keyword was its own name, and OpenEvidence's domain was invented. Registry rebuilt to 258 records (57 human-approved, 201 triage-default). **95 tests passing.** The repository is now under git. |
 | 2026-08-01 | 0.8.0 | **P4.0 benchmark tool built** (`npm run bench`, AD-25). The Ollama client now surfaces server-reported timings — `load_duration`, `prompt_eval_*`, `eval_count`, `eval_duration` — converted from nanoseconds once, at the boundary, so tokens/sec is measured rather than inferred from wall clock. The benchmark sweeps models × concurrency across two output-size profiles (`enrich` 256 tokens, `classify` 96), discards a warm-up per configuration, and projects the wall time of a 2,000-item classification run. Writes `data/benchmark.json`; the printed table is the README artifact required by R11/R13. **80 tests passing.** |
 | 2026-07-31 | 0.7.0 | **AD-23: swapped `better-sqlite3` for `node:sqlite`** after `npm install` failed on the owner's Windows machine with a node-gyp error (no Visual Studio C++ Build Tools). Zero native compilation, zero third-party storage dependency; `db.transaction()` replaced by a nest-safe SAVEPOINT helper. **AD-24: the Ollama client was pulled forward from P4.1 into P2**, since registry enrichment needs it too — de-risks the critical path two days early. **P1 complete, P2 code complete.** New: `packages/ollama` (structured output, deterministic options, jittered retry, content-hash cache, concurrency limiter, health check) and `packages/registry` (seed parsing, enrichment schema, query construction with auditable provenance). `data/companies.json` generated: 258 records, 57 human-approved queries. **77 tests passing.** Provenance labelling corrected mid-build — rows sharing a file with reviewed rows are `triage-default`, not `human-approved`. |
 | 2026-07-31 | 0.6.0 | **M0 REACHED — AD-01…AD-22 frozen to ACCEPTED.** The 57 flagged company queries were approved by the owner and become `queryOverride` ground truth (P2.7); `scripts/enrich-companies.ts` still regenerates the registry through local Ollama for any other seed list (AD-21). **P1 scaffold built and verified:** npm workspaces, TypeScript strict, ESLint 9 flat config, Prettier, Vitest, pino logging, zod-validated config, typed error hierarchy, deterministic id/URL canonicalisation, SQLite schema with idempotency constraints, six repositories, status bucketing, walking skeleton (P1.8), GitHub Actions CI (P1.9) and a `docs:check` gate that fails the build on documentation drift. **46 tests passing.** This file and `ai_prompts.md` now live inside the repo and are the versioned source of truth. |

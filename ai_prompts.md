@@ -539,6 +539,63 @@ a checklist item.
 
 ---
 
+## Entry 007 — The first live model output, and what it was allowed to touch
+
+**Date:** 2026-08-01
+**Stage:** P2.3 verification, before P3.
+**Context:** The enrichment script had never been run against a real model. A 10-company
+smoke test on `llama3.2:3b` completed successfully, and the question was whether to
+proceed to the full 258-company run or move on to Phase 3.
+
+**Prompt:**
+
+```
+Hi. Please read @project_context.md to get fully up to speed on our current architecture
+and state. We just successfully ran `npm run enrich -- --limit 10` with Ollama local model
+(`llama3.2:3b`). Please verify our current status and let's discuss starting the full
+enrichment run or proceeding to Phase 3.
+```
+
+**Strategy:**
+
+| Technique | Where it appears | Why it matters |
+|---|---|---|
+| **Loaded the source of truth first** | *"read @project_context.md to get fully up to speed"* | The assistant starts each session with zero memory. Pointing at one authoritative document is the difference between advice grounded in the plan and advice invented from the file tree. |
+| **Asked for verification, not agreement** | *"Please verify our current status"* | The prompt reported success (`we just successfully ran…`) but requested an independent check of it. That framing is what surfaced the failures: a claim of success is a hypothesis, not evidence. |
+| **Named the decision, kept it open** | *"discuss starting the full enrichment run **or** proceeding to Phase 3"* | Presenting the real fork invites a recommendation with reasoning. Asking "should we start the full run?" would have invited a yes. |
+
+**Outcome:** the smoke test had succeeded in the narrow sense — 10/10 responses were
+schema-valid, the cache worked, the client behaved — and failed in every sense that
+mattered.
+
+- **`data/companies.json` had been truncated from 258 records to 10.** `--limit` did not
+  change the output path, so a dev loop overwrote a graded deliverable (R8, R24). Fixed:
+  a partial run now writes `data/companies.sample-<n>.json` and prints why.
+- **The repository was not under git.** P1.1 was marked DONE, `.gitignore` and
+  `.github/` existed, `git init` had never been run — which is also why the truncation had
+  no undo.
+- **The model's content was confidently wrong.** It returned `known: false` for 4 of 10
+  companies while still supplying aliases, sectors and negative keywords for them. Among
+  those it claimed to know: Stripe was aliased to **"PayPal"**, OncoHost's negative keyword
+  was **its own name** — which would have made the P3.6 pre-filter reject 100% of its
+  genuine coverage — and OpenEvidence's domain was invented outright.
+
+**AD-26** was added in response: model output is filtered by `sanitizeEnrichment` before it
+can influence the registry, and an enrichment that does not survive demotes the row to
+`triage-default` rather than being recorded as a source that contributed nothing. Each rule
+is a regression test named after the response that motivated it.
+
+**Reflection:** §4.3 already said "enrichment is advisory, never authoritative" and A2/A3
+already predicted invented facts. The gap was that this was written as an intention rather
+than enforced as code — and an intention does not filter a negative keyword. The real
+lesson is narrower than "LLMs hallucinate": a smoke test that only checks *shape* will pass
+while every *value* is wrong, so structured-output validation is a floor, not a quality
+bar. The 40% `known: false` rate is itself a finding worth publishing — it is a measured
+statement about what a 3B model knows about a private VC portfolio, and it belongs in the
+README next to the bake-off table.
+
+---
+
 ## Entry template (for all subsequent entries)
 
 ```markdown
