@@ -1,0 +1,9 @@
+{
+  "name": "@oc/registry",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Company registry: seed-list parsing, Ollama enrichment schema, and query construction.",
+  "main": "./src/index.ts",
+  "exports": { ".": "./src/index.ts" }
+}

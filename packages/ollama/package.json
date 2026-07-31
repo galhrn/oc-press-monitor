@@ -1,0 +1,9 @@
+{
+  "name": "@oc/ollama",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Client for the locally hosted Ollama runtime: structured output, retries, caching and concurrency control.",
+  "main": "./src/index.ts",
+  "exports": { ".": "./src/index.ts" }
+}

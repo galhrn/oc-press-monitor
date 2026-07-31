@@ -1,0 +1,212 @@
+[
+  {
+    "id": "1a615ce7b2a5a2cb2e9dbdd7825e3e6d305f75edb69d97230d94ef45153c161d",
+    "name": "ZutaCore",
+    "slug": "zutacore",
+    "aliases": [
+      "ZutaCore"
+    ],
+    "domain": null,
+    "sector": null,
+    "ambiguity": "low",
+    "volume": "normal",
+    "query": "\"ZutaCore\"",
+    "negativeKeywords": [],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T22:21:49.043Z"
+  },
+  {
+    "id": "ba31133a617c85cf7ea95a61c82ccd3e8bd7e02278016fcddbbbbc3b976751ab",
+    "name": "Maolac",
+    "slug": "maolac",
+    "aliases": [
+      "Maolac",
+      "Mao Lac"
+    ],
+    "domain": null,
+    "sector": null,
+    "ambiguity": "low",
+    "volume": "normal",
+    "query": "\"Maolac\" AND (\"Vietnam\" OR \"banking\" OR \"finance\")",
+    "negativeKeywords": [
+      "Vietnamese bank",
+      "Vietnam"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T22:21:49.047Z"
+  },
+  {
+    "id": "6601a17e0e31ff1e64bfa1d26acea37de4fad1e549a66a04af1a4f569d688beb",
+    "name": "Biolojic Design",
+    "slug": "biolojic-design",
+    "aliases": [
+      "BioLogic Design"
+    ],
+    "domain": null,
+    "sector": "Biotechnology",
+    "ambiguity": "low",
+    "volume": "normal",
+    "query": "\"Biolojic Design\" AND (\"design\" OR \"biotech\" OR \"genomics\")",
+    "negativeKeywords": [
+      "other design",
+      "logic puzzle"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T22:21:49.047Z"
+  },
+  {
+    "id": "987954db51d7366f7b39b51730c7a5e843810b9bed894414252b21bef0da8e07",
+    "name": "OncoHost",
+    "slug": "oncohost",
+    "aliases": [
+      "Oncohost"
+    ],
+    "domain": null,
+    "sector": null,
+    "ambiguity": "low",
+    "volume": "normal",
+    "query": "\"OncoHost\" AND (\"cancer\" OR \"immunotherapy\")",
+    "negativeKeywords": [
+      "oncohost"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T22:21:49.047Z"
+  },
+  {
+    "id": "b882213838066690ae67958b1c5694a19eff4c90fb9864888cebbf470407d5f9",
+    "name": "Morphisec",
+    "slug": "morphisec",
+    "aliases": [
+      "Morphisec Technologies"
+    ],
+    "domain": null,
+    "sector": "Cybersecurity",
+    "ambiguity": "low",
+    "volume": "normal",
+    "query": "\"Morphisec\" AND (\"Endpoint Security\" OR \"Threat Detection\" OR \"AI-Powered\")",
+    "negativeKeywords": [
+      "other software",
+      "IT consulting"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T22:21:49.047Z"
+  },
+  {
+    "id": "2349a6848d029aa2bea30b44d8a63b080aa98fb9b5db2cea5fd875fc9543d789",
+    "name": "Harvey",
+    "slug": "harvey",
+    "aliases": [
+      "Harvey Norman",
+      "Harvey's"
+    ],
+    "domain": null,
+    "sector": "Legal AI",
+    "ambiguity": "critical",
+    "volume": "high",
+    "query": "\"Harvey AI\" OR (\"Harvey\" AND (\"legal AI\" OR \"law firm\" OR \"legal tech\"))",
+    "negativeKeywords": [
+      "hurricane",
+      "Weinstein",
+      "Harvey Norman",
+      "Harvey Keitel",
+      "other furniture stores"
+    ],
+    "querySource": "human-approved",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T22:21:49.047Z"
+  },
+  {
+    "id": "fec757d2baccc812123b03d53a417bbdb49acc5e9c50a536db3a8406061448ac",
+    "name": "OpenEvidence",
+    "slug": "openevidence",
+    "aliases": [
+      "evidence",
+      "open evidence"
+    ],
+    "domain": "opeven.com",
+    "sector": "Legal Technology",
+    "ambiguity": "medium",
+    "volume": "normal",
+    "query": "\"OpenEvidence\"",
+    "negativeKeywords": [
+      "open evidence\" policy",
+      "other evidence"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T22:21:49.047Z"
+  },
+  {
+    "id": "f9f48e7d2a38c906d7222f3aeb08db9f1dc1b62e87a4e6ecb22c70fb9b40972a",
+    "name": "Stripe",
+    "slug": "stripe",
+    "aliases": [
+      "PayPal",
+      "Online Payment Processor"
+    ],
+    "domain": "stripe.com",
+    "sector": "Financial Technology",
+    "ambiguity": "high",
+    "volume": "high",
+    "query": "\"Stripe\" AND (payments OR fintech OR \"Stripe Inc\" OR Collison)",
+    "negativeKeywords": [
+      "pinstripe",
+      "striped",
+      "racing stripe",
+      "zebra",
+      "other payment processor"
+    ],
+    "querySource": "human-approved",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T22:21:49.047Z"
+  },
+  {
+    "id": "51ea09628499962f920c6da1c91ff6921032c20c589caa91016ce4bfac5f02d3",
+    "name": "Cerebras",
+    "slug": "cerebras",
+    "aliases": [
+      "Cerebras Systems"
+    ],
+    "domain": "cerebras.ai",
+    "sector": "Artificial Intelligence",
+    "ambiguity": "high",
+    "volume": "high",
+    "query": "\"Cerebras\"",
+    "negativeKeywords": [
+      "other AI company",
+      "neural network"
+    ],
+    "querySource": "human-approved",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T22:21:49.048Z"
+  },
+  {
+    "id": "9d5b9d1933714e02bc89690d60a662e6f2d9cc8c330a84b83d776ed2be48a817",
+    "name": "Together AI",
+    "slug": "together-ai",
+    "aliases": [
+      "Together AI",
+      "Togetha"
+    ],
+    "domain": null,
+    "sector": "Artificial Intelligence",
+    "ambiguity": "critical",
+    "volume": "high",
+    "query": "\"Together AI\" OR \"Together Computer\" OR together.ai",
+    "negativeKeywords": [
+      "work together",
+      "come together",
+      "together with",
+      "together",
+      "team"
+    ],
+    "querySource": "human-approved",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T22:21:49.048Z"
+  }
+]

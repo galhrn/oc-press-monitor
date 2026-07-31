@@ -1,0 +1,17 @@
+node_modules/
+dist/
+coverage/
+.env
+.env.local
+*.log
+.DS_Store
+.cache/
+
+# transient SQLite sidecars only - data/press.sqlite IS a deliverable (R24)
+*.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm
+data/dev.sqlite
+
+# Ollama response cache (content-addressed, regenerable)
+.cache/

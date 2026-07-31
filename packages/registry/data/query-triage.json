@@ -1,0 +1,2582 @@
+[
+ {
+  "idx": 1,
+  "name": "ZutaCore",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"ZutaCore\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 2,
+  "name": "Maolac",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Maolac\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 3,
+  "name": "Biolojic Design",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Biolojic Design\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 4,
+  "name": "OncoHost",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"OncoHost\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 5,
+  "name": "Morphisec",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Morphisec\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 6,
+  "name": "Harvey",
+  "tier": "CRITICAL",
+  "volume": "HIGH",
+  "reason": "Collides with Hurricane Harvey, Harvey Weinstein, Harvey Norman, and every person named Harvey.",
+  "query": "\"Harvey AI\" OR (\"Harvey\" AND (\"legal AI\" OR \"law firm\" OR \"legal tech\"))",
+  "neg": "hurricane, Weinstein, \"Harvey Norman\", Harvey Keitel",
+  "sector": "Legal AI"
+ },
+ {
+  "idx": 7,
+  "name": "OpenEvidence",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "'Open evidence' occurs as a phrase in legal/policy writing.",
+  "query": "\"OpenEvidence\" AND (medical OR clinical OR \"OpenEvidence AI\")",
+  "neg": "\"open evidence\" policy",
+  "sector": "Medical AI"
+ },
+ {
+  "idx": 8,
+  "name": "Stripe",
+  "tier": "HIGH",
+  "volume": "HIGH",
+  "reason": "Very high news volume; 'stripe' also appears in fashion and design coverage.",
+  "query": "\"Stripe\" AND (payments OR fintech OR \"Stripe Inc\" OR Collison)",
+  "neg": "pinstripe, striped, \"racing stripe\", zebra",
+  "sector": "Payments"
+ },
+ {
+  "idx": 9,
+  "name": "Cerebras",
+  "tier": "HIGH",
+  "volume": "HIGH",
+  "reason": "Low ambiguity but high volume (IPO coverage).",
+  "query": "\"Cerebras\"",
+  "neg": "",
+  "sector": "AI chips"
+ },
+ {
+  "idx": 10,
+  "name": "Together AI",
+  "tier": "CRITICAL",
+  "volume": "HIGH",
+  "reason": "'Together' plus 'AI' is one of the most common phrase pairs in tech news.",
+  "query": "\"Together AI\" OR \"Together Computer\" OR together.ai",
+  "neg": "\"work together\", \"come together\", \"together with\"",
+  "sector": "AI infrastructure"
+ },
+ {
+  "idx": 11,
+  "name": "Harbinger Motors",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "'Harbinger' alone is a common noun.",
+  "query": "\"Harbinger Motors\"",
+  "neg": "harbinger of, omen",
+  "sector": "EV trucks"
+ },
+ {
+  "idx": 12,
+  "name": "TensorWave",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"TensorWave\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 13,
+  "name": "Glean",
+  "tier": "HIGH",
+  "volume": "NORMAL",
+  "reason": "'Glean' is a common verb: 'we can glean from this'.",
+  "query": "\"Glean\" AND (\"enterprise search\" OR \"Glean AI\" OR workplace search)",
+  "neg": "\"glean insights\", \"can glean\", \"gleaned from\"",
+  "sector": "Enterprise search"
+ },
+ {
+  "idx": 14,
+  "name": "SpaceX",
+  "tier": "HIGH",
+  "volume": "HIGH",
+  "reason": "Low ambiguity but extreme volume — will dominate the run without a cap.",
+  "query": "\"SpaceX\"",
+  "neg": "",
+  "sector": "Space"
+ },
+ {
+  "idx": 15,
+  "name": "DeepKeep",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"DeepKeep\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 16,
+  "name": "Lambda (lambda.ai)",
+  "tier": "CRITICAL",
+  "volume": "NORMAL",
+  "reason": "Collides with AWS Lambda, lambda calculus, Lambda Legal, particle physics.",
+  "query": "\"Lambda Labs\" OR (\"Lambda\" AND (\"GPU cloud\" OR \"AI cloud\" OR lambda.ai))",
+  "neg": "\"AWS Lambda\", \"lambda calculus\", \"Lambda Legal\", serverless",
+  "sector": "AI cloud / GPU"
+ },
+ {
+  "idx": 17,
+  "name": "SSI (Safe Superintelligence)",
+  "tier": "CRITICAL",
+  "volume": "HIGH",
+  "reason": "Bare 'SSI' means Supplemental Security Income, server-side includes, solid-state and more.",
+  "query": "\"Safe Superintelligence\" OR \"Safe Superintelligence Inc\"",
+  "neg": "\"Supplemental Security Income\", \"server side includes\"",
+  "sector": "AI research"
+ },
+ {
+  "idx": 18,
+  "name": "xAI",
+  "tier": "HIGH",
+  "volume": "HIGH",
+  "reason": "Collides with XAI = explainable AI, a widely used technical term.",
+  "query": "\"xAI\" AND (Musk OR Grok OR \"xAI Corp\")",
+  "neg": "\"explainable AI\", \"XAI methods\", interpretability",
+  "sector": "AI research"
+ },
+ {
+  "idx": 19,
+  "name": "Island",
+  "tier": "CRITICAL",
+  "volume": "NORMAL",
+  "reason": "Extremely common noun; unusable as a bare query.",
+  "query": "\"Island\" AND (\"enterprise browser\" OR \"Island Technology\" OR cybersecurity)",
+  "neg": "tourism, resort, \"island nation\", weather",
+  "sector": "Enterprise browser"
+ },
+ {
+  "idx": 20,
+  "name": "Velotix",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Velotix\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 21,
+  "name": "Databricks",
+  "tier": "HIGH",
+  "volume": "HIGH",
+  "reason": "Low ambiguity but high volume.",
+  "query": "\"Databricks\"",
+  "neg": "",
+  "sector": "Data platform"
+ },
+ {
+  "idx": 22,
+  "name": "Ayar Labs",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Ayar Labs\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 23,
+  "name": "RepAir Carbon",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "Reads as the phrase 'repair carbon'.",
+  "query": "\"RepAir Carbon\" OR \"Rep Air Carbon\"",
+  "neg": "\"repair carbon fiber\"",
+  "sector": "Carbon capture"
+ },
+ {
+  "idx": 24,
+  "name": "Kardome",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Kardome\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 25,
+  "name": "Omnix Medical",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Omnix Medical\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 26,
+  "name": "Kodiak Robotics",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "'Kodiak' alone means the bear and the Alaskan island.",
+  "query": "\"Kodiak Robotics\"",
+  "neg": "bear, Alaska",
+  "sector": "Autonomous trucking"
+ },
+ {
+  "idx": 27,
+  "name": "Scale AI",
+  "tier": "HIGH",
+  "volume": "HIGH",
+  "reason": "'Scale AI' is also a generic phrase: 'enterprises scale AI initiatives'.",
+  "query": "\"Scale AI\" AND (Wang OR \"data labeling\" OR funding OR valuation)",
+  "neg": "\"scale AI adoption\", \"scale AI initiatives\", \"to scale AI\"",
+  "sector": "AI data labeling"
+ },
+ {
+  "idx": 28,
+  "name": "Spot AI",
+  "tier": "HIGH",
+  "volume": "NORMAL",
+  "reason": "Generic phrase, plus Boston Dynamics' Spot robot.",
+  "query": "\"Spot AI\" AND (\"video intelligence\" OR camera OR surveillance)",
+  "neg": "\"Boston Dynamics\", \"spot AI trends\", parking spot",
+  "sector": "Video AI"
+ },
+ {
+  "idx": 29,
+  "name": "Siteaware",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Siteaware\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 30,
+  "name": "Ukko",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "Finnish deity; rare but non-zero collision.",
+  "query": "\"Ukko\" AND (\"food allergy\" OR gluten OR protein OR startup)",
+  "neg": "Finnish mythology, thunder god",
+  "sector": "Food tech"
+ },
+ {
+  "idx": 31,
+  "name": "Groq",
+  "tier": "HIGH",
+  "volume": "HIGH",
+  "reason": "One character from 'Grok' (xAI's model) — constant cross-contamination.",
+  "query": "\"Groq\" AND (LPU OR \"inference chip\" OR \"Groq Inc\")",
+  "neg": "Grok, \"Grok AI\", xAI chatbot",
+  "sector": "AI chips"
+ },
+ {
+  "idx": 32,
+  "name": "Anthropic",
+  "tier": "HIGH",
+  "volume": "HIGH",
+  "reason": "Very high news volume; 'anthropic principle' appears in cosmology coverage.",
+  "query": "\"Anthropic\" AND (Claude OR \"Anthropic PBC\" OR AI)",
+  "neg": "\"anthropic principle\", cosmology, anthropogenic",
+  "sector": "AI research"
+ },
+ {
+  "idx": 33,
+  "name": "Bites",
+  "tier": "CRITICAL",
+  "volume": "NORMAL",
+  "reason": "Matches food writing, dog bites, sound bites, insect bites.",
+  "query": "\"Bites\" AND (\"employee training\" OR \"microlearning\" OR \"Bites app\")",
+  "neg": "restaurant, recipe, \"dog bites\", snake, mosquito",
+  "sector": "Training / microlearning"
+ },
+ {
+  "idx": 34,
+  "name": "Atlas Obscura",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Atlas Obscura\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 35,
+  "name": "Stoke Space",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Stoke Space\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 36,
+  "name": "SeeTree",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"SeeTree\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 37,
+  "name": "OneAI",
+  "tier": "HIGH",
+  "volume": "NORMAL",
+  "reason": "'One AI' is a generic phrase.",
+  "query": "\"One AI\" AND (\"oneai.com\" OR \"language AI\" OR \"AI API\")",
+  "neg": "\"one AI model\", \"no one AI\"",
+  "sector": "NLP API"
+ },
+ {
+  "idx": 38,
+  "name": "Edity Therapeutics",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Edity Therapeutics\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 39,
+  "name": "Carrar",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Carrar\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 40,
+  "name": "Quidnet Energy",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Quidnet Energy\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 41,
+  "name": "Lano",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "Short token; collides with several brands and name fragments.",
+  "query": "\"Lano\" AND (payroll OR \"global hiring\" OR HR OR startup)",
+  "neg": "lanolin, Lano brand",
+  "sector": "HR tech"
+ },
+ {
+  "idx": 42,
+  "name": "Flash Forest",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "Reads as a descriptive phrase.",
+  "query": "\"Flash Forest\" AND (drone OR reforestation OR planting)",
+  "neg": "\"flash forest fire\"",
+  "sector": "Reforestation"
+ },
+ {
+  "idx": 43,
+  "name": "Kando",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "Japanese loanword and several unrelated brands.",
+  "query": "\"Kando\" AND (wastewater OR \"sewage intelligence\" OR Israeli)",
+  "neg": "Kando Japan, \"kando\" concept",
+  "sector": "Water tech"
+ },
+ {
+  "idx": 44,
+  "name": "NT-Tao",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"NT-Tao\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 45,
+  "name": "Neolithics",
+  "tier": "HIGH",
+  "volume": "NORMAL",
+  "reason": "Near-collision with 'Neolithic' archaeology coverage.",
+  "query": "\"Neolithics\" AND (produce OR agritech OR \"food quality\" OR startup)",
+  "neg": "archaeology, \"Neolithic period\", excavation, ancient",
+  "sector": "Agritech"
+ },
+ {
+  "idx": 46,
+  "name": "Arrow Global",
+  "tier": "HIGH",
+  "volume": "NORMAL",
+  "reason": "Arrow Global Group (UK debt purchaser) is a large, actively covered company.",
+  "query": "\"Arrow Global\" AND (Israeli OR startup OR funding OR technology)",
+  "neg": "\"Arrow Global Group\", debt purchaser, \"LSE:ARW\"",
+  "sector": "TBD"
+ },
+ {
+  "idx": 47,
+  "name": "Air EV",
+  "tier": "CRITICAL",
+  "volume": "NORMAL",
+  "reason": "Generic phrase; also the Wuling Air EV production car.",
+  "query": "\"Air EV\" AND (Israeli OR startup OR funding)",
+  "neg": "Wuling, \"air conditioning\", Tesla",
+  "sector": "TBD"
+ },
+ {
+  "idx": 48,
+  "name": "Ursa Major",
+  "tier": "HIGH",
+  "volume": "NORMAL",
+  "reason": "The constellation appears constantly in science and astrology coverage.",
+  "query": "\"Ursa Major\" AND (\"rocket engine\" OR propulsion OR aerospace OR defense)",
+  "neg": "constellation, astronomy, \"Big Dipper\", horoscope",
+  "sector": "Space propulsion"
+ },
+ {
+  "idx": 49,
+  "name": "Quai.MD",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Quai.MD\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 50,
+  "name": "Cyfirma",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Cyfirma\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 51,
+  "name": "Ludeo (formerly Edge)",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "Former name 'Edge' is unusable; use Ludeo only.",
+  "query": "\"Ludeo\" AND (gaming OR \"gameplay\" OR startup)",
+  "neg": "Microsoft Edge, \"edge computing\"",
+  "sector": "Gaming"
+ },
+ {
+  "idx": 52,
+  "name": "Lightico",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Lightico\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 53,
+  "name": "3d Signals",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "Reads as a generic technical phrase.",
+  "query": "\"3d Signals\" AND (manufacturing OR \"machine monitoring\" OR Israeli)",
+  "neg": "\"3D signal processing\"",
+  "sector": "Industrial IoT"
+ },
+ {
+  "idx": 54,
+  "name": "IQM",
+  "tier": "HIGH",
+  "volume": "NORMAL",
+  "reason": "Three-letter token colliding with several acronyms.",
+  "query": "\"IQM\" AND (quantum OR \"IQM Quantum Computers\" OR Finland)",
+  "neg": "IQM index, medical acronym",
+  "sector": "Quantum computing"
+ },
+ {
+  "idx": 55,
+  "name": "Kini",
+  "tier": "CRITICAL",
+  "volume": "NORMAL",
+  "reason": "Four letters, matches fragments and unrelated brands worldwide.",
+  "query": "\"Kini\" AND (startup OR funding OR Israeli OR technology)",
+  "neg": "bikini, Hawaii, \"Kini Hawaii\"",
+  "sector": "TBD"
+ },
+ {
+  "idx": 56,
+  "name": "Liquid Instruments",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "Reads as a generic phrase.",
+  "query": "\"Liquid Instruments\" AND (\"Moku\" OR oscilloscope OR \"test equipment\")",
+  "neg": "\"liquid instrument\" chemistry",
+  "sector": "Test equipment"
+ },
+ {
+  "idx": 57,
+  "name": "Sotero",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "Common surname in Spanish/Portuguese-speaking regions.",
+  "query": "\"Sotero\" AND (encryption OR \"data security\" OR startup)",
+  "neg": "person name",
+  "sector": "Data security"
+ },
+ {
+  "idx": 58,
+  "name": "Connected Energy",
+  "tier": "HIGH",
+  "volume": "NORMAL",
+  "reason": "Generic industry phrase used in most energy-sector writing.",
+  "query": "\"Connected Energy\" AND (\"battery storage\" OR \"second life\" OR company)",
+  "neg": "\"connected energy systems\", \"connected energy grid\"",
+  "sector": "Energy storage"
+ },
+ {
+  "idx": 59,
+  "name": "BetterSeeds",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"BetterSeeds\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 60,
+  "name": "Oshi (formerly Plantish)",
+  "tier": "HIGH",
+  "volume": "NORMAL",
+  "reason": "'Oshi' is heavily used in anime fandom (Oshi no Ko) and by an online casino.",
+  "query": "\"Oshi\" AND (\"plant-based\" OR seafood OR \"Plantish\") OR \"Plantish\"",
+  "neg": "\"Oshi no Ko\", anime, casino, manga",
+  "sector": "Food tech"
+ },
+ {
+  "idx": 61,
+  "name": "Genopore",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Genopore\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 62,
+  "name": "Mermade Seafoods",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Mermade Seafoods\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 63,
+  "name": "ProFuse",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "Short coined name; collides with 'profuse'.",
+  "query": "\"ProFuse Technology\" OR (\"ProFuse\" AND (\"cultivated meat\" OR biotech))",
+  "neg": "profuse bleeding, \"profuse apologies\"",
+  "sector": "Food tech"
+ },
+ {
+  "idx": 64,
+  "name": "AEYE Health",
+  "tier": "HIGH",
+  "volume": "NORMAL",
+  "reason": "Near-identical to AEye Inc., a publicly traded lidar company.",
+  "query": "\"AEYE Health\" AND (retinal OR diabetic OR screening OR FDA)",
+  "neg": "\"AEye lidar\", LIDAR, autonomous vehicle",
+  "sector": "Medical AI"
+ },
+ {
+  "idx": 65,
+  "name": "Workspot",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Workspot\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 66,
+  "name": "Spectrum Labs",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "'Spectrum' collides with Charter Spectrum and spectrum policy.",
+  "query": "\"Spectrum Labs\" AND (\"content moderation\" OR \"trust and safety\")",
+  "neg": "Charter, \"spectrum auction\", autism spectrum",
+  "sector": "Trust & safety"
+ },
+ {
+  "idx": 67,
+  "name": "Anodot",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Anodot\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 68,
+  "name": "Xage Security",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Xage Security\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 69,
+  "name": "IronVest",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"IronVest\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 70,
+  "name": "The EVERY Company",
+  "tier": "CRITICAL",
+  "volume": "NORMAL",
+  "reason": "'Every' is the single hardest token in the list.",
+  "query": "\"The EVERY Company\" OR \"EVERY Company\" AND (\"egg protein\" OR \"precision fermentation\")",
+  "neg": "generic",
+  "sector": "Food tech"
+ },
+ {
+  "idx": 71,
+  "name": "InsideTracker",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"InsideTracker\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 72,
+  "name": "CarDekho",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"CarDekho\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 73,
+  "name": "One Zero Digital Bank Ltd.",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "'One Zero' reads as digits in unrelated contexts.",
+  "query": "\"One Zero Bank\" OR \"OneZero\" AND (Israeli OR \"digital bank\")",
+  "neg": "\"one zero\" score, OneZero Medium",
+  "sector": "Digital banking"
+ },
+ {
+  "idx": 74,
+  "name": "Binah.ai",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "'Binah' is a Kabbalistic term appearing in religious writing.",
+  "query": "\"Binah.ai\" OR (\"Binah\" AND (\"video-based\" OR \"vital signs\"))",
+  "neg": "Kabbalah, sefirot, Torah",
+  "sector": "Health tech"
+ },
+ {
+  "idx": 75,
+  "name": "Eko Health",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "'Eko' is homophonous with 'eco' and used by several brands.",
+  "query": "\"Eko Health\" OR (\"Eko\" AND (stethoscope OR cardiology OR FDA))",
+  "neg": "eco-friendly, Eko guitars",
+  "sector": "Medical devices"
+ },
+ {
+  "idx": 76,
+  "name": "Cycuity (formerly Tortuga Logic)",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Cycuity (formerly Tortuga Logic)\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 77,
+  "name": "Peak",
+  "tier": "CRITICAL",
+  "volume": "NORMAL",
+  "reason": "Peak season, peak oil, peak performance, mountain peaks.",
+  "query": "\"Peak\" AND (\"Peak AI\" OR \"decision intelligence\" OR \"Peak.ai\")",
+  "neg": "\"peak season\", \"peak oil\", mountain, hiking, \"peak demand\"",
+  "sector": "Decision intelligence"
+ },
+ {
+  "idx": 78,
+  "name": "Oriient",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Oriient\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 79,
+  "name": "Tabnine",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Tabnine\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 80,
+  "name": "InZiv",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"InZiv\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 81,
+  "name": "BlueTree Technologies",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "'Blue Tree' appears in unrelated brand names.",
+  "query": "\"BlueTree Technologies\" OR \"Blue Tree Technologies\"",
+  "neg": "Blue Tree hotels",
+  "sector": "Food tech"
+ },
+ {
+  "idx": 82,
+  "name": "BioLumic",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"BioLumic\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 83,
+  "name": "Orchard",
+  "tier": "CRITICAL",
+  "volume": "NORMAL",
+  "reason": "Farming orchards plus a US proptech firm of the same name.",
+  "query": "\"Orchard\" AND (startup OR funding OR technology OR software)",
+  "neg": "apple orchard, farming, harvest, \"Orchard Road\"",
+  "sector": "TBD"
+ },
+ {
+  "idx": 84,
+  "name": "Tailor Brands",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "Reads as the phrase 'tailor brands to...'.",
+  "query": "\"Tailor Brands\" AND (LLC OR \"logo maker\" OR \"business formation\")",
+  "neg": "\"tailor brands to\", bespoke tailoring",
+  "sector": "SMB software"
+ },
+ {
+  "idx": 85,
+  "name": "Flytrex",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Flytrex\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 86,
+  "name": "Quantum Machines",
+  "tier": "HIGH",
+  "volume": "NORMAL",
+  "reason": "'Quantum machines' is standard phrasing across all quantum computing coverage.",
+  "query": "\"Quantum Machines\" AND (OPX OR \"quantum control\" OR Israeli OR funding)",
+  "neg": "\"quantum machine learning\", \"quantum machines are\"",
+  "sector": "Quantum control"
+ },
+ {
+  "idx": 87,
+  "name": "Sufresca",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Sufresca\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 88,
+  "name": "Guild",
+  "tier": "CRITICAL",
+  "volume": "NORMAL",
+  "reason": "Gaming guilds, trade guilds, Guild Education, Writers Guild.",
+  "query": "\"Guild\" AND (startup OR funding OR platform) ",
+  "neg": "\"Writers Guild\", \"Screen Actors\", gaming guild, \"guild wars\"",
+  "sector": "TBD"
+ },
+ {
+  "idx": 89,
+  "name": "Sfara",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Sfara\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 90,
+  "name": "Zippin",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Zippin\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 91,
+  "name": "Privateer",
+  "tier": "HIGH",
+  "volume": "NORMAL",
+  "reason": "Historical naval term, plus Privateer Rum and Privateer Space.",
+  "query": "\"Privateer\" AND (startup OR funding OR \"space debris\" OR technology)",
+  "neg": "pirate, rum, historical, \"privateer ship\"",
+  "sector": "TBD"
+ },
+ {
+  "idx": 92,
+  "name": "Cordio Medical",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Cordio Medical\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 93,
+  "name": "wefox",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"wefox\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 94,
+  "name": "Moodify",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Moodify\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 95,
+  "name": "Polaris Quantum Biotech",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "'Polaris' is a large consumer brand.",
+  "query": "\"Polaris Quantum Biotech\" OR \"POLARISqb\"",
+  "neg": "Polaris Industries, snowmobile, RZR",
+  "sector": "Quantum biotech"
+ },
+ {
+  "idx": 96,
+  "name": "Alloy Therapeutics",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "'Alloy' collides with Alloy (identity fintech) and metallurgy.",
+  "query": "\"Alloy Therapeutics\"",
+  "neg": "\"Alloy identity\", metallurgy, \"alloy wheels\"",
+  "sector": "Biotech"
+ },
+ {
+  "idx": 97,
+  "name": "Ynsect",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Ynsect\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 98,
+  "name": "Treedom",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Treedom\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 99,
+  "name": "MaterialsZone",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"MaterialsZone\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 100,
+  "name": "BrightInsight",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"BrightInsight\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 101,
+  "name": "Launchpad",
+  "tier": "CRITICAL",
+  "volume": "NORMAL",
+  "reason": "Rocket launch pads, Salesforce Launchpad, accelerator programmes.",
+  "query": "\"Launchpad\" AND (startup OR funding OR platform)",
+  "neg": "rocket, \"launch pad\", NASA, SpaceX, accelerator program",
+  "sector": "TBD"
+ },
+ {
+  "idx": 102,
+  "name": "Sequentify",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Sequentify\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 103,
+  "name": "Tamar Robotics",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Tamar Robotics\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 104,
+  "name": "Entangled Networks",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "Reads as a generic quantum phrase.",
+  "query": "\"Entangled Networks\" AND (quantum OR acquired OR startup)",
+  "neg": "\"entangled network\" physics",
+  "sector": "Quantum computing"
+ },
+ {
+  "idx": 105,
+  "name": "Dandelion Energy",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Dandelion Energy\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 106,
+  "name": "Shield",
+  "tier": "CRITICAL",
+  "volume": "NORMAL",
+  "reason": "Shield laws, S.H.I.E.L.D., Iron Dome shields, hundreds of products.",
+  "query": "\"Shield\" AND (\"communications compliance\" OR \"Shield FC\" OR regtech OR fintech)",
+  "neg": "Marvel, \"shield law\", missile, \"human shield\", windshield",
+  "sector": "Regtech / compliance"
+ },
+ {
+  "idx": 107,
+  "name": "People.ai",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "'People AI' is a generic phrase.",
+  "query": "\"People.ai\" AND (revenue OR \"sales intelligence\" OR CRM)",
+  "neg": "\"people and AI\", \"AI people\"",
+  "sector": "Sales intelligence"
+ },
+ {
+  "idx": 108,
+  "name": "H2Pro",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"H2Pro\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 109,
+  "name": "JumpCloud",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"JumpCloud\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 110,
+  "name": "Future Family",
+  "tier": "HIGH",
+  "volume": "NORMAL",
+  "reason": "Generic phrase in demographic and lifestyle writing.",
+  "query": "\"Future Family\" AND (fertility OR IVF OR financing OR fintech)",
+  "neg": "\"future family planning\", \"the future family\"",
+  "sector": "Fertility finance"
+ },
+ {
+  "idx": 111,
+  "name": "Remilk",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Remilk\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 112,
+  "name": "Ordergroove",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Ordergroove\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 113,
+  "name": "Clinch",
+  "tier": "HIGH",
+  "volume": "NORMAL",
+  "reason": "'Clinch a deal', boxing clinch, 'clinched the title' — very high noise.",
+  "query": "\"Clinch\" AND (\"personalized advertising\" OR \"Clinch.co\" OR martech)",
+  "neg": "\"clinch a deal\", \"clinched\", boxing, playoff",
+  "sector": "Adtech"
+ },
+ {
+  "idx": 114,
+  "name": "BlueGreen Water Technologies",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"BlueGreen Water Technologies\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 115,
+  "name": "Classiq",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Classiq\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 116,
+  "name": "Diagnostic Robotics",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "Reads as a generic category phrase.",
+  "query": "\"Diagnostic Robotics\" AND (Israeli OR \"predictive care\" OR health)",
+  "neg": "\"diagnostic robotics field\"",
+  "sector": "Health AI"
+ },
+ {
+  "idx": 117,
+  "name": "Overtime",
+  "tier": "CRITICAL",
+  "volume": "HIGH",
+  "reason": "Sports overtime, overtime pay, labour law.",
+  "query": "\"Overtime\" AND (\"Overtime Elite\" OR \"sports media\" OR \"Overtime league\")",
+  "neg": "\"overtime pay\", \"overtime hours\", \"went to overtime\", labor",
+  "sector": "Sports media"
+ },
+ {
+  "idx": 118,
+  "name": "Dataloop",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Dataloop\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 119,
+  "name": "Greenlight",
+  "tier": "CRITICAL",
+  "volume": "NORMAL",
+  "reason": "'Greenlit a project', Greenlight Capital, Greenlight Networks.",
+  "query": "\"Greenlight\" AND (\"kids debit\" OR \"family finance\" OR fintech)",
+  "neg": "\"green light\", \"greenlit\", \"Greenlight Capital\", traffic",
+  "sector": "Fintech"
+ },
+ {
+  "idx": 120,
+  "name": "Cyabra",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Cyabra\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 121,
+  "name": "C2A Security",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"C2A Security\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 122,
+  "name": "MasterClass",
+  "tier": "HIGH",
+  "volume": "HIGH",
+  "reason": "'Masterclass' is now a common noun for any expert session.",
+  "query": "\"MasterClass\" AND (\"MasterClass.com\" OR subscription OR \"online learning platform\")",
+  "neg": "\"a masterclass in\", \"masterclass performance\", tutorial",
+  "sector": "Edtech"
+ },
+ {
+  "idx": 123,
+  "name": "HEQA Security (formerly QuantLR)",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"HEQA Security (formerly QuantLR)\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 124,
+  "name": "CytoReason",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"CytoReason\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 125,
+  "name": "Tovala",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Tovala\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 126,
+  "name": "Ro",
+  "tier": "CRITICAL",
+  "volume": "HIGH",
+  "reason": "Two characters. Matches inside countless words and abbreviations.",
+  "query": "\"Ro Health\" OR (\"Ro\" AND (\"telehealth\" OR \"Roman health\" OR \"Ro.co\"))",
+  "neg": "reverse osmosis, \"RO water\", Romania, ROI",
+  "sector": "Telehealth"
+ },
+ {
+  "idx": 127,
+  "name": "MigVax",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"MigVax\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 128,
+  "name": "Skillz",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "Collides with 'skills' in casual spelling.",
+  "query": "\"Skillz\" AND (mobile gaming OR NYSE OR esports)",
+  "neg": "\"skillz\" slang",
+  "sector": "Mobile gaming"
+ },
+ {
+  "idx": 129,
+  "name": "BlueCircle (formerly Trellis)",
+  "tier": "HIGH",
+  "volume": "NORMAL",
+  "reason": "Blue Circle is a major cement brand; 'Trellis' is also generic.",
+  "query": "\"BlueCircle\" OR \"Blue Circle\" AND (startup OR funding OR technology)",
+  "neg": "cement, concrete, \"Blue Circle Cement\", garden trellis",
+  "sector": "TBD"
+ },
+ {
+  "idx": 130,
+  "name": "Near",
+  "tier": "CRITICAL",
+  "volume": "NORMAL",
+  "reason": "Preposition, plus NEAR Protocol (crypto) which generates heavy news volume.",
+  "query": "\"Near Intelligence\" OR (\"Near\" AND (\"location data\" OR \"data intelligence\"))",
+  "neg": "\"NEAR Protocol\", crypto, blockchain, \"near future\", \"near miss\"",
+  "sector": "Location data"
+ },
+ {
+  "idx": 131,
+  "name": "CyberX",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "Generic-looking; acquired by Microsoft.",
+  "query": "\"CyberX\" AND (Microsoft OR ICS OR OT security OR Israeli)",
+  "neg": "CyberX conference",
+  "sector": "OT security"
+ },
+ {
+  "idx": 132,
+  "name": "Celeno",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Celeno\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 133,
+  "name": "Kenna Security",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Kenna Security\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 134,
+  "name": "Wayup",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "Reads as the phrase 'way up'.",
+  "query": "\"WayUp\" AND (recruiting OR \"early career\" OR hiring)",
+  "neg": "\"way up\", \"all the way up\"",
+  "sector": "HR tech"
+ },
+ {
+  "idx": 135,
+  "name": "Nanorep",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Nanorep\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 136,
+  "name": "Taranis",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "Celtic deity and a UK military drone programme.",
+  "query": "\"Taranis\" AND (agriculture OR \"crop intelligence\" OR Israeli)",
+  "neg": "BAE, drone, Celtic god, mythology",
+  "sector": "Agritech"
+ },
+ {
+  "idx": 137,
+  "name": "Momentis Surgical (formerly Memic)",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Momentis Surgical (formerly Memic)\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 138,
+  "name": "Argus Cyber Security",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "'Argus' is a common brand and newspaper name.",
+  "query": "\"Argus Cyber Security\" OR \"Argus Cyber\"",
+  "neg": "Argus Media, \"The Argus\", mythology",
+  "sector": "Automotive security"
+ },
+ {
+  "idx": 139,
+  "name": "The Bouqs",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"The Bouqs\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 140,
+  "name": "Zoomcar",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Zoomcar\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 141,
+  "name": "Sweetch",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Sweetch\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 142,
+  "name": "TechSee",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"TechSee\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 143,
+  "name": "Replay Technologies",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "'Replay' is extremely common in sports coverage.",
+  "query": "\"Replay Technologies\" AND (Intel OR \"freeD\" OR acquired)",
+  "neg": "\"instant replay\", \"replay review\", VAR",
+  "sector": "Sports tech"
+ },
+ {
+  "idx": 144,
+  "name": "NooBaa",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"NooBaa\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 145,
+  "name": "mPrest",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"mPrest\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 146,
+  "name": "Amitree",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Amitree\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 147,
+  "name": "Wave",
+  "tier": "CRITICAL",
+  "volume": "HIGH",
+  "reason": "Waves of every kind, plus Wave accounting and Wave Mobile Money.",
+  "query": "\"Wave\" AND (startup OR funding OR Israeli OR technology)",
+  "neg": "ocean, heatwave, \"wave of\", radio waves, surfing",
+  "sector": "TBD"
+ },
+ {
+  "idx": 148,
+  "name": "Firefly Neuroscience (formerly ElMindA)",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "'Firefly' collides with Adobe Firefly and Firefly Aerospace.",
+  "query": "\"Firefly Neuroscience\" OR \"ElMindA\"",
+  "neg": "Adobe Firefly, \"Firefly Aerospace\", insect",
+  "sector": "Neurotech"
+ },
+ {
+  "idx": 149,
+  "name": "Syqe",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Syqe\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 150,
+  "name": "Ubimo",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Ubimo\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 151,
+  "name": "BIScience",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "Reads as 'BI science'.",
+  "query": "\"BIScience\" AND (data OR \"digital intelligence\" OR Israeli)",
+  "neg": "\"BI science\" analytics",
+  "sector": "Data intelligence"
+ },
+ {
+  "idx": 152,
+  "name": "Verse.ai",
+  "tier": "HIGH",
+  "volume": "NORMAL",
+  "reason": "'Verse' is common; several unrelated companies share it.",
+  "query": "\"Verse.ai\" OR (\"Verse\" AND (\"conversational marketing\" OR \"SMS marketing\"))",
+  "neg": "poetry, bible verse, \"verse of\", metaverse",
+  "sector": "Martech"
+ },
+ {
+  "idx": 153,
+  "name": "Global Kinetics",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "Reads as a generic phrase.",
+  "query": "\"Global Kinetics\" AND (Parkinson OR \"PKG\" OR medical device)",
+  "neg": "\"global kinetics of\"",
+  "sector": "Medical devices"
+ },
+ {
+  "idx": 154,
+  "name": "Zebra Medical Vision",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "'Zebra' collides with Zebra Technologies.",
+  "query": "\"Zebra Medical Vision\" OR \"Zebra Medical\"",
+  "neg": "\"Zebra Technologies\", barcode, animal",
+  "sector": "Medical imaging"
+ },
+ {
+  "idx": 155,
+  "name": "Corephotonics",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Corephotonics\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 156,
+  "name": "JUMP Bikes",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "'Jump' is extremely common; company is defunct.",
+  "query": "\"JUMP Bikes\" OR \"Jump Bikes Uber\"",
+  "neg": "\"jump in\", \"jumped\", trampoline",
+  "sector": "Micromobility"
+ },
+ {
+  "idx": 157,
+  "name": "UPnRIDE",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"UPnRIDE\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 158,
+  "name": "Appforma",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Appforma\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 159,
+  "name": "Nextpeer",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Nextpeer\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 160,
+  "name": "Parko",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "Short token colliding with parking-related brands.",
+  "query": "\"Parko\" AND (parking OR app OR Israeli OR startup)",
+  "neg": "\"parko\" generic parking",
+  "sector": "Mobility"
+ },
+ {
+  "idx": 161,
+  "name": "PulmOne",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"PulmOne\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 162,
+  "name": "Shopial",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Shopial\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 163,
+  "name": "Fireblade",
+  "tier": "HIGH",
+  "volume": "NORMAL",
+  "reason": "Honda CBR Fireblade is a well-known motorcycle.",
+  "query": "\"Fireblade\" AND (cybersecurity OR DDoS OR hosting OR startup)",
+  "neg": "Honda, motorcycle, CBR, superbike",
+  "sector": "Cybersecurity"
+ },
+ {
+  "idx": 164,
+  "name": "Freightos",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Freightos\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 165,
+  "name": "The Trendlines Group",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"The Trendlines Group\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 166,
+  "name": "Viewbix",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Viewbix\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 167,
+  "name": "eVigilo",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"eVigilo\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 168,
+  "name": "Appdome",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Appdome\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 169,
+  "name": "enVerid",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"enVerid\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 170,
+  "name": "Crosswise",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Crosswise\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 171,
+  "name": "Abes Market",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "Reads as a generic store name.",
+  "query": "\"Abes Market\" OR \"Abe's Market\"",
+  "neg": "grocery store listings",
+  "sector": "E-commerce"
+ },
+ {
+  "idx": 172,
+  "name": "Surgical Theater",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "Reads as a literal operating theatre.",
+  "query": "\"Surgical Theater\" AND (VR OR \"3D visualization\" OR neurosurgery)",
+  "neg": "\"surgical theatre\" hospital, operating room",
+  "sector": "Medical VR"
+ },
+ {
+  "idx": 173,
+  "name": "MST",
+  "tier": "CRITICAL",
+  "volume": "NORMAL",
+  "reason": "Three-letter acronym: Mountain Standard Time, Military Sexual Trauma, many others.",
+  "query": "\"MST\" AND (startup OR Israeli OR technology OR funding)",
+  "neg": "\"Mountain Standard Time\", \"MST3K\", military",
+  "sector": "TBD"
+ },
+ {
+  "idx": 174,
+  "name": "Bizzabo",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "Distinctive but occasionally misspelled.",
+  "query": "\"Bizzabo\"",
+  "neg": "",
+  "sector": "Event tech"
+ },
+ {
+  "idx": 175,
+  "name": "Neverware",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Neverware\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 176,
+  "name": "BioCatch",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"BioCatch\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 177,
+  "name": "Sight Diagnostics",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "'Sight' is common but the full name is reasonably safe.",
+  "query": "\"Sight Diagnostics\" OR \"Sight OLO\"",
+  "neg": "\"in sight\", eyesight",
+  "sector": "Diagnostics"
+ },
+ {
+  "idx": 178,
+  "name": "Consumer Physics",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "Reads as an academic phrase.",
+  "query": "\"Consumer Physics\" OR \"SCiO scanner\"",
+  "neg": "\"consumer physics\" academic",
+  "sector": "Sensors"
+ },
+ {
+  "idx": 179,
+  "name": "StackIQ",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"StackIQ\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 180,
+  "name": "Mentad",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Mentad\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 181,
+  "name": "CropX",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"CropX\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 182,
+  "name": "Powwow",
+  "tier": "HIGH",
+  "volume": "NORMAL",
+  "reason": "Cultural gatherings and the informal sense of 'a quick powwow'.",
+  "query": "\"Powwow\" AND (startup OR software OR enterprise OR funding)",
+  "neg": "tribal, \"Native American\", gathering, \"quick powwow\"",
+  "sector": "TBD"
+ },
+ {
+  "idx": 183,
+  "name": "Apploi",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Apploi\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 184,
+  "name": "Lifeward (formerly known as ReWalk)",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "Renamed recently; both names needed.",
+  "query": "\"Lifeward\" OR \"ReWalk Robotics\"",
+  "neg": "\"life ward\" hospital",
+  "sector": "Medical robotics"
+ },
+ {
+  "idx": 185,
+  "name": "Cimagine",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Cimagine\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 186,
+  "name": "Boatsetter",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Boatsetter\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 187,
+  "name": "Stringify",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Stringify\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 188,
+  "name": "BriefCam",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"BriefCam\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 189,
+  "name": "BillGuard",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"BillGuard\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 190,
+  "name": "Xsense (formerly BT9)",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "Short token; former name is a generic code.",
+  "query": "\"Xsense\" AND (\"cold chain\" OR logistics OR Israeli)",
+  "neg": "Xsens motion capture",
+  "sector": "Supply chain"
+ },
+ {
+  "idx": 191,
+  "name": "Astra",
+  "tier": "CRITICAL",
+  "volume": "HIGH",
+  "reason": "Vauxhall Astra, AstraZeneca, Astra Space, Astra rocket.",
+  "query": "\"Astra\" AND (startup OR funding OR Israeli OR technology)",
+  "neg": "AstraZeneca, Vauxhall, Opel, \"Astra Space\", rocket, satellite",
+  "sector": "TBD"
+ },
+ {
+  "idx": 192,
+  "name": "NeuReality",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"NeuReality\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 193,
+  "name": "EquipmentShare",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"EquipmentShare\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 194,
+  "name": "Hub Security",
+  "tier": "HIGH",
+  "volume": "NORMAL",
+  "reason": "Reads as a generic security-category phrase.",
+  "query": "\"Hub Security\" AND (HSM OR confidential OR Nasdaq OR Israeli)",
+  "neg": "\"hub security model\", \"security hub\", \"AWS Security Hub\"",
+  "sector": "Cybersecurity"
+ },
+ {
+  "idx": 195,
+  "name": "BlueNalu",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"BlueNalu\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 196,
+  "name": "Medisafe",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Medisafe\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 197,
+  "name": "Ravin AI",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "'Ravin' is a name; 'AI' suffix is generic.",
+  "query": "\"Ravin AI\" AND (\"vehicle inspection\" OR damage OR insurance)",
+  "neg": "Ravin name",
+  "sector": "Insurtech"
+ },
+ {
+  "idx": 198,
+  "name": "Kemtai",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Kemtai\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 199,
+  "name": "Kryon Systems",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Kryon Systems\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 200,
+  "name": "TubiTV",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"TubiTV\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 201,
+  "name": "NetOp",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "Collides with NetOp Tech and 'network operations'.",
+  "query": "\"NetOp\" AND (Israeli OR \"network automation\" OR startup)",
+  "neg": "\"network operations\", NetOp Remote Control",
+  "sector": "Networking"
+ },
+ {
+  "idx": 202,
+  "name": "CorrActions",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"CorrActions\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 203,
+  "name": "SaNOtize",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"SaNOtize\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 204,
+  "name": "Stellar Cyber",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "'Stellar' is a common adjective and a crypto network.",
+  "query": "\"Stellar Cyber\" AND (XDR OR SOC OR security platform)",
+  "neg": "\"stellar performance\", Stellar Lumens, XLM",
+  "sector": "Cybersecurity"
+ },
+ {
+  "idx": 205,
+  "name": "SeeTrue",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "Reads as 'see true'.",
+  "query": "\"SeeTrue\" AND (aviation OR \"security screening\" OR checkpoint)",
+  "neg": "\"see true\" phrase",
+  "sector": "Security AI"
+ },
+ {
+  "idx": 206,
+  "name": "Perception Point",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "Reads as a generic phrase.",
+  "query": "\"Perception Point\" AND (email security OR Israeli OR threat)",
+  "neg": "\"point of perception\"",
+  "sector": "Email security"
+ },
+ {
+  "idx": 207,
+  "name": "Innovalve",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Innovalve\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 208,
+  "name": "Tala",
+  "tier": "HIGH",
+  "volume": "NORMAL",
+  "reason": "Common given name; also places in the Philippines and Jordan.",
+  "query": "\"Tala\" AND (fintech OR \"mobile lending\" OR \"emerging markets\" OR funding)",
+  "neg": "\"Tala Philippines\" city, name, Talaat",
+  "sector": "Fintech"
+ },
+ {
+  "idx": 209,
+  "name": "Signals Analytics",
+  "tier": "HIGH",
+  "volume": "NORMAL",
+  "reason": "Reads as a generic description of an analytics category.",
+  "query": "\"Signals Analytics\" AND (company OR acquired OR platform OR Israeli)",
+  "neg": "\"signals analytics capability\", \"signal analytics\"",
+  "sector": "Data analytics"
+ },
+ {
+  "idx": 210,
+  "name": "PlaySight",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"PlaySight\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 211,
+  "name": "EduNav",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"EduNav\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 212,
+  "name": "Barcode Nanotech",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Barcode Nanotech\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 213,
+  "name": "Ride Vision",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "Reads as a generic phrase.",
+  "query": "\"Ride Vision\" AND (motorcycle OR \"rider assistance\" OR Israeli)",
+  "neg": "\"ride vision\" generic",
+  "sector": "Motorcycle safety"
+ },
+ {
+  "idx": 214,
+  "name": "Frontier Car Group",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "'Frontier' collides with Frontier Airlines and Nissan Frontier.",
+  "query": "\"Frontier Car Group\" OR \"Frontier Car\"",
+  "neg": "Frontier Airlines, Nissan Frontier",
+  "sector": "Auto marketplace"
+ },
+ {
+  "idx": 215,
+  "name": "Autobrains",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Autobrains\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 216,
+  "name": "DailyPay",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "Reads as the phrase 'daily pay'.",
+  "query": "\"DailyPay\" AND (\"earned wage access\" OR fintech OR funding)",
+  "neg": "\"daily pay rate\", \"paid daily\"",
+  "sector": "Fintech"
+ },
+ {
+  "idx": 217,
+  "name": "Sayata",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Sayata\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 218,
+  "name": "Locusview",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Locusview\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 219,
+  "name": "Juganu",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Juganu\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 220,
+  "name": "Nanomedic",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Nanomedic\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 221,
+  "name": "Incredo (formerly known as DouxMatok)",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "Both names needed; 'Incredo' is close to 'incredible'.",
+  "query": "\"Incredo\" OR \"DouxMatok\"",
+  "neg": "\"incredo\" typo of incredible",
+  "sector": "Food tech"
+ },
+ {
+  "idx": 222,
+  "name": "Casper",
+  "tier": "CRITICAL",
+  "volume": "HIGH",
+  "reason": "Casper mattress (large, newsworthy), Casper the ghost, Casper Network (crypto).",
+  "query": "\"Casper\" AND (startup OR funding OR Israeli OR technology)",
+  "neg": "mattress, ghost, \"Casper Network\", Wyoming, crypto",
+  "sector": "TBD"
+ },
+ {
+  "idx": 223,
+  "name": "CB4",
+  "tier": "CRITICAL",
+  "volume": "NORMAL",
+  "reason": "Short alphanumeric token; matches identifiers and the 1993 film.",
+  "query": "\"CB4\" AND (retail OR analytics OR startup OR funding)",
+  "neg": "movie, film, \"CB4 the movie\"",
+  "sector": "Retail analytics"
+ },
+ {
+  "idx": 224,
+  "name": "Foretellix",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Foretellix\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 225,
+  "name": "Neura",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "Prefix collides with Neuralink, Neuralight and neuroscience terms.",
+  "query": "\"Neura\" AND (robotics OR \"Neura Robotics\" OR cognitive)",
+  "neg": "Neuralink, neural network, neurology",
+  "sector": "Robotics"
+ },
+ {
+  "idx": 226,
+  "name": "ItsMine",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "Reads as the phrase 'it's mine'.",
+  "query": "\"ItsMine\" AND (\"data security\" OR DLP OR Israeli)",
+  "neg": "\"it's mine\" phrase, mining",
+  "sector": "Data security"
+ },
+ {
+  "idx": 227,
+  "name": "Tevel",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "Hebrew common noun; also 'Tevel Aerobotics'.",
+  "query": "\"Tevel Aerobotics\" OR (\"Tevel\" AND (drone OR harvesting))",
+  "neg": "Hebrew word usage",
+  "sector": "Agritech"
+ },
+ {
+  "idx": 228,
+  "name": "Trusona",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Trusona\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 229,
+  "name": "Beyond Meat",
+  "tier": "HIGH",
+  "volume": "HIGH",
+  "reason": "Low ambiguity but high volume as a public company.",
+  "query": "\"Beyond Meat\"",
+  "neg": "",
+  "sector": "Food tech"
+ },
+ {
+  "idx": 230,
+  "name": "HoneyBook",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"HoneyBook\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 231,
+  "name": "RealView Imaging",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"RealView Imaging\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 232,
+  "name": "CyberMDX",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"CyberMDX\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 233,
+  "name": "Alpha Tau",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "Greek letters appear in scientific writing.",
+  "query": "\"Alpha Tau Medical\" OR \"Alpha Tau\"",
+  "neg": "\"alpha tau\" physics notation",
+  "sector": "Oncology"
+ },
+ {
+  "idx": 234,
+  "name": "ThetaRay",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"ThetaRay\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 235,
+  "name": "VAYAVISION",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"VAYAVISION\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 236,
+  "name": "Insightec",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Insightec\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 237,
+  "name": "Cognigo",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Cognigo\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 238,
+  "name": "Ossio",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Ossio\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 239,
+  "name": "MeMed",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "Short token; reads like 'me med'.",
+  "query": "\"MeMed\" AND (diagnostics OR \"host response\" OR FDA)",
+  "neg": "generic",
+  "sector": "Diagnostics"
+ },
+ {
+  "idx": 240,
+  "name": "Arbe Robotics",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Arbe Robotics\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 241,
+  "name": "Lemonade",
+  "tier": "CRITICAL",
+  "volume": "HIGH",
+  "reason": "The beverage dominates; the insurer is also high-volume news.",
+  "query": "\"Lemonade Insurance\" OR (\"Lemonade\" AND (insurtech OR insurance OR NYSE))",
+  "neg": "recipe, drink, \"lemonade stand\", pink lemonade",
+  "sector": "Insurtech"
+ },
+ {
+  "idx": 242,
+  "name": "Hailo",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "Collides with Hailo (UK taxi app) and Hailo ladders.",
+  "query": "\"Hailo\" AND (\"AI chip\" OR \"edge AI\" OR Israeli OR processor)",
+  "neg": "Hailo taxi, ladders, \"Hailo cab\"",
+  "sector": "AI chips"
+ },
+ {
+  "idx": 243,
+  "name": "Sense Education",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "Reads as a generic phrase.",
+  "query": "\"Sense Education\" AND (grading OR AI OR Israeli)",
+  "neg": "\"sense of education\", \"makes sense\"",
+  "sector": "Edtech"
+ },
+ {
+  "idx": 244,
+  "name": "Unispectral",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Unispectral\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 245,
+  "name": "Klook",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Klook\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 246,
+  "name": "Innoviz",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Innoviz\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 247,
+  "name": "Rewire",
+  "tier": "HIGH",
+  "volume": "NORMAL",
+  "reason": "'Rewire' is a common verb in tech and neuroscience writing.",
+  "query": "\"Rewire\" AND (remittance OR \"migrant banking\" OR fintech OR Israeli)",
+  "neg": "\"rewire the brain\", \"rewiring\", electrical",
+  "sector": "Fintech"
+ },
+ {
+  "idx": 248,
+  "name": "YuLife",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"YuLife\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 249,
+  "name": "Edgybees",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Edgybees\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 250,
+  "name": "DreaMed Diabetes",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"DreaMed Diabetes\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 251,
+  "name": "Magisto",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Magisto\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 252,
+  "name": "Virgin Hyperloop One",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Virgin Hyperloop One\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 253,
+  "name": "Airobotics",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Airobotics\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 254,
+  "name": "Scopio Labs",
+  "tier": "MEDIUM",
+  "volume": "NORMAL",
+  "reason": "'Scopio' collides with a stock-photo platform.",
+  "query": "\"Scopio Labs\" AND (hematology OR microscopy OR \"digital cell\")",
+  "neg": "Scopio stock photos",
+  "sector": "Medical imaging"
+ },
+ {
+  "idx": 255,
+  "name": "BeetleSat",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"BeetleSat\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 256,
+  "name": "Silo",
+  "tier": "CRITICAL",
+  "volume": "NORMAL",
+  "reason": "Data silos, farm silos, and the Apple TV+ series 'Silo'.",
+  "query": "\"Silo\" AND (startup OR funding OR \"food supply\" OR technology)",
+  "neg": "\"data silos\", \"Apple TV\", series, grain, missile silo",
+  "sector": "TBD"
+ },
+ {
+  "idx": 257,
+  "name": "BrainQ Technologies",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"BrainQ Technologies\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ },
+ {
+  "idx": 258,
+  "name": "Intuition Robotics",
+  "tier": "LOW",
+  "volume": "NORMAL",
+  "reason": "Distinctive name — exact-phrase query is sufficient.",
+  "query": "\"Intuition Robotics\"",
+  "neg": "",
+  "sector": "TBD (auto-enrich)"
+ }
+]

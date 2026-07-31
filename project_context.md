@@ -1,0 +1,757 @@
+# project_context.md — Living Source of Truth
+
+> **Project:** OurCrowd Press Mentions Monitoring & Dashboard
+> **Owner:** Gal Aharon
+> **Status:** `BUILDING` — M0, M1 reached. P2 code complete; M2 pending the owner's live Ollama pass.
+> **Last updated:** 2026-07-31
+> **Document version:** 0.8.0
+>
+> **Target hardware (dev + demo machine):** Windows 11 · Intel Core Ultra (Lunar Lake) ·
+> Intel Arc 140V iGPU, 16 GB addressable VRAM (shared) · 32 GB system RAM
+
+---
+
+## 0. How to use this file (read this first, every session)
+
+This file is the **single source of truth** for the project. It is written primarily
+for an AI coding assistant that starts each session with zero memory, and secondarily
+for a human reviewer.
+
+**Rules of engagement:**
+
+1. At the start of every working session, the assistant reads this file **in full** before touching code.
+2. Any change to structure, dependencies, data model, or a decision in §5 requires an **update to this file in the same commit**.
+3. Sections marked `AUTHORITATIVE` override anything inferred from the codebase.
+4. `OPEN QUESTION` items must never be resolved silently. They are escalated to the owner.
+5. The changelog in §11 is append-only.
+
+**Companion files:**
+
+| File | Purpose |
+|---|---|
+| `project_context.md` | This file. Architecture, plan, decisions, structure. |
+| `ai_prompts.md` | Verbatim log of prompts given to AI **coding assistants**. Required deliverable §5.6. |
+| `prompts/*.md` | Versioned **runtime** prompts sent to the Ollama model at execution time. Not the same thing as `ai_prompts.md`. |
+| `README.md` | Reviewer-facing. Setup, run commands, assumptions, limitations. Written last, from this file. |
+| `docs/adr/*.md` | Architecture Decision Records — the long-form "why" behind §5. |
+
+---
+
+## 1. The assignment in one paragraph
+
+Build a system that, for a seed list of **258 OurCrowd portfolio/fund companies**,
+collects recent press coverage, classifies each mention's sentiment as
+`positive | negative | neutral` using a **locally hosted Ollama model**, persists the
+results with a link back to the source article, and presents them in a dashboard
+showing (a) quarterly press appearances per company and (b) each company's current
+"last mentioned" status. A **daily scheduled job** detects new mentions and fires an
+alert. Backend and all data collection **must be Node.js**.
+
+Graded on: correctness, code quality, use of the local LLM, documentation, product thinking.
+
+---
+
+## 2. Requirements traceability matrix `AUTHORITATIVE`
+
+Every row below maps a literal requirement from the task PDF to where it is satisfied.
+No row may be deleted. Status: `TODO` / `WIP` / `DONE` / `N/A`.
+
+| # | Source | Requirement (verbatim intent) | Satisfied by | Status |
+|---|---|---|---|---|
+| R1 | §2.1 | Dashboard of press appearances per company over the last quarter | `apps/web` — Company grid + drill-down | TODO |
+| R2 | §2.1 | Each mention classified positive / negative / neutral | `packages/classifier` | TODO |
+| R3 | §2.1 | Each mention linked back to source URL | `articles.url` surfaced in UI | TODO |
+| R4 | §2.2 | Current "mention status" per company from last-mentioned date | `v_company_status` view + status chip in UI | WIP — logic + 20 boundary tests done, UI pending |
+| R5 | §2.2 | Must handle "no coverage found" | Explicit `NO_COVERAGE` bucket, company still rendered | WIP — bucket implemented and tested, UI pending |
+| R6 | §2.3 | Daily job checks for new mentions | `scripts/job-daily.ts` + `apps/scheduler` | TODO |
+| R7 | §2.3 | Sends an alert when a new mention is found | `packages/alerting` | TODO |
+| R8 | §3 | Company list is the source of truth | `data/companies.json` — 258 records, 57 human-approved queries | **DONE** |
+| R9 | §3 | Document news-source choice **and its limitations** in README | README §"Data Sources & Limitations" | TODO |
+| R10 | §4.1 | Sentiment via **local Ollama only**, no cloud LLM | `packages/ollama` — the only LLM code path in the repo | WIP — client done, classifier prompt is P4.2 |
+| R11 | §4.1 | README states which model and why | README §"LLM" | TODO |
+| R12 | §4.1 | README states how the model is invoked (prompt structure, output format) | README + `prompts/` | TODO |
+| R13 | §4.1 | README states how classification quality was validated | `packages/classifier/eval/` + README table | TODO |
+| R14 | §4.2 | JavaScript/Node.js for backend **and data collection** | Entire repo (TypeScript → JS, AD-02) | **DONE** |
+| R15 | §4.2 | Data-collection component | `packages/collector` | TODO |
+| R16 | §4.2 | Classification step | `packages/classifier` | TODO |
+| R17 | §4.2 | Storage layer | `packages/core/db` (SQLite) | **DONE** — schema, migrations, 6 repositories, 11 tests |
+| R18 | §4.2 | Dashboard/UI layer | `apps/web` | TODO |
+| R19 | §4.2 | Scheduled job that performs the daily check and sends the alert | `apps/scheduler` | TODO |
+| R20 | §5.4 | GitHub repo + README: what it does, structure | README | TODO |
+| R21 | §5.4 | README: setup, deps, env vars, how to install/run Ollama + which model to pull | README §Setup | TODO |
+| R22 | §5.4 | README: exact commands to run end-to-end locally | README §Quickstart | TODO |
+| R23 | §5.4 | README: assumptions, trade-offs, known limitations | README §Assumptions | TODO |
+| R24 | §5.5 | `data/` folder with output of a successful run: mentions, labels, links, last-mentioned status | `data/` committed artifacts | TODO |
+| R25 | §5.6 | Copy of the full prompt used with AI coding assistants | `ai_prompts.md` | WIP |
+| R26 | §6 | Reasonable error handling | Typed error hierarchy + fail-fast config; retry/backoff & circuit breaker pending P3 | WIP |
+| R27 | §7 | Document assumptions where the spec is ambiguous | §4 of this file → README | WIP |
+
+---
+
+## 3. What the reviewers are actually testing `AUTHORITATIVE`
+
+Derived from the task PDF + the Full Stack Developer JD. This drives prioritisation.
+
+| Signal they want | Where it shows up in our build |
+|---|---|
+| Can he design a pipeline, not just a script? | Discrete, resumable stages with clean seams |
+| Can he integrate an LLM *reliably* (not just call it)? | Structured output, schema validation, retries, caching, determinism, versioned prompts |
+| Does he know an LLM's output needs **evaluation**? | Gold-set eval harness with a confusion matrix in the README |
+| Does he think about **scale**? 258 companies is not 5. | Concurrency limits, rate limiting, dedup, incremental runs |
+| Does he handle the **messy real world**? | Entity disambiguation (see §4.3) — the hidden hard problem |
+| Product thinking | Sentiment axis defined for an *investor* lens; "no coverage" treated as a first-class state |
+| Can a stranger run it? | Offline fixture mode + one-command quickstart |
+| Senior maturity | ADRs, traceability matrix, documented trade-offs, honest limitations |
+
+**JD-specific hooks worth landing** (the JD names these explicitly):
+Node.js microservices · LLM & agentic tooling in production · SQL **and** NoSQL familiarity ·
+low-code orchestration (**n8n / Make**) · end-to-end ownership incl. testing & monitoring ·
+clean, well-tested code.
+
+---
+
+## 4. Assumptions & ambiguities `AUTHORITATIVE`
+
+Each of these goes into the README verbatim.
+
+| # | Ambiguity | Decision | Rationale |
+|---|---|---|---|
+| A1 | "Last quarter" = calendar Q2 2026, or trailing 90 days? | **Trailing 90 days**, rolling, configurable via `QUARTER_WINDOW_DAYS=90` | A rolling window is the more useful monitoring product; calendar quarters go stale. Both supported by config. |
+| A2 | The task says the list contains "name + any identifying detail such as domain or sector"; the delivered file contains **names only** | We enrich into `data/companies.json` with alias/sector/domain/negative-keyword fields | Documented gap; enrichment is a committed, reviewable artifact |
+| A3 | Ambiguous company names (Shield, Peak, Wave, Near, Orchard, Silo, Guild, Astra, Casper, Overtime, Launchpad, Bites, Kini…) | Multi-layer relevance filtering, §4.3 | Naive search would produce mostly false positives — the single biggest correctness risk |
+| A4 | Very-high-volume names (Stripe, SpaceX, xAI, Anthropic, Databricks) | Cap mentions per company per run (`MAX_ITEMS_PER_COMPANY`) | Prevents a handful of companies consuming the entire LLM budget |
+| A5 | "New mention" definition for the daily alert | An article whose `(company_id, article_id)` pair has not been persisted before **and** whose `published_at` is within `ALERT_LOOKBACK_HOURS` | Makes the job idempotent and re-runnable |
+| A6 | Full article text vs headline+snippet for classification | Headline + snippet by default; `--enrich` flag opt-in for body extraction | Paywalls/robots make body fetching unreliable and slow; documented as a limitation |
+| A7 | Sentiment of what, exactly? | Sentiment **toward the company, from an investor/reputation perspective** — not the article's general tone | §6.2 rubric |
+| A8 | Do all 258 companies need a full run? | Yes for the committed `data/` artifact; `--limit` flag for dev loops | Deliverable R24 asks for a real run |
+| A9 | Ollama has **no official Intel Arc acceleration**; Vulkan is opt-in/experimental and IPEX-LLM is a separate distribution | Benchmark three backends (CPU · Vulkan · IPEX-LLM) in Phase 1, pick by measurement, document the result | An honest, measured infrastructure note is worth more than an unverified "runs on GPU" claim. See AD-19. |
+| A10 | Reviewers will run this on unknown hardware | Model choice must be viable **CPU-only**; README states measured timings for both CPU and GPU paths | A reviewer whose run takes 3 hours will not finish it |
+
+### 4.3 The hidden hard problem: entity disambiguation
+
+The seed list contains many single common-word names. A naive query for `Shield` or
+`Peak` returns almost entirely irrelevant news. Our layered defence, cheapest first:
+
+1. **Registry enrichment** — aliases, domain, sector, `disambiguationHints[]`, `negativeKeywords[]` per company.
+2. **Query construction** — exact-phrase quoting, plus a sector qualifier for names flagged `ambiguity: high`.
+3. **Deterministic pre-filter** — whole-word match of name/alias in title or snippet; drop blocked domains; drop obvious noise.
+4. **LLM relevance gate** — the classification call returns `relevant: boolean` *in the same response* as the sentiment, so relevance costs zero extra inference.
+5. **Auditability** — rejected mentions are persisted with a rejection reason so precision can be measured, not asserted.
+
+---
+
+## 5. Architectural decisions `AUTHORITATIVE`
+
+Status: `PROPOSED` / `ACCEPTED` / `SUPERSEDED`. Long-form rationale lives in `docs/adr/`.
+
+| ID | Decision | Status | One-line rationale |
+|---|---|---|---|
+| AD-01 | Node.js 20 LTS+, ESM modules | ACCEPTED | Mandated by task §4.2 |
+| AD-02 | TypeScript (strict) across the repo | **ACCEPTED** | Senior signal + on the CV; compiles to JS so §4.2 holds. README states this explicitly. (OQ-3 resolved.) |
+| AD-03 | npm **workspaces** monorepo — modular monolith with service-ready seams | **ACCEPTED** | Demonstrates microservice thinking without operational over-build; ADR documents the split path |
+| AD-04 | Storage: **SQLite** (driver per AD-23) as system of record, **plus** JSON/CSV exports into `data/` | **ACCEPTED** | Need unique constraints, indexed date-range queries and watermarks; JSON exports satisfy R24 for reviewers |
+| AD-05 | News sourcing: **GDELT DOC 2.0** primary (keyless, exact rolling 3-month window) + **Google News RSS** for the daily delta, behind a `NewsProvider` interface with a `FixtureProvider` | **ACCEPTED** | Zero API keys = reviewer can actually run it; interface keeps NewsAPI/Brave as drop-ins |
+| AD-06 | Classification: single Ollama call returning `{relevant, sentiment, confidence, rationale, evidence}` | **ACCEPTED** | Halves inference cost vs separate relevance + sentiment passes |
+| AD-07 | Model cascade (small bulk model + larger arbiter for low-confidence items) | **CONDITIONAL — default OFF** | Superseded in spirit by AD-17. Build **only** if the bake-off shows the small model missing the accuracy bar. Shipping an unnecessary cascade is over-engineering. |
+| AD-08 | Deterministic inference: `temperature: 0`, fixed `seed`, Ollama structured-output JSON schema | **ACCEPTED** | Reproducible runs; parseable output without regex scraping |
+| AD-09 | Content-hash classification cache keyed by `model + promptVersion + normalizedText` | **ACCEPTED** | Re-runs are near-free; makes iteration on the pipeline affordable |
+| AD-10 | Frontend: **React 18 + Vite + TypeScript**, static SPA served by the API in production | **ACCEPTED** | No SSR/SEO need → Next.js is unjustified weight; vanilla means hand-rolling table state for 258 rows |
+| AD-11 | API: **Express 5** + `zod` request/response validation | **ACCEPTED** | CV-aligned and reviewer-familiar; Fastify considered (ADR-0011) |
+| AD-12 | Scheduling: daily check is an **idempotent CLI**; `node-cron` is a thin wrapper; OS-cron / GitHub Actions / n8n documented as production paths | **ACCEPTED** | Decouples "what runs" from "what triggers it" — the actual senior point |
+| AD-13 | Alerting: `Alerter` interface; console + JSON-file always on, Slack webhook optional | **ACCEPTED** | Reviewer sees it work with zero configuration |
+| AD-14 | Testing: **Vitest** — unit, integration against mocked providers + fake Ollama, plus an LLM eval suite | **ACCEPTED** | Testing is called out in both the task and the JD |
+| AD-15 | Logging: `pino` structured JSON with `runId` / `companyId` correlation + per-run manifest | **ACCEPTED** | "monitoring" is a named JD responsibility |
+| AD-16 | Prompt versioning: runtime prompts are files under `prompts/`; the prompt hash is stored on every classification row | **ACCEPTED** | Makes every label traceable to the exact prompt that produced it |
+| AD-17 | **Right-sizing by measurement.** Model selection is decided by a bake-off against the gold set, ascending from the smallest candidate. Ship the **smallest model within 2 points of macro-F1 of the best.** | **ACCEPTED** | The task is 3-class classification of ~150-token text — the easiest class of LLM work. Asserting "a 7B is better" is an opinion; a bake-off table is evidence. See §6.4. |
+| AD-18 | **Inference-parameter right-sizing:** `num_ctx: 1024` (not the 4096–8192 default), `num_predict: 96`, terse rationale (≤15 words), `keep_alive: 30m`, tuned `OLLAMA_NUM_PARALLEL` | **ACCEPTED** | Right-sizing is not only about parameter count. Context window drives KV-cache memory and bandwidth; output tokens dominate latency. These levers are free and most candidates never touch them. |
+| AD-19 | **Ollama runtime backend on Intel Arc:** benchmark CPU vs `OLLAMA_VULKAN=1` vs Intel IPEX-LLM portable build; select by measurement, document in README | **ACCEPTED** | Upstream Ollama has no official Intel Arc/SYCL path; Vulkan is opt-in experimental and is reported to be *slower than CPU* on some iGPUs. Must be verified, not assumed. |
+| AD-25 | Throughput is **measured with `npm run bench`**, using Ollama's own `eval_count` / `eval_duration` rather than wall clock, with a discarded warm-up per configuration | **ACCEPTED** | Wall-clock timing conflates model-load cost, queueing and decoding. Separating them is what distinguishes "the GPU is idle" from "the model is large" — two problems with opposite fixes. Feeds the AD-17 bake-off table directly. |
+| AD-23 | Storage driver is **`node:sqlite`** (built into Node), not `better-sqlite3` | **ACCEPTED** | `better-sqlite3` is a native addon: `npm install` failed on the owner's Windows machine with a node-gyp error for want of Visual Studio C++ Build Tools. A take-home whose install can fail on the reviewer's machine is a take-home that does not get run. Zero compilers, zero third-party dependency. Costs `db.transaction()`, replaced by a nest-safe SAVEPOINT helper. |
+| AD-24 | The Ollama client (`packages/ollama`) is **pulled forward from P4.1 into P2** | **ACCEPTED** | Registry enrichment needs it too (AD-21). Building it once, shared, is better than a throwaway; it also de-risks the critical path by proving the LLM integration two days early. |
+| AD-21 | Company registry is **both** an Ollama-generated artifact and committed reviewed config: ship `scripts/enrich-companies.ts` (runs on Ollama) *and* commit its hand-reviewed output to `data/companies.json` | **ACCEPTED** | §4.1 mandates Ollama for "any other text understanding step". Enrichment arguably qualifies. Doing both satisfies the strict reading, keeps the repo cloud-free, and preserves human review of the 57 flagged names. |
+| AD-22 | **Query triage covers all 258 companies, not a sampled subset**, on two independent axes: *ambiguity* (query rewriting) and *news volume* (budget capping) | **ACCEPTED** | Conflating "generates noise" with "generates too much" would apply the wrong fix to 19 companies. SpaceX isn't ambiguous — it's just loud. |
+| AD-20 | Fine-tuned encoder classifiers (FinBERT/DistilBERT) **considered and rejected** — documented in an ADR, not silently omitted | **ACCEPTED** | The theoretically right tool for this task is a ~110M-param encoder, ~100× smaller than any LLM here. The task mandates Ollama. Saying so explicitly is the strongest possible right-sizing signal. |
+
+---
+
+## 6. System design
+
+### 6.1 Pipeline
+
+```
+                    ┌─────────────────────────────────────────┐
+ companies.json ──▶ │ 1. COLLECT   NewsProvider(s)            │
+                    │    GDELT · Google News RSS · Fixtures   │
+                    └───────────────┬─────────────────────────┘
+                                    ▼
+                    ┌─────────────────────────────────────────┐
+                    │ 2. NORMALIZE & DEDUPE                   │
+                    │    canonical URL, article_id = sha256   │
+                    └───────────────┬─────────────────────────┘
+                                    ▼
+                    ┌─────────────────────────────────────────┐
+                    │ 3. PRE-FILTER (deterministic, free)     │
+                    │    whole-word match · blocklist · dates │
+                    └───────────────┬─────────────────────────┘
+                                    ▼
+                    ┌─────────────────────────────────────────┐
+                    │ 4. CLASSIFY (Ollama, cached, p-limit)   │
+                    │    relevance + sentiment in one call    │
+                    └───────────────┬─────────────────────────┘
+                                    ▼
+                    ┌─────────────────────────────────────────┐
+                    │ 5. PERSIST (SQLite, upsert, idempotent) │
+                    └───────────────┬─────────────────────────┘
+                                    ▼
+              ┌─────────────────────┴───────────────────┐
+              ▼                     ▼                   ▼
+    ┌──────────────────┐  ┌──────────────────┐  ┌──────────────────┐
+    │ 6a. AGGREGATE    │  │ 6b. EXPORT       │  │ 6c. ALERT        │
+    │  company status  │  │  data/*.json     │  │  new mentions    │
+    └────────┬─────────┘  └──────────────────┘  └──────────────────┘
+             ▼
+     ┌──────────────┐      ┌──────────────┐
+     │  Express API │ ◀──▶ │  React SPA   │
+     └──────────────┘      └──────────────┘
+```
+
+Every stage is independently invokable and resumable. A failure in one company never
+aborts the run; it is recorded in the run manifest.
+
+### 6.2 Sentiment rubric (investor lens) `AUTHORITATIVE`
+
+| Label | Signals |
+|---|---|
+| `positive` | Funding round, favourable acquisition/exit, product launch, major partnership, regulatory approval, award, strong growth/results, notable customer win |
+| `negative` | Layoffs, lawsuit/investigation, data breach, recall, down round, shutdown, executive departure under pressure, missed targets, negative analyst coverage |
+| `neutral` | Routine appointments, factual/directory listings, passing mention in a market roundup, balanced reporting with no clear valence toward the company |
+
+Edge cases the prompt must handle explicitly: industry-negative but company-neutral
+articles; the company benefiting from a competitor's bad news; the company named only
+as an investor in someone else.
+
+### 6.3 Data model (SQLite)
+
+| Table | Key columns | Notes |
+|---|---|---|
+| `companies` | `id`, `name`, `slug`, `aliases`, `domain`, `sector`, `ambiguity`, `negative_keywords` | Seeded from the enriched registry |
+| `articles` | `id` = sha256(canonical_url), `url`, `title`, `snippet`, `source_name`, `published_at`, `provider`, `fetched_at` | One row per unique article |
+| `mentions` | `id` = sha256(company_id + article_id), FK both, `relevant`, `rejection_reason`, `sentiment`, `confidence`, `rationale`, `evidence`, `model`, `prompt_version`, `classified_at` | `UNIQUE(company_id, article_id)` → idempotent upsert |
+| `runs` | `id`, `type`, `started_at`, `finished_at`, `status`, `stats_json` | Run manifest |
+| `alerts` | `id`, `run_id`, `mention_id`, `channel`, `sent_at`, `payload_json` | Prevents duplicate alerts |
+| `kv` | `key`, `value` | Watermarks |
+| `v_company_status` (view) | `last_mentioned_at`, `days_since`, `status_bucket`, sentiment counts in window | Powers R4/R5 |
+
+**Status buckets:** `FRESH` ≤7d · `RECENT` ≤30d · `STALE` ≤90d · `DORMANT` >90d · `NO_COVERAGE`.
+
+### 6.4 Model selection protocol (right-sizing) `AUTHORITATIVE`
+
+**Principle:** the model is a dependency like any other, and the correct size is the
+smallest one that meets the quality bar. We establish the bar first, then climb the
+ladder from the bottom and stop at the first rung that clears it.
+
+**Task profile — why small is defensible here:**
+
+| Property | Value | Implication |
+|---|---|---|
+| Input | Headline + ~200-char snippet | ~120–180 tokens. No long-context reasoning. |
+| Output | Fixed JSON, 5 fields | ~60–90 tokens, schema-constrained |
+| Task type | 3-class classification + binary relevance | No multi-hop reasoning, no generation, no tool use |
+| Volume | ~2,000–4,000 calls per full run | Throughput matters more than peak capability |
+
+**The ladder — run in this order, stop when the bar is met:**
+
+| Rung | Model | q4 size | Role |
+|---|---|---|---|
+| 1 | `qwen2.5:1.5b-instruct` | ~1.0 GB | Floor probe — "is the task genuinely this easy?" |
+| 2 | `llama3.2:3b-instruct` | ~2.0 GB | Expected landing spot |
+| 3 | `qwen2.5:3b-instruct` | ~1.9 GB | Same class, typically stronger at structured extraction |
+| — | `qwen2.5:7b-instruct` | ~4.7 GB | **Reference ceiling only.** Measures the gap; not shipped unless rungs 1–3 all fail. |
+
+**Ship rule:** the smallest model within **2 points of macro-F1** of the best result.
+If rung 1 lands within 2 points of the 7B, we ship a 1 GB model and say so loudly.
+
+**Deliverable:** the bake-off table (model · macro-F1 · per-class precision/recall ·
+p50 latency · full-run wall clock · resident memory · JSON-validity rate) goes into the
+README. The table *is* the argument. Nothing else in this project demonstrates
+"matched the tool to the problem" as directly.
+
+**Right-sizing levers other than parameter count** (apply to whichever model wins):
+
+1. **Don't call the model at all** — the deterministic pre-filter (§4.3 layer 3) is
+   expected to eliminate 40–60% of candidates for zero inference cost. The cheapest
+   token is the one never generated.
+2. **Content-hash cache** (AD-09) — development re-runs cost nothing.
+3. **`num_ctx: 1024`** instead of the default — cuts KV-cache footprint and bandwidth
+   several-fold on inputs that never exceed ~400 tokens.
+4. **Cap and shorten the output** — `num_predict: 96`, rationale capped at 15 words.
+   Output tokens dominate latency in a bandwidth-bound setup.
+5. **Quantization as a size axis** — compare `q8_0` on a 1.5B against `q4_K_M` on a 3B
+   at comparable memory; higher-precision-small can beat lower-precision-large.
+6. **Tune `OLLAMA_NUM_PARALLEL`** empirically — on a bandwidth-bound iGPU the optimum
+   is typically 2–4, and more is often slower.
+
+---
+
+## 7. Target repository structure & file purpose
+
+> Status: **planned**. Update this tree whenever a file is added, moved, or deleted.
+
+```
+oc-press-monitor/
+├── README.md                        # Reviewer-facing docs (R20–R23). Written last.
+├── project_context.md               # THIS FILE — living source of truth
+├── ai_prompts.md                    # Verbatim AI coding-assistant prompt log (R25)
+├── .env.example                     # Every env var, documented, with safe defaults
+├── package.json                     # Workspace root; all top-level npm scripts
+│
+├── docs/
+│   ├── adr/                         # Architecture Decision Records (long-form "why")
+│   └── architecture.md              # Rendered diagrams + component contracts
+│
+├── prompts/
+│   ├── classify.v1.md               # Runtime Ollama prompt — versioned, hash-tracked
+│   └── enrich-company.v1.md         # One-off registry enrichment prompt
+│
+├── data/                            # COMMITTED output of a successful run (R24)
+│   ├── companies.json               # Enriched seed registry
+│   ├── mentions.json                # All mentions + sentiment + source URLs
+│   ├── company_status.json          # Computed "last mentioned" status per company
+│   ├── quarterly_summary.json       # Aggregates powering the dashboard
+│   ├── alerts.log.json              # Alert history from the daily job
+│   └── press.sqlite                 # The database itself
+│
+├── packages/
+│   ├── core/                        # Shared kernel — no dependencies on siblings
+│   │   ├── config.ts                # Env parsing + validation (zod), fail-fast
+│   │   ├── logger.ts                # pino, run-scoped child loggers
+│   │   ├── errors.ts                # Typed error hierarchy
+│   │   ├── db/schema.sql            # DDL, migrations, views
+│   │   └── db/index.ts              # better-sqlite3 connection + repositories
+│   │
+│   ├── collector/                   # DATA COLLECTION (R15)
+│   │   ├── provider.ts              # NewsProvider interface
+│   │   ├── providers/gdelt.ts       # Primary: keyless, rolling 3-month window
+│   │   ├── providers/google-news.ts # Daily delta via RSS
+│   │   ├── providers/fixture.ts     # Offline/test provider
+│   │   ├── query-builder.ts         # Per-company query strategy (§4.3)
+│   │   └── normalize.ts             # Canonical URL, dedupe, date parsing
+│   │
+│   ├── classifier/                  # LLM LAYER (R10, R16)
+│   │   ├── ollama-client.ts         # HTTP client, retries, timeouts, keep-alive
+│   │   ├── prompt.ts                # Prompt builder + version hashing
+│   │   ├── schema.ts                # zod schema == Ollama structured-output schema
+│   │   ├── cache.ts                 # Content-hash cache (AD-09)
+│   │   ├── classify.ts              # Orchestration, concurrency, cascade (AD-07)
+│   │   └── eval/                    # Gold set + confusion matrix + macro-F1 (R13)
+│   │
+│   ├── pipeline/                    # Stage orchestration, run manifests, exports
+│   └── alerting/                    # Alerter interface + console/file/slack impls (R7)
+│
+├── apps/
+│   ├── api/                         # Express 5 read API for the dashboard
+│   ├── web/                         # React + Vite dashboard (R1, R4, R18)
+│   └── scheduler/                   # node-cron wrapper around the daily CLI (R19)
+│
+├── scripts/
+│   ├── seed-companies.ts            # ourcrowd_companies.txt → enriched registry
+│   ├── run-backfill.ts              # Full 90-day historical run
+│   ├── job-daily.ts                 # The daily check + alert (idempotent CLI)
+│   └── export-data.ts               # Regenerate everything under data/
+│
+└── .github/workflows/
+    ├── ci.yml                       # lint · typecheck · test · eval
+    └── daily.yml                    # Documented production scheduling path
+```
+
+---
+
+## 8. Work plan `AUTHORITATIVE`
+
+### 8.0 Conventions
+
+| Element | Rule |
+|---|---|
+| **Task ID** | `P<phase>.<n>` — stable and referenceable. Every commit message cites one (`feat(collector): GDELT provider [P3.2]`). |
+| **Satisfies** | The requirement ID from §2 that a task discharges. A task with no `R#` is infrastructure and must justify itself. |
+| **Est.** | Focused working hours. Not elapsed time. |
+| **Milestone** | `M<n>` — a **demonstrable artifact**, not a feeling. If it can't be run, shown or opened, it isn't a milestone. |
+| **Exit criteria** | Objective gate. A phase is not closed until every criterion is literally true. |
+| **Status** | `TODO` / `WIP` / `DONE` / `CUT` |
+
+**Global Definition of Done** — applies to *every* task, not just the phase gates:
+
+1. Code is typechecked and lint-clean.
+2. Non-trivial logic has a unit test; a stage boundary has an integration test.
+3. Failure paths are handled explicitly — no bare `catch {}`, no unhandled rejection.
+4. Anything a reviewer must know is in the README, not only in a commit message.
+5. `project_context.md` §7 (structure), §5 (decisions) and §11 (changelog) reflect the change **in the same commit**.
+6. A new prompt used to produce the work is appended to `ai_prompts.md`.
+
+---
+
+### 8.1 Roadmap & milestones
+
+| Phase | Name | Milestone — demonstrable artifact | Est. | Depends on |
+|---|---|---|---|---|
+| **P0** | Planning & Decision Freeze | **M0** — Architecture frozen; `project_context.md` + `ai_prompts.md` committed | 3 h | — |
+| **P1** | Foundation & Scaffolding | **M1** — `npm run verify` green; walking skeleton writes one stub row end-to-end | 5 h | M0 |
+| **P2** | Company Registry | **M2** — `data/companies.json`, 258 companies enriched, ambiguous names hand-reviewed | 4 h | M1 |
+| **P3** | Data Collection | **M3** — `npm run collect -- --company Hailo` returns deduped, normalised articles; full suite runs offline | 7 h | M2 |
+| **P4** | LLM Classification & Evaluation | **M4** — Bake-off table produced; model selected by measurement; macro-F1 recorded | 9 h | M1 (fixtures unblock start) |
+| **P5** | Pipeline, Status & Alerts | **M5** — One command runs the full pipeline and writes every `data/*.json` artifact | 6 h | M3, M4 |
+| **P6** | API & Dashboard | **M6** — Dashboard renders all three required outputs from real data | 8 h | M5 |
+| **P7** | Scheduling & Alert Delivery | **M7** — Daily job fires on schedule, detects a genuinely new mention, emits an alert | 3 h | M5 |
+| **P8** | Production Run & Delivery | **M8** — Submission-ready; fresh-clone rehearsal passed | 6 h | M6, M7 |
+| | | **Total** | **~51 h** | |
+
+### 8.2 Critical path & parallelisation
+
+```
+P0 ─▶ P1 ─┬─▶ P2 ─▶ P3 ─┬─▶ P5 ─┬─▶ P6 ─┬─▶ P8
+          │              │       │       │
+          └─▶ P4 ────────┘       └─▶ P7 ─┘
+```
+
+- **Critical path:** P0 → P1 → P2 → P3 → P5 → P6 → P8 (~39 h).
+- **P4 runs in parallel with P2/P3** — the classifier is developed against fixtures, so
+  it never waits on live collection. This is the main schedule win, and it's the reason
+  the `FixtureProvider` is built in P1 rather than as an afterthought.
+- **P7 runs in parallel with P6** — different surfaces, shared pipeline.
+- **P1.8 (walking skeleton) is deliberately early.** A hardcoded single company pushed
+  through stubbed stages into SQLite proves the seams fit before any stage is real.
+  Integration risk discovered in P1 is cheap; discovered in P5 it is not.
+
+### 8.3 Pre-declared descope ladder
+
+Task §7: *"a partially complete solution with clear notes on what's missing is preferred
+over an undocumented 'complete' one."* Deciding the cut order **now**, while calm,
+prevents cutting the wrong thing at 2am. Cut strictly top-down:
+
+| Order | Cut | Cost of cutting | Status |
+|---|---|---|---|
+| 1 | n8n workflow artifact (P7.4) | Loses a JD bonus signal only | **CUT** — stretch goal only |
+| 2 | Model cascade (already CONDITIONAL, AD-07) | None — it's evidence-gated anyway | **CUT** |
+| 3 | Slack alerting (P7.3) — keep console + file | Alerting still demonstrably works | **CUT** (OQ-4) |
+| 4 | Quarterly trend chart (P6.5) — keep sentiment distribution | Dashboard still satisfies R1 | Held in reserve |
+| 5 | Gold set 60 → 30 items | Wider confidence interval; eval still exists | Held in reserve |
+| 6 | Company sample < 258, documented in README | Weakens the "real run" artifact | Held in reserve |
+
+**Never cut** — these *are* the evaluation criteria: the eval harness existing at all ·
+the README · the `data/` artifacts · `ai_prompts.md` · the relevance pre-filter ·
+error handling · the "no coverage" state.
+
+---
+
+### 8.4 Phases in detail
+
+#### Phase 0 — Planning & Decision Freeze `WIP`
+
+> **Objective:** Agree the architecture before a line of code exists.
+> **Milestone M0:** Decisions frozen; both living documents committed.
+
+| ID | Task | Satisfies | Est. | Status |
+|---|---|---|---|---|
+| P0.1 | Read and analyse task, JD, CV, company list | — | 0.5 h | DONE |
+| P0.2 | Reverse-engineer evaluation criteria and hidden requirements | — | 0.5 h | DONE |
+| P0.3 | Draft architecture, tech stack, pipeline design | — | 1 h | DONE |
+| P0.4 | Create `project_context.md` + `ai_prompts.md` | R25, R27 | 0.5 h | DONE |
+| P0.5 | Right-size the model; define the selection protocol (§6.4) | R10, R11 | 0.5 h | DONE |
+| P0.6 | **Resolve OQ-1, OQ-3, OQ-4, OQ-5, OQ-7 with the owner** | — | — | **TODO** |
+| P0.7 | Promote AD-01…AD-20 from `PROPOSED` to `ACCEPTED` | — | — | TODO |
+
+> **Exit criteria:** no `PROPOSED` decision remains · no blocking open question remains ·
+> both markdown files committed.
+> **Risk:** analysis paralysis. P0 is capped at 3 h; unresolved non-blocking questions
+> move to a phase, they do not hold the gate.
+
+---
+
+#### Phase 1 — Foundation & Scaffolding `TODO`
+
+> **Objective:** A repo where every subsequent task is cheap to add and impossible to break silently.
+> **Milestone M1:** `npm run verify` passes; the walking skeleton writes one stub row end-to-end.
+
+| ID | Task | Satisfies | Est. | Status |
+|---|---|---|---|---|
+| P1.1 | Init repo, npm workspaces, `.gitignore`, MIT licence, conventional-commit config | R14 | 0.5 h | **DONE** |
+| P1.2 | Toolchain: tsconfig (strict), ESLint, Prettier, Vitest, `npm run verify` aggregate script | R26 | 1 h | **DONE** |
+| P1.3 | `core/config.ts` — zod-validated env parsing, fail-fast on boot, `.env.example` | R21 | 0.5 h | **DONE** |
+| P1.4 | `core/logger.ts` — pino, run-scoped child loggers with `runId`/`companyId` | R26 | 0.5 h | **DONE** |
+| P1.5 | `core/errors.ts` — typed error hierarchy (`ProviderError`, `ClassificationError`, `ConfigError`) | R26 | 0.5 h | **DONE** |
+| P1.6 | SQLite schema, migration runner, `v_company_status` view (§6.3) | R17 | 1 h | **DONE** |
+| P1.7 | Repository layer + repository unit tests | R17 | 0.5 h | **DONE** |
+| P1.8 | **Walking skeleton** — one hardcoded company through stubbed collect→classify→persist | — | 0.5 h | **DONE** |
+| P1.9 | GitHub Actions CI: lint · typecheck · test | R26 | 0.5 h | **DONE** |
+
+> **Exit criteria:** CI green on a clean clone · `npm run verify` passes locally ·
+> the skeleton writes a row and the DB opens · README skeleton exists with the section headings from §2.
+> **Risk:** `better-sqlite3` is a native module and needs build tools on Windows. Verify
+> in P1.6; the documented fallback is `node:sqlite` (Node 22+).
+
+---
+
+#### Phase 2 — Company Registry `TODO`
+
+> **Objective:** Turn 258 bare names into a queryable, disambiguation-aware registry.
+> **Milestone M2:** `data/companies.json` committed, all 258 present, high-ambiguity names hand-reviewed.
+
+| ID | Task | Satisfies | Est. | Status |
+|---|---|---|---|---|
+| P2.1 | Parser for `ourcrowd_companies.txt` → normalised records, slug generation | R8 | 0.5 h | **DONE** |
+| P2.2 | `prompts/enrich-company.v1.md` — aliases, sector, domain, ambiguity, negative keywords | R8, R10 | 0.5 h | **DONE** |
+| P2.3 | `scripts/enrich-companies.ts` — **runs against local Ollama** (AD-21), batch, resumable, cached; regenerates the registry for any seed list | R8, R10 | 1 h | **CODE DONE** — awaiting a live Ollama pass on the owner's machine |
+| P2.4 | **Hand-review the 57 flagged names** — 25 CRITICAL + 32 HIGH (full triage complete; see `company_query_review.md` / `OurCrowd_Company_Query_Triage.xlsx`) | R8, A3 | 1 h | **DONE** — approved 2026-07-31 |
+| P2.7 | Apply the approved queries as `queryOverride` on flagged records; unflagged records use the Ollama-generated query | R8 | 0.5 h | **DONE** |
+| P2.5 | Registry loader + zod schema + unit tests (count == 258, no dup slugs, required fields) | R8 | 0.5 h | **DONE** |
+| P2.6 | Commit `data/companies.json`; document the A2 gap in the README | R9, R23 | 0.5 h | **DONE** |
+
+> **Exit criteria:** 258 records · zero duplicate slugs · every `ambiguity: high` record
+> has ≥1 disambiguation hint and ≥1 negative keyword · loader tests green.
+> **Risk:** LLM-invented facts (wrong sector/domain). Mitigation: enrichment is advisory,
+> never authoritative; the hand-review in P2.4 is not optional.
+
+---
+
+#### Phase 3 — Data Collection `TODO`
+
+> **Objective:** Fetch and clean news for any company, from any provider, testable offline.
+> **Milestone M3:** `npm run collect -- --company Hailo` returns deduped normalised articles; the whole test suite runs with no network.
+
+| ID | Task | Satisfies | Est. | Status |
+|---|---|---|---|---|
+| P3.1 | `NewsProvider` interface + `FixtureProvider` + recorded fixture corpus | R15 | 1 h | TODO |
+| P3.2 | GDELT DOC 2.0 provider — 90-day window, rate limiting, retry + backoff | R15 | 1.5 h | TODO |
+| P3.3 | Google News RSS provider — XML parsing, redirect-URL resolution | R15 | 1 h | TODO |
+| P3.4 | Query builder — exact-phrase, sector qualifiers, ambiguity-tiered strategies | A3 | 1 h | TODO |
+| P3.5 | Normalisation — canonical URL, `article_id` hash, date parsing, cross-provider dedupe | R15 | 1 h | TODO |
+| P3.6 | Deterministic pre-filter — whole-word match, negative keywords, domain blocklist | A3 | 1 h | TODO |
+| P3.7 | Per-company caps, partial-failure isolation, provider circuit breaker | R26, A4 | 0.5 h | TODO |
+| P3.8 | Provider + normalisation + pre-filter unit tests; offline integration test | R26 | — | TODO |
+
+> **Exit criteria:** both live providers return results for 5 sampled companies ·
+> a manual precision check on 3 ambiguous names shows the pre-filter working ·
+> one provider failing does not abort a run · full suite passes with the network disabled.
+> **Risk:** GDELT rate-limits or Google News changes its RSS shape. Mitigation: two
+> independent providers plus fixtures — no single point of failure, and limitations go in the README (R9).
+
+---
+
+#### Phase 4 — LLM Classification & Evaluation `TODO`
+
+> **Objective:** Turn an article into a trustworthy, reproducible label — and prove it's trustworthy.
+> **Milestone M4:** Bake-off table produced; model selected by measurement per AD-17; macro-F1 recorded.
+> **Runs in parallel with P2–P3** using fixtures.
+
+| ID | Task | Satisfies | Est. | Status |
+|---|---|---|---|---|
+| P4.0 | **Backend benchmark (AD-19)** — CPU vs Vulkan vs IPEX-LLM on the Arc 140V; record tok/s | R11, A9 | 0.5 h | **TOOL DONE** (`npm run bench`) — awaiting the owner's measurement |
+| P4.1 | `ollama-client.ts` — structured output, timeout, retry, `keep_alive`, health check | R10 | 1 h | **DONE** — pulled forward into `packages/ollama` (AD-24), 15 tests |
+| P4.2 | `prompts/classify.v1.md` — rubric §6.2, few-shot examples, edge cases, version hash | R12, R16 | 1.5 h | TODO |
+| P4.3 | zod schema ↔ Ollama JSON schema; parse-and-repair fallback path | R16, R26 | 0.5 h | TODO |
+| P4.4 | Content-hash cache (AD-09) | — | 0.5 h | **DONE** — shipped with AD-24 |
+| P4.5 | Concurrency control, right-sized inference params (AD-18), progress reporting | — | 0.5 h | **DONE** — shipped with AD-24 |
+| P4.6 | **Hand-label a 60-item gold set** — stratified, includes ambiguous-name negatives | R13 | 1.5 h | TODO |
+| P4.7 | Eval harness — confusion matrix, macro-F1, per-class P/R, JSON-validity rate | R13 | 1.5 h | TODO |
+| P4.8 | **Run the §6.4 bake-off** across the ladder; produce the README table; select the model | R11, R13 | 1.5 h | TODO |
+| P4.9 | Decide AD-07: activate the cascade only if the winner misses the bar | — | — | TODO |
+
+> **Exit criteria:** selected model ≥ **0.80 macro-F1** on the gold set · ≥99% JSON
+> validity across the full gold run · bake-off table written into the README · every
+> stored label carries its `model` + `prompt_version`.
+> **Risk 1:** the gold set is the project's ground truth — label it *before* seeing model
+> output, or it is worthless.
+> **Risk 2:** no backend clears usable throughput. Mitigation: descope to rung 1 of the
+> ladder and document the constraint honestly.
+
+---
+
+#### Phase 5 — Pipeline, Status & Alerts `TODO`
+
+> **Objective:** Compose the stages into one resumable, idempotent, observable run.
+> **Milestone M5:** A single command executes the full pipeline and writes every `data/*.json` artifact.
+
+| ID | Task | Satisfies | Est. | Status |
+|---|---|---|---|---|
+| P5.1 | Stage orchestration, `runs` manifest, resumability, partial-failure tolerance | R26 | 1.5 h | TODO |
+| P5.2 | Status computation — buckets, `days_since`, **`NO_COVERAGE` as a first-class state** | R4, R5 | 1 h | TODO |
+| P5.3 | Boundary unit tests for bucketing (0d / 7d / 8d / 30d / 90d / 91d / never) | R4 | 0.5 h | TODO |
+| P5.4 | Exporters → `mentions.json`, `company_status.json`, `quarterly_summary.json` | R24 | 1 h | TODO |
+| P5.5 | `Alerter` interface + console + JSON-file sinks | R7 | 0.5 h | TODO |
+| P5.6 | `scripts/job-daily.ts` — watermark, overlap lock, idempotent re-run | R6, A5 | 1 h | TODO |
+| P5.7 | Integration test: run daily twice → second run emits zero alerts | R6, R26 | 0.5 h | TODO |
+
+> **Exit criteria:** full pipeline runs on fixtures with zero manual steps · running it
+> twice produces identical DB state and no duplicate alerts · every one of the 258
+> companies appears in `company_status.json`, including zero-coverage ones · a killed run
+> resumes without data loss.
+> **Risk:** idempotency bugs are silent and corrupt the alert story. P5.7 is the guard and is mandatory.
+
+---
+
+#### Phase 6 — API & Dashboard `TODO`
+
+> **Objective:** Make the three required outputs legible at a glance.
+> **Milestone M6:** Dashboard renders quarterly mentions, sentiment labels with source links, and per-company status — from real data.
+
+| ID | Task | Satisfies | Est. | Status |
+|---|---|---|---|---|
+| P6.1 | Express 5 app, zod-validated routes, error middleware, `/health` | R18 | 1 h | TODO |
+| P6.2 | Endpoints: companies+status · company mentions · quarterly stats · latest run | R1, R4 | 1 h | TODO |
+| P6.3 | React + Vite shell, API client, loading/error/empty states | R18 | 1 h | TODO |
+| P6.4 | Company grid — status chips, sentiment counts, sort/filter (TanStack Table) | R1, R4 | 1.5 h | TODO |
+| P6.5 | Charts — sentiment distribution + 90-day trend (Recharts) | R1 | 1 h | TODO |
+| P6.6 | Company drill-down — mention list with **clickable source URLs** | R3 | 1 h | TODO |
+| P6.7 | `NO_COVERAGE` treated as a visible state, not an empty row | R5 | 0.5 h | TODO |
+| P6.8 | Serve the SPA build from Express so `npm start` is one command | R22 | 0.5 h | TODO |
+| P6.9 | Screenshots for the README | R20 | 0.5 h | TODO |
+
+> **Exit criteria:** every one of the 258 companies is reachable in the UI · every mention
+> links to a working source URL · a zero-coverage company renders a clear state · a
+> reviewer can find "which companies had negative press this quarter" in under 10 seconds.
+> **Risk:** UI scope creep. R1/R3/R4/R5 are the whole brief — polish only after all four are covered.
+
+---
+
+#### Phase 7 — Scheduling & Alert Delivery `TODO`
+
+> **Objective:** Make the daily check real and visible.
+> **Milestone M7:** The scheduled job fires, detects a genuinely new mention, and emits an alert.
+
+| ID | Task | Satisfies | Est. | Status |
+|---|---|---|---|---|
+| P7.1 | `node-cron` wrapper — explicit `Asia/Jerusalem` TZ, overlap lock, boot catch-up | R19 | 1 h | TODO |
+| P7.2 | Alert payload design — company, headline, sentiment, source URL, timestamp | R7 | 0.5 h | TODO |
+| P7.3 | Slack webhook sink (optional, env-gated, degrades to console when unset) | R7 | 0.5 h | TODO |
+| P7.4 | `.github/workflows/daily.yml` + n8n workflow JSON as documented alternatives | R19 | 0.5 h | TODO |
+| P7.5 | Demo run + captured alert output committed to `data/alerts.log.json` | R7, R24 | 0.5 h | TODO |
+
+> **Exit criteria:** the job runs unattended on schedule · a re-run within the same window
+> alerts nothing · alert output is committed so a reviewer sees it without running anything ·
+> README documents all four scheduling paths.
+> **Risk:** a reviewer won't wait 24h to see it work. Mitigation: `--force` and `--dry-run`
+> flags plus committed sample output.
+
+---
+
+#### Phase 8 — Production Run & Delivery `TODO`
+
+> **Objective:** Ship something a stranger can run and a reviewer can grade.
+> **Milestone M8:** Submission-ready; fresh-clone rehearsal passed.
+
+| ID | Task | Satisfies | Est. | Status |
+|---|---|---|---|---|
+| P8.1 | **Full production run across all 258 companies**; capture timings, failure counts, cost | R24 | 1.5 h | TODO |
+| P8.2 | Spot-check ~20 classified mentions by hand; record findings honestly | R13 | 0.5 h | TODO |
+| P8.3 | Commit every `data/` artifact | R24 | 0.5 h | TODO |
+| P8.4 | Write the README from §2 — every `R#` row becomes a section | R20–R23 | 2 h | TODO |
+| P8.5 | Finalise `ai_prompts.md`; write the ADRs in `docs/adr/` | R25 | 0.5 h | TODO |
+| P8.6 | **Fresh-clone rehearsal** — a different directory, follow the README literally, fix every gap | R22 | 1 h | TODO |
+| P8.7 | Demo GIF/screenshots; final repo hygiene pass; push | R20 | 0.5 h | TODO |
+
+> **Exit criteria:** every row in §2 reads `DONE` or `CUT` with a documented reason ·
+> the fresh-clone rehearsal succeeded from the README **alone** · `data/` is populated
+> from a real run · no `TODO`/`FIXME`/commented-out code · no secrets committed.
+> **Risk:** the README is written last and rushed. Mitigation: it is drafted incrementally
+> from P1 onward; P8.4 is an edit pass, not a first draft.
+
+---
+
+### 8.6 Calendar — deadline Tue 4 Aug 2026, 16:00 `AUTHORITATIVE`
+
+**Target submission: Monday 3 Aug, evening.** Tuesday morning is buffer, not plan.
+Budget ≈30 focused hours; descope rungs 1–3 already cut (§8.3).
+
+| Slot | Phases | Milestone | Hrs |
+|---|---|---|---|
+| **Fri 31 Jul, late** | P0.6, P0.7 — approve triage, freeze decisions | **M0** | 1 |
+| **Sat 1 Aug** | P1 (foundation) → P2 (registry) → P4.0–P4.5 (Ollama client, prompt, cache) | **M1, M2** | 10 |
+| **Sun 2 Aug** | P3 (collection) → P4.6–P4.9 (gold set, eval, bake-off) | **M3, M4** | 9 |
+| **Mon 3 Aug** | P5 (pipeline, status, alerts) → P6 (API + dashboard) | **M5, M6** | 8 |
+| **Mon 3 Aug, evening** | P7 (scheduler) → P8.1–P8.5 (production run, README) | **M7** | 4 |
+| **Tue 4 Aug, morning** | P8.6 fresh-clone rehearsal → P8.7 push → **submit by 12:00** | **M8** | 2 |
+
+**Hard checkpoints — if a checkpoint slips, cut immediately rather than absorbing it:**
+
+| When | Must be true | If not |
+|---|---|---|
+| Sat 1 Aug, end of day | M2 done; Ollama answering with valid JSON | Cut rung 5 (gold set → 30) |
+| Sun 2 Aug, end of day | **M4 done — model selected, bake-off table exists** | Cut rung 4 (trend chart) |
+| Mon 3 Aug, midday | M5 done — pipeline writes `data/*.json` | Cut rung 6 (sample < 258, documented) |
+| Mon 3 Aug, 22:00 | M7 done | Submit as-is with a "known gaps" README section |
+
+> **Rule:** the production run (P8.1) starts **no later than Mon 18:00**. It is the one
+> task whose duration is not fully under our control, and `data/` is a graded deliverable.
+> Start it early and let it run while the README is written.
+
+---
+
+### 8.5 Progress dashboard
+
+| Milestone | Phase | Status |
+|---|---|---|
+| M0 Architecture frozen | P0 | ✅ DONE |
+| M1 Foundation green | P1 | ✅ DONE — 46 tests |
+| M2 Registry enriched | P2 | 🟡 code + offline artifact done (77 tests); live Ollama pass pending |
+| M3 Collection working | P3 | ⚪ TODO |
+| M4 Model selected by evidence | P4 | ⚪ TODO |
+| M5 Pipeline end-to-end | P5 | ⚪ TODO |
+| M6 Dashboard complete | P6 | ⚪ TODO |
+| M7 Daily job live | P7 | ⚪ TODO |
+| M8 Submission ready | P8 | ⚪ TODO |
+
+---
+
+## 9. Environment variables (planned)
+
+| Var | Default | Purpose |
+|---|---|---|
+| `OLLAMA_HOST` | `http://127.0.0.1:11434` | Local Ollama endpoint |
+| `OLLAMA_MODEL` | `llama3.2:3b` _(provisional — confirmed by the §6.4 bake-off)_ | Classification model |
+| `OLLAMA_ARBITER_MODEL` | _unset_ | Optional cascade model — only if AD-07 is activated |
+| `OLLAMA_CONCURRENCY` | `3` | Client-side parallel inference requests (tune per AD-18) |
+| `OLLAMA_NUM_CTX` | `1024` | Context window — right-sized to our input length (AD-18) |
+| `OLLAMA_NUM_PREDICT` | `96` | Output token cap (AD-18) |
+| `OLLAMA_KEEP_ALIVE` | `30m` | Prevents model reload between calls |
+| `OLLAMA_TIMEOUT_MS` | `60000` | Per-request timeout |
+| `QUARTER_WINDOW_DAYS` | `90` | Definition of "last quarter" (A1) |
+| `MAX_ITEMS_PER_COMPANY` | `25` | Budget cap per run (A4) |
+| `NEWS_PROVIDERS` | `gdelt,googlenews` | Ordered provider list; `fixture` for offline |
+| `ALERT_CHANNELS` | `console,file` | Comma-separated alert sinks |
+| `SLACK_WEBHOOK_URL` | _unset_ | Optional Slack alerting |
+| `CRON_SCHEDULE` | `0 8 * * *` | Daily job schedule |
+| `CRON_TIMEZONE` | `Asia/Jerusalem` | Explicit timezone |
+| `DB_PATH` | `./data/press.sqlite` | SQLite file |
+| `LOG_LEVEL` | `info` | pino level |
+
+---
+
+## 10. Open questions `DO NOT RESOLVE SILENTLY`
+
+| ID | Question | Blocking | Owner answer |
+|---|---|---|---|
+| OQ-1 | Submission deadline / realistic time budget? | Phase scope | **ANSWERED:** Hard deadline **Tue 4 Aug 2026, 16:00**. Target submission **Mon 3 Aug evening** to land ahead of other candidates. Budget ≈30 h → descope rungs 1–3 pre-cut. See §8.6. |
+| OQ-2 | Ollama host machine — Apple Silicon / NVIDIA GPU / CPU-only, and RAM? | AD-07, model choice | **ANSWERED 2026-07-31:** Windows 11, Intel Arc 140V iGPU (16 GB shared VRAM), 32 GB RAM. RAM is not the constraint; **memory bandwidth is**. Drives AD-17/18/19. |
+| OQ-8 | Which Ollama backend wins on the Arc 140V — CPU, Vulkan, or IPEX-LLM? | AD-19, all timings | _pending Phase 1 benchmark_ |
+| OQ-9 | If rung 1 (`qwen2.5:1.5b`) clears the accuracy bar, ship a 1 GB model? | AD-17 | _pending bake-off — but the ship rule says yes_ |
+| OQ-3 | TypeScript (AD-02) or plain JS + JSDoc, given the literal "JavaScript (Node.js)" wording? | Phase 1 | **ANSWERED: TypeScript.** AD-02 → ACCEPTED. README states the compiles-to-JS rationale explicitly. |
+| OQ-4 | Alert channels to actually implement? | AD-13 | **ANSWERED: console + JSON file only.** Slack cut (descope rung 3). `Alerter` interface still ships so a sink is a 20-line addition. |
+| OQ-5 | Enrich all 258 companies with the LLM, or hand-curate only the high-ambiguity subset? | Phase 2 effort | **ANSWERED: automated enrichment across all 258 + hand-review of every flagged name.** Owner requires the *entire* list triaged, not a ~40 estimate. Delivered as `OurCrowd_Company_Query_Triage.xlsx`. |
+| OQ-6 | Is a Slack workspace / webhook available for a live alert demo? | AD-13 | **CLOSED** — moot, Slack cut. |
+| OQ-7 | Include the optional n8n workflow artifact? (JD names n8n explicitly) | Phase 7 | **CUT** (descope rung 1) — stretch goal only if M6 lands by Mon morning. |
+| OQ-10 | Does §4.1 ("any other text understanding step") oblige registry enrichment to run through Ollama, or may the reviewed registry ship as committed static config? | P2.3 | **ANSWERED: yes — both. AD-21 ACCEPTED.** Owner's rationale: strict §4.1 compliance, keeps the pipeline reusable if reviewers test a different company list, and removes any cloud LLM dependency from text understanding. |
+
+---
+
+## 11. Changelog (append-only)
+
+| Date | Version | Change |
+|---|---|---|
+| 2026-08-01 | 0.8.0 | **P4.0 benchmark tool built** (`npm run bench`, AD-25). The Ollama client now surfaces server-reported timings — `load_duration`, `prompt_eval_*`, `eval_count`, `eval_duration` — converted from nanoseconds once, at the boundary, so tokens/sec is measured rather than inferred from wall clock. The benchmark sweeps models × concurrency across two output-size profiles (`enrich` 256 tokens, `classify` 96), discards a warm-up per configuration, and projects the wall time of a 2,000-item classification run. Writes `data/benchmark.json`; the printed table is the README artifact required by R11/R13. **80 tests passing.** |
+| 2026-07-31 | 0.7.0 | **AD-23: swapped `better-sqlite3` for `node:sqlite`** after `npm install` failed on the owner's Windows machine with a node-gyp error (no Visual Studio C++ Build Tools). Zero native compilation, zero third-party storage dependency; `db.transaction()` replaced by a nest-safe SAVEPOINT helper. **AD-24: the Ollama client was pulled forward from P4.1 into P2**, since registry enrichment needs it too — de-risks the critical path two days early. **P1 complete, P2 code complete.** New: `packages/ollama` (structured output, deterministic options, jittered retry, content-hash cache, concurrency limiter, health check) and `packages/registry` (seed parsing, enrichment schema, query construction with auditable provenance). `data/companies.json` generated: 258 records, 57 human-approved queries. **77 tests passing.** Provenance labelling corrected mid-build — rows sharing a file with reviewed rows are `triage-default`, not `human-approved`. |
+| 2026-07-31 | 0.6.0 | **M0 REACHED — AD-01…AD-22 frozen to ACCEPTED.** The 57 flagged company queries were approved by the owner and become `queryOverride` ground truth (P2.7); `scripts/enrich-companies.ts` still regenerates the registry through local Ollama for any other seed list (AD-21). **P1 scaffold built and verified:** npm workspaces, TypeScript strict, ESLint 9 flat config, Prettier, Vitest, pino logging, zod-validated config, typed error hierarchy, deterministic id/URL canonicalisation, SQLite schema with idempotency constraints, six repositories, status bucketing, walking skeleton (P1.8), GitHub Actions CI (P1.9) and a `docs:check` gate that fails the build on documentation drift. **46 tests passing.** This file and `ai_prompts.md` now live inside the repo and are the versioned source of truth. |
+| 2026-07-31 | 0.5.0 | **OQ-10 answered — AD-21 ACCEPTED.** Registry enrichment runs through local Ollama via `scripts/enrich-companies.ts` *and* commits its hand-reviewed output, satisfying §4.1 under the strictest reading and keeping the pipeline reusable for any seed list. P2.3 renamed and rescoped accordingly; P2.7 added to apply approved query overrides. P2.4 now blocked on owner approval of the 57 flagged names. Review artifact `company_query_review.md` added alongside the xlsx. All decisions except AD-03…AD-22 pending the P2.4 sign-off are otherwise ready to freeze. Still no code written. |
+| 2026-07-31 | 0.4.0 | **OQ-1, OQ-3, OQ-4, OQ-5 answered.** Deadline Tue 4 Aug 16:00, target submission Mon 3 Aug evening → added §8.6 calendar with hard checkpoints and a cut-on-slip rule. AD-02 (TypeScript) promoted to ACCEPTED. Descope rungs 1–3 marked CUT (n8n, cascade, Slack). Added AD-21 (registry ships as *both* an Ollama script and committed reviewed config, closing the §4.1 compliance question) and AD-22 (triage on two axes: ambiguity vs volume). Full 258-company query triage completed and delivered for review — **57 flagged CRITICAL/HIGH, not the ~40 estimated**; 19 separately flagged high-volume. New OQ-10 raised. Still no code written. |
+| 2026-07-31 | 0.3.0 | **§8 work plan rewritten to a professional structure.** 9 phases, each with objective, demonstrable milestone (M0–M8), numbered sub-tasks (`P<phase>.<n>`), requirement traceability (`Satisfies R#`), hour estimates, objective exit criteria and named risks. Added §8.0 conventions + global Definition of Done, §8.2 critical path and parallelisation (P4 runs against fixtures in parallel with P2/P3), §8.3 pre-declared descope ladder with a never-cut list, §8.5 progress dashboard. Added walking-skeleton task P1.8 and backend-benchmark task P4.0. Total estimated effort ~51 focused hours. Still no code written. |
+| 2026-07-31 | 0.2.0 | OQ-2 answered (Intel Arc 140V / 32 GB / Windows 11). Added AD-17 (right-sizing by measurement), AD-18 (inference-parameter right-sizing), AD-19 (Intel Arc backend benchmark), AD-20 (encoder alternative considered & rejected). **AD-07 downgraded to CONDITIONAL/default-OFF** — the cascade is now evidence-gated rather than assumed. Added §6.4 model-selection protocol and the model ladder. Added assumptions A9, A10 and open questions OQ-8, OQ-9. Env vars extended with right-sizing knobs. Still no code written. |
+| 2026-07-31 | 0.1.0 | Initial creation. Planning phase. Architecture proposed, 7 open questions raised. No code written. |
