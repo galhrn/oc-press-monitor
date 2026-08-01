@@ -7,4 +7,6 @@ export * from './throttle.js';
 export * from './pre-filter.js';
 export * from './normalize.js';
 export * from './query-builder.js';
+export * from './circuit-breaker.js';
+export * from './collect.js';
 export { DEFAULT_CORPUS_PATH, GOOGLE_NEWS_SAMPLE_PATH } from './corpus-path.js';
