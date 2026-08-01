@@ -1,0 +1,3766 @@
+{
+  "runId": "0a8a9607-2420-41be-b48c-d389504f4e89",
+  "promptVersion": "classify.v1@5717fe76202f",
+  "goldItems": 60,
+  "results": [
+    {
+      "model": "qwen2.5:1.5b-instruct",
+      "promptVersion": "classify.v1@5717fe76202f",
+      "failures": 3,
+      "jsonValidityRate": 0.95,
+      "p50LatencyMs": 0,
+      "p95LatencyMs": 0,
+      "itemsPerMinute": 274.5,
+      "projectedMinutesFor2500": 9.1,
+      "relevance": {
+        "n": 57,
+        "accuracy": 0.7017543859649122,
+        "macroF1": 0.6495479204339965,
+        "perClass": [
+          {
+            "label": "relevant",
+            "support": 38,
+            "precision": 0.7560975609756098,
+            "recall": 0.8157894736842105,
+            "f1": 0.7848101265822786
+          },
+          {
+            "label": "irrelevant",
+            "support": 19,
+            "precision": 0.5625,
+            "recall": 0.47368421052631576,
+            "f1": 0.5142857142857142
+          }
+        ],
+        "confusion": {
+          "labels": [
+            "relevant",
+            "irrelevant"
+          ],
+          "counts": {
+            "relevant": {
+              "relevant": 31,
+              "irrelevant": 7
+            },
+            "irrelevant": {
+              "relevant": 10,
+              "irrelevant": 9
+            }
+          }
+        }
+      },
+      "sentiment": {
+        "n": 38,
+        "accuracy": 0.5789473684210527,
+        "macroF1": 0.3449832775919732,
+        "perClass": [
+          {
+            "label": "positive",
+            "support": 19,
+            "precision": 0.7037037037037037,
+            "recall": 1,
+            "f1": 0.8260869565217391
+          },
+          {
+            "label": "negative",
+            "support": 7,
+            "precision": 0.6666666666666666,
+            "recall": 0.2857142857142857,
+            "f1": 0.4
+          },
+          {
+            "label": "neutral",
+            "support": 12,
+            "precision": 1,
+            "recall": 0.08333333333333333,
+            "f1": 0.15384615384615385
+          },
+          {
+            "label": "not_applicable",
+            "support": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          }
+        ],
+        "confusion": {
+          "labels": [
+            "positive",
+            "negative",
+            "neutral",
+            "not_applicable"
+          ],
+          "counts": {
+            "positive": {
+              "positive": 19,
+              "negative": 0,
+              "neutral": 0,
+              "not_applicable": 0
+            },
+            "negative": {
+              "positive": 1,
+              "negative": 2,
+              "neutral": 0,
+              "not_applicable": 4
+            },
+            "neutral": {
+              "positive": 7,
+              "negative": 1,
+              "neutral": 1,
+              "not_applicable": 3
+            },
+            "not_applicable": {
+              "positive": 0,
+              "negative": 0,
+              "neutral": 0,
+              "not_applicable": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f",
+      "failures": 0,
+      "jsonValidityRate": 1,
+      "p50LatencyMs": 0,
+      "p95LatencyMs": 0,
+      "itemsPerMinute": 133333.3,
+      "projectedMinutesFor2500": 0,
+      "relevance": {
+        "n": 60,
+        "accuracy": 0.6333333333333333,
+        "macroF1": 0.53125,
+        "perClass": [
+          {
+            "label": "relevant",
+            "support": 39,
+            "precision": 0.673469387755102,
+            "recall": 0.8461538461538461,
+            "f1": 0.75
+          },
+          {
+            "label": "irrelevant",
+            "support": 21,
+            "precision": 0.45454545454545453,
+            "recall": 0.23809523809523808,
+            "f1": 0.31249999999999994
+          }
+        ],
+        "confusion": {
+          "labels": [
+            "relevant",
+            "irrelevant"
+          ],
+          "counts": {
+            "relevant": {
+              "relevant": 33,
+              "irrelevant": 6
+            },
+            "irrelevant": {
+              "relevant": 16,
+              "irrelevant": 5
+            }
+          }
+        }
+      },
+      "sentiment": {
+        "n": 39,
+        "accuracy": 0.6410256410256411,
+        "macroF1": 0.512781954887218,
+        "perClass": [
+          {
+            "label": "positive",
+            "support": 20,
+            "precision": 0.7777777777777778,
+            "recall": 0.7,
+            "f1": 0.7368421052631577
+          },
+          {
+            "label": "negative",
+            "support": 7,
+            "precision": 0.7142857142857143,
+            "recall": 0.7142857142857143,
+            "f1": 0.7142857142857143
+          },
+          {
+            "label": "neutral",
+            "support": 12,
+            "precision": 0.75,
+            "recall": 0.5,
+            "f1": 0.6
+          },
+          {
+            "label": "not_applicable",
+            "support": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          }
+        ],
+        "confusion": {
+          "labels": [
+            "positive",
+            "negative",
+            "neutral",
+            "not_applicable"
+          ],
+          "counts": {
+            "positive": {
+              "positive": 14,
+              "negative": 1,
+              "neutral": 2,
+              "not_applicable": 3
+            },
+            "negative": {
+              "positive": 0,
+              "negative": 5,
+              "neutral": 0,
+              "not_applicable": 2
+            },
+            "neutral": {
+              "positive": 4,
+              "negative": 1,
+              "neutral": 6,
+              "not_applicable": 1
+            },
+            "not_applicable": {
+              "positive": 0,
+              "negative": 0,
+              "neutral": 0,
+              "not_applicable": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "model": "qwen2.5:3b-instruct",
+      "promptVersion": "classify.v1@5717fe76202f",
+      "failures": 0,
+      "jsonValidityRate": 1,
+      "p50LatencyMs": 0,
+      "p95LatencyMs": 0,
+      "itemsPerMinute": 189473.7,
+      "projectedMinutesFor2500": 0,
+      "relevance": {
+        "n": 60,
+        "accuracy": 0.65,
+        "macroF1": 0.6499027507641011,
+        "perClass": [
+          {
+            "label": "relevant",
+            "support": 39,
+            "precision": 0.9090909090909091,
+            "recall": 0.5128205128205128,
+            "f1": 0.6557377049180326
+          },
+          {
+            "label": "irrelevant",
+            "support": 21,
+            "precision": 0.5,
+            "recall": 0.9047619047619048,
+            "f1": 0.6440677966101696
+          }
+        ],
+        "confusion": {
+          "labels": [
+            "relevant",
+            "irrelevant"
+          ],
+          "counts": {
+            "relevant": {
+              "relevant": 20,
+              "irrelevant": 19
+            },
+            "irrelevant": {
+              "relevant": 2,
+              "irrelevant": 19
+            }
+          }
+        }
+      },
+      "sentiment": {
+        "n": 39,
+        "accuracy": 0.358974358974359,
+        "macroF1": 0.34265734265734266,
+        "perClass": [
+          {
+            "label": "positive",
+            "support": 20,
+            "precision": 1,
+            "recall": 0.3,
+            "f1": 0.4615384615384615
+          },
+          {
+            "label": "negative",
+            "support": 7,
+            "precision": 0.5,
+            "recall": 0.2857142857142857,
+            "f1": 0.36363636363636365
+          },
+          {
+            "label": "neutral",
+            "support": 12,
+            "precision": 0.6,
+            "recall": 0.5,
+            "f1": 0.5454545454545454
+          },
+          {
+            "label": "not_applicable",
+            "support": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          }
+        ],
+        "confusion": {
+          "labels": [
+            "positive",
+            "negative",
+            "neutral",
+            "not_applicable"
+          ],
+          "counts": {
+            "positive": {
+              "positive": 6,
+              "negative": 1,
+              "neutral": 3,
+              "not_applicable": 10
+            },
+            "negative": {
+              "positive": 0,
+              "negative": 2,
+              "neutral": 1,
+              "not_applicable": 4
+            },
+            "neutral": {
+              "positive": 0,
+              "negative": 1,
+              "neutral": 6,
+              "not_applicable": 5
+            },
+            "not_applicable": {
+              "positive": 0,
+              "negative": 0,
+              "neutral": 0,
+              "not_applicable": 0
+            }
+          }
+        }
+      }
+    }
+  ],
+  "ship": "llama3.2:3b",
+  "perItem": {
+    "qwen2.5:1.5b-instruct": [
+      {
+        "id": "019c4b565e8ddae5",
+        "company": "Cyabra",
+        "title": "Cyabra Ord Shs (CYAB) Balance Sheet",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "note": "Factual directory/financial-data page. Rubric: factual listing."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.95,
+          "rationale": "The headline mentions the company's balance sheet, which is neutral in nature."
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "01d2226065c993ac",
+        "company": "Hailo",
+        "title": "ICYMI Ep70: Northern.tech, Atlas Data Storage, imec, Microchip, Hailo",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "note": "Passing mention in a multi-company roundup."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 1,
+          "rationale": "The headline mentions several unrelated companies and does not contain any information about the company…"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "047f786341192935",
+        "company": "Innoviz",
+        "title": "Innoviz Technologies to Raise $30 Million From Registered Share Offering",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "note": "JUDGEMENT CALL: a registered direct offering secures capital but is dilutive and often priced at a discount. Read as a financing fact, not a win or a loss."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 1,
+          "rationale": "The headline explicitly mentions the company Innoviz Technologies, which is the subject of the question."
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "4e44a654bfd41d4a",
+        "company": "Morphisec",
+        "title": "See Prevention-First Ransomware Defense in Action: Join the Morphisec Live Demo",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "note": "Vendor webinar promotion, not press coverage. Arguably should not be a mention at all."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.95,
+          "rationale": "The headline mentions 'Morphisec' and describes a live demo, which is typically associated with cybersecurity…"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "07ca35c00e302932",
+        "company": "OpenEvidence",
+        "title": "OpenEvidence reportedly eyes $200M raise at $20B valuation, signaling AI healthcare's breakneck growth",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Funding at a step-up valuation."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 1,
+          "rationale": "The headline mentions 'OpenEvidence' and discusses a potential funding round with a high valuation, which…"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "c4a8cd1c77c937d8",
+        "company": "Wayup",
+        "title": "The home in a gated community designed as builder's personal residence has many family friendly amenities and luxurious standout features. Photo provided by WayUp Media Check link in bio to see more photos",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "WayUp Media, a real-estate photo credit. Different entity."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.95,
+          "rationale": "The headline mentions 'WayUp' but refers to a property listing, not the company itself."
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "07ada07e084218c9",
+        "company": "ZutaCore",
+        "title": "Liquid cooling co ZutaCore raises $100M",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Funding round."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.95,
+          "rationale": "The headline mentions a funding round, which is typically positive for investors."
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "074b40cc95872258",
+        "company": "Cyabra",
+        "title": "Maxim Group Initiates Cyabra(CYAB.US) With Buy Rating, Announces Target Price $1",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Favourable analyst initiation."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.95,
+          "rationale": "The headline mentions a buy rating and an announcement of a target price for Cyabra…"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "0669c09d0e07d721",
+        "company": "Hailo",
+        "title": "AIS-1000 AI Surveillance Station – A $3,640 NDAA and TAA-compliant AI box based on Raspberry Pi 5 and Hailo-8L",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Third-party product built on Hailo-8L: a design win."
+        },
+        "predicted": null,
+        "error": "Ollama response did not satisfy the schema"
+      },
+      {
+        "id": "141ef90dc4a325bf",
+        "company": "Innoviz",
+        "title": "Innoviz secures $3.5M in defense orders for LiDAR systems By Investing.com",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Customer/defence orders."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 1,
+          "rationale": "The headline mentions 'Innoviz' and discusses securing funding, which is typically seen as a positive…"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "65ed5908eee55562",
+        "company": "Morphisec",
+        "title": "Morphisec Launches AI Usage Control: Governing Shadow and Sanctioned AI on the Endpoint",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Product launch."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.95,
+          "rationale": "The headline mentions 'Morphisec' which is the company name, and it's about launching an AI…"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "0a5b8889e8677578",
+        "company": "OpenEvidence",
+        "title": "A new medical AI study found the same flaw in OpenEvidence, OpenAI, Anthropic, and Doximity",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "negative",
+          "note": "Company named among products found to share a flaw."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.95,
+          "rationale": "The headline mentions several companies with similar names (OpenEvidence, OpenAI, Anthropic, Doximity) but does not…"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "fda6a70f242c362e",
+        "company": "Wayup",
+        "title": "adidas and WayUp Sports Partner with the Egyptian Handball Federation to Support the Future of Egyptian Handball",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "WayUp Sports, an Egyptian handball sponsorship. Different entity."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.95,
+          "rationale": "The headline mentions 'WayUp' but refers to a different company (Adidas) and is not about…"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "096fc0993b62b113",
+        "company": "ZutaCore",
+        "title": "ZutaCore: $100 Million Series C Raised To Expand AI Data Center Cooling Platform",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Funding round."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.95,
+          "rationale": "The headline mentions a 'Series C' funding round, which is typically associated with positive outcomes…"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "0a8f2ef35ce2a173",
+        "company": "Cyabra",
+        "title": "Maxim Group initiates Cyabra stock with buy rating on AI growth",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Favourable analyst initiation."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.95,
+          "rationale": "The headline mentions a 'buy rating' for the company's stock, indicating positive sentiment towards the…"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "240e65756b2a50d3",
+        "company": "Hailo",
+        "title": "Microchip To Acquire Edge AI Processor Company Hailo",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Acquisition: a favourable exit from an investor's view."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.95,
+          "rationale": "The headline mentions 'Microchip' acquiring 'Edge AI Processor', which is consistent with the company name…"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "17e6259ecc5cbb09",
+        "company": "Innoviz",
+        "title": "Innoviz Technologies (NASDAQ: INVZ) prices $30 million registered direct deal",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "note": "Same event as item 2; same reasoning."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 1,
+          "rationale": "The headline mentions the company's stock price, which is a positive outcome for investors."
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "870422b1f773a31e",
+        "company": "Morphisec",
+        "title": "Morphisec Launches AI Usage Control to Govern Enterprise AI Agents and Identities",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Product launch."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.95,
+          "rationale": "The headline mentions 'Morphisec' which is the company name, and it specifically talks about launching…"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "19b4ac5d78ec9c85",
+        "company": "Cerebras",
+        "title": "Jim Cramer on Cerebras Systems: “I Warned You to Stay Away From This One”",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": true,
+          "sentiment": "negative",
+          "note": "Negative pundit coverage."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.95,
+          "rationale": "The headline is clearly about a competitor of the company, not Cerebras Systems/Cerebras."
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "1cbe01d9a2bdf140",
+        "company": "Harvey",
+        "title": "Goldman Sachs, JPMorgan Invest In Legal AI Co. Harvey",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Investment from major banks."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 1,
+          "rationale": "The headline mentions two major investment banks (Goldman Sachs and JPMorgan) investing in a legal…"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "0afe46cb7fba7102",
+        "company": "Launchpad",
+        "title": "The NBA is expanding its Launchpad startup program to …",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "The NBA's own Launchpad programme. Different entity."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.95,
+          "rationale": "The headline mentions the 'NBA' and 'Launchpad', which are likely referring to a new expansion…"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "0dc25b124e4482cb",
+        "company": "Lemonade",
+        "title": "Lemonade Is Keeping More of Its Own Insurance Risk. Is That a Sign of Confidence or a Red Flag?",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "note": "Explicitly two-sided framing: confidence or red flag. Rubric: balanced reporting."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "confidence": 0.95,
+          "rationale": "The headline mentions 'Lemonade' but refers to the insurance technology company, not the drink."
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "4bdb6a6c283eff7a",
+        "company": "Peak",
+        "title": "Peak AI upcoming launch, news and token information",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "A crypto token called Peak AI, not the decision-intelligence company."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.95,
+          "rationale": "The headline mentions an 'upcoming launch' of a company called Peak AI, which is consistent…"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "837902b1b910d814",
+        "company": "Shield",
+        "title": "Green Shield FC - Laugu United FC Live - S-League: Football Scores & Highlights - 25/07/2026",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "Green Shield FC, a football club."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 1,
+          "rationale": "The headline is about a football match, not the company Shield."
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "07c803fdb680959b",
+        "company": "SpaceX",
+        "title": "SpaceX stock keeps sliding. What to do if you own shares.",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": true,
+          "sentiment": "negative",
+          "note": "Valuation decline."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "negative",
+          "confidence": 0.95,
+          "rationale": "The headline mentions 'SpaceX stock', which is the company being discussed, and it warns about…"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "111488949acf4aa1",
+        "company": "Stripe",
+        "title": "Stripe’s PayPal Bid Shows Private Fintech Has Become Powerful Enough To Buy Public Giants",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Reads as a strength signal for Stripe."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.95,
+          "rationale": "The headline mentions 'Stripe's PayPal Bid', indicating a significant acquisition by Stripe, which is generally…"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "5553f7d7eb2df893",
+        "company": "Together AI",
+        "title": "Together AI Highlights Scalable Long-Running AI Agent Architecture",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "note": "Technical thought-leadership content, no clear valence."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.95,
+          "rationale": "The headline mentions 'Together AI' and focuses on the company's scalable long-running AI agent architecture,…"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "20e36e4794b88557",
+        "company": "Cerebras",
+        "title": "Cerebras and Upstage Bring Ultra-Fast AI to South Korea",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Partnership and market expansion."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 1,
+          "rationale": "The headline mentions both Cerebras (the company) and Upstage, which is likely a competitor or…"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "37a4119caa14ae6c",
+        "company": "Harvey",
+        "title": "Harvey Aligns With Toronto Maple Leafs in Multi-Year Legal AI Partnership",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Multi-year partnership / customer win."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.95,
+          "rationale": "The headline mentions a legal AI partnership with the Toronto Maple Leafs, which is likely…"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "1e1a39f8a58c89b4",
+        "company": "Launchpad",
+        "title": "Asia’s Largest Startup Launchpad by Eureka (India)",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "Generic use of the word launchpad by an Indian programme."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.95,
+          "rationale": "The headline mentions 'Asia's Largest Startup Launchpad', which is a clear reference to the company…"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "16158f865775c0d2",
+        "company": "Lemonade",
+        "title": "Lemonade Pet Insurance Review 2026",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "note": "Product review listing, no valence in the headline."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 1,
+          "rationale": "The headline mentions 'Lemonade' and is specifically about a pet insurance product, which aligns with…"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "7f543ad0f9721ce0",
+        "company": "Peak",
+        "title": "Peak AI Trading Signals — Arthur Hayes Liquidates Altcoin Positions",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "Crypto trading-signal content."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 1,
+          "rationale": "The headline mentions 'Arthur Hayes' and 'Liquidates', which are unrelated to the company Peak."
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "045baa6e7e07b34a",
+        "company": "Arrow Global",
+        "title": "Deal Roundup: CD&R agrees Indicor units sale for $5bn, CPPIB exits loan portfolio to Arrow Global, Fortress",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "UNCERTAIN - this is Arrow Global the UK credit manager. If that IS the portfolio company, flip to relevant:true / neutral."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "negative",
+          "confidence": 0.9,
+          "rationale": "The headline mentions 'Arrow Global' in the context of a deal roundup, indicating it is…"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "04059aee896d9fab",
+        "company": "Astra",
+        "title": "Ad ASTRA Community Workshop: Detailed Schedule Available",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "Ad Astra community workshop. Different entity."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.95,
+          "rationale": "The headline mentions 'Astra' but refers to AstraZeneca, a different company with the same name."
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "2969a1a84ceee3b4",
+        "company": "Greenlight",
+        "title": "Greenlight Financial CUSO Hits 100 Credit Union Milestone to Scale Family Banking",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Growth milestone. UNCERTAIN: assumes the portfolio Greenlight is the family-banking fintech."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.95,
+          "rationale": "The headline mentions 'Greenlight Financial', which is the company name, and it specifically talks about…"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "12dc96db949e8d91",
+        "company": "Harvey",
+        "title": "Harvey Announces Investments From JP Morgan, Goldman Sachs Funds",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Same investment event as item 19, different outlet."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.95,
+          "rationale": "The headline mentions 'Harvey' and 'JP Morgan', which are likely to be related to the…"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "b0231da1856213e9",
+        "company": "Hub Security",
+        "title": "Cyber firm HUB Security consolidates every 20 shares into one",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": true,
+          "sentiment": "negative",
+          "note": "A 20-to-1 reverse split, typically a listing-compliance signal."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 1,
+          "rationale": "The headline mentions 'HUB Security' and describes it as a cybersecurity company, which aligns with…"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "4899279107e3cecc",
+        "company": "Island",
+        "title": "Island Brings the First Purpose-Built Workspace for SMBs to the Pax8 Marketplace",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Product launch into a new distribution channel."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.95,
+          "rationale": "The headline mentions 'Island' and describes it as bringing a new product or service (purpose-built…"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "09c94cde7dbf1ae3",
+        "company": "Kini",
+        "title": "FinTech 2.0 must move beyond EMI-led products, says RBIH CEO Sahil Kini",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "Sahil Kini is a person's surname."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "negative",
+          "confidence": 1,
+          "rationale": "The headline mentions the company's name (Sahil Kini) and refers to a product launch by…"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "0c980c140e45fd74",
+        "company": "Launchpad",
+        "title": "LAUNCHPAD Is Built to Connect Emerging Artists With Southeast Asia Audiences",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "An unrelated arts programme using the word."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.95,
+          "rationale": "The headline mentions 'Launchpad', which is the company name, and it's described as being built…"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "46a1dbf17643466a",
+        "company": "Lemonade",
+        "title": "Lemonade Inc (LMND) Stock Price & News - Google Finance",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "note": "Stock-quote directory page."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.95,
+          "rationale": "The headline mentions 'Lemonade Inc.' which is the company name, and it's discussing stock price…"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "1e6bf97bdcdbb9ff",
+        "company": "Peak",
+        "title": "Japan's Nikkei scales record peak as AI shares track US chip rally",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "Common-noun use: the Nikkei at a record peak."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.95,
+          "rationale": "The headline mentions 'AI shares', which is likely referring to Peak, a company that provides…"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "3e348d7fe13b9550",
+        "company": "Quantum Machines",
+        "title": "Quantum Machines Highlights Real-Time Control Strategy for Fault-Tolerant Quantum Computing",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "note": "THE AD-31 RECOVERY CASE. Genuine Quantum Machines coverage, technical in tone with no clear valence. The old hard reject lost this."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.95,
+          "rationale": "The headline mentions 'Quantum Machines' and focuses on a real-time control strategy, which is typically…"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "15fc8dbf9935ba37",
+        "company": "Rewire",
+        "title": "Sky News Australia. . Sky News host James Morrow questions whether oil markets will \"rewire themselves\" in the wake of escalating US-Iran tensions.",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "The verb rewire, in an oil-markets segment."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.95,
+          "rationale": "The headline mentions 'Sky News Australia' and a host questioning oil markets, but it does…"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "a0e541fcfde052f1",
+        "company": "Ro",
+        "title": "Chugai Ro Co., Ltd. Provides Dividend Guidance for the Fiscal Year Ending March 31, 2027",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "Chugai Ro, a Japanese industrial furnace maker."
+        },
+        "predicted": null,
+        "error": "Ollama response did not satisfy the schema"
+      },
+      {
+        "id": "046baf72df3b089f",
+        "company": "Shield",
+        "title": "Shield AI: Innovation X Advisors Participating In $1.5 Billion Series G At $12.7 Billion Valuation",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "Shield AI, a US defence autonomy company. Not the communications-compliance Shield. A strong decoy."
+        },
+        "predicted": null,
+        "error": "Ollama response did not satisfy the schema"
+      },
+      {
+        "id": "1777a74d0bee4303",
+        "company": "Spot AI",
+        "title": "Exploring Ways to Stop Crime on the Spot",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "On the spot, an idiom."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.95,
+          "rationale": "The headline discusses ways to stop crime, which is unrelated to any company named 'Spot…"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "0bcb0d337e1d309a",
+        "company": "Stripe",
+        "title": "Stripe Eyes $10 Billion Deal for AI Model Marketplace OpenRouter",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Major acquisition move."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.95,
+          "rationale": "The headline mentions 'Stripe' and is about a potential acquisition, which is typically framed as…"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "7c344a8f57f24641",
+        "company": "Arrow Global",
+        "title": "Arrow Global appoints CEO of MGA Solutions",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "UNCERTAIN - same Arrow Global question as item 32. If it is the portfolio company, this is a routine appointment: relevant:true / neutral."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.95,
+          "rationale": "The headline mentions 'Arrow Global' but refers to a different company with the same name,…"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "1022f81956cb0e22",
+        "company": "Astra",
+        "title": "\"World's confidence increasing towards India's defence equipment\": PM Modi highlights BrahMos, Astra deal with Indonesia",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "India's Astra missile."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.95,
+          "rationale": "The headline mentions 'India's defense equipment' and a potential deal between Astra (a pharmaceutical company)…"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "5b68ee631da73d41",
+        "company": "Greenlight",
+        "title": "Dow Credit Union launches partnership with Greenlight to help families teach kids about money",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Partnership. Same Greenlight identity assumption as item 34."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.95,
+          "rationale": "The headline mentions a 'partnership' between Dow Credit Union and Greenlight, which is likely referring…"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "2fafa90278824c96",
+        "company": "Harvey",
+        "title": "Broseta partners with Harvey on AI integration",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Customer win."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.95,
+          "rationale": "The headline mentions 'Harvey' and 'AI integration', which is consistent with the company's name and…"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "02f8d9f09a65c8cb",
+        "company": "Cyabra",
+        "title": "Cyabra, Inc. (NASDAQ: CYAB) cuts stockholder meeting quorum to 33 1/3%",
+        "stratum": "negative-signal",
+        "gold": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "note": "Procedural governance change; the word cuts is what the sampler matched, not the meaning."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "negative",
+          "confidence": 0.95,
+          "rationale": "The headline mentions a reduction in the number of stockholders required for meetings, which is…"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "7467db23090debfe",
+        "company": "Innoviz",
+        "title": "Trending Industry Today: Innoviz Technologies Leads Losses In Lidar Technology Stocks",
+        "stratum": "negative-signal",
+        "gold": {
+          "relevant": true,
+          "sentiment": "negative",
+          "note": "Leads losses among peers."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.95,
+          "rationale": "The headline mentions 'Innoviz Technologies' but refers to a loss in the industry, which is…"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "010cf2b35b8c1ae3",
+        "company": "Lemonade",
+        "title": "Lemonade (NYSE:LMND) Beats Q2 CY2026 Sales Expectations But Stock Drops 15.1%",
+        "stratum": "negative-signal",
+        "gold": {
+          "relevant": true,
+          "sentiment": "negative",
+          "note": "MIXED: beat on sales but the stock fell 15%. Investor lens takes the drop."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "negative",
+          "confidence": 0.9,
+          "rationale": "The headline mentions 'Lemonade' (NYSE:LMND) and states that the stock fell, which is a negative…"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "c02f7f5ef83a6984",
+        "company": "Peak",
+        "title": "AI boom turns into gloom: South Korea slips into bear market, falls 20% from peak",
+        "stratum": "negative-signal",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "Common-noun use: 20% from peak."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "negative",
+          "confidence": 1,
+          "rationale": "The headline mentions a 'bear market' and a fall of 20%, which is clearly negative…"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "068e1bce8eed7fcc",
+        "company": "Ro",
+        "title": "Ro Hair Loss Review: Find Out How Ro Compares to Other Brands",
+        "stratum": "negative-signal",
+        "gold": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "note": "Genuinely about Ro the telehealth company; a comparison review with no headline valence."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.95,
+          "rationale": "The headline mentions 'Ro' but is about hair loss products, not the telehealth company."
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "1fd75cf5dd08c21b",
+        "company": "SpaceX",
+        "title": "Musk's bad week: Tesla suffers worst slump since 2022, SpaceX drops ahead of Starship test flight",
+        "stratum": "negative-signal",
+        "gold": {
+          "relevant": true,
+          "sentiment": "negative",
+          "note": "Explicitly a bad week; SpaceX valuation drop."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 1,
+          "rationale": "The headline mentions both Tesla and SpaceX, but the context is Tesla's performance drop, which…"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "5eeeb9ab0c1a6065",
+        "company": "Spot AI",
+        "title": "Humans trained to spot AI faces in battle against deepfake fraud",
+        "stratum": "negative-signal",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "The verb spot, about spotting AI faces."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "negative",
+          "confidence": 0.95,
+          "rationale": "The headline mentions 'Spot' which is the company name, and it's about humans training to…"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "35825ce5dd065dfa",
+        "company": "Ro",
+        "title": "Chugai Ro Swings to Quarterly Loss but Plans Higher Dividend Despite Profit Forecast Cut",
+        "stratum": "negative-signal",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "Chugai Ro again, not Ro the telehealth company."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "negative",
+          "confidence": 0.95,
+          "rationale": "The headline mentions 'Ro' which is the company name, and it talks about a quarterly…"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      }
+    ],
+    "llama3.2:3b": [
+      {
+        "id": "019c4b565e8ddae5",
+        "company": "Cyabra",
+        "title": "Cyabra Ord Shs (CYAB) Balance Sheet",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "note": "Factual directory/financial-data page. Rubric: factual listing."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "confidence": 0.8,
+          "rationale": "sector-specific financial reporting, no direct mention of company performance"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "01d2226065c993ac",
+        "company": "Hailo",
+        "title": "ICYMI Ep70: Northern.tech, Atlas Data Storage, imec, Microchip, Hailo",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "note": "Passing mention in a multi-company roundup."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "confidence": 0.8,
+          "rationale": "Sector and context terms match, but no direct mention of Hailo's AI capabilities."
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "047f786341192935",
+        "company": "Innoviz",
+        "title": "Innoviz Technologies to Raise $30 Million From Registered Share Offering",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "note": "JUDGEMENT CALL: a registered direct offering secures capital but is dilutive and often priced at a discount. Read as a financing fact, not a win or a loss."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "confidence": 0.8,
+          "rationale": "raises capital, not a product launch or acquisition"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "4e44a654bfd41d4a",
+        "company": "Morphisec",
+        "title": "See Prevention-First Ransomware Defense in Action: Join the Morphisec Live Demo",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "note": "Vendor webinar promotion, not press coverage. Arguably should not be a mention at all."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.9,
+          "rationale": "Company name and sector match, positive action verb 'Join' implies benefit."
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "07ca35c00e302932",
+        "company": "OpenEvidence",
+        "title": "OpenEvidence reportedly eyes $200M raise at $20B valuation, signaling AI healthcare's breakneck growth",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Funding at a step-up valuation."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "confidence": 0.8,
+          "rationale": "Company name mentioned, but context is about AI healthcare sector."
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "c4a8cd1c77c937d8",
+        "company": "Wayup",
+        "title": "The home in a gated community designed as builder's personal residence has many family friendly amenities and luxurious standout features. Photo provided by WayUp Media Check link in bio to see more photos",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "WayUp Media, a real-estate photo credit. Different entity."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0,
+          "rationale": "Not about HR tech or the company itself, but rather a real estate listing."
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "07ada07e084218c9",
+        "company": "ZutaCore",
+        "title": "Liquid cooling co ZutaCore raises $100M",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Funding round."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 1,
+          "rationale": "raises funding round"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "074b40cc95872258",
+        "company": "Cyabra",
+        "title": "Maxim Group Initiates Cyabra(CYAB.US) With Buy Rating, Announces Target Price $1",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Favourable analyst initiation."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.9,
+          "rationale": "Buy rating and target price indicate a positive outlook."
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "0669c09d0e07d721",
+        "company": "Hailo",
+        "title": "AIS-1000 AI Surveillance Station – A $3,640 NDAA and TAA-compliant AI box based on Raspberry Pi 5 and Hailo-8L",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Third-party product built on Hailo-8L: a design win."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0,
+          "rationale": ""
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "141ef90dc4a325bf",
+        "company": "Innoviz",
+        "title": "Innoviz secures $3.5M in defense orders for LiDAR systems By Investing.com",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Customer/defence orders."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.8,
+          "rationale": "defense orders, LiDAR systems, funding"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "65ed5908eee55562",
+        "company": "Morphisec",
+        "title": "Morphisec Launches AI Usage Control: Governing Shadow and Sanctioned AI on the Endpoint",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Product launch."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.9,
+          "rationale": "Morphisec Technologies mentioned, implies company involvement"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "0a5b8889e8677578",
+        "company": "OpenEvidence",
+        "title": "A new medical AI study found the same flaw in OpenEvidence, OpenAI, Anthropic, and Doximity",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "negative",
+          "note": "Company named among products found to share a flaw."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "negative",
+          "confidence": 0.8,
+          "rationale": "sector and context terms match, negative words 'flaw' and 'found'"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "fda6a70f242c362e",
+        "company": "Wayup",
+        "title": "adidas and WayUp Sports Partner with the Egyptian Handball Federation to Support the Future of Egyptian Handball",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "WayUp Sports, an Egyptian handball sponsorship. Different entity."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.5,
+          "rationale": "Partnership with a different organization, not HR tech"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "096fc0993b62b113",
+        "company": "ZutaCore",
+        "title": "ZutaCore: $100 Million Series C Raised To Expand AI Data Center Cooling Platform",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Funding round."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.9,
+          "rationale": "Mentions funding round and expansion plans for the company's platform."
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "0a8f2ef35ce2a173",
+        "company": "Cyabra",
+        "title": "Maxim Group initiates Cyabra stock with buy rating on AI growth",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Favourable analyst initiation."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.9,
+          "rationale": "buy rating, positive tone, mentions AI growth"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "240e65756b2a50d3",
+        "company": "Hailo",
+        "title": "Microchip To Acquire Edge AI Processor Company Hailo",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Acquisition: a favourable exit from an investor's view."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "negative",
+          "confidence": 0.8,
+          "rationale": "Acquisition by a competitor"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "17e6259ecc5cbb09",
+        "company": "Innoviz",
+        "title": "Innoviz Technologies (NASDAQ: INVZ) prices $30 million registered direct deal",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "note": "Same event as item 2; same reasoning."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "confidence": 0.8,
+          "rationale": "Company name matches, but no positive or negative outcome mentioned."
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "870422b1f773a31e",
+        "company": "Morphisec",
+        "title": "Morphisec Launches AI Usage Control to Govern Enterprise AI Agents and Identities",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Product launch."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.9,
+          "rationale": "Morphisec is a cybersecurity company, the headline mentions their product launch."
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "19b4ac5d78ec9c85",
+        "company": "Cerebras",
+        "title": "Jim Cramer on Cerebras Systems: “I Warned You to Stay Away From This One”",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": true,
+          "sentiment": "negative",
+          "note": "Negative pundit coverage."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "negative",
+          "confidence": 0.8,
+          "rationale": "Company name and sector match, negative tone from prominent figure."
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "1cbe01d9a2bdf140",
+        "company": "Harvey",
+        "title": "Goldman Sachs, JPMorgan Invest In Legal AI Co. Harvey",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Investment from major banks."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.9,
+          "rationale": "sector and context terms match"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "0afe46cb7fba7102",
+        "company": "Launchpad",
+        "title": "The NBA is expanding its Launchpad startup program to …",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "The NBA's own Launchpad programme. Different entity."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "confidence": 0.8,
+          "rationale": "Company name mentioned in context of unrelated industry"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "0dc25b124e4482cb",
+        "company": "Lemonade",
+        "title": "Lemonade Is Keeping More of Its Own Insurance Risk. Is That a Sign of Confidence or a Red Flag?",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "note": "Explicitly two-sided framing: confidence or red flag. Rubric: balanced reporting."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "confidence": 0.8,
+          "rationale": "sector and context terms, but no clear direction"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "4bdb6a6c283eff7a",
+        "company": "Peak",
+        "title": "Peak AI upcoming launch, news and token information",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "A crypto token called Peak AI, not the decision-intelligence company."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.9,
+          "rationale": "sector and context terms match"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "837902b1b910d814",
+        "company": "Shield",
+        "title": "Green Shield FC - Laugu United FC Live - S-League: Football Scores & Highlights - 25/07/2026",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "Green Shield FC, a football club."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.5,
+          "rationale": "Company name mismatch, unrelated to regtech/compliance"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "07c803fdb680959b",
+        "company": "SpaceX",
+        "title": "SpaceX stock keeps sliding. What to do if you own shares.",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": true,
+          "sentiment": "negative",
+          "note": "Valuation decline."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.8,
+          "rationale": "owns shares"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "111488949acf4aa1",
+        "company": "Stripe",
+        "title": "Stripe’s PayPal Bid Shows Private Fintech Has Become Powerful Enough To Buy Public Giants",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Reads as a strength signal for Stripe."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.9,
+          "rationale": "sector and context terms indicate a major acquisition"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "5553f7d7eb2df893",
+        "company": "Together AI",
+        "title": "Together AI Highlights Scalable Long-Running AI Agent Architecture",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "note": "Technical thought-leadership content, no clear valence."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.9,
+          "rationale": "sector and context terms match company name"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "20e36e4794b88557",
+        "company": "Cerebras",
+        "title": "Cerebras and Upstage Bring Ultra-Fast AI to South Korea",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Partnership and market expansion."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.9,
+          "rationale": "Company name, sector, and positive outcome"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "37a4119caa14ae6c",
+        "company": "Harvey",
+        "title": "Harvey Aligns With Toronto Maple Leafs in Multi-Year Legal AI Partnership",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Multi-year partnership / customer win."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.9,
+          "rationale": "sector and partnership terms"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "1e1a39f8a58c89b4",
+        "company": "Launchpad",
+        "title": "Asia’s Largest Startup Launchpad by Eureka (India)",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "Generic use of the word launchpad by an Indian programme."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.8,
+          "rationale": "Company name matches and positive context"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "16158f865775c0d2",
+        "company": "Lemonade",
+        "title": "Lemonade Pet Insurance Review 2026",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "note": "Product review listing, no valence in the headline."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.8,
+          "rationale": "Review implies a positive assessment, 'Lemonade' is the company name."
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "7f543ad0f9721ce0",
+        "company": "Peak",
+        "title": "Peak AI Trading Signals — Arthur Hayes Liquidates Altcoin Positions",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "Crypto trading-signal content."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "negative",
+          "confidence": 0.8,
+          "rationale": "Arthur Hayes liquidates altcoin positions, implying a negative outcome for Peak AI's trading signals."
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "045baa6e7e07b34a",
+        "company": "Arrow Global",
+        "title": "Deal Roundup: CD&R agrees Indicor units sale for $5bn, CPPIB exits loan portfolio to Arrow Global, Fortress",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "UNCERTAIN - this is Arrow Global the UK credit manager. If that IS the portfolio company, flip to relevant:true / neutral."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "confidence": 0.8,
+          "rationale": "Sector and context terms, but no direct mention of Arrow Global"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "04059aee896d9fab",
+        "company": "Astra",
+        "title": "Ad ASTRA Community Workshop: Detailed Schedule Available",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "Ad Astra community workshop. Different entity."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "confidence": 0.8,
+          "rationale": "Community event, no financial or product-related information"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "2969a1a84ceee3b4",
+        "company": "Greenlight",
+        "title": "Greenlight Financial CUSO Hits 100 Credit Union Milestone to Scale Family Banking",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Growth milestone. UNCERTAIN: assumes the portfolio Greenlight is the family-banking fintech."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.5,
+          "rationale": "Different company and unrelated sector"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "12dc96db949e8d91",
+        "company": "Harvey",
+        "title": "Harvey Announces Investments From JP Morgan, Goldman Sachs Funds",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Same investment event as item 19, different outlet."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.9,
+          "rationale": "sector and context terms match, positive funding announcement"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "b0231da1856213e9",
+        "company": "Hub Security",
+        "title": "Cyber firm HUB Security consolidates every 20 shares into one",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": true,
+          "sentiment": "negative",
+          "note": "A 20-to-1 reverse split, typically a listing-compliance signal."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.5,
+          "rationale": "not about this company, dilutive financing mechanism"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "4899279107e3cecc",
+        "company": "Island",
+        "title": "Island Brings the First Purpose-Built Workspace for SMBs to the Pax8 Marketplace",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Product launch into a new distribution channel."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.9,
+          "rationale": "sector and context terms match"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "09c94cde7dbf1ae3",
+        "company": "Kini",
+        "title": "FinTech 2.0 must move beyond EMI-led products, says RBIH CEO Sahil Kini",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "Sahil Kini is a person's surname."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.8,
+          "rationale": "CEO mentions company name and positive context of FinTech 2.0"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "0c980c140e45fd74",
+        "company": "Launchpad",
+        "title": "LAUNCHPAD Is Built to Connect Emerging Artists With Southeast Asia Audiences",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "An unrelated arts programme using the word."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.8,
+          "rationale": "emerging artists, Southeast Asia audiences, connection implied"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "46a1dbf17643466a",
+        "company": "Lemonade",
+        "title": "Lemonade Inc (LMND) Stock Price & News - Google Finance",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "note": "Stock-quote directory page."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "confidence": 0.8,
+          "rationale": "sector and context terms match"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "1e6bf97bdcdbb9ff",
+        "company": "Peak",
+        "title": "Japan's Nikkei scales record peak as AI shares track US chip rally",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "Common-noun use: the Nikkei at a record peak."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "confidence": 0.8,
+          "rationale": "Decision intelligence sector mentioned, but no direct mention of Peak"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "3e348d7fe13b9550",
+        "company": "Quantum Machines",
+        "title": "Quantum Machines Highlights Real-Time Control Strategy for Fault-Tolerant Quantum Computing",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "note": "THE AD-31 RECOVERY CASE. Genuine Quantum Machines coverage, technical in tone with no clear valence. The old hard reject lost this."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.9,
+          "rationale": "sector and context terms match"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "15fc8dbf9935ba37",
+        "company": "Rewire",
+        "title": "Sky News Australia. . Sky News host James Morrow questions whether oil markets will \"rewire themselves\" in the wake of escalating US-Iran tensions.",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "The verb rewire, in an oil-markets segment."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0,
+          "rationale": "Sector mismatch, unrelated topic"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "a0e541fcfde052f1",
+        "company": "Ro",
+        "title": "Chugai Ro Co., Ltd. Provides Dividend Guidance for the Fiscal Year Ending March 31, 2027",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "Chugai Ro, a Japanese industrial furnace maker."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 1,
+          "rationale": "Company name and sector match"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "046baf72df3b089f",
+        "company": "Shield",
+        "title": "Shield AI: Innovation X Advisors Participating In $1.5 Billion Series G At $12.7 Billion Valuation",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "Shield AI, a US defence autonomy company. Not the communications-compliance Shield. A strong decoy."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.9,
+          "rationale": "sector and context terms match, funding round and valuation mentioned"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "1777a74d0bee4303",
+        "company": "Spot AI",
+        "title": "Exploring Ways to Stop Crime on the Spot",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "On the spot, an idiom."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "confidence": 0.8,
+          "rationale": "Company name mentioned in context of law enforcement"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "0bcb0d337e1d309a",
+        "company": "Stripe",
+        "title": "Stripe Eyes $10 Billion Deal for AI Model Marketplace OpenRouter",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Major acquisition move."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "confidence": 0.8,
+          "rationale": "Sector and context terms match, but no direct mention of Stripe's financials or operations."
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "7c344a8f57f24641",
+        "company": "Arrow Global",
+        "title": "Arrow Global appoints CEO of MGA Solutions",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "UNCERTAIN - same Arrow Global question as item 32. If it is the portfolio company, this is a routine appointment: relevant:true / neutral."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "confidence": 0.8,
+          "rationale": "Company name matches, but unrelated sector and context"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "1022f81956cb0e22",
+        "company": "Astra",
+        "title": "\"World's confidence increasing towards India's defence equipment\": PM Modi highlights BrahMos, Astra deal with Indonesia",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "India's Astra missile."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.5,
+          "rationale": "Company name mentioned but context unrelated to pharma sector"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "5b68ee631da73d41",
+        "company": "Greenlight",
+        "title": "Dow Credit Union launches partnership with Greenlight to help families teach kids about money",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Partnership. Same Greenlight identity assumption as item 34."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.5,
+          "rationale": "Different company and unrelated sector"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "2fafa90278824c96",
+        "company": "Harvey",
+        "title": "Broseta partners with Harvey on AI integration",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Customer win."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.9,
+          "rationale": "Partnership with a major player in the sector"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "02f8d9f09a65c8cb",
+        "company": "Cyabra",
+        "title": "Cyabra, Inc. (NASDAQ: CYAB) cuts stockholder meeting quorum to 33 1/3%",
+        "stratum": "negative-signal",
+        "gold": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "note": "Procedural governance change; the word cuts is what the sampler matched, not the meaning."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "negative",
+          "confidence": 0.8,
+          "rationale": "quorum reduction implies difficulty in reaching consensus"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "7467db23090debfe",
+        "company": "Innoviz",
+        "title": "Trending Industry Today: Innoviz Technologies Leads Losses In Lidar Technology Stocks",
+        "stratum": "negative-signal",
+        "gold": {
+          "relevant": true,
+          "sentiment": "negative",
+          "note": "Leads losses among peers."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "negative",
+          "confidence": 0.8,
+          "rationale": "Lidar technology stocks, Innoviz Technologies mentioned"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "010cf2b35b8c1ae3",
+        "company": "Lemonade",
+        "title": "Lemonade (NYSE:LMND) Beats Q2 CY2026 Sales Expectations But Stock Drops 15.1%",
+        "stratum": "negative-signal",
+        "gold": {
+          "relevant": true,
+          "sentiment": "negative",
+          "note": "MIXED: beat on sales but the stock fell 15%. Investor lens takes the drop."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "negative",
+          "confidence": 0.8,
+          "rationale": "beats expectations but stock drops"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "c02f7f5ef83a6984",
+        "company": "Peak",
+        "title": "AI boom turns into gloom: South Korea slips into bear market, falls 20% from peak",
+        "stratum": "negative-signal",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "Common-noun use: 20% from peak."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "negative",
+          "confidence": 0.8,
+          "rationale": "sector and context terms match"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "068e1bce8eed7fcc",
+        "company": "Ro",
+        "title": "Ro Hair Loss Review: Find Out How Ro Compares to Other Brands",
+        "stratum": "negative-signal",
+        "gold": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "note": "Genuinely about Ro the telehealth company; a comparison review with no headline valence."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.5,
+          "rationale": "Different company and unrelated sector"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "1fd75cf5dd08c21b",
+        "company": "SpaceX",
+        "title": "Musk's bad week: Tesla suffers worst slump since 2022, SpaceX drops ahead of Starship test flight",
+        "stratum": "negative-signal",
+        "gold": {
+          "relevant": true,
+          "sentiment": "negative",
+          "note": "Explicitly a bad week; SpaceX valuation drop."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "negative",
+          "confidence": 0.8,
+          "rationale": "Musk and SpaceX mentioned, but not in a positive context"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "5eeeb9ab0c1a6065",
+        "company": "Spot AI",
+        "title": "Humans trained to spot AI faces in battle against deepfake fraud",
+        "stratum": "negative-signal",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "The verb spot, about spotting AI faces."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.8,
+          "rationale": "AI-focused, company name mentioned, positive context"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "35825ce5dd065dfa",
+        "company": "Ro",
+        "title": "Chugai Ro Swings to Quarterly Loss but Plans Higher Dividend Despite Profit Forecast Cut",
+        "stratum": "negative-signal",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "Chugai Ro again, not Ro the telehealth company."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "negative",
+          "confidence": 0.8,
+          "rationale": "sector and context terms match, negative outcome for the company"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      }
+    ],
+    "qwen2.5:3b-instruct": [
+      {
+        "id": "019c4b565e8ddae5",
+        "company": "Cyabra",
+        "title": "Cyabra Ord Shs (CYAB) Balance Sheet",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "note": "Factual directory/financial-data page. Rubric: factual listing."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 1,
+          "rationale": "Balance Sheet is a financial term not related to Cyabra."
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "01d2226065c993ac",
+        "company": "Hailo",
+        "title": "ICYMI Ep70: Northern.tech, Atlas Data Storage, imec, Microchip, Hailo",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "note": "Passing mention in a multi-company roundup."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 1,
+          "rationale": "Hailo is not mentioned in a way that indicates any news about the company."
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "047f786341192935",
+        "company": "Innoviz",
+        "title": "Innoviz Technologies to Raise $30 Million From Registered Share Offering",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "note": "JUDGEMENT CALL: a registered direct offering secures capital but is dilutive and often priced at a discount. Read as a financing fact, not a win or a loss."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "confidence": 1,
+          "rationale": "registered share offering is routine and neutral for investors"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "4e44a654bfd41d4a",
+        "company": "Morphisec",
+        "title": "See Prevention-First Ransomware Defense in Action: Join the Morphisec Live Demo",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "note": "Vendor webinar promotion, not press coverage. Arguably should not be a mention at all."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "confidence": 0.95,
+          "rationale": "Morphisec and ransomware defense mentioned without bias"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "07ca35c00e302932",
+        "company": "OpenEvidence",
+        "title": "OpenEvidence reportedly eyes $200M raise at $20B valuation, signaling AI healthcare's breakneck growth",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Funding at a step-up valuation."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 1,
+          "rationale": "OpenEvidence is not mentioned in the headline."
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "c4a8cd1c77c937d8",
+        "company": "Wayup",
+        "title": "The home in a gated community designed as builder's personal residence has many family friendly amenities and luxurious standout features. Photo provided by WayUp Media Check link in bio to see more photos",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "WayUp Media, a real-estate photo credit. Different entity."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 1,
+          "rationale": "No mention of Wayup or HR tech sector."
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "07ada07e084218c9",
+        "company": "ZutaCore",
+        "title": "Liquid cooling co ZutaCore raises $100M",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Funding round."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.95,
+          "rationale": "ZutaCore raises $100M"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "074b40cc95872258",
+        "company": "Cyabra",
+        "title": "Maxim Group Initiates Cyabra(CYAB.US) With Buy Rating, Announces Target Price $1",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Favourable analyst initiation."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.95,
+          "rationale": "buy rating and target price announcement"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "0669c09d0e07d721",
+        "company": "Hailo",
+        "title": "AIS-1000 AI Surveillance Station – A $3,640 NDAA and TAA-compliant AI box based on Raspberry Pi 5 and Hailo-8L",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Third-party product built on Hailo-8L: a design win."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.95,
+          "rationale": "Hailo mentioned but not related to the company or its sector."
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "141ef90dc4a325bf",
+        "company": "Innoviz",
+        "title": "Innoviz secures $3.5M in defense orders for LiDAR systems By Investing.com",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Customer/defence orders."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.95,
+          "rationale": "Innoviz secures $3.5M in defense orders for LiDAR systems - no mention of Innoviz Technologies"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "65ed5908eee55562",
+        "company": "Morphisec",
+        "title": "Morphisec Launches AI Usage Control: Governing Shadow and Sanctioned AI on the Endpoint",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Product launch."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "confidence": 1,
+          "rationale": "Morphisec is mentioned in relation to a new product launch."
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "0a5b8889e8677578",
+        "company": "OpenEvidence",
+        "title": "A new medical AI study found the same flaw in OpenEvidence, OpenAI, Anthropic, and Doximity",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "negative",
+          "note": "Company named among products found to share a flaw."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.95,
+          "rationale": "OpenEvidence mentioned but not related to the main topic"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "fda6a70f242c362e",
+        "company": "Wayup",
+        "title": "adidas and WayUp Sports Partner with the Egyptian Handball Federation to Support the Future of Egyptian Handball",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "WayUp Sports, an Egyptian handball sponsorship. Different entity."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.95,
+          "rationale": "adidas and WayUp Sports Partner with the Egyptian Handball Federation"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "096fc0993b62b113",
+        "company": "ZutaCore",
+        "title": "ZutaCore: $100 Million Series C Raised To Expand AI Data Center Cooling Platform",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Funding round."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.95,
+          "rationale": "Series C funding for expansion"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "0a8f2ef35ce2a173",
+        "company": "Cyabra",
+        "title": "Maxim Group initiates Cyabra stock with buy rating on AI growth",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Favourable analyst initiation."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.95,
+          "rationale": "buy rating for Cyabra stock"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "240e65756b2a50d3",
+        "company": "Hailo",
+        "title": "Microchip To Acquire Edge AI Processor Company Hailo",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Acquisition: a favourable exit from an investor's view."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "negative",
+          "confidence": 1,
+          "rationale": "Microchip acquisition of Hailo Technologies"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "17e6259ecc5cbb09",
+        "company": "Innoviz",
+        "title": "Innoviz Technologies (NASDAQ: INVZ) prices $30 million registered direct deal",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "note": "Same event as item 2; same reasoning."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "confidence": 1,
+          "rationale": "registered direct offering is routine and neutral for investors"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "870422b1f773a31e",
+        "company": "Morphisec",
+        "title": "Morphisec Launches AI Usage Control to Govern Enterprise AI Agents and Identities",
+        "stratum": "kept-distinctive",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Product launch."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "confidence": 1,
+          "rationale": "Morphisec Launches AI Usage Control"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "19b4ac5d78ec9c85",
+        "company": "Cerebras",
+        "title": "Jim Cramer on Cerebras Systems: “I Warned You to Stay Away From This One”",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": true,
+          "sentiment": "negative",
+          "note": "Negative pundit coverage."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 1,
+          "rationale": "Jim Cramer's warning to stay away"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "1cbe01d9a2bdf140",
+        "company": "Harvey",
+        "title": "Goldman Sachs, JPMorgan Invest In Legal AI Co. Harvey",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Investment from major banks."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.95,
+          "rationale": "Goldman Sachs and JPMorgan investing in Harvey"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "0afe46cb7fba7102",
+        "company": "Launchpad",
+        "title": "The NBA is expanding its Launchpad startup program to …",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "The NBA's own Launchpad programme. Different entity."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 1,
+          "rationale": "NBA and Launchpad are unrelated terms."
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "0dc25b124e4482cb",
+        "company": "Lemonade",
+        "title": "Lemonade Is Keeping More of Its Own Insurance Risk. Is That a Sign of Confidence or a Red Flag?",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "note": "Explicitly two-sided framing: confidence or red flag. Rubric: balanced reporting."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "confidence": 0.95,
+          "rationale": "Lemonade is keeping more of its own insurance risk"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "4bdb6a6c283eff7a",
+        "company": "Peak",
+        "title": "Peak AI upcoming launch, news and token information",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "A crypto token called Peak AI, not the decision-intelligence company."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.95,
+          "rationale": "Peak mentioned but not related to the company"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "837902b1b910d814",
+        "company": "Shield",
+        "title": "Green Shield FC - Laugu United FC Live - S-League: Football Scores & Highlights - 25/07/2026",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "Green Shield FC, a football club."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 1,
+          "rationale": "S-League football scores and highlights, no mention of Shield."
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "07c803fdb680959b",
+        "company": "SpaceX",
+        "title": "SpaceX stock keeps sliding. What to do if you own shares.",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": true,
+          "sentiment": "negative",
+          "note": "Valuation decline."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 1,
+          "rationale": "SpaceX stock keeps sliding"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "111488949acf4aa1",
+        "company": "Stripe",
+        "title": "Stripe’s PayPal Bid Shows Private Fintech Has Become Powerful Enough To Buy Public Giants",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Reads as a strength signal for Stripe."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 1,
+          "rationale": "Stripe's acquisition by a fintech company"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "5553f7d7eb2df893",
+        "company": "Together AI",
+        "title": "Together AI Highlights Scalable Long-Running AI Agent Architecture",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "note": "Technical thought-leadership content, no clear valence."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "confidence": 1,
+          "rationale": "Highlights scalable long-running architecture without positive/negative context"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "20e36e4794b88557",
+        "company": "Cerebras",
+        "title": "Cerebras and Upstage Bring Ultra-Fast AI to South Korea",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Partnership and market expansion."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.95,
+          "rationale": "Cerebras and Upstage Bring Ultra-Fast AI to South Korea mentions Cerebras but is not about…"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "37a4119caa14ae6c",
+        "company": "Harvey",
+        "title": "Harvey Aligns With Toronto Maple Leafs in Multi-Year Legal AI Partnership",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Multi-year partnership / customer win."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.95,
+          "rationale": "Legal AI partnership does not mention Harvey directly or negatively."
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "1e1a39f8a58c89b4",
+        "company": "Launchpad",
+        "title": "Asia’s Largest Startup Launchpad by Eureka (India)",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "Generic use of the word launchpad by an Indian programme."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "confidence": 1,
+          "rationale": "Asia's largest startup Launchpad by Eureka (India)"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "16158f865775c0d2",
+        "company": "Lemonade",
+        "title": "Lemonade Pet Insurance Review 2026",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "note": "Product review listing, no valence in the headline."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 1,
+          "rationale": "Lemonade refers to a different company in the insurance technology sector."
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "7f543ad0f9721ce0",
+        "company": "Peak",
+        "title": "Peak AI Trading Signals — Arthur Hayes Liquidates Altcoin Positions",
+        "stratum": "kept-ambiguous",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "Crypto trading-signal content."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.95,
+          "rationale": "Arthur Hayes Liquidates Altcoin Positions"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "045baa6e7e07b34a",
+        "company": "Arrow Global",
+        "title": "Deal Roundup: CD&R agrees Indicor units sale for $5bn, CPPIB exits loan portfolio to Arrow Global, Fortress",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "UNCERTAIN - this is Arrow Global the UK credit manager. If that IS the portfolio company, flip to relevant:true / neutral."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 1,
+          "rationale": "Arrow Global is not mentioned in a positive or negative context."
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "04059aee896d9fab",
+        "company": "Astra",
+        "title": "Ad ASTRA Community Workshop: Detailed Schedule Available",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "Ad Astra community workshop. Different entity."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.95,
+          "rationale": "Ad ASTRA is not related to Astra in the pharmaceutical sector."
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "2969a1a84ceee3b4",
+        "company": "Greenlight",
+        "title": "Greenlight Financial CUSO Hits 100 Credit Union Milestone to Scale Family Banking",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Growth milestone. UNCERTAIN: assumes the portfolio Greenlight is the family-banking fintech."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "confidence": 1,
+          "rationale": "Greenlight Financial CUSO"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "12dc96db949e8d91",
+        "company": "Harvey",
+        "title": "Harvey Announces Investments From JP Morgan, Goldman Sachs Funds",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Same investment event as item 19, different outlet."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 1,
+          "rationale": "JP Morgan, Goldman Sachs investments are neutral for Harvey as a company."
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "b0231da1856213e9",
+        "company": "Hub Security",
+        "title": "Cyber firm HUB Security consolidates every 20 shares into one",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": true,
+          "sentiment": "negative",
+          "note": "A 20-to-1 reverse split, typically a listing-compliance signal."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "confidence": 1,
+          "rationale": "consolidate shares"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "4899279107e3cecc",
+        "company": "Island",
+        "title": "Island Brings the First Purpose-Built Workspace for SMBs to the Pax8 Marketplace",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Product launch into a new distribution channel."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.95,
+          "rationale": "Pax8 Marketplace and SMBs, no mention of Island company"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "09c94cde7dbf1ae3",
+        "company": "Kini",
+        "title": "FinTech 2.0 must move beyond EMI-led products, says RBIH CEO Sahil Kini",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "Sahil Kini is a person's surname."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 1,
+          "rationale": "RBIH CEO Sahil Kini, not related to the company Kini."
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "0c980c140e45fd74",
+        "company": "Launchpad",
+        "title": "LAUNCHPAD Is Built to Connect Emerging Artists With Southeast Asia Audiences",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "An unrelated arts programme using the word."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.95,
+          "rationale": "Launchpad is built to connect emerging artists with Southeast Asia audiences"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "46a1dbf17643466a",
+        "company": "Lemonade",
+        "title": "Lemonade Inc (LMND) Stock Price & News - Google Finance",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "note": "Stock-quote directory page."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 1,
+          "rationale": "Lemonade Inc is a company name, but the headline mentions another use of 'Lemonade'."
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "1e6bf97bdcdbb9ff",
+        "company": "Peak",
+        "title": "Japan's Nikkei scales record peak as AI shares track US chip rally",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "Common-noun use: the Nikkei at a record peak."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 1,
+          "rationale": "Nikkei and AI are unrelated to the company Peak in decision intelligence."
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "3e348d7fe13b9550",
+        "company": "Quantum Machines",
+        "title": "Quantum Machines Highlights Real-Time Control Strategy for Fault-Tolerant Quantum Computing",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "note": "THE AD-31 RECOVERY CASE. Genuine Quantum Machines coverage, technical in tone with no clear valence. The old hard reject lost this."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "confidence": 1,
+          "rationale": "Highlights real-time control strategy for fault-tolerant quantum computing"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "15fc8dbf9935ba37",
+        "company": "Rewire",
+        "title": "Sky News Australia. . Sky News host James Morrow questions whether oil markets will \"rewire themselves\" in the wake of escalating US-Iran tensions.",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "The verb rewire, in an oil-markets segment."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 1,
+          "rationale": "Sky News Australia and James Morrow not related to Rewire/ReWire Networks"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "a0e541fcfde052f1",
+        "company": "Ro",
+        "title": "Chugai Ro Co., Ltd. Provides Dividend Guidance for the Fiscal Year Ending March 31, 2027",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "Chugai Ro, a Japanese industrial furnace maker."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 1,
+          "rationale": "Chugai Ro Co., Ltd. is not related to telehealth or the company Ro."
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "046baf72df3b089f",
+        "company": "Shield",
+        "title": "Shield AI: Innovation X Advisors Participating In $1.5 Billion Series G At $12.7 Billion Valuation",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "Shield AI, a US defence autonomy company. Not the communications-compliance Shield. A strong decoy."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "confidence": 0.95,
+          "rationale": "Shield AI and participation in a large funding round"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "1777a74d0bee4303",
+        "company": "Spot AI",
+        "title": "Exploring Ways to Stop Crime on the Spot",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "On the spot, an idiom."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 1,
+          "rationale": "Exploring Ways to Stop Crime"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "0bcb0d337e1d309a",
+        "company": "Stripe",
+        "title": "Stripe Eyes $10 Billion Deal for AI Model Marketplace OpenRouter",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Major acquisition move."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.95,
+          "rationale": "Stripe is not mentioned in the headline and the deal is about a marketplace, not…"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "7c344a8f57f24641",
+        "company": "Arrow Global",
+        "title": "Arrow Global appoints CEO of MGA Solutions",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "UNCERTAIN - same Arrow Global question as item 32. If it is the portfolio company, this is a routine appointment: relevant:true / neutral."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.95,
+          "rationale": "Arrow Global is not mentioned or implied in the headline."
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "1022f81956cb0e22",
+        "company": "Astra",
+        "title": "\"World's confidence increasing towards India's defence equipment\": PM Modi highlights BrahMos, Astra deal with Indonesia",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "India's Astra missile."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.95,
+          "rationale": "PM Modi and defense equipment in India"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "5b68ee631da73d41",
+        "company": "Greenlight",
+        "title": "Dow Credit Union launches partnership with Greenlight to help families teach kids about money",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Partnership. Same Greenlight identity assumption as item 34."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.95,
+          "rationale": "Dow Credit Union and Greenlight Partnership, no mention of the company."
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "2fafa90278824c96",
+        "company": "Harvey",
+        "title": "Broseta partners with Harvey on AI integration",
+        "stratum": "softpass",
+        "gold": {
+          "relevant": true,
+          "sentiment": "positive",
+          "note": "Customer win."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 1,
+          "rationale": "Broseta and Harvey partnership mentioned"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "02f8d9f09a65c8cb",
+        "company": "Cyabra",
+        "title": "Cyabra, Inc. (NASDAQ: CYAB) cuts stockholder meeting quorum to 33 1/3%",
+        "stratum": "negative-signal",
+        "gold": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "note": "Procedural governance change; the word cuts is what the sampler matched, not the meaning."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "negative",
+          "confidence": 0.95,
+          "rationale": "Cyabra cuts stockholder meeting quorum, implying dilution or loss of control"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "7467db23090debfe",
+        "company": "Innoviz",
+        "title": "Trending Industry Today: Innoviz Technologies Leads Losses In Lidar Technology Stocks",
+        "stratum": "negative-signal",
+        "gold": {
+          "relevant": true,
+          "sentiment": "negative",
+          "note": "Leads losses among peers."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 1,
+          "rationale": "Innoviz Technologies leads losses in lidar technology stocks"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "010cf2b35b8c1ae3",
+        "company": "Lemonade",
+        "title": "Lemonade (NYSE:LMND) Beats Q2 CY2026 Sales Expectations But Stock Drops 15.1%",
+        "stratum": "negative-signal",
+        "gold": {
+          "relevant": true,
+          "sentiment": "negative",
+          "note": "MIXED: beat on sales but the stock fell 15%. Investor lens takes the drop."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "negative",
+          "confidence": 1,
+          "rationale": "stock drops after beating expectations"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "c02f7f5ef83a6984",
+        "company": "Peak",
+        "title": "AI boom turns into gloom: South Korea slips into bear market, falls 20% from peak",
+        "stratum": "negative-signal",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "Common-noun use: 20% from peak."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 1,
+          "rationale": "AI boom turns into gloom, no mention of Peak or any specific company performance."
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "068e1bce8eed7fcc",
+        "company": "Ro",
+        "title": "Ro Hair Loss Review: Find Out How Ro Compares to Other Brands",
+        "stratum": "negative-signal",
+        "gold": {
+          "relevant": true,
+          "sentiment": "neutral",
+          "note": "Genuinely about Ro the telehealth company; a comparison review with no headline valence."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.95,
+          "rationale": "Ro in a review context without company-specific details"
+        },
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
+      },
+      {
+        "id": "1fd75cf5dd08c21b",
+        "company": "SpaceX",
+        "title": "Musk's bad week: Tesla suffers worst slump since 2022, SpaceX drops ahead of Starship test flight",
+        "stratum": "negative-signal",
+        "gold": {
+          "relevant": true,
+          "sentiment": "negative",
+          "note": "Explicitly a bad week; SpaceX valuation drop."
+        },
+        "predicted": {
+          "relevant": true,
+          "sentiment": "negative",
+          "confidence": 1,
+          "rationale": "Musk's bad week: SpaceX drops"
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "5eeeb9ab0c1a6065",
+        "company": "Spot AI",
+        "title": "Humans trained to spot AI faces in battle against deepfake fraud",
+        "stratum": "negative-signal",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "The verb spot, about spotting AI faces."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.95,
+          "rationale": "Human training for AI detection, no company-specific mention."
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      },
+      {
+        "id": "35825ce5dd065dfa",
+        "company": "Ro",
+        "title": "Chugai Ro Swings to Quarterly Loss but Plans Higher Dividend Despite Profit Forecast Cut",
+        "stratum": "negative-signal",
+        "gold": {
+          "relevant": false,
+          "sentiment": null,
+          "note": "Chugai Ro again, not Ro the telehealth company."
+        },
+        "predicted": {
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.95,
+          "rationale": "Chugai is not related to telehealth or the company Ro."
+        },
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
+      }
+    ]
+  }
+}

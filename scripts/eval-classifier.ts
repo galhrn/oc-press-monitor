@@ -78,6 +78,7 @@ if (!gold.labelling.status.startsWith('APPROVED')) {
   const contextFor = (company: string) => registry.find((c) => c.name === company);
 
   const results: BakeOffResult[] = [];
+  const byModel: Record<string, Array<Record<string, unknown>>> = {};
 
   for (const model of models) {
     const client = new OllamaClient({
@@ -105,6 +106,9 @@ if (!gold.labelling.status.startsWith('APPROVED')) {
     const pairs: Array<{ gold: GoldItem['label']; predicted: PredictedLabel | null }> = new Array(
       gold.items.length,
     );
+    // Per-item predictions are kept, not just the aggregate. A bake-off table tells you a
+    // model is wrong; only the item list tells you *how*, which is what a fix is built from.
+    const perItem: Array<Record<string, unknown>> = new Array(gold.items.length);
 
     const startedAt = Date.now();
     await Promise.all(
@@ -131,9 +135,33 @@ if (!gold.labelling.status.startsWith('APPROVED')) {
                 sentiment: result.classification.sentiment,
               },
             };
+            perItem[index] = {
+              id: item.id,
+              company: item.company,
+              title: item.title,
+              stratum: item.stratum,
+              gold: item.label,
+              predicted: {
+                relevant: result.classification.relevant,
+                sentiment: result.classification.sentiment,
+                confidence: result.classification.confidence,
+                rationale: result.classification.rationale,
+              },
+              relevanceCorrect: result.classification.relevant === item.label.relevant,
+              sentimentCorrect: result.classification.sentiment === item.label.sentiment,
+            };
           } catch (thrown) {
             log.warn({ item: item.id, err: toError(thrown).message }, 'classification failed');
             pairs[index] = { gold: item.label, predicted: null };
+            perItem[index] = {
+              id: item.id,
+              company: item.company,
+              title: item.title,
+              stratum: item.stratum,
+              gold: item.label,
+              predicted: null,
+              error: toError(thrown).message,
+            };
           }
         }),
       ),
@@ -149,6 +177,7 @@ if (!gold.labelling.status.startsWith('APPROVED')) {
         wallMs,
       }),
     );
+    byModel[model] = perItem;
   }
 
   const line = (r: BakeOffResult): string =>
@@ -201,7 +230,7 @@ if (!gold.labelling.status.startsWith('APPROVED')) {
   mkdirSync(dirname(resolve(out)), { recursive: true });
   writeFileSync(
     out,
-    `${JSON.stringify({ runId, promptVersion: promptVersionTag(), goldItems: gold.items.length, results, ship: ship.model }, null, 2)}\n`,
+    `${JSON.stringify({ runId, promptVersion: promptVersionTag(), goldItems: gold.items.length, results, ship: ship.model, perItem: byModel }, null, 2)}\n`,
     'utf8',
   );
   console.error(`  written -> ${out}\n`);
