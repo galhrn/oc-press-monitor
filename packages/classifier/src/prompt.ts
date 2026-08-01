@@ -22,7 +22,7 @@ import { fileURLToPath } from 'node:url';
 import { sha256 } from '@oc/core';
 
 /** The prompt shipped by default. v1 is kept so the bake-off can compare them. */
-export const DEFAULT_PROMPT_VERSION = 'classify.v2';
+export const DEFAULT_PROMPT_VERSION = 'classify.v1';
 
 export const promptPath = (version: string = DEFAULT_PROMPT_VERSION): string =>
   fileURLToPath(new URL(`../../../prompts/${version}.md`, import.meta.url));
