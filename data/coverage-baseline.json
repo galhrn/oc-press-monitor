@@ -1,0 +1,747 @@
+{
+  "generatedFor": "human-approved",
+  "windowDays": 90,
+  "rows": [
+    {
+      "name": "Harvey",
+      "fetched": 25,
+      "kept": 12,
+      "ambiguity": "critical",
+      "reasons": {
+        "kept": 12,
+        "blocked-domain": 0,
+        "no-name-match": 6,
+        "negative-keyword": 0,
+        "missing-qualifier": 7
+      }
+    },
+    {
+      "name": "Stripe",
+      "fetched": 25,
+      "kept": 11,
+      "ambiguity": "high",
+      "reasons": {
+        "kept": 11,
+        "blocked-domain": 0,
+        "no-name-match": 2,
+        "negative-keyword": 0,
+        "missing-qualifier": 12
+      }
+    },
+    {
+      "name": "Cerebras",
+      "fetched": 25,
+      "kept": 23,
+      "ambiguity": "high",
+      "reasons": {
+        "kept": 23,
+        "blocked-domain": 0,
+        "no-name-match": 2,
+        "negative-keyword": 0,
+        "missing-qualifier": 0
+      }
+    },
+    {
+      "name": "Together AI",
+      "fetched": 25,
+      "kept": 20,
+      "ambiguity": "critical",
+      "reasons": {
+        "kept": 20,
+        "blocked-domain": 0,
+        "no-name-match": 5,
+        "negative-keyword": 0,
+        "missing-qualifier": 0
+      }
+    },
+    {
+      "name": "Glean",
+      "fetched": 25,
+      "kept": 1,
+      "ambiguity": "high",
+      "reasons": {
+        "kept": 1,
+        "blocked-domain": 0,
+        "no-name-match": 9,
+        "negative-keyword": 0,
+        "missing-qualifier": 15
+      }
+    },
+    {
+      "name": "SpaceX",
+      "fetched": 25,
+      "kept": 23,
+      "ambiguity": "high",
+      "reasons": {
+        "kept": 23,
+        "blocked-domain": 0,
+        "no-name-match": 2,
+        "negative-keyword": 0,
+        "missing-qualifier": 0
+      }
+    },
+    {
+      "name": "Lambda (lambda.ai)",
+      "fetched": 23,
+      "kept": 1,
+      "ambiguity": "critical",
+      "reasons": {
+        "kept": 1,
+        "blocked-domain": 0,
+        "no-name-match": 10,
+        "negative-keyword": 0,
+        "missing-qualifier": 12
+      }
+    },
+    {
+      "name": "SSI (Safe Superintelligence)",
+      "fetched": 25,
+      "kept": 22,
+      "ambiguity": "critical",
+      "reasons": {
+        "kept": 22,
+        "blocked-domain": 0,
+        "no-name-match": 3,
+        "negative-keyword": 0,
+        "missing-qualifier": 0
+      }
+    },
+    {
+      "name": "xAI",
+      "fetched": 25,
+      "kept": 19,
+      "ambiguity": "high",
+      "reasons": {
+        "kept": 19,
+        "blocked-domain": 0,
+        "no-name-match": 5,
+        "negative-keyword": 0,
+        "missing-qualifier": 1
+      }
+    },
+    {
+      "name": "Island",
+      "fetched": 25,
+      "kept": 0,
+      "ambiguity": "critical",
+      "reasons": {
+        "kept": 0,
+        "blocked-domain": 0,
+        "no-name-match": 18,
+        "negative-keyword": 1,
+        "missing-qualifier": 6
+      }
+    },
+    {
+      "name": "Databricks",
+      "fetched": 25,
+      "kept": 16,
+      "ambiguity": "high",
+      "reasons": {
+        "kept": 16,
+        "blocked-domain": 0,
+        "no-name-match": 9,
+        "negative-keyword": 0,
+        "missing-qualifier": 0
+      }
+    },
+    {
+      "name": "Scale AI",
+      "fetched": 25,
+      "kept": 1,
+      "ambiguity": "high",
+      "reasons": {
+        "kept": 1,
+        "blocked-domain": 0,
+        "no-name-match": 2,
+        "negative-keyword": 11,
+        "missing-qualifier": 11
+      }
+    },
+    {
+      "name": "Spot AI",
+      "fetched": 16,
+      "kept": 0,
+      "ambiguity": "high",
+      "reasons": {
+        "kept": 0,
+        "blocked-domain": 0,
+        "no-name-match": 5,
+        "negative-keyword": 0,
+        "missing-qualifier": 11
+      }
+    },
+    {
+      "name": "Groq",
+      "fetched": 25,
+      "kept": 2,
+      "ambiguity": "high",
+      "reasons": {
+        "kept": 2,
+        "blocked-domain": 0,
+        "no-name-match": 7,
+        "negative-keyword": 0,
+        "missing-qualifier": 16
+      }
+    },
+    {
+      "name": "Anthropic",
+      "fetched": 25,
+      "kept": 19,
+      "ambiguity": "high",
+      "reasons": {
+        "kept": 19,
+        "blocked-domain": 0,
+        "no-name-match": 3,
+        "negative-keyword": 0,
+        "missing-qualifier": 3
+      }
+    },
+    {
+      "name": "Bites",
+      "fetched": 1,
+      "kept": 0,
+      "ambiguity": "critical",
+      "reasons": {
+        "kept": 0,
+        "blocked-domain": 0,
+        "no-name-match": 1,
+        "negative-keyword": 0,
+        "missing-qualifier": 0
+      }
+    },
+    {
+      "name": "OneAI",
+      "fetched": 3,
+      "kept": 0,
+      "ambiguity": "high",
+      "reasons": {
+        "kept": 0,
+        "blocked-domain": 0,
+        "no-name-match": 3,
+        "negative-keyword": 0,
+        "missing-qualifier": 0
+      }
+    },
+    {
+      "name": "Neolithics",
+      "fetched": 0,
+      "kept": 0,
+      "ambiguity": "high",
+      "reasons": {
+        "kept": 0,
+        "blocked-domain": 0,
+        "no-name-match": 0,
+        "negative-keyword": 0,
+        "missing-qualifier": 0
+      }
+    },
+    {
+      "name": "Arrow Global",
+      "fetched": 13,
+      "kept": 0,
+      "ambiguity": "high",
+      "reasons": {
+        "kept": 0,
+        "blocked-domain": 0,
+        "no-name-match": 10,
+        "negative-keyword": 0,
+        "missing-qualifier": 3
+      }
+    },
+    {
+      "name": "Air EV",
+      "fetched": 2,
+      "kept": 0,
+      "ambiguity": "critical",
+      "reasons": {
+        "kept": 0,
+        "blocked-domain": 0,
+        "no-name-match": 2,
+        "negative-keyword": 0,
+        "missing-qualifier": 0
+      }
+    },
+    {
+      "name": "Ursa Major",
+      "fetched": 22,
+      "kept": 4,
+      "ambiguity": "high",
+      "reasons": {
+        "kept": 4,
+        "blocked-domain": 0,
+        "no-name-match": 8,
+        "negative-keyword": 0,
+        "missing-qualifier": 10
+      }
+    },
+    {
+      "name": "IQM",
+      "fetched": 25,
+      "kept": 23,
+      "ambiguity": "high",
+      "reasons": {
+        "kept": 23,
+        "blocked-domain": 0,
+        "no-name-match": 0,
+        "negative-keyword": 0,
+        "missing-qualifier": 2
+      }
+    },
+    {
+      "name": "Kini",
+      "fetched": 25,
+      "kept": 0,
+      "ambiguity": "critical",
+      "reasons": {
+        "kept": 0,
+        "blocked-domain": 0,
+        "no-name-match": 22,
+        "negative-keyword": 0,
+        "missing-qualifier": 3
+      }
+    },
+    {
+      "name": "Connected Energy",
+      "fetched": 22,
+      "kept": 0,
+      "ambiguity": "high",
+      "reasons": {
+        "kept": 0,
+        "blocked-domain": 0,
+        "no-name-match": 22,
+        "negative-keyword": 0,
+        "missing-qualifier": 0
+      }
+    },
+    {
+      "name": "Oshi (formerly Plantish)",
+      "fetched": 11,
+      "kept": 0,
+      "ambiguity": "high",
+      "reasons": {
+        "kept": 0,
+        "blocked-domain": 0,
+        "no-name-match": 11,
+        "negative-keyword": 0,
+        "missing-qualifier": 0
+      }
+    },
+    {
+      "name": "AEYE Health",
+      "fetched": 0,
+      "kept": 0,
+      "ambiguity": "high",
+      "reasons": {
+        "kept": 0,
+        "blocked-domain": 0,
+        "no-name-match": 0,
+        "negative-keyword": 0,
+        "missing-qualifier": 0
+      }
+    },
+    {
+      "name": "The EVERY Company",
+      "fetched": 10,
+      "kept": 4,
+      "ambiguity": "critical",
+      "reasons": {
+        "kept": 4,
+        "blocked-domain": 0,
+        "no-name-match": 6,
+        "negative-keyword": 0,
+        "missing-qualifier": 0
+      }
+    },
+    {
+      "name": "Peak",
+      "fetched": 24,
+      "kept": 6,
+      "ambiguity": "critical",
+      "reasons": {
+        "kept": 6,
+        "blocked-domain": 0,
+        "no-name-match": 11,
+        "negative-keyword": 0,
+        "missing-qualifier": 7
+      }
+    },
+    {
+      "name": "Orchard",
+      "fetched": 25,
+      "kept": 3,
+      "ambiguity": "critical",
+      "reasons": {
+        "kept": 3,
+        "blocked-domain": 0,
+        "no-name-match": 14,
+        "negative-keyword": 1,
+        "missing-qualifier": 7
+      }
+    },
+    {
+      "name": "Quantum Machines",
+      "fetched": 25,
+      "kept": 0,
+      "ambiguity": "high",
+      "reasons": {
+        "kept": 0,
+        "blocked-domain": 0,
+        "no-name-match": 17,
+        "negative-keyword": 0,
+        "missing-qualifier": 8
+      }
+    },
+    {
+      "name": "Guild",
+      "fetched": 25,
+      "kept": 1,
+      "ambiguity": "critical",
+      "reasons": {
+        "kept": 1,
+        "blocked-domain": 0,
+        "no-name-match": 11,
+        "negative-keyword": 0,
+        "missing-qualifier": 13
+      }
+    },
+    {
+      "name": "Privateer",
+      "fetched": 2,
+      "kept": 0,
+      "ambiguity": "high",
+      "reasons": {
+        "kept": 0,
+        "blocked-domain": 0,
+        "no-name-match": 0,
+        "negative-keyword": 0,
+        "missing-qualifier": 2
+      }
+    },
+    {
+      "name": "Launchpad",
+      "fetched": 25,
+      "kept": 5,
+      "ambiguity": "critical",
+      "reasons": {
+        "kept": 5,
+        "blocked-domain": 0,
+        "no-name-match": 5,
+        "negative-keyword": 0,
+        "missing-qualifier": 15
+      }
+    },
+    {
+      "name": "Shield",
+      "fetched": 25,
+      "kept": 2,
+      "ambiguity": "critical",
+      "reasons": {
+        "kept": 2,
+        "blocked-domain": 0,
+        "no-name-match": 18,
+        "negative-keyword": 0,
+        "missing-qualifier": 5
+      }
+    },
+    {
+      "name": "Future Family",
+      "fetched": 25,
+      "kept": 0,
+      "ambiguity": "high",
+      "reasons": {
+        "kept": 0,
+        "blocked-domain": 0,
+        "no-name-match": 24,
+        "negative-keyword": 1,
+        "missing-qualifier": 0
+      }
+    },
+    {
+      "name": "Clinch",
+      "fetched": 4,
+      "kept": 0,
+      "ambiguity": "high",
+      "reasons": {
+        "kept": 0,
+        "blocked-domain": 0,
+        "no-name-match": 1,
+        "negative-keyword": 1,
+        "missing-qualifier": 2
+      }
+    },
+    {
+      "name": "Overtime",
+      "fetched": 25,
+      "kept": 5,
+      "ambiguity": "critical",
+      "reasons": {
+        "kept": 5,
+        "blocked-domain": 0,
+        "no-name-match": 19,
+        "negative-keyword": 0,
+        "missing-qualifier": 1
+      }
+    },
+    {
+      "name": "Greenlight",
+      "fetched": 25,
+      "kept": 0,
+      "ambiguity": "critical",
+      "reasons": {
+        "kept": 0,
+        "blocked-domain": 0,
+        "no-name-match": 16,
+        "negative-keyword": 0,
+        "missing-qualifier": 9
+      }
+    },
+    {
+      "name": "MasterClass",
+      "fetched": 25,
+      "kept": 1,
+      "ambiguity": "high",
+      "reasons": {
+        "kept": 1,
+        "blocked-domain": 0,
+        "no-name-match": 13,
+        "negative-keyword": 0,
+        "missing-qualifier": 11
+      }
+    },
+    {
+      "name": "Ro",
+      "fetched": 25,
+      "kept": 0,
+      "ambiguity": "critical",
+      "reasons": {
+        "kept": 0,
+        "blocked-domain": 0,
+        "no-name-match": 21,
+        "negative-keyword": 0,
+        "missing-qualifier": 4
+      }
+    },
+    {
+      "name": "BlueCircle (formerly Trellis)",
+      "fetched": 4,
+      "kept": 0,
+      "ambiguity": "high",
+      "reasons": {
+        "kept": 0,
+        "blocked-domain": 0,
+        "no-name-match": 4,
+        "negative-keyword": 0,
+        "missing-qualifier": 0
+      }
+    },
+    {
+      "name": "Near",
+      "fetched": 16,
+      "kept": 0,
+      "ambiguity": "critical",
+      "reasons": {
+        "kept": 0,
+        "blocked-domain": 0,
+        "no-name-match": 16,
+        "negative-keyword": 0,
+        "missing-qualifier": 0
+      }
+    },
+    {
+      "name": "Wave",
+      "fetched": 25,
+      "kept": 6,
+      "ambiguity": "critical",
+      "reasons": {
+        "kept": 6,
+        "blocked-domain": 0,
+        "no-name-match": 0,
+        "negative-keyword": 7,
+        "missing-qualifier": 12
+      }
+    },
+    {
+      "name": "Verse.ai",
+      "fetched": 0,
+      "kept": 0,
+      "ambiguity": "high",
+      "reasons": {
+        "kept": 0,
+        "blocked-domain": 0,
+        "no-name-match": 0,
+        "negative-keyword": 0,
+        "missing-qualifier": 0
+      }
+    },
+    {
+      "name": "Fireblade",
+      "fetched": 0,
+      "kept": 0,
+      "ambiguity": "high",
+      "reasons": {
+        "kept": 0,
+        "blocked-domain": 0,
+        "no-name-match": 0,
+        "negative-keyword": 0,
+        "missing-qualifier": 0
+      }
+    },
+    {
+      "name": "MST",
+      "fetched": 25,
+      "kept": 4,
+      "ambiguity": "critical",
+      "reasons": {
+        "kept": 4,
+        "blocked-domain": 0,
+        "no-name-match": 19,
+        "negative-keyword": 0,
+        "missing-qualifier": 2
+      }
+    },
+    {
+      "name": "Powwow",
+      "fetched": 25,
+      "kept": 1,
+      "ambiguity": "high",
+      "reasons": {
+        "kept": 1,
+        "blocked-domain": 0,
+        "no-name-match": 13,
+        "negative-keyword": 1,
+        "missing-qualifier": 10
+      }
+    },
+    {
+      "name": "Astra",
+      "fetched": 25,
+      "kept": 0,
+      "ambiguity": "critical",
+      "reasons": {
+        "kept": 0,
+        "blocked-domain": 0,
+        "no-name-match": 6,
+        "negative-keyword": 1,
+        "missing-qualifier": 18
+      }
+    },
+    {
+      "name": "Hub Security",
+      "fetched": 5,
+      "kept": 0,
+      "ambiguity": "high",
+      "reasons": {
+        "kept": 0,
+        "blocked-domain": 0,
+        "no-name-match": 4,
+        "negative-keyword": 0,
+        "missing-qualifier": 1
+      }
+    },
+    {
+      "name": "Tala",
+      "fetched": 25,
+      "kept": 1,
+      "ambiguity": "high",
+      "reasons": {
+        "kept": 1,
+        "blocked-domain": 0,
+        "no-name-match": 9,
+        "negative-keyword": 0,
+        "missing-qualifier": 15
+      }
+    },
+    {
+      "name": "Signals Analytics",
+      "fetched": 3,
+      "kept": 0,
+      "ambiguity": "high",
+      "reasons": {
+        "kept": 0,
+        "blocked-domain": 0,
+        "no-name-match": 3,
+        "negative-keyword": 0,
+        "missing-qualifier": 0
+      }
+    },
+    {
+      "name": "Casper",
+      "fetched": 25,
+      "kept": 3,
+      "ambiguity": "critical",
+      "reasons": {
+        "kept": 3,
+        "blocked-domain": 0,
+        "no-name-match": 6,
+        "negative-keyword": 3,
+        "missing-qualifier": 13
+      }
+    },
+    {
+      "name": "CB4",
+      "fetched": 0,
+      "kept": 0,
+      "ambiguity": "critical",
+      "reasons": {
+        "kept": 0,
+        "blocked-domain": 0,
+        "no-name-match": 0,
+        "negative-keyword": 0,
+        "missing-qualifier": 0
+      }
+    },
+    {
+      "name": "Beyond Meat",
+      "fetched": 25,
+      "kept": 24,
+      "ambiguity": "high",
+      "reasons": {
+        "kept": 24,
+        "blocked-domain": 0,
+        "no-name-match": 1,
+        "negative-keyword": 0,
+        "missing-qualifier": 0
+      }
+    },
+    {
+      "name": "Lemonade",
+      "fetched": 25,
+      "kept": 18,
+      "ambiguity": "critical",
+      "reasons": {
+        "kept": 18,
+        "blocked-domain": 0,
+        "no-name-match": 2,
+        "negative-keyword": 0,
+        "missing-qualifier": 5
+      }
+    },
+    {
+      "name": "Rewire",
+      "fetched": 7,
+      "kept": 0,
+      "ambiguity": "high",
+      "reasons": {
+        "kept": 0,
+        "blocked-domain": 0,
+        "no-name-match": 4,
+        "negative-keyword": 0,
+        "missing-qualifier": 3
+      }
+    },
+    {
+      "name": "Silo",
+      "fetched": 25,
+      "kept": 1,
+      "ambiguity": "critical",
+      "reasons": {
+        "kept": 1,
+        "blocked-domain": 0,
+        "no-name-match": 5,
+        "negative-keyword": 1,
+        "missing-qualifier": 18
+      }
+    }
+  ]
+}
