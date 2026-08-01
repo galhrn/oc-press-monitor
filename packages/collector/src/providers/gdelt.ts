@@ -23,6 +23,7 @@
 import { ProviderError, withRetry, type Logger, type RetryOptions } from '@oc/core';
 import { z } from 'zod';
 import type { NewsProvider, ProviderHealth, RawArticle, SearchRequest } from '../provider.js';
+import { createThrottle, type Throttle } from '../throttle.js';
 
 export const GDELT_PROVIDER_NAME = 'gdelt';
 
@@ -147,9 +148,7 @@ export class GdeltProvider implements NewsProvider {
   readonly #fetch: typeof fetch;
   readonly #now: () => number;
   readonly #sleep: (ms: number) => Promise<void>;
-  /** Serialises requests so the throttle is a real queue, not an advisory suggestion. */
-  #chain: Promise<unknown> = Promise.resolve();
-  #lastRequestAt = 0;
+  readonly #throttle: Throttle;
 
   constructor(options: GdeltProviderOptions = {}) {
     this.#options = {
@@ -161,6 +160,11 @@ export class GdeltProvider implements NewsProvider {
     this.#fetch = options.fetchImpl ?? globalThis.fetch;
     this.#now = options.now ?? Date.now;
     this.#sleep = options.sleep ?? ((ms) => new Promise((r) => setTimeout(r, ms)));
+    this.#throttle = createThrottle({
+      minIntervalMs: this.#options.minIntervalMs,
+      now: this.#now,
+      sleep: this.#sleep,
+    });
   }
 
   /** Builds the request URL. Exported behaviour is covered directly by unit tests. */
@@ -196,40 +200,20 @@ export class GdeltProvider implements NewsProvider {
     request.signal?.throwIfAborted();
     const url = this.buildUrl(request);
 
-    const body = await withRetry(
-      () => this.#throttled(() => this.#fetchOnce(url, request.signal)),
-      {
-        attempts: 3,
-        baseDelayMs: 1_000,
-        maxDelayMs: 10_000,
-        sleep: this.#options.sleep ?? this.#sleep,
-        ...this.#options.retry,
-        onRetry: (attempt, delayMs, error) =>
-          this.#options.logger?.warn(
-            { attempt, delayMs, err: error.message, provider: GDELT_PROVIDER_NAME },
-            'retrying GDELT request',
-          ),
-      },
-    );
+    const body = await withRetry(() => this.#throttle(() => this.#fetchOnce(url, request.signal)), {
+      attempts: 3,
+      baseDelayMs: 1_000,
+      maxDelayMs: 10_000,
+      sleep: this.#options.sleep ?? this.#sleep,
+      ...this.#options.retry,
+      onRetry: (attempt, delayMs, error) =>
+        this.#options.logger?.warn(
+          { attempt, delayMs, err: error.message, provider: GDELT_PROVIDER_NAME },
+          'retrying GDELT request',
+        ),
+    });
 
     return this.#toRawArticles(body, request);
-  }
-
-  /**
-   * Queues every request behind the previous one and enforces `minIntervalMs` between
-   * them. Concurrency is managed per-provider rather than per-company, because the thing
-   * being protected is the remote service, not our own loop.
-   */
-  #throttled<T>(task: () => Promise<T>): Promise<T> {
-    const run = this.#chain.then(async () => {
-      const wait = this.#lastRequestAt + this.#options.minIntervalMs - this.#now();
-      if (wait > 0) await this.#sleep(wait);
-      this.#lastRequestAt = this.#now();
-      return task();
-    });
-    // The chain must not break on failure, or one error stalls every later request.
-    this.#chain = run.catch(() => undefined);
-    return run;
   }
 
   async #fetchOnce(url: string, signal?: AbortSignal): Promise<unknown> {
