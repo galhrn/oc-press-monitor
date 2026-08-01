@@ -26,6 +26,7 @@
     "enrich": "tsx scripts/enrich-companies.ts",
     "bench": "tsx scripts/bench-ollama.ts",
     "collect": "tsx scripts/collect.ts",
+    "backfill": "tsx scripts/run-backfill.ts",
     "measure:prefilter": "tsx scripts/measure-prefilter.ts",
     "audit:coverage": "tsx scripts/coverage-audit.ts",
     "gold:build": "tsx scripts/build-gold-set.ts",

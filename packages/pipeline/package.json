@@ -1,0 +1,11 @@
+{
+  "name": "@oc/pipeline",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Stage orchestration, run manifests and the data/ exporters.",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  }
+}

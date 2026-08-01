@@ -152,6 +152,37 @@ export class ArticleRepository {
     return changesOf(info) > 0;
   }
 
+  /** Needed by the resume path: a pending mention knows an article id, not its headline. */
+  byId(id: string): Article | undefined {
+    const row = rowAs<Record<string, unknown>>(
+      this.db.prepare('SELECT * FROM articles WHERE id = ?').get(id),
+    );
+    if (row === undefined) return undefined;
+    return {
+      id: row['id'] as string,
+      url: row['url'] as string,
+      canonicalUrl: row['canonical_url'] as string,
+      sourceName: (row['source_name'] as string | null) ?? null,
+      title: row['title'] as string,
+      snippet: (row['snippet'] as string | null) ?? null,
+      publishedAt: (row['published_at'] as string | null) ?? null,
+      provider: row['provider'] as string,
+      language: (row['language'] as string | null) ?? null,
+      raw: row['raw'] === null ? null : JSON.parse(row['raw'] as string),
+      fetchedAt: row['fetched_at'] as string,
+    };
+  }
+
+  /** All articles referenced by a mention, newest first. Used by the exporters (R24). */
+  all(): Article[] {
+    const rows = rowsAs<Record<string, unknown>>(
+      this.db.prepare('SELECT * FROM articles ORDER BY published_at DESC').all(),
+    );
+    return rows
+      .map((r) => this.byId(r['id'] as string))
+      .filter((a): a is Article => a !== undefined);
+  }
+
   count(): number {
     return (
       rowAs<{ n: number }>(this.db.prepare('SELECT COUNT(*) AS n FROM articles').get())?.n ?? 0
@@ -160,6 +191,22 @@ export class ArticleRepository {
 }
 
 /* ------------------------------------------------------------------- mentions */
+
+const toMention = (r: Record<string, unknown>): Mention => ({
+  id: r['id'] as string,
+  companyId: r['company_id'] as string,
+  articleId: r['article_id'] as string,
+  relevant: r['relevant'] === null ? null : r['relevant'] === 1,
+  rejectionReason: r['rejection_reason'] as string | null,
+  sentiment: r['sentiment'] as Mention['sentiment'],
+  confidence: r['confidence'] as number | null,
+  rationale: r['rationale'] as string | null,
+  evidence: r['evidence'] as string | null,
+  model: r['model'] as string | null,
+  promptVersion: r['prompt_version'] as string | null,
+  classifiedAt: r['classified_at'] as string | null,
+  firstSeenAt: r['first_seen_at'] as string,
+});
 
 export class MentionRepository {
   constructor(private readonly db: Db) {}
@@ -205,25 +252,21 @@ export class MentionRepository {
     });
   }
 
+  /** Classified, relevant mentions - what the dashboard and the exports call "coverage". */
+  relevant(): Mention[] {
+    const rows = this.db
+      .prepare(
+        'SELECT * FROM mentions WHERE relevant = 1 AND classified_at IS NOT NULL ORDER BY classified_at DESC',
+      )
+      .all() as unknown as Array<Record<string, unknown>>;
+    return rows.map((r) => toMention(r));
+  }
+
   unclassified(limit = 500): Mention[] {
     const rows = this.db
       .prepare('SELECT * FROM mentions WHERE classified_at IS NULL LIMIT ?')
       .all(limit) as unknown as Array<Record<string, unknown>>;
-    return rows.map((r) => ({
-      id: r['id'] as string,
-      companyId: r['company_id'] as string,
-      articleId: r['article_id'] as string,
-      relevant: r['relevant'] === null ? null : r['relevant'] === 1,
-      rejectionReason: r['rejection_reason'] as string | null,
-      sentiment: r['sentiment'] as Mention['sentiment'],
-      confidence: r['confidence'] as number | null,
-      rationale: r['rationale'] as string | null,
-      evidence: r['evidence'] as string | null,
-      model: r['model'] as string | null,
-      promptVersion: r['prompt_version'] as string | null,
-      classifiedAt: r['classified_at'] as string | null,
-      firstSeenAt: r['first_seen_at'] as string,
-    }));
+    return rows.map((r) => toMention(r));
   }
 
   count(): number {
@@ -318,10 +361,32 @@ export class KeyValueRepository {
 export class StatusRepository {
   constructor(private readonly db: Db) {}
 
-  /** Every company is returned, including those with no coverage at all (R5). */
-  all(now_: Date = new Date()): CompanyStatus[] {
+  /**
+   * Every company is returned, including those with no coverage at all (R5).
+   *
+   * The window is a **parameter, not a literal**. `v_company_status` hardcodes 90 days for
+   * convenience at the sqlite prompt, but A1 made the window configurable via
+   * `QUARTER_WINDOW_DAYS` - and a view that ignores the setting would silently report
+   * 90-day counts under a 30-day configuration, with nothing in the UI to reveal it.
+   */
+  all(now_: Date = new Date(), windowDays = 90): CompanyStatus[] {
     const rows = rowsAs<StatusRow>(
-      this.db.prepare('SELECT * FROM v_company_status ORDER BY name').all(),
+      this.db
+        .prepare(
+          `SELECT
+             c.id AS company_id, c.name AS name, c.slug AS slug,
+             MAX(CASE WHEN m.relevant = 1 THEN a.published_at END) AS last_mentioned_at,
+             COUNT(CASE WHEN m.relevant = 1 AND a.published_at >= @from THEN 1 END) AS mentions_in_window,
+             COUNT(CASE WHEN m.relevant = 1 AND m.sentiment = 'positive' AND a.published_at >= @from THEN 1 END) AS positive,
+             COUNT(CASE WHEN m.relevant = 1 AND m.sentiment = 'negative' AND a.published_at >= @from THEN 1 END) AS negative,
+             COUNT(CASE WHEN m.relevant = 1 AND m.sentiment = 'neutral'  AND a.published_at >= @from THEN 1 END) AS neutral
+           FROM companies c
+           LEFT JOIN mentions m ON m.company_id = c.id
+           LEFT JOIN articles a ON a.id = m.article_id
+           GROUP BY c.id, c.name, c.slug
+           ORDER BY c.name`,
+        )
+        .all({ from: new Date(now_.getTime() - windowDays * 86_400_000).toISOString() }),
     );
     return rows.map((r) => {
       const days = daysSince(r.last_mentioned_at, now_);

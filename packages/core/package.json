@@ -5,5 +5,8 @@
   "type": "module",
   "description": "Shared kernel: config, logging, typed errors, domain types and the SQLite storage layer.",
   "main": "./src/index.ts",
-  "exports": { ".": "./src/index.ts", "./*": "./src/*.ts" }
+  "exports": {
+    ".": "./src/index.ts",
+    "./*": "./src/*.ts"
+  }
 }
