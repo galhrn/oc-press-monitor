@@ -77,7 +77,7 @@ const parser = new XMLParser({
 });
 
 /** `<source url="https://www.prnewswire.com">PR Newswire</source>` -> `prnewswire.com`. */
-export function publisherDomain(sourceUrl: string | undefined): string | null {
+export function sourceUrlToDomain(sourceUrl: string | undefined): string | null {
   if (!sourceUrl) return null;
   try {
     return new URL(sourceUrl).hostname.replace(/^www\./, '').toLowerCase();
@@ -265,7 +265,7 @@ export class GoogleNewsProvider implements NewsProvider {
       const sourceRecord = item.source as Record<string, unknown> | string | undefined;
       const publisher =
         typeof sourceRecord === 'string' ? sourceRecord : (asText(sourceRecord) ?? null);
-      const domain = publisherDomain(
+      const domain = sourceUrlToDomain(
         typeof sourceRecord === 'object' && sourceRecord !== null
           ? (sourceRecord['@_url'] as string | undefined)
           : undefined,
@@ -281,7 +281,7 @@ export class GoogleNewsProvider implements NewsProvider {
         // The feed reports no per-item language; the edition is chosen by `ceid`.
         language: null,
         provider: GOOGLE_NEWS_PROVIDER_NAME,
-        raw: { ...item, publisherDomain: domain },
+        raw: { ...item, sourceUrlToDomain: domain },
       });
     }
 

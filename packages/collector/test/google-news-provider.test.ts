@@ -6,7 +6,7 @@ import {
   GOOGLE_NEWS_SAMPLE_PATH,
   GoogleNewsProvider,
   parsePubDate,
-  publisherDomain,
+  sourceUrlToDomain,
   stripPublisherSuffix,
   type NewsProvider,
 } from '@oc/collector';
@@ -52,9 +52,9 @@ const search = (p: GoogleNewsProvider, over: Record<string, unknown> = {}) =>
 
 describe('field helpers', () => {
   it('extracts a publisher domain from the source element', () => {
-    expect(publisherDomain('https://www.prnewswire.com')).toBe('prnewswire.com');
-    expect(publisherDomain('not a url')).toBeNull();
-    expect(publisherDomain(undefined)).toBeNull();
+    expect(sourceUrlToDomain('https://www.prnewswire.com')).toBe('prnewswire.com');
+    expect(sourceUrlToDomain('not a url')).toBeNull();
+    expect(sourceUrlToDomain(undefined)).toBeNull();
   });
 
   it('strips the publisher suffix Google appends to every headline', () => {
