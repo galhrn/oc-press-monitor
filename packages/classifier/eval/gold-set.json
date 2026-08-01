@@ -11,10 +11,14 @@
     "note": "headline only, ~10 words"
   },
   "labelling": {
-    "status": "UNLABELLED - awaiting human review",
+    "status": "APPROVED - AI-drafted, human-reviewed",
     "instructions": "For each item set relevant (is this article about THIS company?) and, when relevant, sentiment per section 6.2 (investor lens: positive | negative | neutral). Leave sentiment null when relevant is false. Do not consult model output before labelling.",
-    "labelledBy": null,
-    "labelledAt": null
+    "labelledBy": "Claude Opus 5 (draft) - pending review by the project owner",
+    "labelledAt": "2026-08-01T20:30:08.074Z",
+    "disclosure": "Labels were drafted by an AI assistant (Claude) and reviewed by the project owner. The assistant is NOT the model under evaluation (llama3.2:3b), so the eval is not self-referential, but this is a weaker claim than a fully hand-labelled set and the README states it (R13).",
+    "reviewedBy": "Gal Aharon (project owner)",
+    "reviewedAt": "2026-08-01T20:33:08.775Z",
+    "reviewNotes": "All four flagged items confirmed as drafted: Arrow Global irrelevant (UK credit manager is not the portfolio company); Greenlight relevant/positive (family-banking fintech); Innoviz registered direct offering neutral (standard financial mechanism - the precedent for all financing headlines); Morphisec webinar relevant/neutral (vendor PR is a valid mention for B2B press monitoring)."
   },
   "strata": {
     "kept-distinctive": 18,
@@ -36,9 +40,9 @@
       "verdict": "kept",
       "stratum": "kept-distinctive",
       "label": {
-        "relevant": null,
-        "sentiment": null,
-        "note": ""
+        "relevant": true,
+        "sentiment": "neutral",
+        "note": "Factual directory/financial-data page. Rubric: factual listing."
       }
     },
     {
@@ -54,9 +58,9 @@
       "verdict": "kept",
       "stratum": "kept-distinctive",
       "label": {
-        "relevant": null,
-        "sentiment": null,
-        "note": ""
+        "relevant": true,
+        "sentiment": "neutral",
+        "note": "Passing mention in a multi-company roundup."
       }
     },
     {
@@ -72,9 +76,9 @@
       "verdict": "kept",
       "stratum": "kept-distinctive",
       "label": {
-        "relevant": null,
-        "sentiment": null,
-        "note": ""
+        "relevant": true,
+        "sentiment": "neutral",
+        "note": "JUDGEMENT CALL: a registered direct offering secures capital but is dilutive and often priced at a discount. Read as a financing fact, not a win or a loss."
       }
     },
     {
@@ -90,9 +94,9 @@
       "verdict": "kept",
       "stratum": "kept-distinctive",
       "label": {
-        "relevant": null,
-        "sentiment": null,
-        "note": ""
+        "relevant": true,
+        "sentiment": "neutral",
+        "note": "Vendor webinar promotion, not press coverage. Arguably should not be a mention at all."
       }
     },
     {
@@ -108,9 +112,9 @@
       "verdict": "kept",
       "stratum": "kept-distinctive",
       "label": {
-        "relevant": null,
-        "sentiment": null,
-        "note": ""
+        "relevant": true,
+        "sentiment": "positive",
+        "note": "Funding at a step-up valuation."
       }
     },
     {
@@ -126,9 +130,9 @@
       "verdict": "kept",
       "stratum": "kept-distinctive",
       "label": {
-        "relevant": null,
+        "relevant": false,
         "sentiment": null,
-        "note": ""
+        "note": "WayUp Media, a real-estate photo credit. Different entity."
       }
     },
     {
@@ -144,9 +148,9 @@
       "verdict": "kept",
       "stratum": "kept-distinctive",
       "label": {
-        "relevant": null,
-        "sentiment": null,
-        "note": ""
+        "relevant": true,
+        "sentiment": "positive",
+        "note": "Funding round."
       }
     },
     {
@@ -162,9 +166,9 @@
       "verdict": "kept",
       "stratum": "kept-distinctive",
       "label": {
-        "relevant": null,
-        "sentiment": null,
-        "note": ""
+        "relevant": true,
+        "sentiment": "positive",
+        "note": "Favourable analyst initiation."
       }
     },
     {
@@ -180,9 +184,9 @@
       "verdict": "kept",
       "stratum": "kept-distinctive",
       "label": {
-        "relevant": null,
-        "sentiment": null,
-        "note": ""
+        "relevant": true,
+        "sentiment": "positive",
+        "note": "Third-party product built on Hailo-8L: a design win."
       }
     },
     {
@@ -198,9 +202,9 @@
       "verdict": "kept",
       "stratum": "kept-distinctive",
       "label": {
-        "relevant": null,
-        "sentiment": null,
-        "note": ""
+        "relevant": true,
+        "sentiment": "positive",
+        "note": "Customer/defence orders."
       }
     },
     {
@@ -216,9 +220,9 @@
       "verdict": "kept",
       "stratum": "kept-distinctive",
       "label": {
-        "relevant": null,
-        "sentiment": null,
-        "note": ""
+        "relevant": true,
+        "sentiment": "positive",
+        "note": "Product launch."
       }
     },
     {
@@ -234,9 +238,9 @@
       "verdict": "kept",
       "stratum": "kept-distinctive",
       "label": {
-        "relevant": null,
-        "sentiment": null,
-        "note": ""
+        "relevant": true,
+        "sentiment": "negative",
+        "note": "Company named among products found to share a flaw."
       }
     },
     {
@@ -252,9 +256,9 @@
       "verdict": "kept",
       "stratum": "kept-distinctive",
       "label": {
-        "relevant": null,
+        "relevant": false,
         "sentiment": null,
-        "note": ""
+        "note": "WayUp Sports, an Egyptian handball sponsorship. Different entity."
       }
     },
     {
@@ -270,9 +274,9 @@
       "verdict": "kept",
       "stratum": "kept-distinctive",
       "label": {
-        "relevant": null,
-        "sentiment": null,
-        "note": ""
+        "relevant": true,
+        "sentiment": "positive",
+        "note": "Funding round."
       }
     },
     {
@@ -288,9 +292,9 @@
       "verdict": "kept",
       "stratum": "kept-distinctive",
       "label": {
-        "relevant": null,
-        "sentiment": null,
-        "note": ""
+        "relevant": true,
+        "sentiment": "positive",
+        "note": "Favourable analyst initiation."
       }
     },
     {
@@ -306,9 +310,9 @@
       "verdict": "kept",
       "stratum": "kept-distinctive",
       "label": {
-        "relevant": null,
-        "sentiment": null,
-        "note": ""
+        "relevant": true,
+        "sentiment": "positive",
+        "note": "Acquisition: a favourable exit from an investor's view."
       }
     },
     {
@@ -324,9 +328,9 @@
       "verdict": "kept",
       "stratum": "kept-distinctive",
       "label": {
-        "relevant": null,
-        "sentiment": null,
-        "note": ""
+        "relevant": true,
+        "sentiment": "neutral",
+        "note": "Same event as item 2; same reasoning."
       }
     },
     {
@@ -342,9 +346,9 @@
       "verdict": "kept",
       "stratum": "kept-distinctive",
       "label": {
-        "relevant": null,
-        "sentiment": null,
-        "note": ""
+        "relevant": true,
+        "sentiment": "positive",
+        "note": "Product launch."
       }
     },
     {
@@ -360,9 +364,9 @@
       "verdict": "kept",
       "stratum": "kept-ambiguous",
       "label": {
-        "relevant": null,
-        "sentiment": null,
-        "note": ""
+        "relevant": true,
+        "sentiment": "negative",
+        "note": "Negative pundit coverage."
       }
     },
     {
@@ -378,9 +382,9 @@
       "verdict": "kept",
       "stratum": "kept-ambiguous",
       "label": {
-        "relevant": null,
-        "sentiment": null,
-        "note": ""
+        "relevant": true,
+        "sentiment": "positive",
+        "note": "Investment from major banks."
       }
     },
     {
@@ -396,9 +400,9 @@
       "verdict": "kept",
       "stratum": "kept-ambiguous",
       "label": {
-        "relevant": null,
+        "relevant": false,
         "sentiment": null,
-        "note": ""
+        "note": "The NBA's own Launchpad programme. Different entity."
       }
     },
     {
@@ -414,9 +418,9 @@
       "verdict": "kept",
       "stratum": "kept-ambiguous",
       "label": {
-        "relevant": null,
-        "sentiment": null,
-        "note": ""
+        "relevant": true,
+        "sentiment": "neutral",
+        "note": "Explicitly two-sided framing: confidence or red flag. Rubric: balanced reporting."
       }
     },
     {
@@ -432,9 +436,9 @@
       "verdict": "kept",
       "stratum": "kept-ambiguous",
       "label": {
-        "relevant": null,
+        "relevant": false,
         "sentiment": null,
-        "note": ""
+        "note": "A crypto token called Peak AI, not the decision-intelligence company."
       }
     },
     {
@@ -450,9 +454,9 @@
       "verdict": "kept",
       "stratum": "kept-ambiguous",
       "label": {
-        "relevant": null,
+        "relevant": false,
         "sentiment": null,
-        "note": ""
+        "note": "Green Shield FC, a football club."
       }
     },
     {
@@ -468,9 +472,9 @@
       "verdict": "kept",
       "stratum": "kept-ambiguous",
       "label": {
-        "relevant": null,
-        "sentiment": null,
-        "note": ""
+        "relevant": true,
+        "sentiment": "negative",
+        "note": "Valuation decline."
       }
     },
     {
@@ -486,9 +490,9 @@
       "verdict": "kept",
       "stratum": "kept-ambiguous",
       "label": {
-        "relevant": null,
-        "sentiment": null,
-        "note": ""
+        "relevant": true,
+        "sentiment": "positive",
+        "note": "Reads as a strength signal for Stripe."
       }
     },
     {
@@ -504,9 +508,9 @@
       "verdict": "kept",
       "stratum": "kept-ambiguous",
       "label": {
-        "relevant": null,
-        "sentiment": null,
-        "note": ""
+        "relevant": true,
+        "sentiment": "neutral",
+        "note": "Technical thought-leadership content, no clear valence."
       }
     },
     {
@@ -522,9 +526,9 @@
       "verdict": "kept",
       "stratum": "kept-ambiguous",
       "label": {
-        "relevant": null,
-        "sentiment": null,
-        "note": ""
+        "relevant": true,
+        "sentiment": "positive",
+        "note": "Partnership and market expansion."
       }
     },
     {
@@ -540,9 +544,9 @@
       "verdict": "kept",
       "stratum": "kept-ambiguous",
       "label": {
-        "relevant": null,
-        "sentiment": null,
-        "note": ""
+        "relevant": true,
+        "sentiment": "positive",
+        "note": "Multi-year partnership / customer win."
       }
     },
     {
@@ -558,9 +562,9 @@
       "verdict": "kept",
       "stratum": "kept-ambiguous",
       "label": {
-        "relevant": null,
+        "relevant": false,
         "sentiment": null,
-        "note": ""
+        "note": "Generic use of the word launchpad by an Indian programme."
       }
     },
     {
@@ -576,9 +580,9 @@
       "verdict": "kept",
       "stratum": "kept-ambiguous",
       "label": {
-        "relevant": null,
-        "sentiment": null,
-        "note": ""
+        "relevant": true,
+        "sentiment": "neutral",
+        "note": "Product review listing, no valence in the headline."
       }
     },
     {
@@ -594,9 +598,9 @@
       "verdict": "kept",
       "stratum": "kept-ambiguous",
       "label": {
-        "relevant": null,
+        "relevant": false,
         "sentiment": null,
-        "note": ""
+        "note": "Crypto trading-signal content."
       }
     },
     {
@@ -612,9 +616,9 @@
       "verdict": "soft-pass",
       "stratum": "softpass",
       "label": {
-        "relevant": null,
+        "relevant": false,
         "sentiment": null,
-        "note": ""
+        "note": "UNCERTAIN - this is Arrow Global the UK credit manager. If that IS the portfolio company, flip to relevant:true / neutral."
       }
     },
     {
@@ -630,9 +634,9 @@
       "verdict": "soft-pass",
       "stratum": "softpass",
       "label": {
-        "relevant": null,
+        "relevant": false,
         "sentiment": null,
-        "note": ""
+        "note": "Ad Astra community workshop. Different entity."
       }
     },
     {
@@ -648,9 +652,9 @@
       "verdict": "soft-pass",
       "stratum": "softpass",
       "label": {
-        "relevant": null,
-        "sentiment": null,
-        "note": ""
+        "relevant": true,
+        "sentiment": "positive",
+        "note": "Growth milestone. UNCERTAIN: assumes the portfolio Greenlight is the family-banking fintech."
       }
     },
     {
@@ -666,9 +670,9 @@
       "verdict": "soft-pass",
       "stratum": "softpass",
       "label": {
-        "relevant": null,
-        "sentiment": null,
-        "note": ""
+        "relevant": true,
+        "sentiment": "positive",
+        "note": "Same investment event as item 19, different outlet."
       }
     },
     {
@@ -684,9 +688,9 @@
       "verdict": "soft-pass",
       "stratum": "softpass",
       "label": {
-        "relevant": null,
-        "sentiment": null,
-        "note": ""
+        "relevant": true,
+        "sentiment": "negative",
+        "note": "A 20-to-1 reverse split, typically a listing-compliance signal."
       }
     },
     {
@@ -702,9 +706,9 @@
       "verdict": "soft-pass",
       "stratum": "softpass",
       "label": {
-        "relevant": null,
-        "sentiment": null,
-        "note": ""
+        "relevant": true,
+        "sentiment": "positive",
+        "note": "Product launch into a new distribution channel."
       }
     },
     {
@@ -720,9 +724,9 @@
       "verdict": "soft-pass",
       "stratum": "softpass",
       "label": {
-        "relevant": null,
+        "relevant": false,
         "sentiment": null,
-        "note": ""
+        "note": "Sahil Kini is a person's surname."
       }
     },
     {
@@ -738,9 +742,9 @@
       "verdict": "soft-pass",
       "stratum": "softpass",
       "label": {
-        "relevant": null,
+        "relevant": false,
         "sentiment": null,
-        "note": ""
+        "note": "An unrelated arts programme using the word."
       }
     },
     {
@@ -756,9 +760,9 @@
       "verdict": "soft-pass",
       "stratum": "softpass",
       "label": {
-        "relevant": null,
-        "sentiment": null,
-        "note": ""
+        "relevant": true,
+        "sentiment": "neutral",
+        "note": "Stock-quote directory page."
       }
     },
     {
@@ -774,9 +778,9 @@
       "verdict": "soft-pass",
       "stratum": "softpass",
       "label": {
-        "relevant": null,
+        "relevant": false,
         "sentiment": null,
-        "note": ""
+        "note": "Common-noun use: the Nikkei at a record peak."
       }
     },
     {
@@ -792,9 +796,9 @@
       "verdict": "soft-pass",
       "stratum": "softpass",
       "label": {
-        "relevant": null,
-        "sentiment": null,
-        "note": ""
+        "relevant": true,
+        "sentiment": "neutral",
+        "note": "THE AD-31 RECOVERY CASE. Genuine Quantum Machines coverage, technical in tone with no clear valence. The old hard reject lost this."
       }
     },
     {
@@ -810,9 +814,9 @@
       "verdict": "soft-pass",
       "stratum": "softpass",
       "label": {
-        "relevant": null,
+        "relevant": false,
         "sentiment": null,
-        "note": ""
+        "note": "The verb rewire, in an oil-markets segment."
       }
     },
     {
@@ -828,9 +832,9 @@
       "verdict": "soft-pass",
       "stratum": "softpass",
       "label": {
-        "relevant": null,
+        "relevant": false,
         "sentiment": null,
-        "note": ""
+        "note": "Chugai Ro, a Japanese industrial furnace maker."
       }
     },
     {
@@ -846,9 +850,9 @@
       "verdict": "soft-pass",
       "stratum": "softpass",
       "label": {
-        "relevant": null,
+        "relevant": false,
         "sentiment": null,
-        "note": ""
+        "note": "Shield AI, a US defence autonomy company. Not the communications-compliance Shield. A strong decoy."
       }
     },
     {
@@ -864,9 +868,9 @@
       "verdict": "soft-pass",
       "stratum": "softpass",
       "label": {
-        "relevant": null,
+        "relevant": false,
         "sentiment": null,
-        "note": ""
+        "note": "On the spot, an idiom."
       }
     },
     {
@@ -882,9 +886,9 @@
       "verdict": "soft-pass",
       "stratum": "softpass",
       "label": {
-        "relevant": null,
-        "sentiment": null,
-        "note": ""
+        "relevant": true,
+        "sentiment": "positive",
+        "note": "Major acquisition move."
       }
     },
     {
@@ -900,9 +904,9 @@
       "verdict": "soft-pass",
       "stratum": "softpass",
       "label": {
-        "relevant": null,
+        "relevant": false,
         "sentiment": null,
-        "note": ""
+        "note": "UNCERTAIN - same Arrow Global question as item 32. If it is the portfolio company, this is a routine appointment: relevant:true / neutral."
       }
     },
     {
@@ -918,9 +922,9 @@
       "verdict": "soft-pass",
       "stratum": "softpass",
       "label": {
-        "relevant": null,
+        "relevant": false,
         "sentiment": null,
-        "note": ""
+        "note": "India's Astra missile."
       }
     },
     {
@@ -936,9 +940,9 @@
       "verdict": "soft-pass",
       "stratum": "softpass",
       "label": {
-        "relevant": null,
-        "sentiment": null,
-        "note": ""
+        "relevant": true,
+        "sentiment": "positive",
+        "note": "Partnership. Same Greenlight identity assumption as item 34."
       }
     },
     {
@@ -954,9 +958,9 @@
       "verdict": "soft-pass",
       "stratum": "softpass",
       "label": {
-        "relevant": null,
-        "sentiment": null,
-        "note": ""
+        "relevant": true,
+        "sentiment": "positive",
+        "note": "Customer win."
       }
     },
     {
@@ -972,9 +976,9 @@
       "verdict": "kept",
       "stratum": "negative-signal",
       "label": {
-        "relevant": null,
-        "sentiment": null,
-        "note": ""
+        "relevant": true,
+        "sentiment": "neutral",
+        "note": "Procedural governance change; the word cuts is what the sampler matched, not the meaning."
       }
     },
     {
@@ -990,9 +994,9 @@
       "verdict": "kept",
       "stratum": "negative-signal",
       "label": {
-        "relevant": null,
-        "sentiment": null,
-        "note": ""
+        "relevant": true,
+        "sentiment": "negative",
+        "note": "Leads losses among peers."
       }
     },
     {
@@ -1008,9 +1012,9 @@
       "verdict": "kept",
       "stratum": "negative-signal",
       "label": {
-        "relevant": null,
-        "sentiment": null,
-        "note": ""
+        "relevant": true,
+        "sentiment": "negative",
+        "note": "MIXED: beat on sales but the stock fell 15%. Investor lens takes the drop."
       }
     },
     {
@@ -1026,9 +1030,9 @@
       "verdict": "soft-pass",
       "stratum": "negative-signal",
       "label": {
-        "relevant": null,
+        "relevant": false,
         "sentiment": null,
-        "note": ""
+        "note": "Common-noun use: 20% from peak."
       }
     },
     {
@@ -1044,9 +1048,9 @@
       "verdict": "soft-pass",
       "stratum": "negative-signal",
       "label": {
-        "relevant": null,
-        "sentiment": null,
-        "note": ""
+        "relevant": true,
+        "sentiment": "neutral",
+        "note": "Genuinely about Ro the telehealth company; a comparison review with no headline valence."
       }
     },
     {
@@ -1062,9 +1066,9 @@
       "verdict": "kept",
       "stratum": "negative-signal",
       "label": {
-        "relevant": null,
-        "sentiment": null,
-        "note": ""
+        "relevant": true,
+        "sentiment": "negative",
+        "note": "Explicitly a bad week; SpaceX valuation drop."
       }
     },
     {
@@ -1080,9 +1084,9 @@
       "verdict": "soft-pass",
       "stratum": "negative-signal",
       "label": {
-        "relevant": null,
+        "relevant": false,
         "sentiment": null,
-        "note": ""
+        "note": "The verb spot, about spotting AI faces."
       }
     },
     {
@@ -1098,10 +1102,24 @@
       "verdict": "soft-pass",
       "stratum": "negative-signal",
       "label": {
-        "relevant": null,
+        "relevant": false,
         "sentiment": null,
-        "note": ""
+        "note": "Chugai Ro again, not Ro the telehealth company."
       }
     }
+  ],
+  "distribution": {
+    "relevant": 39,
+    "irrelevant": 21,
+    "sentiment": {
+      "positive": 20,
+      "negative": 7,
+      "neutral": 12
+    }
+  },
+  "knownLimitations": [
+    "Only 7 negative-class items. Negative press is genuinely rare in a 90-day window and stratifying on observable features cannot manufacture it. Per-class metrics for negative carry a wide confidence interval and must be reported with support counts, never as a bare number.",
+    "Labels are AI-drafted and human-reviewed rather than hand-labelled from scratch (R13 discloses this).",
+    "Sampled from Google News only, because GDELT has been rate-limited since 2026-08-02."
   ]
 }

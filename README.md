@@ -105,13 +105,87 @@ Every variable has a working default — copy `.env.example` to `.env` only to o
 
 ## Data sources and their limitations
 
-_(pending — task P3 / requirement R9.)_
+Two providers sit behind one `NewsProvider` interface, plus an offline fixture provider.
+Neither live source needs an API key, which is deliberate: a reviewer can clone this repo and
+get real data without signing up for anything.
+
+| Provider | Role | Status |
+|---|---|---|
+| **Google News RSS** | Primary in practice | Verified live end to end |
+| **GDELT DOC 2.0** | Intended primary (honours exact-phrase boolean queries) | Code-complete, **rate-limited from this network since 2026-08-02** |
+| **Fixture** | Offline corpus | `NEWS_PROVIDERS=fixture` runs the whole pipeline with no network |
+
+**Measured limitations.** Every item below was observed, not assumed.
+
+- **Neither provider returns a snippet.** GDELT's `ArtList` has no such field, and Google
+  News's `<description>` is an anchor tag plus a publisher name. **Classification therefore
+  runs on the headline alone — roughly ten words.** This is the single biggest constraint on
+  accuracy in the whole system.
+- **Google News does not honour boolean query syntax.** A live search for
+  `"Peak" AND ("decision intelligence" OR "supply chain")` returned five articles, none about
+  Peak. The pipeline re-applies its own query client-side (`packages/collector/src/pre-filter.ts`)
+  because that is the only place the semantics reliably hold.
+- **Google News article links are unresolvable redirects.** The `guid` is an opaque token and
+  following the link returns a JavaScript interstitial, not a redirect. The Google URL is
+  stored (it does open the article) and the publisher domain is recorded separately so the
+  same story from two providers still deduplicates.
+- **GDELT's rate limit is one request per 5 seconds**, stated nowhere except inside its own
+  429 body. At 258 companies that is a floor of ~22 minutes per collection pass.
+- **GDELT's `seendate` is when its crawler saw an article, not the publication date.**
+  Cross-provider dedupe compares dates within a 7-day tolerance for this reason.
+- **Coverage skews to indexed online news.** Paywalled and subscription outlets are
+  under-represented, and the feed is relevance-ordered and capped at ~100 items.
+- **Some companies genuinely have no recent press.** OncoHost returns zero articles in a
+  90-day window, and its most recent coverage anywhere is 2026-03-24. `NO_COVERAGE` is a
+  correct answer here, not a bug — see `data/coverage-baseline.json`.
 
 ## The local LLM
 
 - **Model used, and why** — _(pending — P4.8)_
 - **How it is invoked** — prompt structure and expected output format — _(pending — P4.2)_
-- **How classification quality was validated** — gold set, confusion matrix, macro-F1 — _(pending — P4.7)_
+- **How classification quality was validated** — see below. _(Confusion matrix and macro-F1 land with P4.7.)_
+
+### Validating classification quality (R13)
+
+Quality is measured against a 60-item gold set at `packages/classifier/eval/gold-set.json`.
+
+**How it was built.** Items were sampled from **live Google News results**, not written by
+hand, so the eval measures the input the system actually receives. Stratification uses only
+*observable* features — company ambiguity tier, pre-filter verdict, and loss-language in the
+headline — never the answer. Sampling "twelve negatives" would require first deciding what is
+negative, which is precisely the circularity that makes an evaluation worthless.
+
+| Stratum | n | What it tests |
+|---|---|---|
+| `kept-distinctive` | 18 | Baseline relevance and the sentiment spread |
+| `kept-ambiguous` | 14 | Decoys the deterministic pre-filter cannot catch |
+| `softpass` | 20 | Items kept only because a qualifier miss demotes rather than drops |
+| `negative-signal` | 8 | The rubric's rarest class |
+
+Labels: **39 relevant / 21 irrelevant**; among the relevant, **20 positive, 7 negative,
+12 neutral**. Input to the classifier is exactly `company` + `title` — the file records this
+as `inputShape` so an evaluation cannot feed the model more context than production has.
+
+**Disclosure — how the labels were produced.** Labels were **drafted by an AI assistant
+(Claude) and reviewed, corrected and approved by the project owner**. This is weaker than a
+set hand-labelled from scratch and is stated here rather than glossed over. Two mitigations
+apply: the drafting assistant is **not** the model under evaluation (`llama3.2:3b` and the
+other bake-off candidates), so the evaluation is not self-referential; and all labelling was
+completed **before any candidate model saw the data**, which is what stops a gold set from
+quietly becoming a description of model behaviour.
+
+**Known limitations of this gold set.**
+
+- **The negative class has only 7 items.** Negative press is genuinely rare in a 90-day
+  window, and stratifying on observable features cannot manufacture it. Per-class precision
+  and recall for `negative` therefore carry a **wide confidence interval** — a single
+  misclassification moves the score by roughly 14 points. Negative-class figures are reported
+  **with their support count** and must not be read as a stable estimate. Macro-F1, which
+  weights all three classes equally, inherits that instability and is quoted with the same
+  caveat.
+- Items come from Google News only, since GDELT has been rate-limited from this network.
+- 60 items is small. It is enough to separate a model that works from one that does not; it
+  is not enough to rank two close models confidently.
 
 ### Model selection
 
