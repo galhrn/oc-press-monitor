@@ -4,7 +4,7 @@
 > **Owner:** Gal Aharon
 > **Status:** `BUILDING` — M0, M1 reached. P2 code complete; M2 pending the owner's live Ollama pass.
 > **Last updated:** 2026-08-01
-> **Document version:** 0.8.2
+> **Document version:** 0.8.3
 >
 > **Target hardware (dev + demo machine):** Windows 11 · Intel Core Ultra (Lunar Lake) ·
 > Intel Arc 140V iGPU, 16 GB addressable VRAM (shared) · 32 GB system RAM
@@ -336,10 +336,13 @@ oc-press-monitor/
 │   │   └── db/index.ts              # better-sqlite3 connection + repositories
 │   │
 │   ├── collector/                   # DATA COLLECTION (R15)
-│   │   ├── provider.ts              # NewsProvider interface
-│   │   ├── providers/gdelt.ts       # Primary: keyless, rolling 3-month window
-│   │   ├── providers/google-news.ts # Daily delta via RSS
-│   │   ├── providers/fixture.ts     # Offline/test provider
+│   │   ├── src/provider.ts          # NewsProvider interface + RawArticle/SearchRequest
+│   │   ├── src/query-match.ts       # Boolean query matcher; whole-word, spacing-preserving
+│   │   ├── src/corpus-path.ts       # Path to the shipped corpus, so fixture mode needs no config
+│   │   ├── src/providers/gdelt.ts   # Primary: keyless, rolling 3-month window (P3.2)
+│   │   ├── src/providers/google-news.ts # Daily delta via RSS (P3.3)
+│   │   ├── src/providers/fixture.ts # Offline/test provider (P3.1)
+│   │   ├── fixtures/corpus.json     # Hand-authored offline corpus; provenance in `_provenance`
 │   │   ├── query-builder.ts         # Per-company query strategy (§4.3)
 │   │   └── normalize.ts             # Canonical URL, dedupe, date parsing
 │   │
@@ -530,7 +533,7 @@ error handling · the "no coverage" state.
 
 | ID | Task | Satisfies | Est. | Status |
 |---|---|---|---|---|
-| P3.1 | `NewsProvider` interface + `FixtureProvider` + recorded fixture corpus | R15 | 1 h | TODO |
+| P3.1 | `NewsProvider` interface + `FixtureProvider` + fixture corpus | R15 | 1 h | **DONE** — 23 tests. Corpus is **hand-authored, not recorded**; P3.2 adds `--record` for a real GDELT capture. |
 | P3.2 | GDELT DOC 2.0 provider — 90-day window, rate limiting, retry + backoff | R15 | 1.5 h | TODO |
 | P3.3 | Google News RSS provider — XML parsing, redirect-URL resolution | R15 | 1 h | TODO |
 | P3.4 | Query builder — exact-phrase, sector qualifiers, ambiguity-tiered strategies | A3 | 1 h | TODO |
@@ -703,7 +706,7 @@ Budget ≈30 focused hours; descope rungs 1–3 already cut (§8.3).
 | M0 Architecture frozen | P0 | ✅ DONE |
 | M1 Foundation green | P1 | ✅ DONE — 46 tests |
 | M2 Registry enriched | P2 | ✅ DONE — 258 companies, full live Ollama pass, 0 failures |
-| M3 Collection working | P3 | ⚪ TODO |
+| M3 Collection working | P3 | 🟡 P3.1 done — provider seam + offline corpus (23 tests); live providers pending |
 | M4 Model selected by evidence | P4 | ⚪ TODO |
 | M5 Pipeline end-to-end | P5 | ⚪ TODO |
 | M6 Dashboard complete | P6 | ⚪ TODO |
@@ -757,6 +760,7 @@ Budget ≈30 focused hours; descope rungs 1–3 already cut (§8.3).
 
 | Date | Version | Change |
 |---|---|---|
+| 2026-08-01 | 0.8.3 | **P3.1 merged — the data-collection seam exists.** `packages/collector` adds the `NewsProvider` interface (R15, AD-05), a small boolean query matcher, and an offline `FixtureProvider` over a 24-item corpus. Providers are deliberately dumb: they turn a query into raw items and do not canonicalise URLs, judge relevance, or retry — those belong to P3.5, P3.6 and P3.7 respectively, which is what keeps GDELT, RSS and fixtures interchangeable. Two design points worth carrying forward: fixture dates are **relative** (`-3d`) so the corpus can never age out of the rolling 90-day window (A1), and **undated items are dropped rather than guessed at**, because an article with no date cannot be placed in a quarter (R1) or drive last-mentioned (R4). The corpus is **hand-authored and labelled as such** in its `_provenance` field — it is not recorded traffic, and the README must not describe it as such until P3.2 lands a `--record` capture. **118 tests passing.** |
 | 2026-08-01 | 0.8.2 | **M2 REACHED — full 258-company Ollama enrichment run, and the P4.0 CPU benchmark.** Enrichment: 258 companies on `llama3.2:3b`, **0 failures**, 10 cache hits / 248 misses. Provenance: 57 human-approved · 130 llm-enriched · 71 triage-default · 0 fallback. Sectors rose from 103 to 198; 70 rows carry a domain, 119 an alias. **AD-26 discarded 91 of 258 enrichments (35%)** — overwhelmingly `known: false`, matching the 40% seen in the 10-company sample. A full-scale audit of the committed artifact found **zero unrelated aliases and zero unrelated domains**; the three apparent self-negations (`Launchpad`/"launch pad", `Greenlight`/"green light", `Wayup`/"way up") are human triage entries that discriminate by spacing on purpose, which is now recorded as a **hard constraint on the P3.6 pre-filter** in §4.3. Benchmark (AD-25, `data/benchmark.json`): `llama3.2:3b` on CPU peaks at **concurrency 3 — 59.6 items/min, ~19 tok/s**, with concurrency 6 *slower* than 3, confirming the AD-18 prediction that the optimum sits at 2–4 on a bandwidth-bound machine. tok/s is flat across all three concurrency levels, which is the bandwidth ceiling made visible. **Caveat recorded, not buried:** the bench schema emits ~17 output tokens while the real classification schema emits ~60–90, so the "33.5 min per 2,000 items" projection is optimistic by roughly 3×; the number to plan P8.1 against is ~90–100 min until P4.2 exists and the bench is re-run against the real prompt. OQ-8 partially answered — CPU shipped by measurement, the GPU backends consciously left unmeasured. |
 | 2026-08-01 | 0.8.1 | **First live Ollama enrichment pass (P2.3) run on `llama3.2:3b`, and two defects it exposed, fixed.** (1) `npm run enrich -- --limit 10` wrote to the default `--out`, truncating `data/companies.json` from 258 records to 10 — a graded deliverable (R8/R24) silently destroyed by a dev loop. A partial run now writes `data/companies.sample-<n>.json` and says so; the guard is unit-tested in `test/enrich-args.test.ts`. (2) **AD-26 added** — model output is now sanitised before it can reach the registry. The pass returned `known: false` for 4 of 10 companies while still emitting confident aliases, sectors and negative keywords for them; among the survivors, Stripe was aliased to `"PayPal"`, OncoHost's negative keyword was its own name, and OpenEvidence's domain was invented. Registry rebuilt to 258 records (57 human-approved, 201 triage-default). **95 tests passing.** The repository is now under git. |
 | 2026-08-01 | 0.8.0 | **P4.0 benchmark tool built** (`npm run bench`, AD-25). The Ollama client now surfaces server-reported timings — `load_duration`, `prompt_eval_*`, `eval_count`, `eval_duration` — converted from nanoseconds once, at the boundary, so tokens/sec is measured rather than inferred from wall clock. The benchmark sweeps models × concurrency across two output-size profiles (`enrich` 256 tokens, `classify` 96), discards a warm-up per configuration, and projects the wall time of a 2,000-item classification run. Writes `data/benchmark.json`; the printed table is the README artifact required by R11/R13. **80 tests passing.** |
