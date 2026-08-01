@@ -1,35 +1,35 @@
 {
-  "runId": "62eb616a-e293-4b82-be66-ade22ebf7e93",
-  "promptVersion": "classify.v2@a2efbac64362",
+  "runId": "0a8a9607-2420-41be-b48c-d389504f4e89",
+  "promptVersion": "classify.v1@5717fe76202f",
   "goldItems": 60,
   "results": [
     {
       "model": "qwen2.5:1.5b-instruct",
-      "promptVersion": "classify.v2@a2efbac64362",
-      "failures": 0,
-      "jsonValidityRate": 1,
-      "p50LatencyMs": 17439,
-      "p95LatencyMs": 23071,
-      "itemsPerMinute": 10.6,
-      "projectedMinutesFor2500": 235,
+      "promptVersion": "classify.v1@5717fe76202f",
+      "failures": 3,
+      "jsonValidityRate": 0.95,
+      "p50LatencyMs": 0,
+      "p95LatencyMs": 0,
+      "itemsPerMinute": 274.5,
+      "projectedMinutesFor2500": 9.1,
       "relevance": {
-        "n": 60,
-        "accuracy": 0.65,
-        "macroF1": 0.5225464190981433,
+        "n": 57,
+        "accuracy": 0.7017543859649122,
+        "macroF1": 0.6495479204339965,
         "perClass": [
           {
             "label": "relevant",
-            "support": 39,
-            "precision": 0.6730769230769231,
-            "recall": 0.8974358974358975,
-            "f1": 0.7692307692307692
+            "support": 38,
+            "precision": 0.7560975609756098,
+            "recall": 0.8157894736842105,
+            "f1": 0.7848101265822786
           },
           {
             "label": "irrelevant",
-            "support": 21,
-            "precision": 0.5,
-            "recall": 0.19047619047619047,
-            "f1": 0.27586206896551724
+            "support": 19,
+            "precision": 0.5625,
+            "recall": 0.47368421052631576,
+            "f1": 0.5142857142857142
           }
         ],
         "confusion": {
@@ -39,41 +39,41 @@
           ],
           "counts": {
             "relevant": {
-              "relevant": 35,
-              "irrelevant": 4
+              "relevant": 31,
+              "irrelevant": 7
             },
             "irrelevant": {
-              "relevant": 17,
-              "irrelevant": 4
+              "relevant": 10,
+              "irrelevant": 9
             }
           }
         }
       },
       "sentiment": {
-        "n": 39,
-        "accuracy": 0.6153846153846154,
-        "macroF1": 0.37648809523809523,
+        "n": 38,
+        "accuracy": 0.5789473684210527,
+        "macroF1": 0.3449832775919732,
         "perClass": [
           {
             "label": "positive",
-            "support": 20,
-            "precision": 0.6785714285714286,
-            "recall": 0.95,
-            "f1": 0.7916666666666667
+            "support": 19,
+            "precision": 0.7037037037037037,
+            "recall": 1,
+            "f1": 0.8260869565217391
           },
           {
             "label": "negative",
             "support": 7,
-            "precision": 0.7142857142857143,
-            "recall": 0.7142857142857143,
-            "f1": 0.7142857142857143
+            "precision": 0.6666666666666666,
+            "recall": 0.2857142857142857,
+            "f1": 0.4
           },
           {
             "label": "neutral",
             "support": 12,
-            "precision": 0,
-            "recall": 0,
-            "f1": 0
+            "precision": 1,
+            "recall": 0.08333333333333333,
+            "f1": 0.15384615384615385
           },
           {
             "label": "not_applicable",
@@ -95,19 +95,19 @@
               "positive": 19,
               "negative": 0,
               "neutral": 0,
-              "not_applicable": 1
+              "not_applicable": 0
             },
             "negative": {
               "positive": 1,
-              "negative": 5,
-              "neutral": 0,
-              "not_applicable": 1
-            },
-            "neutral": {
-              "positive": 8,
               "negative": 2,
               "neutral": 0,
-              "not_applicable": 2
+              "not_applicable": 4
+            },
+            "neutral": {
+              "positive": 7,
+              "negative": 1,
+              "neutral": 1,
+              "not_applicable": 3
             },
             "not_applicable": {
               "positive": 0,
@@ -121,147 +121,31 @@
     },
     {
       "model": "llama3.2:3b",
-      "promptVersion": "classify.v2@a2efbac64362",
+      "promptVersion": "classify.v1@5717fe76202f",
       "failures": 0,
       "jsonValidityRate": 1,
-      "p50LatencyMs": 29712,
-      "p95LatencyMs": 40217,
-      "itemsPerMinute": 6.4,
-      "projectedMinutesFor2500": 392.9,
+      "p50LatencyMs": 0,
+      "p95LatencyMs": 0,
+      "itemsPerMinute": 133333.3,
+      "projectedMinutesFor2500": 0,
       "relevance": {
         "n": 60,
-        "accuracy": 0.6,
-        "macroF1": 0.5378690629011553,
+        "accuracy": 0.6333333333333333,
+        "macroF1": 0.53125,
         "perClass": [
           {
             "label": "relevant",
             "support": 39,
-            "precision": 0.6744186046511628,
-            "recall": 0.7435897435897436,
-            "f1": 0.7073170731707318
-          },
-          {
-            "label": "irrelevant",
-            "support": 21,
-            "precision": 0.4117647058823529,
-            "recall": 0.3333333333333333,
-            "f1": 0.36842105263157887
-          }
-        ],
-        "confusion": {
-          "labels": [
-            "relevant",
-            "irrelevant"
-          ],
-          "counts": {
-            "relevant": {
-              "relevant": 29,
-              "irrelevant": 10
-            },
-            "irrelevant": {
-              "relevant": 14,
-              "irrelevant": 7
-            }
-          }
-        }
-      },
-      "sentiment": {
-        "n": 39,
-        "accuracy": 0.5384615384615384,
-        "macroF1": 0.3295454545454546,
-        "perClass": [
-          {
-            "label": "positive",
-            "support": 20,
-            "precision": 0.75,
-            "recall": 0.9,
-            "f1": 0.8181818181818182
-          },
-          {
-            "label": "negative",
-            "support": 7,
-            "precision": 0.6,
-            "recall": 0.42857142857142855,
-            "f1": 0.5
-          },
-          {
-            "label": "neutral",
-            "support": 12,
-            "precision": 0,
-            "recall": 0,
-            "f1": 0
-          },
-          {
-            "label": "not_applicable",
-            "support": 0,
-            "precision": 0,
-            "recall": 0,
-            "f1": 0
-          }
-        ],
-        "confusion": {
-          "labels": [
-            "positive",
-            "negative",
-            "neutral",
-            "not_applicable"
-          ],
-          "counts": {
-            "positive": {
-              "positive": 18,
-              "negative": 1,
-              "neutral": 0,
-              "not_applicable": 1
-            },
-            "negative": {
-              "positive": 0,
-              "negative": 3,
-              "neutral": 0,
-              "not_applicable": 4
-            },
-            "neutral": {
-              "positive": 6,
-              "negative": 1,
-              "neutral": 0,
-              "not_applicable": 5
-            },
-            "not_applicable": {
-              "positive": 0,
-              "negative": 0,
-              "neutral": 0,
-              "not_applicable": 0
-            }
-          }
-        }
-      }
-    },
-    {
-      "model": "qwen2.5:3b-instruct",
-      "promptVersion": "classify.v2@a2efbac64362",
-      "failures": 0,
-      "jsonValidityRate": 1,
-      "p50LatencyMs": 31680,
-      "p95LatencyMs": 41496,
-      "itemsPerMinute": 5.9,
-      "projectedMinutesFor2500": 421,
-      "relevance": {
-        "n": 60,
-        "accuracy": 0.6833333333333333,
-        "macroF1": 0.6168067226890755,
-        "perClass": [
-          {
-            "label": "relevant",
-            "support": 39,
-            "precision": 0.717391304347826,
+            "precision": 0.673469387755102,
             "recall": 0.8461538461538461,
-            "f1": 0.776470588235294
+            "f1": 0.75
           },
           {
             "label": "irrelevant",
             "support": 21,
-            "precision": 0.5714285714285714,
-            "recall": 0.38095238095238093,
-            "f1": 0.4571428571428571
+            "precision": 0.45454545454545453,
+            "recall": 0.23809523809523808,
+            "f1": 0.31249999999999994
           }
         ],
         "confusion": {
@@ -275,23 +159,23 @@
               "irrelevant": 6
             },
             "irrelevant": {
-              "relevant": 13,
-              "irrelevant": 8
+              "relevant": 16,
+              "irrelevant": 5
             }
           }
         }
       },
       "sentiment": {
         "n": 39,
-        "accuracy": 0.6923076923076923,
-        "macroF1": 0.5376447876447876,
+        "accuracy": 0.6410256410256411,
+        "macroF1": 0.512781954887218,
         "perClass": [
           {
             "label": "positive",
             "support": 20,
-            "precision": 0.9411764705882353,
-            "recall": 0.8,
-            "f1": 0.8648648648648648
+            "precision": 0.7777777777777778,
+            "recall": 0.7,
+            "f1": 0.7368421052631577
           },
           {
             "label": "negative",
@@ -303,9 +187,9 @@
           {
             "label": "neutral",
             "support": 12,
-            "precision": 0.6666666666666666,
+            "precision": 0.75,
             "recall": 0.5,
-            "f1": 0.5714285714285715
+            "f1": 0.6
           },
           {
             "label": "not_applicable",
@@ -324,22 +208,138 @@
           ],
           "counts": {
             "positive": {
-              "positive": 16,
+              "positive": 14,
               "negative": 1,
               "neutral": 2,
-              "not_applicable": 1
+              "not_applicable": 3
             },
             "negative": {
               "positive": 0,
               "negative": 5,
-              "neutral": 1,
-              "not_applicable": 1
+              "neutral": 0,
+              "not_applicable": 2
             },
             "neutral": {
-              "positive": 1,
+              "positive": 4,
               "negative": 1,
               "neutral": 6,
+              "not_applicable": 1
+            },
+            "not_applicable": {
+              "positive": 0,
+              "negative": 0,
+              "neutral": 0,
+              "not_applicable": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "model": "qwen2.5:3b-instruct",
+      "promptVersion": "classify.v1@5717fe76202f",
+      "failures": 0,
+      "jsonValidityRate": 1,
+      "p50LatencyMs": 0,
+      "p95LatencyMs": 0,
+      "itemsPerMinute": 189473.7,
+      "projectedMinutesFor2500": 0,
+      "relevance": {
+        "n": 60,
+        "accuracy": 0.65,
+        "macroF1": 0.6499027507641011,
+        "perClass": [
+          {
+            "label": "relevant",
+            "support": 39,
+            "precision": 0.9090909090909091,
+            "recall": 0.5128205128205128,
+            "f1": 0.6557377049180326
+          },
+          {
+            "label": "irrelevant",
+            "support": 21,
+            "precision": 0.5,
+            "recall": 0.9047619047619048,
+            "f1": 0.6440677966101696
+          }
+        ],
+        "confusion": {
+          "labels": [
+            "relevant",
+            "irrelevant"
+          ],
+          "counts": {
+            "relevant": {
+              "relevant": 20,
+              "irrelevant": 19
+            },
+            "irrelevant": {
+              "relevant": 2,
+              "irrelevant": 19
+            }
+          }
+        }
+      },
+      "sentiment": {
+        "n": 39,
+        "accuracy": 0.358974358974359,
+        "macroF1": 0.34265734265734266,
+        "perClass": [
+          {
+            "label": "positive",
+            "support": 20,
+            "precision": 1,
+            "recall": 0.3,
+            "f1": 0.4615384615384615
+          },
+          {
+            "label": "negative",
+            "support": 7,
+            "precision": 0.5,
+            "recall": 0.2857142857142857,
+            "f1": 0.36363636363636365
+          },
+          {
+            "label": "neutral",
+            "support": 12,
+            "precision": 0.6,
+            "recall": 0.5,
+            "f1": 0.5454545454545454
+          },
+          {
+            "label": "not_applicable",
+            "support": 0,
+            "precision": 0,
+            "recall": 0,
+            "f1": 0
+          }
+        ],
+        "confusion": {
+          "labels": [
+            "positive",
+            "negative",
+            "neutral",
+            "not_applicable"
+          ],
+          "counts": {
+            "positive": {
+              "positive": 6,
+              "negative": 1,
+              "neutral": 3,
+              "not_applicable": 10
+            },
+            "negative": {
+              "positive": 0,
+              "negative": 2,
+              "neutral": 1,
               "not_applicable": 4
+            },
+            "neutral": {
+              "positive": 0,
+              "negative": 1,
+              "neutral": 6,
+              "not_applicable": 5
             },
             "not_applicable": {
               "positive": 0,
@@ -352,7 +352,7 @@
       }
     }
   ],
-  "ship": "qwen2.5:3b-instruct",
+  "ship": "llama3.2:3b",
   "perItem": {
     "qwen2.5:1.5b-instruct": [
       {
@@ -368,8 +368,8 @@
         "predicted": {
           "relevant": false,
           "sentiment": null,
-          "confidence": 0.5,
-          "rationale": "The headline is a balance sheet, which is not related to the sentiment of the…"
+          "confidence": 0.95,
+          "rationale": "The headline mentions the company's balance sheet, which is neutral in nature."
         },
         "relevanceCorrect": false,
         "sentimentCorrect": false
@@ -388,7 +388,7 @@
           "relevant": false,
           "sentiment": null,
           "confidence": 1,
-          "rationale": "The headline is not about the company or its products."
+          "rationale": "The headline mentions several unrelated companies and does not contain any information about the company…"
         },
         "relevanceCorrect": false,
         "sentimentCorrect": false
@@ -406,8 +406,8 @@
         "predicted": {
           "relevant": true,
           "sentiment": "positive",
-          "confidence": 0.95,
-          "rationale": "The headline mentions a registered direct offering, which is typically seen as positive for the…"
+          "confidence": 1,
+          "rationale": "The headline explicitly mentions the company Innoviz Technologies, which is the subject of the question."
         },
         "relevanceCorrect": true,
         "sentimentCorrect": false
@@ -426,7 +426,7 @@
           "relevant": true,
           "sentiment": "positive",
           "confidence": 0.95,
-          "rationale": "The headline mentions a live demo of ransomware defense, which is likely to be positive…"
+          "rationale": "The headline mentions 'Morphisec' and describes a live demo, which is typically associated with cybersecurity…"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": false
@@ -444,8 +444,8 @@
         "predicted": {
           "relevant": true,
           "sentiment": "positive",
-          "confidence": 0.95,
-          "rationale": "The headline mentions a significant funding round with a high valuation and signals the company’s…"
+          "confidence": 1,
+          "rationale": "The headline mentions 'OpenEvidence' and discusses a potential funding round with a high valuation, which…"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -461,13 +461,13 @@
           "note": "WayUp Media, a real-estate photo credit. Different entity."
         },
         "predicted": {
-          "relevant": true,
-          "sentiment": "positive",
+          "relevant": false,
+          "sentiment": null,
           "confidence": 0.95,
-          "rationale": "The headline is about a home designed for family-friendly amenities and luxurious features, which are…"
+          "rationale": "The headline mentions 'WayUp' but refers to a property listing, not the company itself."
         },
-        "relevanceCorrect": false,
-        "sentimentCorrect": false
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
       },
       {
         "id": "07ada07e084218c9",
@@ -517,14 +517,8 @@
           "sentiment": "positive",
           "note": "Third-party product built on Hailo-8L: a design win."
         },
-        "predicted": {
-          "relevant": false,
-          "sentiment": null,
-          "confidence": 0.9,
-          "rationale": "The headline is about an AI surveillance station, not a company named Hailo."
-        },
-        "relevanceCorrect": false,
-        "sentimentCorrect": false
+        "predicted": null,
+        "error": "Ollama response did not satisfy the schema"
       },
       {
         "id": "141ef90dc4a325bf",
@@ -539,8 +533,8 @@
         "predicted": {
           "relevant": true,
           "sentiment": "positive",
-          "confidence": 0.98,
-          "rationale": "The headline mentions a funding round, which is typically positive for investors."
+          "confidence": 1,
+          "rationale": "The headline mentions 'Innoviz' and discusses securing funding, which is typically seen as a positive…"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -559,7 +553,7 @@
           "relevant": true,
           "sentiment": "positive",
           "confidence": 0.95,
-          "rationale": "The headline mentions a product launch of an AI usage control solution, which is generally…"
+          "rationale": "The headline mentions 'Morphisec' which is the company name, and it's about launching an AI…"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -575,13 +569,13 @@
           "note": "Company named among products found to share a flaw."
         },
         "predicted": {
-          "relevant": true,
-          "sentiment": "negative",
+          "relevant": false,
+          "sentiment": null,
           "confidence": 0.95,
-          "rationale": "The headline mentions multiple companies that use evidence technology, including OpenEvidence, which is the company…"
+          "rationale": "The headline mentions several companies with similar names (OpenEvidence, OpenAI, Anthropic, Doximity) but does not…"
         },
-        "relevanceCorrect": true,
-        "sentimentCorrect": true
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
       },
       {
         "id": "fda6a70f242c362e",
@@ -594,13 +588,13 @@
           "note": "WayUp Sports, an Egyptian handball sponsorship. Different entity."
         },
         "predicted": {
-          "relevant": true,
-          "sentiment": "positive",
+          "relevant": false,
+          "sentiment": null,
           "confidence": 0.95,
-          "rationale": "The headline mentions a partnership between Adidas, WayUp Sports, and the Egyptian Handball Federation, which…"
+          "rationale": "The headline mentions 'WayUp' but refers to a different company (Adidas) and is not about…"
         },
-        "relevanceCorrect": false,
-        "sentimentCorrect": false
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
       },
       {
         "id": "096fc0993b62b113",
@@ -616,7 +610,7 @@
           "relevant": true,
           "sentiment": "positive",
           "confidence": 0.95,
-          "rationale": "The headline mentions a funding round, which is typically positive for investors."
+          "rationale": "The headline mentions a 'Series C' funding round, which is typically associated with positive outcomes…"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -635,7 +629,7 @@
           "relevant": true,
           "sentiment": "positive",
           "confidence": 0.95,
-          "rationale": "The headline mentions a positive analyst coverage, which is indicative of a favorable investor outcome."
+          "rationale": "The headline mentions a 'buy rating' for the company's stock, indicating positive sentiment towards the…"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -654,7 +648,7 @@
           "relevant": true,
           "sentiment": "positive",
           "confidence": 0.95,
-          "rationale": "The headline mentions a significant acquisition by a microchip company, which is typically viewed positively…"
+          "rationale": "The headline mentions 'Microchip' acquiring 'Edge AI Processor', which is consistent with the company name…"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -673,7 +667,7 @@
           "relevant": true,
           "sentiment": "positive",
           "confidence": 1,
-          "rationale": "The headline mentions a 'registered direct offering', which is typically seen as positive for the…"
+          "rationale": "The headline mentions the company's stock price, which is a positive outcome for investors."
         },
         "relevanceCorrect": true,
         "sentimentCorrect": false
@@ -692,7 +686,7 @@
           "relevant": true,
           "sentiment": "positive",
           "confidence": 0.95,
-          "rationale": "The headline mentions a product launch, which is typically associated with positive outcomes for investors."
+          "rationale": "The headline mentions 'Morphisec' which is the company name, and it specifically talks about launching…"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -708,13 +702,13 @@
           "note": "Negative pundit coverage."
         },
         "predicted": {
-          "relevant": true,
-          "sentiment": "negative",
+          "relevant": false,
+          "sentiment": null,
           "confidence": 0.95,
-          "rationale": "The headline directly mentions that Jim Cramer warned investors not to invest in Cerebras Systems,…"
+          "rationale": "The headline is clearly about a competitor of the company, not Cerebras Systems/Cerebras."
         },
-        "relevanceCorrect": true,
-        "sentimentCorrect": true
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
       },
       {
         "id": "1cbe01d9a2bdf140",
@@ -729,8 +723,8 @@
         "predicted": {
           "relevant": true,
           "sentiment": "positive",
-          "confidence": 0.95,
-          "rationale": "The headline mentions two major financial institutions investing in a legal AI company, which is…"
+          "confidence": 1,
+          "rationale": "The headline mentions two major investment banks (Goldman Sachs and JPMorgan) investing in a legal…"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -749,7 +743,7 @@
           "relevant": true,
           "sentiment": "positive",
           "confidence": 0.95,
-          "rationale": "The headline mentions the NBA's expansion of a startup program, which indicates positive news for…"
+          "rationale": "The headline mentions the 'NBA' and 'Launchpad', which are likely referring to a new expansion…"
         },
         "relevanceCorrect": false,
         "sentimentCorrect": false
@@ -766,12 +760,12 @@
         },
         "predicted": {
           "relevant": true,
-          "sentiment": "positive",
+          "sentiment": "neutral",
           "confidence": 0.95,
-          "rationale": "The headline mentions that the company is keeping more of its own insurance risk, which…"
+          "rationale": "The headline mentions 'Lemonade' but refers to the insurance technology company, not the drink."
         },
         "relevanceCorrect": true,
-        "sentimentCorrect": false
+        "sentimentCorrect": true
       },
       {
         "id": "4bdb6a6c283eff7a",
@@ -787,7 +781,7 @@
           "relevant": true,
           "sentiment": "positive",
           "confidence": 0.95,
-          "rationale": "The headline mentions an upcoming launch of Peak AI, which is likely a product or…"
+          "rationale": "The headline mentions an 'upcoming launch' of a company called Peak AI, which is consistent…"
         },
         "relevanceCorrect": false,
         "sentimentCorrect": false
@@ -806,7 +800,7 @@
           "relevant": false,
           "sentiment": null,
           "confidence": 1,
-          "rationale": "The headline is about a football-related event, not related to the company Shield."
+          "rationale": "The headline is about a football match, not the company Shield."
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -825,7 +819,7 @@
           "relevant": true,
           "sentiment": "negative",
           "confidence": 0.95,
-          "rationale": "The headline mentions that the company's stock is declining, which indicates a negative sentiment towards…"
+          "rationale": "The headline mentions 'SpaceX stock', which is the company being discussed, and it warns about…"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -844,7 +838,7 @@
           "relevant": true,
           "sentiment": "positive",
           "confidence": 0.95,
-          "rationale": "The headline mentions a 'PayPal Bid' for Stripe, indicating an acquisition or exit event."
+          "rationale": "The headline mentions 'Stripe's PayPal Bid', indicating a significant acquisition by Stripe, which is generally…"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -863,7 +857,7 @@
           "relevant": true,
           "sentiment": "positive",
           "confidence": 0.95,
-          "rationale": "The headline mentions 'Highlights', indicating a positive outcome, and discusses scalability and long-running AI agent…"
+          "rationale": "The headline mentions 'Together AI' and focuses on the company's scalable long-running AI agent architecture,…"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": false
@@ -881,8 +875,8 @@
         "predicted": {
           "relevant": true,
           "sentiment": "positive",
-          "confidence": 0.95,
-          "rationale": "The headline mentions both Cerebras (the company) and Upstage, which is bringing ultra-fast AI technology…"
+          "confidence": 1,
+          "rationale": "The headline mentions both Cerebras (the company) and Upstage, which is likely a competitor or…"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -901,7 +895,7 @@
           "relevant": true,
           "sentiment": "positive",
           "confidence": 0.95,
-          "rationale": "The headline mentions a legal AI partnership with the Toronto Maple Leafs, which is generally…"
+          "rationale": "The headline mentions a legal AI partnership with the Toronto Maple Leafs, which is likely…"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -920,7 +914,7 @@
           "relevant": true,
           "sentiment": "positive",
           "confidence": 0.95,
-          "rationale": "The headline mentions 'Asia's Largest Startup Launchpad' and is framed as a positive achievement."
+          "rationale": "The headline mentions 'Asia's Largest Startup Launchpad', which is a clear reference to the company…"
         },
         "relevanceCorrect": false,
         "sentimentCorrect": false
@@ -938,8 +932,8 @@
         "predicted": {
           "relevant": true,
           "sentiment": "positive",
-          "confidence": 0.95,
-          "rationale": "The headline mentions a 'Lemonade Pet Insurance Review', indicating a product launch or significant development…"
+          "confidence": 1,
+          "rationale": "The headline mentions 'Lemonade' and is specifically about a pet insurance product, which aligns with…"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": false
@@ -955,13 +949,13 @@
           "note": "Crypto trading-signal content."
         },
         "predicted": {
-          "relevant": true,
-          "sentiment": "negative",
-          "confidence": 0.95,
-          "rationale": "The headline mentions 'Arthur Hayes' and 'Altcoin Positions', which are negative indicators for the company."
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 1,
+          "rationale": "The headline mentions 'Arthur Hayes' and 'Liquidates', which are unrelated to the company Peak."
         },
-        "relevanceCorrect": false,
-        "sentimentCorrect": false
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
       },
       {
         "id": "045baa6e7e07b34a",
@@ -974,13 +968,13 @@
           "note": "UNCERTAIN - this is Arrow Global the UK credit manager. If that IS the portfolio company, flip to relevant:true / neutral."
         },
         "predicted": {
-          "relevant": false,
-          "sentiment": null,
+          "relevant": true,
+          "sentiment": "negative",
           "confidence": 0.9,
-          "rationale": "The headline is about a deal round-up and mentions several companies but does not provide…"
+          "rationale": "The headline mentions 'Arrow Global' in the context of a deal roundup, indicating it is…"
         },
-        "relevanceCorrect": true,
-        "sentimentCorrect": true
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
       },
       {
         "id": "04059aee896d9fab",
@@ -993,13 +987,13 @@
           "note": "Ad Astra community workshop. Different entity."
         },
         "predicted": {
-          "relevant": true,
-          "sentiment": "positive",
+          "relevant": false,
+          "sentiment": null,
           "confidence": 0.95,
-          "rationale": "The headline mentions an 'ASTRA' community workshop, which is likely related to AstraZeneca's pharmaceuticals sector."
+          "rationale": "The headline mentions 'Astra' but refers to AstraZeneca, a different company with the same name."
         },
-        "relevanceCorrect": false,
-        "sentimentCorrect": false
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
       },
       {
         "id": "2969a1a84ceee3b4",
@@ -1015,7 +1009,7 @@
           "relevant": true,
           "sentiment": "positive",
           "confidence": 0.95,
-          "rationale": "The headline mentions a significant milestone for Greenlight Financial, indicating growth and expansion into the…"
+          "rationale": "The headline mentions 'Greenlight Financial', which is the company name, and it specifically talks about…"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -1034,7 +1028,7 @@
           "relevant": true,
           "sentiment": "positive",
           "confidence": 0.95,
-          "rationale": "The headline mentions investments from well-known financial firms like JPMorgan and Goldman Sachs, which are…"
+          "rationale": "The headline mentions 'Harvey' and 'JP Morgan', which are likely to be related to the…"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -1052,8 +1046,8 @@
         "predicted": {
           "relevant": true,
           "sentiment": "positive",
-          "confidence": 0.95,
-          "rationale": "The headline mentions 'consolidate', which is a positive action for the company, and it's likely…"
+          "confidence": 1,
+          "rationale": "The headline mentions 'HUB Security' and describes it as a cybersecurity company, which aligns with…"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": false
@@ -1072,7 +1066,7 @@
           "relevant": true,
           "sentiment": "positive",
           "confidence": 0.95,
-          "rationale": "The headline mentions that Island is bringing a purpose-built workspace, which suggests it's an innovative…"
+          "rationale": "The headline mentions 'Island' and describes it as bringing a new product or service (purpose-built…"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -1089,9 +1083,9 @@
         },
         "predicted": {
           "relevant": true,
-          "sentiment": "positive",
-          "confidence": 0.95,
-          "rationale": "The headline mentions that the CEO of Kini (Sahil Kini) believes FinTech 2.0 should move…"
+          "sentiment": "negative",
+          "confidence": 1,
+          "rationale": "The headline mentions the company's name (Sahil Kini) and refers to a product launch by…"
         },
         "relevanceCorrect": false,
         "sentimentCorrect": false
@@ -1110,7 +1104,7 @@
           "relevant": true,
           "sentiment": "positive",
           "confidence": 0.95,
-          "rationale": "The headline mentions 'Launchpad' and connects it with connecting emerging artists, which is generally seen…"
+          "rationale": "The headline mentions 'Launchpad', which is the company name, and it's described as being built…"
         },
         "relevanceCorrect": false,
         "sentimentCorrect": false
@@ -1129,7 +1123,7 @@
           "relevant": true,
           "sentiment": "positive",
           "confidence": 0.95,
-          "rationale": "The headline mentions the company's stock price and news, indicating a positive investor outcome."
+          "rationale": "The headline mentions 'Lemonade Inc.' which is the company name, and it's discussing stock price…"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": false
@@ -1148,7 +1142,7 @@
           "relevant": true,
           "sentiment": "positive",
           "confidence": 0.95,
-          "rationale": "The headline mentions a 'record peak' in the Japanese stock market, which is typically associated…"
+          "rationale": "The headline mentions 'AI shares', which is likely referring to Peak, a company that provides…"
         },
         "relevanceCorrect": false,
         "sentimentCorrect": false
@@ -1167,7 +1161,7 @@
           "relevant": true,
           "sentiment": "positive",
           "confidence": 0.95,
-          "rationale": "The headline mentions 'Quantum Machines' and focuses on a real-time control strategy, which is likely…"
+          "rationale": "The headline mentions 'Quantum Machines' and focuses on a real-time control strategy, which is typically…"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": false
@@ -1185,8 +1179,8 @@
         "predicted": {
           "relevant": false,
           "sentiment": null,
-          "confidence": 0.5,
-          "rationale": "The headline is about a question being asked by a news host, not about any…"
+          "confidence": 0.95,
+          "rationale": "The headline mentions 'Sky News Australia' and a host questioning oil markets, but it does…"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -1201,14 +1195,8 @@
           "sentiment": null,
           "note": "Chugai Ro, a Japanese industrial furnace maker."
         },
-        "predicted": {
-          "relevant": true,
-          "sentiment": "positive",
-          "confidence": 0.95,
-          "rationale": "The headline mentions a dividend guidance, which is typically seen as positive news for investors."
-        },
-        "relevanceCorrect": false,
-        "sentimentCorrect": false
+        "predicted": null,
+        "error": "Ollama response did not satisfy the schema"
       },
       {
         "id": "046baf72df3b089f",
@@ -1220,14 +1208,8 @@
           "sentiment": null,
           "note": "Shield AI, a US defence autonomy company. Not the communications-compliance Shield. A strong decoy."
         },
-        "predicted": {
-          "relevant": true,
-          "sentiment": "positive",
-          "confidence": 0.98,
-          "rationale": "The headline mentions 'Shield AI', which is a company, and the context of an acquisition…"
-        },
-        "relevanceCorrect": false,
-        "sentimentCorrect": false
+        "predicted": null,
+        "error": "Ollama response did not satisfy the schema"
       },
       {
         "id": "1777a74d0bee4303",
@@ -1240,13 +1222,13 @@
           "note": "On the spot, an idiom."
         },
         "predicted": {
-          "relevant": true,
-          "sentiment": "positive",
+          "relevant": false,
+          "sentiment": null,
           "confidence": 0.95,
-          "rationale": "The headline mentions 'Exploring Ways', which indicates a positive intent towards finding solutions or methods,…"
+          "rationale": "The headline discusses ways to stop crime, which is unrelated to any company named 'Spot…"
         },
-        "relevanceCorrect": false,
-        "sentimentCorrect": false
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
       },
       {
         "id": "0bcb0d337e1d309a",
@@ -1262,7 +1244,7 @@
           "relevant": true,
           "sentiment": "positive",
           "confidence": 0.95,
-          "rationale": "The headline mentions a potential acquisition of Stripe by an AI model marketplace, which is…"
+          "rationale": "The headline mentions 'Stripe' and is about a potential acquisition, which is typically framed as…"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -1278,13 +1260,13 @@
           "note": "UNCERTAIN - same Arrow Global question as item 32. If it is the portfolio company, this is a routine appointment: relevant:true / neutral."
         },
         "predicted": {
-          "relevant": true,
-          "sentiment": "positive",
+          "relevant": false,
+          "sentiment": null,
           "confidence": 0.95,
-          "rationale": "The headline mentions an appointment, which is typically a positive event for the company."
+          "rationale": "The headline mentions 'Arrow Global' but refers to a different company with the same name,…"
         },
-        "relevanceCorrect": false,
-        "sentimentCorrect": false
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
       },
       {
         "id": "1022f81956cb0e22",
@@ -1299,8 +1281,8 @@
         "predicted": {
           "relevant": false,
           "sentiment": null,
-          "confidence": 0.5,
-          "rationale": "The headline mentions 'India' and 'BrahMos', which are not related to the company Astra."
+          "confidence": 0.95,
+          "rationale": "The headline mentions 'India's defense equipment' and a potential deal between Astra (a pharmaceutical company)…"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -1319,7 +1301,7 @@
           "relevant": true,
           "sentiment": "positive",
           "confidence": 0.95,
-          "rationale": "The headline mentions a financial institution (Dow Credit Union) launching a partnership, which is generally…"
+          "rationale": "The headline mentions a 'partnership' between Dow Credit Union and Greenlight, which is likely referring…"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -1338,7 +1320,7 @@
           "relevant": true,
           "sentiment": "positive",
           "confidence": 0.95,
-          "rationale": "Broseta is partnering with Harvey, which is likely a positive development for the company."
+          "rationale": "The headline mentions 'Harvey' and 'AI integration', which is consistent with the company's name and…"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -1373,13 +1355,13 @@
           "note": "Leads losses among peers."
         },
         "predicted": {
-          "relevant": true,
-          "sentiment": "negative",
+          "relevant": false,
+          "sentiment": null,
           "confidence": 0.95,
-          "rationale": "The headline directly mentions that Innoviz Technologies is leading losses in the Lidar technology stocks,…"
+          "rationale": "The headline mentions 'Innoviz Technologies' but refers to a loss in the industry, which is…"
         },
-        "relevanceCorrect": true,
-        "sentimentCorrect": true
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
       },
       {
         "id": "010cf2b35b8c1ae3",
@@ -1392,13 +1374,13 @@
           "note": "MIXED: beat on sales but the stock fell 15%. Investor lens takes the drop."
         },
         "predicted": {
-          "relevant": false,
-          "sentiment": null,
-          "confidence": 0.98,
-          "rationale": "The headline mentions that the stock fell, which is a negative outcome."
+          "relevant": true,
+          "sentiment": "negative",
+          "confidence": 0.9,
+          "rationale": "The headline mentions 'Lemonade' (NYSE:LMND) and states that the stock fell, which is a negative…"
         },
-        "relevanceCorrect": false,
-        "sentimentCorrect": false
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
       },
       {
         "id": "c02f7f5ef83a6984",
@@ -1413,8 +1395,8 @@
         "predicted": {
           "relevant": true,
           "sentiment": "negative",
-          "confidence": 0.95,
-          "rationale": "The headline mentions a 'bear market' and a fall of 20%, which is clearly negative."
+          "confidence": 1,
+          "rationale": "The headline mentions a 'bear market' and a fall of 20%, which is clearly negative…"
         },
         "relevanceCorrect": false,
         "sentimentCorrect": false
@@ -1430,12 +1412,12 @@
           "note": "Genuinely about Ro the telehealth company; a comparison review with no headline valence."
         },
         "predicted": {
-          "relevant": true,
-          "sentiment": "negative",
+          "relevant": false,
+          "sentiment": null,
           "confidence": 0.95,
-          "rationale": "The headline mentions 'Ro Hair Loss Review', which is a product review, and the context…"
+          "rationale": "The headline mentions 'Ro' but is about hair loss products, not the telehealth company."
         },
-        "relevanceCorrect": true,
+        "relevanceCorrect": false,
         "sentimentCorrect": false
       },
       {
@@ -1449,13 +1431,13 @@
           "note": "Explicitly a bad week; SpaceX valuation drop."
         },
         "predicted": {
-          "relevant": true,
-          "sentiment": "negative",
-          "confidence": 0.95,
-          "rationale": "The headline mentions SpaceX and a drop in its stock price, indicating negative sentiment."
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 1,
+          "rationale": "The headline mentions both Tesla and SpaceX, but the context is Tesla's performance drop, which…"
         },
-        "relevanceCorrect": true,
-        "sentimentCorrect": true
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
       },
       {
         "id": "5eeeb9ab0c1a6065",
@@ -1469,9 +1451,9 @@
         },
         "predicted": {
           "relevant": true,
-          "sentiment": "positive",
+          "sentiment": "negative",
           "confidence": 0.95,
-          "rationale": "The headline mentions humans being trained to spot AI, which is a positive outcome for…"
+          "rationale": "The headline mentions 'Spot' which is the company name, and it's about humans training to…"
         },
         "relevanceCorrect": false,
         "sentimentCorrect": false
@@ -1490,7 +1472,7 @@
           "relevant": true,
           "sentiment": "negative",
           "confidence": 0.95,
-          "rationale": "The headline mentions a quarterly loss, which is negative for the company."
+          "rationale": "The headline mentions 'Ro' which is the company name, and it talks about a quarterly…"
         },
         "relevanceCorrect": false,
         "sentimentCorrect": false
@@ -1508,13 +1490,13 @@
           "note": "Factual directory/financial-data page. Rubric: factual listing."
         },
         "predicted": {
-          "relevant": false,
-          "sentiment": null,
-          "confidence": 0,
-          "rationale": "Step 1 does not apply"
+          "relevant": true,
+          "sentiment": "neutral",
+          "confidence": 0.8,
+          "rationale": "sector-specific financial reporting, no direct mention of company performance"
         },
-        "relevanceCorrect": false,
-        "sentimentCorrect": false
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
       },
       {
         "id": "01d2226065c993ac",
@@ -1527,13 +1509,13 @@
           "note": "Passing mention in a multi-company roundup."
         },
         "predicted": {
-          "relevant": false,
-          "sentiment": null,
-          "confidence": 0,
-          "rationale": ""
+          "relevant": true,
+          "sentiment": "neutral",
+          "confidence": 0.8,
+          "rationale": "Sector and context terms match, but no direct mention of Hailo's AI capabilities."
         },
-        "relevanceCorrect": false,
-        "sentimentCorrect": false
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
       },
       {
         "id": "047f786341192935",
@@ -1547,12 +1529,12 @@
         },
         "predicted": {
           "relevant": true,
-          "sentiment": "positive",
-          "confidence": 1,
-          "rationale": "funding round"
+          "sentiment": "neutral",
+          "confidence": 0.8,
+          "rationale": "raises capital, not a product launch or acquisition"
         },
         "relevanceCorrect": true,
-        "sentimentCorrect": false
+        "sentimentCorrect": true
       },
       {
         "id": "4e44a654bfd41d4a",
@@ -1567,8 +1549,8 @@
         "predicted": {
           "relevant": true,
           "sentiment": "positive",
-          "confidence": 1,
-          "rationale": "product launch, live demo"
+          "confidence": 0.9,
+          "rationale": "Company name and sector match, positive action verb 'Join' implies benefit."
         },
         "relevanceCorrect": true,
         "sentimentCorrect": false
@@ -1585,12 +1567,12 @@
         },
         "predicted": {
           "relevant": true,
-          "sentiment": "positive",
-          "confidence": 0.9,
-          "rationale": "growth, valuation, and investment"
+          "sentiment": "neutral",
+          "confidence": 0.8,
+          "rationale": "Company name mentioned, but context is about AI healthcare sector."
         },
         "relevanceCorrect": true,
-        "sentimentCorrect": true
+        "sentimentCorrect": false
       },
       {
         "id": "c4a8cd1c77c937d8",
@@ -1606,7 +1588,7 @@
           "relevant": false,
           "sentiment": null,
           "confidence": 0,
-          "rationale": "EXCLUDE: 'WayUp' or 'all the way up'"
+          "rationale": "Not about HR tech or the company itself, but rather a real estate listing."
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -1625,7 +1607,7 @@
           "relevant": true,
           "sentiment": "positive",
           "confidence": 1,
-          "rationale": "funding round"
+          "rationale": "raises funding round"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -1644,7 +1626,7 @@
           "relevant": true,
           "sentiment": "positive",
           "confidence": 0.9,
-          "rationale": "Initiates with buy rating and target price"
+          "rationale": "Buy rating and target price indicate a positive outlook."
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -1660,13 +1642,13 @@
           "note": "Third-party product built on Hailo-8L: a design win."
         },
         "predicted": {
-          "relevant": true,
-          "sentiment": "positive",
-          "confidence": 1,
-          "rationale": "NDAA and TAA-compliant, new product launch"
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0,
+          "rationale": ""
         },
-        "relevanceCorrect": true,
-        "sentimentCorrect": true
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
       },
       {
         "id": "141ef90dc4a325bf",
@@ -1681,8 +1663,8 @@
         "predicted": {
           "relevant": true,
           "sentiment": "positive",
-          "confidence": 1,
-          "rationale": ""
+          "confidence": 0.8,
+          "rationale": "defense orders, LiDAR systems, funding"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -1700,8 +1682,8 @@
         "predicted": {
           "relevant": true,
           "sentiment": "positive",
-          "confidence": 1,
-          "rationale": "Launch, product launch, governing shadow/sanctioned AI"
+          "confidence": 0.9,
+          "rationale": "Morphisec Technologies mentioned, implies company involvement"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -1719,8 +1701,8 @@
         "predicted": {
           "relevant": true,
           "sentiment": "negative",
-          "confidence": 0.9,
-          "rationale": "flaw mentioned in multiple companies including OpenEvidence"
+          "confidence": 0.8,
+          "rationale": "sector and context terms match, negative words 'flaw' and 'found'"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -1738,8 +1720,8 @@
         "predicted": {
           "relevant": false,
           "sentiment": null,
-          "confidence": 1,
-          "rationale": "Excluded because headline contains 'all the way up'"
+          "confidence": 0.5,
+          "rationale": "Partnership with a different organization, not HR tech"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -1757,8 +1739,8 @@
         "predicted": {
           "relevant": true,
           "sentiment": "positive",
-          "confidence": 1,
-          "rationale": "funding round, product launch, major partnership"
+          "confidence": 0.9,
+          "rationale": "Mentions funding round and expansion plans for the company's platform."
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -1776,8 +1758,8 @@
         "predicted": {
           "relevant": true,
           "sentiment": "positive",
-          "confidence": 1,
-          "rationale": "initiates with buy, positive analyst coverage"
+          "confidence": 0.9,
+          "rationale": "buy rating, positive tone, mentions AI growth"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -1795,7 +1777,7 @@
         "predicted": {
           "relevant": true,
           "sentiment": "negative",
-          "confidence": 1,
+          "confidence": 0.8,
           "rationale": "Acquisition by a competitor"
         },
         "relevanceCorrect": true,
@@ -1813,12 +1795,12 @@
         },
         "predicted": {
           "relevant": true,
-          "sentiment": "positive",
-          "confidence": 1,
-          "rationale": "Funding round"
+          "sentiment": "neutral",
+          "confidence": 0.8,
+          "rationale": "Company name matches, but no positive or negative outcome mentioned."
         },
         "relevanceCorrect": true,
-        "sentimentCorrect": false
+        "sentimentCorrect": true
       },
       {
         "id": "870422b1f773a31e",
@@ -1833,8 +1815,8 @@
         "predicted": {
           "relevant": true,
           "sentiment": "positive",
-          "confidence": 1,
-          "rationale": "Launch, new product, partnership with no negative context"
+          "confidence": 0.9,
+          "rationale": "Morphisec is a cybersecurity company, the headline mentions their product launch."
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -1850,13 +1832,13 @@
           "note": "Negative pundit coverage."
         },
         "predicted": {
-          "relevant": false,
-          "sentiment": null,
-          "confidence": 1,
-          "rationale": "Jim Cramer's warning"
+          "relevant": true,
+          "sentiment": "negative",
+          "confidence": 0.8,
+          "rationale": "Company name and sector match, negative tone from prominent figure."
         },
-        "relevanceCorrect": false,
-        "sentimentCorrect": false
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
       },
       {
         "id": "1cbe01d9a2bdf140",
@@ -1871,8 +1853,8 @@
         "predicted": {
           "relevant": true,
           "sentiment": "positive",
-          "confidence": 1,
-          "rationale": ""
+          "confidence": 0.9,
+          "rationale": "sector and context terms match"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -1889,9 +1871,9 @@
         },
         "predicted": {
           "relevant": true,
-          "sentiment": "positive",
-          "confidence": 1,
-          "rationale": "expanding a program is a positive development for the company"
+          "sentiment": "neutral",
+          "confidence": 0.8,
+          "rationale": "Company name mentioned in context of unrelated industry"
         },
         "relevanceCorrect": false,
         "sentimentCorrect": false
@@ -1907,13 +1889,13 @@
           "note": "Explicitly two-sided framing: confidence or red flag. Rubric: balanced reporting."
         },
         "predicted": {
-          "relevant": false,
-          "sentiment": null,
-          "confidence": 0,
-          "rationale": "EXCLUDE - recipe, drink, lemonade stand, pink lemonade, lemonade ice cream"
+          "relevant": true,
+          "sentiment": "neutral",
+          "confidence": 0.8,
+          "rationale": "sector and context terms, but no clear direction"
         },
-        "relevanceCorrect": false,
-        "sentimentCorrect": false
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
       },
       {
         "id": "4bdb6a6c283eff7a",
@@ -1928,8 +1910,8 @@
         "predicted": {
           "relevant": true,
           "sentiment": "positive",
-          "confidence": 1,
-          "rationale": ""
+          "confidence": 0.9,
+          "rationale": "sector and context terms match"
         },
         "relevanceCorrect": false,
         "sentimentCorrect": false
@@ -1947,8 +1929,8 @@
         "predicted": {
           "relevant": false,
           "sentiment": null,
-          "confidence": 1,
-          "rationale": ""
+          "confidence": 0.5,
+          "rationale": "Company name mismatch, unrelated to regtech/compliance"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -1966,8 +1948,8 @@
         "predicted": {
           "relevant": false,
           "sentiment": null,
-          "confidence": 1,
-          "rationale": "excluded because headline mentions 'sliding' stock, which is a negative outcome for investors"
+          "confidence": 0.8,
+          "rationale": "owns shares"
         },
         "relevanceCorrect": false,
         "sentimentCorrect": false
@@ -1985,8 +1967,8 @@
         "predicted": {
           "relevant": true,
           "sentiment": "positive",
-          "confidence": 1,
-          "rationale": "acquisition, powerful enough to buy public giants"
+          "confidence": 0.9,
+          "rationale": "sector and context terms indicate a major acquisition"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -2004,8 +1986,8 @@
         "predicted": {
           "relevant": true,
           "sentiment": "positive",
-          "confidence": 1,
-          "rationale": ""
+          "confidence": 0.9,
+          "rationale": "sector and context terms match company name"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": false
@@ -2023,8 +2005,8 @@
         "predicted": {
           "relevant": true,
           "sentiment": "positive",
-          "confidence": 1,
-          "rationale": ""
+          "confidence": 0.9,
+          "rationale": "Company name, sector, and positive outcome"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -2042,8 +2024,8 @@
         "predicted": {
           "relevant": true,
           "sentiment": "positive",
-          "confidence": 1,
-          "rationale": ""
+          "confidence": 0.9,
+          "rationale": "sector and partnership terms"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -2061,8 +2043,8 @@
         "predicted": {
           "relevant": true,
           "sentiment": "positive",
-          "confidence": 1,
-          "rationale": ""
+          "confidence": 0.8,
+          "rationale": "Company name matches and positive context"
         },
         "relevanceCorrect": false,
         "sentimentCorrect": false
@@ -2081,7 +2063,7 @@
           "relevant": true,
           "sentiment": "positive",
           "confidence": 0.8,
-          "rationale": "Review implies a positive assessment, and '2026' suggests a future outlook."
+          "rationale": "Review implies a positive assessment, 'Lemonade' is the company name."
         },
         "relevanceCorrect": true,
         "sentimentCorrect": false
@@ -2099,8 +2081,8 @@
         "predicted": {
           "relevant": true,
           "sentiment": "negative",
-          "confidence": 0.9,
-          "rationale": "liquidates positions, altcoin"
+          "confidence": 0.8,
+          "rationale": "Arthur Hayes liquidates altcoin positions, implying a negative outcome for Peak AI's trading signals."
         },
         "relevanceCorrect": false,
         "sentimentCorrect": false
@@ -2116,13 +2098,13 @@
           "note": "UNCERTAIN - this is Arrow Global the UK credit manager. If that IS the portfolio company, flip to relevant:true / neutral."
         },
         "predicted": {
-          "relevant": false,
-          "sentiment": null,
-          "confidence": 0,
-          "rationale": ""
+          "relevant": true,
+          "sentiment": "neutral",
+          "confidence": 0.8,
+          "rationale": "Sector and context terms, but no direct mention of Arrow Global"
         },
-        "relevanceCorrect": true,
-        "sentimentCorrect": true
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
       },
       {
         "id": "04059aee896d9fab",
@@ -2137,8 +2119,8 @@
         "predicted": {
           "relevant": true,
           "sentiment": "neutral",
-          "confidence": 1,
-          "rationale": ""
+          "confidence": 0.8,
+          "rationale": "Community event, no financial or product-related information"
         },
         "relevanceCorrect": false,
         "sentimentCorrect": false
@@ -2154,13 +2136,13 @@
           "note": "Growth milestone. UNCERTAIN: assumes the portfolio Greenlight is the family-banking fintech."
         },
         "predicted": {
-          "relevant": true,
-          "sentiment": "positive",
-          "confidence": 0.9,
-          "rationale": "milestone, scaling family banking"
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.5,
+          "rationale": "Different company and unrelated sector"
         },
-        "relevanceCorrect": true,
-        "sentimentCorrect": true
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
       },
       {
         "id": "12dc96db949e8d91",
@@ -2175,8 +2157,8 @@
         "predicted": {
           "relevant": true,
           "sentiment": "positive",
-          "confidence": 1,
-          "rationale": "Investment from major financial institutions"
+          "confidence": 0.9,
+          "rationale": "sector and context terms match, positive funding announcement"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -2192,13 +2174,13 @@
           "note": "A 20-to-1 reverse split, typically a listing-compliance signal."
         },
         "predicted": {
-          "relevant": true,
-          "sentiment": "negative",
-          "confidence": 0.8,
-          "rationale": "consolidation, down round"
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.5,
+          "rationale": "not about this company, dilutive financing mechanism"
         },
-        "relevanceCorrect": true,
-        "sentimentCorrect": true
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
       },
       {
         "id": "4899279107e3cecc",
@@ -2213,8 +2195,8 @@
         "predicted": {
           "relevant": true,
           "sentiment": "positive",
-          "confidence": 1,
-          "rationale": ""
+          "confidence": 0.9,
+          "rationale": "sector and context terms match"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -2230,13 +2212,13 @@
           "note": "Sahil Kini is a person's surname."
         },
         "predicted": {
-          "relevant": false,
-          "sentiment": null,
-          "confidence": 1,
-          "rationale": "CEO mentioned in context of industry development"
+          "relevant": true,
+          "sentiment": "positive",
+          "confidence": 0.8,
+          "rationale": "CEO mentions company name and positive context of FinTech 2.0"
         },
-        "relevanceCorrect": true,
-        "sentimentCorrect": true
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
       },
       {
         "id": "0c980c140e45fd74",
@@ -2251,8 +2233,8 @@
         "predicted": {
           "relevant": true,
           "sentiment": "positive",
-          "confidence": 1,
-          "rationale": ""
+          "confidence": 0.8,
+          "rationale": "emerging artists, Southeast Asia audiences, connection implied"
         },
         "relevanceCorrect": false,
         "sentimentCorrect": false
@@ -2268,13 +2250,13 @@
           "note": "Stock-quote directory page."
         },
         "predicted": {
-          "relevant": false,
-          "sentiment": null,
-          "confidence": 0,
-          "rationale": ""
+          "relevant": true,
+          "sentiment": "neutral",
+          "confidence": 0.8,
+          "rationale": "sector and context terms match"
         },
-        "relevanceCorrect": false,
-        "sentimentCorrect": false
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
       },
       {
         "id": "1e6bf97bdcdbb9ff",
@@ -2288,9 +2270,9 @@
         },
         "predicted": {
           "relevant": true,
-          "sentiment": "positive",
-          "confidence": 0.9,
-          "rationale": "AI shares tracking a US market trend"
+          "sentiment": "neutral",
+          "confidence": 0.8,
+          "rationale": "Decision intelligence sector mentioned, but no direct mention of Peak"
         },
         "relevanceCorrect": false,
         "sentimentCorrect": false
@@ -2308,8 +2290,8 @@
         "predicted": {
           "relevant": true,
           "sentiment": "positive",
-          "confidence": 1,
-          "rationale": ""
+          "confidence": 0.9,
+          "rationale": "sector and context terms match"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": false
@@ -2328,7 +2310,7 @@
           "relevant": false,
           "sentiment": null,
           "confidence": 0,
-          "rationale": ""
+          "rationale": "Sector mismatch, unrelated topic"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -2347,7 +2329,7 @@
           "relevant": true,
           "sentiment": "positive",
           "confidence": 1,
-          "rationale": "dividend guidance"
+          "rationale": "Company name and sector match"
         },
         "relevanceCorrect": false,
         "sentimentCorrect": false
@@ -2366,7 +2348,7 @@
           "relevant": true,
           "sentiment": "positive",
           "confidence": 0.9,
-          "rationale": "funding round, high valuation"
+          "rationale": "sector and context terms match, funding round and valuation mentioned"
         },
         "relevanceCorrect": false,
         "sentimentCorrect": false
@@ -2383,9 +2365,9 @@
         },
         "predicted": {
           "relevant": true,
-          "sentiment": "negative",
+          "sentiment": "neutral",
           "confidence": 0.8,
-          "rationale": "crime, stop"
+          "rationale": "Company name mentioned in context of law enforcement"
         },
         "relevanceCorrect": false,
         "sentimentCorrect": false
@@ -2402,12 +2384,12 @@
         },
         "predicted": {
           "relevant": true,
-          "sentiment": "positive",
-          "confidence": 0.9,
-          "rationale": "Deal size and potential market impact"
+          "sentiment": "neutral",
+          "confidence": 0.8,
+          "rationale": "Sector and context terms match, but no direct mention of Stripe's financials or operations."
         },
         "relevanceCorrect": true,
-        "sentimentCorrect": true
+        "sentimentCorrect": false
       },
       {
         "id": "7c344a8f57f24641",
@@ -2422,8 +2404,8 @@
         "predicted": {
           "relevant": true,
           "sentiment": "neutral",
-          "confidence": 1,
-          "rationale": ""
+          "confidence": 0.8,
+          "rationale": "Company name matches, but unrelated sector and context"
         },
         "relevanceCorrect": false,
         "sentimentCorrect": false
@@ -2442,7 +2424,7 @@
           "relevant": false,
           "sentiment": null,
           "confidence": 0.5,
-          "rationale": "Excluded because of 'AstraZeneca' mention"
+          "rationale": "Company name mentioned but context unrelated to pharma sector"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -2460,8 +2442,8 @@
         "predicted": {
           "relevant": false,
           "sentiment": null,
-          "confidence": 1,
-          "rationale": "EXCLUDE — 'traffic' and 'other hedge funds'"
+          "confidence": 0.5,
+          "rationale": "Different company and unrelated sector"
         },
         "relevanceCorrect": false,
         "sentimentCorrect": false
@@ -2479,8 +2461,8 @@
         "predicted": {
           "relevant": true,
           "sentiment": "positive",
-          "confidence": 1,
-          "rationale": ""
+          "confidence": 0.9,
+          "rationale": "Partnership with a major player in the sector"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -2496,12 +2478,12 @@
           "note": "Procedural governance change; the word cuts is what the sampler matched, not the meaning."
         },
         "predicted": {
-          "relevant": false,
-          "sentiment": null,
-          "confidence": 0,
-          "rationale": "Step 4 — sentiment applies only when relevant is true"
+          "relevant": true,
+          "sentiment": "negative",
+          "confidence": 0.8,
+          "rationale": "quorum reduction implies difficulty in reaching consensus"
         },
-        "relevanceCorrect": false,
+        "relevanceCorrect": true,
         "sentimentCorrect": false
       },
       {
@@ -2515,13 +2497,13 @@
           "note": "Leads losses among peers."
         },
         "predicted": {
-          "relevant": false,
-          "sentiment": null,
-          "confidence": 1,
-          "rationale": "excluded 'other' category"
+          "relevant": true,
+          "sentiment": "negative",
+          "confidence": 0.8,
+          "rationale": "Lidar technology stocks, Innoviz Technologies mentioned"
         },
-        "relevanceCorrect": false,
-        "sentimentCorrect": false
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
       },
       {
         "id": "010cf2b35b8c1ae3",
@@ -2534,13 +2516,13 @@
           "note": "MIXED: beat on sales but the stock fell 15%. Investor lens takes the drop."
         },
         "predicted": {
-          "relevant": false,
-          "sentiment": null,
-          "confidence": 0.9,
-          "rationale": "stock drops despite beating sales expectations"
+          "relevant": true,
+          "sentiment": "negative",
+          "confidence": 0.8,
+          "rationale": "beats expectations but stock drops"
         },
-        "relevanceCorrect": false,
-        "sentimentCorrect": false
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
       },
       {
         "id": "c02f7f5ef83a6984",
@@ -2555,8 +2537,8 @@
         "predicted": {
           "relevant": true,
           "sentiment": "negative",
-          "confidence": 0.9,
-          "rationale": "peak mentioned in context of market fall"
+          "confidence": 0.8,
+          "rationale": "sector and context terms match"
         },
         "relevanceCorrect": false,
         "sentimentCorrect": false
@@ -2572,12 +2554,12 @@
           "note": "Genuinely about Ro the telehealth company; a comparison review with no headline valence."
         },
         "predicted": {
-          "relevant": true,
-          "sentiment": "negative",
-          "confidence": 0.8,
-          "rationale": "comparing to other brands implies a negative comparison"
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.5,
+          "rationale": "Different company and unrelated sector"
         },
-        "relevanceCorrect": true,
+        "relevanceCorrect": false,
         "sentimentCorrect": false
       },
       {
@@ -2594,7 +2576,7 @@
           "relevant": true,
           "sentiment": "negative",
           "confidence": 0.8,
-          "rationale": "Musk's bad week"
+          "rationale": "Musk and SpaceX mentioned, but not in a positive context"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -2612,8 +2594,8 @@
         "predicted": {
           "relevant": true,
           "sentiment": "positive",
-          "confidence": 0.9,
-          "rationale": "training for a good outcome, positive context"
+          "confidence": 0.8,
+          "rationale": "AI-focused, company name mentioned, positive context"
         },
         "relevanceCorrect": false,
         "sentimentCorrect": false
@@ -2632,7 +2614,7 @@
           "relevant": true,
           "sentiment": "negative",
           "confidence": 0.8,
-          "rationale": "loss, dividend cut"
+          "rationale": "sector and context terms match, negative outcome for the company"
         },
         "relevanceCorrect": false,
         "sentimentCorrect": false
@@ -2653,7 +2635,7 @@
           "relevant": false,
           "sentiment": null,
           "confidence": 1,
-          "rationale": "Balance sheet announcement is routine and investor-neutral."
+          "rationale": "Balance Sheet is a financial term not related to Cyabra."
         },
         "relevanceCorrect": false,
         "sentimentCorrect": false
@@ -2672,7 +2654,7 @@
           "relevant": false,
           "sentiment": null,
           "confidence": 1,
-          "rationale": "Hailo mentioned as part of a list without any specific outcome or news."
+          "rationale": "Hailo is not mentioned in a way that indicates any news about the company."
         },
         "relevanceCorrect": false,
         "sentimentCorrect": false
@@ -2691,7 +2673,7 @@
           "relevant": true,
           "sentiment": "neutral",
           "confidence": 1,
-          "rationale": "Registered direct offering is neutral unless framed as a win."
+          "rationale": "registered share offering is routine and neutral for investors"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -2709,8 +2691,8 @@
         "predicted": {
           "relevant": true,
           "sentiment": "neutral",
-          "confidence": 0.85,
-          "rationale": "No clear positive or negative sentiment, and no results attached."
+          "confidence": 0.95,
+          "rationale": "Morphisec and ransomware defense mentioned without bias"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -2726,13 +2708,13 @@
           "note": "Funding at a step-up valuation."
         },
         "predicted": {
-          "relevant": true,
-          "sentiment": "positive",
-          "confidence": 0.95,
-          "rationale": "AI healthcare growth and funding signal strong company prospects"
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 1,
+          "rationale": "OpenEvidence is not mentioned in the headline."
         },
-        "relevanceCorrect": true,
-        "sentimentCorrect": true
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
       },
       {
         "id": "c4a8cd1c77c937d8",
@@ -2748,7 +2730,7 @@
           "relevant": false,
           "sentiment": null,
           "confidence": 1,
-          "rationale": "Headline is unrelated to the company's sector or activities."
+          "rationale": "No mention of Wayup or HR tech sector."
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -2764,13 +2746,13 @@
           "note": "Funding round."
         },
         "predicted": {
-          "relevant": true,
-          "sentiment": "positive",
-          "confidence": 1,
-          "rationale": "Funding round, acquisition or exit"
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.95,
+          "rationale": "ZutaCore raises $100M"
         },
-        "relevanceCorrect": true,
-        "sentimentCorrect": true
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
       },
       {
         "id": "074b40cc95872258",
@@ -2786,7 +2768,7 @@
           "relevant": true,
           "sentiment": "positive",
           "confidence": 0.95,
-          "rationale": "Buy rating and target price announcement are positive signals."
+          "rationale": "buy rating and target price announcement"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -2804,8 +2786,8 @@
         "predicted": {
           "relevant": false,
           "sentiment": null,
-          "confidence": 1,
-          "rationale": "Headline is about a specific product, not related to Hailo's operations or financials."
+          "confidence": 0.95,
+          "rationale": "Hailo mentioned but not related to the company or its sector."
         },
         "relevanceCorrect": false,
         "sentimentCorrect": false
@@ -2821,13 +2803,13 @@
           "note": "Customer/defence orders."
         },
         "predicted": {
-          "relevant": true,
-          "sentiment": "positive",
+          "relevant": false,
+          "sentiment": null,
           "confidence": 0.95,
-          "rationale": "Defense order funding is a positive outcome for the company."
+          "rationale": "Innoviz secures $3.5M in defense orders for LiDAR systems - no mention of Innoviz Technologies"
         },
-        "relevanceCorrect": true,
-        "sentimentCorrect": true
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
       },
       {
         "id": "65ed5908eee55562",
@@ -2841,12 +2823,12 @@
         },
         "predicted": {
           "relevant": true,
-          "sentiment": "positive",
-          "confidence": 0.95,
-          "rationale": "AI usage control launch is a product feature update"
+          "sentiment": "neutral",
+          "confidence": 1,
+          "rationale": "Morphisec is mentioned in relation to a new product launch."
         },
         "relevanceCorrect": true,
-        "sentimentCorrect": true
+        "sentimentCorrect": false
       },
       {
         "id": "0a5b8889e8677578",
@@ -2859,13 +2841,13 @@
           "note": "Company named among products found to share a flaw."
         },
         "predicted": {
-          "relevant": true,
-          "sentiment": "negative",
+          "relevant": false,
+          "sentiment": null,
           "confidence": 0.95,
-          "rationale": "Criticism of multiple companies for a flaw"
+          "rationale": "OpenEvidence mentioned but not related to the main topic"
         },
-        "relevanceCorrect": true,
-        "sentimentCorrect": true
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
       },
       {
         "id": "fda6a70f242c362e",
@@ -2878,13 +2860,13 @@
           "note": "WayUp Sports, an Egyptian handball sponsorship. Different entity."
         },
         "predicted": {
-          "relevant": true,
-          "sentiment": "positive",
+          "relevant": false,
+          "sentiment": null,
           "confidence": 0.95,
-          "rationale": "Sports industry partnership"
+          "rationale": "adidas and WayUp Sports Partner with the Egyptian Handball Federation"
         },
-        "relevanceCorrect": false,
-        "sentimentCorrect": false
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
       },
       {
         "id": "096fc0993b62b113",
@@ -2900,7 +2882,7 @@
           "relevant": true,
           "sentiment": "positive",
           "confidence": 0.95,
-          "rationale": "Funding round with significant investment amount."
+          "rationale": "Series C funding for expansion"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -2919,7 +2901,7 @@
           "relevant": true,
           "sentiment": "positive",
           "confidence": 0.95,
-          "rationale": "Buy rating indicates investor confidence in the company's future."
+          "rationale": "buy rating for Cyabra stock"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -2936,12 +2918,12 @@
         },
         "predicted": {
           "relevant": true,
-          "sentiment": "positive",
-          "confidence": 0.95,
-          "rationale": "Microchip acquisition indicates strategic investment in the company."
+          "sentiment": "negative",
+          "confidence": 1,
+          "rationale": "Microchip acquisition of Hailo Technologies"
         },
         "relevanceCorrect": true,
-        "sentimentCorrect": true
+        "sentimentCorrect": false
       },
       {
         "id": "17e6259ecc5cbb09",
@@ -2957,7 +2939,7 @@
           "relevant": true,
           "sentiment": "neutral",
           "confidence": 1,
-          "rationale": "Registered direct offering is neutral unless framed as a win."
+          "rationale": "registered direct offering is routine and neutral for investors"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -2974,12 +2956,12 @@
         },
         "predicted": {
           "relevant": true,
-          "sentiment": "positive",
-          "confidence": 0.95,
-          "rationale": "AI usage control launch in cybersecurity sector"
+          "sentiment": "neutral",
+          "confidence": 1,
+          "rationale": "Morphisec Launches AI Usage Control"
         },
         "relevanceCorrect": true,
-        "sentimentCorrect": true
+        "sentimentCorrect": false
       },
       {
         "id": "19b4ac5d78ec9c85",
@@ -2995,7 +2977,7 @@
           "relevant": false,
           "sentiment": null,
           "confidence": 1,
-          "rationale": "Excluded as it mentions a specific AI company and its CEO/analyst's warning."
+          "rationale": "Jim Cramer's warning to stay away"
         },
         "relevanceCorrect": false,
         "sentimentCorrect": false
@@ -3014,7 +2996,7 @@
           "relevant": true,
           "sentiment": "positive",
           "confidence": 0.95,
-          "rationale": "Goldman Sachs and JPMorgan investment in the company is seen as a positive sign."
+          "rationale": "Goldman Sachs and JPMorgan investing in Harvey"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -3030,13 +3012,13 @@
           "note": "The NBA's own Launchpad programme. Different entity."
         },
         "predicted": {
-          "relevant": true,
-          "sentiment": "neutral",
+          "relevant": false,
+          "sentiment": null,
           "confidence": 1,
           "rationale": "NBA and Launchpad are unrelated terms."
         },
-        "relevanceCorrect": false,
-        "sentimentCorrect": false
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
       },
       {
         "id": "0dc25b124e4482cb",
@@ -3051,8 +3033,8 @@
         "predicted": {
           "relevant": true,
           "sentiment": "neutral",
-          "confidence": 0.85,
-          "rationale": "Question headline about mixed results without clear sentiment indicator."
+          "confidence": 0.95,
+          "rationale": "Lemonade is keeping more of its own insurance risk"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -3068,13 +3050,13 @@
           "note": "A crypto token called Peak AI, not the decision-intelligence company."
         },
         "predicted": {
-          "relevant": true,
-          "sentiment": "positive",
+          "relevant": false,
+          "sentiment": null,
           "confidence": 0.95,
-          "rationale": "Upcoming launch and token information suggest positive investor interest."
+          "rationale": "Peak mentioned but not related to the company"
         },
-        "relevanceCorrect": false,
-        "sentimentCorrect": false
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
       },
       {
         "id": "837902b1b910d814",
@@ -3090,7 +3072,7 @@
           "relevant": false,
           "sentiment": null,
           "confidence": 1,
-          "rationale": "Headline is about sports scores and highlights, irrelevant to Shield company."
+          "rationale": "S-League football scores and highlights, no mention of Shield."
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -3106,13 +3088,13 @@
           "note": "Valuation decline."
         },
         "predicted": {
-          "relevant": true,
-          "sentiment": "negative",
+          "relevant": false,
+          "sentiment": null,
           "confidence": 1,
-          "rationale": "Sliding stock and advice for shareholders"
+          "rationale": "SpaceX stock keeps sliding"
         },
-        "relevanceCorrect": true,
-        "sentimentCorrect": true
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
       },
       {
         "id": "111488949acf4aa1",
@@ -3126,12 +3108,12 @@
         },
         "predicted": {
           "relevant": true,
-          "sentiment": "negative",
-          "confidence": 0.95,
-          "rationale": "Stripe is being acquired by a public company, indicating pressure or loss of market relevance."
+          "sentiment": "positive",
+          "confidence": 1,
+          "rationale": "Stripe's acquisition by a fintech company"
         },
         "relevanceCorrect": true,
-        "sentimentCorrect": false
+        "sentimentCorrect": true
       },
       {
         "id": "5553f7d7eb2df893",
@@ -3146,8 +3128,8 @@
         "predicted": {
           "relevant": true,
           "sentiment": "neutral",
-          "confidence": 0.85,
-          "rationale": "No industry-specific positive/negative keywords, and no exclusions relevant to the headline."
+          "confidence": 1,
+          "rationale": "Highlights scalable long-running architecture without positive/negative context"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -3163,13 +3145,13 @@
           "note": "Partnership and market expansion."
         },
         "predicted": {
-          "relevant": true,
-          "sentiment": "positive",
+          "relevant": false,
+          "sentiment": null,
           "confidence": 0.95,
-          "rationale": "AI partnership with potential for growth"
+          "rationale": "Cerebras and Upstage Bring Ultra-Fast AI to South Korea mentions Cerebras but is not about…"
         },
-        "relevanceCorrect": true,
-        "sentimentCorrect": true
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
       },
       {
         "id": "37a4119caa14ae6c",
@@ -3182,13 +3164,13 @@
           "note": "Multi-year partnership / customer win."
         },
         "predicted": {
-          "relevant": true,
-          "sentiment": "positive",
+          "relevant": false,
+          "sentiment": null,
           "confidence": 0.95,
-          "rationale": "Legal AI partnership is a positive development for the company."
+          "rationale": "Legal AI partnership does not mention Harvey directly or negatively."
         },
-        "relevanceCorrect": true,
-        "sentimentCorrect": true
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
       },
       {
         "id": "1e1a39f8a58c89b4",
@@ -3204,7 +3186,7 @@
           "relevant": true,
           "sentiment": "neutral",
           "confidence": 1,
-          "rationale": "No industry-specific terms or competitors mentioned."
+          "rationale": "Asia's largest startup Launchpad by Eureka (India)"
         },
         "relevanceCorrect": false,
         "sentimentCorrect": false
@@ -3220,13 +3202,13 @@
           "note": "Product review listing, no valence in the headline."
         },
         "predicted": {
-          "relevant": true,
-          "sentiment": "neutral",
+          "relevant": false,
+          "sentiment": null,
           "confidence": 1,
-          "rationale": "Product review headline, no company-specific news."
+          "rationale": "Lemonade refers to a different company in the insurance technology sector."
         },
-        "relevanceCorrect": true,
-        "sentimentCorrect": true
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
       },
       {
         "id": "7f543ad0f9721ce0",
@@ -3239,13 +3221,13 @@
           "note": "Crypto trading-signal content."
         },
         "predicted": {
-          "relevant": true,
-          "sentiment": "negative",
+          "relevant": false,
+          "sentiment": null,
           "confidence": 0.95,
-          "rationale": "Arthur Hayes liquidating positions is negative for the company"
+          "rationale": "Arthur Hayes Liquidates Altcoin Positions"
         },
-        "relevanceCorrect": false,
-        "sentimentCorrect": false
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
       },
       {
         "id": "045baa6e7e07b34a",
@@ -3261,7 +3243,7 @@
           "relevant": false,
           "sentiment": null,
           "confidence": 1,
-          "rationale": "No company-specific information or news."
+          "rationale": "Arrow Global is not mentioned in a positive or negative context."
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -3277,13 +3259,13 @@
           "note": "Ad Astra community workshop. Different entity."
         },
         "predicted": {
-          "relevant": true,
-          "sentiment": "neutral",
-          "confidence": 1,
-          "rationale": "No specific positive or negative information about the company's performance or situation."
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.95,
+          "rationale": "Ad ASTRA is not related to Astra in the pharmaceutical sector."
         },
-        "relevanceCorrect": false,
-        "sentimentCorrect": false
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
       },
       {
         "id": "2969a1a84ceee3b4",
@@ -3298,8 +3280,8 @@
         "predicted": {
           "relevant": true,
           "sentiment": "neutral",
-          "confidence": 0.85,
-          "rationale": "No positive or negative indicators, just factual information."
+          "confidence": 1,
+          "rationale": "Greenlight Financial CUSO"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": false
@@ -3315,12 +3297,12 @@
           "note": "Same investment event as item 19, different outlet."
         },
         "predicted": {
-          "relevant": true,
-          "sentiment": "neutral",
+          "relevant": false,
+          "sentiment": null,
           "confidence": 1,
-          "rationale": "No specific positive or negative outcome mentioned."
+          "rationale": "JP Morgan, Goldman Sachs investments are neutral for Harvey as a company."
         },
-        "relevanceCorrect": true,
+        "relevanceCorrect": false,
         "sentimentCorrect": false
       },
       {
@@ -3337,7 +3319,7 @@
           "relevant": true,
           "sentiment": "neutral",
           "confidence": 1,
-          "rationale": "No specific positive or negative information about the company's performance or outcome."
+          "rationale": "consolidate shares"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": false
@@ -3353,13 +3335,13 @@
           "note": "Product launch into a new distribution channel."
         },
         "predicted": {
-          "relevant": true,
-          "sentiment": "positive",
+          "relevant": false,
+          "sentiment": null,
           "confidence": 0.95,
-          "rationale": "Purpose-built workspace for SMBs is a positive development in enterprise sector."
+          "rationale": "Pax8 Marketplace and SMBs, no mention of Island company"
         },
-        "relevanceCorrect": true,
-        "sentimentCorrect": true
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
       },
       {
         "id": "09c94cde7dbf1ae3",
@@ -3372,13 +3354,13 @@
           "note": "Sahil Kini is a person's surname."
         },
         "predicted": {
-          "relevant": true,
-          "sentiment": "negative",
-          "confidence": 0.95,
-          "rationale": "RBIH CEO's negative comment on FinTech industry"
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 1,
+          "rationale": "RBIH CEO Sahil Kini, not related to the company Kini."
         },
-        "relevanceCorrect": false,
-        "sentimentCorrect": false
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
       },
       {
         "id": "0c980c140e45fd74",
@@ -3391,13 +3373,13 @@
           "note": "An unrelated arts programme using the word."
         },
         "predicted": {
-          "relevant": true,
-          "sentiment": "neutral",
+          "relevant": false,
+          "sentiment": null,
           "confidence": 0.95,
-          "rationale": "No industry-specific or company-related keywords."
+          "rationale": "Launchpad is built to connect emerging artists with Southeast Asia audiences"
         },
-        "relevanceCorrect": false,
-        "sentimentCorrect": false
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
       },
       {
         "id": "46a1dbf17643466a",
@@ -3413,7 +3395,7 @@
           "relevant": false,
           "sentiment": null,
           "confidence": 1,
-          "rationale": "Headline is about stock price and news, not related to company's performance or events."
+          "rationale": "Lemonade Inc is a company name, but the headline mentions another use of 'Lemonade'."
         },
         "relevanceCorrect": false,
         "sentimentCorrect": false
@@ -3432,7 +3414,7 @@
           "relevant": false,
           "sentiment": null,
           "confidence": 1,
-          "rationale": "The headline is about Japanese stock performance and does not mention Peak or its sector."
+          "rationale": "Nikkei and AI are unrelated to the company Peak in decision intelligence."
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -3449,12 +3431,12 @@
         },
         "predicted": {
           "relevant": true,
-          "sentiment": "positive",
-          "confidence": 0.95,
-          "rationale": "Highlights real-time control strategy, indicating progress in quantum computing."
+          "sentiment": "neutral",
+          "confidence": 1,
+          "rationale": "Highlights real-time control strategy for fault-tolerant quantum computing"
         },
         "relevanceCorrect": true,
-        "sentimentCorrect": false
+        "sentimentCorrect": true
       },
       {
         "id": "15fc8dbf9935ba37",
@@ -3470,7 +3452,7 @@
           "relevant": false,
           "sentiment": null,
           "confidence": 1,
-          "rationale": "Headline mentions unrelated terms and is about a news event, not Rewire."
+          "rationale": "Sky News Australia and James Morrow not related to Rewire/ReWire Networks"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -3489,7 +3471,7 @@
           "relevant": false,
           "sentiment": null,
           "confidence": 1,
-          "rationale": "Headline is about a Japanese pharmaceutical company and does not mention telehealth or the specified…"
+          "rationale": "Chugai Ro Co., Ltd. is not related to telehealth or the company Ro."
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -3506,9 +3488,9 @@
         },
         "predicted": {
           "relevant": true,
-          "sentiment": "positive",
+          "sentiment": "neutral",
           "confidence": 0.95,
-          "rationale": "AI investment in a high valuation round"
+          "rationale": "Shield AI and participation in a large funding round"
         },
         "relevanceCorrect": false,
         "sentimentCorrect": false
@@ -3524,13 +3506,13 @@
           "note": "On the spot, an idiom."
         },
         "predicted": {
-          "relevant": true,
-          "sentiment": "neutral",
-          "confidence": 0.95,
-          "rationale": "No clear positive or negative sentiment about the company's performance or results."
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 1,
+          "rationale": "Exploring Ways to Stop Crime"
         },
-        "relevanceCorrect": false,
-        "sentimentCorrect": false
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
       },
       {
         "id": "0bcb0d337e1d309a",
@@ -3543,13 +3525,13 @@
           "note": "Major acquisition move."
         },
         "predicted": {
-          "relevant": true,
-          "sentiment": "positive",
+          "relevant": false,
+          "sentiment": null,
           "confidence": 0.95,
-          "rationale": "AI model marketplace expansion is seen as a growth opportunity"
+          "rationale": "Stripe is not mentioned in the headline and the deal is about a marketplace, not…"
         },
-        "relevanceCorrect": true,
-        "sentimentCorrect": true
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
       },
       {
         "id": "7c344a8f57f24641",
@@ -3562,13 +3544,13 @@
           "note": "UNCERTAIN - same Arrow Global question as item 32. If it is the portfolio company, this is a routine appointment: relevant:true / neutral."
         },
         "predicted": {
-          "relevant": true,
-          "sentiment": "neutral",
-          "confidence": 1,
-          "rationale": "Appointment headline with no investor outcome mentioned."
+          "relevant": false,
+          "sentiment": null,
+          "confidence": 0.95,
+          "rationale": "Arrow Global is not mentioned or implied in the headline."
         },
-        "relevanceCorrect": false,
-        "sentimentCorrect": false
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
       },
       {
         "id": "1022f81956cb0e22",
@@ -3583,8 +3565,8 @@
         "predicted": {
           "relevant": false,
           "sentiment": null,
-          "confidence": 1,
-          "rationale": "No mention of the company or its financials in the headline."
+          "confidence": 0.95,
+          "rationale": "PM Modi and defense equipment in India"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -3600,13 +3582,13 @@
           "note": "Partnership. Same Greenlight identity assumption as item 34."
         },
         "predicted": {
-          "relevant": true,
-          "sentiment": "positive",
+          "relevant": false,
+          "sentiment": null,
           "confidence": 0.95,
-          "rationale": "Partnership implies collaboration and mutual benefit."
+          "rationale": "Dow Credit Union and Greenlight Partnership, no mention of the company."
         },
-        "relevanceCorrect": true,
-        "sentimentCorrect": true
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
       },
       {
         "id": "2fafa90278824c96",
@@ -3621,8 +3603,8 @@
         "predicted": {
           "relevant": true,
           "sentiment": "positive",
-          "confidence": 0.95,
-          "rationale": "AI partnership is generally seen as positive for a company."
+          "confidence": 1,
+          "rationale": "Broseta and Harvey partnership mentioned"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -3641,7 +3623,7 @@
           "relevant": true,
           "sentiment": "negative",
           "confidence": 0.95,
-          "rationale": "Company action reduces shareholder engagement"
+          "rationale": "Cyabra cuts stockholder meeting quorum, implying dilution or loss of control"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": false
@@ -3657,13 +3639,13 @@
           "note": "Leads losses among peers."
         },
         "predicted": {
-          "relevant": true,
-          "sentiment": "negative",
+          "relevant": false,
+          "sentiment": null,
           "confidence": 1,
-          "rationale": "Industry loss mentioned, no positive context for the company."
+          "rationale": "Innoviz Technologies leads losses in lidar technology stocks"
         },
-        "relevanceCorrect": true,
-        "sentimentCorrect": true
+        "relevanceCorrect": false,
+        "sentimentCorrect": false
       },
       {
         "id": "010cf2b35b8c1ae3",
@@ -3678,8 +3660,8 @@
         "predicted": {
           "relevant": true,
           "sentiment": "negative",
-          "confidence": 0.95,
-          "rationale": "Stock fell despite beating expectations"
+          "confidence": 1,
+          "rationale": "stock drops after beating expectations"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -3695,13 +3677,13 @@
           "note": "Common-noun use: 20% from peak."
         },
         "predicted": {
-          "relevant": true,
-          "sentiment": "negative",
+          "relevant": false,
+          "sentiment": null,
           "confidence": 1,
-          "rationale": "South Korea bear market and stock fall mentioned"
+          "rationale": "AI boom turns into gloom, no mention of Peak or any specific company performance."
         },
-        "relevanceCorrect": false,
-        "sentimentCorrect": false
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
       },
       {
         "id": "068e1bce8eed7fcc",
@@ -3716,8 +3698,8 @@
         "predicted": {
           "relevant": false,
           "sentiment": null,
-          "confidence": 1,
-          "rationale": "The headline is about a product review and does not mention any financial or operational…"
+          "confidence": 0.95,
+          "rationale": "Ro in a review context without company-specific details"
         },
         "relevanceCorrect": false,
         "sentimentCorrect": false
@@ -3736,7 +3718,7 @@
           "relevant": true,
           "sentiment": "negative",
           "confidence": 1,
-          "rationale": "Musk's bad week and company performance"
+          "rationale": "Musk's bad week: SpaceX drops"
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
@@ -3752,13 +3734,13 @@
           "note": "The verb spot, about spotting AI faces."
         },
         "predicted": {
-          "relevant": true,
-          "sentiment": "neutral",
+          "relevant": false,
+          "sentiment": null,
           "confidence": 0.95,
-          "rationale": "No clear positive or negative sentiment, and no specific company information."
+          "rationale": "Human training for AI detection, no company-specific mention."
         },
-        "relevanceCorrect": false,
-        "sentimentCorrect": false
+        "relevanceCorrect": true,
+        "sentimentCorrect": true
       },
       {
         "id": "35825ce5dd065dfa",
@@ -3773,8 +3755,8 @@
         "predicted": {
           "relevant": false,
           "sentiment": null,
-          "confidence": 1,
-          "rationale": "The headline is about a company unrelated to telehealth."
+          "confidence": 0.95,
+          "rationale": "Chugai is not related to telehealth or the company Ro."
         },
         "relevanceCorrect": true,
         "sentimentCorrect": true
