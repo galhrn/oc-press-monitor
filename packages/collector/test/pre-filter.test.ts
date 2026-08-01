@@ -152,14 +152,15 @@ describe('preFilter', () => {
 describe('re-applying our own query semantics (the Google News finding)', () => {
   const peak = company('Peak');
 
-  it('rejects an article that names the company but misses every qualifier', () => {
+  it('flags an article that names the company but misses every qualifier', () => {
     const verdict = preFilter(
       article({ title: 'Record climbers reached the peak during a narrow weather window' }),
       peak,
     );
-    expect(verdict.keep).toBe(false);
-    // Either layer may catch it; what matters is that it does not survive.
-    expect(['missing-qualifier', 'negative-keyword']).toContain(verdict.reason);
+    // It must never arrive as a clean keep: either a negative keyword rejects it outright,
+    // or it soft-passes to the LLM gate carrying the reason.
+    expect(verdict.reason).not.toBeNull();
+    if (verdict.keep) expect(verdict.softPass).toBe(true);
   });
 
   it('keeps an article that satisfies a qualifier group', () => {
@@ -177,9 +178,10 @@ describe('re-applying our own query semantics (the Google News finding)', () => 
       ),
     ).toMatchObject({ keep: true });
 
+    // Soft-pass, not a drop: the name matched, so the LLM gate gets the final say (P4).
     expect(
       preFilter(article({ title: 'Peak season begins for retailers' }), qualified),
-    ).toMatchObject({ keep: false, reason: 'missing-qualifier' });
+    ).toMatchObject({ keep: true, softPass: true, reason: 'missing-qualifier' });
   });
 
   it('leaves an unqualified query untouched - no groups means no extra requirement', () => {
@@ -256,9 +258,13 @@ describe('qualifier enforcement is gated on query provenance', () => {
     expect(preFilter(headline, withSource('triage-default'))).toMatchObject({ keep: true });
   });
 
-  it('does enforce qualifiers a human vetted', () => {
+  it('does apply qualifiers a human vetted, as a soft-pass rather than a drop', () => {
+    // Measured 2026-08-02: dropping these cost Quantum Machines a genuine article, because
+    // the approved qualifier said "quantum control" and the headline said "Real-Time
+    // Control Strategy". 293 items across the 57 approved companies were in this bucket.
     expect(preFilter(headline, withSource('human-approved'))).toMatchObject({
-      keep: false,
+      keep: true,
+      softPass: true,
       reason: 'missing-qualifier',
     });
   });
@@ -266,12 +272,56 @@ describe('qualifier enforcement is gated on query provenance', () => {
   it('lets a caller override the policy explicitly', () => {
     expect(
       preFilter(headline, withSource('llm-enriched'), { enforceQualifiers: () => true }),
-    ).toMatchObject({ keep: false, reason: 'missing-qualifier' });
+    ).toMatchObject({ keep: true, softPass: true, reason: 'missing-qualifier' });
   });
 
   it('still enforces qualifiers when provenance is unknown', () => {
     const noProvenance: PreFilterCompany = { ...withSource('llm-enriched') };
     delete noProvenance.querySource;
-    expect(preFilter(headline, noProvenance)).toMatchObject({ reason: 'missing-qualifier' });
+    expect(preFilter(headline, noProvenance)).toMatchObject({
+      reason: 'missing-qualifier',
+      softPass: true,
+    });
+  });
+});
+
+/**
+ * The soft-pass rule (adopted 2026-08-02). A qualifier miss is a demotion, not a drop: the
+ * company was named, so the LLM relevance gate decides. Section 6.4 - the pre-filter cuts
+ * cost, not correctness.
+ */
+describe('soft-pass accounting', () => {
+  const qualified: PreFilterCompany = {
+    id: 'qm',
+    name: 'Quantum Machines',
+    aliases: [],
+    negativeKeywords: [],
+    query: '"Quantum Machines" AND (OPX OR "quantum control")',
+    querySource: 'human-approved',
+  };
+
+  it('keeps a genuine article the qualifier would have dropped', () => {
+    const verdict = preFilter(
+      article({ title: 'Quantum Machines Highlights Real-Time Control Strategy' }),
+      qualified,
+    );
+    expect(verdict).toMatchObject({ keep: true, softPass: true });
+  });
+
+  it('reports soft passes separately so a run can budget for them', () => {
+    const result = preFilterAll(
+      [
+        article({ title: 'Quantum Machines ships OPX hardware' }),
+        article({ url: 'https://x.com/2', title: 'Quantum Machines Highlights Control Strategy' }),
+        article({ url: 'https://x.com/3', title: 'Nvidia ships a GPU' }),
+      ],
+      qualified,
+    );
+    expect(result.stats.kept).toBe(2);
+    expect(result.stats['soft-pass']).toBe(1);
+    expect(result.softPassed).toHaveLength(1);
+    expect(result.stats['no-name-match']).toBe(1);
+    // A soft-passed item is kept, so it is never also counted as rejected.
+    expect(result.rejected).toHaveLength(1);
   });
 });

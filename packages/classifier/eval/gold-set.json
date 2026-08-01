@@ -1,0 +1,1107 @@
+{
+  "version": 1,
+  "createdAt": "2026-08-01T20:22:46.302Z",
+  "windowDays": 90,
+  "provider": "googlenews",
+  "inputShape": {
+    "fields": [
+      "company",
+      "title"
+    ],
+    "note": "headline only, ~10 words"
+  },
+  "labelling": {
+    "status": "UNLABELLED - awaiting human review",
+    "instructions": "For each item set relevant (is this article about THIS company?) and, when relevant, sentiment per section 6.2 (investor lens: positive | negative | neutral). Leave sentiment null when relevant is false. Do not consult model output before labelling.",
+    "labelledBy": null,
+    "labelledAt": null
+  },
+  "strata": {
+    "kept-distinctive": 18,
+    "kept-ambiguous": 14,
+    "softpass": 20,
+    "negative-signal": 8
+  },
+  "items": [
+    {
+      "id": "019c4b565e8ddae5",
+      "company": "Cyabra",
+      "companyId": "f3922ff8fd2ff3e9374ec3f76dc57d59a85e20328399055e04c998d99864d47f",
+      "ambiguity": "low",
+      "querySource": "triage-default",
+      "title": "Cyabra Ord Shs (CYAB) Balance Sheet",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE00Z0llZ3R5Zng3ampUaTVtSUlvRlMwd0tRX1VyZFN1MUFfUV9zbHVtUXBRdHlDX2JTLU12cm1VMmdHYXBTTnRYdUp4emY1UzVGRTNLX0VDV0VmNlNGa3J3NjJmc0JQNkxtMW1XWg?oc=5",
+      "sourceName": "tradingkey.com",
+      "publishedAt": "2026-07-25T11:53:41.000Z",
+      "verdict": "kept",
+      "stratum": "kept-distinctive",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "01d2226065c993ac",
+      "company": "Hailo",
+      "companyId": "214d4dbc32023232877791593091774db87334789088352e5f33319e7e2f39b1",
+      "ambiguity": "medium",
+      "querySource": "llm-enriched",
+      "title": "ICYMI Ep70: Northern.tech, Atlas Data Storage, imec, Microchip, Hailo",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNVnU1NzFQdnlHOG9Ea2pqSWhSazZ3eUhpRWtXYmRzWHJ3Y1dXZFhkTUhrd0w0OV85SUJtVThHcHpTRlhPcFI1NW84LXZyUkN2MFFFWTE0VS1TaWNBUENON0k3MzB6QWJMSm0yVVN3ODBnQXd4WS0teXpyTEtBck81dVUzem5adGQ1VmhvYThadi1TR20wRldVN3U3azFGN0tYM19wMFNqcVlIbnc3Qk40S1N5OC04YzdVRjY1UlpkSkg?oc=5",
+      "sourceName": "embeddedcomputing.com",
+      "publishedAt": "2026-07-31T00:49:01.000Z",
+      "verdict": "kept",
+      "stratum": "kept-distinctive",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "047f786341192935",
+      "company": "Innoviz",
+      "companyId": "d5a14855b0964276b8e6085fdc6ad488c20411f2f0d6a6dffc61513422d7b50f",
+      "ambiguity": "low",
+      "querySource": "llm-enriched",
+      "title": "Innoviz Technologies to Raise $30 Million From Registered Share Offering",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQb2NnNHdoYU1BSk0zdER2dl93dy1UVnZRMVJHeEVmQzl0VFpfQ2NxSy1adTltalFLYTBSU1VhV1lCUWVrdmJiblE3VlluanFHWXdJTjdRZ0VHbXN6RDM4dFRjZmpmSXBPcUtHaWsxTlNIdDZKU0RVeWhVc3E3VWRVczBOTkFCbjk5Wk9pTXRJOU9yVnZSdGhqUGpfN3daXzBNWFNOZzdJNXV4OFpqekJDWndYUQ?oc=5",
+      "sourceName": "moomoo.com",
+      "publishedAt": "2026-07-28T14:32:37.000Z",
+      "verdict": "kept",
+      "stratum": "kept-distinctive",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "4e44a654bfd41d4a",
+      "company": "Morphisec",
+      "companyId": "b882213838066690ae67958b1c5694a19eff4c90fb9864888cebbf470407d5f9",
+      "ambiguity": "low",
+      "querySource": "llm-enriched",
+      "title": "See Prevention-First Ransomware Defense in Action: Join the Morphisec Live Demo",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPc2NpZVZBdmJRUTRkb1F0aDF5d3NiYnR5Q1dDUlRWN0lHamItOERUQ1dxaWFwSlltdzBBVlFPeTJhNFZ6NWw2ekNJQUVOdGctY0tFOXVTZFdfY1d2ank3SjI4Sm9saWQ1NU95djd3YnZ4VVZfMUtULXE2THhjSVVrUXhWRDFGWXFXT0dtU3ZjRC14VUtRQ0wyeURheWttbVBRVXJHdnFkMFZSNFlvZnNJ?oc=5",
+      "sourceName": "morphisec.com",
+      "publishedAt": "2026-06-17T07:00:00.000Z",
+      "verdict": "kept",
+      "stratum": "kept-distinctive",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "07ca35c00e302932",
+      "company": "OpenEvidence",
+      "companyId": "fec757d2baccc812123b03d53a417bbdb49acc5e9c50a536db3a8406061448ac",
+      "ambiguity": "medium",
+      "querySource": "llm-enriched",
+      "title": "OpenEvidence reportedly eyes $200M raise at $20B valuation, signaling AI healthcare's breakneck growth",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE02RU0yY1RJLUlYMlRGMDZQcDNYd3o0V3hWUTQzTWMwck5TenJwSE5jMzFSa1FOeTdmX0FIa1hrc1l5QnVkY0dIZ0RqN0podkZ0UnVhQ3B4TXJGNElqZ05tcE9USS10a2k3VmY3SDJrcHlWU1k?oc=5",
+      "sourceName": "cryptobriefing.com",
+      "publishedAt": "2026-07-18T07:00:00.000Z",
+      "verdict": "kept",
+      "stratum": "kept-distinctive",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "c4a8cd1c77c937d8",
+      "company": "Wayup",
+      "companyId": "c76f18141f0b3b4a308be338910cd99ca0dff46b6fc0ae6582d7dea6e7f0f39b",
+      "ambiguity": "medium",
+      "querySource": "triage-default",
+      "title": "The home in a gated community designed as builder's personal residence has many family friendly amenities and luxurious standout features. Photo provided by WayUp Media Check link in bio to see more photos",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9RMU5qdXBsMWhFVFZQalVuU2tpTGdPazNDVE1FZ2pTOGZxVmxNX0JmQXVFbkI5dkVFTWJOV0RvQTVJZXRnSFBUMlVWRUJNbnpHYVE?oc=5",
+      "sourceName": "instagram.com",
+      "publishedAt": "2026-07-24T01:10:10.000Z",
+      "verdict": "kept",
+      "stratum": "kept-distinctive",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "07ada07e084218c9",
+      "company": "ZutaCore",
+      "companyId": "1a615ce7b2a5a2cb2e9dbdd7825e3e6d305f75edb69d97230d94ef45153c161d",
+      "ambiguity": "low",
+      "querySource": "triage-default",
+      "title": "Liquid cooling co ZutaCore raises $100M",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNdWZUYVpva2FHRWVObUpJQUp0c185Ui1nT0QyX0xVdGpEZUxCVTA4MzlINVlDUWRkZXNIVk9nUmpoajN2RUo0ZEtZd09fN0QyQUZpV0JCdUctbUsxU0JJaFFqaWxmbkVmMmhmaTBGR1lHdEx5RmNhMGJ2VEsxT1EwNUQzV1U?oc=5",
+      "sourceName": "fierce-network.com",
+      "publishedAt": "2026-06-02T07:00:00.000Z",
+      "verdict": "kept",
+      "stratum": "kept-distinctive",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "074b40cc95872258",
+      "company": "Cyabra",
+      "companyId": "f3922ff8fd2ff3e9374ec3f76dc57d59a85e20328399055e04c998d99864d47f",
+      "ambiguity": "low",
+      "querySource": "triage-default",
+      "title": "Maxim Group Initiates Cyabra(CYAB.US) With Buy Rating, Announces Target Price $1",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPRDJJd2dZaVZEZERoMGVWcGJfdHpwWldXdGVvLXYzdkpjZUdnOVhvWnZjQl9XY0pQRm9BU0NZUWFUb2l0LWQ4TjFzSE5WbkhyQ1RTOWdfRDNhdHJOWEt2NGp6cTNOVDY0R2VUNGVqeEhwVXEzZVpDS3FCbUpiV2p0ZkFOSWxqcFR5M0MzaGVSdkFoQS1MeG96Vl9OZWdQV3U1alRRYVJIODdWT2FlWlNZ?oc=5",
+      "sourceName": "moomoo.com",
+      "publishedAt": "2026-07-23T07:00:00.000Z",
+      "verdict": "kept",
+      "stratum": "kept-distinctive",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "0669c09d0e07d721",
+      "company": "Hailo",
+      "companyId": "214d4dbc32023232877791593091774db87334789088352e5f33319e7e2f39b1",
+      "ambiguity": "medium",
+      "querySource": "llm-enriched",
+      "title": "AIS-1000 AI Surveillance Station – A $3,640 NDAA and TAA-compliant AI box based on Raspberry Pi 5 and Hailo-8L",
+      "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPbHdSNEZDUk5JbG5GMUEzY3o4ZFhuVlZyNVBDSWFwdGNyMTFnTDZNVUNyRkxvWEUtejhObzZaVFlfLVhoTWFHSm95WmgxV3ZaWFVIWGVhakZaRHdYZi0yR3RuWmJwSUVMbUxFM2V0Z2hibkcyV2x3Q0JpN0F4bzRmcThBeW11REw5TUdIUjJpU051dmNZZ3NrRzRIQkUxSXFqYTRaZEZaZWNBM2tpNHZQMGplcDY0VlNhTGZRVVJiV1p4NVhRMzJvUXhrMzlQV1N3SGxOdUZwWnNvOUE3aHZLX9IB6AFBVV95cUxPcmczTEdFY09pQWlHbWwyVDR0TEdKSGRSbzJPQlVibUhWeDBJc3k5UHpRWXhrTmZjTG5MNS1IRDZ5QnBDcmJ6QTE3akVoekdnWm9MR1JFYWwzRVNKOGp5VndRbDJPYUIzZ3h2RnMxVmRhQzRXZldlcFB5dE92ZUlTNUJMMkFmSUJlN3BjdXdYRDdyUHlOTkZiajlLOXB4Q0dBR0ZDam4tSHVEY2Vya1NWMFpZUVg1a1p5OWx0MHAtVFFPNFViMjctcGk5MFgxbHhydWN5VUV1R1lJc0R0aWQxYUZ1cEZ1TXRO?oc=5",
+      "sourceName": "cnx-software.com",
+      "publishedAt": "2026-07-23T07:00:00.000Z",
+      "verdict": "kept",
+      "stratum": "kept-distinctive",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "141ef90dc4a325bf",
+      "company": "Innoviz",
+      "companyId": "d5a14855b0964276b8e6085fdc6ad488c20411f2f0d6a6dffc61513422d7b50f",
+      "ambiguity": "low",
+      "querySource": "llm-enriched",
+      "title": "Innoviz secures $3.5M in defense orders for LiDAR systems By Investing.com",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPRkdGLVVKSEM1TE02dERMaEdSSGhHZ1JoZVNQLWhDSUdOZThpRjBUTHRwWElmWUdvXy1sX2dnRGFvWDI3elV2ZGREX1lHNWZTWDBXQTlBRXVockc2Z0RuV1BidzVqUEt1M1NFUVVBMDd1RnBQOXB1Q3gzTzkwQzEzdmhqZG9qWWRyaTNQdklwTFV2TXJBZFliLUxJdHo0RnJOZnJ6NWZJYWFGRW0zdFEyT1ZhQUNfYXM?oc=5",
+      "sourceName": "uk.investing.com",
+      "publishedAt": "2026-07-30T12:06:00.000Z",
+      "verdict": "kept",
+      "stratum": "kept-distinctive",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "65ed5908eee55562",
+      "company": "Morphisec",
+      "companyId": "b882213838066690ae67958b1c5694a19eff4c90fb9864888cebbf470407d5f9",
+      "ambiguity": "low",
+      "querySource": "llm-enriched",
+      "title": "Morphisec Launches AI Usage Control: Governing Shadow and Sanctioned AI on the Endpoint",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQbHpJUFBUM2ZMWm9wNElRZU1EUTc0YXNkX04zUlR5ZllKSEdhbXdOY2VHS01oRzhQSFIxV2lJSFFuSU45dVZkeGhSY1g3dllDeXlfUVRVeEg2Z1haZS1ZSVJUQzlQdTVFa0dObmF4RlpoZDV1ak9VeTVDbUxfNDJFdElwVjFyX05mZURWb0ZOSE82Y0dISE1pSloyMzlSd1dYZjVjUlNaeGNqaGdRS3BXMFM1Z0Q2YU1qcjFGTklRc3B2a01iMHNR?oc=5",
+      "sourceName": "einnews.com",
+      "publishedAt": "2026-07-29T13:00:00.000Z",
+      "verdict": "kept",
+      "stratum": "kept-distinctive",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "0a5b8889e8677578",
+      "company": "OpenEvidence",
+      "companyId": "fec757d2baccc812123b03d53a417bbdb49acc5e9c50a536db3a8406061448ac",
+      "ambiguity": "medium",
+      "querySource": "llm-enriched",
+      "title": "A new medical AI study found the same flaw in OpenEvidence, OpenAI, Anthropic, and Doximity",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOMXBfTUl1blBKNEl4NU1xQXNycnJ1TmNndGNXMmJlTmdZMDVqUDZZTFFfVm5NSWt3Z0tmM09OZVhPaG5yNkh5b1dLYWdJYlc0SUxxZ1N4LV90V3RuQWVuZkQ2UUFUTG9WbzZHR0VwWTIta3AwQjVVLUZKeWNYbFdZTUhtaHF5Z0djRTNBdkhHSFhjSk1lQnFGWDQ4Rk9YdGFHakVF?oc=5",
+      "sourceName": "fortune.com",
+      "publishedAt": "2026-07-29T12:03:00.000Z",
+      "verdict": "kept",
+      "stratum": "kept-distinctive",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "fda6a70f242c362e",
+      "company": "Wayup",
+      "companyId": "c76f18141f0b3b4a308be338910cd99ca0dff46b6fc0ae6582d7dea6e7f0f39b",
+      "ambiguity": "medium",
+      "querySource": "triage-default",
+      "title": "adidas and WayUp Sports Partner with the Egyptian Handball Federation to Support the Future of Egyptian Handball",
+      "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNVTRlSEdZSzllR1JydXp2bkk0SWlLSmdJWnNrWk9CdHNKSVZFR3hFVG95VnZRN1NQeVZVWVZIb01TXzNHazdUMWlGZE5LWXJ1X0s4eGJLRWM5VzlSUGF6blFXNGd4ODRkNHVLakgxUlFrTldyU1JtSW9hcGE0RVV3WEpGcXpsZ2l1V09idVFmb3dqS3o0ajBEWTJPS2JQaFNvUUlyRjNDVHZza3BmeVdOTlZxRVRBeTE0aTdTTWpDblNnTUo1X0N4YnlaMXlrbzZ1Tk5IaGF0Wkxrb2lHeVNyd0Zra1VCN1c5YXRIVg?oc=5",
+      "sourceName": "cairo360.com",
+      "publishedAt": "2026-07-30T07:00:00.000Z",
+      "verdict": "kept",
+      "stratum": "kept-distinctive",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "096fc0993b62b113",
+      "company": "ZutaCore",
+      "companyId": "1a615ce7b2a5a2cb2e9dbdd7825e3e6d305f75edb69d97230d94ef45153c161d",
+      "ambiguity": "low",
+      "querySource": "triage-default",
+      "title": "ZutaCore: $100 Million Series C Raised To Expand AI Data Center Cooling Platform",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNc2s5dGZyVGxFd0gzdWxScnNGNkFzVTlRajFmZlNHYmt3X296ZHJ2cUIxS0FYci14dkRsT2V6VW9VREFmckIzVXpSNTlpbGFxYklSQVd6blB2S1FJUDdTblFWVTdfWmFzZGY1YWNWSGd1MDhCT203SW5GYmlQbkliM2ZpRGRTVkhsZ254Rm9BZ1BCeDVRblJSTy1sUGxkekHSAaQBQVVfeXFMTUg1ZG1MZktFZ0xqZ052TEUxR01TVmV5aVFOMXhkYk5tTHNsUHRMQTQzNGhSaHZpTHVWT3U5SXE1S2I1dXo0TklSNUJhTEpHcHBKZE5FRGtqamtqWG1wcVFXZTI2MFVtTGk1WEEtVjlTUTVjdm9UZkZ1LV9TLTlyRVBLNVVSYUt0R1UwcXBUWUJ2eVB2WDBmNXlZWmloa3Ftd2RBaGw?oc=5",
+      "sourceName": "pulse2.com",
+      "publishedAt": "2026-06-07T07:00:00.000Z",
+      "verdict": "kept",
+      "stratum": "kept-distinctive",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "0a8f2ef35ce2a173",
+      "company": "Cyabra",
+      "companyId": "f3922ff8fd2ff3e9374ec3f76dc57d59a85e20328399055e04c998d99864d47f",
+      "ambiguity": "low",
+      "querySource": "triage-default",
+      "title": "Maxim Group initiates Cyabra stock with buy rating on AI growth",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQcEJfb3pDdGJXaXJpMXBBZmlwRFJmdFZBbVlHeW5tYTQwdkZxeUVMcnd1N0tYQU9iQ1lsajBRSDk3b0plX3hGUEdVSUNQa1RmTVhVcmpSMzduOTE1SlBtLVhrVVd3enpHdVNlVVpjeVZqVFJNU2Q4RGJuOWQ1MnpTWXZCdFZNSFBQQnRma25oQ3dHbTN5LU80SGM2U2k4TmNTUTY4cjc2OVpIZFFIamRjOGVNRlEybXlMNjRwOF9Dcy1nZw?oc=5",
+      "sourceName": "ng.investing.com",
+      "publishedAt": "2026-07-23T13:25:01.000Z",
+      "verdict": "kept",
+      "stratum": "kept-distinctive",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "240e65756b2a50d3",
+      "company": "Hailo",
+      "companyId": "214d4dbc32023232877791593091774db87334789088352e5f33319e7e2f39b1",
+      "ambiguity": "medium",
+      "querySource": "llm-enriched",
+      "title": "Microchip To Acquire Edge AI Processor Company Hailo",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5fVy1Nc2dvX2pNeEtNeUh4aGYwR3pPSERCU0tYT1B3UThON29fOEluMVBvUVNZOUFTN3ZUbEF0RDNHZmwtcFpNTkdlc0Zxd2I3Sy1NZ2RwWGU0NF9EdTZfVmtDZDUwWVpuSUt0cGk2RW1LREJEa01NMG43aEfSAYIBQVVfeXFMT2lFbExwSXlUeDBMdXUwR1MxWnY5RlAzREZ6MnVNZVBQa3ptOFRWRk1UV3lQd0NoV3BSQ2l6ek9ySUpKckEtbThEVm50VXhVSjJvRE8weUhVc3dMLXBEWWZMdGtHWGRLdGdPUmQ2bEgwdlJmb0RGRVFrS0FldlI2U0ZLZw?oc=5",
+      "sourceName": "pulse2.com",
+      "publishedAt": "2026-07-29T19:07:28.000Z",
+      "verdict": "kept",
+      "stratum": "kept-distinctive",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "17e6259ecc5cbb09",
+      "company": "Innoviz",
+      "companyId": "d5a14855b0964276b8e6085fdc6ad488c20411f2f0d6a6dffc61513422d7b50f",
+      "ambiguity": "low",
+      "querySource": "llm-enriched",
+      "title": "Innoviz Technologies (NASDAQ: INVZ) prices $30 million registered direct deal",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOb2Q0Y3d4R1BlZHczUk1MUGFXQnJGYU1zejFCaXFkOWgteGJCQkZZZHBmdEx4cmgxQ3FuZDZqVEFoaDZaODVuSE5oYWMtS19jbUV4clJuT0ZaYWNmNVFhbWdTMHo0WTVxaWtOekhNLXJleXdOSWVtY3h1TDFESE9VX0VIT0t1dktPQXUyZVZmcWRTWndGeHZfNmNPX3ZvLTM1U1NZZWdXNW5PM09zb1hBdkdrNnU3NUptMkxMbw?oc=5",
+      "sourceName": "stocktitan.net",
+      "publishedAt": "2026-07-28T12:50:50.000Z",
+      "verdict": "kept",
+      "stratum": "kept-distinctive",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "870422b1f773a31e",
+      "company": "Morphisec",
+      "companyId": "b882213838066690ae67958b1c5694a19eff4c90fb9864888cebbf470407d5f9",
+      "ambiguity": "low",
+      "querySource": "llm-enriched",
+      "title": "Morphisec Launches AI Usage Control to Govern Enterprise AI Agents and Identities",
+      "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxPaDdVeWR5eG44ZDVyM0I5R0ZHZUxhSUpGWDNldWxrV0NWb1BNSzFFZTRmSTdoR1F1Z3ZCMnpGQmF5S0lOdnhTMmhBMXBUc0xfRmt5NF8zaWF1T3lXanNJTnRSeGRrRTZ6bTNLVWlJcnNEb2xMNHlDUWk3WG84S1Z2NGRqWGlmaWpOX05lS0RHbVc4WlU5SkpmWVEzMThYejRhNmNGRUVVdjFNX0hmWDJyZk9UdkNSMzdmNzl3ZDd0VlNqYk1pTnFrQzJpdm4xOVlJSXd0eE9KcXRrSms?oc=5",
+      "sourceName": "securityinfowatch.com",
+      "publishedAt": "2026-07-31T14:14:55.000Z",
+      "verdict": "kept",
+      "stratum": "kept-distinctive",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "19b4ac5d78ec9c85",
+      "company": "Cerebras",
+      "companyId": "51ea09628499962f920c6da1c91ff6921032c20c589caa91016ce4bfac5f02d3",
+      "ambiguity": "high",
+      "querySource": "human-approved",
+      "title": "Jim Cramer on Cerebras Systems: “I Warned You to Stay Away From This One”",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNNlp5M2JtaXlFZmlkazlOSWRJNjBISlkzNDdBSHVmWGNVc1lfS0EzZkE5SlRqS01FRFMwNVJ6WUdOSFRjQ2gzMjBJTFpnUmxXR0ozT05PdDlMNEZWT2lnSGg1RDFZMzc0VzY3ZmlnaWZwMFUtS3FaZ0ZXVl9MNms4Nnk4bzFXVnJEZXNoRllSWG44eWN2MHZpd2NaTXBsczY2?oc=5",
+      "sourceName": "finance.yahoo.com",
+      "publishedAt": "2026-07-04T07:00:00.000Z",
+      "verdict": "kept",
+      "stratum": "kept-ambiguous",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "1cbe01d9a2bdf140",
+      "company": "Harvey",
+      "companyId": "2349a6848d029aa2bea30b44d8a63b080aa98fb9b5db2cea5fd875fc9543d789",
+      "ambiguity": "critical",
+      "querySource": "human-approved",
+      "title": "Goldman Sachs, JPMorgan Invest In Legal AI Co. Harvey",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQZlIwMDlFckFDelh4OTI5VFQwNHZqU0JWOFpzUjZ4dHNTY3B6SEJLUjM4MU9zaGFLZk80cnZJRUlsOEZWamQwRkx5XzBEQkg2ZEtVSV92ZnFJTzlrbUdacHh2TEJJZTQzSE9CVmIyQ3Izd3pGbU9RUXp4U2lMTTNCbkVVUlkwSnZBMmozQzhJWDFYT3g1SXFFMzdhemZEZ9IBXkFVX3lxTE41T1ZGYVNSbjZNWUg3Yjl1V3FFM1o0U0RYcC1QRjJ4Uk95aTFfWmVvSktUMEJzNGU3d3J6a2xmbnVaeHJGMWR1UE5pSGtWNWNLZnMySHVqbVFFcHRSTGc?oc=5",
+      "sourceName": "law360.com",
+      "publishedAt": "2026-07-28T20:01:00.000Z",
+      "verdict": "kept",
+      "stratum": "kept-ambiguous",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "0afe46cb7fba7102",
+      "company": "Launchpad",
+      "companyId": "4176f025dd9922a8dff53a3e9e2bd96abeddbbf178f614fd343b93fd128fecdd",
+      "ambiguity": "critical",
+      "querySource": "human-approved",
+      "title": "The NBA is expanding its Launchpad startup program to …",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOOGg1NUhoTUh0bzAtVkV5VFJLVEhWUkZhSng0OFpjQUhBTktHNmRBQWRKbnN5aXl6eEJKa2UyYkNaMVpCUmxUcXdXMjZXdGh2eVpKWU5sLXppdGNHdUV4aUlfbkRVNnBFdGpBdHNIcVhqcW1xQWdfWERyOEY0djgwanFtOHNMR2tHbGVBZHlrT1hReThOS3FQSk1lR1JORDBISG1RYUZueGFjaDhMT1RQTzVBYk4xZElPWFg5OGFUb2lBZm42dXc?oc=5",
+      "sourceName": "hoopshype.com",
+      "publishedAt": "2026-06-27T07:00:00.000Z",
+      "verdict": "kept",
+      "stratum": "kept-ambiguous",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "0dc25b124e4482cb",
+      "company": "Lemonade",
+      "companyId": "2a4901ee2848d8ba0c7eddb21a892ab8e3c92ba3ebeafb3d40c78f79ada5f57b",
+      "ambiguity": "critical",
+      "querySource": "human-approved",
+      "title": "Lemonade Is Keeping More of Its Own Insurance Risk. Is That a Sign of Confidence or a Red Flag?",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPTS1uMzFhQlh0TEIyaU95anpMOVJHNXdIOVdxVWQ5WmFLeUkzRWdSX2FyNGs2c2t1b3c1R0FHbFNiLVZBQklzNEhwUnJTSkxwbEpmeUtobDRNWUVDdzRlSTRrODlsdzRyTnY0aWVUZUJ0OXNmeGxOZnIzbWZ1Y2xZRGhsQy01c0pxTW5CaER1a3FINGM?oc=5",
+      "sourceName": "fool.com",
+      "publishedAt": "2026-07-16T07:00:00.000Z",
+      "verdict": "kept",
+      "stratum": "kept-ambiguous",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "4bdb6a6c283eff7a",
+      "company": "Peak",
+      "companyId": "fa1c97cf22ef1420c42922832bd836127c49ef5213b49e6c7f1eeb894bbd6bbc",
+      "ambiguity": "critical",
+      "querySource": "human-approved",
+      "title": "Peak AI upcoming launch, news and token information",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5TbGNmdEVfa1pmM3c3b1pYZU1RR2l0Uk9HSHY4TjBrbVUzazd1T181SFF5eEVETGZMbzN6THZmT0dQNXRXN0FzOXZPSmNISThSUThVaVE0TFppZnItZHl2emRR?oc=5",
+      "sourceName": "coinmarketcap.com",
+      "publishedAt": "2026-07-30T10:46:11.000Z",
+      "verdict": "kept",
+      "stratum": "kept-ambiguous",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "837902b1b910d814",
+      "company": "Shield",
+      "companyId": "3aab452a942f16c726a174483d3228a86706e5be72abdfb21db78df1e8fe97c7",
+      "ambiguity": "critical",
+      "querySource": "human-approved",
+      "title": "Green Shield FC - Laugu United FC Live - S-League: Football Scores & Highlights - 25/07/2026",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNaGJlVTExTHh3ZHFodVpNd2pEVk1sVlplbGloSjNCbVI4a0Q2UGFXT0R3aDNoZUx3UWhOaXZsQmtpblJuV29oVGRwNmlJOUwwaTlqWW9RSzFiOGNmbjNvLUZZM0k3dHphMWJZR09fX3RaQnp4dGZfdWNpQlUyVHNtVkw3eVZOQW1MaEdOdWxBenJyc2d1eW1SLTBPTF9INlppUktYV2JTRWdPbmlBQ0I0?oc=5",
+      "sourceName": "tntsports.co.uk",
+      "publishedAt": "2026-07-25T07:00:00.000Z",
+      "verdict": "kept",
+      "stratum": "kept-ambiguous",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "07c803fdb680959b",
+      "company": "SpaceX",
+      "companyId": "01d6e78d4dc7f34ff1190ec006387b934166de8a24535ef96562cd52a09fde1e",
+      "ambiguity": "high",
+      "querySource": "human-approved",
+      "title": "SpaceX stock keeps sliding. What to do if you own shares.",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNbDktRzc0UnN1SWNHXzZfcGlrNnE4UWRMa21KNnFJMUJhaHNFeGdjRThuUjhYeTlfQlExaVVZWnpoUk1vUS1LWHZWMjk2MVpYcXpadjVYay1mQkpZUVJsYVRJVHI3OVo2SFZuRWVpRW40eEhHNHBVYnU3TWx4a3lUY0R1V2ppWXhNc1pwRXBRUVZSY0NQWF95SmFSTDlXN191NVQ5MkdfOGZzYUtEdWlYMWFfRHVacm02V2VDa2pWZ2NBdDcyQnREVHZnSQ?oc=5",
+      "sourceName": "finance.yahoo.com",
+      "publishedAt": "2026-07-31T19:58:24.000Z",
+      "verdict": "kept",
+      "stratum": "kept-ambiguous",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "111488949acf4aa1",
+      "company": "Stripe",
+      "companyId": "f9f48e7d2a38c906d7222f3aeb08db9f1dc1b62e87a4e6ecb22c70fb9b40972a",
+      "ambiguity": "high",
+      "querySource": "human-approved",
+      "title": "Stripe’s PayPal Bid Shows Private Fintech Has Become Powerful Enough To Buy Public Giants",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQV3EwTmU0anVlMU5JNVpkWGZ2OW8xblZuQlZWcnBNQ3hQS1I2UkJKLWwzVklzVnQzTV9EYkdrTVg4TDlDVVI1VjEwTnF1cFlvdDMwV1gwbzBkbVFGLVRrYXN0aTRkT2VURjhocnAtM0w2Sjk4ZXJQbU9fcThsdlNVc3hWSFpRN2hMajhCY3FWNU1VU2NZN3Q3OFJPZDE5ZWNwNFhjcXducFJId1hOc04zbkM3R0syNS1XbG5oWko2VmlDOWlvZFFZa0xzR3ZXaHRKVUpOc3FyMA?oc=5",
+      "sourceName": "sahmcapital.com",
+      "publishedAt": "2026-07-17T07:00:00.000Z",
+      "verdict": "kept",
+      "stratum": "kept-ambiguous",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "5553f7d7eb2df893",
+      "company": "Together AI",
+      "companyId": "9d5b9d1933714e02bc89690d60a662e6f2d9cc8c330a84b83d776ed2be48a817",
+      "ambiguity": "critical",
+      "querySource": "human-approved",
+      "title": "Together AI Highlights Scalable Long-Running AI Agent Architecture",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNZ2ZHSEZQbXdUYWxIZExFY2x2NEREU0NSR0huQnMzUTRZbGY3cldhRTJLOTFBUGVsUjZjZmV3NEl5dkc1VzZLLTV1b3JtRFJQTHA2UDY0ZF8zQ2NtbVlhTWRYcWpKdVU5N3Z0YmZwZkRzYjVsUEZRNlNRZXdSZjMyLWxLV1lrRDFsb0IyTl81TGZLRkRJbG9Eb1Zvbm9ZR0dyWHppLVNmOFM3NEk0bXNXRC1uR2g?oc=5",
+      "sourceName": "tipranks.com",
+      "publishedAt": "2026-07-14T07:00:00.000Z",
+      "verdict": "kept",
+      "stratum": "kept-ambiguous",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "20e36e4794b88557",
+      "company": "Cerebras",
+      "companyId": "51ea09628499962f920c6da1c91ff6921032c20c589caa91016ce4bfac5f02d3",
+      "ambiguity": "high",
+      "querySource": "human-approved",
+      "title": "Cerebras and Upstage Bring Ultra-Fast AI to South Korea",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNUEI1N1pjbHNCb1BsODVZYXdDdnFLN3FmQzJtUnZva2Vsc3lYejdXTEQwRmxueDZjT19KWVo2T0RmbDFVMERNNG1EWnpOdVh1Mlg0aFFYeGhUUlNyQWxyM2RJcGJrWHpCZ1FLOXp5LWVfWVNLb1FFd1UtajdWWXUxV0V4bFM?oc=5",
+      "sourceName": "cerebras.ai",
+      "publishedAt": "2026-07-10T07:00:00.000Z",
+      "verdict": "kept",
+      "stratum": "kept-ambiguous",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "37a4119caa14ae6c",
+      "company": "Harvey",
+      "companyId": "2349a6848d029aa2bea30b44d8a63b080aa98fb9b5db2cea5fd875fc9543d789",
+      "ambiguity": "critical",
+      "querySource": "human-approved",
+      "title": "Harvey Aligns With Toronto Maple Leafs in Multi-Year Legal AI Partnership",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOc0hFblVRRk5VZ09oa2pFWGJBT0lQQXNfS2dNVWphcklpTEVvanVHMVNjM1dIS3VxTEpmaEpIOHlFY2dUZGNsLUVmQlFXRnh2Z0JSSkJMaGF5Wk5qdkc4dTRaNk90aXBNSFBQRUEzOWdRdlpkb3RNMHFyQ3RNd2JEeDBTTGlieXktUlFBbGdHcGFRY0VfTDFzSDZXQXJXaW1RX3lDNjFRYXNCY1c4TXhFNHAwWUtxYllLaDFWbmVB?oc=5",
+      "sourceName": "tipranks.com",
+      "publishedAt": "2026-06-23T07:00:00.000Z",
+      "verdict": "kept",
+      "stratum": "kept-ambiguous",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "1e1a39f8a58c89b4",
+      "company": "Launchpad",
+      "companyId": "4176f025dd9922a8dff53a3e9e2bd96abeddbbf178f614fd343b93fd128fecdd",
+      "ambiguity": "critical",
+      "querySource": "human-approved",
+      "title": "Asia’s Largest Startup Launchpad by Eureka (India)",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPQ20xaGItamEwWXFqQXhoQ2FtbnZKeXZIVkplMzZzT0NRaXkzRTh5YjMwZ0Nna3A5aFdyeEhzTVRCcEUxOVYyS3Q1XzBDWmlocTI4dFZYbG9NSHFpUmJidlViUm9TQXZSUkxQOFJrNFBhTlNVVG5VaVZORWtmODBLellFbUxUQXYzYThfa25MNjFKZnPSAZgBQVVfeXFMTmFtdzZGbHlHaHJFV1hJZGl2MXI4OFI3dDkzNnNiNWFQaWR1M05sOVBybU1uUzh6WjZobmx2aWVxTWpMbFhMZDBCaktuTHRORWZ6SWpuMWI5aUVjWEdKRXBZNkRoN0hjT3dRWHkzb1UyVEY4X3E0V29nMGsyVlZhN01lOEVrb3ExbmM4THQzR0xnN1RScldhU0c?oc=5",
+      "sourceName": "www2.fundsforngos.org",
+      "publishedAt": "2026-07-28T06:38:51.000Z",
+      "verdict": "kept",
+      "stratum": "kept-ambiguous",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "16158f865775c0d2",
+      "company": "Lemonade",
+      "companyId": "2a4901ee2848d8ba0c7eddb21a892ab8e3c92ba3ebeafb3d40c78f79ada5f57b",
+      "ambiguity": "critical",
+      "querySource": "human-approved",
+      "title": "Lemonade Pet Insurance Review 2026",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOY0doclhZbVNPTm5ySXJqSnYyVzZoeTREM21QbEZhenlqdTF4UGE4dkcxWXRSWEE0WF9qNlF5Wk9ELW9nejA4UVNlcEtzM0tFLW53M2dBbnFjeWFSUFZUd0U3SzB2ekRtZWQ2Wl9rblJGWmxCNEFDYlBWb19kVlFHcw?oc=5",
+      "sourceName": "forbes.com",
+      "publishedAt": "2026-07-02T07:00:00.000Z",
+      "verdict": "kept",
+      "stratum": "kept-ambiguous",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "7f543ad0f9721ce0",
+      "company": "Peak",
+      "companyId": "fa1c97cf22ef1420c42922832bd836127c49ef5213b49e6c7f1eeb894bbd6bbc",
+      "ambiguity": "critical",
+      "querySource": "human-approved",
+      "title": "Peak AI Trading Signals — Arthur Hayes Liquidates Altcoin Positions",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNTGF4Z1c1UnlFcU53Y0ZHcVZURUppbVIwWWRxTE1RYUJSNEZmYUVmRmJUczVlV1RtVnJuRHZMWHM1RUxqelNINnZrMS1kemdwMFBPaHktaVQ2Yi1TNF9ONjZNRmRLSkJPNlN5QS1vS3dGSGthdTBjZzNUa3FHejU1cTFtUWJVeEE3ZG9vTUowV1NKSVkt?oc=5",
+      "sourceName": "coinfomania.com",
+      "publishedAt": "2026-06-21T07:00:00.000Z",
+      "verdict": "kept",
+      "stratum": "kept-ambiguous",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "045baa6e7e07b34a",
+      "company": "Arrow Global",
+      "companyId": "90943955bee5a4fab9db9420290f46f75508238d01b2e32b0e0c703bba4a3d73",
+      "ambiguity": "high",
+      "querySource": "human-approved",
+      "title": "Deal Roundup: CD&R agrees Indicor units sale for $5bn, CPPIB exits loan portfolio to Arrow Global, Fortress",
+      "url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxNbnBRT3pWTGVyTmhKQU8xd0g4bFpiZVVyRFBLQ1pNMHFneHhDVFBOZ3Y2Njg1UUhydDVYQTBaUTF2YU5Oemg1SkdGTHEyS3c5Z1JVUW0tdFhWQVJQNEk2V0VjLUQ1NEFiYktEbDZ0X0JsNkVRS3lkMHNBVUV1Yi1pRVJjdjYwMDFXeENVRmY5cVVBUF93bGlreVNXbE5ieXJvVlVpRExNeGVCYzNkZnRRR0trajJQT1BNaXNLZC10YnFVeE90Nk5VTHZLWUJtd2FWSmlhYkM1TFdZWFdKY2RGRHJwY1ZQTm5FbjhZQTEyWXQ1NGEzNDRCS3lGSm9rOWNDVzJ4UnBFMzF2YjJh?oc=5",
+      "sourceName": "altassets.net",
+      "publishedAt": "2026-05-07T07:00:00.000Z",
+      "verdict": "soft-pass",
+      "stratum": "softpass",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "04059aee896d9fab",
+      "company": "Astra",
+      "companyId": "2e0d94f87a5474e3c7fd441cd481345cbb775551b15808612ba3c2c18eed735d",
+      "ambiguity": "critical",
+      "querySource": "human-approved",
+      "title": "Ad ASTRA Community Workshop: Detailed Schedule Available",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNR0gyc1B5LXJGVVA4aWU5ei1PUmhGT3ZSWDhxUGlIbDFPWEZENWk4LXVkVWVDY2ZucFU5MXFIcEtsMExzR3lLbDlTUlRESXV5clgtQmQ3czI4a3psQzd4YmdZcVJNakJ3NmU0ZGo3WXhxejlQZmp1d1VfODhPMTltcXVmcnhoVU45MDE5T2I4UkVXaTNjN0pSM3plZXZBMDREQ3BjMW5kS3dRbEQyd1ptdXdYZWUya3NTTXZ0TUdRLWtPYmM3UWN3?oc=5",
+      "sourceName": "science.nasa.gov",
+      "publishedAt": "2026-07-27T21:40:01.000Z",
+      "verdict": "soft-pass",
+      "stratum": "softpass",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "2969a1a84ceee3b4",
+      "company": "Greenlight",
+      "companyId": "c134bf20e74faa526146098e4d1efad69400e81c3a03a7c74aefe9ae3a817ace",
+      "ambiguity": "critical",
+      "querySource": "human-approved",
+      "title": "Greenlight Financial CUSO Hits 100 Credit Union Milestone to Scale Family Banking",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNY205UVVCWnZWNllkUGw5bVpZcXd3QWhSekV5aUNFOEV4R184UDVSQWh3TW9KUkJiQmFnVHl0eWw0LUkwMFVJNDdlWGFYUkh6eFowY3BqUUdtZ19lYjE1TGZlYnBIUndqVnl0ZE9SY3lvVkJGU2c5cnBBdm9ZdmhTbVl6d212TVloNExwZjNFMTRGbnZDWUxUbHZscU9xLV9faGNJWVd2LVI?oc=5",
+      "sourceName": "ffnews.com",
+      "publishedAt": "2026-07-09T15:45:13.000Z",
+      "verdict": "soft-pass",
+      "stratum": "softpass",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "12dc96db949e8d91",
+      "company": "Harvey",
+      "companyId": "2349a6848d029aa2bea30b44d8a63b080aa98fb9b5db2cea5fd875fc9543d789",
+      "ambiguity": "critical",
+      "querySource": "human-approved",
+      "title": "Harvey Announces Investments From JP Morgan, Goldman Sachs Funds",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNT2tCMGM0UE9EWXdzbkR3NWNYZm1FUENNUjVwWUZVSlZXWWtBdVN3N1ZOazRJemJxUzM1VXREUDcxSXNISEs5Q2lkQXV5OTE3eGtZOUUtaDhySkw5cW8yc0V6S3NDMDYxZUlMUTd6SDY3RGw0Yk13SUJhZmRhbjktSkh3T1J2Z0FNYkViNzcwVEYtMjRXYmJOXy15OHpFQXlHNTNiaFozVGVBQTg4RWc?oc=5",
+      "sourceName": "law.com",
+      "publishedAt": "2026-07-28T15:26:00.000Z",
+      "verdict": "soft-pass",
+      "stratum": "softpass",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "b0231da1856213e9",
+      "company": "Hub Security",
+      "companyId": "c8d2018bf2907e0288a3c9c96053368d4cfbf725b59c02a024f43710b715a0c1",
+      "ambiguity": "high",
+      "querySource": "human-approved",
+      "title": "Cyber firm HUB Security consolidates every 20 shares into one",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOMk82bmVkcWp2dGZTOHRrRmJRblpiU090cWl3Z193d2FfTGZLVlZDS0sxU3VXQW5aSFkwb183Nm1nVDBsMEpXWGs3RV91eHJrMG12TnJEVHF6RGduRHVmSVhBVkhlRUMxeFpibmFqYjdnMlp1elJqbWZMcG13ei1HWlJJcmRjdUd5ZHc?oc=5",
+      "sourceName": "stocktitan.net",
+      "publishedAt": "2026-06-03T07:00:00.000Z",
+      "verdict": "soft-pass",
+      "stratum": "softpass",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "4899279107e3cecc",
+      "company": "Island",
+      "companyId": "6e161b557e5ee4b369a0ce7332bd8d12a4196fe757c3751dff828b6485e5613b",
+      "ambiguity": "critical",
+      "querySource": "human-approved",
+      "title": "Island Brings the First Purpose-Built Workspace for SMBs to the Pax8 Marketplace",
+      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOa1JJSktWaW53Z2ZlcWt5NWo0bF9tQUJERExfbVc4WVFTRU1Wck5xempFV2J3dVdYNms3aUZUdVZLR0hCUUpIOEMyQVRGU2R6SmVyZTExMmNQTnlnRTBZdDBZMi1qZ2tDWTNfb3Z3N29WT0VVemRVM2Vnc0Y0RlhpUkhrTEhYX1RqU0pSeGt4MWp6czBHN0tUZUJHYzFxbWZSc2UtVGNUN1FSTktLaUdPdVRhUXIxd1dtRUxPLU5nLVBHSi1MMGhNNVp3NEpEeThoMVZjLWxBUkVVaVBCSjJqek1DeWNoRzA?oc=5",
+      "sourceName": "globenewswire.com",
+      "publishedAt": "2026-06-08T07:00:00.000Z",
+      "verdict": "soft-pass",
+      "stratum": "softpass",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "09c94cde7dbf1ae3",
+      "company": "Kini",
+      "companyId": "ec79b0163bc3de4260a934f7245370074510ce45ba3620511e81e483cf27761f",
+      "ambiguity": "critical",
+      "querySource": "human-approved",
+      "title": "FinTech 2.0 must move beyond EMI-led products, says RBIH CEO Sahil Kini",
+      "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxNYndyblViX0xycjdrUE5LQWtDNDFMRWtyNUthaDZQb2FFUllDck9EUFNoLURIbF8waHhZOXBpSHhjQ3BKZkRqTDlYWXFaMmwxYnJyc0JWYm94VndfWjJzTDE0RXNEa2l6R29IYVZBWmtzaTRHMUhvbV9RM2o0bkJyLWlDNXpXNjJpUk5GeEpoYl9YR2RQVWtQc1N0eFVEWnF2VUM0ZUdDV290VXVIc3AxLVJBUmhEcHNqVUw0ZWtsdjQtdEltZk52SWc3MFlVYzBWMEJla0c0Y2xMOU9NY3BaVk1pOWtoN0t3RG1CampjbGhKbVA10gH6AUFVX3lxTE9IYndFOFdjZkFPbnpLRXJDNmFIUWxGM0JhZWRZVkotRUcwOWN6V1NTY25UamZodXBhVzFKTlBzYmZOaUEwZ3hvUFFYc2pqSG42bFpfUVZseEtKRXFMVWxPQjhJVW9ka0hiaFVwTl8xTlk0aWlldHBKTjhTNUhqWFVvTHZNZHRYVHNrOWlPbmIyYi0xRFo5S3ozczhVYWZhN0dja2NLcnR0SVEtSDJrSU9lT09kYTdxSFZWcFFjaHdOeW9UTDJCaWtrejRVd0tFQ3pzU2hSNl9ET1JtR2ZlSnpoRWU5VGMxV0NhUGZYMjk1THpmd2NHaHJDQUE?oc=5",
+      "sourceName": "bfsi.economictimes.indiatimes.com",
+      "publishedAt": "2026-06-18T07:00:00.000Z",
+      "verdict": "soft-pass",
+      "stratum": "softpass",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "0c980c140e45fd74",
+      "company": "Launchpad",
+      "companyId": "4176f025dd9922a8dff53a3e9e2bd96abeddbbf178f614fd343b93fd128fecdd",
+      "ambiguity": "critical",
+      "querySource": "human-approved",
+      "title": "LAUNCHPAD Is Built to Connect Emerging Artists With Southeast Asia Audiences",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOOVZGRy00TTFfX1FFNWpQYWh3WGJrMlVmSzl2YWtXQnFJcnBNSkdxUzBTSkRYZ0dqR1JFVnVKcUZpTDQ5SkQ2T1VNZnp1RXYzYUc2UHBUemsyU3NheWpxLThXQmhPR1ZwS1BBQlJqVUNmdGpFRHVCdE1vVzQ0MnVEZUpWQWNlMHlPWnVRamxDc1FsbGxNZG9jbzk1dE9CYzRPRzY2aU5YbzkzczJEYl9TUHdqcVlpeVFBMWJIZ1BRcw?oc=5",
+      "sourceName": "stocktitan.net",
+      "publishedAt": "2026-07-27T12:30:00.000Z",
+      "verdict": "soft-pass",
+      "stratum": "softpass",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "46a1dbf17643466a",
+      "company": "Lemonade",
+      "companyId": "2a4901ee2848d8ba0c7eddb21a892ab8e3c92ba3ebeafb3d40c78f79ada5f57b",
+      "ambiguity": "critical",
+      "querySource": "human-approved",
+      "title": "Lemonade Inc (LMND) Stock Price & News - Google Finance",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5nOXozOE1IcDl3U0djNFRpTk1rSlYzRlB6d3hVNUI5MFdZSlhTUXhuWGhsVWNHemtHdXczY2VEa2FTS3RPZTRmc1NKeFNBbjYtZXQtTFNzTFNGQQ?oc=5",
+      "sourceName": "google.com",
+      "publishedAt": "2026-07-31T17:45:01.000Z",
+      "verdict": "soft-pass",
+      "stratum": "softpass",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "1e6bf97bdcdbb9ff",
+      "company": "Peak",
+      "companyId": "fa1c97cf22ef1420c42922832bd836127c49ef5213b49e6c7f1eeb894bbd6bbc",
+      "ambiguity": "critical",
+      "querySource": "human-approved",
+      "title": "Japan's Nikkei scales record peak as AI shares track US chip rally",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQZFNGZno5Q1VGMmRSaC1YU3hsVHV5bHg4YnNtU29oME9SN2gtUS1IR3RIM1lPRDlNblBoNHlwZUtuUTlISW9UMlFzdjFDdks3VTc2NG9LNkJ0cmpKOENDYWNXWjg4QWh3YU1DbHM0QU9CVUhMdEJZVlp2MjR1YTNvbnRzWU9Gc0l4U0Jna1JyN3BKaU5iN0NYME9OMzByMVUxQ05hbnBleEtfX2hPUkNDUVNZODVsSG9Fb1dGStIBwgFBVV95cUxNNHBHUG9PVjF0VnpzY3k1UXpaVjdHQTZEdnVsRzlNbDRwZ2ZGZ2laOTVTNFc1WVI0RGpBTFdFWHVIWnRiNlU0MmRRRkEwbHMySjVFZ0w0ZzdFOTZBWFR6SGxrdnF4QXNRdi1Rak1OdEM3NU1nX1JlYkNsUUtJeW0wSXItaFhpenlTZFVkVHBoT29Za2tkRnpxdmFkZjgzLURDY0dYQ0dIdC1iSlBrcS0zZGpCZEotZHVTMU05d1lKNGh4Zw?oc=5",
+      "sourceName": "nst.com.my",
+      "publishedAt": "2026-06-18T07:00:00.000Z",
+      "verdict": "soft-pass",
+      "stratum": "softpass",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "3e348d7fe13b9550",
+      "company": "Quantum Machines",
+      "companyId": "b901582b142856c5b009ef6ff8c3161130bb5ed70b0df43a24b0a09c128e1128",
+      "ambiguity": "high",
+      "querySource": "human-approved",
+      "title": "Quantum Machines Highlights Real-Time Control Strategy for Fault-Tolerant Quantum Computing",
+      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNQWhBU1Qtd0I2ZkdBRkxySDBVMWc2LUR2TTY2WDF0eTJmWG0tZGJ6Q2dweG1tYUZoZDFiNTlmc2d6UWJMd1RlWklxbXFKV3RFMTc3eUJHQ29zY3g4bHVGaW9ScGVhUlZrU1ZmN01pQ2ZNYW42LXBjbTM5bG9NR2l1YldzenVlR0M4WXBWbkpZeDNtdTFEdmJrMEtGbTNnRl9VQ29BbHA4QVdlVkJ1ci1UeWczMWlRNFVQeUVHNC1yNUYzN3ZxT1U0eVNaVmFCb3pnN2d0TV93?oc=5",
+      "sourceName": "tipranks.com",
+      "publishedAt": "2026-08-01T01:49:19.000Z",
+      "verdict": "soft-pass",
+      "stratum": "softpass",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "15fc8dbf9935ba37",
+      "company": "Rewire",
+      "companyId": "82fcbdab231d51268bb44549a3649a09380803b75533f605302d8f67e17ebd26",
+      "ambiguity": "high",
+      "querySource": "human-approved",
+      "title": "Sky News Australia. . Sky News host James Morrow questions whether oil markets will \"rewire themselves\" in the wake of escalating US-Iran tensions.",
+      "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPd0tvWmpRaVZXdFZydWJBSS1EbGdsNFVuM01YWmd1ZDBrTTIwbFduRHQzdzVZZWw1dnBPcmNBTC1ncUQ3UURSZC1nTUduYjdya2lhcHBfZFBDZ3pydTlNUlZvRFBfN1Q1VzdBMDhtS0xneEgzcFY1dVRKYXJsRElHQ2ZfdzFjRGpOQU5OcTVJSUdoNmpRelR6X2hyR0NoOVVuejhvWHRjbnZYeXhseWhDWGV5N2NsVUhXYm0teHUxM1VLcHJqMkhTNm9jd3ppb2lWMDA3c0xfZmlqa0V0cVFDbA?oc=5",
+      "sourceName": "facebook.com",
+      "publishedAt": "2026-07-15T11:46:54.000Z",
+      "verdict": "soft-pass",
+      "stratum": "softpass",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "a0e541fcfde052f1",
+      "company": "Ro",
+      "companyId": "19197b87ab0778017d922babcc2e2e664eb7cd29a0655dcb049c596c2761eefb",
+      "ambiguity": "critical",
+      "querySource": "human-approved",
+      "title": "Chugai Ro Co., Ltd. Provides Dividend Guidance for the Fiscal Year Ending March 31, 2027",
+      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNNXdjYjNwMlJKYjhzODNIREw0ZVloZExYSnZta2FSdmlWZWZmaUFJYTduMXN1T0hEVzBvREwta2ppbzhkVDg2ODZsazVqZ2JXejN3OTluRjFfWnFtdjhGSWxkU0dvMXJCTHNPQzRlRGl1UEN6MDF1LXY3Y2RpOXZ6TTc0X25RNFdwNFRlWE55MlE2bFFFcjdkbkJfVW9vRUNDRlBxQW9nZW05M295YmtHTjgxcXBRajhNeUJqa0tTM09pQWZxVzJ3OE1zVnk4TEM3anBn?oc=5",
+      "sourceName": "marketscreener.com",
+      "publishedAt": "2026-07-24T18:52:28.000Z",
+      "verdict": "soft-pass",
+      "stratum": "softpass",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "046baf72df3b089f",
+      "company": "Shield",
+      "companyId": "3aab452a942f16c726a174483d3228a86706e5be72abdfb21db78df1e8fe97c7",
+      "ambiguity": "critical",
+      "querySource": "human-approved",
+      "title": "Shield AI: Innovation X Advisors Participating In $1.5 Billion Series G At $12.7 Billion Valuation",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNZnBseUpsT00xTmg2UkJQUWJGSEE1NHRoZ2VpTUdfZTlaVjNJbkxMa3BtQ2cwOG5HMzJKbzhzR21INnBSVFBqbzJuUThhU0ZhTjBCbXhJMEhQUGZBakFyWFlXeFp6UVBleUw1THJoVk9LeGdnVW1JYnR5LXVVaHJzT29XZ0VRekk3SGV1di1xSHZBVHpFWWRQTjR3cjhqT0lJQmVNMk1SOFJUakhacmtNV0FhYWxOZ9IBuwFBVV95cUxPaHViR3p3R2ZqUTJrZFFyaDJmOFMtci1ERlZ2T3ZCZjgxbnZKRTlKQUNpSlVfX3EzQTJmZXRqUGRhaHFTNV9yOEJaNW15X2x4WWRackYzQTdtaGlPU1VqOHdYZGRNQ05Eb21KWFUyWVFXcm0wR1Y3YU51LVhMbFZWQnJMY0J2akdFYXY4V21WdVAwR0Z0Q2pJMzNaWDJHSm5UVkVCWDFlcHg4WW5rbHJNLTg0VWJnSmFGREpv?oc=5",
+      "sourceName": "pulse2.com",
+      "publishedAt": "2026-07-30T02:35:59.000Z",
+      "verdict": "soft-pass",
+      "stratum": "softpass",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "1777a74d0bee4303",
+      "company": "Spot AI",
+      "companyId": "e66939463a46bb5677fbad56e1f3a9ea351b6ce3ca37df01cca298feba59eae6",
+      "ambiguity": "high",
+      "querySource": "human-approved",
+      "title": "Exploring Ways to Stop Crime on the Spot",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE96Z19fMzhuVjQyUU9nVGRwdHhCNlpfWUtqcVNZY082T2RYY3pYcXktWTVJVDNmLW1PSEVON21xMDRMQkxhOTFtakdiem02WlRoaXppZm0zazI3b3lPSHc?oc=5",
+      "sourceName": "csnews.com",
+      "publishedAt": "2026-06-22T07:00:00.000Z",
+      "verdict": "soft-pass",
+      "stratum": "softpass",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "0bcb0d337e1d309a",
+      "company": "Stripe",
+      "companyId": "f9f48e7d2a38c906d7222f3aeb08db9f1dc1b62e87a4e6ecb22c70fb9b40972a",
+      "ambiguity": "high",
+      "querySource": "human-approved",
+      "title": "Stripe Eyes $10 Billion Deal for AI Model Marketplace OpenRouter",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQcUZGZjNaQUxnYXZIa202bXM0YmpodUg4WFhqeFJtT01TamxCckxpSk45aXVPQzJhWkJISWY2TFRtUkxwOGwtaDR5R1BwaE9EZDVpQS1fRWxRU0ZSQkpZTjFlMzVTVXI5VERGSkc0Y252elB3cEg2eXBQdmRtekFHSF93a3N1dkE0eDRlaHJ5cFlpYVZSOTVCNXBRUmpCLTlMSlYzZ1RvY1Q4ZnBjMkctejBFREJfUEE1SXJ0VEFB?oc=5",
+      "sourceName": "pymnts.com",
+      "publishedAt": "2026-07-24T00:29:38.000Z",
+      "verdict": "soft-pass",
+      "stratum": "softpass",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "7c344a8f57f24641",
+      "company": "Arrow Global",
+      "companyId": "90943955bee5a4fab9db9420290f46f75508238d01b2e32b0e0c703bba4a3d73",
+      "ambiguity": "high",
+      "querySource": "human-approved",
+      "title": "Arrow Global appoints CEO of MGA Solutions",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBzSVdXWVdmNEpIYXU4VVgtMm42Z3ZaUEQ4NlVwTkd6ZE1GdFRiWjVZdlFjOVFxSm5TZF9wdmNFc0R0RERrZkRCa0hsMTFONGF6OTFwSUZlbkxoSll3bkRNZDZxVENNd3ZZWVd4dWszcGUwY3V5UlhTLXpJVkZncmM?oc=5",
+      "sourceName": "funds-europe.com",
+      "publishedAt": "2026-05-20T07:00:00.000Z",
+      "verdict": "soft-pass",
+      "stratum": "softpass",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "1022f81956cb0e22",
+      "company": "Astra",
+      "companyId": "2e0d94f87a5474e3c7fd441cd481345cbb775551b15808612ba3c2c18eed735d",
+      "ambiguity": "critical",
+      "querySource": "human-approved",
+      "title": "\"World's confidence increasing towards India's defence equipment\": PM Modi highlights BrahMos, Astra deal with Indonesia",
+      "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNN1Bvc0FGOWl1WVhDTTNmV0xvYnZIT0JLV2N1M1NWeTN4QjR3SGlUdnRUMmh4M3FEVEgtc2djMkdFeW1QblFmUXVVOG1YRXYwQUpLalZQNWEwR01OcFV3eWRVaF84VWRHdUIxN2VXM2Q5NnU3a21JM245RmJwdkRxdlBMVWl0R28yZVMxbTNXTzhPR0tsZzFsZmtRZWxyTnhIZWhrZmp2MGxPVVN1TGJYU2tZbU9pLUpqMjgyWmVXckNHNHdfeURzZHppTGlfSjRzbDdzQ1BwT2dyUWRaTFlTVmdXWFlTTFdWdXc?oc=5",
+      "sourceName": "indiasnews.net",
+      "publishedAt": "2026-07-26T21:30:00.000Z",
+      "verdict": "soft-pass",
+      "stratum": "softpass",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "5b68ee631da73d41",
+      "company": "Greenlight",
+      "companyId": "c134bf20e74faa526146098e4d1efad69400e81c3a03a7c74aefe9ae3a817ace",
+      "ambiguity": "critical",
+      "querySource": "human-approved",
+      "title": "Dow Credit Union launches partnership with Greenlight to help families teach kids about money",
+      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNOW95RmI1VFVid0d6ZmVSdUVPY2I3NUtnUTkwWVIyWW9vUVc2M2dITHRfb3ByM2NublZfZk16aXhGdGFkSGkyVGZ1eW9OYnBGVzZ1WGM2Y0J3dkRuMmJJOWZHdWRqemFudGJtOHpxck1tMGtmRVQwcnl2UUhXNmNxLWI3Q0lvVERNY1VZU0I5Q3BnYWppYmctaVBoNXRLLUJ1Rms3T0UyV1lCLVhMX1plTmx1TmhONzJGOEFjemRGVzBhUS16cVE0YTFuV2hIaTVkWW4wanBZZ3Fqd1ppUlFXNExISkjSAfgBQVVfeXFMT0pJWFlFRVN0Y1VsVV9IYktTQW9fOC1veG1paUtSV3dNSlMwZVJnNEpqc1I2QzBpbm00ckVfMFIxMXJ2WFdTMlVUODdQU05pVWM5UDQ3VnYwaVN1M2UzNHZXcl9CMy15OUlyZHUwNFdaeEswdVRwc2tDd2t4MlFEcEl1elNQWm9kWVJDbmxJOFFJeGg0U1R2azhZOTNjRHI3SllqNmNxT0kxSXhMM0NjTnJraDVib0VHdzFmRmdtN0cybUpOQ2EzUGl4THktUVNKbF9TcTN2NFhYOE5ZU2drelhSeUdqVFVycTg1cU1tRDdVMjRvTDVEWVg?oc=5",
+      "sourceName": "mlive.com",
+      "publishedAt": "2026-07-15T07:00:00.000Z",
+      "verdict": "soft-pass",
+      "stratum": "softpass",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "2fafa90278824c96",
+      "company": "Harvey",
+      "companyId": "2349a6848d029aa2bea30b44d8a63b080aa98fb9b5db2cea5fd875fc9543d789",
+      "ambiguity": "critical",
+      "querySource": "human-approved",
+      "title": "Broseta partners with Harvey on AI integration",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1jYXhJSkcxYkVWVWppNUJ5YlBVSWt3QjJrLUlycF9oMnFhMGFHZ19kUDZVdTdHMWNVRFZtYWRxX1Q1alowYXJKM2kybW1KZUNIRGM3XzRJbnFoTXk0Vm5Qbmw5bnpaMEtzWWtaaUdfck1sRUhZXzY0SUxzQVF4Zw?oc=5",
+      "sourceName": "iberianlawyer.com",
+      "publishedAt": "2026-06-18T07:00:00.000Z",
+      "verdict": "soft-pass",
+      "stratum": "softpass",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "02f8d9f09a65c8cb",
+      "company": "Cyabra",
+      "companyId": "f3922ff8fd2ff3e9374ec3f76dc57d59a85e20328399055e04c998d99864d47f",
+      "ambiguity": "low",
+      "querySource": "triage-default",
+      "title": "Cyabra, Inc. (NASDAQ: CYAB) cuts stockholder meeting quorum to 33 1/3%",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPQjhpek5MVzZpb29ZclJ4M05nNXpBV3pVY1phQlVEV2M2WVA1R3FRakQyNVBxUmE5LXQzaWpsclVlUmRrMkJpcUVoREhtNFJCZk1LY0F3SlBsb0VaSk5sUGVlRjNTUVZDU1k4bU56UUNMdVNrLTcyb01MWmJRc0NUT2ptT1c1N3BHc2JINUN6a0lULUdoQ1kwd3NPS3hkWlha?oc=5",
+      "sourceName": "stocktitan.net",
+      "publishedAt": "2026-07-31T20:02:15.000Z",
+      "verdict": "kept",
+      "stratum": "negative-signal",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "7467db23090debfe",
+      "company": "Innoviz",
+      "companyId": "d5a14855b0964276b8e6085fdc6ad488c20411f2f0d6a6dffc61513422d7b50f",
+      "ambiguity": "low",
+      "querySource": "llm-enriched",
+      "title": "Trending Industry Today: Innoviz Technologies Leads Losses In Lidar Technology Stocks",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPNnVDRFFkQjdLcVFCREp3R0Judmw3bEpLQ0xtYWRLNFhTY3VzVGN3VnRpZ084N0dWMDd2ZUNhM2pPbEhuSTduQVV3M3lOejBLaG5tZWtfVFZfNjRKbHlrNF9LOWtwWjVKdlhTcVBhQlc5OG42cmFXQXE0ZzM0dVhpalhqQ2VDWGJWUHpLejhiQ3hBbXhHcFlFS2dXWTZCNHZsNWltVG9BNmVTZlRGbnlCM2JwUmJVUkpxMHNn?oc=5",
+      "sourceName": "moomoo.com",
+      "publishedAt": "2026-07-28T14:00:01.000Z",
+      "verdict": "kept",
+      "stratum": "negative-signal",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "010cf2b35b8c1ae3",
+      "company": "Lemonade",
+      "companyId": "2a4901ee2848d8ba0c7eddb21a892ab8e3c92ba3ebeafb3d40c78f79ada5f57b",
+      "ambiguity": "critical",
+      "querySource": "human-approved",
+      "title": "Lemonade (NYSE:LMND) Beats Q2 CY2026 Sales Expectations But Stock Drops 15.1%",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPRHVITml6M1JLRHBtYXVwMUdEYlhZQzdxVURiLXQ0WXhkWjc1OW5JcmVDRHN0OENmLUN4Q2VvcGlPdVZjVTZQUzQ1NkF5TjNNV0hOZDdOcmlEa3oxYXRsNk5IY2RMU1AwVWxJeFNjNU9oMUZfeDlBU1hoajNrcVdnSzNqQXJrdUIwaVVnUXByTllaOUhLSjVz?oc=5",
+      "sourceName": "finance.yahoo.com",
+      "publishedAt": "2026-07-29T12:33:46.000Z",
+      "verdict": "kept",
+      "stratum": "negative-signal",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "c02f7f5ef83a6984",
+      "company": "Peak",
+      "companyId": "fa1c97cf22ef1420c42922832bd836127c49ef5213b49e6c7f1eeb894bbd6bbc",
+      "ambiguity": "critical",
+      "querySource": "human-approved",
+      "title": "AI boom turns into gloom: South Korea slips into bear market, falls 20% from peak",
+      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxON1ExaVFpMXlFM0d1X204LVdLM1BfT0JYQTd6YWlISVNDZU80cERSUmx5T3lvRnZNRVNFYWZ2a2F6cGdrbXZUN2JMNjdTZFVMcWdUMms4S29TRklDSWgyYlZfY1BPTGpJMWlpR1ZzdlRMMmlhU1lXTzk3M1oyczVpb0hhVldraWoxemVlLWx3WHluVUlvTWY0ampEaE8tYzExMlMwaGhNWlpxWGhod2ZQWTlpbC1lLUhqdkhVVkVmaGhGbkpwRE1zTnJjUkZtVzBldFJRNlNtaGJ6LUZrTzd2UlBn0gHnAUFVX3lxTE5XNDdjZHE1amx6b29DRTFwRmFTa2sxODh4NjBGTjB0RVd0Q2hiZFRsLUdlc0pFM0NOYUJFekxSaG44U3NjZHE1YW9oNWcxd0RDNENSQ1RWQ1dRdERRdE9yN213Rm1rQ1ZyVnBDbmN0a2VTX2JGbGlBQXNfUC1JWTVmZGhSbmM0WU5YWGNVNlZwREtYQVpGWjcyWWs1dHA0UzdER0MybkU1ME9mR0tqeGpIcXkxVWUxMVdCOHBKRV8teWhVdzFBaFVfRE91UUV6VnZjMURlbjhacmE1aVZmTHJHWHVpWkpfQQ?oc=5",
+      "sourceName": "indiatoday.in",
+      "publishedAt": "2026-07-08T07:00:00.000Z",
+      "verdict": "soft-pass",
+      "stratum": "negative-signal",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "068e1bce8eed7fcc",
+      "company": "Ro",
+      "companyId": "19197b87ab0778017d922babcc2e2e664eb7cd29a0655dcb049c596c2761eefb",
+      "ambiguity": "critical",
+      "querySource": "human-approved",
+      "title": "Ro Hair Loss Review: Find Out How Ro Compares to Other Brands",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1Rbkp0SHhlU3ZxajhrQk1wU21LOXllZ0NUZ3A0dkFQQm0yOGR1UWhPR3hWLVpLOXNWRGhsaWRrcVhkSnAxejNyVGhIRDgyYUw5bEtnMkwwZ2RZRkpGbldXNjdXWW9DMDgwYS1Z?oc=5",
+      "sourceName": "ncoa.org",
+      "publishedAt": "2026-07-20T07:00:00.000Z",
+      "verdict": "soft-pass",
+      "stratum": "negative-signal",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "1fd75cf5dd08c21b",
+      "company": "SpaceX",
+      "companyId": "01d6e78d4dc7f34ff1190ec006387b934166de8a24535ef96562cd52a09fde1e",
+      "ambiguity": "high",
+      "querySource": "human-approved",
+      "title": "Musk's bad week: Tesla suffers worst slump since 2022, SpaceX drops ahead of Starship test flight",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNVElsTnpTSUg5Y05mTmFTRk5ucDZPMU5RTHQtZk96MTIyT21TUXE0cWkweTZtcnUtQTc5S3A1Zm1oTUM2akJGWnFKaWc0LXpwODV6anpSVHFyd2FtSVBBQWo2dmVwRnBWYzdZTjlTOG5uaEFtLWVsZG9PVlFmdzNoQTZQTW9ab0ZQWXNldU45NURYdkdIeFBjZ0Z6SjVxQlBtVXfSAacBQVVfeXFMUGYzSUJVNTFxSm50ckhkWFVPZTdmU1hBLWRHRUpaTWdfMjRkWmQ4YXdlUEQ5NzFxUDVfQVJWX3cwYzBmQ3Aya0dRNUlHaWgyOU5ZdHpOOTRKSGMwWmZXU0FmZkk0aGlmaEJKeUZMMlk4T1NTdzlta0ZiZkctZnhtbUVNY0tBZXNJUFNCTUh4ZGRaRjJ0RHRwV3Q5UGVVTXdTMVpZVGNUUnc?oc=5",
+      "sourceName": "cnbc.com",
+      "publishedAt": "2026-07-24T07:00:00.000Z",
+      "verdict": "kept",
+      "stratum": "negative-signal",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "5eeeb9ab0c1a6065",
+      "company": "Spot AI",
+      "companyId": "e66939463a46bb5677fbad56e1f3a9ea351b6ce3ca37df01cca298feba59eae6",
+      "ambiguity": "high",
+      "querySource": "human-approved",
+      "title": "Humans trained to spot AI faces in battle against deepfake fraud",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPaDJTbWVyVFItNzJnQmZsUWNaZG9GTlU1VG5ocGk2MUwtWUZ3LVBYb3AzNEVjWU1QcGp4cU4zdTRrNnIyTFpqWkdMa2g3ZGJVb0FSaHJQZnI2Uk9LamlRQkFoUEhtVV85bHlKZVlNXy1HeGptRElBR2E2S0ZqR0c4X0V0TVJ6VHZyd19aUzMxQzlhRnJGUElPSGxITV9mRlVXcnc?oc=5",
+      "sourceName": "news.uvic.ca",
+      "publishedAt": "2026-06-29T07:00:00.000Z",
+      "verdict": "soft-pass",
+      "stratum": "negative-signal",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    },
+    {
+      "id": "35825ce5dd065dfa",
+      "company": "Ro",
+      "companyId": "19197b87ab0778017d922babcc2e2e664eb7cd29a0655dcb049c596c2761eefb",
+      "ambiguity": "critical",
+      "querySource": "human-approved",
+      "title": "Chugai Ro Swings to Quarterly Loss but Plans Higher Dividend Despite Profit Forecast Cut",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPQ2dqRWNsMUV0OXVDZ3pqSEdMNldIdUlhVC1kOTlkNmhWTzZEWDg2cm1aaUIwX3dBRDFoc3djSXVGLURkekJ6dFctSWVRZTNZUUNBYXhTeXd4MGRtLVRVeFl4dGE0TFVYNEF4OW13NUJCM1F4TWdIYmhXcGt2TGsyX1pqUS0xckdsSDVWWE1oUjlJcExYaURBYVNaVk9BcTZha0JlNWozLWJvdTh5SjMtZm8wOVQ0WVVudVo2aHVJSE1vU2E5LTBRZUpUWjIxaHBSVGVtcjRKZw?oc=5",
+      "sourceName": "tipranks.com",
+      "publishedAt": "2026-07-24T08:07:28.000Z",
+      "verdict": "soft-pass",
+      "stratum": "negative-signal",
+      "label": {
+        "relevant": null,
+        "sentiment": null,
+        "note": ""
+      }
+    }
+  ]
+}

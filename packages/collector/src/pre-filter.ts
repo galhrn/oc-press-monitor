@@ -56,6 +56,12 @@ export interface PreFilterVerdict {
   reason: RejectionReason | null;
   /** The term that decided it - the alias that matched, or the keyword that rejected. */
   evidence: string | null;
+  /**
+   * True when the item is kept only under the soft-pass rule: the company was named, but a
+   * qualifier the query asked for is absent. It survives so the LLM relevance gate can
+   * decide, and is flagged so a run can report how much of its budget went here.
+   */
+  softPass: boolean;
 }
 
 /**
@@ -146,39 +152,51 @@ export function preFilter(
   const blocked = options.blockedDomains ?? DEFAULT_BLOCKED_DOMAINS;
 
   const blockedBy = isBlocked(articleDomain(article), blocked);
-  if (blockedBy !== null) return { keep: false, reason: 'blocked-domain', evidence: blockedBy };
+  if (blockedBy !== null)
+    return { keep: false, reason: 'blocked-domain', evidence: blockedBy, softPass: false };
 
   // The company must be named as a whole word. "Peakhurst" is not "Peak".
   const nameHit = [company.name, ...company.aliases].find((n) => containsPhrase(text, n));
-  if (nameHit === undefined) return { keep: false, reason: 'no-name-match', evidence: null };
+  if (nameHit === undefined)
+    return { keep: false, reason: 'no-name-match', evidence: null, softPass: false };
 
   // Literal, whitespace-sensitive. "launch pad" must not be collapsed onto "Launchpad".
   const negativeHit = company.negativeKeywords.find((k) => containsPhrase(text, k));
   if (negativeHit !== undefined) {
-    return { keep: false, reason: 'negative-keyword', evidence: negativeHit };
+    return { keep: false, reason: 'negative-keyword', evidence: negativeHit, softPass: false };
   }
 
   // Re-apply our own query as a whole boolean expression. This is what a provider that
   // treats `AND (...)` as a suggestion cannot be trusted to have done. Evaluating the whole
   // tree - rather than picking out OR-groups - is what lets `"Harvey AI" OR ("Harvey" AND
   // ("legal AI" OR "law firm"))` mean what its author meant.
+  //
+  // A qualifier miss **soft-passes** rather than rejects. Measured 2026-08-02 across the 57
+  // approved companies: 293 items failed only on a qualifier, and the bucket is not uniformly
+  // noise - `Astra` correctly loses 18 articles about OpenAI's Astra model, while
+  // `Quantum Machines` lost a genuine one because the approved qualifier says "quantum
+  // control" and the headline said "Real-Time Control Strategy". Those qualifiers were
+  // written assuming headline + snippet; P3.3 established there is no snippet. The company
+  // was named, so this is precisely the ambiguous case AD-06's relevance gate exists for,
+  // and section 6.4 is explicit that the pre-filter cuts cost, not correctness.
   if (
     hasConjunction(company.query) &&
-    (options.enforceQualifiers ?? shouldEnforceQualifiers)(company)
+    (options.enforceQualifiers ?? shouldEnforceQualifiers)(company) &&
+    !matchesQuery(text, company.query)
   ) {
-    if (!matchesQuery(text, company.query)) {
-      return { keep: false, reason: 'missing-qualifier', evidence: company.query };
-    }
+    return { keep: true, reason: 'missing-qualifier', evidence: company.query, softPass: true };
   }
 
-  return { keep: true, reason: null, evidence: nameHit };
+  return { keep: true, reason: null, evidence: nameHit, softPass: false };
 }
 
 export interface PreFilterResult {
   kept: RawArticle[];
+  /** Subset of `kept` that survived only via the soft-pass rule. */
+  softPassed: RawArticle[];
   rejected: Array<{ article: RawArticle; reason: RejectionReason; evidence: string | null }>;
   /** Counts per reason, for the run manifest and the README precision table (R9). */
-  stats: Record<RejectionReason | 'kept', number>;
+  stats: Record<RejectionReason | 'kept' | 'soft-pass', number>;
 }
 
 export function preFilterAll(
@@ -188,9 +206,11 @@ export function preFilterAll(
 ): PreFilterResult {
   const result: PreFilterResult = {
     kept: [],
+    softPassed: [],
     rejected: [],
     stats: {
       kept: 0,
+      'soft-pass': 0,
       'blocked-domain': 0,
       'no-name-match': 0,
       'negative-keyword': 0,
@@ -200,10 +220,14 @@ export function preFilterAll(
 
   for (const article of articles) {
     const verdict = preFilter(article, company, options);
-    if (verdict.keep || verdict.reason === null) {
+    if (verdict.keep) {
       result.kept.push(article);
       result.stats.kept += 1;
-    } else {
+      if (verdict.softPass) {
+        result.softPassed.push(article);
+        result.stats['soft-pass'] += 1;
+      }
+    } else if (verdict.reason !== null) {
       result.rejected.push({ article, reason: verdict.reason, evidence: verdict.evidence });
       result.stats[verdict.reason] += 1;
     }

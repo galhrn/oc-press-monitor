@@ -1,0 +1,9 @@
+{
+  "name": "@oc/classifier",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "LLM classification layer: prompt, schema, relevance gate, sentiment and the eval harness.",
+  "main": "./src/index.ts",
+  "exports": { ".": "./src/index.ts" }
+}

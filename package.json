@@ -28,6 +28,7 @@
     "collect": "tsx scripts/collect.ts",
     "measure:prefilter": "tsx scripts/measure-prefilter.ts",
     "audit:coverage": "tsx scripts/coverage-audit.ts",
+    "gold:build": "tsx scripts/build-gold-set.ts",
     "skeleton": "tsx scripts/skeleton.ts"
   },
   "devDependencies": {

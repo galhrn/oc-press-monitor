@@ -5,27 +5,29 @@
     {
       "name": "Harvey",
       "fetched": 25,
-      "kept": 12,
+      "kept": 19,
       "ambiguity": "critical",
       "reasons": {
-        "kept": 12,
+        "kept": 19,
+        "soft-pass": 7,
         "blocked-domain": 0,
         "no-name-match": 6,
         "negative-keyword": 0,
-        "missing-qualifier": 7
+        "missing-qualifier": 0
       }
     },
     {
       "name": "Stripe",
       "fetched": 25,
-      "kept": 11,
+      "kept": 23,
       "ambiguity": "high",
       "reasons": {
-        "kept": 11,
+        "kept": 23,
+        "soft-pass": 12,
         "blocked-domain": 0,
         "no-name-match": 2,
         "negative-keyword": 0,
-        "missing-qualifier": 12
+        "missing-qualifier": 0
       }
     },
     {
@@ -35,6 +37,7 @@
       "ambiguity": "high",
       "reasons": {
         "kept": 23,
+        "soft-pass": 0,
         "blocked-domain": 0,
         "no-name-match": 2,
         "negative-keyword": 0,
@@ -48,6 +51,7 @@
       "ambiguity": "critical",
       "reasons": {
         "kept": 20,
+        "soft-pass": 0,
         "blocked-domain": 0,
         "no-name-match": 5,
         "negative-keyword": 0,
@@ -57,14 +61,15 @@
     {
       "name": "Glean",
       "fetched": 25,
-      "kept": 1,
+      "kept": 16,
       "ambiguity": "high",
       "reasons": {
-        "kept": 1,
+        "kept": 16,
+        "soft-pass": 15,
         "blocked-domain": 0,
         "no-name-match": 9,
         "negative-keyword": 0,
-        "missing-qualifier": 15
+        "missing-qualifier": 0
       }
     },
     {
@@ -74,6 +79,7 @@
       "ambiguity": "high",
       "reasons": {
         "kept": 23,
+        "soft-pass": 0,
         "blocked-domain": 0,
         "no-name-match": 2,
         "negative-keyword": 0,
@@ -83,14 +89,15 @@
     {
       "name": "Lambda (lambda.ai)",
       "fetched": 23,
-      "kept": 1,
+      "kept": 13,
       "ambiguity": "critical",
       "reasons": {
-        "kept": 1,
+        "kept": 13,
+        "soft-pass": 12,
         "blocked-domain": 0,
         "no-name-match": 10,
         "negative-keyword": 0,
-        "missing-qualifier": 12
+        "missing-qualifier": 0
       }
     },
     {
@@ -100,6 +107,7 @@
       "ambiguity": "critical",
       "reasons": {
         "kept": 22,
+        "soft-pass": 0,
         "blocked-domain": 0,
         "no-name-match": 3,
         "negative-keyword": 0,
@@ -113,23 +121,25 @@
       "ambiguity": "high",
       "reasons": {
         "kept": 19,
+        "soft-pass": 1,
         "blocked-domain": 0,
-        "no-name-match": 5,
+        "no-name-match": 6,
         "negative-keyword": 0,
-        "missing-qualifier": 1
+        "missing-qualifier": 0
       }
     },
     {
       "name": "Island",
       "fetched": 25,
-      "kept": 0,
+      "kept": 6,
       "ambiguity": "critical",
       "reasons": {
-        "kept": 0,
+        "kept": 6,
+        "soft-pass": 6,
         "blocked-domain": 0,
         "no-name-match": 18,
         "negative-keyword": 1,
-        "missing-qualifier": 6
+        "missing-qualifier": 0
       }
     },
     {
@@ -139,6 +149,7 @@
       "ambiguity": "high",
       "reasons": {
         "kept": 16,
+        "soft-pass": 0,
         "blocked-domain": 0,
         "no-name-match": 9,
         "negative-keyword": 0,
@@ -148,53 +159,57 @@
     {
       "name": "Scale AI",
       "fetched": 25,
-      "kept": 1,
+      "kept": 12,
       "ambiguity": "high",
       "reasons": {
-        "kept": 1,
+        "kept": 12,
+        "soft-pass": 11,
         "blocked-domain": 0,
         "no-name-match": 2,
         "negative-keyword": 11,
-        "missing-qualifier": 11
+        "missing-qualifier": 0
       }
     },
     {
       "name": "Spot AI",
       "fetched": 16,
-      "kept": 0,
+      "kept": 11,
       "ambiguity": "high",
       "reasons": {
-        "kept": 0,
+        "kept": 11,
+        "soft-pass": 11,
         "blocked-domain": 0,
         "no-name-match": 5,
         "negative-keyword": 0,
-        "missing-qualifier": 11
+        "missing-qualifier": 0
       }
     },
     {
       "name": "Groq",
       "fetched": 25,
-      "kept": 2,
+      "kept": 18,
       "ambiguity": "high",
       "reasons": {
-        "kept": 2,
+        "kept": 18,
+        "soft-pass": 16,
         "blocked-domain": 0,
         "no-name-match": 7,
         "negative-keyword": 0,
-        "missing-qualifier": 16
+        "missing-qualifier": 0
       }
     },
     {
       "name": "Anthropic",
       "fetched": 25,
-      "kept": 19,
+      "kept": 22,
       "ambiguity": "high",
       "reasons": {
-        "kept": 19,
+        "kept": 22,
+        "soft-pass": 3,
         "blocked-domain": 0,
         "no-name-match": 3,
         "negative-keyword": 0,
-        "missing-qualifier": 3
+        "missing-qualifier": 0
       }
     },
     {
@@ -204,6 +219,7 @@
       "ambiguity": "critical",
       "reasons": {
         "kept": 0,
+        "soft-pass": 0,
         "blocked-domain": 0,
         "no-name-match": 1,
         "negative-keyword": 0,
@@ -217,6 +233,7 @@
       "ambiguity": "high",
       "reasons": {
         "kept": 0,
+        "soft-pass": 0,
         "blocked-domain": 0,
         "no-name-match": 3,
         "negative-keyword": 0,
@@ -230,6 +247,7 @@
       "ambiguity": "high",
       "reasons": {
         "kept": 0,
+        "soft-pass": 0,
         "blocked-domain": 0,
         "no-name-match": 0,
         "negative-keyword": 0,
@@ -239,14 +257,15 @@
     {
       "name": "Arrow Global",
       "fetched": 13,
-      "kept": 0,
+      "kept": 3,
       "ambiguity": "high",
       "reasons": {
-        "kept": 0,
+        "kept": 3,
+        "soft-pass": 3,
         "blocked-domain": 0,
         "no-name-match": 10,
         "negative-keyword": 0,
-        "missing-qualifier": 3
+        "missing-qualifier": 0
       }
     },
     {
@@ -256,6 +275,7 @@
       "ambiguity": "critical",
       "reasons": {
         "kept": 0,
+        "soft-pass": 0,
         "blocked-domain": 0,
         "no-name-match": 2,
         "negative-keyword": 0,
@@ -265,40 +285,43 @@
     {
       "name": "Ursa Major",
       "fetched": 22,
-      "kept": 4,
+      "kept": 14,
       "ambiguity": "high",
       "reasons": {
-        "kept": 4,
+        "kept": 14,
+        "soft-pass": 10,
         "blocked-domain": 0,
         "no-name-match": 8,
         "negative-keyword": 0,
-        "missing-qualifier": 10
+        "missing-qualifier": 0
       }
     },
     {
       "name": "IQM",
       "fetched": 25,
-      "kept": 23,
+      "kept": 25,
       "ambiguity": "high",
       "reasons": {
-        "kept": 23,
+        "kept": 25,
+        "soft-pass": 2,
         "blocked-domain": 0,
         "no-name-match": 0,
         "negative-keyword": 0,
-        "missing-qualifier": 2
+        "missing-qualifier": 0
       }
     },
     {
       "name": "Kini",
       "fetched": 25,
-      "kept": 0,
+      "kept": 3,
       "ambiguity": "critical",
       "reasons": {
-        "kept": 0,
+        "kept": 3,
+        "soft-pass": 3,
         "blocked-domain": 0,
         "no-name-match": 22,
         "negative-keyword": 0,
-        "missing-qualifier": 3
+        "missing-qualifier": 0
       }
     },
     {
@@ -308,6 +331,7 @@
       "ambiguity": "high",
       "reasons": {
         "kept": 0,
+        "soft-pass": 0,
         "blocked-domain": 0,
         "no-name-match": 22,
         "negative-keyword": 0,
@@ -321,6 +345,7 @@
       "ambiguity": "high",
       "reasons": {
         "kept": 0,
+        "soft-pass": 0,
         "blocked-domain": 0,
         "no-name-match": 11,
         "negative-keyword": 0,
@@ -334,6 +359,7 @@
       "ambiguity": "high",
       "reasons": {
         "kept": 0,
+        "soft-pass": 0,
         "blocked-domain": 0,
         "no-name-match": 0,
         "negative-keyword": 0,
@@ -347,6 +373,7 @@
       "ambiguity": "critical",
       "reasons": {
         "kept": 4,
+        "soft-pass": 0,
         "blocked-domain": 0,
         "no-name-match": 6,
         "negative-keyword": 0,
@@ -355,93 +382,100 @@
     },
     {
       "name": "Peak",
-      "fetched": 24,
-      "kept": 6,
+      "fetched": 23,
+      "kept": 13,
       "ambiguity": "critical",
       "reasons": {
-        "kept": 6,
+        "kept": 13,
+        "soft-pass": 7,
         "blocked-domain": 0,
-        "no-name-match": 11,
+        "no-name-match": 10,
         "negative-keyword": 0,
-        "missing-qualifier": 7
+        "missing-qualifier": 0
       }
     },
     {
       "name": "Orchard",
       "fetched": 25,
-      "kept": 3,
+      "kept": 10,
       "ambiguity": "critical",
       "reasons": {
-        "kept": 3,
+        "kept": 10,
+        "soft-pass": 7,
         "blocked-domain": 0,
         "no-name-match": 14,
         "negative-keyword": 1,
-        "missing-qualifier": 7
+        "missing-qualifier": 0
       }
     },
     {
       "name": "Quantum Machines",
       "fetched": 25,
-      "kept": 0,
+      "kept": 8,
       "ambiguity": "high",
       "reasons": {
-        "kept": 0,
+        "kept": 8,
+        "soft-pass": 8,
         "blocked-domain": 0,
         "no-name-match": 17,
         "negative-keyword": 0,
-        "missing-qualifier": 8
+        "missing-qualifier": 0
       }
     },
     {
       "name": "Guild",
       "fetched": 25,
-      "kept": 1,
+      "kept": 14,
       "ambiguity": "critical",
       "reasons": {
-        "kept": 1,
+        "kept": 14,
+        "soft-pass": 13,
         "blocked-domain": 0,
         "no-name-match": 11,
         "negative-keyword": 0,
-        "missing-qualifier": 13
+        "missing-qualifier": 0
       }
     },
     {
       "name": "Privateer",
       "fetched": 2,
-      "kept": 0,
+      "kept": 2,
       "ambiguity": "high",
       "reasons": {
-        "kept": 0,
+        "kept": 2,
+        "soft-pass": 2,
         "blocked-domain": 0,
         "no-name-match": 0,
         "negative-keyword": 0,
-        "missing-qualifier": 2
+        "missing-qualifier": 0
       }
     },
     {
       "name": "Launchpad",
       "fetched": 25,
-      "kept": 5,
+      "kept": 20,
       "ambiguity": "critical",
       "reasons": {
-        "kept": 5,
+        "kept": 20,
+        "soft-pass": 15,
         "blocked-domain": 0,
         "no-name-match": 5,
         "negative-keyword": 0,
-        "missing-qualifier": 15
+        "missing-qualifier": 0
       }
     },
     {
       "name": "Shield",
       "fetched": 25,
-      "kept": 2,
+      "kept": 7,
       "ambiguity": "critical",
       "reasons": {
-        "kept": 2,
+        "kept": 7,
+        "soft-pass": 5,
         "blocked-domain": 0,
         "no-name-match": 18,
         "negative-keyword": 0,
-        "missing-qualifier": 5
+        "missing-qualifier": 0
       }
     },
     {
@@ -451,6 +485,7 @@
       "ambiguity": "high",
       "reasons": {
         "kept": 0,
+        "soft-pass": 0,
         "blocked-domain": 0,
         "no-name-match": 24,
         "negative-keyword": 1,
@@ -460,66 +495,71 @@
     {
       "name": "Clinch",
       "fetched": 4,
-      "kept": 0,
+      "kept": 2,
       "ambiguity": "high",
       "reasons": {
-        "kept": 0,
+        "kept": 2,
+        "soft-pass": 2,
         "blocked-domain": 0,
         "no-name-match": 1,
         "negative-keyword": 1,
-        "missing-qualifier": 2
+        "missing-qualifier": 0
       }
     },
     {
       "name": "Overtime",
       "fetched": 25,
-      "kept": 5,
+      "kept": 6,
       "ambiguity": "critical",
       "reasons": {
-        "kept": 5,
+        "kept": 6,
+        "soft-pass": 1,
         "blocked-domain": 0,
         "no-name-match": 19,
         "negative-keyword": 0,
-        "missing-qualifier": 1
+        "missing-qualifier": 0
       }
     },
     {
       "name": "Greenlight",
       "fetched": 25,
-      "kept": 0,
+      "kept": 9,
       "ambiguity": "critical",
       "reasons": {
-        "kept": 0,
+        "kept": 9,
+        "soft-pass": 9,
         "blocked-domain": 0,
         "no-name-match": 16,
         "negative-keyword": 0,
-        "missing-qualifier": 9
+        "missing-qualifier": 0
       }
     },
     {
       "name": "MasterClass",
       "fetched": 25,
-      "kept": 1,
+      "kept": 12,
       "ambiguity": "high",
       "reasons": {
-        "kept": 1,
+        "kept": 12,
+        "soft-pass": 11,
         "blocked-domain": 0,
         "no-name-match": 13,
         "negative-keyword": 0,
-        "missing-qualifier": 11
+        "missing-qualifier": 0
       }
     },
     {
       "name": "Ro",
       "fetched": 25,
-      "kept": 0,
+      "kept": 4,
       "ambiguity": "critical",
       "reasons": {
-        "kept": 0,
+        "kept": 4,
+        "soft-pass": 4,
         "blocked-domain": 0,
         "no-name-match": 21,
         "negative-keyword": 0,
-        "missing-qualifier": 4
+        "missing-qualifier": 0
       }
     },
     {
@@ -529,6 +569,7 @@
       "ambiguity": "high",
       "reasons": {
         "kept": 0,
+        "soft-pass": 0,
         "blocked-domain": 0,
         "no-name-match": 4,
         "negative-keyword": 0,
@@ -542,6 +583,7 @@
       "ambiguity": "critical",
       "reasons": {
         "kept": 0,
+        "soft-pass": 0,
         "blocked-domain": 0,
         "no-name-match": 16,
         "negative-keyword": 0,
@@ -551,14 +593,15 @@
     {
       "name": "Wave",
       "fetched": 25,
-      "kept": 6,
+      "kept": 18,
       "ambiguity": "critical",
       "reasons": {
-        "kept": 6,
+        "kept": 18,
+        "soft-pass": 12,
         "blocked-domain": 0,
         "no-name-match": 0,
         "negative-keyword": 7,
-        "missing-qualifier": 12
+        "missing-qualifier": 0
       }
     },
     {
@@ -568,6 +611,7 @@
       "ambiguity": "high",
       "reasons": {
         "kept": 0,
+        "soft-pass": 0,
         "blocked-domain": 0,
         "no-name-match": 0,
         "negative-keyword": 0,
@@ -581,6 +625,7 @@
       "ambiguity": "high",
       "reasons": {
         "kept": 0,
+        "soft-pass": 0,
         "blocked-domain": 0,
         "no-name-match": 0,
         "negative-keyword": 0,
@@ -590,66 +635,71 @@
     {
       "name": "MST",
       "fetched": 25,
-      "kept": 4,
+      "kept": 5,
       "ambiguity": "critical",
       "reasons": {
-        "kept": 4,
+        "kept": 5,
+        "soft-pass": 2,
         "blocked-domain": 0,
-        "no-name-match": 19,
+        "no-name-match": 20,
         "negative-keyword": 0,
-        "missing-qualifier": 2
+        "missing-qualifier": 0
       }
     },
     {
       "name": "Powwow",
       "fetched": 25,
-      "kept": 1,
+      "kept": 11,
       "ambiguity": "high",
       "reasons": {
-        "kept": 1,
+        "kept": 11,
+        "soft-pass": 10,
         "blocked-domain": 0,
         "no-name-match": 13,
         "negative-keyword": 1,
-        "missing-qualifier": 10
+        "missing-qualifier": 0
       }
     },
     {
       "name": "Astra",
       "fetched": 25,
-      "kept": 0,
+      "kept": 18,
       "ambiguity": "critical",
       "reasons": {
-        "kept": 0,
+        "kept": 18,
+        "soft-pass": 18,
         "blocked-domain": 0,
         "no-name-match": 6,
         "negative-keyword": 1,
-        "missing-qualifier": 18
+        "missing-qualifier": 0
       }
     },
     {
       "name": "Hub Security",
       "fetched": 5,
-      "kept": 0,
+      "kept": 1,
       "ambiguity": "high",
       "reasons": {
-        "kept": 0,
+        "kept": 1,
+        "soft-pass": 1,
         "blocked-domain": 0,
         "no-name-match": 4,
         "negative-keyword": 0,
-        "missing-qualifier": 1
+        "missing-qualifier": 0
       }
     },
     {
       "name": "Tala",
       "fetched": 25,
-      "kept": 1,
+      "kept": 16,
       "ambiguity": "high",
       "reasons": {
-        "kept": 1,
+        "kept": 16,
+        "soft-pass": 15,
         "blocked-domain": 0,
         "no-name-match": 9,
         "negative-keyword": 0,
-        "missing-qualifier": 15
+        "missing-qualifier": 0
       }
     },
     {
@@ -659,6 +709,7 @@
       "ambiguity": "high",
       "reasons": {
         "kept": 0,
+        "soft-pass": 0,
         "blocked-domain": 0,
         "no-name-match": 3,
         "negative-keyword": 0,
@@ -668,14 +719,15 @@
     {
       "name": "Casper",
       "fetched": 25,
-      "kept": 3,
+      "kept": 16,
       "ambiguity": "critical",
       "reasons": {
-        "kept": 3,
+        "kept": 16,
+        "soft-pass": 13,
         "blocked-domain": 0,
         "no-name-match": 6,
         "negative-keyword": 3,
-        "missing-qualifier": 13
+        "missing-qualifier": 0
       }
     },
     {
@@ -685,6 +737,7 @@
       "ambiguity": "critical",
       "reasons": {
         "kept": 0,
+        "soft-pass": 0,
         "blocked-domain": 0,
         "no-name-match": 0,
         "negative-keyword": 0,
@@ -698,6 +751,7 @@
       "ambiguity": "high",
       "reasons": {
         "kept": 24,
+        "soft-pass": 0,
         "blocked-domain": 0,
         "no-name-match": 1,
         "negative-keyword": 0,
@@ -707,40 +761,43 @@
     {
       "name": "Lemonade",
       "fetched": 25,
-      "kept": 18,
+      "kept": 22,
       "ambiguity": "critical",
       "reasons": {
-        "kept": 18,
+        "kept": 22,
+        "soft-pass": 5,
         "blocked-domain": 0,
-        "no-name-match": 2,
+        "no-name-match": 3,
         "negative-keyword": 0,
-        "missing-qualifier": 5
+        "missing-qualifier": 0
       }
     },
     {
       "name": "Rewire",
       "fetched": 7,
-      "kept": 0,
+      "kept": 3,
       "ambiguity": "high",
       "reasons": {
-        "kept": 0,
+        "kept": 3,
+        "soft-pass": 3,
         "blocked-domain": 0,
         "no-name-match": 4,
         "negative-keyword": 0,
-        "missing-qualifier": 3
+        "missing-qualifier": 0
       }
     },
     {
       "name": "Silo",
       "fetched": 25,
-      "kept": 1,
+      "kept": 19,
       "ambiguity": "critical",
       "reasons": {
-        "kept": 1,
+        "kept": 19,
+        "soft-pass": 18,
         "blocked-domain": 0,
         "no-name-match": 5,
         "negative-keyword": 1,
-        "missing-qualifier": 18
+        "missing-qualifier": 0
       }
     }
   ]
