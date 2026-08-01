@@ -35,14 +35,17 @@
     "slug": "biolojic-design",
     "aliases": [],
     "domain": null,
-    "sector": null,
+    "sector": "Biotechnology",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"Biolojic Design\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"Biolojic Design\" AND (\"design\" OR \"biotech\" OR \"genomics\")",
+    "negativeKeywords": [
+      "other design",
+      "logic puzzle"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.700Z"
   },
   {
     "id": "987954db51d7366f7b39b51730c7a5e843810b9bed894414252b21bef0da8e07",
@@ -63,16 +66,21 @@
     "id": "b882213838066690ae67958b1c5694a19eff4c90fb9864888cebbf470407d5f9",
     "name": "Morphisec",
     "slug": "morphisec",
-    "aliases": [],
+    "aliases": [
+      "Morphisec Technologies"
+    ],
     "domain": null,
-    "sector": null,
+    "sector": "Cybersecurity",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"Morphisec\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"Morphisec\" AND (\"Endpoint Security\" OR \"Threat Detection\" OR \"AI-Powered\")",
+    "negativeKeywords": [
+      "other software",
+      "IT consulting"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.702Z"
   },
   {
     "id": "2349a6848d029aa2bea30b44d8a63b080aa98fb9b5db2cea5fd875fc9543d789",
@@ -98,26 +106,29 @@
     "id": "fec757d2baccc812123b03d53a417bbdb49acc5e9c50a536db3a8406061448ac",
     "name": "OpenEvidence",
     "slug": "openevidence",
-    "aliases": [],
+    "aliases": [
+      "evidence"
+    ],
     "domain": null,
-    "sector": "Medical AI",
+    "sector": "Legal Technology",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"OpenEvidence\" AND (medical OR clinical OR \"OpenEvidence AI\")",
+    "query": "\"OpenEvidence\"",
     "negativeKeywords": [
-      "open evidence\" policy"
+      "open evidence\" policy",
+      "other evidence"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.703Z"
   },
   {
     "id": "f9f48e7d2a38c906d7222f3aeb08db9f1dc1b62e87a4e6ecb22c70fb9b40972a",
     "name": "Stripe",
     "slug": "stripe",
     "aliases": [],
-    "domain": null,
-    "sector": "Payments",
+    "domain": "stripe.com",
+    "sector": "Financial Technology",
     "ambiguity": "high",
     "volume": "high",
     "query": "\"Stripe\" AND (payments OR fintech OR \"Stripe Inc\" OR Collison)",
@@ -125,26 +136,32 @@
       "pinstripe",
       "striped",
       "racing stripe",
-      "zebra"
+      "zebra",
+      "other payment processor"
     ],
     "querySource": "human-approved",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.703Z"
   },
   {
     "id": "51ea09628499962f920c6da1c91ff6921032c20c589caa91016ce4bfac5f02d3",
     "name": "Cerebras",
     "slug": "cerebras",
-    "aliases": [],
-    "domain": null,
-    "sector": "AI chips",
+    "aliases": [
+      "Cerebras Systems"
+    ],
+    "domain": "cerebras.ai",
+    "sector": "Artificial Intelligence",
     "ambiguity": "high",
     "volume": "high",
     "query": "\"Cerebras\"",
-    "negativeKeywords": [],
+    "negativeKeywords": [
+      "other AI company",
+      "neural network"
+    ],
     "querySource": "human-approved",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.703Z"
   },
   {
     "id": "9d5b9d1933714e02bc89690d60a662e6f2d9cc8c330a84b83d776ed2be48a817",
@@ -152,36 +169,42 @@
     "slug": "together-ai",
     "aliases": [],
     "domain": null,
-    "sector": "AI infrastructure",
+    "sector": "Artificial Intelligence",
     "ambiguity": "critical",
     "volume": "high",
     "query": "\"Together AI\" OR \"Together Computer\" OR together.ai",
     "negativeKeywords": [
       "work together",
       "come together",
-      "together with"
+      "together with",
+      "team"
     ],
     "querySource": "human-approved",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.703Z"
   },
   {
     "id": "965c19b5e6cd90f6e431dd95b9423e9993c809ca3adc9e98724d7ea152e2f45c",
     "name": "Harbinger Motors",
     "slug": "harbinger-motors",
-    "aliases": [],
+    "aliases": [
+      "Harbinger",
+      "Motors"
+    ],
     "domain": null,
-    "sector": "EV trucks",
+    "sector": "Automotive",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"Harbinger Motors\"",
+    "query": "\"Harbinger Motors\" AND (\"electric vehicle\" OR \"EV\" OR \"autonomous driving\")",
     "negativeKeywords": [
       "harbinger of",
-      "omen"
+      "omen",
+      "Harbinger Systems",
+      "Harbinger Capital"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.703Z"
   },
   {
     "id": "7bc78f8836857959f4b3365aa92eb7187f2208f3694663168b2225a4851c96b5",
@@ -202,35 +225,41 @@
     "id": "f6d90809437cf9d3d4ca4332c7b1a4359dc52c7c31f905b26e1d13fc52f5e4cc",
     "name": "Glean",
     "slug": "glean",
-    "aliases": [],
-    "domain": null,
-    "sector": "Enterprise search",
+    "aliases": [
+      "Glean.io"
+    ],
+    "domain": "glean.io",
+    "sector": "Software",
     "ambiguity": "high",
     "volume": "normal",
     "query": "\"Glean\" AND (\"enterprise search\" OR \"Glean AI\" OR workplace search)",
     "negativeKeywords": [
       "glean insights",
       "can glean",
-      "gleaned from"
+      "gleaned from",
+      "other data collection"
     ],
     "querySource": "human-approved",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.703Z"
   },
   {
     "id": "01d6e78d4dc7f34ff1190ec006387b934166de8a24535ef96562cd52a09fde1e",
     "name": "SpaceX",
     "slug": "spacex",
     "aliases": [],
-    "domain": null,
-    "sector": "Space",
+    "domain": "spacex.com",
+    "sector": "Space Exploration/Aerospace",
     "ambiguity": "high",
     "volume": "high",
     "query": "\"SpaceX\"",
-    "negativeKeywords": [],
+    "negativeKeywords": [
+      "other space agency",
+      "satellite manufacturer"
+    ],
     "querySource": "human-approved",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.703Z"
   },
   {
     "id": "bb3b9ddbcb8ae2262ff911a3f5d50a156e25adb9ab5b23c1f35220857229cf85",
@@ -251,9 +280,12 @@
     "id": "0c196ad164c3a43f604c31377fd7831708e987d198305742ffb4977565fcacee",
     "name": "Lambda (lambda.ai)",
     "slug": "lambda-lambda-ai",
-    "aliases": [],
+    "aliases": [
+      "lambda.ai",
+      "Lambda"
+    ],
     "domain": null,
-    "sector": "AI cloud / GPU",
+    "sector": "Artificial Intelligence",
     "ambiguity": "critical",
     "volume": "normal",
     "query": "\"Lambda Labs\" OR (\"Lambda\" AND (\"GPU cloud\" OR \"AI cloud\" OR lambda.ai))",
@@ -261,29 +293,34 @@
       "AWS Lambda",
       "lambda calculus",
       "Lambda Legal",
-      "serverless"
+      "serverless",
+      "lambda function",
+      "Greek letter"
     ],
     "querySource": "human-approved",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.703Z"
   },
   {
     "id": "89ad781019a013a61f7fb04859a298e5eab371fedc934c9a0ab94fc5e53074a9",
     "name": "SSI (Safe Superintelligence)",
     "slug": "ssi-safe-superintelligence",
-    "aliases": [],
+    "aliases": [
+      "Safe Superintelligence"
+    ],
     "domain": null,
-    "sector": "AI research",
+    "sector": "Artificial Intelligence",
     "ambiguity": "critical",
     "volume": "high",
     "query": "\"Safe Superintelligence\" OR \"Safe Superintelligence Inc\"",
     "negativeKeywords": [
       "Supplemental Security Income",
-      "server side includes"
+      "server side includes",
+      "other superintelligent AI"
     ],
     "querySource": "human-approved",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.703Z"
   },
   {
     "id": "7c0fded7fc4ddbb63d04cfc78fd8022545e7d92a09c8b55f3011eecf90098b85",
@@ -291,18 +328,20 @@
     "slug": "xai",
     "aliases": [],
     "domain": null,
-    "sector": "AI research",
+    "sector": "Artificial Intelligence",
     "ambiguity": "high",
     "volume": "high",
     "query": "\"xAI\" AND (Musk OR Grok OR \"xAI Corp\")",
     "negativeKeywords": [
       "explainable AI",
       "XAI methods",
-      "interpretability"
+      "interpretability",
+      "x-ray",
+      "X-Men"
     ],
     "querySource": "human-approved",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.703Z"
   },
   {
     "id": "6e161b557e5ee4b369a0ce7332bd8d12a4196fe757c3751dff828b6485e5613b",
@@ -328,31 +367,39 @@
     "id": "f2df13f6e3377995d6b41c497f33bfc934841f6dc6c16364750b82f9141873b0",
     "name": "Velotix",
     "slug": "velotix",
-    "aliases": [],
+    "aliases": [
+      "Velotix Therapeutics"
+    ],
     "domain": null,
-    "sector": null,
+    "sector": "Healthcare Technology",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"Velotix\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"Velotix\" AND (\"therapeutics\" OR \"biotechnology\" OR \"pharmaceuticals\")",
+    "negativeKeywords": [
+      "other"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.703Z"
   },
   {
     "id": "a4718c1526f6accda4011db8e7b4ceace570230667f97c53c850047246562b23",
     "name": "Databricks",
     "slug": "databricks",
-    "aliases": [],
-    "domain": null,
-    "sector": "Data platform",
+    "aliases": [
+      "Databricks Inc."
+    ],
+    "domain": "databricks.com",
+    "sector": "Software",
     "ambiguity": "high",
     "volume": "high",
     "query": "\"Databricks\"",
-    "negativeKeywords": [],
+    "negativeKeywords": [
+      "other data storage"
+    ],
     "querySource": "human-approved",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.703Z"
   },
   {
     "id": "ebcc0c7d365b76be039a43cbcde9ef7d14549b013cb2f840df3347f74ab11f69",
@@ -390,87 +437,109 @@
     "id": "c6d2310dea6d15da04251138711f7d7cb2d82ba6cfa0fe4216c9a5e4a9b15e24",
     "name": "Kardome",
     "slug": "kardome",
-    "aliases": [],
+    "aliases": [
+      "Kardom",
+      "Kardome Entertainment"
+    ],
     "domain": null,
-    "sector": null,
+    "sector": "Entertainment",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"Kardome\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"Kardome\" AND (\"entertainment\" OR \"music\" OR \"film\")",
+    "negativeKeywords": [
+      "card game",
+      "card collector"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.703Z"
   },
   {
     "id": "22f4ccb6c1ec3168882cc65008fff051cf18f39fa9b56350d64fb57d3b7258dc",
     "name": "Omnix Medical",
     "slug": "omnix-medical",
-    "aliases": [],
+    "aliases": [
+      "Omnix Medical Systems"
+    ],
     "domain": null,
-    "sector": null,
+    "sector": "Healthcare",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"Omnix Medical\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "other medical device",
+      "medical equipment manufacturer"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.703Z"
   },
   {
     "id": "623b4a0ded84cc01130fde29efabeace9b845afe4a92b2f6c2df406feb3b3899",
     "name": "Kodiak Robotics",
     "slug": "kodiak-robotics",
-    "aliases": [],
-    "domain": null,
-    "sector": "Autonomous trucking",
+    "aliases": [
+      "Kodiak Robotics Inc."
+    ],
+    "domain": "kodiak.ai",
+    "sector": "Autonomous Vehicles",
     "ambiguity": "medium",
     "volume": "normal",
     "query": "\"Kodiak Robotics\"",
     "negativeKeywords": [
       "bear",
-      "Alaska"
+      "Alaska",
+      "other robotics",
+      "robotic exoskeletons"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.703Z"
   },
   {
     "id": "cee64ba995c98bbab9dad11d0d8c5b0ff51a8acd00f3de72c36e9ecf64430465",
     "name": "Scale AI",
     "slug": "scale-ai",
-    "aliases": [],
-    "domain": null,
-    "sector": "AI data labeling",
+    "aliases": [
+      "AI"
+    ],
+    "domain": "scaleai.com",
+    "sector": "Artificial Intelligence",
     "ambiguity": "high",
     "volume": "high",
     "query": "\"Scale AI\" AND (Wang OR \"data labeling\" OR funding OR valuation)",
     "negativeKeywords": [
       "scale AI adoption",
       "scale AI initiatives",
-      "to scale AI"
+      "to scale AI",
+      "other scale"
     ],
     "querySource": "human-approved",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.703Z"
   },
   {
     "id": "e66939463a46bb5677fbad56e1f3a9ea351b6ce3ca37df01cca298feba59eae6",
     "name": "Spot AI",
     "slug": "spot-ai",
-    "aliases": [],
+    "aliases": [
+      "Spot"
+    ],
     "domain": null,
-    "sector": "Video AI",
+    "sector": "Artificial Intelligence",
     "ambiguity": "high",
     "volume": "normal",
     "query": "\"Spot AI\" AND (\"video intelligence\" OR camera OR surveillance)",
     "negativeKeywords": [
       "Boston Dynamics",
       "spot AI trends",
-      "parking spot"
+      "parking spot",
+      "other Spot",
+      "spotting"
     ],
     "querySource": "human-approved",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.703Z"
   },
   {
     "id": "6c420f3fb762f98e949ceaf1fb39ef9f36d02e1ae3ba1c46e2332f2bab46f037",
@@ -509,39 +578,46 @@
     "id": "d78473263b9c68bd2acfbb20545f42565ca554c9f7650625451364d7c678bf99",
     "name": "Groq",
     "slug": "groq",
-    "aliases": [],
-    "domain": null,
-    "sector": "AI chips",
+    "aliases": [
+      "Groq Inc."
+    ],
+    "domain": "groq.com",
+    "sector": "Semiconductors",
     "ambiguity": "high",
     "volume": "high",
     "query": "\"Groq\" AND (LPU OR \"inference chip\" OR \"Groq Inc\")",
     "negativeKeywords": [
       "Grok",
       "Grok AI",
-      "xAI chatbot"
+      "xAI chatbot",
+      "other Groq"
     ],
     "querySource": "human-approved",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.703Z"
   },
   {
     "id": "572c531059ad7c8ca7a25a96de29e18e172caddf31e111211335e94541f2f8a3",
     "name": "Anthropic",
     "slug": "anthropic",
-    "aliases": [],
-    "domain": null,
-    "sector": "AI research",
+    "aliases": [
+      "Anthropic AI"
+    ],
+    "domain": "anthropic.co",
+    "sector": "AI and Machine Learning",
     "ambiguity": "high",
     "volume": "high",
     "query": "\"Anthropic\" AND (Claude OR \"Anthropic PBC\" OR AI)",
     "negativeKeywords": [
       "anthropic principle",
       "cosmology",
-      "anthropogenic"
+      "anthropogenic",
+      "anthropic art",
+      "anthropic music"
     ],
     "querySource": "human-approved",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.703Z"
   },
   {
     "id": "9eedb09b00abe6597c73386c415193adb778b2f90dcbe9fd89fccb41c0a1ffdd",
@@ -568,79 +644,102 @@
     "id": "61a61851bee3d134ec5fdc2807eae9927c59a1df4a2b1e7e34be1303c9e3dc99",
     "name": "Atlas Obscura",
     "slug": "atlas-obscura",
-    "aliases": [],
-    "domain": null,
-    "sector": null,
+    "aliases": [
+      "Obscura"
+    ],
+    "domain": "atlasobscura.com",
+    "sector": "Media & Entertainment",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"Atlas Obscura\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "other obscura"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.703Z"
   },
   {
     "id": "821bc2079c10c166910f0acf58d4d1766cc9dc7ce8abc80fef62805f3f8b49a6",
     "name": "Stoke Space",
     "slug": "stoke-space",
-    "aliases": [],
+    "aliases": [
+      "Stoke Space Systems",
+      "Stoke Space Systems Inc."
+    ],
     "domain": null,
-    "sector": null,
+    "sector": "Space Technology",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"Stoke Space\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "other space company",
+      "space tourism"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.703Z"
   },
   {
     "id": "65a6e0766828cec2228b46ebc1222ebe8511724e286613c184d16aa4e65b85dd",
     "name": "SeeTree",
     "slug": "seetree",
-    "aliases": [],
-    "domain": null,
-    "sector": null,
+    "aliases": [
+      "SeeTree Technologies"
+    ],
+    "domain": "seetree.com",
+    "sector": "Sustainability/Environment",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"SeeTree\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "treehouse",
+      "treemendous"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.703Z"
   },
   {
     "id": "573dd46205baff142874d85a3494a197a61529d74aa558b90f1b02ea847b0652",
     "name": "OneAI",
     "slug": "oneai",
-    "aliases": [],
-    "domain": null,
-    "sector": "NLP API",
+    "aliases": [
+      "OneAI Technologies"
+    ],
+    "domain": "oneai.com",
+    "sector": "Artificial Intelligence",
     "ambiguity": "high",
     "volume": "normal",
     "query": "\"One AI\" AND (\"oneai.com\" OR \"language AI\" OR \"AI API\")",
     "negativeKeywords": [
       "one AI model",
-      "no one AI"
+      "no one AI",
+      "other AI company",
+      "artificial intelligence startup"
     ],
     "querySource": "human-approved",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.703Z"
   },
   {
     "id": "56fda249010dece7dc1ea47cdb066b128acbaf381e448d359cdee10e511f5d5d",
     "name": "Edity Therapeutics",
     "slug": "edity-therapeutics",
-    "aliases": [],
+    "aliases": [
+      "Edity"
+    ],
     "domain": null,
-    "sector": null,
+    "sector": "Biotechnology",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"Edity Therapeutics\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"Edity Therapeutics\" AND (\"Gene editing\" OR \"CRISPR\" OR \"Therapeutics\")",
+    "negativeKeywords": [
+      "other gene therapy"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.703Z"
   },
   {
     "id": "7e56679a373b871fa73e9ba866e057554328b491ad97d8b8b8f3c9b65b33c7ed",
@@ -766,18 +865,19 @@
     "slug": "arrow-global",
     "aliases": [],
     "domain": null,
-    "sector": null,
+    "sector": "Financial Services",
     "ambiguity": "high",
     "volume": "normal",
     "query": "\"Arrow Global\" AND (Israeli OR startup OR funding OR technology)",
     "negativeKeywords": [
       "Arrow Global Group",
       "debt purchaser",
-      "LSE:ARW"
+      "LSE:ARW",
+      "Honda motorcycle"
     ],
     "querySource": "human-approved",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.703Z"
   },
   {
     "id": "2b2e39e45056d5d173123e577c64eb356329dc04e71966f71b524fd3327722e5",
@@ -785,18 +885,20 @@
     "slug": "air-ev",
     "aliases": [],
     "domain": null,
-    "sector": null,
+    "sector": "Electric Vehicles",
     "ambiguity": "critical",
     "volume": "normal",
     "query": "\"Air EV\" AND (Israeli OR startup OR funding)",
     "negativeKeywords": [
       "Wuling",
       "air conditioning",
-      "Tesla"
+      "Tesla",
+      "airline",
+      "aviation"
     ],
     "querySource": "human-approved",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.703Z"
   },
   {
     "id": "94ef6a3f679f6a481ab1ece2f27b4b81ab1a4ceb9e3b3b6f7be9d8271ae775b5",
@@ -852,19 +954,23 @@
     "id": "8127170f78a488ba2cc659c243494c9cb0e7f25fa60241167c95c7eb20556485",
     "name": "Ludeo (formerly Edge)",
     "slug": "ludeo-formerly-edge",
-    "aliases": [],
+    "aliases": [
+      "Edge"
+    ],
     "domain": null,
-    "sector": "Gaming",
+    "sector": "Cybersecurity",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"Ludeo\" AND (gaming OR \"gameplay\" OR startup)",
+    "query": "\"Ludeo (formerly Edge)\" AND (\"Endpoint Security\" OR \"Zero-Day Exploits\")",
     "negativeKeywords": [
       "Microsoft Edge",
-      "edge computing"
+      "edge computing",
+      "other Edge products",
+      "Edge computing"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.703Z"
   },
   {
     "id": "3e9f56783c94d2fd310b7f100f0d6f39f6e3dc19e844eb0c7f32da3924533163",
@@ -885,36 +991,42 @@
     "id": "62d825d6ab86288b600119bf1b23d674f7c93c0de4b43d2377d993e173c39ee0",
     "name": "3d Signals",
     "slug": "3d-signals",
-    "aliases": [],
+    "aliases": [
+      "3DS"
+    ],
     "domain": null,
-    "sector": "Industrial IoT",
+    "sector": "Software",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"3d Signals\" AND (manufacturing OR \"machine monitoring\" OR Israeli)",
+    "query": "\"3d Signals\" AND (\"software\" OR \"signal processing\" OR \"machine learning\")",
     "negativeKeywords": [
-      "3D signal processing"
+      "3D signal processing",
+      "other signal processing company"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.704Z"
   },
   {
     "id": "8872094304f140434f7999f76c7d39f5b73506c52c6550000bc597eeef5790e3",
     "name": "IQM",
     "slug": "iqm",
-    "aliases": [],
+    "aliases": [
+      "IQM Technologies"
+    ],
     "domain": null,
-    "sector": "Quantum computing",
+    "sector": "Semiconductors",
     "ambiguity": "high",
     "volume": "normal",
     "query": "\"IQM\" AND (quantum OR \"IQM Quantum Computers\" OR Finland)",
     "negativeKeywords": [
       "IQM index",
-      "medical acronym"
+      "medical acronym",
+      "iqm motorcycle"
     ],
     "querySource": "human-approved",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.704Z"
   },
   {
     "id": "ec79b0163bc3de4260a934f7245370074510ce45ba3620511e81e483cf27761f",
@@ -939,18 +1051,23 @@
     "id": "10039910ec58424d4222d35dfe16bce14711d906feeca23b3dfe8029129cdc74",
     "name": "Liquid Instruments",
     "slug": "liquid-instruments",
-    "aliases": [],
+    "aliases": [
+      "Liquid Instruments Inc.",
+      "LI"
+    ],
     "domain": null,
-    "sector": "Test equipment",
+    "sector": "Electronics",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"Liquid Instruments\" AND (\"Moku\" OR oscilloscope OR \"test equipment\")",
+    "query": "\"Liquid Instruments\" AND (\"sensors\" OR \"instrumentation\" OR \"measurement\")",
     "negativeKeywords": [
-      "liquid instrument\" chemistry"
+      "liquid instrument\" chemistry",
+      "liquid fuel",
+      "liquid nitrogen"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.704Z"
   },
   {
     "id": "38e31afe14b1f85ac1bf2151e202f0c969ded478a1b310383a2bb72bc98b6928",
@@ -975,17 +1092,18 @@
     "slug": "connected-energy",
     "aliases": [],
     "domain": null,
-    "sector": "Energy storage",
+    "sector": "Renewable Energy",
     "ambiguity": "high",
     "volume": "normal",
     "query": "\"Connected Energy\" AND (\"battery storage\" OR \"second life\" OR company)",
     "negativeKeywords": [
       "connected energy systems",
-      "connected energy grid"
+      "connected energy grid",
+      "Honda motorcycle"
     ],
     "querySource": "human-approved",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.704Z"
   },
   {
     "id": "cd714d4e10c4d2e7cc02c2145a523c22b6ba3646c740b32b49283dbfb7c89af1",
@@ -1006,9 +1124,11 @@
     "id": "a73134d310bc538dd11b18b29525bd2de0a17a39b6b96e7f37617fb18f47446c",
     "name": "Oshi (formerly Plantish)",
     "slug": "oshi-formerly-plantish",
-    "aliases": [],
+    "aliases": [
+      "Plantish"
+    ],
     "domain": null,
-    "sector": "Food tech",
+    "sector": "Software",
     "ambiguity": "high",
     "volume": "normal",
     "query": "\"Oshi\" AND (\"plant-based\" OR seafood OR \"Plantish\") OR \"Plantish\"",
@@ -1016,11 +1136,12 @@
       "Oshi no Ko",
       "anime",
       "casino",
-      "manga"
+      "manga",
+      "ishi"
     ],
     "querySource": "human-approved",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.704Z"
   },
   {
     "id": "a1edce3705128de1922a1fbbca8dbcdac8e9635de3339551200ea95fdd5b8d52",
@@ -1028,14 +1149,16 @@
     "slug": "genopore",
     "aliases": [],
     "domain": null,
-    "sector": null,
+    "sector": "Biotechnology",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"Genopore\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"Genopore\" AND (\"CRISPR\" OR \"Gene editing\" OR \"Synthetic biology\")",
+    "negativeKeywords": [
+      "other gene therapy"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.704Z"
   },
   {
     "id": "ec23eec60dda6cdebd26744f152345c858b2e48a48b7fb655e652e67911a2aaa",
@@ -1076,18 +1199,19 @@
     "slug": "aeye-health",
     "aliases": [],
     "domain": null,
-    "sector": "Medical AI",
+    "sector": "Healthcare",
     "ambiguity": "high",
     "volume": "normal",
     "query": "\"AEYE Health\" AND (retinal OR diabetic OR screening OR FDA)",
     "negativeKeywords": [
       "AEye lidar",
       "LIDAR",
-      "autonomous vehicle"
+      "autonomous vehicle",
+      "other eye care"
     ],
     "querySource": "human-approved",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.704Z"
   },
   {
     "id": "c7c1bcc4b4523235395abb396a5204a56559da58822d3db26d6419d285cf105b",
@@ -1110,48 +1234,59 @@
     "slug": "spectrum-labs",
     "aliases": [],
     "domain": null,
-    "sector": "Trust & safety",
+    "sector": "Biotechnology",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"Spectrum Labs\" AND (\"content moderation\" OR \"trust and safety\")",
+    "query": "\"Spectrum Labs\" AND (\"CRISPR\" OR \"Gene Editing\" OR \"Genomics\")",
     "negativeKeywords": [
       "Charter",
       "spectrum auction",
-      "autism spectrum"
+      "autism spectrum",
+      "spectrum TV",
+      "Spectrum News"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.704Z"
   },
   {
     "id": "925c25aee1ae89e11203422df5707928519f5b763a4bcd289f483ecf753d28f3",
     "name": "Anodot",
     "slug": "anodot",
-    "aliases": [],
-    "domain": null,
-    "sector": null,
+    "aliases": [
+      "Anodot AI",
+      "Anodot Analytics"
+    ],
+    "domain": "anodot.ai",
+    "sector": "Artificial Intelligence",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"Anodot\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "other software company"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.704Z"
   },
   {
     "id": "be84a6b7d5891751695775047322edec4c1219a9280e6c59bdc731a3738b08cb",
     "name": "Xage Security",
     "slug": "xage-security",
-    "aliases": [],
+    "aliases": [
+      "Xage"
+    ],
     "domain": null,
-    "sector": null,
+    "sector": "Cybersecurity",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"Xage Security\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"Xage Security\" AND (\"artificial intelligence\" OR \"machine learning\" OR \"cloud security\")",
+    "negativeKeywords": [
+      "other Xage"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.704Z"
   },
   {
     "id": "ade47c40f89fcfdc3cbf47bdc9b007c887ee06ffd1689c5c507783a24c5d540e",
@@ -1189,101 +1324,124 @@
     "id": "0457f1bd2b4418b8693d1612451556b8855764a1bb9cf81ed2b1a76edc64b84c",
     "name": "InsideTracker",
     "slug": "insidetracker",
-    "aliases": [],
-    "domain": null,
-    "sector": null,
+    "aliases": [
+      "InsideTracker Health"
+    ],
+    "domain": "inside-tracker.com",
+    "sector": "Healthcare Technology",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"InsideTracker\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "other medical device"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.704Z"
   },
   {
     "id": "48d38f4b41ed005622f58a4c22f3da14a547d3c44b8f67e22d8ca2f86623ea09",
     "name": "CarDekho",
     "slug": "cardekho",
-    "aliases": [],
-    "domain": null,
-    "sector": null,
+    "aliases": [
+      "Cardekho.com"
+    ],
+    "domain": "cardekho.com",
+    "sector": "E-commerce",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"CarDekho\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "other car websites"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.704Z"
   },
   {
     "id": "d271a5215046fb1825e8d9fd914e67fdcca4c6b73c5ed1b1e09b86c0ec8b3d46",
     "name": "One Zero Digital Bank Ltd.",
     "slug": "one-zero-digital-bank-ltd",
-    "aliases": [],
-    "domain": null,
-    "sector": "Digital banking",
+    "aliases": [
+      "One Zero Digital Bank",
+      "OneZero"
+    ],
+    "domain": "onezero.com",
+    "sector": "Financial Services",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"One Zero Bank\" OR \"OneZero\" AND (Israeli OR \"digital bank\")",
+    "query": "\"One Zero Digital Bank Ltd.\"",
     "negativeKeywords": [
       "one zero\" score",
-      "OneZero Medium"
+      "OneZero Medium",
+      "other financial services"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.704Z"
   },
   {
     "id": "cc0da43fb0c891dfb47939f0d913bf7443ed6503f6684bb42f01bc08543d2407",
     "name": "Binah.ai",
     "slug": "binah-ai",
-    "aliases": [],
-    "domain": null,
-    "sector": "Health tech",
+    "aliases": [
+      "Binah",
+      "AI"
+    ],
+    "domain": "binah.ai",
+    "sector": "Artificial Intelligence/Machine Learning",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"Binah.ai\" OR (\"Binah\" AND (\"video-based\" OR \"vital signs\"))",
+    "query": "\"Binah.ai\"",
     "negativeKeywords": [
       "Kabbalah",
       "sefirot",
-      "Torah"
+      "Torah",
+      "other AI company",
+      "machine learning startup"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.704Z"
   },
   {
     "id": "3b1479c759e6f0961131188ddcc81ab2f05dea8e357174b79acd9f50b1693302",
     "name": "Eko Health",
     "slug": "eko-health",
-    "aliases": [],
+    "aliases": [
+      "Eko"
+    ],
     "domain": null,
-    "sector": "Medical devices",
+    "sector": "Healthcare Technology",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"Eko Health\" OR (\"Eko\" AND (stethoscope OR cardiology OR FDA))",
+    "query": "\"Eko Health\" AND (\"ECG\" OR \"Telemedicine\" OR \"Remote Health Monitoring\")",
     "negativeKeywords": [
       "eco-friendly",
-      "Eko guitars"
+      "Eko guitars",
+      "other health services",
+      "medical equipment manufacturers"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.704Z"
   },
   {
     "id": "aa4db91eb084e85899a47653ae89d48d1bb027b61239cf123e9f4ec93f5beaa4",
     "name": "Cycuity (formerly Tortuga Logic)",
     "slug": "cycuity-formerly-tortuga-logic",
-    "aliases": [],
+    "aliases": [
+      "Tortuga Logic"
+    ],
     "domain": null,
-    "sector": null,
+    "sector": "Semiconductors",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"Cycuity (formerly Tortuga Logic)\"",
+    "query": "\"Cycuity (formerly Tortuga Logic)\" AND (\"logic\" OR \"semiconductor\" OR \"ASIC\")",
     "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.704Z"
   },
   {
     "id": "fa1c97cf22ef1420c42922832bd836127c49ef5213b49e6c7f1eeb894bbd6bbc",
@@ -1326,15 +1484,17 @@
     "name": "Tabnine",
     "slug": "tabnine",
     "aliases": [],
-    "domain": null,
-    "sector": null,
+    "domain": "tabnine.ai",
+    "sector": "Software",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"Tabnine\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "other AI startups"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.704Z"
   },
   {
     "id": "e9277407cd65f74e2be0036444a16fd21cc82af621dac0ee8ae8654eacee5d50",
@@ -1355,18 +1515,22 @@
     "id": "ed0690e015d56beb2c3d66e2013998683f53acef5ec8309541914b8a58d4e458",
     "name": "BlueTree Technologies",
     "slug": "bluetree-technologies",
-    "aliases": [],
+    "aliases": [
+      "BlueTree"
+    ],
     "domain": null,
-    "sector": "Food tech",
+    "sector": "Software",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"BlueTree Technologies\" OR \"Blue Tree Technologies\"",
+    "query": "\"BlueTree Technologies\" AND (\"AI\" OR \"Machine Learning\" OR \"Cloud Computing\")",
     "negativeKeywords": [
-      "Blue Tree hotels"
+      "Blue Tree hotels",
+      "tree service",
+      "blue ribbon"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.704Z"
   },
   {
     "id": "cb2b8ee511ee7d117dce6c336ce81d2071a4aa67d38b40994ac46a4eec4720ae",
@@ -1374,14 +1538,16 @@
     "slug": "biolumic",
     "aliases": [],
     "domain": null,
-    "sector": null,
+    "sector": "Healthcare",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"BioLumic\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "other luminescent organisms"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.704Z"
   },
   {
     "id": "8bc131bbace21ba30b54d903b61f859700db00f028991f7c1af5b6b235cd4840",
@@ -1408,51 +1574,57 @@
     "name": "Tailor Brands",
     "slug": "tailor-brands",
     "aliases": [],
-    "domain": null,
-    "sector": "SMB software",
+    "domain": "tailorbrands.com",
+    "sector": "Software",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"Tailor Brands\" AND (LLC OR \"logo maker\" OR \"business formation\")",
+    "query": "\"Tailor Brands\" AND (\"branding\" OR \"designer\" OR \"software\" OR \"marketing\")",
     "negativeKeywords": [
       "tailor brands to",
-      "bespoke tailoring"
+      "bespoke tailoring",
+      "other fashion brands"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.704Z"
   },
   {
     "id": "1beef5e1dbf58272312550df5aa0059344174879b93b6808bf4754ea3a4c7834",
     "name": "Flytrex",
     "slug": "flytrex",
-    "aliases": [],
-    "domain": null,
-    "sector": null,
+    "aliases": [
+      "Flytrex Inc."
+    ],
+    "domain": "flytrex.com",
+    "sector": "Aviation",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"Flytrex\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "other drone company"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.704Z"
   },
   {
     "id": "b901582b142856c5b009ef6ff8c3161130bb5ed70b0df43a24b0a09c128e1128",
     "name": "Quantum Machines",
     "slug": "quantum-machines",
     "aliases": [],
-    "domain": null,
-    "sector": "Quantum control",
+    "domain": "quantum-machines.com",
+    "sector": "Hardware",
     "ambiguity": "high",
     "volume": "normal",
     "query": "\"Quantum Machines\" AND (OPX OR \"quantum control\" OR Israeli OR funding)",
     "negativeKeywords": [
       "quantum machine learning",
-      "quantum machines are"
+      "quantum machines are",
+      "Honda motorcycle"
     ],
     "querySource": "human-approved",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.704Z"
   },
   {
     "id": "b628cc0b5c40d3cec77d6dad3f5d901e82cef1409959c8c4aeb0608ee632348a",
@@ -1523,9 +1695,12 @@
     "id": "028a7544d5cedf917b560d004e9bfde17c3fe64c2e5f2caf71e591c330211f34",
     "name": "Privateer",
     "slug": "privateer",
-    "aliases": [],
+    "aliases": [
+      "Privateer Ventures",
+      "Privateer Capital"
+    ],
     "domain": null,
-    "sector": null,
+    "sector": "Technology",
     "ambiguity": "high",
     "volume": "normal",
     "query": "\"Privateer\" AND (startup OR funding OR \"space debris\" OR technology)",
@@ -1533,41 +1708,50 @@
       "pirate",
       "rum",
       "historical",
-      "privateer ship"
+      "privateer ship",
+      "privateer press",
+      "privateer insurance"
     ],
     "querySource": "human-approved",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.704Z"
   },
   {
     "id": "4a0e0225afd23113aa5091459c052ff609709c61643911fe1b86d3e8b4faf66c",
     "name": "Cordio Medical",
     "slug": "cordio-medical",
-    "aliases": [],
+    "aliases": [
+      "Cordio"
+    ],
     "domain": null,
-    "sector": null,
+    "sector": "Healthcare",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"Cordio Medical\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"Cordio Medical\" AND (\"cardiovascular disease\" OR \"heart health\" OR \"medical device\")",
+    "negativeKeywords": [
+      "other medical devices",
+      "cardiovascular surgery"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.704Z"
   },
   {
     "id": "e07d42fa498c6eb6029c7144da7dfd30093369f83de00260c6dc7a29c45fc56f",
     "name": "wefox",
     "slug": "wefox",
     "aliases": [],
-    "domain": null,
-    "sector": null,
+    "domain": "wefox.com",
+    "sector": "Financial Technology",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"wefox\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "other insurance company"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.704Z"
   },
   {
     "id": "b4e5121d9d8c8c10828d900eb38418542f2670daf9a8ea4769209b269ca17656",
@@ -1590,52 +1774,60 @@
     "slug": "polaris-quantum-biotech",
     "aliases": [],
     "domain": null,
-    "sector": "Quantum biotech",
+    "sector": "Biotechnology",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"Polaris Quantum Biotech\" OR \"POLARISqb\"",
+    "query": "\"Polaris Quantum Biotech\" AND (\"Quantum Computing\" OR \"Synthetic Biology\")",
     "negativeKeywords": [
       "Polaris Industries",
       "snowmobile",
-      "RZR"
+      "RZR",
+      "Polaris Outdoors"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.705Z"
   },
   {
     "id": "95f4406ddb371437f0d9744958b7e6be600a51cf81f11798f609ee31830e0464",
     "name": "Alloy Therapeutics",
     "slug": "alloy-therapeutics",
-    "aliases": [],
+    "aliases": [
+      "Alloy Therapeutics Inc."
+    ],
     "domain": null,
-    "sector": "Biotech",
+    "sector": "Biotechnology",
     "ambiguity": "medium",
     "volume": "normal",
     "query": "\"Alloy Therapeutics\"",
     "negativeKeywords": [
       "Alloy identity",
       "metallurgy",
-      "alloy wheels"
+      "alloy wheels",
+      "other biotech company"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.705Z"
   },
   {
     "id": "072c7172ab1286200d719254b5a99ab9afe4a0a3db4d73b5b10116cef8bc2422",
     "name": "Ynsect",
     "slug": "ynsect",
-    "aliases": [],
+    "aliases": [
+      "Ynsect Insect Farming"
+    ],
     "domain": null,
-    "sector": null,
+    "sector": "Agriculture",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"Ynsect\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"Ynsect\" AND (\"insect farming\" OR \"sustainable agriculture\")",
+    "negativeKeywords": [
+      "ynsect insecticide"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.705Z"
   },
   {
     "id": "883f9ee99f08ede3ed57e527f19bea2351ed0ff87be05d51e810d551a23122bd",
@@ -1643,14 +1835,17 @@
     "slug": "treedom",
     "aliases": [],
     "domain": null,
-    "sector": null,
+    "sector": "Sustainability/Environment",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"Treedom\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "tree doom",
+      "doom tree"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.705Z"
   },
   {
     "id": "2352989bf79f0773039cc8512fdc76f8aa84ac60f24690db6d66088c071db9dd",
@@ -1673,14 +1868,17 @@
     "slug": "brightinsight",
     "aliases": [],
     "domain": null,
-    "sector": null,
+    "sector": "Healthcare Technology",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"BrightInsight\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"BrightInsight\" AND (\"AI\" OR \"Insight\" OR \"Healthcare\")",
+    "negativeKeywords": [
+      "other insight",
+      "bright star"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.705Z"
   },
   {
     "id": "4176f025dd9922a8dff53a3e9e2bd96abeddbbf178f614fd343b93fd128fecdd",
@@ -1722,33 +1920,42 @@
     "id": "90fd66a6e796bc56d1735a23aecbd74edb463b39649c6413dd73a8f01244bda9",
     "name": "Tamar Robotics",
     "slug": "tamar-robotics",
-    "aliases": [],
+    "aliases": [
+      "Tamar Robotics Inc.",
+      "Tamar"
+    ],
     "domain": null,
-    "sector": null,
+    "sector": "Autonomous Vehicles",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"Tamar Robotics\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "other robotics"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.705Z"
   },
   {
     "id": "058b4bbcf64276e709af0d0bca922189f1134fdfa8fdd4ec937de409d8791709",
     "name": "Entangled Networks",
     "slug": "entangled-networks",
-    "aliases": [],
-    "domain": null,
-    "sector": "Quantum computing",
+    "aliases": [
+      "Entangled Networks Inc."
+    ],
+    "domain": "entanglednetworks.com",
+    "sector": "Telecommunications",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"Entangled Networks\" AND (quantum OR acquired OR startup)",
+    "query": "\"Entangled Networks\"",
     "negativeKeywords": [
-      "entangled network\" physics"
+      "entangled network\" physics",
+      "Entangled Rings",
+      "Entangled Jewellery"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.705Z"
   },
   {
     "id": "ff7f0439d8ea064e81e21509daac956ea6d63bcb351469d54bfb3daa7726f798",
@@ -1756,14 +1963,17 @@
     "slug": "dandelion-energy",
     "aliases": [],
     "domain": null,
-    "sector": null,
+    "sector": "Renewable Energy",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"Dandelion Energy\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "dandelion wine",
+      "dandelion salad"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.705Z"
   },
   {
     "id": "3aab452a942f16c726a174483d3228a86706e5be72abdfb21db78df1e8fe97c7",
@@ -1791,18 +2001,19 @@
     "name": "People.ai",
     "slug": "people-ai",
     "aliases": [],
-    "domain": null,
-    "sector": "Sales intelligence",
+    "domain": "people.ai",
+    "sector": "Software",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"People.ai\" AND (revenue OR \"sales intelligence\" OR CRM)",
+    "query": "\"People.ai\" AND (\"AI\" OR \"Sales Enablement\" OR \"CRM\")",
     "negativeKeywords": [
       "people and AI",
-      "AI people"
+      "AI people",
+      "other AI startup"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.705Z"
   },
   {
     "id": "6d653300184868682f135735bd431180107c576f273bfa8ebaaa02822ac77e82",
@@ -1824,15 +2035,18 @@
     "name": "JumpCloud",
     "slug": "jumpcloud",
     "aliases": [],
-    "domain": null,
-    "sector": null,
+    "domain": "jumpcloud.com",
+    "sector": "Software",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"JumpCloud\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"JumpCloud\" AND (\"Cloud Management\" OR \"Multi-tenancy\" OR \"SaaS\")",
+    "negativeKeywords": [
+      "other cloud services",
+      "cloud storage"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.705Z"
   },
   {
     "id": "212c10a83d6e925d8c4d304df7a4e7d646356ce92807566efab3e0e3644f1845",
@@ -1858,14 +2072,16 @@
     "slug": "remilk",
     "aliases": [],
     "domain": null,
-    "sector": null,
+    "sector": "Food and Beverage",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"Remilk\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"Remilk\" AND (\"dairy\" OR \"plant-based\" OR \"milk alternative\")",
+    "negativeKeywords": [
+      "other dairy products"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.705Z"
   },
   {
     "id": "7d6b48b42ae8f641be21cc5d8f2d38e2b532a27d7eaf18eb9d2bb91e59169720",
@@ -1908,46 +2124,58 @@
     "slug": "bluegreen-water-technologies",
     "aliases": [],
     "domain": null,
-    "sector": null,
+    "sector": "Environmental Technology",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"BlueGreen Water Technologies\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"BlueGreen Water Technologies\" AND (\"water treatment\" OR \"sustainability\" OR \"green technology\")",
+    "negativeKeywords": [
+      "other water company",
+      "blue green energy"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.705Z"
   },
   {
     "id": "97cfac84ededf5ce0052b8ec2dc432b2ae9045dca9e3a2e6b9d74aff78477726",
     "name": "Classiq",
     "slug": "classiq",
-    "aliases": [],
+    "aliases": [
+      "Classiq AI",
+      "Classiq Technologies"
+    ],
     "domain": null,
-    "sector": null,
+    "sector": "Artificial Intelligence",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"Classiq\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "classiq motorcycle"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.705Z"
   },
   {
     "id": "79e7537d257c9efa97b593520b052d01eef86bd1b787c097b1988728201a3926",
     "name": "Diagnostic Robotics",
     "slug": "diagnostic-robotics",
-    "aliases": [],
-    "domain": null,
-    "sector": "Health AI",
+    "aliases": [
+      "Diagnostic Robotics Inc."
+    ],
+    "domain": "diagnosticrobotics.com",
+    "sector": "Healthcare Technology",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"Diagnostic Robotics\" AND (Israeli OR \"predictive care\" OR health)",
+    "query": "\"Diagnostic Robotics\"",
     "negativeKeywords": [
-      "diagnostic robotics field"
+      "diagnostic robotics field",
+      "other medical device",
+      "medical imaging software"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.705Z"
   },
   {
     "id": "b8e4ef764b62e30a25fc5589c6306548fe0393083258db5f87cd9a3d1bbd851b",
@@ -1955,7 +2183,7 @@
     "slug": "overtime",
     "aliases": [],
     "domain": null,
-    "sector": "Sports media",
+    "sector": "Software",
     "ambiguity": "critical",
     "volume": "high",
     "query": "\"Overtime\" AND (\"Overtime Elite\" OR \"sports media\" OR \"Overtime league\")",
@@ -1963,34 +2191,42 @@
       "overtime pay",
       "overtime hours",
       "went to overtime",
-      "labor"
+      "labor",
+      "other overtime"
     ],
     "querySource": "human-approved",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.705Z"
   },
   {
     "id": "062efac5116480c3c3d7178c121263d8085ba8fe0fa3d14131ba1729167c5cbe",
     "name": "Dataloop",
     "slug": "dataloop",
-    "aliases": [],
-    "domain": null,
-    "sector": null,
+    "aliases": [
+      "Dataloop AI"
+    ],
+    "domain": "dataloop.ai",
+    "sector": "Artificial Intelligence/Machine Learning",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"Dataloop\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "loop data"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.705Z"
   },
   {
     "id": "c134bf20e74faa526146098e4d1efad69400e81c3a03a7c74aefe9ae3a817ace",
     "name": "Greenlight",
     "slug": "greenlight",
-    "aliases": [],
+    "aliases": [
+      "Greenlight Capital",
+      "Greenlight Partners"
+    ],
     "domain": null,
-    "sector": "Fintech",
+    "sector": "Financial Services",
     "ambiguity": "critical",
     "volume": "normal",
     "query": "\"Greenlight\" AND (\"kids debit\" OR \"family finance\" OR fintech)",
@@ -1998,11 +2234,12 @@
       "green light",
       "greenlit",
       "Greenlight Capital",
-      "traffic"
+      "traffic",
+      "other hedge funds"
     ],
     "querySource": "human-approved",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.705Z"
   },
   {
     "id": "f3922ff8fd2ff3e9374ec3f76dc57d59a85e20328399055e04c998d99864d47f",
@@ -2023,80 +2260,99 @@
     "id": "f1ba60084b768656fbf40d5bc80ef2be253b0bec6ac836dfbeb8ccc504a483a9",
     "name": "C2A Security",
     "slug": "c2a-security",
-    "aliases": [],
+    "aliases": [
+      "C2A"
+    ],
     "domain": null,
-    "sector": null,
+    "sector": "Cybersecurity",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"C2A Security\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "c2a motorcycle",
+      "c2a energy"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.705Z"
   },
   {
     "id": "129c2f7f5d0b972efe151a5ea3947cf4b7ffaa961d5d4d05eb8889b23c3b03d4",
     "name": "MasterClass",
     "slug": "masterclass",
     "aliases": [],
-    "domain": null,
-    "sector": "Edtech",
+    "domain": "masterclass.com",
+    "sector": "Education Technology",
     "ambiguity": "high",
     "volume": "high",
     "query": "\"MasterClass\" AND (\"MasterClass.com\" OR subscription OR \"online learning platform\")",
     "negativeKeywords": [
       "a masterclass in",
       "masterclass performance",
-      "tutorial"
+      "tutorial",
+      "other educational institutions",
+      "educational software"
     ],
     "querySource": "human-approved",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.705Z"
   },
   {
     "id": "bf49314558e1461885984b1054d27ae0561ec13c20f10ae6b494e8234fa91310",
     "name": "HEQA Security (formerly QuantLR)",
     "slug": "heqa-security-formerly-quantlr",
-    "aliases": [],
+    "aliases": [
+      "QuantLR"
+    ],
     "domain": null,
-    "sector": null,
+    "sector": "Cybersecurity",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"HEQA Security (formerly QuantLR)\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"HEQA Security (formerly QuantLR)\" AND (\"security\" OR \"threat intelligence\" OR \"cybersecurity\")",
+    "negativeKeywords": [
+      "quantum computing"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.705Z"
   },
   {
     "id": "1b5dbd776f9028bed8a334272ae5bdf678643783d4aa201ec5485b7fb84c67e2",
     "name": "CytoReason",
     "slug": "cytoreason",
-    "aliases": [],
+    "aliases": [
+      "CytoReason Therapeutics"
+    ],
     "domain": null,
-    "sector": null,
+    "sector": "Biotechnology",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"CytoReason\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"CytoReason\" AND (\"immunotherapy\" OR \"biologics\" OR \"cancer treatment\")",
+    "negativeKeywords": [
+      "cytoskeleton"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.705Z"
   },
   {
     "id": "1a0bfb50e9f2c15ce2b624369d14660cd0e1d4d1527a1f97cd206ccfc35bbb56",
     "name": "Tovala",
     "slug": "tovala",
-    "aliases": [],
-    "domain": null,
-    "sector": null,
+    "aliases": [
+      "Tovala Inc."
+    ],
+    "domain": "tovala.com",
+    "sector": "Food Technology",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"Tovala\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "other food company"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.705Z"
   },
   {
     "id": "19197b87ab0778017d922babcc2e2e664eb7cd29a0655dcb049c596c2761eefb",
@@ -2137,26 +2393,33 @@
     "id": "b67862ab5a5a4bb6db93801c7be821a4d7ee5114bc82f1da5596618aa157bd50",
     "name": "Skillz",
     "slug": "skillz",
-    "aliases": [],
-    "domain": null,
-    "sector": "Mobile gaming",
+    "aliases": [
+      "Skillz Entertainment",
+      "Skillz Gaming"
+    ],
+    "domain": "skillz.com",
+    "sector": "Gaming",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"Skillz\" AND (mobile gaming OR NYSE OR esports)",
+    "query": "\"Skillz\"",
     "negativeKeywords": [
-      "skillz\" slang"
+      "skillz\" slang",
+      "other",
+      "company"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.705Z"
   },
   {
     "id": "4d1627ea360d80768a8df20dbb511cf6ffd0d6be8af1f8d9f69fd32db263ae9d",
     "name": "BlueCircle (formerly Trellis)",
     "slug": "bluecircle-formerly-trellis",
-    "aliases": [],
+    "aliases": [
+      "Trellis"
+    ],
     "domain": null,
-    "sector": null,
+    "sector": "Renewable Energy",
     "ambiguity": "high",
     "volume": "normal",
     "query": "\"BlueCircle\" OR \"Blue Circle\" AND (startup OR funding OR technology)",
@@ -2164,11 +2427,12 @@
       "cement",
       "concrete",
       "Blue Circle Cement",
-      "garden trellis"
+      "garden trellis",
+      "trellis furniture"
     ],
     "querySource": "human-approved",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.705Z"
   },
   {
     "id": "c0697c14119a6414372326a4e72ee6c5a93c7831de423745718284ea0726a444",
@@ -2195,48 +2459,61 @@
     "id": "fcbe1ec7307452e465443a2777dae2606e217c72ab7bc362c234d706d9b52666",
     "name": "CyberX",
     "slug": "cyberx",
-    "aliases": [],
-    "domain": null,
-    "sector": "OT security",
+    "aliases": [
+      "CyberX Systems",
+      "CyberX Technologies"
+    ],
+    "domain": "cyberx.com",
+    "sector": "Cybersecurity",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"CyberX\" AND (Microsoft OR ICS OR OT security OR Israeli)",
+    "query": "\"CyberX\"",
     "negativeKeywords": [
-      "CyberX conference"
+      "CyberX conference",
+      "CyberX motorcycle",
+      "CyberX energy"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.705Z"
   },
   {
     "id": "b792a44546da4440df8ca9c2ee529f20a2fa6db313597157d110a10db1521c63",
     "name": "Celeno",
     "slug": "celeno",
-    "aliases": [],
+    "aliases": [
+      "Celeno Semiconductor"
+    ],
     "domain": null,
-    "sector": null,
+    "sector": "Semiconductors",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"Celeno\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"Celeno\" AND (\"semiconductor\" OR \"IC design\" OR \"GPU\" OR \"display\")",
+    "negativeKeywords": [
+      "other semiconductor company"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.705Z"
   },
   {
     "id": "574069bc86f55ea5c2e88b35d69482d726b9bd5547c8a8e58d26569c9dbe0766",
     "name": "Kenna Security",
     "slug": "kenna-security",
-    "aliases": [],
+    "aliases": [
+      "Kenna"
+    ],
     "domain": null,
-    "sector": null,
+    "sector": "Cybersecurity",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"Kenna Security\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"Kenna Security\" AND (\"threat intelligence\" OR \"vulnerability management\")",
+    "negativeKeywords": [
+      "other software company"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.705Z"
   },
   {
     "id": "c76f18141f0b3b4a308be338910cd99ca0dff46b6fc0ae6582d7dea6e7f0f39b",
@@ -2295,50 +2572,63 @@
     "id": "2f97de29db15444eb14b378859e61a05e818e0b25a7fb1807a9d0cd151aaa4a3",
     "name": "Momentis Surgical (formerly Memic)",
     "slug": "momentis-surgical-formerly-memic",
-    "aliases": [],
+    "aliases": [
+      "Memic"
+    ],
     "domain": null,
-    "sector": null,
+    "sector": "Medical Devices",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"Momentis Surgical (formerly Memic)\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"Momentis Surgical (formerly Memic)\" AND (\"robotic surgery\" OR \"minimally invasive\" OR \"orthopedics\")",
+    "negativeKeywords": [
+      "other medical devices",
+      "surgical instruments"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.705Z"
   },
   {
     "id": "d3fb298990da9372f2023e0f35872963b951783bf2ea85fa7586bb1d65a82616",
     "name": "Argus Cyber Security",
     "slug": "argus-cyber-security",
-    "aliases": [],
+    "aliases": [
+      "Argus"
+    ],
     "domain": null,
-    "sector": "Automotive security",
+    "sector": "Cybersecurity",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"Argus Cyber Security\" OR \"Argus Cyber\"",
+    "query": "\"Argus Cyber Security\"",
     "negativeKeywords": [
       "Argus Media",
       "The Argus",
-      "mythology"
+      "mythology",
+      "Honda motorcycle",
+      "other"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.705Z"
   },
   {
     "id": "bba92c952ab139efead01b862ffedba1485a3f272c84ed1f6c3393abf73c8e43",
     "name": "The Bouqs",
     "slug": "the-bouqs",
-    "aliases": [],
-    "domain": null,
-    "sector": null,
+    "aliases": [
+      "The Bouqs Co."
+    ],
+    "domain": "thebouqs.com",
+    "sector": "Flowers and Plants",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"The Bouqs\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "other bouquets"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.705Z"
   },
   {
     "id": "204d3799e9bba42b9d58ea5b70eff9bfd3dfb71e41bdb1965471a82283f1e3b6",
@@ -2346,14 +2636,17 @@
     "slug": "zoomcar",
     "aliases": [],
     "domain": null,
-    "sector": null,
+    "sector": "Automotive",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"Zoomcar\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"Zoomcar\" AND (\"car sharing\" OR \"fleet management\" OR \"auto rental\")",
+    "negativeKeywords": [
+      "other vehicle",
+      "car sales"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "d7ba7ef691cf6815a833ccf761183c252cd56272cc38124c47d2923f3711d1b2",
@@ -2374,35 +2667,41 @@
     "id": "82955cdef97ef518dd668430f646c3ce8b5e1c0f82c092c6f41c91f0562d2aee",
     "name": "TechSee",
     "slug": "techsee",
-    "aliases": [],
-    "domain": null,
-    "sector": null,
+    "aliases": [
+      "TechSee AI",
+      "TechSee Vision"
+    ],
+    "domain": "techsee.ai",
+    "sector": "Artificial Intelligence",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"TechSee\"",
     "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "e47ee9aca47626522857d68a6bc7d6f4595108f49f8442917c8029b612449739",
     "name": "Replay Technologies",
     "slug": "replay-technologies",
-    "aliases": [],
-    "domain": null,
-    "sector": "Sports tech",
+    "aliases": [
+      "Replay"
+    ],
+    "domain": "replaytech.com",
+    "sector": "Semiconductors",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"Replay Technologies\" AND (Intel OR \"freeD\" OR acquired)",
+    "query": "\"Replay Technologies\"",
     "negativeKeywords": [
       "instant replay",
       "replay review",
-      "VAR"
+      "VAR",
+      "other flash storage"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "3ee57aa2834e269a898c81973ab2b8b0ec064e04b1b8285a3034a8a6f83649c7",
@@ -2453,9 +2752,12 @@
     "id": "f50c3622b6952d92efd7428d6ec4400a2db7ade2a3dff92cf7b446f74a1ed3de",
     "name": "Wave",
     "slug": "wave",
-    "aliases": [],
+    "aliases": [
+      "Wavemaker",
+      "Wavefront"
+    ],
     "domain": null,
-    "sector": null,
+    "sector": "Technology",
     "ambiguity": "critical",
     "volume": "high",
     "query": "\"Wave\" AND (startup OR funding OR Israeli OR technology)",
@@ -2464,45 +2766,54 @@
       "heatwave",
       "wave of",
       "radio waves",
-      "surfing"
+      "surfing",
+      "wave pattern",
+      "wave function"
     ],
     "querySource": "human-approved",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "bb2b3cad26e8fe46d5bdd69597b48eead447add17341620b27bddafdcf1879b8",
     "name": "Firefly Neuroscience (formerly ElMindA)",
     "slug": "firefly-neuroscience-formerly-elminda",
-    "aliases": [],
+    "aliases": [
+      "ElMindA"
+    ],
     "domain": null,
-    "sector": "Neurotech",
+    "sector": "Healthcare",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"Firefly Neuroscience\" OR \"ElMindA\"",
+    "query": "\"Firefly Neuroscience (formerly ElMindA)\" AND (\"neuroscience\" OR \"AI\" OR \"brain-computer interface\")",
     "negativeKeywords": [
       "Adobe Firefly",
       "Firefly Aerospace",
-      "insect"
+      "insect",
+      "other AI startup"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "afc27a7f34485776863426f7bdb7a5df9ffa3035656713b9c985f224d9e24921",
     "name": "Syqe",
     "slug": "syqe",
-    "aliases": [],
+    "aliases": [
+      "Syqe Therapeutics"
+    ],
     "domain": null,
-    "sector": null,
+    "sector": "Healthcare Technology",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"Syqe\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"Syqe\" AND (\"therapeutics\" OR \"pharmaceuticals\" OR \"healthcare technology\")",
+    "negativeKeywords": [
+      "other pharmaceutical company"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "b7b08ea36f3b94547588e6c029d0e4f736043f29c113e1c51fc0ee438b57d017",
@@ -2540,9 +2851,11 @@
     "id": "df2e516234cf5488e4f6e4c96edc156c3c2918d6fedb360735fba0bc8a88dd04",
     "name": "Verse.ai",
     "slug": "verse-ai",
-    "aliases": [],
-    "domain": null,
-    "sector": "Martech",
+    "aliases": [
+      "Verse"
+    ],
+    "domain": "verse.ai",
+    "sector": "Artificial Intelligence",
     "ambiguity": "high",
     "volume": "normal",
     "query": "\"Verse.ai\" OR (\"Verse\" AND (\"conversational marketing\" OR \"SMS marketing\"))",
@@ -2550,11 +2863,13 @@
       "poetry",
       "bible verse",
       "verse of",
-      "metaverse"
+      "metaverse",
+      "other Verse",
+      "Verse the company"
     ],
     "querySource": "human-approved",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "366e809f61a426cea2b565eae4bfaaa85b749a8d1330972db728fc591c3c0bd3",
@@ -2577,20 +2892,25 @@
     "id": "766887975552b0feae55aa9e46eb13fd18ad84b4be9b5f93365d63778da21ca7",
     "name": "Zebra Medical Vision",
     "slug": "zebra-medical-vision",
-    "aliases": [],
+    "aliases": [
+      "Zebra Medical Vision Ltd.",
+      "Zebra"
+    ],
     "domain": null,
-    "sector": "Medical imaging",
+    "sector": "Healthcare Technology",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"Zebra Medical Vision\" OR \"Zebra Medical\"",
+    "query": "\"Zebra Medical Vision\"",
     "negativeKeywords": [
       "Zebra Technologies",
       "barcode",
-      "animal"
+      "animal",
+      "zebra fish",
+      "zebra print"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "be901d4d25141a3af5187c567b171d84f718144af878fbe30bc12ce77fc96536",
@@ -2598,33 +2918,38 @@
     "slug": "corephotonics",
     "aliases": [],
     "domain": null,
-    "sector": null,
+    "sector": "Semiconductors",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"Corephotonics\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"Corephotonics\" AND (\"photonics\" OR \"semiconductor\" OR \"optoelectronics\")",
+    "negativeKeywords": [
+      "other photonics"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "75fed701650a143660944696309e5edab76b5a6dca49a31bbd1f866a392485ef",
     "name": "JUMP Bikes",
     "slug": "jump-bikes",
-    "aliases": [],
+    "aliases": [
+      "JUMP"
+    ],
     "domain": null,
-    "sector": "Micromobility",
+    "sector": "Transportation",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"JUMP Bikes\" OR \"Jump Bikes Uber\"",
+    "query": "\"JUMP Bikes\" AND (\"bike-sharing\" OR \"scooter rental\" OR \"mobility-as-a-service\")",
     "negativeKeywords": [
       "jump in",
       "jumped",
-      "trampoline"
+      "trampoline",
+      "other bike company"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "ffbdb5e1eab8a43b120e4fd6fb3f31c8add0b2ad5877774c9e950eb5438528d0",
@@ -2660,16 +2985,20 @@
     "id": "4eab7b5660b946832f07891c686f20fda1b2e5d57df93fda970feaf89cc8b5b9",
     "name": "Nextpeer",
     "slug": "nextpeer",
-    "aliases": [],
-    "domain": null,
-    "sector": null,
+    "aliases": [
+      "Nextpeer Network"
+    ],
+    "domain": "nextpeer.com",
+    "sector": "Software",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"Nextpeer\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"Nextpeer\" AND (\"network\" OR \"gaming\" OR \"social\")",
+    "negativeKeywords": [
+      "other social network"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "f2d81d3544eb43fa9b9886a9aa4b5b272560323cfa7d607eba40beeb2e757bd9",
@@ -2694,14 +3023,16 @@
     "slug": "pulmone",
     "aliases": [],
     "domain": null,
-    "sector": null,
+    "sector": "Healthcare",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"PulmOne\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "other pulmone"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "1a4e232fe86eae1a1909a26c0bec8c0c6bb42df5d89c48132d57df46b491129a",
@@ -2709,14 +3040,16 @@
     "slug": "shopial",
     "aliases": [],
     "domain": null,
-    "sector": null,
+    "sector": "E-commerce",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"Shopial\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"Shopial\" AND (\"online marketplace\" OR \"digital commerce\" OR \"payment processing\")",
+    "negativeKeywords": [
+      "other online stores"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "3a82fc30aaefd48fdedb7c994982fea629e50abc857fb7ae3e6bab84c20319a2",
@@ -2742,91 +3075,115 @@
     "id": "4ec98d7498ccabbcb76760b24fa033adc5b26d9db17b2c04af808b5f3bc20e1d",
     "name": "Freightos",
     "slug": "freightos",
-    "aliases": [],
-    "domain": null,
-    "sector": null,
+    "aliases": [
+      "Freightos.com"
+    ],
+    "domain": "freightos.com",
+    "sector": "Logistics/Transportation",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"Freightos\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "other freight company",
+      "shipping service"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "2eeb6441814fa08a232e45e8b2d447bb830326b076577c84117aa0e5d8ed6594",
     "name": "The Trendlines Group",
     "slug": "the-trendlines-group",
-    "aliases": [],
+    "aliases": [
+      "Trendlines"
+    ],
     "domain": null,
-    "sector": null,
+    "sector": "Software",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"The Trendlines Group\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"The Trendlines Group\" AND (\"software\" OR \"agriculture\" OR \"precision agriculture\")",
+    "negativeKeywords": [
+      "other software",
+      "agricultural equipment"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "9ff154dd2703f3ec604654b69aebdd0b6efef490299db683591b083ffb252d00",
     "name": "Viewbix",
     "slug": "viewbix",
     "aliases": [],
-    "domain": null,
-    "sector": null,
+    "domain": "viewbix.com",
+    "sector": "Digital Media",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"Viewbix\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "other video services"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "887377f80e326f9c3972982a5924cca2b9c614109a2ee0ac6593cb5eac88b04f",
     "name": "eVigilo",
     "slug": "evigilo",
-    "aliases": [],
+    "aliases": [
+      "eVigilo Systems"
+    ],
     "domain": null,
-    "sector": null,
+    "sector": "Cybersecurity",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"eVigilo\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"eVigilo\" AND (\"AI\" OR \"Machine Learning\" OR \"Security Software\")",
+    "negativeKeywords": [
+      "other",
+      "vigilance"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "b2d4858a0973db702fb3b3da91f09a3cb0176312f9cd7673bbc3b2eb333bbbab",
     "name": "Appdome",
     "slug": "appdome",
     "aliases": [],
-    "domain": null,
-    "sector": null,
+    "domain": "appdome.com",
+    "sector": "Software",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"Appdome\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"Appdome\" AND (\"security\" OR \"software protection\" OR \"application protection\")",
+    "negativeKeywords": [
+      "other software",
+      "application security"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "083ad6d3693c143f2c8b0d6e2374f8f503d7ff35c2ba7ea6dc531beff3bbfb9f",
     "name": "enVerid",
     "slug": "enverid",
-    "aliases": [],
+    "aliases": [
+      "enVerid Technologies"
+    ],
     "domain": null,
-    "sector": null,
+    "sector": "Renewable Energy",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"enVerid\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"enVerid\" AND (\"solar\" OR \"renewable energy\" OR \"carbon capture\")",
+    "negativeKeywords": [
+      "other carbon capture technologies"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "de51fe46e78e859acb0e4de72052faae9230b8490ba282f668bde019bf73db08",
@@ -2864,19 +3221,23 @@
     "id": "2b331fb220785eac89c486144d63ce00493d1dadbb755b95ba83a5463c0e4a57",
     "name": "Surgical Theater",
     "slug": "surgical-theater",
-    "aliases": [],
+    "aliases": [
+      "Surgical Theater Inc."
+    ],
     "domain": null,
-    "sector": "Medical VR",
+    "sector": "Healthcare Technology",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"Surgical Theater\" AND (VR OR \"3D visualization\" OR neurosurgery)",
+    "query": "\"Surgical Theater\" AND (\"robotic surgery\" OR \"telepresence\" OR \"medical technology\")",
     "negativeKeywords": [
       "surgical theatre\" hospital",
-      "operating room"
+      "operating room",
+      "other medical device",
+      "hospital equipment"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "70009dfe542d8b48e3deef9bfde986c3c0a1a59f449d2278b90acfa405865ef5",
@@ -2903,29 +3264,35 @@
     "slug": "bizzabo",
     "aliases": [],
     "domain": null,
-    "sector": "Event tech",
+    "sector": "Software",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"Bizzabo\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"Bizzabo\" AND (\"event management\" OR \"conference software\" OR \"meeting planning\")",
+    "negativeKeywords": [
+      "other event space"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "8117a969c51b8a1d46416d94c78e6d88281903b0f9f6e90e540a1a4934285ecf",
     "name": "Neverware",
     "slug": "neverware",
-    "aliases": [],
-    "domain": null,
-    "sector": null,
+    "aliases": [
+      "Neverware Inc."
+    ],
+    "domain": "neverware.com",
+    "sector": "Software",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"Neverware\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"Neverware\" AND (\"Swift\" OR \"Xcode\")",
+    "negativeKeywords": [
+      "other software"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "b40e33f88271627cf3be6e8229200ae9840c2ab0138d473ae424e6c6653ec332",
@@ -2933,64 +3300,78 @@
     "slug": "biocatch",
     "aliases": [],
     "domain": null,
-    "sector": null,
+    "sector": "Cybersecurity",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"BioCatch\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"BioCatch\" AND (\"biometric authentication\" OR \"cybersecurity software\")",
+    "negativeKeywords": [
+      "other biotech company"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "6935ae5d2b557f0f4867d53bce977975a07de3047b502bef651ebd9bb1527455",
     "name": "Sight Diagnostics",
     "slug": "sight-diagnostics",
-    "aliases": [],
+    "aliases": [
+      "Sight Diagnostics Ltd"
+    ],
     "domain": null,
-    "sector": "Diagnostics",
+    "sector": "Healthcare Technology",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"Sight Diagnostics\" OR \"Sight OLO\"",
+    "query": "\"Sight Diagnostics\" AND (\"artificial intelligence\" OR \"diagnostic imaging\")",
     "negativeKeywords": [
       "in sight",
-      "eyesight"
+      "eyesight",
+      "sightseeing",
+      "sights",
+      "visual"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "dae9e9578f84869082d9c65ec2ff9889f26d560335d62997c7e3edcc2ab9f56d",
     "name": "Consumer Physics",
     "slug": "consumer-physics",
-    "aliases": [],
-    "domain": null,
-    "sector": "Sensors",
+    "aliases": [
+      "Consumer Physics Inc."
+    ],
+    "domain": "consumerphysics.com",
+    "sector": "Healthcare Technology",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"Consumer Physics\" OR \"SCiO scanner\"",
+    "query": "\"Consumer Physics\"",
     "negativeKeywords": [
-      "consumer physics\" academic"
+      "consumer physics\" academic",
+      "other consumer products"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "aed42cbafd645d5b06725891cf1fe1547ac9e80b6c890dd5f1df09c76059d537",
     "name": "StackIQ",
     "slug": "stackiq",
-    "aliases": [],
-    "domain": null,
-    "sector": null,
+    "aliases": [
+      "StackIQ Technologies"
+    ],
+    "domain": "stackiq.com",
+    "sector": "Cloud Computing",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"StackIQ\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "other cloud providers"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "33d2a9ade57a79c080082f9158ab5b938c6a03a323fb447eaa2eff719de14cd0",
@@ -3011,16 +3392,22 @@
     "id": "2c9b81afa6538baecf0e2eebe53efb49cb1917d1db97b78a6e776d1a06dc0566",
     "name": "CropX",
     "slug": "cropx",
-    "aliases": [],
-    "domain": null,
-    "sector": null,
+    "aliases": [
+      "CropX Technologies",
+      "CropX Inc."
+    ],
+    "domain": "cropx.com",
+    "sector": "Agriculture",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"CropX\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "CropX Energy",
+      "CropX Foods"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "6c35602e0943173563731fcd2804e47be0992ab0a06f461c177b443d329622cc",
@@ -3061,18 +3448,22 @@
     "id": "a17b7b1be686a4d19bb8068e59749c41d0f46dd9f0a9dfdd38b18f9a5fbf51bc",
     "name": "Lifeward (formerly known as ReWalk)",
     "slug": "lifeward-formerly-known-as-rewalk",
-    "aliases": [],
+    "aliases": [
+      "ReWalk"
+    ],
     "domain": null,
-    "sector": "Medical robotics",
+    "sector": "Medical Devices",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"Lifeward\" OR \"ReWalk Robotics\"",
+    "query": "\"Lifeward (formerly known as ReWalk)\" AND (\"exoskeleton\" OR \"rehabilitation\" OR \"paralysis\")",
     "negativeKeywords": [
-      "life ward\" hospital"
+      "life ward\" hospital",
+      "other exoskeletons",
+      "wheelchair"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "8ec39cb409e9432f75e151ac5a0e46e59b6e1e2ddc55942c8d340d1ae6bd1727",
@@ -3093,16 +3484,21 @@
     "id": "2382ecd70830765ccd98e16cd0be3c79984536b855d04b3727a8945edce5bc88",
     "name": "Boatsetter",
     "slug": "boatsetter",
-    "aliases": [],
-    "domain": null,
-    "sector": null,
+    "aliases": [
+      "boatsetter.com"
+    ],
+    "domain": "boatsetter.com",
+    "sector": "Marine Transportation",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"Boatsetter\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "boat insurance",
+      "marina management"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "bd88c3b3d6744374a2e4f653ea32129dc1c17e54eac16c25c6cdf22dac0c9237",
@@ -3125,14 +3521,17 @@
     "slug": "briefcam",
     "aliases": [],
     "domain": null,
-    "sector": null,
+    "sector": "Security",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"BriefCam\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"BriefCam\" AND (\"video analysis\" OR \"evidence management\")",
+    "negativeKeywords": [
+      "other video",
+      "security camera"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "83da9d26ecb045838d55b014e9a3527f83d7f9ce4b0a5e401f5adacddfb40ace",
@@ -3140,39 +3539,48 @@
     "slug": "billguard",
     "aliases": [],
     "domain": null,
-    "sector": null,
+    "sector": "Cybersecurity",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"BillGuard\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"BillGuard\" AND (\"password manager\" OR \"identity theft protection\")",
+    "negativeKeywords": [
+      "other password managers"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "d0ad8e268592f5c480d4e3bf4effd7220ddb8a877b78749e3ed45e0a93a263d6",
     "name": "Xsense (formerly BT9)",
     "slug": "xsense-formerly-bt9",
-    "aliases": [],
+    "aliases": [
+      "BT9",
+      "Xsense"
+    ],
     "domain": null,
-    "sector": "Supply chain",
+    "sector": "Security",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"Xsense\" AND (\"cold chain\" OR logistics OR Israeli)",
+    "query": "\"Xsense (formerly BT9)\" AND (\"security software\" OR \"threat intelligence\" OR \"cybersecurity\")",
     "negativeKeywords": [
-      "Xsens motion capture"
+      "Xsens motion capture",
+      "other security company",
+      "IT security solutions"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "2e0d94f87a5474e3c7fd441cd481345cbb775551b15808612ba3c2c18eed735d",
     "name": "Astra",
     "slug": "astra",
-    "aliases": [],
+    "aliases": [
+      "AstraZeneca"
+    ],
     "domain": null,
-    "sector": null,
+    "sector": "Pharmaceuticals",
     "ambiguity": "critical",
     "volume": "high",
     "query": "\"Astra\" AND (startup OR funding OR Israeli OR technology)",
@@ -3182,11 +3590,13 @@
       "Opel",
       "Astra Space",
       "rocket",
-      "satellite"
+      "satellite",
+      "astronaut",
+      "astral plane"
     ],
     "querySource": "human-approved",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "96fd0d16060a189e39707a03a76590e477d8e4e8609eb1cfa3889d0f63934fcd",
@@ -3208,22 +3618,28 @@
     "name": "EquipmentShare",
     "slug": "equipmentshare",
     "aliases": [],
-    "domain": null,
-    "sector": null,
+    "domain": "equipmentshare.com",
+    "sector": "Equipment Rental and Leasing",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"EquipmentShare\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "other equipment",
+      "equipment sales"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "c8d2018bf2907e0288a3c9c96053368d4cfbf725b59c02a024f43710b715a0c1",
     "name": "Hub Security",
     "slug": "hub-security",
-    "aliases": [],
-    "domain": null,
+    "aliases": [
+      "Hub Security Systems",
+      "Hub Security Solutions"
+    ],
+    "domain": "hubsecurity.com",
     "sector": "Cybersecurity",
     "ambiguity": "high",
     "volume": "normal",
@@ -3231,58 +3647,67 @@
     "negativeKeywords": [
       "hub security model",
       "security hub",
-      "AWS Security Hub"
+      "AWS Security Hub",
+      "Honda motorcycle"
     ],
     "querySource": "human-approved",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "250463430153cfe49b2fedc12b09c5bc2bd87fdb0711ecae55be7c14be41dcb9",
     "name": "BlueNalu",
     "slug": "bluenalu",
-    "aliases": [],
-    "domain": null,
-    "sector": null,
+    "aliases": [
+      "BlueNalu Technologies"
+    ],
+    "domain": "bluenalu.com",
+    "sector": "Food and Beverage",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"BlueNalu\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "other food company"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "dc140ffbe551e7add76507f67fb945034ad7f28b4c70a53b55f9f5b9225fd8db",
     "name": "Medisafe",
     "slug": "medisafe",
     "aliases": [],
-    "domain": null,
-    "sector": null,
+    "domain": "medisafe.com",
+    "sector": "Healthcare",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"Medisafe\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "other medication"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "ab4a4087cb6e1f2ff5c40415510203e44c2d81fad684f6e747eae24602dc85f9",
     "name": "Ravin AI",
     "slug": "ravin-ai",
-    "aliases": [],
+    "aliases": [
+      "Ravin"
+    ],
     "domain": null,
-    "sector": "Insurtech",
+    "sector": "Artificial Intelligence/Machine Learning",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"Ravin AI\" AND (\"vehicle inspection\" OR damage OR insurance)",
+    "query": "\"Ravin AI\"",
     "negativeKeywords": [
       "Ravin name"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "ce6917b7e6885a45bb7096e2cdf59a4467bb17a629a36f99de51fc811765417f",
@@ -3303,31 +3728,40 @@
     "id": "30ae2190a2807ecae7df95d3f8f4dcf1e5918179d2cac3debba80847042973df",
     "name": "Kryon Systems",
     "slug": "kryon-systems",
-    "aliases": [],
-    "domain": null,
-    "sector": null,
+    "aliases": [
+      "Kryon"
+    ],
+    "domain": "kryon.com",
+    "sector": "Software",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"Kryon Systems\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "other",
+      "company"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "ce8048b9fa939000d208cbe66803e13541a235c68970090203a87c80839b44bf",
     "name": "TubiTV",
     "slug": "tubitv",
-    "aliases": [],
-    "domain": null,
-    "sector": null,
+    "aliases": [
+      "Tubi"
+    ],
+    "domain": "tubitv.com",
+    "sector": "Media and Entertainment",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"TubiTV\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "other streaming services"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "97068585acc9cc0f4534c10b607027ca5a9dec9d1a100f48532b5df35e4d1e82",
@@ -3368,67 +3802,78 @@
     "slug": "sanotize",
     "aliases": [],
     "domain": null,
-    "sector": null,
+    "sector": "Healthcare",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"SaNOtize\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"SaNOtize\" AND (\"vaccine\" OR \"COVID-19\")",
+    "negativeKeywords": [
+      "other vaccine"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "bf5789c82aef96cb6d4c3e7441824058c0b7a144d8ad37fa88144fe88782d635",
     "name": "Stellar Cyber",
     "slug": "stellar-cyber",
-    "aliases": [],
-    "domain": null,
+    "aliases": [
+      "Stellar Cyber Solutions",
+      "Stellar Cyber Security"
+    ],
+    "domain": "stellarcyber.com",
     "sector": "Cybersecurity",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"Stellar Cyber\" AND (XDR OR SOC OR security platform)",
+    "query": "\"Stellar Cyber\"",
     "negativeKeywords": [
       "stellar performance",
       "Stellar Lumens",
-      "XLM"
+      "XLM",
+      "other cyber security company"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "845c16af09a57751c3054f83a34ab3ef1939aed957f206696bc49fba9c631f80",
     "name": "SeeTrue",
     "slug": "seetrue",
-    "aliases": [],
-    "domain": null,
-    "sector": "Security AI",
+    "aliases": [
+      "SeeTrue Technologies"
+    ],
+    "domain": "seetrue.com",
+    "sector": "Software",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"SeeTrue\" AND (aviation OR \"security screening\" OR checkpoint)",
+    "query": "\"SeeTrue\" AND (\"software\" OR \"AI\" OR \"machine learning\")",
     "negativeKeywords": [
-      "see true\" phrase"
+      "see true\" phrase",
+      "other software",
+      "machine learning startups"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "d6005b278a19b72dbaacb5d7f0bded2ae2e4ca9214b11692ae3a29ac8e766c32",
     "name": "Perception Point",
     "slug": "perception-point",
     "aliases": [],
-    "domain": null,
-    "sector": "Email security",
+    "domain": "perceptionpoint.com",
+    "sector": "Cybersecurity",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"Perception Point\" AND (email security OR Israeli OR threat)",
+    "query": "\"Perception Point\" AND (\"Endpoint Security\" OR \"Network Security\" OR \"Threat Detection\")",
     "negativeKeywords": [
-      "point of perception"
+      "point of perception",
+      "other endpoint security solutions"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "015e88887894f22daec3b432aae7282e153433a0a6b57b4fd43e66882b64fdb2",
@@ -3436,66 +3881,79 @@
     "slug": "innovalve",
     "aliases": [],
     "domain": null,
-    "sector": null,
+    "sector": "Healthcare Technology",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"Innovalve\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "other medical devices",
+      "eye care"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "39a26058fbaae8d1f091cf391da3934779df39bde081416c2aa53d122ce2228b",
     "name": "Tala",
     "slug": "tala",
-    "aliases": [],
-    "domain": null,
-    "sector": "Fintech",
+    "aliases": [
+      "Tala Networks",
+      "Tala Care"
+    ],
+    "domain": "tala.com",
+    "sector": "Financial Technology",
     "ambiguity": "high",
     "volume": "normal",
     "query": "\"Tala\" AND (fintech OR \"mobile lending\" OR \"emerging markets\" OR funding)",
     "negativeKeywords": [
       "Tala Philippines\" city",
       "name",
-      "Talaat"
+      "Talaat",
+      "other financial services"
     ],
     "querySource": "human-approved",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "48253becc0c4f6e48276e89175c5410fc525f1167f84a3410579b0fbfbf1f595",
     "name": "Signals Analytics",
     "slug": "signals-analytics",
     "aliases": [],
-    "domain": null,
-    "sector": "Data analytics",
+    "domain": "signalsanalytics.com",
+    "sector": "Software",
     "ambiguity": "high",
     "volume": "normal",
     "query": "\"Signals Analytics\" AND (company OR acquired OR platform OR Israeli)",
     "negativeKeywords": [
       "signals analytics capability",
-      "signal analytics"
+      "signal analytics",
+      "cable"
     ],
     "querySource": "human-approved",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "848f90b01fbc96c5a528302dfaa2aae5e5d3659d5c79417f253a5e45528206a5",
     "name": "PlaySight",
     "slug": "playsight",
-    "aliases": [],
-    "domain": null,
-    "sector": null,
+    "aliases": [
+      "PlaySight Sports",
+      "PlaySight Golf"
+    ],
+    "domain": "playsight.com",
+    "sector": "Sports Equipment",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"PlaySight\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "other sports equipment"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "68497c99cf580f923ba30a86640d11cbbe3ab17bf0f584e376e74ef9c1a3b92d",
@@ -3503,14 +3961,16 @@
     "slug": "edunav",
     "aliases": [],
     "domain": null,
-    "sector": null,
+    "sector": "Education Technology",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"EduNav\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"EduNav\" AND (\"navigation\" OR \"education\" OR \"learning management\")",
+    "negativeKeywords": [
+      "other navigation systems"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "a5400ba688165ab2e04c1e05d9e2e40fc7b60166d4dc3487f4826fa07477070d",
@@ -3518,49 +3978,58 @@
     "slug": "barcode-nanotech",
     "aliases": [],
     "domain": null,
-    "sector": null,
+    "sector": "Semiconductors",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"Barcode Nanotech\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "Barcode scanner",
+      "RFID tags"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "11dd34e33e23be6792970d3942f0d2fe14de3f37baf2a72601d525a72bd5b05b",
     "name": "Ride Vision",
     "slug": "ride-vision",
-    "aliases": [],
+    "aliases": [
+      "Ride Vision Technologies"
+    ],
     "domain": null,
-    "sector": "Motorcycle safety",
+    "sector": "Autonomous Vehicles",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"Ride Vision\" AND (motorcycle OR \"rider assistance\" OR Israeli)",
+    "query": "\"Ride Vision\" AND (\"autonomous driving\" OR \"self-driving cars\")",
     "negativeKeywords": [
-      "ride vision\" generic"
+      "ride vision\" generic",
+      "other vehicle manufacturers"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "2d9411295f459c0789b2caab824d9103b17099a5729d9f7c38f8d7edf8cde9c8",
     "name": "Frontier Car Group",
     "slug": "frontier-car-group",
-    "aliases": [],
+    "aliases": [
+      "Frontier Car"
+    ],
     "domain": null,
-    "sector": "Auto marketplace",
+    "sector": "Automotive",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"Frontier Car Group\" OR \"Frontier Car\"",
+    "query": "\"Frontier Car Group\" AND (\"electric vehicle\" OR \"EV\" OR \"autonomous driving\")",
     "negativeKeywords": [
       "Frontier Airlines",
-      "Nissan Frontier"
+      "Nissan Frontier",
+      "other motorcycle"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "f1c4eb9f9ea19976e967b592b56731a84fa277a6f0aec525795bf5731e49c1cd",
@@ -3582,18 +4051,19 @@
     "name": "DailyPay",
     "slug": "dailypay",
     "aliases": [],
-    "domain": null,
-    "sector": "Fintech",
+    "domain": "daily.pay",
+    "sector": "Financial Technology",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"DailyPay\" AND (\"earned wage access\" OR fintech OR funding)",
+    "query": "\"DailyPay\" AND (\"payroll\" OR \"wage advance\" OR \"gig economy\")",
     "negativeKeywords": [
       "daily pay rate",
-      "paid daily"
+      "paid daily",
+      "other financial services"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.706Z"
   },
   {
     "id": "b1c16386d86286171b740bb429e5c5425394613932e06baabf9e963a65ed955d",
@@ -3644,41 +4114,51 @@
     "id": "876fe82f6e872effd51013ec8b3252186ba9f32d5a537cce66893e0afc107d40",
     "name": "Nanomedic",
     "slug": "nanomedic",
-    "aliases": [],
+    "aliases": [
+      "Nanomedicine"
+    ],
     "domain": null,
-    "sector": null,
+    "sector": "Healthcare",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"Nanomedic\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "other nanotech"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.707Z"
   },
   {
     "id": "a590fc2798e35d5010dbbfd8e3f014989798366b1e057d6a418c27af686c6ec8",
     "name": "Incredo (formerly known as DouxMatok)",
     "slug": "incredo-formerly-known-as-douxmatok",
-    "aliases": [],
+    "aliases": [
+      "DouxMatok"
+    ],
     "domain": null,
-    "sector": "Food tech",
+    "sector": "Healthcare",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"Incredo\" OR \"DouxMatok\"",
+    "query": "\"Incredo (formerly known as DouxMatok)\" AND (\"vaccine\" OR \"pharmaceuticals\")",
     "negativeKeywords": [
-      "incredo\" typo of incredible"
+      "incredo\" typo of incredible",
+      "other vaccine"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.707Z"
   },
   {
     "id": "27180d6a94ac63a9ed393eca66fff055b75d95a95852f499fd5b6d3b912b5266",
     "name": "Casper",
     "slug": "casper",
-    "aliases": [],
-    "domain": null,
-    "sector": null,
+    "aliases": [
+      "Casper Sleep",
+      "Casper Mattress"
+    ],
+    "domain": "casper.com",
+    "sector": "Bedding and Mattress",
     "ambiguity": "critical",
     "volume": "high",
     "query": "\"Casper\" AND (startup OR funding OR Israeli OR technology)",
@@ -3687,11 +4167,12 @@
       "ghost",
       "Casper Network",
       "Wyoming",
-      "crypto"
+      "crypto",
+      "other mattress brand"
     ],
     "querySource": "human-approved",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.707Z"
   },
   {
     "id": "22b978f32405b05afe38c7dd116706abb18648a958aaae03bc5598d37381a994",
@@ -3716,35 +4197,44 @@
     "id": "283741a031cb8c6aab8d70c3f49cbcb9c4bbb2bbcb06d565062a00106dc3b039",
     "name": "Foretellix",
     "slug": "foretellix",
-    "aliases": [],
-    "domain": null,
-    "sector": null,
+    "aliases": [
+      "Foretellix Technologies"
+    ],
+    "domain": "foretellix.com",
+    "sector": "Software",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"Foretellix\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "other software"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.707Z"
   },
   {
     "id": "82c52ecad94cd30ca5727614d06467fcb36aa7a8f36219e6b03ae734ad050bef",
     "name": "Neura",
     "slug": "neura",
-    "aliases": [],
+    "aliases": [
+      "Neural Networks",
+      "Neural Computing"
+    ],
     "domain": null,
-    "sector": "Robotics",
+    "sector": "Artificial Intelligence",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"Neura\" AND (robotics OR \"Neura Robotics\" OR cognitive)",
+    "query": "\"Neura\"",
     "negativeKeywords": [
       "Neuralink",
       "neural network",
-      "neurology"
+      "neurology",
+      "Neura Medical",
+      "Neura Energy"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.707Z"
   },
   {
     "id": "81c9366c99dba611311d82ca02c334c5403e8c3b395f0b781890f38e7a7fd384",
@@ -3785,76 +4275,95 @@
     "id": "9bbb03a16049e9d49ab4ccdc6161ea52d6955ee1531ebbf49d1902ef73ea2e5f",
     "name": "Trusona",
     "slug": "trusona",
-    "aliases": [],
-    "domain": null,
-    "sector": null,
+    "aliases": [
+      "Trusona Inc."
+    ],
+    "domain": "trusona.com",
+    "sector": "Identity and Access Management",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"Trusona\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "other identity solutions",
+      "password managers"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.707Z"
   },
   {
     "id": "280fbc6bd96afde52c45d2d7d4f8a417953d288828023ed23ef7219d6005985b",
     "name": "Beyond Meat",
     "slug": "beyond-meat",
     "aliases": [],
-    "domain": null,
-    "sector": "Food tech",
+    "domain": "beyondmeat.com",
+    "sector": "Food and Beverage (Alternative Protein)",
     "ambiguity": "high",
     "volume": "high",
     "query": "\"Beyond Meat\"",
-    "negativeKeywords": [],
+    "negativeKeywords": [
+      "other meat products"
+    ],
     "querySource": "human-approved",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.707Z"
   },
   {
     "id": "9013b2951c377a7a6bb42799d08b28af56769a1ee4ccd1766c6d1e0de5c014f5",
     "name": "HoneyBook",
     "slug": "honeybook",
     "aliases": [],
-    "domain": null,
-    "sector": null,
+    "domain": "honeybook.com",
+    "sector": "Software",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"HoneyBook\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"HoneyBook\" AND (\"invoicing\" OR \"project management\" OR \"marketing tools\")",
+    "negativeKeywords": [
+      "other honeydew",
+      "honeycomb"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.707Z"
   },
   {
     "id": "284cc176f4ac89c49e25bd08368ea76fb99e02f78c24a86ac8a230fba4b39675",
     "name": "RealView Imaging",
     "slug": "realview-imaging",
-    "aliases": [],
+    "aliases": [
+      "RealView"
+    ],
     "domain": null,
-    "sector": null,
+    "sector": "Semiconductors",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"RealView Imaging\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "real estate",
+      "reality TV"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.707Z"
   },
   {
     "id": "e10faf69af4725d6ed5ba6ec30a5f98651a662ffd59d494ee244536d591aefa7",
     "name": "CyberMDX",
     "slug": "cybermdx",
-    "aliases": [],
-    "domain": null,
-    "sector": null,
+    "aliases": [
+      "CyberMDX Technologies"
+    ],
+    "domain": "cybermdx.com",
+    "sector": "Healthcare Technology",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"CyberMDX\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "other cybersecurity company"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.707Z"
   },
   {
     "id": "3054aecc3e8c17cf0246d35e15c2d49bbf18ada92dd81757c8d273c2678b68da",
@@ -3879,14 +4388,17 @@
     "slug": "thetaray",
     "aliases": [],
     "domain": null,
-    "sector": null,
+    "sector": "Cybersecurity",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"ThetaRay\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"ThetaRay\" AND (\"phishing\" OR \"threat intelligence\" OR \"cybersecurity\")",
+    "negativeKeywords": [
+      "ray gun",
+      "omega"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.707Z"
   },
   {
     "id": "117527bf5b7abc890b1363e7eef26cef38ba8e519a060a5de9f91d8509203f82",
@@ -3907,16 +4419,21 @@
     "id": "2e9102c69e5f8d7d75b3169afe9f9fc590db60a135f4c8896e471a5e22c9893d",
     "name": "Insightec",
     "slug": "insightec",
-    "aliases": [],
+    "aliases": [
+      "Insightec Ltd"
+    ],
     "domain": null,
-    "sector": null,
+    "sector": "Medical Devices",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"Insightec\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"Insightec\" AND (\"MR-guided\" OR \"neurosurgery\" OR \"tumor treatment\")",
+    "negativeKeywords": [
+      "other medical devices",
+      "medical imaging"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.707Z"
   },
   {
     "id": "9ff63453f056691337187c05e13666568439b1b609be650c92460d02014c2420",
@@ -3952,41 +4469,52 @@
     "id": "7c012b50fb80e9aa0bf2058858e70483bbc6439b1889af9ee86ba2cf97682fec",
     "name": "MeMed",
     "slug": "memed",
-    "aliases": [],
-    "domain": null,
-    "sector": "Diagnostics",
+    "aliases": [
+      "MeD"
+    ],
+    "domain": "med.memed.com",
+    "sector": "Healthcare Technology",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"MeMed\" AND (diagnostics OR \"host response\" OR FDA)",
+    "query": "\"MeMed\"",
     "negativeKeywords": [
-      "generic"
+      "generic",
+      "other medical device"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.707Z"
   },
   {
     "id": "2e08832726e2ba4c56ccd4bc8a1c2d0c6cbf75ef31271b4322763f22bf77fc30",
     "name": "Arbe Robotics",
     "slug": "arbe-robotics",
-    "aliases": [],
+    "aliases": [
+      "Arbe"
+    ],
     "domain": null,
-    "sector": null,
+    "sector": "Autonomous Vehicles",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"Arbe Robotics\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"Arbe Robotics\" AND (\"autonomous vehicles\" OR \"self-driving cars\" OR \"lidar technology\")",
+    "negativeKeywords": [
+      "other robotics",
+      "robotic exoskeletons"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.707Z"
   },
   {
     "id": "2a4901ee2848d8ba0c7eddb21a892ab8e3c92ba3ebeafb3d40c78f79ada5f57b",
     "name": "Lemonade",
     "slug": "lemonade",
-    "aliases": [],
-    "domain": null,
-    "sector": "Insurtech",
+    "aliases": [
+      "Lemonade Inc.",
+      "Lemonade Insurance"
+    ],
+    "domain": "lemonade.com",
+    "sector": "Insurance Technology",
     "ambiguity": "critical",
     "volume": "high",
     "query": "\"Lemonade Insurance\" OR (\"Lemonade\" AND (insurtech OR insurance OR NYSE))",
@@ -3994,127 +4522,159 @@
       "recipe",
       "drink",
       "lemonade stand",
-      "pink lemonade"
+      "pink lemonade",
+      "lemonade ice cream",
+      "lemonade soda"
     ],
     "querySource": "human-approved",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.707Z"
   },
   {
     "id": "214d4dbc32023232877791593091774db87334789088352e5f33319e7e2f39b1",
     "name": "Hailo",
     "slug": "hailo",
-    "aliases": [],
-    "domain": null,
-    "sector": "AI chips",
+    "aliases": [
+      "Hailo Technologies",
+      "Hailo Robotics"
+    ],
+    "domain": "hailotech.com",
+    "sector": "Artificial Intelligence",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"Hailo\" AND (\"AI chip\" OR \"edge AI\" OR Israeli OR processor)",
+    "query": "\"Hailo\"",
     "negativeKeywords": [
       "Hailo taxi",
       "ladders",
-      "Hailo cab"
+      "Hailo cab",
+      "other AI company",
+      "robotic vacuum"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.707Z"
   },
   {
     "id": "313b2eb44f4cccca3c6a88f18f463e2a8e2fb542224bab8d54af5926c986ae8e",
     "name": "Sense Education",
     "slug": "sense-education",
-    "aliases": [],
+    "aliases": [
+      "Sense Education Solutions"
+    ],
     "domain": null,
-    "sector": "Edtech",
+    "sector": "Education Technology",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"Sense Education\" AND (grading OR AI OR Israeli)",
+    "query": "\"Sense Education\" AND (\"learning management system\" OR \"edtech\" OR \"online learning platform\")",
     "negativeKeywords": [
       "sense of education",
-      "makes sense"
+      "makes sense",
+      "other educational software"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.707Z"
   },
   {
     "id": "d6bc7f96f22ff0b48e8ef4467599e090110b203e28fe7422bd90fa8b12df6c05",
     "name": "Unispectral",
     "slug": "unispectral",
-    "aliases": [],
+    "aliases": [
+      "Unispectral Technologies"
+    ],
     "domain": null,
-    "sector": null,
+    "sector": "Technology",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"Unispectral\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"Unispectral\" AND (\"spectral imaging\" OR \"hyperspectral analysis\")",
+    "negativeKeywords": [
+      "spectrum analyzer",
+      "optical fiber"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.707Z"
   },
   {
     "id": "223314a00d25507f7bfe7f4de44b35c1d01739bf00728edc9f4f96836f8a3307",
     "name": "Klook",
     "slug": "klook",
-    "aliases": [],
-    "domain": null,
-    "sector": null,
+    "aliases": [
+      "Klook Travel",
+      "Klook.com"
+    ],
+    "domain": "klook.com",
+    "sector": "Travel Technology",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"Klook\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "other travel services"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.707Z"
   },
   {
     "id": "d5a14855b0964276b8e6085fdc6ad488c20411f2f0d6a6dffc61513422d7b50f",
     "name": "Innoviz",
     "slug": "innoviz",
-    "aliases": [],
+    "aliases": [
+      "Innoviz Technologies"
+    ],
     "domain": null,
-    "sector": null,
+    "sector": "Semiconductors",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"Innoviz\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"Innoviz\" AND (\"LiDAR\" OR \"Autonomous Vehicles\")",
+    "negativeKeywords": [
+      "other"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.707Z"
   },
   {
     "id": "82fcbdab231d51268bb44549a3649a09380803b75533f605302d8f67e17ebd26",
     "name": "Rewire",
     "slug": "rewire",
-    "aliases": [],
+    "aliases": [
+      "Rewire Networks",
+      "Rewire Communications"
+    ],
     "domain": null,
-    "sector": "Fintech",
+    "sector": "Telecommunications",
     "ambiguity": "high",
     "volume": "normal",
     "query": "\"Rewire\" AND (remittance OR \"migrant banking\" OR fintech OR Israeli)",
     "negativeKeywords": [
       "rewire the brain",
       "rewiring",
-      "electrical"
+      "electrical",
+      "other"
     ],
     "querySource": "human-approved",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.707Z"
   },
   {
     "id": "1399e9b2035b98ace8f2a98fab08b76d8e3bfd64565040bc0c068235441fd008",
     "name": "YuLife",
     "slug": "yulife",
-    "aliases": [],
-    "domain": null,
-    "sector": null,
+    "aliases": [
+      "YuLife Insurance"
+    ],
+    "domain": "yu-life.com",
+    "sector": "Insurance",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"YuLife\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "Yu Life Fitness"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.708Z"
   },
   {
     "id": "6a1058318fe5a880bdbfd3a05b2e76424f31064594d184cb3e487d2ead5e3148",
@@ -4135,78 +4695,101 @@
     "id": "6b50da653bed7bd2bd19dc5fb8293965ac4584c2aec9a9907a4c2d3285c5dc9f",
     "name": "DreaMed Diabetes",
     "slug": "dreamed-diabetes",
-    "aliases": [],
+    "aliases": [
+      "DreaMed"
+    ],
     "domain": null,
-    "sector": null,
+    "sector": "Healthcare",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"DreaMed Diabetes\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "other medical device"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.708Z"
   },
   {
     "id": "2d52854a9bbdf12a626e51b83f0918b5425ba43885c6d990155d0b12ad374417",
     "name": "Magisto",
     "slug": "magisto",
-    "aliases": [],
-    "domain": null,
-    "sector": null,
+    "aliases": [
+      "Magisto Inc.",
+      "Magisto Video"
+    ],
+    "domain": "magisto.com",
+    "sector": "Media and Entertainment",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"Magisto\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "other video software"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.708Z"
   },
   {
     "id": "5e8213fe2ce590bb5c260a03d81118fcb9efc1b9179b79c1ddfe5da4cf65d7f4",
     "name": "Virgin Hyperloop One",
     "slug": "virgin-hyperloop-one",
-    "aliases": [],
+    "aliases": [
+      "Virgin Hyperloop",
+      "Hyperloop One"
+    ],
     "domain": null,
-    "sector": null,
+    "sector": "Transportation",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"Virgin Hyperloop One\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"Virgin Hyperloop One\" AND (\"hyperloop\" OR \"transportation\" OR \"innovation\")",
+    "negativeKeywords": [
+      "other Virgin company",
+      "Virgin airline"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.708Z"
   },
   {
     "id": "ec55ac30816142a1d1f9b128b4f0aff8745581e844aca82c5825723269e53bd3",
     "name": "Airobotics",
     "slug": "airobotics",
-    "aliases": [],
+    "aliases": [
+      "Airobotic"
+    ],
     "domain": null,
-    "sector": null,
+    "sector": "Aerospace/Defense",
     "ambiguity": "low",
     "volume": "normal",
     "query": "\"Airobotics\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "negativeKeywords": [
+      "Software"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.708Z"
   },
   {
     "id": "ff8441d05b0f96173eef6877f137c1050ec2ab68d6c328e6f691adc1a36fde69",
     "name": "Scopio Labs",
     "slug": "scopio-labs",
-    "aliases": [],
+    "aliases": [
+      "Scopio"
+    ],
     "domain": null,
-    "sector": "Medical imaging",
+    "sector": "Artificial Intelligence",
     "ambiguity": "medium",
     "volume": "normal",
-    "query": "\"Scopio Labs\" AND (hematology OR microscopy OR \"digital cell\")",
+    "query": "\"Scopio Labs\" AND (\"AI\" OR \"Machine Learning\" OR \"Computer Vision\")",
     "negativeKeywords": [
-      "Scopio stock photos"
+      "Scopio stock photos",
+      "scopio software",
+      "scopio games"
     ],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.708Z"
   },
   {
     "id": "01921b5bee479d906cb509972c4966858248a28c0e60c065352428a84fbcbd07",
@@ -4227,9 +4810,12 @@
     "id": "30cc037de0324a63e14acdfdde125baa1a1baeb88179a7ed4774c50e1471d40f",
     "name": "Silo",
     "slug": "silo",
-    "aliases": [],
-    "domain": null,
-    "sector": null,
+    "aliases": [
+      "Silo Systems",
+      "Silo Capital"
+    ],
+    "domain": "silosystems.com",
+    "sector": "Software",
     "ambiguity": "critical",
     "volume": "normal",
     "query": "\"Silo\" AND (startup OR funding OR \"food supply\" OR technology)",
@@ -4238,40 +4824,50 @@
       "Apple TV",
       "series",
       "grain",
-      "missile silo"
+      "missile silo",
+      "silo as in silo of grain"
     ],
     "querySource": "human-approved",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.708Z"
   },
   {
     "id": "b8d6a80af32b1591ce12133c3d6c737c517d49ec092de765c975346b5ce9cc2e",
     "name": "BrainQ Technologies",
     "slug": "brainq-technologies",
-    "aliases": [],
+    "aliases": [
+      "BrainQ"
+    ],
     "domain": null,
-    "sector": null,
+    "sector": "Healthcare Technology",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"BrainQ Technologies\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"BrainQ Technologies\" AND (\"AI\" OR \"Neuroscience\" OR \"Deep Learning\")",
+    "negativeKeywords": [
+      "brainwave",
+      "neural network"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.708Z"
   },
   {
     "id": "4c18d928e465dd01c630e6a8ad0c6ef9bd6c99961dd8d7bacd7fedcd1fd45b17",
     "name": "Intuition Robotics",
     "slug": "intuition-robotics",
-    "aliases": [],
+    "aliases": [
+      "Intuition"
+    ],
     "domain": null,
-    "sector": null,
+    "sector": "Artificial Intelligence",
     "ambiguity": "low",
     "volume": "normal",
-    "query": "\"Intuition Robotics\"",
-    "negativeKeywords": [],
-    "querySource": "triage-default",
-    "enrichedBy": null,
-    "enrichedAt": null
+    "query": "\"Intuition Robotics\" AND (\"AI\" OR \"Robotics\" OR \"Healthcare\")",
+    "negativeKeywords": [
+      "robotic exoskeletons"
+    ],
+    "querySource": "llm-enriched",
+    "enrichedBy": "llama3.2:3b",
+    "enrichedAt": "2026-07-31T23:55:24.708Z"
   }
 ]

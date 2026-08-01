@@ -4,7 +4,7 @@
 > **Owner:** Gal Aharon
 > **Status:** `BUILDING` — M0, M1 reached. P2 code complete; M2 pending the owner's live Ollama pass.
 > **Last updated:** 2026-08-01
-> **Document version:** 0.8.1
+> **Document version:** 0.8.2
 >
 > **Target hardware (dev + demo machine):** Windows 11 · Intel Core Ultra (Lunar Lake) ·
 > Intel Arc 140V iGPU, 16 GB addressable VRAM (shared) · 32 GB system RAM
@@ -135,6 +135,11 @@ The seed list contains many single common-word names. A naive query for `Shield`
 1. **Registry enrichment** — aliases, domain, sector, `disambiguationHints[]`, `negativeKeywords[]` per company.
 2. **Query construction** — exact-phrase quoting, plus a sector qualifier for names flagged `ambiguity: high`.
 3. **Deterministic pre-filter** — whole-word match of name/alias in title or snippet; drop blocked domains; drop obvious noise.
+   > **P3.6 constraint, discovered in the P2.3 full run:** negative-keyword matching must be
+   > **whitespace-sensitive**. Several human-approved negatives discriminate purely by spacing —
+   > `Launchpad` excludes `"launch pad"`, `Greenlight` excludes `"green light"`, `Wayup` excludes
+   > `"way up"`. A pre-filter that normalises whitespace before matching would read those as the
+   > company's own name and reject 100% of its genuine coverage. Match on the literal phrase.
 4. **LLM relevance gate** — the classification call returns `relevant: boolean` *in the same response* as the sentiment, so relevance costs zero extra inference.
 5. **Auditability** — rejected mentions are persisted with a rejection reason so precision can be measured, not asserted.
 
@@ -505,7 +510,7 @@ error handling · the "no coverage" state.
 |---|---|---|---|---|
 | P2.1 | Parser for `ourcrowd_companies.txt` → normalised records, slug generation | R8 | 0.5 h | **DONE** |
 | P2.2 | `prompts/enrich-company.v1.md` — aliases, sector, domain, ambiguity, negative keywords | R8, R10 | 0.5 h | **DONE** |
-| P2.3 | `scripts/enrich-companies.ts` — **runs against local Ollama** (AD-21), batch, resumable, cached; regenerates the registry for any seed list | R8, R10 | 1 h | **CODE DONE** — awaiting a live Ollama pass on the owner's machine |
+| P2.3 | `scripts/enrich-companies.ts` — **runs against local Ollama** (AD-21), batch, resumable, cached; regenerates the registry for any seed list | R8, R10 | 1 h | **DONE** — full 258-company pass on `llama3.2:3b`, 2026-08-01, 0 failures |
 | P2.4 | **Hand-review the 57 flagged names** — 25 CRITICAL + 32 HIGH (full triage complete; see `company_query_review.md` / `OurCrowd_Company_Query_Triage.xlsx`) | R8, A3 | 1 h | **DONE** — approved 2026-07-31 |
 | P2.7 | Apply the approved queries as `queryOverride` on flagged records; unflagged records use the Ollama-generated query | R8 | 0.5 h | **DONE** |
 | P2.5 | Registry loader + zod schema + unit tests (count == 258, no dup slugs, required fields) | R8 | 0.5 h | **DONE** |
@@ -697,7 +702,7 @@ Budget ≈30 focused hours; descope rungs 1–3 already cut (§8.3).
 |---|---|---|
 | M0 Architecture frozen | P0 | ✅ DONE |
 | M1 Foundation green | P1 | ✅ DONE — 46 tests |
-| M2 Registry enriched | P2 | 🟡 code + offline artifact done (77 tests); live Ollama pass pending |
+| M2 Registry enriched | P2 | ✅ DONE — 258 companies, full live Ollama pass, 0 failures |
 | M3 Collection working | P3 | ⚪ TODO |
 | M4 Model selected by evidence | P4 | ⚪ TODO |
 | M5 Pipeline end-to-end | P5 | ⚪ TODO |
@@ -737,7 +742,7 @@ Budget ≈30 focused hours; descope rungs 1–3 already cut (§8.3).
 |---|---|---|---|
 | OQ-1 | Submission deadline / realistic time budget? | Phase scope | **ANSWERED:** Hard deadline **Tue 4 Aug 2026, 16:00**. Target submission **Mon 3 Aug evening** to land ahead of other candidates. Budget ≈30 h → descope rungs 1–3 pre-cut. See §8.6. |
 | OQ-2 | Ollama host machine — Apple Silicon / NVIDIA GPU / CPU-only, and RAM? | AD-07, model choice | **ANSWERED 2026-07-31:** Windows 11, Intel Arc 140V iGPU (16 GB shared VRAM), 32 GB RAM. RAM is not the constraint; **memory bandwidth is**. Drives AD-17/18/19. |
-| OQ-8 | Which Ollama backend wins on the Arc 140V — CPU, Vulkan, or IPEX-LLM? | AD-19, all timings | _pending Phase 1 benchmark_ |
+| OQ-8 | Which Ollama backend wins on the Arc 140V — CPU, Vulkan, or IPEX-LLM? | AD-19, all timings | **PARTIALLY ANSWERED 2026-08-01 — ship CPU.** Measured: CPU only. `ollama ps` confirms 100% CPU (upstream Ollama has no Intel Arc path). CPU throughput is sufficient (see the 0.8.2 changelog row), so the Vulkan and IPEX-LLM paths were **deliberately not measured** — a schedule decision, not a result. The README must say exactly that rather than implying a three-way bake-off happened. Rationale: the Arc 140V shares LPDDR5X with the CPU, so there is no dedicated-bandwidth win to unlock, and the measured tok/s is flat across concurrency — the signature of a bandwidth ceiling. |
 | OQ-9 | If rung 1 (`qwen2.5:1.5b`) clears the accuracy bar, ship a 1 GB model? | AD-17 | _pending bake-off — but the ship rule says yes_ |
 | OQ-3 | TypeScript (AD-02) or plain JS + JSDoc, given the literal "JavaScript (Node.js)" wording? | Phase 1 | **ANSWERED: TypeScript.** AD-02 → ACCEPTED. README states the compiles-to-JS rationale explicitly. |
 | OQ-4 | Alert channels to actually implement? | AD-13 | **ANSWERED: console + JSON file only.** Slack cut (descope rung 3). `Alerter` interface still ships so a sink is a 20-line addition. |
@@ -752,6 +757,7 @@ Budget ≈30 focused hours; descope rungs 1–3 already cut (§8.3).
 
 | Date | Version | Change |
 |---|---|---|
+| 2026-08-01 | 0.8.2 | **M2 REACHED — full 258-company Ollama enrichment run, and the P4.0 CPU benchmark.** Enrichment: 258 companies on `llama3.2:3b`, **0 failures**, 10 cache hits / 248 misses. Provenance: 57 human-approved · 130 llm-enriched · 71 triage-default · 0 fallback. Sectors rose from 103 to 198; 70 rows carry a domain, 119 an alias. **AD-26 discarded 91 of 258 enrichments (35%)** — overwhelmingly `known: false`, matching the 40% seen in the 10-company sample. A full-scale audit of the committed artifact found **zero unrelated aliases and zero unrelated domains**; the three apparent self-negations (`Launchpad`/"launch pad", `Greenlight`/"green light", `Wayup`/"way up") are human triage entries that discriminate by spacing on purpose, which is now recorded as a **hard constraint on the P3.6 pre-filter** in §4.3. Benchmark (AD-25, `data/benchmark.json`): `llama3.2:3b` on CPU peaks at **concurrency 3 — 59.6 items/min, ~19 tok/s**, with concurrency 6 *slower* than 3, confirming the AD-18 prediction that the optimum sits at 2–4 on a bandwidth-bound machine. tok/s is flat across all three concurrency levels, which is the bandwidth ceiling made visible. **Caveat recorded, not buried:** the bench schema emits ~17 output tokens while the real classification schema emits ~60–90, so the "33.5 min per 2,000 items" projection is optimistic by roughly 3×; the number to plan P8.1 against is ~90–100 min until P4.2 exists and the bench is re-run against the real prompt. OQ-8 partially answered — CPU shipped by measurement, the GPU backends consciously left unmeasured. |
 | 2026-08-01 | 0.8.1 | **First live Ollama enrichment pass (P2.3) run on `llama3.2:3b`, and two defects it exposed, fixed.** (1) `npm run enrich -- --limit 10` wrote to the default `--out`, truncating `data/companies.json` from 258 records to 10 — a graded deliverable (R8/R24) silently destroyed by a dev loop. A partial run now writes `data/companies.sample-<n>.json` and says so; the guard is unit-tested in `test/enrich-args.test.ts`. (2) **AD-26 added** — model output is now sanitised before it can reach the registry. The pass returned `known: false` for 4 of 10 companies while still emitting confident aliases, sectors and negative keywords for them; among the survivors, Stripe was aliased to `"PayPal"`, OncoHost's negative keyword was its own name, and OpenEvidence's domain was invented. Registry rebuilt to 258 records (57 human-approved, 201 triage-default). **95 tests passing.** The repository is now under git. |
 | 2026-08-01 | 0.8.0 | **P4.0 benchmark tool built** (`npm run bench`, AD-25). The Ollama client now surfaces server-reported timings — `load_duration`, `prompt_eval_*`, `eval_count`, `eval_duration` — converted from nanoseconds once, at the boundary, so tokens/sec is measured rather than inferred from wall clock. The benchmark sweeps models × concurrency across two output-size profiles (`enrich` 256 tokens, `classify` 96), discards a warm-up per configuration, and projects the wall time of a 2,000-item classification run. Writes `data/benchmark.json`; the printed table is the README artifact required by R11/R13. **80 tests passing.** |
 | 2026-07-31 | 0.7.0 | **AD-23: swapped `better-sqlite3` for `node:sqlite`** after `npm install` failed on the owner's Windows machine with a node-gyp error (no Visual Studio C++ Build Tools). Zero native compilation, zero third-party storage dependency; `db.transaction()` replaced by a nest-safe SAVEPOINT helper. **AD-24: the Ollama client was pulled forward from P4.1 into P2**, since registry enrichment needs it too — de-risks the critical path two days early. **P1 complete, P2 code complete.** New: `packages/ollama` (structured output, deterministic options, jittered retry, content-hash cache, concurrency limiter, health check) and `packages/registry` (seed parsing, enrichment schema, query construction with auditable provenance). `data/companies.json` generated: 258 records, 57 human-approved queries. **77 tests passing.** Provenance labelling corrected mid-build — rows sharing a file with reviewed rows are `triage-default`, not `human-approved`. |
