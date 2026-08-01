@@ -1,5 +1,5 @@
 /** Exponential backoff with full jitter. Only ever applied to errors marked retryable. */
-import { isRetryable, toError } from '@oc/core';
+import { isRetryable, toError } from './errors.js';
 
 export interface RetryOptions {
   attempts?: number;

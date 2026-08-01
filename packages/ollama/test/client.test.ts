@@ -1,13 +1,7 @@
-import { describe, expect, it, vi } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import { z } from 'zod';
 import { ClassificationError } from '@oc/core';
-import {
-  OllamaClient,
-  createLimiter,
-  createNullCache,
-  extractJsonObject,
-  withRetry,
-} from '@oc/ollama';
+import { OllamaClient, createLimiter, createNullCache, extractJsonObject } from '@oc/ollama';
 
 const Schema = z.object({ sentiment: z.enum(['positive', 'negative', 'neutral']) });
 const JSON_SCHEMA = { type: 'object', properties: { sentiment: { type: 'string' } } };
@@ -158,26 +152,6 @@ describe('extractJsonObject', () => {
 
   it('returns undefined when there is no object', () => {
     expect(extractJsonObject('nothing here')).toBeUndefined();
-  });
-});
-
-describe('withRetry', () => {
-  it('gives up immediately on a non-retryable error', async () => {
-    const fn = vi.fn(async () => {
-      throw new ClassificationError('bad schema', { retryable: false });
-    });
-    await expect(withRetry(fn, { attempts: 5, sleep: async () => undefined })).rejects.toThrow();
-    expect(fn).toHaveBeenCalledTimes(1);
-  });
-
-  it('stops after the configured number of attempts', async () => {
-    const fn = vi.fn(async () => {
-      throw new ClassificationError('flaky', { retryable: true });
-    });
-    await expect(
-      withRetry(fn, { attempts: 3, baseDelayMs: 0, sleep: async () => undefined, random: () => 0 }),
-    ).rejects.toThrow();
-    expect(fn).toHaveBeenCalledTimes(3);
   });
 });
 

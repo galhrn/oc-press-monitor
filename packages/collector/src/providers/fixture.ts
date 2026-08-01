@@ -20,7 +20,7 @@ import { ProviderError } from '@oc/core';
 import type { NewsProvider, ProviderHealth, RawArticle, SearchRequest } from '../provider.js';
 import { matchesQuery, parseQuery } from '../query-match.js';
 
-export const PROVIDER_NAME = 'fixture';
+export const FIXTURE_PROVIDER_NAME = 'fixture';
 
 /**
  * `publishedAt` accepts an ISO timestamp or a relative offset in days (`-3d`).
@@ -67,7 +67,7 @@ const resolvePublishedAt = (value: string | null, now: Date): string | null => {
 };
 
 export class FixtureProvider implements NewsProvider {
-  readonly name = PROVIDER_NAME;
+  readonly name = FIXTURE_PROVIDER_NAME;
   readonly #corpus: Corpus;
   readonly #now: () => Date;
 
@@ -142,7 +142,7 @@ export class FixtureProvider implements NewsProvider {
         sourceName: item.sourceName,
         publishedAt,
         language: item.language,
-        provider: PROVIDER_NAME,
+        provider: FIXTURE_PROVIDER_NAME,
         raw: item,
       })),
     );

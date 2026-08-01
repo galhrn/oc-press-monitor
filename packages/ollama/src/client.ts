@@ -15,8 +15,8 @@
  *   - a repair path for the rare response wrapped in prose
  */
 import type { z } from 'zod';
-import { ClassificationError, type Logger } from '@oc/core';
-import { withRetry, type RetryOptions } from './retry.js';
+import { ClassificationError, withRetry, type Logger, type RetryOptions } from '@oc/core';
+
 import { cacheKey, createNullCache, type Cache } from './cache.js';
 
 export interface OllamaClientOptions {
