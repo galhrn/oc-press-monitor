@@ -10,14 +10,23 @@
  *
  * **The chart is a donut, not a pie.** Three categories with one dominant slice is exactly
  * where a pie stops being readable, and the hole gives the total somewhere to live.
+ *
+ * The chart itself is lazy-loaded (see `SentimentDonut`), so the numbers a reader needs first
+ * are not waiting on a charting library to download.
  */
-import type { JSX } from 'react';
-import { Cell, Legend, Pie, PieChart, ResponsiveContainer, Tooltip } from 'recharts';
-import { EyeOff, FileText, PieChart as PieIcon, ThumbsDown, ThumbsUp } from 'lucide-react';
+import { Suspense, lazy, type JSX } from 'react';
+import { ChartPie, EyeOff, FileText, ThumbsDown, ThumbsUp } from 'lucide-react';
 import type { SummaryResponse } from '@oc/api/contract';
-import { KpiSkeleton, Skeleton } from '@/components/Skeleton';
-import { SENTIMENT_COLOR, compactNumber } from '@/lib/format';
+import { ChartSkeleton, KpiSkeleton, Skeleton } from '@/components/Skeleton';
+import { compactNumber } from '@/lib/format';
+import type { DonutSlice } from '@/components/SentimentDonut';
 import type { QueryLike } from '@/lib/types';
+
+/**
+ * Recharts arrives in its own chunk. The KPI numbers, the grid and the drill-down all render
+ * without it, so it has no business sitting in the critical path.
+ */
+const SentimentDonut = lazy(() => import('@/components/SentimentDonut'));
 
 type Tone = 'default' | 'positive' | 'negative' | 'muted';
 
@@ -42,7 +51,7 @@ function Kpi({
   hint?: string;
 }): JSX.Element {
   return (
-    <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+    <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition-shadow duration-200 hover:shadow-md">
       <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-slate-500">
         {icon}
         {label}
@@ -72,12 +81,12 @@ export function SummaryBanner({ query }: { query: QueryLike<SummaryResponse> }):
   }
 
   const { totals, sentiment } = query.data;
-  const slices = (
+  const slices: DonutSlice[] = (
     [
       { name: 'Positive', key: 'positive', value: sentiment.positive },
       { name: 'Neutral', key: 'neutral', value: sentiment.neutral },
       { name: 'Negative', key: 'negative', value: sentiment.negative },
-    ] as const
+    ] satisfies DonutSlice[]
   ).filter((slice) => slice.value > 0);
 
   const classified = sentiment.positive + sentiment.negative + sentiment.neutral;
@@ -114,44 +123,16 @@ export function SummaryBanner({ query }: { query: QueryLike<SummaryResponse> }):
 
       <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
         <h2 className="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-slate-500">
-          <PieIcon className="size-3.5" aria-hidden />
+          <ChartPie className="size-3.5" aria-hidden />
           Sentiment distribution
         </h2>
 
         {classified === 0 ? (
           <p className="py-16 text-center text-sm text-slate-400">Nothing classified yet.</p>
         ) : (
-          <div className="h-48" role="img" aria-label={`Sentiment across ${classified} mentions`}>
-            <ResponsiveContainer width="100%" height="100%">
-              <PieChart>
-                <Pie
-                  data={[...slices]}
-                  dataKey="value"
-                  nameKey="name"
-                  innerRadius={45}
-                  outerRadius={70}
-                  paddingAngle={2}
-                  strokeWidth={0}
-                >
-                  {slices.map((slice) => (
-                    <Cell key={slice.key} fill={SENTIMENT_COLOR[slice.key]} />
-                  ))}
-                </Pie>
-                <Tooltip
-                  formatter={(value, name) => [compactNumber(Number(value ?? 0)), String(name)]}
-                  contentStyle={{ borderRadius: 8, border: '1px solid #e2e8f0', fontSize: 12 }}
-                />
-                <Legend
-                  verticalAlign="bottom"
-                  height={24}
-                  iconType="circle"
-                  formatter={(value) => (
-                    <span className="text-xs text-slate-600">{String(value)}</span>
-                  )}
-                />
-              </PieChart>
-            </ResponsiveContainer>
-          </div>
+          <Suspense fallback={<ChartSkeleton />}>
+            <SentimentDonut slices={slices} />
+          </Suspense>
         )}
       </div>
     </section>

@@ -37,7 +37,7 @@ export function App(): JSX.Element {
       <header className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <h1 className="text-xl font-semibold tracking-tight text-slate-900">
-            OurCrowd Press Monitor
+            Press Monitor - Gal Aharon
           </h1>
           <p className="mt-0.5 text-sm text-slate-500">
             Portfolio press coverage over the last {summary.data?.windowDays ?? 90} days, classified

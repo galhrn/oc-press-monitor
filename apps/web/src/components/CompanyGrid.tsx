@@ -6,12 +6,18 @@
  * A debounce buys the same smoothness by making results arrive *late*; this keeps them merely
  * *behind*, and React discards superseded work on its own.
  *
+ * **Sorted by activity, not alphabetically.** A press monitor is opened to answer "what
+ * happened lately", and 258 rows sorted A-Z buries that under whichever companies start with
+ * an A. Companies with coverage come first, most recently mentioned at the top; quiet ones
+ * settle at the bottom in name order. They are still present and still one scroll away -
+ * demoted, never hidden.
+ *
  * **`NO_COVERAGE` is styled as an answer, not an absence.** It is the only bucket rendered as
  * a dashed outline rather than a filled chip, and the company still occupies a row. R5 makes
  * it a first-class state, the coverage audit found it is usually genuinely true, and a company
  * that silently vanished from the list would be the one bug a reviewer could never see.
  */
-import { useDeferredValue, useMemo, useState, type JSX } from 'react';
+import { useDeferredValue, useMemo, useState, type CSSProperties, type JSX } from 'react';
 import { ChevronRight, Search, SlidersHorizontal, X } from 'lucide-react';
 import type { CompaniesResponse, CompanySummary, StatusBucket } from '@oc/api/contract';
 import { RowSkeleton } from '@/components/Skeleton';
@@ -40,6 +46,22 @@ const SENTIMENT_OPTIONS: ReadonlyArray<{ value: SentimentFilter; label: string }
   { value: 'negative', label: 'Has negative' },
   { value: 'neutral', label: 'Has neutral' },
 ];
+
+/**
+ * Recency first, then volume, then name. `lastMentionedAt` is null exactly when there is no
+ * coverage, which is what sends those rows to the bottom without a special case.
+ */
+function byActivity(a: CompanySummary, b: CompanySummary): number {
+  const aDate = a.lastMentionedAt;
+  const bDate = b.lastMentionedAt;
+  if (aDate !== bDate) {
+    if (aDate === null) return 1;
+    if (bDate === null) return -1;
+    return bDate.localeCompare(aDate);
+  }
+  if (a.mentionsInWindow !== b.mentionsInWindow) return b.mentionsInWindow - a.mentionsInWindow;
+  return a.name.localeCompare(b.name);
+}
 
 function matches(company: CompanySummary, filters: Filters, search: string): boolean {
   if (search !== '') {
@@ -104,7 +126,7 @@ export function CompanyGrid({
   const visible = useMemo(() => {
     if (companies === undefined) return [];
     const needle = deferredSearch.trim().toLowerCase();
-    return companies.filter((c) => matches(c, filters, needle));
+    return companies.filter((c) => matches(c, filters, needle)).sort(byActivity);
   }, [companies, filters, deferredSearch]);
 
   const toggleStatus = (status: StatusBucket): void => {
@@ -209,12 +231,14 @@ export function CompanyGrid({
         <NoResults query={filters.search} />
       ) : (
         <ul className={isStale ? 'opacity-60 transition-opacity' : 'transition-opacity'}>
-          {visible.map((company) => (
-            <li key={company.id}>
+          {visible.map((company, index) => (
+            // Capped so the last row of a 258-item list is not waiting a quarter of a second;
+            // the stagger is there to suggest order, not to be watched.
+            <li key={company.id} style={{ '--row-index': Math.min(index, 12) } as CSSProperties}>
               <button
                 type="button"
                 onClick={() => onSelect(company.slug)}
-                className="flex w-full items-center gap-4 border-b border-slate-100 px-4 py-3 text-left hover:bg-slate-50 focus:bg-slate-50 focus:outline-none"
+                className="row-enter flex w-full items-center gap-4 border-b border-slate-100 px-4 py-3 text-left transition-[background-color,box-shadow,transform] duration-150 hover:z-10 hover:bg-white hover:shadow-[0_1px_12px_-2px_rgb(15_23_42_/_0.12)] focus-visible:bg-slate-50 focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-sky-500"
               >
                 <span className="min-w-0 flex-1">
                   <span className="block truncate text-sm font-medium text-slate-900">

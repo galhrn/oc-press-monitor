@@ -22,3 +22,19 @@ export function RowSkeleton(): JSX.Element {
     </div>
   );
 }
+
+/**
+ * Placeholder for the lazily-loaded chart. Matches the donut's footprint exactly, so the card
+ * does not resize when Recharts finishes downloading.
+ */
+export function ChartSkeleton(): JSX.Element {
+  return (
+    <div
+      className="flex h-48 items-center justify-center"
+      aria-busy="true"
+      aria-label="Loading chart"
+    >
+      <div className="size-[140px] animate-pulse rounded-full border-[25px] border-slate-200" />
+    </div>
+  );
+}

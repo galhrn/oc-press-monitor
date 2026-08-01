@@ -13,7 +13,7 @@
  * disagree with it - which matters more here than usual, because the bake-off put this
  * configuration at 0.52 combined macro-F1 rather than something you would take on trust.
  */
-import { useEffect, type JSX } from 'react';
+import { useCallback, useEffect, useState, type JSX } from 'react';
 import { ExternalLink, Loader2, X } from 'lucide-react';
 import type { Mention } from '@oc/api/contract';
 import { useCompanyDetail } from '@/hooks/queries';
@@ -73,17 +73,40 @@ export function CompanyDrawer({
   onClose: () => void;
 }): JSX.Element | null {
   const detail = useCompanyDetail(slug);
+  const [closing, setClosing] = useState(false);
 
-  // Escape closes it. A slide-over that can only be dismissed by a mouse is a slide-over that
-  // keyboard users get stuck in.
+  /**
+   * Closing runs the exit animation first, then unmounts. Without this the panel vanishes
+   * mid-gesture, which reads as a glitch rather than as a dismissal - the one place where
+   * skipping the animation would be more noticeable than having it.
+   */
+  const dismiss = useCallback(() => {
+    setClosing(true);
+    window.setTimeout(() => {
+      setClosing(false);
+      onClose();
+    }, 180);
+  }, [onClose]);
+
+  // Escape closes it. A slide-over dismissable only by mouse is one keyboard users get stuck in.
   useEffect(() => {
     if (slug === null) return undefined;
     const onKey = (e: KeyboardEvent): void => {
-      if (e.key === 'Escape') onClose();
+      if (e.key === 'Escape') dismiss();
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [slug, onClose]);
+  }, [slug, dismiss]);
+
+  // The page behind must not scroll while a modal surface is open.
+  useEffect(() => {
+    if (slug === null) return undefined;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = previous;
+    };
+  }, [slug]);
 
   if (slug === null) return null;
 
@@ -95,15 +118,19 @@ export function CompanyDrawer({
       <button
         type="button"
         aria-label="Close details"
-        onClick={onClose}
-        className="absolute inset-0 bg-slate-900/20 backdrop-blur-[1px]"
+        onClick={dismiss}
+        className={`absolute inset-0 bg-slate-900/25 backdrop-blur-[2px] ${
+          closing ? 'backdrop-out' : 'backdrop-in'
+        }`}
       />
 
       <aside
         role="dialog"
         aria-modal="true"
         aria-label={company ? `${company.name} press coverage` : 'Company details'}
-        className="relative flex h-full w-full max-w-xl flex-col bg-white shadow-2xl"
+        className={`relative flex h-full w-full max-w-xl flex-col bg-white shadow-2xl ${
+          closing ? 'drawer-out' : 'drawer-in'
+        }`}
       >
         <header className="flex items-start gap-3 border-b border-slate-200 p-5">
           <div className="min-w-0 flex-1">
@@ -126,9 +153,9 @@ export function CompanyDrawer({
           </div>
           <button
             type="button"
-            onClick={onClose}
+            onClick={dismiss}
             aria-label="Close"
-            className="rounded-md p-1.5 text-slate-400 hover:bg-slate-100 hover:text-slate-600"
+            className="rounded-md p-1.5 text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-600 focus-visible:outline-2 focus-visible:outline-sky-500"
           >
             <X className="size-5" aria-hidden />
           </button>
