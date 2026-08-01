@@ -13,6 +13,7 @@ export default defineConfig({
       '@oc/ollama': r('./packages/ollama/src/index.ts'),
       '@oc/registry': r('./packages/registry/src/index.ts'),
       '@oc/collector': r('./packages/collector/src/index.ts'),
+      '@oc/classifier': r('./packages/classifier/src/index.ts'),
     },
   },
   test: {

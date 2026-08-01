@@ -29,6 +29,7 @@
     "measure:prefilter": "tsx scripts/measure-prefilter.ts",
     "audit:coverage": "tsx scripts/coverage-audit.ts",
     "gold:build": "tsx scripts/build-gold-set.ts",
+    "eval": "tsx scripts/eval-classifier.ts",
     "skeleton": "tsx scripts/skeleton.ts"
   },
   "devDependencies": {

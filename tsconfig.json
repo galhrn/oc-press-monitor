@@ -22,7 +22,8 @@
       "@oc/core/*": ["packages/core/src/*.ts"],
       "@oc/ollama": ["packages/ollama/src/index.ts"],
       "@oc/registry": ["packages/registry/src/index.ts"],
-      "@oc/collector": ["packages/collector/src/index.ts"]
+      "@oc/collector": ["packages/collector/src/index.ts"],
+      "@oc/classifier": ["packages/classifier/src/index.ts"]
     }
   },
   "include": ["packages/**/*.ts", "apps/**/*.ts", "scripts/**/*.ts", "test/**/*.ts", "*.config.ts"]
