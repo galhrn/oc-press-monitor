@@ -6,4 +6,5 @@ export * from './providers/google-news.js';
 export * from './throttle.js';
 export * from './pre-filter.js';
 export * from './normalize.js';
+export * from './query-builder.js';
 export { DEFAULT_CORPUS_PATH, GOOGLE_NEWS_SAMPLE_PATH } from './corpus-path.js';

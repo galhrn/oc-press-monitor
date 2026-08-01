@@ -18,7 +18,7 @@ import { readFileSync } from 'node:fs';
 import { z } from 'zod';
 import { ProviderError } from '@oc/core';
 import type { NewsProvider, ProviderHealth, RawArticle, SearchRequest } from '../provider.js';
-import { matchesQuery, parseQuery } from '../query-match.js';
+import { matchesQuery, parseBooleanQuery } from '../query-match.js';
 
 export const FIXTURE_PROVIDER_NAME = 'fixture';
 
@@ -106,7 +106,7 @@ export class FixtureProvider implements NewsProvider {
     request.signal?.throwIfAborted();
 
     const now = this.#now();
-    const parsed = parseQuery(request.query);
+    const parsed = parseBooleanQuery(request.query);
     const fromMs = Date.parse(request.from);
     const toMs = request.to === undefined ? now.getTime() : Date.parse(request.to);
 

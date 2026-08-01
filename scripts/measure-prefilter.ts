@@ -13,7 +13,12 @@
  * to see the pre-filter's limits - the LLM relevance gate (AD-06) exists for what remains.
  */
 import { readFileSync } from 'node:fs';
-import { GoogleNewsProvider, preFilterAll, type PreFilterCompany } from '@oc/collector';
+import {
+  GoogleNewsProvider,
+  buildSearchQuery,
+  preFilterAll,
+  type PreFilterCompany,
+} from '@oc/collector';
 
 const registry = JSON.parse(
   readFileSync(new URL('../data/companies.json', import.meta.url), 'utf8'),
@@ -43,7 +48,9 @@ const reasons: Record<string, number> = {};
 for (const name of names) {
   const company = registry.find((c) => c.name === name);
   if (!company) continue;
-  const items = await provider.search({ query: company.query, from, limit: 25 });
+  // Send exactly what the pipeline sends (P3.4), not the raw registry string.
+  const plan = buildSearchQuery(company);
+  const items = await provider.search({ query: plan.query, from, limit: 25 });
   const result = preFilterAll(items, company);
   totals.fetched = (totals.fetched ?? 0) + items.length;
   totals.kept = (totals.kept ?? 0) + result.kept.length;
@@ -51,7 +58,7 @@ for (const name of names) {
     if (k !== 'kept' && v > 0) reasons[k] = (reasons[k] ?? 0) + v;
   }
   console.log(
-    `${name.padEnd(11)} fetched ${String(items.length).padStart(2)}  kept ${String(result.kept.length).padStart(2)}  ` +
+    `${name.padEnd(11)} ${plan.strategy.padEnd(12)} fetched ${String(items.length).padStart(2)}  kept ${String(result.kept.length).padStart(2)}  ` +
       Object.entries(result.stats)
         .filter(([k, v]) => k !== 'kept' && v > 0)
         .map(([k, v]) => `${k}:${v}`)

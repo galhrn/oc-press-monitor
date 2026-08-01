@@ -4,7 +4,7 @@ import {
   DEFAULT_CORPUS_PATH,
   FixtureProvider,
   containsPhrase,
-  parseQuery,
+  parseBooleanQuery,
   matchesQuery,
   type NewsProvider,
 } from '@oc/collector';
@@ -21,23 +21,64 @@ const search = (
   overrides: Partial<{ from: string; to: string; limit: number }> = {},
 ) => provider().search({ query, from: daysAgo(90), limit: 25, ...overrides });
 
-describe('parseQuery', () => {
+describe('parseBooleanQuery', () => {
   it('reads a bare exact phrase', () => {
-    expect(parseQuery('"ZutaCore"')).toEqual({ required: ['ZutaCore'], groups: [] });
+    expect(parseBooleanQuery('"ZutaCore"')).toEqual({ kind: 'phrase', value: 'ZutaCore' });
   });
 
   it('separates the required phrase from an OR-group qualifier', () => {
-    expect(parseQuery('"Peak" AND ("decision intelligence" OR "supply chain")')).toEqual({
-      required: ['Peak'],
-      groups: [['decision intelligence', 'supply chain']],
+    expect(parseBooleanQuery('"Peak" AND ("decision intelligence" OR "supply chain")')).toEqual({
+      kind: 'and',
+      children: [
+        { kind: 'phrase', value: 'Peak' },
+        {
+          kind: 'or',
+          children: [
+            { kind: 'phrase', value: 'decision intelligence' },
+            { kind: 'phrase', value: 'supply chain' },
+          ],
+        },
+      ],
     });
   });
 
   it('accepts unquoted alternatives inside a group', () => {
-    expect(parseQuery('"Innoviz" AND (lidar OR sensor)')).toEqual({
-      required: ['Innoviz'],
-      groups: [['lidar', 'sensor']],
+    expect(parseBooleanQuery('"Innoviz" AND (lidar OR sensor)')).toEqual({
+      kind: 'and',
+      children: [
+        { kind: 'phrase', value: 'Innoviz' },
+        {
+          kind: 'or',
+          children: [
+            { kind: 'phrase', value: 'lidar' },
+            { kind: 'phrase', value: 'sensor' },
+          ],
+        },
+      ],
     });
+  });
+
+  /** The 16 registry queries the previous regex-based reader misparsed (P3.4). */
+  it('treats a top-level OR as alternatives, not as two required phrases', () => {
+    const node = parseBooleanQuery('"Together AI" OR "Together Computer" OR together.ai');
+    expect(node?.kind).toBe('or');
+    expect(matchesQuery('Together AI raises a round', node)).toBe(true);
+    expect(matchesQuery('Together Computer rebrands', node)).toBe(true);
+    expect(matchesQuery('Some other company raises', node)).toBe(false);
+  });
+
+  it('parses nested parentheses correctly', () => {
+    const q = '"Harvey AI" OR ("Harvey" AND ("legal AI" OR "law firm"))';
+    expect(matchesQuery('Harvey AI ships a feature', q)).toBe(true);
+    expect(matchesQuery('Harvey raises for its legal AI platform', q)).toBe(true);
+    // Harvey alone, with no legal context, must not match.
+    expect(matchesQuery('Harvey Keitel joins the cast', q)).toBe(false);
+    expect(matchesQuery('Hurricane Harvey anniversary', q)).toBe(false);
+  });
+
+  it('degrades a malformed query to something broader, never to nothing', () => {
+    expect(matchesQuery('ZutaCore expands', '"ZutaCore')).toBe(true);
+    expect(matchesQuery('anything at all', '')).toBe(true);
   });
 });
 
@@ -61,7 +102,7 @@ describe('containsPhrase', () => {
   });
 
   it('requires every term of a multi-term query', () => {
-    const parsed = parseQuery('"Peak" AND ("decision intelligence" OR "supply chain")');
+    const parsed = parseBooleanQuery('"Peak" AND ("decision intelligence" OR "supply chain")');
     expect(matchesQuery('Peak lands funding for decision intelligence', parsed)).toBe(true);
     expect(matchesQuery('Record climbers reached the peak', parsed)).toBe(false);
   });

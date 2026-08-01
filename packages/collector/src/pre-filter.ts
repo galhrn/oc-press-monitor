@@ -22,7 +22,7 @@
  * whole word "Kando" and will pass; that is the LLM relevance gate's job (AD-06). The
  * pre-filter exists to make that call cheap, not to replace it.
  */
-import { containsPhrase, parseQuery } from './query-match.js';
+import { containsPhrase, hasConjunction, matchesQuery } from './query-match.js';
 import type { RawArticle } from './provider.js';
 
 /**
@@ -93,7 +93,16 @@ export interface PreFilterOptions {
   enforceQualifiers?: (company: PreFilterCompany) => boolean;
 }
 
-const defaultEnforceQualifiers = (company: PreFilterCompany): boolean =>
+/**
+ * The single source of truth for "do this company's qualifiers count?".
+ *
+ * Exported because the query builder (P3.4) must ask the *same* question. Measured on live
+ * Google News data 2026-08-02: when the two disagree, one of them wins and the run loses.
+ * Requesting qualifiers the filter will not enforce collapses recall (Kando 5 kept -> 0,
+ * Morphisec 3 -> 1); enforcing qualifiers the query never requested drops everything
+ * (Peak 6 -> 0, Shield 2 -> 0). Symmetry is not tidiness here, it is correctness.
+ */
+export const shouldEnforceQualifiers = (company: PreFilterCompany): boolean =>
   company.querySource === undefined || company.querySource === 'human-approved';
 
 const defaultTextOf = (article: RawArticle): string =>
@@ -149,13 +158,16 @@ export function preFilter(
     return { keep: false, reason: 'negative-keyword', evidence: negativeHit };
   }
 
-  // Re-apply the qualifier groups from our own query. This is what a provider that treats
-  // `AND (...)` as a suggestion cannot be trusted to have done. Only for vetted queries.
-  if ((options.enforceQualifiers ?? defaultEnforceQualifiers)(company)) {
-    for (const group of parseQuery(company.query).groups) {
-      if (!group.some((term) => containsPhrase(text, term))) {
-        return { keep: false, reason: 'missing-qualifier', evidence: group.join(' OR ') };
-      }
+  // Re-apply our own query as a whole boolean expression. This is what a provider that
+  // treats `AND (...)` as a suggestion cannot be trusted to have done. Evaluating the whole
+  // tree - rather than picking out OR-groups - is what lets `"Harvey AI" OR ("Harvey" AND
+  // ("legal AI" OR "law firm"))` mean what its author meant.
+  if (
+    hasConjunction(company.query) &&
+    (options.enforceQualifiers ?? shouldEnforceQualifiers)(company)
+  ) {
+    if (!matchesQuery(text, company.query)) {
+      return { keep: false, reason: 'missing-qualifier', evidence: company.query };
     }
   }
 
