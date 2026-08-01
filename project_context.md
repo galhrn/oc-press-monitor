@@ -2,9 +2,9 @@
 
 > **Project:** OurCrowd Press Mentions Monitoring & Dashboard
 > **Owner:** Gal Aharon
-> **Status:** `BUILDING` — M0, M1 reached. P2 code complete; M2 pending the owner's live Ollama pass.
+> **Status:** `BUILDING` — M0–M3 reached. Phase 3 complete; next is M4 (LLM classification + eval).
 > **Last updated:** 2026-08-01
-> **Document version:** 0.8.9
+> **Document version:** 0.9.0
 >
 > **Target hardware (dev + demo machine):** Windows 11 · Intel Core Ultra (Lunar Lake) ·
 > Intel Arc 140V iGPU, 16 GB addressable VRAM (shared) · 32 GB system RAM
@@ -72,7 +72,7 @@ No row may be deleted. Status: `TODO` / `WIP` / `DONE` / `N/A`.
 | R12 | §4.1 | README states how the model is invoked (prompt structure, output format) | README + `prompts/` | TODO |
 | R13 | §4.1 | README states how classification quality was validated | `packages/classifier/eval/` + README table | TODO |
 | R14 | §4.2 | JavaScript/Node.js for backend **and data collection** | Entire repo (TypeScript → JS, AD-02) | **DONE** |
-| R15 | §4.2 | Data-collection component | `packages/collector` | TODO |
+| R15 | §4.2 | Data-collection component | `packages/collector` | **DONE** — 2 live providers + fixtures, 141 tests |
 | R16 | §4.2 | Classification step | `packages/classifier` | TODO |
 | R17 | §4.2 | Storage layer | `packages/core/db` (SQLite) | **DONE** — schema, migrations, 6 repositories, 11 tests |
 | R18 | §4.2 | Dashboard/UI layer | `apps/web` | TODO |
@@ -537,7 +537,7 @@ error handling · the "no coverage" state.
 
 ---
 
-#### Phase 3 — Data Collection `TODO`
+#### Phase 3 — Data Collection `DONE`
 
 > **Objective:** Fetch and clean news for any company, from any provider, testable offline.
 > **Milestone M3:** `npm run collect -- --company Hailo` returns deduped normalised articles; the whole test suite runs with no network.
@@ -551,7 +551,7 @@ error handling · the "no coverage" state.
 | P3.5 | Normalisation — canonical URL, `article_id` hash, date parsing, cross-provider dedupe | R15 | 1 h | **DONE** — 20 tests; two-key dedupe (URL hash + content key with date tolerance) |
 | P3.6 | Deterministic pre-filter — whole-word match, negative keywords, domain blocklist, client-side query re-application | A3 | 1 h | **DONE** — 21 tests; measured on live data via `npm run measure:prefilter` |
 | P3.7 | Per-company caps, partial-failure isolation, provider circuit breaker, `npm run collect` | R26, A4 | 0.5 h | **DONE** — 13 tests; demonstrated live with GDELT down |
-| P3.8 | Provider + normalisation + pre-filter unit tests; offline integration test | R26 | — | TODO |
+| P3.8 | Provider + normalisation + pre-filter unit tests; offline integration test | R26 | — | **DONE** — `pipeline.integration.test.ts` stubs `globalThis.fetch` to reject, so a reintroduced live call fails the suite |
 
 > **Exit criteria:** both live providers return results for 5 sampled companies ·
 > a manual precision check on 3 ambiguous names shows the pre-filter working ·
@@ -775,6 +775,7 @@ Budget ≈30 focused hours; descope rungs 1–3 already cut (§8.3).
 
 | Date | Version | Change |
 |---|---|---|
+| 2026-08-02 | 0.9.0 | **PHASE 3 COMPLETE — M3 reached.** P3.8 adds an offline end-to-end integration test that replaces `globalThis.fetch` with a rejecting stub, so a regression reintroducing a live call **fails the suite** rather than quietly making CI depend on GDELT being up. It runs the full pipeline against the committed registry and the fixture corpus, asserts determinism (identical output across runs) and covers the collision, dedupe, no-coverage and dead-provider paths. **P3.7 hardened after a review question about GDELT recovery.** Three changes, all pointing the same way — spend as few requests as possible on an endpoint that has said stop: (1) **429 is no longer retryable.** It is an instruction, not a flaky failure; retrying it twice more is exactly what turned a burst into a multi-hour block on 2026-08-02. (2) **A 429 trips the circuit immediately** rather than waiting for three consecutive failures — previously a rate-limited GDELT could absorb up to 9 requests before we stopped asking; it now costs exactly 1 per run. (3) **Default cooldown raised 60 s → 5 min**, since the observed block outlasted a 75-second pause by hours. Recovery is automatic and unchanged in shape: open → cooldown → one half-open probe → success closes the circuit. Breaker state is per-process, so every fresh run also spends exactly one probe per provider. **244 tests passing.** |
 | 2026-08-02 | 0.8.9 | **P3.7 — M3 REACHED. The collection pipeline runs end to end.** `collectForCompany` composes query builder → providers → normalise/dedupe → pre-filter → cap, and `npm run collect -- --company ZutaCore` is the milestone artifact: **12 deduped live articles returned while GDELT was failing**, which is the partial-failure isolation (R26) working rather than being asserted. `--providers fixture` runs the identical path offline, so a reviewer with no network still sees it work. A **per-provider circuit breaker** opens after consecutive failures and skips that provider until a cooldown elapses — without it a provider outage is rediscovered 258 times, each with its own retries. It is per provider precisely because the project's current situation is one source down and one healthy. Caps (A4) are applied **after** sorting by recency, because Google News returns relevance-ordered results and slicing first would let the cap choose by arbitrary position. **An honest limitation the demo surfaces:** the fixture corpus's Hailo taxi-app collision survives the pre-filter, because the model-generated negative keyword is the exact phrase `"Hailo taxi"` while the headline reads "Hailo, the taxi-hailing app". A human would have written `taxi`. That is the LLM relevance gate's job (AD-06), and it is further evidence for the AD-26/AD-29 theme that model-invented terms are too brittle to be load-bearing. **231 tests passing.** |
 | 2026-08-02 | 0.8.8 | **P3.4 query builder — and a latent parser bug it exposed in the 57 human-approved queries.** The builder decides what to *send*, which is not always the registry string. **AD-30**: the query and the pre-filter share one predicate, because a measured A/B showed asymmetry loses both ways — sending unenforced qualifiers starved the fetch (Kando 5 kept → 0, Morphisec 3 → 1) while enforcing unsent ones dropped everything (Peak 6 → 0, Shield 2 → 0). **The bug:** `parseQuery` recognised only parenthesised OR-groups and treated every other quoted phrase as *required*. Against the committed registry that misread **16 of the approved queries** — `"Together AI" OR "Together Computer"` became a demand for both phrases, which no headline satisfies, and nested parentheses were matched by a regex that cannot nest, so `"Harvey AI" OR ("Harvey" AND ("legal AI" OR …))` collapsed into a group that was trivially true. Those queries are the output of an hour of human review, and misreading them looks exactly like "no coverage". Replaced with a real recursive-descent parser (`parseBooleanQuery` → `QueryNode` tree, `evaluateQuery`), which degrades a malformed query to a *broader* search rather than an empty one. Measured effect on live data: Morphisec 1 → 3 kept, and Harvey tightened 19 → 12 with the survivors now genuinely legal-AI coverage rather than whatever satisfied a broken group. **218 tests passing.** |
 | 2026-08-02 | 0.8.7 | **P3.5 normalisation and cross-provider deduplication.** Raw provider items become storage-shaped `Article` rows: canonical URL, `article_id = sha256(canonical_url)`, publisher domain resolved from `<source url>` rather than the URL host, and a hard refusal of anything undated, titleless or unlinkable — an article with no date cannot sit in a quarter (R1) or drive last-mentioned (R4). **Dedupe uses two keys.** The URL hash is primary and collapses the same article seen with different tracking tails. A content key — (normalised title, publisher domain) — is the fallback that AD-28 forced: Google News URLs are opaque redirects, so the same story from two providers hashes differently and a URL-only dedupe would never merge it. Where two records describe one story, the survivor is the one with a **resolvable publisher link**, because R3 requires a reader to reach the source. **This refines AD-28:** dates are compared within a **7-day tolerance** rather than for equality, since GDELT's `seendate` lags a publisher's `pubDate` — requiring equal dates would break exactly the cross-provider merge the key exists for. Wire copy at two different outlets stays two mentions, each with its own link. Skips and duplicates are returned with reasons rather than vanishing. **GDELT re-probed and still HTTP 429** on a single request, hours after the original burst — this is persistent for this network, not a cooldown, so Google News remains the only live-verified source and that belongs in the README under R9. **204 tests passing.** |

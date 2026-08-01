@@ -179,14 +179,24 @@ describe('GdeltProvider.search', () => {
 });
 
 describe('GdeltProvider error handling (R26)', () => {
-  it('retries a 429 and succeeds', async () => {
+  it('does NOT retry a 429 - it is an instruction, not a flaky failure', async () => {
+    // Measured 2026-08-02: retrying through 429s turned a burst into a block lasting hours.
+    // The collector trips the circuit on this instead of spending two more requests.
     const fetchImpl = vi
       .fn()
       .mockResolvedValueOnce(jsonResponse('rate limited', 429))
       .mockResolvedValueOnce(jsonResponse({ articles: [article()] }));
-    const items = await search(provider(fetchImpl as unknown as typeof fetch));
-    expect(fetchImpl).toHaveBeenCalledTimes(2);
-    expect(items).toHaveLength(1);
+    await expect(search(provider(fetchImpl as unknown as typeof fetch))).rejects.toMatchObject({
+      retryable: false,
+    });
+    expect(fetchImpl).toHaveBeenCalledTimes(1);
+  });
+
+  it('carries the status so the collector can recognise a rate limit', async () => {
+    const fetchImpl = vi.fn(() => Promise.resolve(jsonResponse('slow down', 429)));
+    await expect(search(provider(fetchImpl as unknown as typeof fetch))).rejects.toMatchObject({
+      context: { status: 429 },
+    });
   });
 
   it('retries a transport failure', async () => {

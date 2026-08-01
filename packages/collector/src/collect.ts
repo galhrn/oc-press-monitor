@@ -19,7 +19,7 @@
  *   **Per-company caps (A4).** SpaceX is not ambiguous, it is loud (AD-22). Without a cap a
  *   handful of companies consume the entire downstream LLM budget.
  */
-import { toError, type Logger } from '@oc/core';
+import { AppError, toError, type Logger } from '@oc/core';
 import type { Article } from '@oc/core';
 import { createCircuitBreaker, type CircuitBreaker } from './circuit-breaker.js';
 import { normalizeAndDedupe, type DuplicatePair, type SkippedArticle } from './normalize.js';
@@ -117,7 +117,7 @@ export async function collectForCompany(
       // An abort is the caller's decision, not a provider fault: do not blame the circuit.
       if (options.signal?.aborted) throw thrown;
       const error = toError(thrown);
-      breaker.recordFailure(provider.name);
+      breaker.recordFailure(provider.name, { immediate: isRateLimited(thrown) });
       providers.push({
         provider: provider.name,
         status: 'failed',
@@ -165,6 +165,14 @@ export async function collectForCompany(
       providersSkipped: providers.filter((p) => p.status === 'skipped').length,
     },
   };
+}
+
+/**
+ * A 429 is an instruction, not a fault. One is enough to stop asking: continuing to poll a
+ * rate-limited endpoint is what turns a short cooldown into a long block.
+ */
+function isRateLimited(thrown: unknown): boolean {
+  return thrown instanceof AppError && thrown.context['status'] === 429;
 }
 
 /**

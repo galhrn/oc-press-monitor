@@ -16,7 +16,11 @@ export type CircuitState = (typeof CIRCUIT_STATES)[number];
 export interface CircuitBreakerOptions {
   /** Consecutive failures before the circuit opens. */
   failureThreshold?: number;
-  /** How long an open circuit waits before allowing a probe. */
+  /**
+   * How long an open circuit waits before allowing a probe. Five minutes rather than one:
+   * the GDELT block observed on 2026-08-02 outlasted a 75-second pause by hours, so a
+   * short cooldown just spends requests confirming what we already know.
+   */
   cooldownMs?: number;
   now?: () => number;
 }
@@ -31,13 +35,17 @@ export interface CircuitBreaker {
   canAttempt(provider: string): boolean;
   state(provider: string): CircuitState;
   recordSuccess(provider: string): void;
-  recordFailure(provider: string): void;
+  /**
+   * `immediate` trips the circuit on a single failure, for a response that explicitly says
+   * "stop" - a 429 is not a flaky error to be retried past, it is an instruction.
+   */
+  recordFailure(provider: string, options?: { immediate?: boolean }): void;
   snapshot(): Record<string, { state: CircuitState; failures: number }>;
 }
 
 export function createCircuitBreaker(options: CircuitBreakerOptions = {}): CircuitBreaker {
   const failureThreshold = options.failureThreshold ?? 3;
-  const cooldownMs = options.cooldownMs ?? 60_000;
+  const cooldownMs = options.cooldownMs ?? 300_000;
   const now = options.now ?? Date.now;
   const circuits = new Map<string, ProviderCircuit>();
 
@@ -64,11 +72,13 @@ export function createCircuitBreaker(options: CircuitBreakerOptions = {}): Circu
       circuit.failures = 0;
       circuit.openedAt = null;
     },
-    recordFailure: (provider) => {
+    recordFailure: (provider, opts) => {
       const circuit = get(provider);
       circuit.failures += 1;
       // A failed probe in half-open restarts the cooldown rather than opening a new one.
-      if (circuit.failures >= failureThreshold) circuit.openedAt = now();
+      if (opts?.immediate === true || circuit.failures >= failureThreshold) {
+        circuit.openedAt = now();
+      }
     },
     snapshot: () =>
       Object.fromEntries(

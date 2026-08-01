@@ -39,8 +39,15 @@ const MAX_RECORDS = 250;
  */
 export const GDELT_MIN_INTERVAL_MS = 5_000;
 
-/** HTTP statuses where the same request could plausibly succeed later. */
-const RETRYABLE_STATUS = new Set([408, 425, 429, 500, 502, 503, 504]);
+/**
+ * HTTP statuses where the same request could plausibly succeed later.
+ *
+ * **429 is deliberately absent.** It is not a flaky failure, it is the server saying we are
+ * over quota, and retrying it twice more only spends requests deepening the block. Measured
+ * 2026-08-02: retrying through 429s turned a burst into an outage lasting hours. The
+ * collector trips the circuit on it instead (P3.7).
+ */
+const RETRYABLE_STATUS = new Set([408, 425, 500, 502, 503, 504]);
 
 /**
  * GDELT reports a language name, not a code. Only the languages we can actually expect in
