@@ -4,7 +4,7 @@
 > **Owner:** Gal Aharon
 > **Status:** `BUILDING` — M0–M3 reached. Phase 3 complete; next is M4 (LLM classification + eval).
 > **Last updated:** 2026-08-01
-> **Document version:** 0.9.6
+> **Document version:** 0.9.7
 >
 > **Target hardware (dev + demo machine):** Windows 11 · Intel Core Ultra (Lunar Lake) ·
 > Intel Arc 140V iGPU, 16 GB addressable VRAM (shared) · 32 GB system RAM
@@ -58,9 +58,9 @@ No row may be deleted. Status: `TODO` / `WIP` / `DONE` / `N/A`.
 
 | # | Source | Requirement (verbatim intent) | Satisfied by | Status |
 |---|---|---|---|---|
-| R1 | §2.1 | Dashboard of press appearances per company over the last quarter | `apps/web` — Company grid + drill-down | TODO |
+| R1 | §2.1 | Dashboard of press appearances per company over the last quarter | `apps/web` — Company grid + drill-down | **DONE** |
 | R2 | §2.1 | Each mention classified positive / negative / neutral | `packages/classifier` | TODO |
-| R3 | §2.1 | Each mention linked back to source URL | `articles.url` surfaced in UI | TODO |
+| R3 | §2.1 | Each mention linked back to source URL | `articles.url` surfaced in the drill-down | **DONE** |
 | R4 | §2.2 | Current "mention status" per company from last-mentioned date | `v_company_status` view + status chip in UI | WIP — logic + 20 boundary tests done, UI pending |
 | R5 | §2.2 | Must handle "no coverage found" | Explicit `NO_COVERAGE` bucket, company still rendered | WIP — bucket implemented and tested, UI pending |
 | R6 | §2.3 | Daily job checks for new mentions | `scripts/job-daily.ts` + `apps/scheduler` | TODO |
@@ -75,7 +75,7 @@ No row may be deleted. Status: `TODO` / `WIP` / `DONE` / `N/A`.
 | R15 | §4.2 | Data-collection component | `packages/collector` | **DONE** — 2 live providers + fixtures, 141 tests |
 | R16 | §4.2 | Classification step | `packages/classifier` | TODO |
 | R17 | §4.2 | Storage layer | `packages/core/db` (SQLite) | **DONE** — schema, migrations, 6 repositories, 11 tests |
-| R18 | §4.2 | Dashboard/UI layer | `apps/web` | TODO |
+| R18 | §4.2 | Dashboard/UI layer | `apps/web` + `apps/api` | **DONE** |
 | R19 | §4.2 | Scheduled job that performs the daily check and sends the alert | `apps/scheduler` | TODO |
 | R20 | §5.4 | GitHub repo + README: what it does, structure | README | TODO |
 | R21 | §5.4 | README: setup, deps, env vars, how to install/run Ollama + which model to pull | README §Setup | TODO |
@@ -628,14 +628,14 @@ error handling · the "no coverage" state.
 
 | ID | Task | Satisfies | Est. | Status |
 |---|---|---|---|---|
-| P6.1 | Express 5 app, zod-validated routes, error middleware, `/health` | R18 | 1 h | TODO |
-| P6.2 | Endpoints: companies+status · company mentions · quarterly stats · latest run | R1, R4 | 1 h | TODO |
-| P6.3 | React + Vite shell, API client, loading/error/empty states | R18 | 1 h | TODO |
-| P6.4 | Company grid — status chips, sentiment counts, sort/filter (TanStack Table) | R1, R4 | 1.5 h | TODO |
-| P6.5 | Charts — sentiment distribution + 90-day trend (Recharts) | R1 | 1 h | TODO |
-| P6.6 | Company drill-down — mention list with **clickable source URLs** | R3 | 1 h | TODO |
-| P6.7 | `NO_COVERAGE` treated as a visible state, not an empty row | R5 | 0.5 h | TODO |
-| P6.8 | Serve the SPA build from Express so `npm start` is one command | R22 | 0.5 h | TODO |
+| P6.1 | Express 5 app, zod-validated routes, error middleware, `/health` | R18 | 1 h | **DONE** |
+| P6.2 | Endpoints: companies+status · company mentions · quarterly stats · latest run | R1, R4 | 1 h | **DONE** |
+| P6.3 | React + Vite shell, API client, loading/error/empty states | R18 | 1 h | **DONE** |
+| P6.4 | Company grid — status chips, sentiment counts, search + filters | R1, R4 | 1.5 h | **DONE** — `useDeferredValue`; TanStack Table not needed for 258 rows |
+| P6.5 | Charts — sentiment distribution (Recharts donut) | R1 | 1 h | **DONE** — trend chart still held in reserve (descope rung 4) |
+| P6.6 | Company drill-down — mention list with **clickable source URLs** | R3 | 1 h | **DONE** — slide-over, `rel="noopener noreferrer"`, per-item rationale |
+| P6.7 | `NO_COVERAGE` treated as a visible state, not an empty row | R5 | 0.5 h | **DONE** — dashed-outline chip, company keeps its row |
+| P6.8 | Serve the SPA build from Express so `npm start` is one command | R22 | 0.5 h | **DONE** — `npm run serve`, SPA fallback verified |
 | P6.9 | Screenshots for the README | R20 | 0.5 h | TODO |
 
 > **Exit criteria:** every one of the 258 companies is reachable in the UI · every mention
@@ -728,7 +728,7 @@ Budget ≈30 focused hours; descope rungs 1–3 already cut (§8.3).
 | M3 Collection working | P3 | ✅ **DONE** — `npm run collect -- --company ZutaCore` returns 12 deduped live articles with GDELT failing; `--providers fixture` runs fully offline |
 | M4 Model selected by evidence | P4 | 🟡 **selected by evidence, bar not met** — `llama3.2:3b`+v1 at 0.522 combined vs a 0.80 criterion; documented rather than hidden |
 | M5 Pipeline end-to-end | P5 | ⚪ TODO |
-| M6 Dashboard complete | P6 | ⚪ TODO |
+| M6 Dashboard complete | P6 | 🟡 built and verified against live data; screenshots (P6.9) pending |
 | M7 Daily job live | P7 | ⚪ TODO |
 | M8 Submission ready | P8 | ⚪ TODO |
 
@@ -779,6 +779,7 @@ Budget ≈30 focused hours; descope rungs 1–3 already cut (§8.3).
 
 | Date | Version | Change |
 |---|---|---|
+| 2026-08-02 | 0.9.7 | **Phase 6 dashboard built and verified against the live database while the backfill was still running.** `apps/api` is a read-only Express layer (database opened `readonly`, so the UI can never mutate a run's output) and `apps/web` is Vite + React 18 + Tailwind 4 + TanStack Query. **Verified end to end:** SPA served, bundle reachable, deep-route fallback working without swallowing `/api`, unknown slug returning a typed 404, and real data flowing — 258 companies, 500 mentions, 217 with no coverage, sentiment 302/121/77, Anthropic drilling down to 25 mentions. **Three UI decisions worth recording.** (1) `NO_COVERAGE` renders as a **dashed outline** and the company keeps its row — R5 makes it a first-class state and the coverage audit showed it is usually genuinely true, so it must read as an answer rather than a missing value. (2) Search uses **`useDeferredValue` rather than a debounce**: a debounce makes results arrive late, whereas deferring keeps them merely behind and lets React discard superseded work. (3) The **run-in-progress banner** — a backfill takes hours, so a dashboard reporting "217 companies with no coverage" mid-run tells the truth about the database and a lie about the portfolio; `/health` reports `runInProgress` and the hooks poll while it is true. Each mention shows the model's own one-line rationale beside its sentiment badge, because at 0.52 combined macro-F1 the label is not something a reader should take on trust. **Known trade-off:** the bundle is 658 kB (195 kB gzipped), dominated by Recharts; code-splitting the chart is the obvious fix if it matters. |
 | 2026-08-02 | 0.9.6 | **Classification configuration frozen: `llama3.2:3b` + `classify.v1` (AD-32).** `DEFAULT_PROMPT_VERSION` reverted to v1 in code, so the shipped default and the measured winner are the same thing. The 0.80 exit criterion is **not met** — best combined macro-F1 is 0.522 — and that is recorded as a result rather than worked around. **P4.9 decided: AD-07's cascade stays CUT.** It would route low-confidence items to a larger model, but the largest model we can run is already ~7 hours for a production pass, so a cascade makes the run infeasible without addressing the discrimination gap the v1/v2 per-item diff exposed. M4 closes as *selected by evidence, bar not met*. |
 | 2026-08-02 | 0.9.5 | **Prompt v2 evaluated against v1 on the same gold set — and the result says prompt engineering will not reach the bar.** Combined macro-F1, v1 → v2: `qwen2.5:3b-instruct` 0.496 → **0.577** (+0.081), `qwen2.5:1.5b-instruct` 0.497 → 0.450 (−0.048), `llama3.2:3b` 0.522 → 0.434 (−0.088). Best configuration overall is now **qwen2.5:3b-instruct + classify.v2 at 0.577**, still far below the 0.80 exit criterion. **The per-item diff is the finding.** For `qwen2.5:3b`, v2 fixed **13** items and broke **11** — and the split is perfectly clean: *every* fixed item was genuine coverage it had been rejecting (ZutaCore's $100M round, Innoviz's defence orders, Harvey's investment, Island's product launch) and *every* broken item was a decoy it now accepts (Peak the crypto token, the NBA's Launchpad, Ad ASTRA, "stop crime on the spot"). That is a **threshold slide, not a gain in discrimination**: inverting the doubt clause moved the operating point exactly as intended, and the model traded decoy rejection for coverage recall one-for-one. Relevance macro-F1 actually fell slightly (0.650 → 0.617) while sentiment rose sharply (0.343 → 0.538), because more genuinely relevant items now receive a sentiment at all. **Implication: further prompt iteration is not the lever.** A threshold move cannot buy both sides, and the homonym guidance demonstrably failed to teach the distinction it described — Launchpad and Peak remain wrong across every model and both prompts. **Cost side:** v2's longer prompt roughly halves throughput. Projected time for 2,500 items is now 235–421 min (`qwen2.5:3b`+v2 is ~7 hours), against 144–246 min for v1. JSON validity reached 100% for all three models under v2. Both runs are kept as `data/bakeoff.v1.json` and `data/bakeoff.v2.json`. |
 | 2026-08-02 | 0.9.4 | **Bake-off run across the full §6.4 ladder — and the P4 exit criterion was NOT met.** 180 classifications, 60 gold items × 3 models. Combined macro-F1 (mean of the relevance and sentiment axes): `llama3.2:3b` **0.522**, `qwen2.5:1.5b-instruct` **0.498**, `qwen2.5:3b-instruct` **0.497**. The exit criterion is **≥0.80**; nothing is close, so **AD-17's ship rule does not apply** — it selects among models that clear the bar, and none do. Recording this as a measured negative result rather than shipping the least-bad number as though it passed. **Relevance is the failure, not sentiment.** Every model gets roughly a third of the relevance question wrong (17, 22 and 21 misses of 60), and the two 3B models fail in *opposite* directions: `llama3.2:3b` waves decoys through (irrelevant recall **0.24**) while `qwen2.5:3b` rejects genuine coverage (relevant recall **0.51** — it dropped "Liquid cooling co ZutaCore raises $100M"). Common-word names break all three: every model calls the NBA's Launchpad, a Eureka startup Launchpad and an arts LAUNCHPAD relevant. `llama3.2:3b` accepted **"Shield AI: $1.5 Billion Series G"** despite being handed the sector and the negative keyword `Shield AI`. **Two things that did work:** the Quantum Machines soft-passed article was classified correctly by all three models, vindicating AD-31; and JSON validity was 100% for both 3B models (95% for the 1.5B), so the schema and repair path hold. **A context-overflow hypothesis was tested and eliminated** — 777 input + 67 output tokens against a 1024 budget, so AD-18's setting is not the cause. Throughput measured: **144–246 min for 2,500 items**, well above the earlier 90–100 min estimate, because the classification prompt is far larger than the benchmark's. The harness now stores **per-item predictions** in `data/bakeoff.json`; an aggregate says a model is wrong, only the item list says how. |
