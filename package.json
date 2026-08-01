@@ -25,6 +25,7 @@
     "db:migrate": "tsx scripts/migrate.ts",
     "enrich": "tsx scripts/enrich-companies.ts",
     "bench": "tsx scripts/bench-ollama.ts",
+    "measure:prefilter": "tsx scripts/measure-prefilter.ts",
     "skeleton": "tsx scripts/skeleton.ts"
   },
   "devDependencies": {
