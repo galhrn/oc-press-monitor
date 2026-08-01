@@ -33,15 +33,16 @@ export interface ClassifyOptions {
   client: OllamaClient;
   model?: string;
   logger?: Logger;
-  promptPath?: string;
+  /** Which `prompts/classify.vN.md` to use. Defaults to the shipped version. */
+  promptVersion?: string;
 }
 
 export async function classifyArticle(
   input: ClassifyInput,
   options: ClassifyOptions,
 ): Promise<ClassifyResult> {
-  const { text } = loadClassifyPrompt(options.promptPath);
-  const promptVersion = promptVersionTag(options.promptPath);
+  const { text } = loadClassifyPrompt(options.promptVersion);
+  const promptVersion = promptVersionTag(options.promptVersion);
 
   const result = await options.client.generate({
     promptVersion,

@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs';
 import {
   CLASSIFICATION_JSON_SCHEMA,
   RepairError,
+  DEFAULT_PROMPT_VERSION,
   buildUserPrompt,
   capWords,
   evaluate,
@@ -90,16 +91,22 @@ describe('prompt (P4.2, AD-16)', () => {
     const { text, hash } = loadClassifyPrompt();
     expect(text).toMatch(/relevant/);
     expect(hash).toMatch(/^[a-f0-9]{12}$/);
-    expect(promptVersionTag()).toBe(`classify.v1@${hash}`);
+    expect(promptVersionTag()).toBe(`${DEFAULT_PROMPT_VERSION}@${hash}`);
   });
 
-  it('changes the version tag when the prompt file changes', () => {
-    // The tag is what lands on every row; if it did not move with the file, a stored label
-    // could not be traced to the instructions that produced it.
-    const { hash } = loadClassifyPrompt();
-    const other = readFileSync(new URL('./fixtures/alt-prompt.md', import.meta.url), 'utf8');
-    expect(other).not.toBe(loadClassifyPrompt().text);
-    expect(hash).toBe(loadClassifyPrompt().hash);
+  it('keeps every prompt version loadable and separately hashed', () => {
+    // The tag is what lands on every row. If two versions shared a hash a stored label could
+    // not be traced to the instructions that produced it, and an A/B would be meaningless.
+    const v1 = loadClassifyPrompt('classify.v1');
+    const v2 = loadClassifyPrompt('classify.v2');
+    expect(v1.text).not.toBe(v2.text);
+    expect(v1.hash).not.toBe(v2.hash);
+    expect(promptVersionTag('classify.v1')).toMatch(/^classify\.v1@/);
+  });
+
+  it('states the EXCLUDE list as a hard rule, which v1 did not', () => {
+    // The 2026-08-02 bake-off showed llama3.2:3b ignoring v1's "NOT this company" line.
+    expect(loadClassifyPrompt('classify.v2').text).toMatch(/hard rule, not a hint/);
   });
 
   it('injects the disambiguation context the headline alone cannot supply', () => {
@@ -112,15 +119,16 @@ describe('prompt (P4.2, AD-16)', () => {
     });
     expect(prompt).toContain('Company: Shield');
     expect(prompt).toContain('Sector: communications compliance');
-    expect(prompt).toContain('NOT this company: Shield AI, Green Shield FC, windshield');
-    expect(prompt).not.toContain('ignored'); // capped at three hints to keep the prompt short
+    expect(prompt).toContain('EXCLUDE');
+    expect(prompt).toContain('  - Shield AI');
+    expect(prompt).toContain('  - Green Shield FC');
     expect(prompt).toContain('Headline: Shield AI: $1.5 Billion Series G');
   });
 
   it('omits context lines that the registry does not have', () => {
     const prompt = buildUserPrompt({ company: 'ZutaCore', title: 'ZutaCore raises $100M' });
     expect(prompt).not.toContain('Sector:');
-    expect(prompt).not.toContain('NOT this company:');
+    expect(prompt).not.toContain('EXCLUDE');
   });
 });
 

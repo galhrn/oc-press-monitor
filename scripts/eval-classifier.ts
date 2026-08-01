@@ -19,6 +19,7 @@ import { fileURLToPath } from 'node:url';
 import { getConfig, childLogger, newRunId, toError, type Sentiment } from '@oc/core';
 import { OllamaClient, createFileCache, createLimiter, createNullCache } from '@oc/ollama';
 import {
+  DEFAULT_PROMPT_VERSION,
   classifyArticle,
   promptVersionTag,
   renderConfusion,
@@ -51,6 +52,8 @@ const models = (at('--models') ?? LADDER.join(','))
   .split(',')
   .map((m) => m.trim())
   .filter(Boolean);
+
+const promptVersion = at('--prompt') ?? DEFAULT_PROMPT_VERSION;
 
 const cfg = getConfig();
 const runId = newRunId();
@@ -125,7 +128,7 @@ if (!gold.labelling.status.startsWith('APPROVED')) {
                 aliases: context?.aliases ?? [],
                 negativeKeywords: context?.negativeKeywords ?? [],
               },
-              { client, logger: log },
+              { client, logger: log, promptVersion },
             );
             if (!result.cached) latencies.push(Date.now() - t0);
             pairs[index] = {
@@ -171,7 +174,7 @@ if (!gold.labelling.status.startsWith('APPROVED')) {
     results.push(
       scoreRun({
         model,
-        promptVersion: promptVersionTag(),
+        promptVersion: promptVersionTag(promptVersion),
         pairs,
         latenciesMs: latencies,
         wallMs,
@@ -230,7 +233,7 @@ if (!gold.labelling.status.startsWith('APPROVED')) {
   mkdirSync(dirname(resolve(out)), { recursive: true });
   writeFileSync(
     out,
-    `${JSON.stringify({ runId, promptVersion: promptVersionTag(), goldItems: gold.items.length, results, ship: ship.model, perItem: byModel }, null, 2)}\n`,
+    `${JSON.stringify({ runId, promptVersion: promptVersionTag(promptVersion), goldItems: gold.items.length, results, ship: ship.model, perItem: byModel }, null, 2)}\n`,
     'utf8',
   );
   console.error(`  written -> ${out}\n`);
