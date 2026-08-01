@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "lib": ["ES2022"],
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "types": ["node"],
@@ -11,6 +11,7 @@
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "jsx": "react-jsx",
     "verbatimModuleSyntax": true,
     "isolatedModules": true,
     "resolveJsonModule": true,
@@ -24,8 +25,18 @@
       "@oc/registry": ["packages/registry/src/index.ts"],
       "@oc/collector": ["packages/collector/src/index.ts"],
       "@oc/classifier": ["packages/classifier/src/index.ts"],
-      "@oc/pipeline": ["packages/pipeline/src/index.ts"]
+      "@oc/pipeline": ["packages/pipeline/src/index.ts"],
+      "@oc/api": ["apps/api/src/index.ts"],
+      "@oc/api/contract": ["apps/api/src/contract.ts"],
+      "@/*": ["apps/web/src/*"]
     }
   },
-  "include": ["packages/**/*.ts", "apps/**/*.ts", "scripts/**/*.ts", "test/**/*.ts", "*.config.ts"]
+  "include": [
+    "packages/**/*.ts",
+    "apps/**/*.ts",
+    "apps/**/*.tsx",
+    "scripts/**/*.ts",
+    "test/**/*.ts",
+    "*.config.ts"
+  ]
 }

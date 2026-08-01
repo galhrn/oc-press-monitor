@@ -21,3 +21,4 @@ data/companies.sample-*.json
 
 # Production run log (regenerated; the artifacts it produces ARE committed)
 data/backfill.log
+apps/web/dist

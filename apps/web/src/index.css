@@ -1,0 +1,6 @@
+@import 'tailwindcss';
+
+/* Tabular figures keep the KPI numbers from jittering as the background run fills them in. */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}

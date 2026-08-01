@@ -1,0 +1,7 @@
+{
+  "name": "@oc/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "React dashboard: company grid, status chips, sentiment analytics and mention drill-down."
+}
