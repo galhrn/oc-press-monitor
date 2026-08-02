@@ -28,6 +28,7 @@
     "collect": "tsx scripts/collect.ts",
     "backfill": "tsx scripts/run-backfill.ts",
     "serve": "tsx scripts/serve.ts",
+    "daily": "tsx scripts/job-daily.ts",
     "web:dev": "vite --config apps/web/vite.config.ts",
     "web:build": "vite build --config apps/web/vite.config.ts",
     "measure:prefilter": "tsx scripts/measure-prefilter.ts",

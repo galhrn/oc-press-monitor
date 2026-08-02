@@ -70,6 +70,13 @@ export interface RunSummary {
   articlesSeen: number;
   articlesStored: number;
   mentionsNew: number;
+  /**
+   * Ids of the (company, article) pairs this run created, straight from the upsert's return
+   * value. This is what "new mention" means in A5, and it is a fact the write already knows -
+   * deriving it afterwards from a timestamp is fragile, because a run started in the same
+   * millisecond as its own inserts cannot tell its rows apart from the previous run's.
+   */
+  newMentionIds: string[];
   classified: number;
   classificationFailures: number;
   relevant: number;
@@ -122,6 +129,7 @@ export async function runPipeline(options: RunOptions): Promise<RunSummary> {
     articlesSeen: 0,
     articlesStored: 0,
     mentionsNew: 0,
+    newMentionIds: [],
     classified: 0,
     classificationFailures: 0,
     relevant: 0,
@@ -176,7 +184,10 @@ export async function runPipeline(options: RunOptions): Promise<RunSummary> {
         };
         // `upsert` returns true only the first time this pair is seen, which is exactly the
         // definition of a new mention the daily alert uses (A5).
-        if (repos.mentions.upsert(mention)) summary.mentionsNew += 1;
+        if (repos.mentions.upsert(mention)) {
+          summary.mentionsNew += 1;
+          summary.newMentionIds.push(mention.id);
+        }
         pending.push({ article, mention });
       }
 

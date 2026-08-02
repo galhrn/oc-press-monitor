@@ -1,0 +1,11 @@
+{
+  "name": "@oc/alerting",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Alerter interface with console and JSON-file sinks, plus idempotent dispatch.",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  }
+}

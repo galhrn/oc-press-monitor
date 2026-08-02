@@ -26,6 +26,7 @@
       "@oc/collector": ["packages/collector/src/index.ts"],
       "@oc/classifier": ["packages/classifier/src/index.ts"],
       "@oc/pipeline": ["packages/pipeline/src/index.ts"],
+      "@oc/alerting": ["packages/alerting/src/index.ts"],
       "@oc/api": ["apps/api/src/index.ts"],
       "@oc/api/contract": ["apps/api/src/contract.ts"],
       "@/*": ["apps/web/src/*"]

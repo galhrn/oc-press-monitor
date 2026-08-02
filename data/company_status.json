@@ -1,0 +1,3877 @@
+{
+  "generatedAt": "2026-08-02T21:15:54.991Z",
+  "windowDays": 90,
+  "note": "Every company in the registry appears here, including those with no coverage (R5).",
+  "companies": [
+    {
+      "companyId": "62d825d6ab86288b600119bf1b23d674f7c93c0de4b43d2377d993e173c39ee0",
+      "name": "3d Signals",
+      "slug": "3d-signals",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "523fbfacde47d04b5784e2ef0739558762f8fcc1443b9d37116bb08f71574de8",
+      "name": "AEYE Health",
+      "slug": "aeye-health",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "6a556bdf3612b06e2811473c70039f2464b1a6c12892e670fbf4585b2eb7262a",
+      "name": "Abes Market",
+      "slug": "abes-market",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "2b2e39e45056d5d173123e577c64eb356329dc04e71966f71b524fd3327722e5",
+      "name": "Air EV",
+      "slug": "air-ev",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "ec55ac30816142a1d1f9b128b4f0aff8745581e844aca82c5825723269e53bd3",
+      "name": "Airobotics",
+      "slug": "airobotics",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "95f4406ddb371437f0d9744958b7e6be600a51cf81f11798f609ee31830e0464",
+      "name": "Alloy Therapeutics",
+      "slug": "alloy-therapeutics",
+      "status": "STALE",
+      "statusText": "last mentioned 34 days ago",
+      "lastMentionedAt": "2026-06-29T09:36:00.000Z",
+      "daysSinceLastMention": 34,
+      "mentionsInWindow": 3,
+      "sentiment": {
+        "positive": 3,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "3054aecc3e8c17cf0246d35e15c2d49bbf18ada92dd81757c8d273c2678b68da",
+      "name": "Alpha Tau",
+      "slug": "alpha-tau",
+      "status": "FRESH",
+      "statusText": "last mentioned yesterday",
+      "lastMentionedAt": "2026-08-01T06:16:00.000Z",
+      "daysSinceLastMention": 1,
+      "mentionsInWindow": 25,
+      "sentiment": {
+        "positive": 10,
+        "negative": 6,
+        "neutral": 9
+      }
+    },
+    {
+      "companyId": "0bbc5efc52fff98910ef35c5b83528f1dab11a65e24c6456470aac55412b7ad8",
+      "name": "Amitree",
+      "slug": "amitree",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "925c25aee1ae89e11203422df5707928519f5b763a4bcd289f483ecf753d28f3",
+      "name": "Anodot",
+      "slug": "anodot",
+      "status": "STALE",
+      "statusText": "last mentioned 87 days ago",
+      "lastMentionedAt": "2026-05-07T07:00:00.000Z",
+      "daysSinceLastMention": 87,
+      "mentionsInWindow": 2,
+      "sentiment": {
+        "positive": 0,
+        "negative": 2,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "572c531059ad7c8ca7a25a96de29e18e172caddf31e111211335e94541f2f8a3",
+      "name": "Anthropic",
+      "slug": "anthropic",
+      "status": "FRESH",
+      "statusText": "last mentioned yesterday",
+      "lastMentionedAt": "2026-08-01T09:00:00.000Z",
+      "daysSinceLastMention": 1,
+      "mentionsInWindow": 25,
+      "sentiment": {
+        "positive": 5,
+        "negative": 19,
+        "neutral": 1
+      }
+    },
+    {
+      "companyId": "b2d4858a0973db702fb3b3da91f09a3cb0176312f9cd7673bbc3b2eb333bbbab",
+      "name": "Appdome",
+      "slug": "appdome",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "1184f90c50d6757a6195ed21745398439284eb652157b8b499c74772b24e7d6f",
+      "name": "Appforma",
+      "slug": "appforma",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "5af7421d4687aa1ad150d1a05b2191c58579101e9b3a0341e0544ac650d00185",
+      "name": "Apploi",
+      "slug": "apploi",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "2e08832726e2ba4c56ccd4bc8a1c2d0c6cbf75ef31271b4322763f22bf77fc30",
+      "name": "Arbe Robotics",
+      "slug": "arbe-robotics",
+      "status": "FRESH",
+      "statusText": "last mentioned yesterday",
+      "lastMentionedAt": "2026-08-01T03:11:03.000Z",
+      "daysSinceLastMention": 1,
+      "mentionsInWindow": 25,
+      "sentiment": {
+        "positive": 3,
+        "negative": 7,
+        "neutral": 15
+      }
+    },
+    {
+      "companyId": "d3fb298990da9372f2023e0f35872963b951783bf2ea85fa7586bb1d65a82616",
+      "name": "Argus Cyber Security",
+      "slug": "argus-cyber-security",
+      "status": "STALE",
+      "statusText": "last mentioned 33 days ago",
+      "lastMentionedAt": "2026-06-30T07:00:00.000Z",
+      "daysSinceLastMention": 33,
+      "mentionsInWindow": 1,
+      "sentiment": {
+        "positive": 0,
+        "negative": 1,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "90943955bee5a4fab9db9420290f46f75508238d01b2e32b0e0c703bba4a3d73",
+      "name": "Arrow Global",
+      "slug": "arrow-global",
+      "status": "RECENT",
+      "statusText": "last mentioned 24 days ago",
+      "lastMentionedAt": "2026-07-09T07:00:00.000Z",
+      "daysSinceLastMention": 24,
+      "mentionsInWindow": 3,
+      "sentiment": {
+        "positive": 2,
+        "negative": 0,
+        "neutral": 1
+      }
+    },
+    {
+      "companyId": "2e0d94f87a5474e3c7fd441cd481345cbb775551b15808612ba3c2c18eed735d",
+      "name": "Astra",
+      "slug": "astra",
+      "status": "FRESH",
+      "statusText": "last mentioned yesterday",
+      "lastMentionedAt": "2026-08-01T15:24:03.000Z",
+      "daysSinceLastMention": 1,
+      "mentionsInWindow": 18,
+      "sentiment": {
+        "positive": 4,
+        "negative": 2,
+        "neutral": 12
+      }
+    },
+    {
+      "companyId": "61a61851bee3d134ec5fdc2807eae9927c59a1df4a2b1e7e34be1303c9e3dc99",
+      "name": "Atlas Obscura",
+      "slug": "atlas-obscura",
+      "status": "FRESH",
+      "statusText": "last mentioned 5 days ago",
+      "lastMentionedAt": "2026-07-28T16:25:00.000Z",
+      "daysSinceLastMention": 5,
+      "mentionsInWindow": 1,
+      "sentiment": {
+        "positive": 1,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "f1c4eb9f9ea19976e967b592b56731a84fa277a6f0aec525795bf5731e49c1cd",
+      "name": "Autobrains",
+      "slug": "autobrains",
+      "status": "STALE",
+      "statusText": "last mentioned 33 days ago",
+      "lastMentionedAt": "2026-06-30T07:00:00.000Z",
+      "daysSinceLastMention": 33,
+      "mentionsInWindow": 21,
+      "sentiment": {
+        "positive": 15,
+        "negative": 0,
+        "neutral": 6
+      }
+    },
+    {
+      "companyId": "ebcc0c7d365b76be039a43cbcde9ef7d14549b013cb2f840df3347f74ab11f69",
+      "name": "Ayar Labs",
+      "slug": "ayar-labs",
+      "status": "RECENT",
+      "statusText": "last mentioned 11 days ago",
+      "lastMentionedAt": "2026-07-22T07:00:00.000Z",
+      "daysSinceLastMention": 11,
+      "mentionsInWindow": 13,
+      "sentiment": {
+        "positive": 10,
+        "negative": 0,
+        "neutral": 3
+      }
+    },
+    {
+      "companyId": "4f5b52d5d8f1d1a01106e962704f5355af3fe1f099f1f6953222a50a7f037260",
+      "name": "BIScience",
+      "slug": "biscience",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "a5400ba688165ab2e04c1e05d9e2e40fc7b60166d4dc3487f4826fa07477070d",
+      "name": "Barcode Nanotech",
+      "slug": "barcode-nanotech",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "01921b5bee479d906cb509972c4966858248a28c0e60c065352428a84fbcbd07",
+      "name": "BeetleSat",
+      "slug": "beetlesat",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "cd714d4e10c4d2e7cc02c2145a523c22b6ba3646c740b32b49283dbfb7c89af1",
+      "name": "BetterSeeds",
+      "slug": "betterseeds",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "280fbc6bd96afde52c45d2d7d4f8a417953d288828023ed23ef7219d6005985b",
+      "name": "Beyond Meat",
+      "slug": "beyond-meat",
+      "status": "FRESH",
+      "statusText": "last mentioned yesterday",
+      "lastMentionedAt": "2026-07-31T21:19:00.000Z",
+      "daysSinceLastMention": 1,
+      "mentionsInWindow": 25,
+      "sentiment": {
+        "positive": 14,
+        "negative": 4,
+        "neutral": 7
+      }
+    },
+    {
+      "companyId": "83da9d26ecb045838d55b014e9a3527f83d7f9ce4b0a5e401f5adacddfb40ace",
+      "name": "BillGuard",
+      "slug": "billguard",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "cc0da43fb0c891dfb47939f0d913bf7443ed6503f6684bb42f01bc08543d2407",
+      "name": "Binah.ai",
+      "slug": "binah-ai",
+      "status": "STALE",
+      "statusText": "last mentioned 90 days ago",
+      "lastMentionedAt": "2026-05-04T07:00:00.000Z",
+      "daysSinceLastMention": 90,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "b40e33f88271627cf3be6e8229200ae9840c2ab0138d473ae424e6c6653ec332",
+      "name": "BioCatch",
+      "slug": "biocatch",
+      "status": "RECENT",
+      "statusText": "last mentioned 9 days ago",
+      "lastMentionedAt": "2026-07-24T13:01:26.000Z",
+      "daysSinceLastMention": 9,
+      "mentionsInWindow": 8,
+      "sentiment": {
+        "positive": 5,
+        "negative": 2,
+        "neutral": 1
+      }
+    },
+    {
+      "companyId": "cb2b8ee511ee7d117dce6c336ce81d2071a4aa67d38b40994ac46a4eec4720ae",
+      "name": "BioLumic",
+      "slug": "biolumic",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "6601a17e0e31ff1e64bfa1d26acea37de4fad1e549a66a04af1a4f569d688beb",
+      "name": "Biolojic Design",
+      "slug": "biolojic-design",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "9eedb09b00abe6597c73386c415193adb778b2f90dcbe9fd89fccb41c0a1ffdd",
+      "name": "Bites",
+      "slug": "bites",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "aebe5052e13800f9214db007733b7d01a48e866fda30b6431e994f1f40f8d525",
+      "name": "Bizzabo",
+      "slug": "bizzabo",
+      "status": "STALE",
+      "statusText": "last mentioned 33 days ago",
+      "lastMentionedAt": "2026-06-30T07:00:00.000Z",
+      "daysSinceLastMention": 33,
+      "mentionsInWindow": 1,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 1
+      }
+    },
+    {
+      "companyId": "4d1627ea360d80768a8df20dbb511cf6ffd0d6be8af1f8d9f69fd32db263ae9d",
+      "name": "BlueCircle (formerly Trellis)",
+      "slug": "bluecircle-formerly-trellis",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "cce2191242d3f1ccb0ecac4636df182a8e20ffe4454af0668375d9131dd00da3",
+      "name": "BlueGreen Water Technologies",
+      "slug": "bluegreen-water-technologies",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "250463430153cfe49b2fedc12b09c5bc2bd87fdb0711ecae55be7c14be41dcb9",
+      "name": "BlueNalu",
+      "slug": "bluenalu",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "ed0690e015d56beb2c3d66e2013998683f53acef5ec8309541914b8a58d4e458",
+      "name": "BlueTree Technologies",
+      "slug": "bluetree-technologies",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "2382ecd70830765ccd98e16cd0be3c79984536b855d04b3727a8945edce5bc88",
+      "name": "Boatsetter",
+      "slug": "boatsetter",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "b8d6a80af32b1591ce12133c3d6c737c517d49ec092de765c975346b5ce9cc2e",
+      "name": "BrainQ Technologies",
+      "slug": "brainq-technologies",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "e25130ee8c71520bfb57810fae35c98ac924e232bcc46624dcba5550bb063d25",
+      "name": "BriefCam",
+      "slug": "briefcam",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "9241da378e5c9d06945f48e2b6a9ad6e62bea2f597b933baaf935b0555aefead",
+      "name": "BrightInsight",
+      "slug": "brightinsight",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "f1ba60084b768656fbf40d5bc80ef2be253b0bec6ac836dfbeb8ccc504a483a9",
+      "name": "C2A Security",
+      "slug": "c2a-security",
+      "status": "STALE",
+      "statusText": "last mentioned 67 days ago",
+      "lastMentionedAt": "2026-05-27T07:00:00.000Z",
+      "daysSinceLastMention": 67,
+      "mentionsInWindow": 1,
+      "sentiment": {
+        "positive": 1,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "22b978f32405b05afe38c7dd116706abb18648a958aaae03bc5598d37381a994",
+      "name": "CB4",
+      "slug": "cb4",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "48d38f4b41ed005622f58a4c22f3da14a547d3c44b8f67e22d8ca2f86623ea09",
+      "name": "CarDekho",
+      "slug": "cardekho",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "7e56679a373b871fa73e9ba866e057554328b491ad97d8b8b8f3c9b65b33c7ed",
+      "name": "Carrar",
+      "slug": "carrar",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "27180d6a94ac63a9ed393eca66fff055b75d95a95852f499fd5b6d3b912b5266",
+      "name": "Casper",
+      "slug": "casper",
+      "status": "FRESH",
+      "statusText": "last mentioned 5 days ago",
+      "lastMentionedAt": "2026-07-27T23:31:00.000Z",
+      "daysSinceLastMention": 5,
+      "mentionsInWindow": 21,
+      "sentiment": {
+        "positive": 2,
+        "negative": 5,
+        "neutral": 14
+      }
+    },
+    {
+      "companyId": "b792a44546da4440df8ca9c2ee529f20a2fa6db313597157d110a10db1521c63",
+      "name": "Celeno",
+      "slug": "celeno",
+      "status": "STALE",
+      "statusText": "last mentioned 41 days ago",
+      "lastMentionedAt": "2026-06-22T07:00:00.000Z",
+      "daysSinceLastMention": 41,
+      "mentionsInWindow": 1,
+      "sentiment": {
+        "positive": 0,
+        "negative": 1,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "51ea09628499962f920c6da1c91ff6921032c20c589caa91016ce4bfac5f02d3",
+      "name": "Cerebras",
+      "slug": "cerebras",
+      "status": "FRESH",
+      "statusText": "last mentioned 6 days ago",
+      "lastMentionedAt": "2026-07-27T20:35:09.000Z",
+      "daysSinceLastMention": 6,
+      "mentionsInWindow": 25,
+      "sentiment": {
+        "positive": 16,
+        "negative": 3,
+        "neutral": 6
+      }
+    },
+    {
+      "companyId": "8ec39cb409e9432f75e151ac5a0e46e59b6e1e2ddc55942c8d340d1ae6bd1727",
+      "name": "Cimagine",
+      "slug": "cimagine",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "97cfac84ededf5ce0052b8ec2dc432b2ae9045dca9e3a2e6b9d74aff78477726",
+      "name": "Classiq",
+      "slug": "classiq",
+      "status": "RECENT",
+      "statusText": "last mentioned 18 days ago",
+      "lastMentionedAt": "2026-07-15T15:04:17.000Z",
+      "daysSinceLastMention": 18,
+      "mentionsInWindow": 25,
+      "sentiment": {
+        "positive": 10,
+        "negative": 0,
+        "neutral": 15
+      }
+    },
+    {
+      "companyId": "17b7dc0f4f6575c9fe8175efe8ca28c0fa945398ab8162fa16515f131e74e3dd",
+      "name": "Clinch",
+      "slug": "clinch",
+      "status": "STALE",
+      "statusText": "last mentioned 59 days ago",
+      "lastMentionedAt": "2026-06-04T07:00:00.000Z",
+      "daysSinceLastMention": 59,
+      "mentionsInWindow": 2,
+      "sentiment": {
+        "positive": 2,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "9ff63453f056691337187c05e13666568439b1b609be650c92460d02014c2420",
+      "name": "Cognigo",
+      "slug": "cognigo",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "d976a80de225beebc7c24f60c8f569f58d61f7c48e2b6dd112b9533092b85c79",
+      "name": "Connected Energy",
+      "slug": "connected-energy",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "dae9e9578f84869082d9c65ec2ff9889f26d560335d62997c7e3edcc2ab9f56d",
+      "name": "Consumer Physics",
+      "slug": "consumer-physics",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "4a0e0225afd23113aa5091459c052ff609709c61643911fe1b86d3e8b4faf66c",
+      "name": "Cordio Medical",
+      "slug": "cordio-medical",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "be901d4d25141a3af5187c567b171d84f718144af878fbe30bc12ce77fc96536",
+      "name": "Corephotonics",
+      "slug": "corephotonics",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "80cff4bd92369a6bb94cf57ca70f6fc1fc5fa14aa8683d4dce6c6b605a9fd224",
+      "name": "CorrActions",
+      "slug": "corractions",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "2c9b81afa6538baecf0e2eebe53efb49cb1917d1db97b78a6e776d1a06dc0566",
+      "name": "CropX",
+      "slug": "cropx",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "de51fe46e78e859acb0e4de72052faae9230b8490ba282f668bde019bf73db08",
+      "name": "Crosswise",
+      "slug": "crosswise",
+      "status": "STALE",
+      "statusText": "last mentioned 32 days ago",
+      "lastMentionedAt": "2026-07-01T07:00:00.000Z",
+      "daysSinceLastMention": 32,
+      "mentionsInWindow": 1,
+      "sentiment": {
+        "positive": 0,
+        "negative": 1,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "f3922ff8fd2ff3e9374ec3f76dc57d59a85e20328399055e04c998d99864d47f",
+      "name": "Cyabra",
+      "slug": "cyabra",
+      "status": "FRESH",
+      "statusText": "last mentioned yesterday",
+      "lastMentionedAt": "2026-07-31T22:22:47.000Z",
+      "daysSinceLastMention": 1,
+      "mentionsInWindow": 23,
+      "sentiment": {
+        "positive": 11,
+        "negative": 1,
+        "neutral": 11
+      }
+    },
+    {
+      "companyId": "e10faf69af4725d6ed5ba6ec30a5f98651a662ffd59d494ee244536d591aefa7",
+      "name": "CyberMDX",
+      "slug": "cybermdx",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "fcbe1ec7307452e465443a2777dae2606e217c72ab7bc362c234d706d9b52666",
+      "name": "CyberX",
+      "slug": "cyberx",
+      "status": "STALE",
+      "statusText": "last mentioned 89 days ago",
+      "lastMentionedAt": "2026-05-05T07:00:00.000Z",
+      "daysSinceLastMention": 89,
+      "mentionsInWindow": 1,
+      "sentiment": {
+        "positive": 1,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "aa4db91eb084e85899a47653ae89d48d1bb027b61239cf123e9f4ec93f5beaa4",
+      "name": "Cycuity (formerly Tortuga Logic)",
+      "slug": "cycuity-formerly-tortuga-logic",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "b6a2ef21f933a3e965094ce45fcb196425b061c496b21db704f427c76b5f3e42",
+      "name": "Cyfirma",
+      "slug": "cyfirma",
+      "status": "RECENT",
+      "statusText": "last mentioned 23 days ago",
+      "lastMentionedAt": "2026-07-10T12:16:22.000Z",
+      "daysSinceLastMention": 23,
+      "mentionsInWindow": 7,
+      "sentiment": {
+        "positive": 5,
+        "negative": 1,
+        "neutral": 1
+      }
+    },
+    {
+      "companyId": "1b5dbd776f9028bed8a334272ae5bdf678643783d4aa201ec5485b7fb84c67e2",
+      "name": "CytoReason",
+      "slug": "cytoreason",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "3538ac2a6e4f6ac47bde3e994ab79c7da4316dccbde5928fb99535efafdeee10",
+      "name": "DailyPay",
+      "slug": "dailypay",
+      "status": "FRESH",
+      "statusText": "last mentioned 4 days ago",
+      "lastMentionedAt": "2026-07-29T17:44:37.000Z",
+      "daysSinceLastMention": 4,
+      "mentionsInWindow": 8,
+      "sentiment": {
+        "positive": 2,
+        "negative": 3,
+        "neutral": 3
+      }
+    },
+    {
+      "companyId": "ff7f0439d8ea064e81e21509daac956ea6d63bcb351469d54bfb3daa7726f798",
+      "name": "Dandelion Energy",
+      "slug": "dandelion-energy",
+      "status": "FRESH",
+      "statusText": "last mentioned 3 days ago",
+      "lastMentionedAt": "2026-07-30T07:00:00.000Z",
+      "daysSinceLastMention": 3,
+      "mentionsInWindow": 5,
+      "sentiment": {
+        "positive": 3,
+        "negative": 0,
+        "neutral": 2
+      }
+    },
+    {
+      "companyId": "a4718c1526f6accda4011db8e7b4ceace570230667f97c53c850047246562b23",
+      "name": "Databricks",
+      "slug": "databricks",
+      "status": "FRESH",
+      "statusText": "last mentioned 2 days ago",
+      "lastMentionedAt": "2026-07-31T18:20:01.000Z",
+      "daysSinceLastMention": 2,
+      "mentionsInWindow": 24,
+      "sentiment": {
+        "positive": 17,
+        "negative": 1,
+        "neutral": 6
+      }
+    },
+    {
+      "companyId": "062efac5116480c3c3d7178c121263d8085ba8fe0fa3d14131ba1729167c5cbe",
+      "name": "Dataloop",
+      "slug": "dataloop",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "bb3b9ddbcb8ae2262ff911a3f5d50a156e25adb9ab5b23c1f35220857229cf85",
+      "name": "DeepKeep",
+      "slug": "deepkeep",
+      "status": "RECENT",
+      "statusText": "last mentioned 11 days ago",
+      "lastMentionedAt": "2026-07-22T07:00:00.000Z",
+      "daysSinceLastMention": 11,
+      "mentionsInWindow": 3,
+      "sentiment": {
+        "positive": 1,
+        "negative": 2,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "79e7537d257c9efa97b593520b052d01eef86bd1b787c097b1988728201a3926",
+      "name": "Diagnostic Robotics",
+      "slug": "diagnostic-robotics",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "6b50da653bed7bd2bd19dc5fb8293965ac4584c2aec9a9907a4c2d3285c5dc9f",
+      "name": "DreaMed Diabetes",
+      "slug": "dreamed-diabetes",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "6a1058318fe5a880bdbfd3a05b2e76424f31064594d184cb3e487d2ead5e3148",
+      "name": "Edgybees",
+      "slug": "edgybees",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "56fda249010dece7dc1ea47cdb066b128acbaf381e448d359cdee10e511f5d5d",
+      "name": "Edity Therapeutics",
+      "slug": "edity-therapeutics",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "68497c99cf580f923ba30a86640d11cbbe3ab17bf0f584e376e74ef9c1a3b92d",
+      "name": "EduNav",
+      "slug": "edunav",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "3b1479c759e6f0961131188ddcc81ab2f05dea8e357174b79acd9f50b1693302",
+      "name": "Eko Health",
+      "slug": "eko-health",
+      "status": "RECENT",
+      "statusText": "last mentioned 10 days ago",
+      "lastMentionedAt": "2026-07-23T07:00:00.000Z",
+      "daysSinceLastMention": 10,
+      "mentionsInWindow": 4,
+      "sentiment": {
+        "positive": 3,
+        "negative": 1,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "058b4bbcf64276e709af0d0bca922189f1134fdfa8fdd4ec937de409d8791709",
+      "name": "Entangled Networks",
+      "slug": "entangled-networks",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "2b8733b3f6fbf42de852e485207370208f98f1523a0317eaaf33237d416b826a",
+      "name": "EquipmentShare",
+      "slug": "equipmentshare",
+      "status": "FRESH",
+      "statusText": "last mentioned yesterday",
+      "lastMentionedAt": "2026-08-01T06:18:28.000Z",
+      "daysSinceLastMention": 1,
+      "mentionsInWindow": 25,
+      "sentiment": {
+        "positive": 0,
+        "negative": 20,
+        "neutral": 5
+      }
+    },
+    {
+      "companyId": "3a82fc30aaefd48fdedb7c994982fea629e50abc857fb7ae3e6bab84c20319a2",
+      "name": "Fireblade",
+      "slug": "fireblade",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "bb2b3cad26e8fe46d5bdd69597b48eead447add17341620b27bddafdcf1879b8",
+      "name": "Firefly Neuroscience (formerly ElMindA)",
+      "slug": "firefly-neuroscience-formerly-elminda",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "54c0933fce1d95f06d85b890a0abf8ea6cce18f7c155b1e3d8cd773ddc01aa17",
+      "name": "Flash Forest",
+      "slug": "flash-forest",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "1beef5e1dbf58272312550df5aa0059344174879b93b6808bf4754ea3a4c7834",
+      "name": "Flytrex",
+      "slug": "flytrex",
+      "status": "FRESH",
+      "statusText": "last mentioned 3 days ago",
+      "lastMentionedAt": "2026-07-30T18:42:45.000Z",
+      "daysSinceLastMention": 3,
+      "mentionsInWindow": 22,
+      "sentiment": {
+        "positive": 17,
+        "negative": 1,
+        "neutral": 4
+      }
+    },
+    {
+      "companyId": "283741a031cb8c6aab8d70c3f49cbcb9c4bbb2bbcb06d565062a00106dc3b039",
+      "name": "Foretellix",
+      "slug": "foretellix",
+      "status": "STALE",
+      "statusText": "last mentioned 62 days ago",
+      "lastMentionedAt": "2026-06-01T07:00:00.000Z",
+      "daysSinceLastMention": 62,
+      "mentionsInWindow": 2,
+      "sentiment": {
+        "positive": 2,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "4ec98d7498ccabbcb76760b24fa033adc5b26d9db17b2c04af808b5f3bc20e1d",
+      "name": "Freightos",
+      "slug": "freightos",
+      "status": "FRESH",
+      "statusText": "last mentioned yesterday",
+      "lastMentionedAt": "2026-08-01T07:11:01.000Z",
+      "daysSinceLastMention": 1,
+      "mentionsInWindow": 25,
+      "sentiment": {
+        "positive": 12,
+        "negative": 5,
+        "neutral": 8
+      }
+    },
+    {
+      "companyId": "2d9411295f459c0789b2caab824d9103b17099a5729d9f7c38f8d7edf8cde9c8",
+      "name": "Frontier Car Group",
+      "slug": "frontier-car-group",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "212c10a83d6e925d8c4d304df7a4e7d646356ce92807566efab3e0e3644f1845",
+      "name": "Future Family",
+      "slug": "future-family",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "a1edce3705128de1922a1fbbca8dbcdac8e9635de3339551200ea95fdd5b8d52",
+      "name": "Genopore",
+      "slug": "genopore",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "f6d90809437cf9d3d4ca4332c7b1a4359dc52c7c31f905b26e1d13fc52f5e4cc",
+      "name": "Glean",
+      "slug": "glean",
+      "status": "RECENT",
+      "statusText": "last mentioned 9 days ago",
+      "lastMentionedAt": "2026-07-24T07:00:00.000Z",
+      "daysSinceLastMention": 9,
+      "mentionsInWindow": 16,
+      "sentiment": {
+        "positive": 12,
+        "negative": 4,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "366e809f61a426cea2b565eae4bfaaa85b749a8d1330972db728fc591c3c0bd3",
+      "name": "Global Kinetics",
+      "slug": "global-kinetics",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "c134bf20e74faa526146098e4d1efad69400e81c3a03a7c74aefe9ae3a817ace",
+      "name": "Greenlight",
+      "slug": "greenlight",
+      "status": "FRESH",
+      "statusText": "last mentioned 4 days ago",
+      "lastMentionedAt": "2026-07-29T13:02:47.000Z",
+      "daysSinceLastMention": 4,
+      "mentionsInWindow": 8,
+      "sentiment": {
+        "positive": 3,
+        "negative": 0,
+        "neutral": 5
+      }
+    },
+    {
+      "companyId": "d78473263b9c68bd2acfbb20545f42565ca554c9f7650625451364d7c678bf99",
+      "name": "Groq",
+      "slug": "groq",
+      "status": "RECENT",
+      "statusText": "last mentioned 9 days ago",
+      "lastMentionedAt": "2026-07-24T07:00:00.000Z",
+      "daysSinceLastMention": 9,
+      "mentionsInWindow": 18,
+      "sentiment": {
+        "positive": 9,
+        "negative": 6,
+        "neutral": 3
+      }
+    },
+    {
+      "companyId": "ad986c3a0834608b5219148c12c76991032593a75c6c6f864c14104990ed827f",
+      "name": "Guild",
+      "slug": "guild",
+      "status": "FRESH",
+      "statusText": "last mentioned 2 days ago",
+      "lastMentionedAt": "2026-07-31T21:06:11.000Z",
+      "daysSinceLastMention": 2,
+      "mentionsInWindow": 23,
+      "sentiment": {
+        "positive": 9,
+        "negative": 7,
+        "neutral": 7
+      }
+    },
+    {
+      "companyId": "6d653300184868682f135735bd431180107c576f273bfa8ebaaa02822ac77e82",
+      "name": "H2Pro",
+      "slug": "h2pro",
+      "status": "STALE",
+      "statusText": "last mentioned 51 days ago",
+      "lastMentionedAt": "2026-06-12T07:00:00.000Z",
+      "daysSinceLastMention": 51,
+      "mentionsInWindow": 7,
+      "sentiment": {
+        "positive": 3,
+        "negative": 0,
+        "neutral": 4
+      }
+    },
+    {
+      "companyId": "bf49314558e1461885984b1054d27ae0561ec13c20f10ae6b494e8234fa91310",
+      "name": "HEQA Security (formerly QuantLR)",
+      "slug": "heqa-security-formerly-quantlr",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "214d4dbc32023232877791593091774db87334789088352e5f33319e7e2f39b1",
+      "name": "Hailo",
+      "slug": "hailo",
+      "status": "FRESH",
+      "statusText": "last mentioned 2 days ago",
+      "lastMentionedAt": "2026-07-31T00:49:01.000Z",
+      "daysSinceLastMention": 2,
+      "mentionsInWindow": 25,
+      "sentiment": {
+        "positive": 13,
+        "negative": 10,
+        "neutral": 2
+      }
+    },
+    {
+      "companyId": "965c19b5e6cd90f6e431dd95b9423e9993c809ca3adc9e98724d7ea152e2f45c",
+      "name": "Harbinger Motors",
+      "slug": "harbinger-motors",
+      "status": "FRESH",
+      "statusText": "last mentioned 2 days ago",
+      "lastMentionedAt": "2026-07-31T16:26:57.000Z",
+      "daysSinceLastMention": 2,
+      "mentionsInWindow": 10,
+      "sentiment": {
+        "positive": 3,
+        "negative": 3,
+        "neutral": 4
+      }
+    },
+    {
+      "companyId": "2349a6848d029aa2bea30b44d8a63b080aa98fb9b5db2cea5fd875fc9543d789",
+      "name": "Harvey",
+      "slug": "harvey",
+      "status": "FRESH",
+      "statusText": "last mentioned 2 days ago",
+      "lastMentionedAt": "2026-07-31T05:26:00.000Z",
+      "daysSinceLastMention": 2,
+      "mentionsInWindow": 25,
+      "sentiment": {
+        "positive": 24,
+        "negative": 1,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "9013b2951c377a7a6bb42799d08b28af56769a1ee4ccd1766c6d1e0de5c014f5",
+      "name": "HoneyBook",
+      "slug": "honeybook",
+      "status": "FRESH",
+      "statusText": "last mentioned 5 days ago",
+      "lastMentionedAt": "2026-07-28T06:32:59.000Z",
+      "daysSinceLastMention": 5,
+      "mentionsInWindow": 10,
+      "sentiment": {
+        "positive": 6,
+        "negative": 1,
+        "neutral": 3
+      }
+    },
+    {
+      "companyId": "c8d2018bf2907e0288a3c9c96053368d4cfbf725b59c02a024f43710b715a0c1",
+      "name": "Hub Security",
+      "slug": "hub-security",
+      "status": "STALE",
+      "statusText": "last mentioned 60 days ago",
+      "lastMentionedAt": "2026-06-03T07:00:00.000Z",
+      "daysSinceLastMention": 60,
+      "mentionsInWindow": 2,
+      "sentiment": {
+        "positive": 0,
+        "negative": 2,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "8872094304f140434f7999f76c7d39f5b73506c52c6550000bc597eeef5790e3",
+      "name": "IQM",
+      "slug": "iqm",
+      "status": "FRESH",
+      "statusText": "last mentioned yesterday",
+      "lastMentionedAt": "2026-08-01T12:22:50.000Z",
+      "daysSinceLastMention": 1,
+      "mentionsInWindow": 25,
+      "sentiment": {
+        "positive": 17,
+        "negative": 4,
+        "neutral": 4
+      }
+    },
+    {
+      "companyId": "e9277407cd65f74e2be0036444a16fd21cc82af621dac0ee8ae8654eacee5d50",
+      "name": "InZiv",
+      "slug": "inziv",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "a590fc2798e35d5010dbbfd8e3f014989798366b1e057d6a418c27af686c6ec8",
+      "name": "Incredo (formerly known as DouxMatok)",
+      "slug": "incredo-formerly-known-as-douxmatok",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "015e88887894f22daec3b432aae7282e153433a0a6b57b4fd43e66882b64fdb2",
+      "name": "Innovalve",
+      "slug": "innovalve",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "d5a14855b0964276b8e6085fdc6ad488c20411f2f0d6a6dffc61513422d7b50f",
+      "name": "Innoviz",
+      "slug": "innoviz",
+      "status": "FRESH",
+      "statusText": "last mentioned 2 days ago",
+      "lastMentionedAt": "2026-07-31T01:37:52.000Z",
+      "daysSinceLastMention": 2,
+      "mentionsInWindow": 25,
+      "sentiment": {
+        "positive": 10,
+        "negative": 3,
+        "neutral": 12
+      }
+    },
+    {
+      "companyId": "0457f1bd2b4418b8693d1612451556b8855764a1bb9cf81ed2b1a76edc64b84c",
+      "name": "InsideTracker",
+      "slug": "insidetracker",
+      "status": "FRESH",
+      "statusText": "last mentioned 4 days ago",
+      "lastMentionedAt": "2026-07-29T13:04:00.000Z",
+      "daysSinceLastMention": 4,
+      "mentionsInWindow": 4,
+      "sentiment": {
+        "positive": 3,
+        "negative": 1,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "2e9102c69e5f8d7d75b3169afe9f9fc590db60a135f4c8896e471a5e22c9893d",
+      "name": "Insightec",
+      "slug": "insightec",
+      "status": "FRESH",
+      "statusText": "last mentioned 4 days ago",
+      "lastMentionedAt": "2026-07-29T05:09:35.000Z",
+      "daysSinceLastMention": 4,
+      "mentionsInWindow": 4,
+      "sentiment": {
+        "positive": 2,
+        "negative": 0,
+        "neutral": 2
+      }
+    },
+    {
+      "companyId": "4c18d928e465dd01c630e6a8ad0c6ef9bd6c99961dd8d7bacd7fedcd1fd45b17",
+      "name": "Intuition Robotics",
+      "slug": "intuition-robotics",
+      "status": "RECENT",
+      "statusText": "last mentioned 12 days ago",
+      "lastMentionedAt": "2026-07-21T13:00:00.000Z",
+      "daysSinceLastMention": 12,
+      "mentionsInWindow": 1,
+      "sentiment": {
+        "positive": 1,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "ade47c40f89fcfdc3cbf47bdc9b007c887ee06ffd1689c5c507783a24c5d540e",
+      "name": "IronVest",
+      "slug": "ironvest",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "6e161b557e5ee4b369a0ce7332bd8d12a4196fe757c3751dff828b6485e5613b",
+      "name": "Island",
+      "slug": "island",
+      "status": "FRESH",
+      "statusText": "last mentioned 3 days ago",
+      "lastMentionedAt": "2026-07-30T07:13:39.000Z",
+      "daysSinceLastMention": 3,
+      "mentionsInWindow": 9,
+      "sentiment": {
+        "positive": 5,
+        "negative": 0,
+        "neutral": 4
+      }
+    },
+    {
+      "companyId": "81c9366c99dba611311d82ca02c334c5403e8c3b395f0b781890f38e7a7fd384",
+      "name": "ItsMine",
+      "slug": "itsmine",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "75fed701650a143660944696309e5edab76b5a6dca49a31bbd1f866a392485ef",
+      "name": "JUMP Bikes",
+      "slug": "jump-bikes",
+      "status": "RECENT",
+      "statusText": "last mentioned 17 days ago",
+      "lastMentionedAt": "2026-07-16T09:30:27.000Z",
+      "daysSinceLastMention": 17,
+      "mentionsInWindow": 3,
+      "sentiment": {
+        "positive": 0,
+        "negative": 3,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "38ebce20fb8ef5982d7d26000f9845c270ba533a7b997175f4924223bf770dc0",
+      "name": "Juganu",
+      "slug": "juganu",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "b3f214eae7968c274676f1536fef00a45ce2924a9a16434645786bb8bba58e2e",
+      "name": "JumpCloud",
+      "slug": "jumpcloud",
+      "status": "RECENT",
+      "statusText": "last mentioned 18 days ago",
+      "lastMentionedAt": "2026-07-15T07:00:00.000Z",
+      "daysSinceLastMention": 18,
+      "mentionsInWindow": 5,
+      "sentiment": {
+        "positive": 4,
+        "negative": 0,
+        "neutral": 1
+      }
+    },
+    {
+      "companyId": "c3064d2480bb73cbfa103811bb6b072c2d39243f58e03805badfe894524c66d0",
+      "name": "Kando",
+      "slug": "kando",
+      "status": "FRESH",
+      "statusText": "last mentioned 6 days ago",
+      "lastMentionedAt": "2026-07-27T07:00:00.000Z",
+      "daysSinceLastMention": 6,
+      "mentionsInWindow": 5,
+      "sentiment": {
+        "positive": 3,
+        "negative": 0,
+        "neutral": 2
+      }
+    },
+    {
+      "companyId": "c6d2310dea6d15da04251138711f7d7cb2d82ba6cfa0fe4216c9a5e4a9b15e24",
+      "name": "Kardome",
+      "slug": "kardome",
+      "status": "STALE",
+      "statusText": "last mentioned 75 days ago",
+      "lastMentionedAt": "2026-05-19T07:00:00.000Z",
+      "daysSinceLastMention": 75,
+      "mentionsInWindow": 2,
+      "sentiment": {
+        "positive": 2,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "ce6917b7e6885a45bb7096e2cdf59a4467bb17a629a36f99de51fc811765417f",
+      "name": "Kemtai",
+      "slug": "kemtai",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "574069bc86f55ea5c2e88b35d69482d726b9bd5547c8a8e58d26569c9dbe0766",
+      "name": "Kenna Security",
+      "slug": "kenna-security",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "ec79b0163bc3de4260a934f7245370074510ce45ba3620511e81e483cf27761f",
+      "name": "Kini",
+      "slug": "kini",
+      "status": "FRESH",
+      "statusText": "last mentioned 5 days ago",
+      "lastMentionedAt": "2026-07-28T09:30:07.000Z",
+      "daysSinceLastMention": 5,
+      "mentionsInWindow": 4,
+      "sentiment": {
+        "positive": 4,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "223314a00d25507f7bfe7f4de44b35c1d01739bf00728edc9f4f96836f8a3307",
+      "name": "Klook",
+      "slug": "klook",
+      "status": "FRESH",
+      "statusText": "last mentioned 3 days ago",
+      "lastMentionedAt": "2026-07-30T14:07:00.000Z",
+      "daysSinceLastMention": 3,
+      "mentionsInWindow": 24,
+      "sentiment": {
+        "positive": 16,
+        "negative": 3,
+        "neutral": 5
+      }
+    },
+    {
+      "companyId": "623b4a0ded84cc01130fde29efabeace9b845afe4a92b2f6c2df406feb3b3899",
+      "name": "Kodiak Robotics",
+      "slug": "kodiak-robotics",
+      "status": "STALE",
+      "statusText": "last mentioned 86 days ago",
+      "lastMentionedAt": "2026-05-08T07:00:00.000Z",
+      "daysSinceLastMention": 86,
+      "mentionsInWindow": 1,
+      "sentiment": {
+        "positive": 1,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "30ae2190a2807ecae7df95d3f8f4dcf1e5918179d2cac3debba80847042973df",
+      "name": "Kryon Systems",
+      "slug": "kryon-systems",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "0c196ad164c3a43f604c31377fd7831708e987d198305742ffb4977565fcacee",
+      "name": "Lambda (lambda.ai)",
+      "slug": "lambda-lambda-ai",
+      "status": "STALE",
+      "statusText": "last mentioned 40 days ago",
+      "lastMentionedAt": "2026-06-23T07:00:00.000Z",
+      "daysSinceLastMention": 40,
+      "mentionsInWindow": 12,
+      "sentiment": {
+        "positive": 11,
+        "negative": 0,
+        "neutral": 1
+      }
+    },
+    {
+      "companyId": "54f327fc0d4fe86e7a07b6a9ae40db905ee86a840603054838016d382a193ad5",
+      "name": "Lano",
+      "slug": "lano",
+      "status": "STALE",
+      "statusText": "last mentioned 44 days ago",
+      "lastMentionedAt": "2026-06-19T10:17:52.000Z",
+      "daysSinceLastMention": 44,
+      "mentionsInWindow": 1,
+      "sentiment": {
+        "positive": 1,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "4176f025dd9922a8dff53a3e9e2bd96abeddbbf178f614fd343b93fd128fecdd",
+      "name": "Launchpad",
+      "slug": "launchpad",
+      "status": "FRESH",
+      "statusText": "last mentioned 3 days ago",
+      "lastMentionedAt": "2026-07-30T09:07:13.000Z",
+      "daysSinceLastMention": 3,
+      "mentionsInWindow": 25,
+      "sentiment": {
+        "positive": 17,
+        "negative": 4,
+        "neutral": 4
+      }
+    },
+    {
+      "companyId": "2a4901ee2848d8ba0c7eddb21a892ab8e3c92ba3ebeafb3d40c78f79ada5f57b",
+      "name": "Lemonade",
+      "slug": "lemonade",
+      "status": "FRESH",
+      "statusText": "last mentioned 2 days ago",
+      "lastMentionedAt": "2026-07-31T17:45:01.000Z",
+      "daysSinceLastMention": 2,
+      "mentionsInWindow": 25,
+      "sentiment": {
+        "positive": 11,
+        "negative": 6,
+        "neutral": 8
+      }
+    },
+    {
+      "companyId": "a17b7b1be686a4d19bb8068e59749c41d0f46dd9f0a9dfdd38b18f9a5fbf51bc",
+      "name": "Lifeward (formerly known as ReWalk)",
+      "slug": "lifeward-formerly-known-as-rewalk",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "3e9f56783c94d2fd310b7f100f0d6f39f6e3dc19e844eb0c7f32da3924533163",
+      "name": "Lightico",
+      "slug": "lightico",
+      "status": "STALE",
+      "statusText": "last mentioned 48 days ago",
+      "lastMentionedAt": "2026-06-15T07:00:00.000Z",
+      "daysSinceLastMention": 48,
+      "mentionsInWindow": 1,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 1
+      }
+    },
+    {
+      "companyId": "10039910ec58424d4222d35dfe16bce14711d906feeca23b3dfe8029129cdc74",
+      "name": "Liquid Instruments",
+      "slug": "liquid-instruments",
+      "status": "FRESH",
+      "statusText": "last mentioned 4 days ago",
+      "lastMentionedAt": "2026-07-29T16:00:00.000Z",
+      "daysSinceLastMention": 4,
+      "mentionsInWindow": 5,
+      "sentiment": {
+        "positive": 5,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "2d9f5e5ec094569e6ad54288160710fea7de8cb85660878f48df37163058c301",
+      "name": "Locusview",
+      "slug": "locusview",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "8127170f78a488ba2cc659c243494c9cb0e7f25fa60241167c95c7eb20556485",
+      "name": "Ludeo (formerly Edge)",
+      "slug": "ludeo-formerly-edge",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "70009dfe542d8b48e3deef9bfde986c3c0a1a59f449d2278b90acfa405865ef5",
+      "name": "MST",
+      "slug": "mst",
+      "status": "RECENT",
+      "statusText": "last mentioned 16 days ago",
+      "lastMentionedAt": "2026-07-17T07:00:00.000Z",
+      "daysSinceLastMention": 16,
+      "mentionsInWindow": 10,
+      "sentiment": {
+        "positive": 3,
+        "negative": 1,
+        "neutral": 6
+      }
+    },
+    {
+      "companyId": "2d52854a9bbdf12a626e51b83f0918b5425ba43885c6d990155d0b12ad374417",
+      "name": "Magisto",
+      "slug": "magisto",
+      "status": "RECENT",
+      "statusText": "last mentioned 9 days ago",
+      "lastMentionedAt": "2026-07-24T02:13:40.000Z",
+      "daysSinceLastMention": 9,
+      "mentionsInWindow": 1,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 1
+      }
+    },
+    {
+      "companyId": "ba31133a617c85cf7ea95a61c82ccd3e8bd7e02278016fcddbbbbc3b976751ab",
+      "name": "Maolac",
+      "slug": "maolac",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "129c2f7f5d0b972efe151a5ea3947cf4b7ffaa961d5d4d05eb8889b23c3b03d4",
+      "name": "MasterClass",
+      "slug": "masterclass",
+      "status": "FRESH",
+      "statusText": "last mentioned yesterday",
+      "lastMentionedAt": "2026-08-01T03:53:00.000Z",
+      "daysSinceLastMention": 1,
+      "mentionsInWindow": 16,
+      "sentiment": {
+        "positive": 11,
+        "negative": 4,
+        "neutral": 1
+      }
+    },
+    {
+      "companyId": "2352989bf79f0773039cc8512fdc76f8aa84ac60f24690db6d66088c071db9dd",
+      "name": "MaterialsZone",
+      "slug": "materialszone",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "7c012b50fb80e9aa0bf2058858e70483bbc6439b1889af9ee86ba2cf97682fec",
+      "name": "MeMed",
+      "slug": "memed",
+      "status": "STALE",
+      "statusText": "last mentioned 42 days ago",
+      "lastMentionedAt": "2026-06-21T07:00:00.000Z",
+      "daysSinceLastMention": 42,
+      "mentionsInWindow": 4,
+      "sentiment": {
+        "positive": 1,
+        "negative": 2,
+        "neutral": 1
+      }
+    },
+    {
+      "companyId": "dc140ffbe551e7add76507f67fb945034ad7f28b4c70a53b55f9f5b9225fd8db",
+      "name": "Medisafe",
+      "slug": "medisafe",
+      "status": "RECENT",
+      "statusText": "last mentioned 12 days ago",
+      "lastMentionedAt": "2026-07-21T12:00:00.000Z",
+      "daysSinceLastMention": 12,
+      "mentionsInWindow": 1,
+      "sentiment": {
+        "positive": 1,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "33d2a9ade57a79c080082f9158ab5b938c6a03a323fb447eaa2eff719de14cd0",
+      "name": "Mentad",
+      "slug": "mentad",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "ec23eec60dda6cdebd26744f152345c858b2e48a48b7fb655e652e67911a2aaa",
+      "name": "Mermade Seafoods",
+      "slug": "mermade-seafoods",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "0a5476c97298c269b6bc87a2fa4e0cca742abc3713fdc4e77ee237b3659fd54c",
+      "name": "MigVax",
+      "slug": "migvax",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "2f97de29db15444eb14b378859e61a05e818e0b25a7fb1807a9d0cd151aaa4a3",
+      "name": "Momentis Surgical (formerly Memic)",
+      "slug": "momentis-surgical-formerly-memic",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "b4e5121d9d8c8c10828d900eb38418542f2670daf9a8ea4769209b269ca17656",
+      "name": "Moodify",
+      "slug": "moodify",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "b882213838066690ae67958b1c5694a19eff4c90fb9864888cebbf470407d5f9",
+      "name": "Morphisec",
+      "slug": "morphisec",
+      "status": "FRESH",
+      "statusText": "last mentioned 2 days ago",
+      "lastMentionedAt": "2026-07-31T14:14:55.000Z",
+      "daysSinceLastMention": 2,
+      "mentionsInWindow": 3,
+      "sentiment": {
+        "positive": 3,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "ca02ccdcd85a91d90a03176954926b69a59a37c1050369166a149191e6f12be6",
+      "name": "NT-Tao",
+      "slug": "nt-tao",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "876fe82f6e872effd51013ec8b3252186ba9f32d5a537cce66893e0afc107d40",
+      "name": "Nanomedic",
+      "slug": "nanomedic",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "6f30c14b6b000ef28bbca746d71c310e61d602583c44fd921db2ead5fa9bf331",
+      "name": "Nanorep",
+      "slug": "nanorep",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "c0697c14119a6414372326a4e72ee6c5a93c7831de423745718284ea0726a444",
+      "name": "Near",
+      "slug": "near",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "068a48f02e51286d2a1c2eb7bd2e917dd1e2786b203bb4e834803308e330a395",
+      "name": "Neolithics",
+      "slug": "neolithics",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "97068585acc9cc0f4534c10b607027ca5a9dec9d1a100f48532b5df35e4d1e82",
+      "name": "NetOp",
+      "slug": "netop",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "96fd0d16060a189e39707a03a76590e477d8e4e8609eb1cfa3889d0f63934fcd",
+      "name": "NeuReality",
+      "slug": "neureality",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "82c52ecad94cd30ca5727614d06467fcb36aa7a8f36219e6b03ae734ad050bef",
+      "name": "Neura",
+      "slug": "neura",
+      "status": "FRESH",
+      "statusText": "last mentioned 3 days ago",
+      "lastMentionedAt": "2026-07-30T20:31:34.000Z",
+      "daysSinceLastMention": 3,
+      "mentionsInWindow": 23,
+      "sentiment": {
+        "positive": 18,
+        "negative": 0,
+        "neutral": 5
+      }
+    },
+    {
+      "companyId": "8117a969c51b8a1d46416d94c78e6d88281903b0f9f6e90e540a1a4934285ecf",
+      "name": "Neverware",
+      "slug": "neverware",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "4eab7b5660b946832f07891c686f20fda1b2e5d57df93fda970feaf89cc8b5b9",
+      "name": "Nextpeer",
+      "slug": "nextpeer",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "3ee57aa2834e269a898c81973ab2b8b0ec064e04b1b8285a3034a8a6f83649c7",
+      "name": "NooBaa",
+      "slug": "noobaa",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "22f4ccb6c1ec3168882cc65008fff051cf18f39fa9b56350d64fb57d3b7258dc",
+      "name": "Omnix Medical",
+      "slug": "omnix-medical",
+      "status": "RECENT",
+      "statusText": "last mentioned 20 days ago",
+      "lastMentionedAt": "2026-07-13T07:00:00.000Z",
+      "daysSinceLastMention": 20,
+      "mentionsInWindow": 1,
+      "sentiment": {
+        "positive": 1,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "987954db51d7366f7b39b51730c7a5e843810b9bed894414252b21bef0da8e07",
+      "name": "OncoHost",
+      "slug": "oncohost",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "d271a5215046fb1825e8d9fd914e67fdcca4c6b73c5ed1b1e09b86c0ec8b3d46",
+      "name": "One Zero Digital Bank Ltd.",
+      "slug": "one-zero-digital-bank-ltd",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "573dd46205baff142874d85a3494a197a61529d74aa558b90f1b02ea847b0652",
+      "name": "OneAI",
+      "slug": "oneai",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "fec757d2baccc812123b03d53a417bbdb49acc5e9c50a536db3a8406061448ac",
+      "name": "OpenEvidence",
+      "slug": "openevidence",
+      "status": "FRESH",
+      "statusText": "last mentioned yesterday",
+      "lastMentionedAt": "2026-08-01T17:37:32.000Z",
+      "daysSinceLastMention": 1,
+      "mentionsInWindow": 24,
+      "sentiment": {
+        "positive": 18,
+        "negative": 6,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "8bc131bbace21ba30b54d903b61f859700db00f028991f7c1af5b6b235cd4840",
+      "name": "Orchard",
+      "slug": "orchard",
+      "status": "FRESH",
+      "statusText": "last mentioned yesterday",
+      "lastMentionedAt": "2026-08-01T12:39:17.000Z",
+      "daysSinceLastMention": 1,
+      "mentionsInWindow": 24,
+      "sentiment": {
+        "positive": 7,
+        "negative": 6,
+        "neutral": 11
+      }
+    },
+    {
+      "companyId": "7d6b48b42ae8f641be21cc5d8f2d38e2b532a27d7eaf18eb9d2bb91e59169720",
+      "name": "Ordergroove",
+      "slug": "ordergroove",
+      "status": "STALE",
+      "statusText": "last mentioned 45 days ago",
+      "lastMentionedAt": "2026-06-18T07:00:00.000Z",
+      "daysSinceLastMention": 45,
+      "mentionsInWindow": 2,
+      "sentiment": {
+        "positive": 1,
+        "negative": 1,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "97693d38226dbc471b2a7243d4f129d0a639ae5540f3a4ec34c6d0761467909a",
+      "name": "Oriient",
+      "slug": "oriient",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "a73134d310bc538dd11b18b29525bd2de0a17a39b6b96e7f37617fb18f47446c",
+      "name": "Oshi (formerly Plantish)",
+      "slug": "oshi-formerly-plantish",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "2fb2dee9dcedf008f758fd8d07edf25ae90f6563bc2875cdfd265845b68c9feb",
+      "name": "Ossio",
+      "slug": "ossio",
+      "status": "RECENT",
+      "statusText": "last mentioned 27 days ago",
+      "lastMentionedAt": "2026-07-06T07:00:00.000Z",
+      "daysSinceLastMention": 27,
+      "mentionsInWindow": 4,
+      "sentiment": {
+        "positive": 4,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "b8e4ef764b62e30a25fc5589c6306548fe0393083258db5f87cd9a3d1bbd851b",
+      "name": "Overtime",
+      "slug": "overtime",
+      "status": "RECENT",
+      "statusText": "last mentioned 11 days ago",
+      "lastMentionedAt": "2026-07-22T13:14:11.000Z",
+      "daysSinceLastMention": 11,
+      "mentionsInWindow": 12,
+      "sentiment": {
+        "positive": 7,
+        "negative": 1,
+        "neutral": 4
+      }
+    },
+    {
+      "companyId": "f2d81d3544eb43fa9b9886a9aa4b5b272560323cfa7d607eba40beeb2e757bd9",
+      "name": "Parko",
+      "slug": "parko",
+      "status": "FRESH",
+      "statusText": "last mentioned 5 days ago",
+      "lastMentionedAt": "2026-07-28T19:52:22.000Z",
+      "daysSinceLastMention": 5,
+      "mentionsInWindow": 3,
+      "sentiment": {
+        "positive": 1,
+        "negative": 0,
+        "neutral": 2
+      }
+    },
+    {
+      "companyId": "fa1c97cf22ef1420c42922832bd836127c49ef5213b49e6c7f1eeb894bbd6bbc",
+      "name": "Peak",
+      "slug": "peak",
+      "status": "FRESH",
+      "statusText": "last mentioned 3 days ago",
+      "lastMentionedAt": "2026-07-30T10:46:11.000Z",
+      "daysSinceLastMention": 3,
+      "mentionsInWindow": 13,
+      "sentiment": {
+        "positive": 2,
+        "negative": 8,
+        "neutral": 3
+      }
+    },
+    {
+      "companyId": "0e07bc3c184f4e4d29d00242b28c82b1884d43bc146c8c98361b06950143a2b0",
+      "name": "People.ai",
+      "slug": "people-ai",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "d6005b278a19b72dbaacb5d7f0bded2ae2e4ca9214b11692ae3a29ac8e766c32",
+      "name": "Perception Point",
+      "slug": "perception-point",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "848f90b01fbc96c5a528302dfaa2aae5e5d3659d5c79417f253a5e45528206a5",
+      "name": "PlaySight",
+      "slug": "playsight",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "765a552314b697cb213bb1293c7f395ab5c65189593e40ed6efc2fda1bd9ae51",
+      "name": "Polaris Quantum Biotech",
+      "slug": "polaris-quantum-biotech",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "6c35602e0943173563731fcd2804e47be0992ab0a06f461c177b443d329622cc",
+      "name": "Powwow",
+      "slug": "powwow",
+      "status": "RECENT",
+      "statusText": "last mentioned 10 days ago",
+      "lastMentionedAt": "2026-07-23T07:00:00.000Z",
+      "daysSinceLastMention": 10,
+      "mentionsInWindow": 11,
+      "sentiment": {
+        "positive": 5,
+        "negative": 2,
+        "neutral": 4
+      }
+    },
+    {
+      "companyId": "028a7544d5cedf917b560d004e9bfde17c3fe64c2e5f2caf71e591c330211f34",
+      "name": "Privateer",
+      "slug": "privateer",
+      "status": "RECENT",
+      "statusText": "last mentioned 16 days ago",
+      "lastMentionedAt": "2026-07-17T07:00:00.000Z",
+      "daysSinceLastMention": 16,
+      "mentionsInWindow": 2,
+      "sentiment": {
+        "positive": 1,
+        "negative": 0,
+        "neutral": 1
+      }
+    },
+    {
+      "companyId": "998c8a8d7670ea3eec209bf16e277a3151ea2c082d7dcbfbcf0bd1b9c5dc0c0b",
+      "name": "ProFuse",
+      "slug": "profuse",
+      "status": "STALE",
+      "statusText": "last mentioned 31 days ago",
+      "lastMentionedAt": "2026-07-02T07:00:00.000Z",
+      "daysSinceLastMention": 31,
+      "mentionsInWindow": 1,
+      "sentiment": {
+        "positive": 1,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "037cd0a260ee7e309de8ad6e26b597d24ef2e08b510efe6542e426b9f110f3ed",
+      "name": "PulmOne",
+      "slug": "pulmone",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "c21134ad527074b1265496f2d1390f063650e70343f7f7aa420e45af7bbc472c",
+      "name": "Quai.MD",
+      "slug": "quai-md",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "b901582b142856c5b009ef6ff8c3161130bb5ed70b0df43a24b0a09c128e1128",
+      "name": "Quantum Machines",
+      "slug": "quantum-machines",
+      "status": "FRESH",
+      "statusText": "last mentioned 4 days ago",
+      "lastMentionedAt": "2026-07-29T15:06:39.000Z",
+      "daysSinceLastMention": 4,
+      "mentionsInWindow": 12,
+      "sentiment": {
+        "positive": 11,
+        "negative": 0,
+        "neutral": 1
+      }
+    },
+    {
+      "companyId": "7fe4278c5ccc85e86579b34cc3d2a696d1505b3a5eeaa1ba3f8ba55db054562d",
+      "name": "Quidnet Energy",
+      "slug": "quidnet-energy",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "ab4a4087cb6e1f2ff5c40415510203e44c2d81fad684f6e747eae24602dc85f9",
+      "name": "Ravin AI",
+      "slug": "ravin-ai",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "284cc176f4ac89c49e25bd08368ea76fb99e02f78c24a86ac8a230fba4b39675",
+      "name": "RealView Imaging",
+      "slug": "realview-imaging",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "37dcf221a8c8acc3fc2ea3dbf138b0ef0b8d47bf15673fbf89474e1234bfbe9b",
+      "name": "Remilk",
+      "slug": "remilk",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "30d25d0796367e567ec5824f214f06cd300cdf8425209b26498d765e98886f82",
+      "name": "RepAir Carbon",
+      "slug": "repair-carbon",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "e47ee9aca47626522857d68a6bc7d6f4595108f49f8442917c8029b612449739",
+      "name": "Replay Technologies",
+      "slug": "replay-technologies",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "82fcbdab231d51268bb44549a3649a09380803b75533f605302d8f67e17ebd26",
+      "name": "Rewire",
+      "slug": "rewire",
+      "status": "STALE",
+      "statusText": "last mentioned 89 days ago",
+      "lastMentionedAt": "2026-05-05T07:00:00.000Z",
+      "daysSinceLastMention": 89,
+      "mentionsInWindow": 1,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 1
+      }
+    },
+    {
+      "companyId": "11dd34e33e23be6792970d3942f0d2fe14de3f37baf2a72601d525a72bd5b05b",
+      "name": "Ride Vision",
+      "slug": "ride-vision",
+      "status": "STALE",
+      "statusText": "last mentioned 54 days ago",
+      "lastMentionedAt": "2026-06-09T07:00:00.000Z",
+      "daysSinceLastMention": 54,
+      "mentionsInWindow": 2,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 2
+      }
+    },
+    {
+      "companyId": "19197b87ab0778017d922babcc2e2e664eb7cd29a0655dcb049c596c2761eefb",
+      "name": "Ro",
+      "slug": "ro",
+      "status": "RECENT",
+      "statusText": "last mentioned 9 days ago",
+      "lastMentionedAt": "2026-07-24T18:52:28.000Z",
+      "daysSinceLastMention": 9,
+      "mentionsInWindow": 6,
+      "sentiment": {
+        "positive": 0,
+        "negative": 2,
+        "neutral": 4
+      }
+    },
+    {
+      "companyId": "89ad781019a013a61f7fb04859a298e5eab371fedc934c9a0ab94fc5e53074a9",
+      "name": "SSI (Safe Superintelligence)",
+      "slug": "ssi-safe-superintelligence",
+      "status": "FRESH",
+      "statusText": "last mentioned 2 days ago",
+      "lastMentionedAt": "2026-07-31T20:14:23.000Z",
+      "daysSinceLastMention": 2,
+      "mentionsInWindow": 25,
+      "sentiment": {
+        "positive": 24,
+        "negative": 0,
+        "neutral": 1
+      }
+    },
+    {
+      "companyId": "30edd1b58f1f9a41f50424e20f1ec0934238093f255c9159ba2605bbd5dffa0c",
+      "name": "SaNOtize",
+      "slug": "sanotize",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "b1c16386d86286171b740bb429e5c5425394613932e06baabf9e963a65ed955d",
+      "name": "Sayata",
+      "slug": "sayata",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "cee64ba995c98bbab9dad11d0d8c5b0ff51a8acd00f3de72c36e9ecf64430465",
+      "name": "Scale AI",
+      "slug": "scale-ai",
+      "status": "FRESH",
+      "statusText": "last mentioned 2 days ago",
+      "lastMentionedAt": "2026-07-31T12:33:43.000Z",
+      "daysSinceLastMention": 2,
+      "mentionsInWindow": 20,
+      "sentiment": {
+        "positive": 12,
+        "negative": 5,
+        "neutral": 3
+      }
+    },
+    {
+      "companyId": "ff8441d05b0f96173eef6877f137c1050ec2ab68d6c328e6f691adc1a36fde69",
+      "name": "Scopio Labs",
+      "slug": "scopio-labs",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "65a6e0766828cec2228b46ebc1222ebe8511724e286613c184d16aa4e65b85dd",
+      "name": "SeeTree",
+      "slug": "seetree",
+      "status": "RECENT",
+      "statusText": "last mentioned 18 days ago",
+      "lastMentionedAt": "2026-07-15T08:25:25.000Z",
+      "daysSinceLastMention": 18,
+      "mentionsInWindow": 1,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 1
+      }
+    },
+    {
+      "companyId": "845c16af09a57751c3054f83a34ab3ef1939aed957f206696bc49fba9c631f80",
+      "name": "SeeTrue",
+      "slug": "seetrue",
+      "status": "RECENT",
+      "statusText": "last mentioned 26 days ago",
+      "lastMentionedAt": "2026-07-07T14:45:00.000Z",
+      "daysSinceLastMention": 26,
+      "mentionsInWindow": 5,
+      "sentiment": {
+        "positive": 4,
+        "negative": 0,
+        "neutral": 1
+      }
+    },
+    {
+      "companyId": "313b2eb44f4cccca3c6a88f18f463e2a8e2fb542224bab8d54af5926c986ae8e",
+      "name": "Sense Education",
+      "slug": "sense-education",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "60fb7b26701651ab744739bb08ecf8d7cfb4944c1ed0c748044537e642745cc6",
+      "name": "Sequentify",
+      "slug": "sequentify",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "2c2f180386c17ef3f48e1f0060a4512ae9daa28022f708d128ce43428e3d92c6",
+      "name": "Sfara",
+      "slug": "sfara",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "3aab452a942f16c726a174483d3228a86706e5be72abdfb21db78df1e8fe97c7",
+      "name": "Shield",
+      "slug": "shield",
+      "status": "FRESH",
+      "statusText": "last mentioned yesterday",
+      "lastMentionedAt": "2026-08-01T17:54:36.000Z",
+      "daysSinceLastMention": 1,
+      "mentionsInWindow": 15,
+      "sentiment": {
+        "positive": 9,
+        "negative": 2,
+        "neutral": 4
+      }
+    },
+    {
+      "companyId": "1a4e232fe86eae1a1909a26c0bec8c0c6bb42df5d89c48132d57df46b491129a",
+      "name": "Shopial",
+      "slug": "shopial",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "6935ae5d2b557f0f4867d53bce977975a07de3047b502bef651ebd9bb1527455",
+      "name": "Sight Diagnostics",
+      "slug": "sight-diagnostics",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "48253becc0c4f6e48276e89175c5410fc525f1167f84a3410579b0fbfbf1f595",
+      "name": "Signals Analytics",
+      "slug": "signals-analytics",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "30cc037de0324a63e14acdfdde125baa1a1baeb88179a7ed4774c50e1471d40f",
+      "name": "Silo",
+      "slug": "silo",
+      "status": "FRESH",
+      "statusText": "last mentioned 2 days ago",
+      "lastMentionedAt": "2026-07-31T18:00:00.000Z",
+      "daysSinceLastMention": 2,
+      "mentionsInWindow": 21,
+      "sentiment": {
+        "positive": 8,
+        "negative": 7,
+        "neutral": 6
+      }
+    },
+    {
+      "companyId": "6c420f3fb762f98e949ceaf1fb39ef9f36d02e1ae3ba1c46e2332f2bab46f037",
+      "name": "Siteaware",
+      "slug": "siteaware",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "b67862ab5a5a4bb6db93801c7be821a4d7ee5114bc82f1da5596618aa157bd50",
+      "name": "Skillz",
+      "slug": "skillz",
+      "status": "FRESH",
+      "statusText": "last mentioned yesterday",
+      "lastMentionedAt": "2026-08-01T03:12:06.000Z",
+      "daysSinceLastMention": 1,
+      "mentionsInWindow": 23,
+      "sentiment": {
+        "positive": 2,
+        "negative": 14,
+        "neutral": 7
+      }
+    },
+    {
+      "companyId": "38e31afe14b1f85ac1bf2151e202f0c969ded478a1b310383a2bb72bc98b6928",
+      "name": "Sotero",
+      "slug": "sotero",
+      "status": "RECENT",
+      "statusText": "last mentioned 23 days ago",
+      "lastMentionedAt": "2026-07-10T07:00:00.000Z",
+      "daysSinceLastMention": 23,
+      "mentionsInWindow": 2,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 2
+      }
+    },
+    {
+      "companyId": "01d6e78d4dc7f34ff1190ec006387b934166de8a24535ef96562cd52a09fde1e",
+      "name": "SpaceX",
+      "slug": "spacex",
+      "status": "FRESH",
+      "statusText": "last mentioned yesterday",
+      "lastMentionedAt": "2026-08-01T11:28:00.000Z",
+      "daysSinceLastMention": 1,
+      "mentionsInWindow": 25,
+      "sentiment": {
+        "positive": 10,
+        "negative": 13,
+        "neutral": 2
+      }
+    },
+    {
+      "companyId": "e31cb4b049296b27c39c28e28003970a79b885025effb3c18ff71f4440d2061e",
+      "name": "Spectrum Labs",
+      "slug": "spectrum-labs",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "e66939463a46bb5677fbad56e1f3a9ea351b6ce3ca37df01cca298feba59eae6",
+      "name": "Spot AI",
+      "slug": "spot-ai",
+      "status": "RECENT",
+      "statusText": "last mentioned 18 days ago",
+      "lastMentionedAt": "2026-07-15T07:00:00.000Z",
+      "daysSinceLastMention": 18,
+      "mentionsInWindow": 10,
+      "sentiment": {
+        "positive": 0,
+        "negative": 6,
+        "neutral": 4
+      }
+    },
+    {
+      "companyId": "aed42cbafd645d5b06725891cf1fe1547ac9e80b6c890dd5f1df09c76059d537",
+      "name": "StackIQ",
+      "slug": "stackiq",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "bf5789c82aef96cb6d4c3e7441824058c0b7a144d8ad37fa88144fe88782d635",
+      "name": "Stellar Cyber",
+      "slug": "stellar-cyber",
+      "status": "FRESH",
+      "statusText": "last mentioned 5 days ago",
+      "lastMentionedAt": "2026-07-28T12:00:00.000Z",
+      "daysSinceLastMention": 5,
+      "mentionsInWindow": 8,
+      "sentiment": {
+        "positive": 6,
+        "negative": 0,
+        "neutral": 2
+      }
+    },
+    {
+      "companyId": "821bc2079c10c166910f0acf58d4d1766cc9dc7ce8abc80fef62805f3f8b49a6",
+      "name": "Stoke Space",
+      "slug": "stoke-space",
+      "status": "FRESH",
+      "statusText": "last mentioned 3 days ago",
+      "lastMentionedAt": "2026-07-30T13:56:10.000Z",
+      "daysSinceLastMention": 3,
+      "mentionsInWindow": 9,
+      "sentiment": {
+        "positive": 9,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "bd88c3b3d6744374a2e4f653ea32129dc1c17e54eac16c25c6cdf22dac0c9237",
+      "name": "Stringify",
+      "slug": "stringify",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "f9f48e7d2a38c906d7222f3aeb08db9f1dc1b62e87a4e6ecb22c70fb9b40972a",
+      "name": "Stripe",
+      "slug": "stripe",
+      "status": "FRESH",
+      "statusText": "last mentioned 3 days ago",
+      "lastMentionedAt": "2026-07-30T18:07:35.000Z",
+      "daysSinceLastMention": 3,
+      "mentionsInWindow": 25,
+      "sentiment": {
+        "positive": 7,
+        "negative": 6,
+        "neutral": 12
+      }
+    },
+    {
+      "companyId": "b628cc0b5c40d3cec77d6dad3f5d901e82cef1409959c8c4aeb0608ee632348a",
+      "name": "Sufresca",
+      "slug": "sufresca",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "2b331fb220785eac89c486144d63ce00493d1dadbb755b95ba83a5463c0e4a57",
+      "name": "Surgical Theater",
+      "slug": "surgical-theater",
+      "status": "RECENT",
+      "statusText": "last mentioned 8 days ago",
+      "lastMentionedAt": "2026-07-25T07:00:00.000Z",
+      "daysSinceLastMention": 8,
+      "mentionsInWindow": 3,
+      "sentiment": {
+        "positive": 3,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "d7ba7ef691cf6815a833ccf761183c252cd56272cc38124c47d2923f3711d1b2",
+      "name": "Sweetch",
+      "slug": "sweetch",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "afc27a7f34485776863426f7bdb7a5df9ffa3035656713b9c985f224d9e24921",
+      "name": "Syqe",
+      "slug": "syqe",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "24074115541b1cb3ac4777a2c8d1aeed61fa0523bf9ee1c48150994019c53c57",
+      "name": "Tabnine",
+      "slug": "tabnine",
+      "status": "FRESH",
+      "statusText": "last mentioned 2 days ago",
+      "lastMentionedAt": "2026-07-31T16:16:00.000Z",
+      "daysSinceLastMention": 2,
+      "mentionsInWindow": 10,
+      "sentiment": {
+        "positive": 2,
+        "negative": 8,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "42beac25a773328433fe9a9f8c72f99a5ab9f9419a043600b18b0c6232aae058",
+      "name": "Tailor Brands",
+      "slug": "tailor-brands",
+      "status": "STALE",
+      "statusText": "last mentioned 74 days ago",
+      "lastMentionedAt": "2026-05-20T07:00:00.000Z",
+      "daysSinceLastMention": 74,
+      "mentionsInWindow": 2,
+      "sentiment": {
+        "positive": 2,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "39a26058fbaae8d1f091cf391da3934779df39bde081416c2aa53d122ce2228b",
+      "name": "Tala",
+      "slug": "tala",
+      "status": "RECENT",
+      "statusText": "last mentioned 11 days ago",
+      "lastMentionedAt": "2026-07-22T07:00:00.000Z",
+      "daysSinceLastMention": 11,
+      "mentionsInWindow": 18,
+      "sentiment": {
+        "positive": 6,
+        "negative": 9,
+        "neutral": 3
+      }
+    },
+    {
+      "companyId": "90fd66a6e796bc56d1735a23aecbd74edb463b39649c6413dd73a8f01244bda9",
+      "name": "Tamar Robotics",
+      "slug": "tamar-robotics",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "7e4bfc7157f60bd7c05f883b39ee59c3cb3ff039bfd2d8658beb8c6edf478313",
+      "name": "Taranis",
+      "slug": "taranis",
+      "status": "RECENT",
+      "statusText": "last mentioned 13 days ago",
+      "lastMentionedAt": "2026-07-20T15:25:58.000Z",
+      "daysSinceLastMention": 13,
+      "mentionsInWindow": 7,
+      "sentiment": {
+        "positive": 3,
+        "negative": 1,
+        "neutral": 3
+      }
+    },
+    {
+      "companyId": "82955cdef97ef518dd668430f646c3ce8b5e1c0f82c092c6f41c91f0562d2aee",
+      "name": "TechSee",
+      "slug": "techsee",
+      "status": "RECENT",
+      "statusText": "last mentioned 25 days ago",
+      "lastMentionedAt": "2026-07-08T07:00:00.000Z",
+      "daysSinceLastMention": 25,
+      "mentionsInWindow": 1,
+      "sentiment": {
+        "positive": 1,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "7bc78f8836857959f4b3365aa92eb7187f2208f3694663168b2225a4851c96b5",
+      "name": "TensorWave",
+      "slug": "tensorwave",
+      "status": "FRESH",
+      "statusText": "last mentioned 6 days ago",
+      "lastMentionedAt": "2026-07-27T02:14:37.000Z",
+      "daysSinceLastMention": 6,
+      "mentionsInWindow": 20,
+      "sentiment": {
+        "positive": 16,
+        "negative": 2,
+        "neutral": 2
+      }
+    },
+    {
+      "companyId": "5108bbaa842567686d8b53d0c3e2faf73e980061d6abe48ab31ad44b188a75ae",
+      "name": "Tevel",
+      "slug": "tevel",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "bba92c952ab139efead01b862ffedba1485a3f272c84ed1f6c3393abf73c8e43",
+      "name": "The Bouqs",
+      "slug": "the-bouqs",
+      "status": "STALE",
+      "statusText": "last mentioned 86 days ago",
+      "lastMentionedAt": "2026-05-08T07:00:00.000Z",
+      "daysSinceLastMention": 86,
+      "mentionsInWindow": 1,
+      "sentiment": {
+        "positive": 1,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "a19215774baec39c9630b4ddd2b6b75fbb2f055d5346668c3bbd608b7333e416",
+      "name": "The EVERY Company",
+      "slug": "the-every-company",
+      "status": "RECENT",
+      "statusText": "last mentioned 19 days ago",
+      "lastMentionedAt": "2026-07-14T13:00:00.000Z",
+      "daysSinceLastMention": 19,
+      "mentionsInWindow": 4,
+      "sentiment": {
+        "positive": 3,
+        "negative": 1,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "2eeb6441814fa08a232e45e8b2d447bb830326b076577c84117aa0e5d8ed6594",
+      "name": "The Trendlines Group",
+      "slug": "the-trendlines-group",
+      "status": "RECENT",
+      "statusText": "last mentioned 19 days ago",
+      "lastMentionedAt": "2026-07-14T07:00:00.000Z",
+      "daysSinceLastMention": 19,
+      "mentionsInWindow": 3,
+      "sentiment": {
+        "positive": 2,
+        "negative": 0,
+        "neutral": 1
+      }
+    },
+    {
+      "companyId": "441f27f448722b1415036274bfe7cdc2605c29fdaf98ab4b16b576ab293ac8a4",
+      "name": "ThetaRay",
+      "slug": "thetaray",
+      "status": "RECENT",
+      "statusText": "last mentioned 11 days ago",
+      "lastMentionedAt": "2026-07-22T07:00:00.000Z",
+      "daysSinceLastMention": 11,
+      "mentionsInWindow": 5,
+      "sentiment": {
+        "positive": 3,
+        "negative": 1,
+        "neutral": 1
+      }
+    },
+    {
+      "companyId": "9d5b9d1933714e02bc89690d60a662e6f2d9cc8c330a84b83d776ed2be48a817",
+      "name": "Together AI",
+      "slug": "together-ai",
+      "status": "FRESH",
+      "statusText": "last mentioned 2 days ago",
+      "lastMentionedAt": "2026-07-31T19:22:01.000Z",
+      "daysSinceLastMention": 2,
+      "mentionsInWindow": 22,
+      "sentiment": {
+        "positive": 20,
+        "negative": 2,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "1a0bfb50e9f2c15ce2b624369d14660cd0e1d4d1527a1f97cd206ccfc35bbb56",
+      "name": "Tovala",
+      "slug": "tovala",
+      "status": "FRESH",
+      "statusText": "last mentioned 3 days ago",
+      "lastMentionedAt": "2026-07-30T15:44:06.000Z",
+      "daysSinceLastMention": 3,
+      "mentionsInWindow": 4,
+      "sentiment": {
+        "positive": 4,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "883f9ee99f08ede3ed57e527f19bea2351ed0ff87be05d51e810d551a23122bd",
+      "name": "Treedom",
+      "slug": "treedom",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "9bbb03a16049e9d49ab4ccdc6161ea52d6955ee1531ebbf49d1902ef73ea2e5f",
+      "name": "Trusona",
+      "slug": "trusona",
+      "status": "STALE",
+      "statusText": "last mentioned 90 days ago",
+      "lastMentionedAt": "2026-05-04T07:00:00.000Z",
+      "daysSinceLastMention": 90,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "ce8048b9fa939000d208cbe66803e13541a235c68970090203a87c80839b44bf",
+      "name": "TubiTV",
+      "slug": "tubitv",
+      "status": "FRESH",
+      "statusText": "last mentioned 4 days ago",
+      "lastMentionedAt": "2026-07-29T20:42:18.000Z",
+      "daysSinceLastMention": 4,
+      "mentionsInWindow": 10,
+      "sentiment": {
+        "positive": 6,
+        "negative": 0,
+        "neutral": 4
+      }
+    },
+    {
+      "companyId": "ffbdb5e1eab8a43b120e4fd6fb3f31c8add0b2ad5877774c9e950eb5438528d0",
+      "name": "UPnRIDE",
+      "slug": "upnride",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "b7b08ea36f3b94547588e6c029d0e4f736043f29c113e1c51fc0ee438b57d017",
+      "name": "Ubimo",
+      "slug": "ubimo",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "4f30fed2cfe86d6b10f3a4c18271947ae2c3abcef2e8aaa42459a71934b7d032",
+      "name": "Ukko",
+      "slug": "ukko",
+      "status": "FRESH",
+      "statusText": "last mentioned yesterday",
+      "lastMentionedAt": "2026-07-31T21:47:37.000Z",
+      "daysSinceLastMention": 1,
+      "mentionsInWindow": 21,
+      "sentiment": {
+        "positive": 4,
+        "negative": 7,
+        "neutral": 10
+      }
+    },
+    {
+      "companyId": "d6bc7f96f22ff0b48e8ef4467599e090110b203e28fe7422bd90fa8b12df6c05",
+      "name": "Unispectral",
+      "slug": "unispectral",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "94ef6a3f679f6a481ab1ece2f27b4b81ab1a4ceb9e3b3b6f7be9d8271ae775b5",
+      "name": "Ursa Major",
+      "slug": "ursa-major",
+      "status": "RECENT",
+      "statusText": "last mentioned 15 days ago",
+      "lastMentionedAt": "2026-07-18T13:19:11.000Z",
+      "daysSinceLastMention": 15,
+      "mentionsInWindow": 14,
+      "sentiment": {
+        "positive": 8,
+        "negative": 3,
+        "neutral": 3
+      }
+    },
+    {
+      "companyId": "117527bf5b7abc890b1363e7eef26cef38ba8e519a060a5de9f91d8509203f82",
+      "name": "VAYAVISION",
+      "slug": "vayavision",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "f2df13f6e3377995d6b41c497f33bfc934841f6dc6c16364750b82f9141873b0",
+      "name": "Velotix",
+      "slug": "velotix",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "df2e516234cf5488e4f6e4c96edc156c3c2918d6fedb360735fba0bc8a88dd04",
+      "name": "Verse.ai",
+      "slug": "verse-ai",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "9ff154dd2703f3ec604654b69aebdd0b6efef490299db683591b083ffb252d00",
+      "name": "Viewbix",
+      "slug": "viewbix",
+      "status": "FRESH",
+      "statusText": "last mentioned yesterday",
+      "lastMentionedAt": "2026-07-31T22:08:45.000Z",
+      "daysSinceLastMention": 1,
+      "mentionsInWindow": 8,
+      "sentiment": {
+        "positive": 0,
+        "negative": 1,
+        "neutral": 7
+      }
+    },
+    {
+      "companyId": "5e8213fe2ce590bb5c260a03d81118fcb9efc1b9179b79c1ddfe5da4cf65d7f4",
+      "name": "Virgin Hyperloop One",
+      "slug": "virgin-hyperloop-one",
+      "status": "RECENT",
+      "statusText": "last mentioned 8 days ago",
+      "lastMentionedAt": "2026-07-24T21:30:00.000Z",
+      "daysSinceLastMention": 8,
+      "mentionsInWindow": 1,
+      "sentiment": {
+        "positive": 0,
+        "negative": 1,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "f50c3622b6952d92efd7428d6ec4400a2db7ade2a3dff92cf7b446f74a1ed3de",
+      "name": "Wave",
+      "slug": "wave",
+      "status": "FRESH",
+      "statusText": "last mentioned 3 days ago",
+      "lastMentionedAt": "2026-07-30T08:57:58.000Z",
+      "daysSinceLastMention": 3,
+      "mentionsInWindow": 24,
+      "sentiment": {
+        "positive": 16,
+        "negative": 4,
+        "neutral": 4
+      }
+    },
+    {
+      "companyId": "c76f18141f0b3b4a308be338910cd99ca0dff46b6fc0ae6582d7dea6e7f0f39b",
+      "name": "Wayup",
+      "slug": "wayup",
+      "status": "FRESH",
+      "statusText": "last mentioned 3 days ago",
+      "lastMentionedAt": "2026-07-30T07:00:00.000Z",
+      "daysSinceLastMention": 3,
+      "mentionsInWindow": 2,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 2
+      }
+    },
+    {
+      "companyId": "c7c1bcc4b4523235395abb396a5204a56559da58822d3db26d6419d285cf105b",
+      "name": "Workspot",
+      "slug": "workspot",
+      "status": "STALE",
+      "statusText": "last mentioned 47 days ago",
+      "lastMentionedAt": "2026-06-16T07:00:00.000Z",
+      "daysSinceLastMention": 47,
+      "mentionsInWindow": 2,
+      "sentiment": {
+        "positive": 2,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "be84a6b7d5891751695775047322edec4c1219a9280e6c59bdc731a3738b08cb",
+      "name": "Xage Security",
+      "slug": "xage-security",
+      "status": "STALE",
+      "statusText": "last mentioned 60 days ago",
+      "lastMentionedAt": "2026-06-03T01:34:39.000Z",
+      "daysSinceLastMention": 60,
+      "mentionsInWindow": 3,
+      "sentiment": {
+        "positive": 3,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "d0ad8e268592f5c480d4e3bf4effd7220ddb8a877b78749e3ed45e0a93a263d6",
+      "name": "Xsense (formerly BT9)",
+      "slug": "xsense-formerly-bt9",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "072c7172ab1286200d719254b5a99ab9afe4a0a3db4d73b5b10116cef8bc2422",
+      "name": "Ynsect",
+      "slug": "ynsect",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "1399e9b2035b98ace8f2a98fab08b76d8e3bfd64565040bc0c068235441fd008",
+      "name": "YuLife",
+      "slug": "yulife",
+      "status": "FRESH",
+      "statusText": "last mentioned 3 days ago",
+      "lastMentionedAt": "2026-07-30T08:00:00.000Z",
+      "daysSinceLastMention": 3,
+      "mentionsInWindow": 9,
+      "sentiment": {
+        "positive": 8,
+        "negative": 0,
+        "neutral": 1
+      }
+    },
+    {
+      "companyId": "766887975552b0feae55aa9e46eb13fd18ad84b4be9b5f93365d63778da21ca7",
+      "name": "Zebra Medical Vision",
+      "slug": "zebra-medical-vision",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "7a60554cb96b242484190819798f7ff790914b5627a8246f7d6c38a04b328206",
+      "name": "Zippin",
+      "slug": "zippin",
+      "status": "STALE",
+      "statusText": "last mentioned 53 days ago",
+      "lastMentionedAt": "2026-06-10T07:00:00.000Z",
+      "daysSinceLastMention": 53,
+      "mentionsInWindow": 1,
+      "sentiment": {
+        "positive": 1,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "204d3799e9bba42b9d58ea5b70eff9bfd3dfb71e41bdb1965471a82283f1e3b6",
+      "name": "Zoomcar",
+      "slug": "zoomcar",
+      "status": "FRESH",
+      "statusText": "last mentioned 2 days ago",
+      "lastMentionedAt": "2026-07-31T15:17:12.000Z",
+      "daysSinceLastMention": 2,
+      "mentionsInWindow": 25,
+      "sentiment": {
+        "positive": 7,
+        "negative": 3,
+        "neutral": 15
+      }
+    },
+    {
+      "companyId": "1a615ce7b2a5a2cb2e9dbdd7825e3e6d305f75edb69d97230d94ef45153c161d",
+      "name": "ZutaCore",
+      "slug": "zutacore",
+      "status": "STALE",
+      "statusText": "last mentioned 56 days ago",
+      "lastMentionedAt": "2026-06-07T07:00:00.000Z",
+      "daysSinceLastMention": 56,
+      "mentionsInWindow": 12,
+      "sentiment": {
+        "positive": 12,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "887377f80e326f9c3972982a5924cca2b9c614109a2ee0ac6593cb5eac88b04f",
+      "name": "eVigilo",
+      "slug": "evigilo",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "083ad6d3693c143f2c8b0d6e2374f8f503d7ff35c2ba7ea6dc531beff3bbfb9f",
+      "name": "enVerid",
+      "slug": "enverid",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "0abd1b36ab3e8ba9776bd44d8e00734bde838ff31189c685549e8923d959b687",
+      "name": "mPrest",
+      "slug": "mprest",
+      "status": "NO_COVERAGE",
+      "statusText": "no coverage found",
+      "lastMentionedAt": null,
+      "daysSinceLastMention": null,
+      "mentionsInWindow": 0,
+      "sentiment": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "e07d42fa498c6eb6029c7144da7dfd30093369f83de00260c6dc7a29c45fc56f",
+      "name": "wefox",
+      "slug": "wefox",
+      "status": "STALE",
+      "statusText": "last mentioned 33 days ago",
+      "lastMentionedAt": "2026-06-30T09:17:47.000Z",
+      "daysSinceLastMention": 33,
+      "mentionsInWindow": 2,
+      "sentiment": {
+        "positive": 0,
+        "negative": 2,
+        "neutral": 0
+      }
+    },
+    {
+      "companyId": "7c0fded7fc4ddbb63d04cfc78fd8022545e7d92a09c8b55f3011eecf90098b85",
+      "name": "xAI",
+      "slug": "xai",
+      "status": "FRESH",
+      "statusText": "last mentioned yesterday",
+      "lastMentionedAt": "2026-07-31T23:16:51.000Z",
+      "daysSinceLastMention": 1,
+      "mentionsInWindow": 25,
+      "sentiment": {
+        "positive": 0,
+        "negative": 25,
+        "neutral": 0
+      }
+    }
+  ]
+}

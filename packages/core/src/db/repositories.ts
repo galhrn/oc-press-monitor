@@ -5,6 +5,7 @@
  * can be interrupted and re-run without producing duplicates (A5).
  */
 import { changesOf, rowAs, rowsAs, withTransaction, type Db } from './index.js';
+import { sha256 } from '../ids.js';
 import { StorageError } from '../errors.js';
 import type {
   Article,
@@ -354,6 +355,11 @@ export class KeyValueRepository {
       )
       .run(key, value, now());
   }
+
+  /** Used to release the daily-job lock; an absent key is the unlocked state. */
+  delete(key: string): void {
+    this.db.prepare('DELETE FROM kv WHERE key = ?').run(key);
+  }
 }
 
 /* ------------------------------------------------------------------- statuses */
@@ -406,6 +412,72 @@ export class StatusRepository {
   }
 }
 
+/* --------------------------------------------------------------------- alerts */
+
+export interface AlertRecordInput {
+  runId: string;
+  mentionId: string;
+  channel: string;
+  payload: unknown;
+}
+
+/**
+ * The durable record of what has actually been alerted on.
+ *
+ * `alerts` carries `UNIQUE (mention_id, channel)`, so the "do not alert twice" guarantee is
+ * enforced by the database rather than by remembering to check. A re-run inserts nothing and
+ * `record` reports that honestly instead of silently overwriting.
+ */
+export class AlertRepository {
+  constructor(private readonly db: Db) {}
+
+  /** True when this is the first time the mention has been sent on this channel. */
+  record(input: AlertRecordInput): boolean {
+    const info = this.db
+      .prepare(
+        `INSERT INTO alerts (id, run_id, mention_id, channel, sent_at, payload)
+         VALUES (@id, @runId, @mentionId, @channel, @sentAt, @payload)
+         ON CONFLICT (mention_id, channel) DO NOTHING`,
+      )
+      .run({
+        id: sha256(`${input.mentionId}:${input.channel}`),
+        runId: input.runId,
+        mentionId: input.mentionId,
+        channel: input.channel,
+        sentAt: now(),
+        payload: json(input.payload),
+      });
+    return changesOf(info) > 0;
+  }
+
+  wasSent(mentionId: string, channel: string): boolean {
+    return (
+      this.db
+        .prepare('SELECT 1 FROM alerts WHERE mention_id = ? AND channel = ?')
+        .get(mentionId, channel) !== undefined
+    );
+  }
+
+  count(): number {
+    return rowAs<{ n: number }>(this.db.prepare('SELECT COUNT(*) AS n FROM alerts').get())?.n ?? 0;
+  }
+
+  /** Most recent first - the daily job prints these back as its summary. */
+  recent(
+    limit = 50,
+  ): Array<{ mentionId: string; channel: string; sentAt: string; payload: unknown }> {
+    const rows = rowsAs<Record<string, unknown>>(
+      this.db.prepare('SELECT * FROM alerts ORDER BY sent_at DESC LIMIT ?').all(limit),
+    );
+    return rows.map((r) => ({
+      mentionId: r['mention_id'] as string,
+      channel: r['channel'] as string,
+      sentAt: r['sent_at'] as string,
+      payload: parse<unknown>(r['payload'] as string | null, {}),
+    }));
+  }
+}
+
 /** Convenience bundle so callers construct one object, not six. */
 export function createRepositories(db: Db) {
   return {
@@ -415,6 +487,7 @@ export function createRepositories(db: Db) {
     runs: new RunRepository(db),
     kv: new KeyValueRepository(db),
     statuses: new StatusRepository(db),
+    alerts: new AlertRepository(db),
   };
 }
 

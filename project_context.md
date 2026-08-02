@@ -4,7 +4,7 @@
 > **Owner:** Gal Aharon
 > **Status:** `BUILDING` — M0–M3 reached. Phase 3 complete; next is M4 (LLM classification + eval).
 > **Last updated:** 2026-08-01
-> **Document version:** 0.9.8
+> **Document version:** 0.9.9
 >
 > **Target hardware (dev + demo machine):** Windows 11 · Intel Core Ultra (Lunar Lake) ·
 > Intel Arc 140V iGPU, 16 GB addressable VRAM (shared) · 32 GB system RAM
@@ -63,8 +63,8 @@ No row may be deleted. Status: `TODO` / `WIP` / `DONE` / `N/A`.
 | R3 | §2.1 | Each mention linked back to source URL | `articles.url` surfaced in the drill-down | **DONE** |
 | R4 | §2.2 | Current "mention status" per company from last-mentioned date | `v_company_status` view + status chip in UI | WIP — logic + 20 boundary tests done, UI pending |
 | R5 | §2.2 | Must handle "no coverage found" | Explicit `NO_COVERAGE` bucket, company still rendered | WIP — bucket implemented and tested, UI pending |
-| R6 | §2.3 | Daily job checks for new mentions | `scripts/job-daily.ts` + `apps/scheduler` | TODO |
-| R7 | §2.3 | Sends an alert when a new mention is found | `packages/alerting` | TODO |
+| R6 | §2.3 | Daily job checks for new mentions | `scripts/job-daily.ts` | **DONE** — scheduler wrapper is P7 |
+| R7 | §2.3 | Sends an alert when a new mention is found | `packages/alerting` | **DONE** — console + file, demonstrated on live data |
 | R8 | §3 | Company list is the source of truth | `data/companies.json` — 258 records, 57 human-approved queries | **DONE** |
 | R9 | §3 | Document news-source choice **and its limitations** in README | README §"Data sources and their limitations" | **DONE** — every limitation measured, not assumed |
 | R10 | §4.1 | Sentiment via **local Ollama only**, no cloud LLM | `packages/ollama` — the only LLM code path in the repo | WIP — client done, classifier prompt is P4.2 |
@@ -605,13 +605,13 @@ error handling · the "no coverage" state.
 
 | ID | Task | Satisfies | Est. | Status |
 |---|---|---|---|---|
-| P5.1 | Stage orchestration, `runs` manifest, resumability, partial-failure tolerance | R26 | 1.5 h | TODO |
-| P5.2 | Status computation — buckets, `days_since`, **`NO_COVERAGE` as a first-class state** | R4, R5 | 1 h | TODO |
-| P5.3 | Boundary unit tests for bucketing (0d / 7d / 8d / 30d / 90d / 91d / never) | R4 | 0.5 h | TODO |
-| P5.4 | Exporters → `mentions.json`, `company_status.json`, `quarterly_summary.json` | R24 | 1 h | TODO |
-| P5.5 | `Alerter` interface + console + JSON-file sinks | R7 | 0.5 h | TODO |
-| P5.6 | `scripts/job-daily.ts` — watermark, overlap lock, idempotent re-run | R6, A5 | 1 h | TODO |
-| P5.7 | Integration test: run daily twice → second run emits zero alerts | R6, R26 | 0.5 h | TODO |
+| P5.1 | Stage orchestration, `runs` manifest, resumability, partial-failure tolerance | R26 | 1.5 h | **DONE** |
+| P5.2 | Status computation — buckets, `days_since`, **`NO_COVERAGE` as a first-class state** | R4, R5 | 1 h | **DONE** (P1) — window parameterised in P5 |
+| P5.3 | Boundary unit tests for bucketing (0d / 7d / 8d / 30d / 90d / 91d / never) | R4 | 0.5 h | **DONE** (P1) — 20 tests |
+| P5.4 | Exporters → `mentions.json`, `company_status.json`, `quarterly_summary.json` | R24 | 1 h | **DONE** |
+| P5.5 | `Alerter` interface + console + JSON-file sinks | R7 | 0.5 h | **DONE** — 13 tests; at-least-once delivery, DB-level dedupe |
+| P5.6 | `scripts/job-daily.ts` — watermark, overlap lock, idempotent re-run | R6, A5 | 1 h | **DONE** — inline classification, TTL lock, `--dry-run`/`--force` |
+| P5.7 | Integration test: run daily twice → second run emits zero alerts | R6, R26 | 0.5 h | **DONE** — 15 offline assertions |
 
 > **Exit criteria:** full pipeline runs on fixtures with zero manual steps · running it
 > twice produces identical DB state and no duplicate alerts · every one of the 258
@@ -727,7 +727,7 @@ Budget ≈30 focused hours; descope rungs 1–3 already cut (§8.3).
 | M2 Registry enriched | P2 | ✅ DONE — 258 companies, full live Ollama pass, 0 failures |
 | M3 Collection working | P3 | ✅ **DONE** — `npm run collect -- --company ZutaCore` returns 12 deduped live articles with GDELT failing; `--providers fixture` runs fully offline |
 | M4 Model selected by evidence | P4 | 🟡 **selected by evidence, bar not met** — `llama3.2:3b`+v1 at 0.522 combined vs a 0.80 criterion; documented rather than hidden |
-| M5 Pipeline end-to-end | P5 | ⚪ TODO |
+| M5 Pipeline end-to-end | P5 | ✅ **DONE** — backfill + daily job, both idempotent and asserted |
 | M6 Dashboard complete | P6 | 🟡 built and verified against live data; screenshots (P6.9) pending |
 | M7 Daily job live | P7 | ⚪ TODO |
 | M8 Submission ready | P8 | ⚪ TODO |
@@ -779,6 +779,7 @@ Budget ≈30 focused hours; descope rungs 1–3 already cut (§8.3).
 
 | Date | Version | Change |
 |---|---|---|
+| 2026-08-03 | 0.9.9 | **M5 REACHED — P5.5, P5.6 and P5.7 complete; the daily job runs and alerts.** `packages/alerting` ships the `Alerter` seam with console and JSON-file sinks. Two decisions: **delivery is recorded only after a sink succeeds** (at-least-once, chosen deliberately — a repeated alert is recoverable, a silently dropped one is not), and **a broken sink never fails the run**. Idempotency is enforced by the database via `UNIQUE (mention_id, channel)` rather than by remembering to check. Alerts carry the model's `rationale` and `confidence`, because at 0.52 combined macro-F1 some alerts will be about the wrong company and an alert nobody can triage is one they learn to ignore. **P5.7 caught a real design flaw rather than confirming the design.** Alert selection originally used `firstSeenSince(runStart)`, and the test showed a run cannot distinguish its own inserts from a previous run's when both share a timestamp. Replaced with `newMentionIds`, taken from the upsert's own return value — the write already knows which pairs it created, and deriving it afterwards from a clock is fragile. **Demonstrated on live data:** run 1 alerted on 52 new mentions; run 2 minutes later saw 176 articles against 174 and alerted on only the 3 that were genuinely new. `data/alerts.log.json` holds 55 entries and 55 unique `(mention, channel)` pairs — no duplicates. **306 tests passing.** |
 | 2026-08-02 | 0.9.8 | **Dashboard performance and interaction pass.** **Recharts is now code-split** behind `React.lazy` + `Suspense`: the initial bundle drops from **194.5 kB to 93.7 kB gzipped (−52%)** and the charting library moves to a 101 kB chunk fetched only when the card renders. The fallback is a donut-shaped skeleton with the same footprint, so the card does not resize when the chunk lands. **The grid now sorts by activity rather than alphabetically** — companies with coverage first, most recently mentioned at the top, quiet ones settling to the bottom in name order. A press monitor is opened to answer "what happened lately", and A-Z ordering buries that under whichever companies start with an A. `lastMentionedAt` is null exactly when there is no coverage, so those rows sort to the bottom without a special case — demoted, never hidden (R5). **Motion added deliberately and sparingly:** rows fade in staggered by rank so the eye follows the sort order, the drawer slides from the edge it lives on with a slower enter than exit, and the backdrop blurs in. Closing runs the exit animation *before* unmounting — without that the panel vanishes mid-gesture and reads as a glitch. `prefers-reduced-motion` removes all of it rather than shortening it, since every animation here is ornament on a layout that already works. Also added: body scroll lock while the drawer is open, and `focus-visible` outlines on the interactive rows. |
 | 2026-08-02 | 0.9.7 | **Phase 6 dashboard built and verified against the live database while the backfill was still running.** `apps/api` is a read-only Express layer (database opened `readonly`, so the UI can never mutate a run's output) and `apps/web` is Vite + React 18 + Tailwind 4 + TanStack Query. **Verified end to end:** SPA served, bundle reachable, deep-route fallback working without swallowing `/api`, unknown slug returning a typed 404, and real data flowing — 258 companies, 500 mentions, 217 with no coverage, sentiment 302/121/77, Anthropic drilling down to 25 mentions. **Three UI decisions worth recording.** (1) `NO_COVERAGE` renders as a **dashed outline** and the company keeps its row — R5 makes it a first-class state and the coverage audit showed it is usually genuinely true, so it must read as an answer rather than a missing value. (2) Search uses **`useDeferredValue` rather than a debounce**: a debounce makes results arrive late, whereas deferring keeps them merely behind and lets React discard superseded work. (3) The **run-in-progress banner** — a backfill takes hours, so a dashboard reporting "217 companies with no coverage" mid-run tells the truth about the database and a lie about the portfolio; `/health` reports `runInProgress` and the hooks poll while it is true. Each mention shows the model's own one-line rationale beside its sentiment badge, because at 0.52 combined macro-F1 the label is not something a reader should take on trust. **Known trade-off:** the bundle is 658 kB (195 kB gzipped), dominated by Recharts; code-splitting the chart is the obvious fix if it matters. |
 | 2026-08-02 | 0.9.6 | **Classification configuration frozen: `llama3.2:3b` + `classify.v1` (AD-32).** `DEFAULT_PROMPT_VERSION` reverted to v1 in code, so the shipped default and the measured winner are the same thing. The 0.80 exit criterion is **not met** — best combined macro-F1 is 0.522 — and that is recorded as a result rather than worked around. **P4.9 decided: AD-07's cascade stays CUT.** It would route low-confidence items to a larger model, but the largest model we can run is already ~7 hours for a production pass, so a cascade makes the run infeasible without addressing the discrimination gap the v1/v2 per-item diff exposed. M4 closes as *selected by evidence, bar not met*. |
