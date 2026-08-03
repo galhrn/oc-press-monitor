@@ -383,7 +383,28 @@ Relevance is binary classification of short text, which a fine-tuned ~110M-param
 better and roughly 30× faster than a 3B generative model. This was considered and rejected here
 because the task mandates Ollama; for a production V2 it is the correct tool.
 
-### 5. Calibrate sentiment against the observed bias
+### 5. Reduce the zero-coverage baseline
+
+**50.8% of the portfolio (131 of 258 companies) has no coverage in the window.** Some of that is
+genuine — OncoHost's most recent press anywhere is four months old, and no amount of ingestion
+recovers an article that does not exist. But some of it is reach, and three additions would
+separate the two:
+
+1. **Full-text article-body search** via a paid news API (NewsAPI, Event Registry). Both current
+   providers match on headline metadata only, so a company mentioned in the third paragraph of a
+   funding round-up is invisible to us.
+2. **Brand alias and subsidiary mapping** in `companies.json`. Coverage frequently names a
+   product, a regional entity or a former name rather than the registered company — the registry
+   already has an `aliases` field, and it is currently thin because the enrichment model
+   populated it conservatively.
+3. **PR distribution feeds** — PR Newswire, GlobeNewswire, Business Wire. For B2B portfolio
+   companies the press release *is* the primary source, and it is published on a predictable
+   feed rather than having to be discovered.
+
+The honest caveat: a paid API breaks the zero-key property this project deliberately holds, so it
+belongs behind the existing `NewsProvider` seam as an opt-in provider rather than as a default.
+
+### 6. Calibrate sentiment against the observed bias
 
 The optimism bias is systematic and therefore correctable — by prompting explicitly against it,
 by routing low-confidence `positive` predictions to `neutral`, or by a few-shot set weighted
@@ -433,6 +454,7 @@ npm run backfill              # full run: collect, classify, export
 npm run backfill -- --resume  # finish an interrupted run
 npm run daily                 # the daily check and alert
 npm run serve                 # API + built dashboard on :3000
+npm run scheduler             # long-running node-cron process (CRON_SCHEDULE/CRON_TIMEZONE)
 npm run web:dev               # dashboard with hot reload (proxies to :3000)
 
 npm run bench                 # Ollama throughput, measured rather than guessed
@@ -441,6 +463,33 @@ npm run spot-check            # sample production output for manual review
 npm run audit:coverage        # zero-coverage baseline across the approved companies
 npm run measure:prefilter     # live pre-filter precision probe
 ```
+
+---
+
+## Scheduling
+
+The daily check is an **idempotent CLI**, and scheduling is a separate decision from what runs.
+Four paths, all calling the same command:
+
+| Path | Command | Notes |
+|---|---|---|
+| **OS cron / systemd timer** | `npm run daily` | Simplest for a machine that already runs Ollama |
+| **node-cron process** | `npm run scheduler` | Explicit IANA timezone, boot catch-up, keeps running after a failed run |
+| **GitHub Actions** | `.github/workflows/daily.yml` | Committed and documented — see the caveat below |
+| **n8n / Make** | HTTP or shell node calling the CLI | Not built; the CLI is the integration point |
+
+The GitHub Actions workflow carries an honest caveat, stated in the file itself: hosted runners
+have no Ollama, so classification cannot run there as written. It executes against the fixture
+provider, which genuinely exercises the schedule, the overlap lock, the watermark and the alert
+sinks — but it is not pretending to classify. Making it real means either a self-hosted runner
+with Ollama, or splitting collection from classification, which the pipeline already supports
+because articles are persisted before inference.
+
+`npm run scheduler` adds three things over a bare cron entry: an **explicit timezone** (`0 8 * * *`
+means nothing without one, and GitHub's cron is UTC-only so it drifts across DST), **boot
+catch-up** so a missed schedule runs at start rather than waiting a day, and a guarantee that a
+failed run **does not kill the scheduler** — tomorrow's check is worth more than today's stack
+trace.
 
 ---
 

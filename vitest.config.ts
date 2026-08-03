@@ -16,6 +16,7 @@ export default defineConfig({
       '@oc/classifier': r('./packages/classifier/src/index.ts'),
       '@oc/pipeline': r('./packages/pipeline/src/index.ts'),
       '@oc/alerting': r('./packages/alerting/src/index.ts'),
+      '@oc/scheduler': r('./apps/scheduler/src/index.ts'),
     },
   },
   test: {

@@ -1,0 +1,11 @@
+{
+  "name": "@oc/scheduler",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "node-cron wrapper around the idempotent daily CLI.",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  }
+}

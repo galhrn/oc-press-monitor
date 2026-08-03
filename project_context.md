@@ -4,7 +4,7 @@
 > **Owner:** Gal Aharon
 > **Status:** `BUILDING` — M0–M3 reached. Phase 3 complete; next is M4 (LLM classification + eval).
 > **Last updated:** 2026-08-01
-> **Document version:** 0.10.1
+> **Document version:** 0.10.2
 >
 > **Target hardware (dev + demo machine):** Windows 11 · Intel Core Ultra (Lunar Lake) ·
 > Intel Arc 140V iGPU, 16 GB addressable VRAM (shared) · 32 GB system RAM
@@ -76,7 +76,7 @@ No row may be deleted. Status: `TODO` / `WIP` / `DONE` / `N/A`.
 | R16 | §4.2 | Classification step | `packages/classifier` | TODO |
 | R17 | §4.2 | Storage layer | `packages/core/db` (SQLite) | **DONE** — schema, migrations, 6 repositories, 11 tests |
 | R18 | §4.2 | Dashboard/UI layer | `apps/web` + `apps/api` | **DONE** |
-| R19 | §4.2 | Scheduled job that performs the daily check and sends the alert | `apps/scheduler` | TODO |
+| R19 | §4.2 | Scheduled job that performs the daily check and sends the alert | `apps/scheduler` + `.github/workflows/daily.yml` | **DONE** |
 | R20 | §5.4 | GitHub repo + README: what it does, structure | README | **DONE** |
 | R21 | §5.4 | README: setup, deps, env vars, how to install/run Ollama + which model to pull | README §Setup | **DONE** |
 | R22 | §5.4 | README: exact commands to run end-to-end locally | README §Quickstart | **DONE** |
@@ -653,11 +653,11 @@ error handling · the "no coverage" state.
 
 | ID | Task | Satisfies | Est. | Status |
 |---|---|---|---|---|
-| P7.1 | `node-cron` wrapper — explicit `Asia/Jerusalem` TZ, overlap lock, boot catch-up | R19 | 1 h | TODO |
-| P7.2 | Alert payload design — company, headline, sentiment, source URL, timestamp | R7 | 0.5 h | TODO |
+| P7.1 | `node-cron` wrapper — explicit `Asia/Jerusalem` TZ, overlap lock, boot catch-up | R19 | 1 h | **DONE** — 5 tests; cross-process lock demonstrated live |
+| P7.2 | Alert payload design — company, headline, sentiment, source URL, timestamp | R7 | 0.5 h | **DONE** (P5.5) — plus rationale and confidence |
 | P7.3 | Slack webhook sink (optional, env-gated, degrades to console when unset) | R7 | 0.5 h | TODO |
-| P7.4 | `.github/workflows/daily.yml` + n8n workflow JSON as documented alternatives | R19 | 0.5 h | TODO |
-| P7.5 | Demo run + captured alert output committed to `data/alerts.log.json` | R7, R24 | 0.5 h | TODO |
+| P7.4 | `.github/workflows/daily.yml` as a documented alternative (n8n cut) | R19 | 0.5 h | **DONE** — with an honest caveat about Ollama on hosted runners |
+| P7.5 | Demo run + captured alert output committed to `data/alerts.log.json` | R7, R24 | 0.5 h | **DONE** (P5.6) — 55 real alerts |
 
 > **Exit criteria:** the job runs unattended on schedule · a re-run within the same window
 > alerts nothing · alert output is committed so a reviewer sees it without running anything ·
@@ -730,7 +730,7 @@ Budget ≈30 focused hours; descope rungs 1–3 already cut (§8.3).
 | M4 Model selected by evidence | P4 | 🟡 **selected by evidence, bar not met** — `llama3.2:3b`+v1 at 0.522 combined vs a 0.80 criterion; documented rather than hidden |
 | M5 Pipeline end-to-end | P5 | ✅ **DONE** — backfill + daily job, both idempotent and asserted |
 | M6 Dashboard complete | P6 | 🟡 built and verified against live data; screenshots (P6.9) pending |
-| M7 Daily job live | P7 | ⚪ TODO |
+| M7 Daily job live | P7 | ✅ **DONE** — scheduler fires, lock holds across processes, alerts committed |
 | M8 Submission ready | P8 | ⚪ TODO |
 
 ---
@@ -780,6 +780,7 @@ Budget ≈30 focused hours; descope rungs 1–3 already cut (§8.3).
 
 | Date | Version | Change |
 |---|---|---|
+| 2026-08-03 | 0.10.2 | **M7 REACHED — P7 scheduling complete.** `apps/scheduler` is a deliberately thin `node-cron` wrapper: the daily check is already an idempotent function, so this only decides *when*. It adds three things a bare cron entry cannot — an **explicit IANA timezone** (`0 8 * * *` is meaningless without one, and GitHub's cron is UTC-only so it drifts across DST), **boot catch-up** so a schedule missed while the process was down runs at start rather than a day later, and a guarantee that a **failed run does not kill the scheduler**. 5 tests, including that an invalid cron expression throws rather than silently never firing. **The overlap lock was demonstrated across processes rather than asserted:** two schedulers were briefly running, the second logged `skipped: another run holds the lock`, and afterwards the lock key was absent and the watermark had advanced — so the guard held and released correctly. `.github/workflows/daily.yml` is committed with the caveat stated **in the file**: hosted runners have no Ollama, so it runs against the fixture provider, which exercises the schedule, lock, watermark and alert sinks without pretending the classification ran. Two real paths to make it production are documented — a self-hosted runner, or splitting collection from classification, which the pipeline already supports because articles persist before inference. README gains a **Scheduling** section and a **zero-coverage V2 item**: 50.8% of the portfolio (131 of 258) has no coverage, and full-text body search, alias/subsidiary mapping and PR-wire feeds would separate genuine silence from limited reach — noting that a paid API breaks the zero-key property and so belongs behind the provider seam as opt-in. **311 tests passing.** |
 | 2026-08-03 | 0.10.1 | **README written (P8.4) — R9, R11, R12, R13, R20–R24 discharged.** Structured so the *measurements* come first: a reviewer sees the 0.52 macro-F1 miss, the ~85% weighted precision and the optimism bias before they see a feature list. Includes the full bake-off table with the v1/v2 prompt comparison and the reasoning for **not** shipping the higher-scoring configuration, the gold-set disclosure and its 7-item negative-class caveat, and the production spot-check. **The homonym section is the sharpest part**: every published mention for the two worst names was reviewed by hand — **Peak published 13 mentions of which 0 are the company, Shield 15 of which 2 are** — with real headlines quoted from `data/mentions.json`. The V2 roadmap explains why the obvious fix (case-sensitive matching) cannot work, since news headlines are Title-Cased and *"To Shield Nigerian SMBs"*, *"From Peak"* and *"Its Peak"* all capitalise the common word; NER is proposed as the cheap high-value replacement, ahead of sector-conditioning, body extraction, a dedicated encoder and sentiment calibration. **One README claim was wrong and was corrected against the artifact:** the backfill log reported 130 companies with no coverage (zero *collected* articles) while `company_status.json` reports **131** (zero *relevant* mentions). The export is authoritative and the README now matches it. |
 | 2026-08-03 | 0.10.0 | **P8.2 production spot-check — the precision numbers, measured rather than claimed.** 24 mentions drawn deterministically from the 1,352 the pipeline published, stratified to over-weight the critical/high tier where errors concentrate (`npm run spot-check`, `data/spot-check.json`). **Relevance precision 20/24 (83%)** — and the split is the finding: **10/14 (71%) on critical/high names, 10/10 (100%) on medium/low**. Weighting back to the published population, which is 51% ambiguous-tier, gives an estimated **~85% precision, or roughly 198 false positives among 1,352 published mentions**. All four false positives were homonyms: NASA's *Ad Astra* workshop, *Arrow Global* the UK credit manager, *Shield AI* the defence company, and *High Risk Shield* — and Shield AI passed while the prompt held both its sector and the negative keyword `Shield AI`. Three of the four are decoy shapes the gold set already contained, so this is the bake-off's 0.24 irrelevant-recall showing up in production exactly as predicted. **Sentiment accuracy 15/20 (75%) among correctly-identified mentions, and every single error ran the same way: `positive` where `neutral` was right.** A competitive 'battle', a bare list entry, a conference demo, a pre-launch status and a marketing campaign were all read as wins. That is a systematic optimism bias, consistent with the bake-off's neutral recall of 0.50, and it means the published sentiment split (696 positive / 352 neutral / 304 negative) **overstates positive coverage**. Both figures belong in the README beside the bake-off table. |
 | 2026-08-03 | 0.9.9 | **M5 REACHED — P5.5, P5.6 and P5.7 complete; the daily job runs and alerts.** `packages/alerting` ships the `Alerter` seam with console and JSON-file sinks. Two decisions: **delivery is recorded only after a sink succeeds** (at-least-once, chosen deliberately — a repeated alert is recoverable, a silently dropped one is not), and **a broken sink never fails the run**. Idempotency is enforced by the database via `UNIQUE (mention_id, channel)` rather than by remembering to check. Alerts carry the model's `rationale` and `confidence`, because at 0.52 combined macro-F1 some alerts will be about the wrong company and an alert nobody can triage is one they learn to ignore. **P5.7 caught a real design flaw rather than confirming the design.** Alert selection originally used `firstSeenSince(runStart)`, and the test showed a run cannot distinguish its own inserts from a previous run's when both share a timestamp. Replaced with `newMentionIds`, taken from the upsert's own return value — the write already knows which pairs it created, and deriving it afterwards from a clock is fragile. **Demonstrated on live data:** run 1 alerted on 52 new mentions; run 2 minutes later saw 176 articles against 174 and alerted on only the 3 that were genuinely new. `data/alerts.log.json` holds 55 entries and 55 unique `(mention, channel)` pairs — no duplicates. **306 tests passing.** |

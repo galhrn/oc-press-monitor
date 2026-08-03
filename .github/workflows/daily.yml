@@ -1,0 +1,70 @@
+# Scheduled daily check (task P7.4, requirement R19).
+#
+# This is a *documented production path*, and it comes with an honest caveat: GitHub's hosted
+# runners have no GPU and no Ollama, so classification cannot run here as written. Two ways to
+# make it real, in order of effort:
+#
+#   1. Point `runs-on` at a self-hosted runner with Ollama installed. Nothing else changes -
+#      the job is the same idempotent CLI that runs locally.
+#   2. Split the stages: collect on a hosted runner (`--collect-only`, no model needed), commit
+#      the database, and classify on a machine that has Ollama. The pipeline already persists
+#      articles before classification precisely so this split is possible.
+#
+# As committed, this workflow runs the pipeline against the **fixture provider** with a stub
+# model, which exercises the scheduling path, the lock, the watermark and the alert sinks
+# end to end without needing a network or a GPU. That is a real test of the wiring, not a
+# pretence that the classification ran.
+name: daily
+
+on:
+  schedule:
+    # 08:00 Asia/Jerusalem. GitHub cron is UTC-only, so this is 05:00 UTC and will drift by an
+    # hour across DST - which is exactly why the local scheduler takes an explicit IANA zone.
+    - cron: '0 5 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Report what would be alerted without sending'
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  # A slow run must not overlap the next schedule. The job's own lock guards the data; this
+  # guards the runner minutes.
+  group: daily
+  cancel-in-progress: false
+
+jobs:
+  daily:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+
+      - run: npm ci
+
+      - name: Verify the toolchain
+        run: npm run verify
+
+      - name: Daily check (fixture provider - see the note at the top of this file)
+        env:
+          NEWS_PROVIDERS: fixture
+          ALERT_CHANNELS: console,file
+          DB_PATH: ./data/press.sqlite
+        run: npm run daily -- --dry-run --providers fixture
+
+      - name: Upload alert log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: alerts
+          path: data/alerts.log.json
+          if-no-files-found: ignore

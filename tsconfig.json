@@ -28,6 +28,7 @@
       "@oc/pipeline": ["packages/pipeline/src/index.ts"],
       "@oc/alerting": ["packages/alerting/src/index.ts"],
       "@oc/api": ["apps/api/src/index.ts"],
+      "@oc/scheduler": ["apps/scheduler/src/index.ts"],
       "@oc/api/contract": ["apps/api/src/contract.ts"],
       "@/*": ["apps/web/src/*"]
     }
