@@ -4,7 +4,7 @@
 > **Owner:** Gal Aharon
 > **Status:** `BUILDING` — M0–M3 reached. Phase 3 complete; next is M4 (LLM classification + eval).
 > **Last updated:** 2026-08-01
-> **Document version:** 0.10.2
+> **Document version:** 0.10.3
 >
 > **Target hardware (dev + demo machine):** Windows 11 · Intel Core Ultra (Lunar Lake) ·
 > Intel Arc 140V iGPU, 16 GB addressable VRAM (shared) · 32 GB system RAM
@@ -82,7 +82,7 @@ No row may be deleted. Status: `TODO` / `WIP` / `DONE` / `N/A`.
 | R22 | §5.4 | README: exact commands to run end-to-end locally | README §Quickstart | **DONE** |
 | R23 | §5.4 | README: assumptions, trade-offs, known limitations | README §Assumptions + §Known gaps | **DONE** |
 | R24 | §5.5 | `data/` folder with output of a successful run: mentions, labels, links, last-mentioned status | `data/` committed artifacts | **DONE** — 10 files from a real 123-minute run |
-| R25 | §5.6 | Copy of the full prompt used with AI coding assistants | `ai_prompts.md` | WIP |
+| R25 | §5.6 | Copy of the full prompt used with AI coding assistants | `ai_prompts.md` | **DONE** — 8 entries plus the standing instruction |
 | R26 | §6 | Reasonable error handling | Typed error hierarchy + fail-fast config; retry/backoff & circuit breaker pending P3 | WIP |
 | R27 | §7 | Document assumptions where the spec is ambiguous | §4 of this file → README | WIP |
 
@@ -637,7 +637,7 @@ error handling · the "no coverage" state.
 | P6.6 | Company drill-down — mention list with **clickable source URLs** | R3 | 1 h | **DONE** — slide-over, `rel="noopener noreferrer"`, per-item rationale |
 | P6.7 | `NO_COVERAGE` treated as a visible state, not an empty row | R5 | 0.5 h | **DONE** — dashed-outline chip, company keeps its row |
 | P6.8 | Serve the SPA build from Express so `npm start` is one command | R22 | 0.5 h | **DONE** — `npm run serve`, SPA fallback verified |
-| P6.9 | Screenshots for the README | R20 | 0.5 h | TODO |
+| P6.9 | Screenshots for the README | R20 | 0.5 h | **DONE** — three captured by the owner, wired in with captions |
 
 > **Exit criteria:** every one of the 258 companies is reachable in the UI · every mention
 > links to a working source URL · a zero-coverage company renders a clear state · a
@@ -678,7 +678,7 @@ error handling · the "no coverage" state.
 | P8.2 | Spot-check ~20 classified mentions by hand; record findings honestly | R13 | 0.5 h | **DONE** — 24 sampled, `data/spot-check.json`; 83% relevance precision on a tier-weighted sample, 75% sentiment |
 | P8.3 | Commit every `data/` artifact | R24 | 0.5 h | **DONE** |
 | P8.4 | Write the README from §2 — every `R#` row becomes a section | R20–R23 | 2 h | **DONE** |
-| P8.5 | Finalise `ai_prompts.md`; write the ADRs in `docs/adr/` | R25 | 0.5 h | TODO |
+| P8.5 | Finalise `ai_prompts.md`; write the ADRs in `docs/adr/` | R25 | 0.5 h | **DONE** — 6 long-form ADRs + index; prompt log closed with Entry 008 |
 | P8.6 | **Fresh-clone rehearsal** — a different directory, follow the README literally, fix every gap | R22 | 1 h | TODO |
 | P8.7 | Demo GIF/screenshots; final repo hygiene pass; push | R20 | 0.5 h | TODO |
 
@@ -729,7 +729,7 @@ Budget ≈30 focused hours; descope rungs 1–3 already cut (§8.3).
 | M3 Collection working | P3 | ✅ **DONE** — `npm run collect -- --company ZutaCore` returns 12 deduped live articles with GDELT failing; `--providers fixture` runs fully offline |
 | M4 Model selected by evidence | P4 | 🟡 **selected by evidence, bar not met** — `llama3.2:3b`+v1 at 0.522 combined vs a 0.80 criterion; documented rather than hidden |
 | M5 Pipeline end-to-end | P5 | ✅ **DONE** — backfill + daily job, both idempotent and asserted |
-| M6 Dashboard complete | P6 | 🟡 built and verified against live data; screenshots (P6.9) pending |
+| M6 Dashboard complete | P6 | ✅ **DONE** — built, verified against live data, screenshots in the README |
 | M7 Daily job live | P7 | ✅ **DONE** — scheduler fires, lock holds across processes, alerts committed |
 | M8 Submission ready | P8 | ⚪ TODO |
 
@@ -780,6 +780,7 @@ Budget ≈30 focused hours; descope rungs 1–3 already cut (§8.3).
 
 | Date | Version | Change |
 |---|---|---|
+| 2026-08-03 | 0.10.3 | **P6.9 and P8.5 done.** Three owner-captured screenshots wired into the README with captions that explain the *decisions* rather than describing the pixels — activity ordering, `NO_COVERAGE` as a distinct chip, the per-mention rationale, and the drawer footer showing `llama3.2:3b · classify.v1@5717fe76202f`, which is the prompt-hash provenance visible in the product. One caption points at a **visible defect** rather than hiding it: in the IQM drawer a share registration is labelled `negative` while a near-identical one two rows up is `neutral`, and one rationale cites a funding round the headline never mentions — the spot-check's findings on screen. A note records that the screenshots show a live session (1,397 mentions) slightly ahead of the committed backfill export (1,352). **`docs/adr/` was empty and is now written**: six long-form records for the decisions that changed the system's shape or were reversed by evidence — keyless providers, right-sizing by measurement, `node:sqlite`, sanitising model output, the soft-pass, and shipping below the bar — plus an index pointing at §5 as the authoritative table. `ai_prompts.md` closes with Entry 008 recording the prompt *shape* across twelve sessions rather than reproducing every message. |
 | 2026-08-03 | 0.10.2 | **M7 REACHED — P7 scheduling complete.** `apps/scheduler` is a deliberately thin `node-cron` wrapper: the daily check is already an idempotent function, so this only decides *when*. It adds three things a bare cron entry cannot — an **explicit IANA timezone** (`0 8 * * *` is meaningless without one, and GitHub's cron is UTC-only so it drifts across DST), **boot catch-up** so a schedule missed while the process was down runs at start rather than a day later, and a guarantee that a **failed run does not kill the scheduler**. 5 tests, including that an invalid cron expression throws rather than silently never firing. **The overlap lock was demonstrated across processes rather than asserted:** two schedulers were briefly running, the second logged `skipped: another run holds the lock`, and afterwards the lock key was absent and the watermark had advanced — so the guard held and released correctly. `.github/workflows/daily.yml` is committed with the caveat stated **in the file**: hosted runners have no Ollama, so it runs against the fixture provider, which exercises the schedule, lock, watermark and alert sinks without pretending the classification ran. Two real paths to make it production are documented — a self-hosted runner, or splitting collection from classification, which the pipeline already supports because articles persist before inference. README gains a **Scheduling** section and a **zero-coverage V2 item**: 50.8% of the portfolio (131 of 258) has no coverage, and full-text body search, alias/subsidiary mapping and PR-wire feeds would separate genuine silence from limited reach — noting that a paid API breaks the zero-key property and so belongs behind the provider seam as opt-in. **311 tests passing.** |
 | 2026-08-03 | 0.10.1 | **README written (P8.4) — R9, R11, R12, R13, R20–R24 discharged.** Structured so the *measurements* come first: a reviewer sees the 0.52 macro-F1 miss, the ~85% weighted precision and the optimism bias before they see a feature list. Includes the full bake-off table with the v1/v2 prompt comparison and the reasoning for **not** shipping the higher-scoring configuration, the gold-set disclosure and its 7-item negative-class caveat, and the production spot-check. **The homonym section is the sharpest part**: every published mention for the two worst names was reviewed by hand — **Peak published 13 mentions of which 0 are the company, Shield 15 of which 2 are** — with real headlines quoted from `data/mentions.json`. The V2 roadmap explains why the obvious fix (case-sensitive matching) cannot work, since news headlines are Title-Cased and *"To Shield Nigerian SMBs"*, *"From Peak"* and *"Its Peak"* all capitalise the common word; NER is proposed as the cheap high-value replacement, ahead of sector-conditioning, body extraction, a dedicated encoder and sentiment calibration. **One README claim was wrong and was corrected against the artifact:** the backfill log reported 130 companies with no coverage (zero *collected* articles) while `company_status.json` reports **131** (zero *relevant* mentions). The export is authoritative and the README now matches it. |
 | 2026-08-03 | 0.10.0 | **P8.2 production spot-check — the precision numbers, measured rather than claimed.** 24 mentions drawn deterministically from the 1,352 the pipeline published, stratified to over-weight the critical/high tier where errors concentrate (`npm run spot-check`, `data/spot-check.json`). **Relevance precision 20/24 (83%)** — and the split is the finding: **10/14 (71%) on critical/high names, 10/10 (100%) on medium/low**. Weighting back to the published population, which is 51% ambiguous-tier, gives an estimated **~85% precision, or roughly 198 false positives among 1,352 published mentions**. All four false positives were homonyms: NASA's *Ad Astra* workshop, *Arrow Global* the UK credit manager, *Shield AI* the defence company, and *High Risk Shield* — and Shield AI passed while the prompt held both its sector and the negative keyword `Shield AI`. Three of the four are decoy shapes the gold set already contained, so this is the bake-off's 0.24 irrelevant-recall showing up in production exactly as predicted. **Sentiment accuracy 15/20 (75%) among correctly-identified mentions, and every single error ran the same way: `positive` where `neutral` was right.** A competitive 'battle', a bare list entry, a conference demo, a pre-launch status and a marketing campaign were all read as wins. That is a systematic optimism bias, consistent with the bake-off's neutral recall of 0.50, and it means the published sentiment split (696 positive / 352 neutral / 304 negative) **overstates positive coverage**. Both figures belong in the README beside the bake-off table. |

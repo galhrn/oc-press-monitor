@@ -72,6 +72,49 @@ npm run daily                     # collect, classify, alert
 
 ---
 
+## The dashboard
+
+![Company grid with KPI banner and sentiment distribution](docs/images/dashboard-grid.png)
+
+The grid ranks by **activity, not alphabetically** — a press monitor is opened to answer "what
+happened lately", and A–Z ordering buries that. Companies with coverage come first, most
+recently mentioned at the top, and the quiet ones settle at the bottom. `No coverage` is a
+first-class filter and a distinct chip style, because for 131 of these companies it is the
+correct answer rather than a gap.
+
+The sentiment bar on each row is the positive/neutral/negative split at a glance; the count
+beside it is mentions in the window.
+
+> Screenshot taken from a live session after several daily runs, so its totals (1,397 mentions)
+> are slightly ahead of the committed backfill export in `data/` (1,352). The `data/` files are
+> the artifact of one reproducible run; the dashboard shows whatever is currently in the
+> database.
+
+![Company drill-down for IQM](docs/images/company-drawer.png)
+
+Opening a company slides over its full quarter of coverage. Every headline links to its source,
+and **every label carries the model's own one-line reason** — at 0.52 combined macro-F1 the
+sentiment is not something a reader should take on trust, and the rationale is what lets them
+disagree with it.
+
+The drawer footer records provenance: `Labels produced by llama3.2:3b · classify.v1@5717fe76202f`.
+That hash is the exact prompt file that produced those labels, stored on every row.
+
+![SpaceX drill-down showing mixed sentiment](docs/images/company-drawer-focused.png)
+
+SpaceX is a good illustration of the sentiment axis being **investor-facing rather than
+tonal**: Starlink launches and wind-tunnel progress read `positive`, while "stock hits new
+closing low" and "stock keeps sliding" read `negative`, in the same week and for the same
+company.
+
+It also shows a documented weakness in plain sight. In the IQM drawer above, *"IQM Board Member
+Receives 20,489 Shares at a €0 Price"* is labelled `negative` ("share dilution") while a nearly
+identical share-registration headline two rows up is labelled `neutral`, and one rationale cites
+a "funding round" that the headline never mentions. These are exactly the failure modes measured
+in the spot-check, visible in the product rather than hidden behind an aggregate.
+
+---
+
 ## Architecture
 
 An npm-workspaces monorepo: a modular monolith with service-ready seams. Each package has one

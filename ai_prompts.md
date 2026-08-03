@@ -596,6 +596,44 @@ README next to the bake-off table.
 
 ---
 
+## Entry 008 — The prompts that produced the last four phases
+
+**Date:** 2026-08-01 to 2026-08-03
+**Stage:** P3 (collection) through P8 (delivery).
+**Context:** Twelve working sessions, each opening with the same instruction to read
+`project_context.md` in full before touching code. Rather than reproduce every message, this
+entry records the *shape* the prompts settled into, because the shape is what made the sessions
+productive.
+
+**The recurring pattern:**
+
+```
+<approval or correction of the previous result>
+<one or two numbered tasks, scoped to a phase>
+Please present the plan for X and start implementing.
+```
+
+**Strategy:**
+
+| Technique | Why it mattered here |
+|---|---|
+| **Plan before code, every time** | "Present the plan and start" surfaced disagreements while they were cheap. The P3.6-before-P3.4 reordering and the AD-31 soft-pass both came out of a plan being questioned rather than a commit being reverted. |
+| **Approval was specific, not blanket** | "Option A is right because X" told the assistant *which* argument had landed, so the reasoning could be reused. A bare "yes" would have transmitted the decision but not the criterion. |
+| **Findings were escalated as decisions, not bugs** | The GDELT rate limit, the missing snippet and the 0.52 macro-F1 were each brought back as "here is the measurement, here is what it changes" — which is why they became ADRs rather than silent workarounds. |
+| **The owner supplied ground truth the assistant could not have** | Which Arrow Global is in the portfolio; whether a registered direct offering is neutral; that vendor PR counts as a mention. These are product decisions, and the assistant was explicitly not allowed to guess them. |
+| **Real UI observations fed back in** | "Paystack Unveils… To Shield Nigerian SMBs" came from the owner reading the live dashboard, and it became the argument for why case-sensitivity cannot fix homonyms. |
+
+**Outcome:** Phases 3–8 delivered with 311 tests, a full production run, and — the part worth
+noting — several results that contradicted the plan. The prompts left room for that: none of
+them asked for confirmation that the approach was working.
+
+**Reflection:** The most valuable instruction in the whole log is the standing one at the top of
+`project_context.md` — read this file first, and update it in the same commit. It is what let
+twelve sessions with no shared memory behave like one continuous piece of work, and what makes
+the changelog a record of *why* rather than a list of what.
+
+---
+
 ## Entry template (for all subsequent entries)
 
 ```markdown
