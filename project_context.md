@@ -4,8 +4,8 @@
 > **Owner:** Gal Aharon
 > **Status:** `SUBMISSION READY` — M0–M8 reached. All 27 requirements discharged; the model
 > missed its own accuracy bar and that is documented rather than hidden.
-> **Last updated:** 2026-08-01
-> **Document version:** 0.11.0
+> **Last updated:** 2026-08-03
+> **Document version:** 0.11.1
 >
 > **Target hardware (dev + demo machine):** Windows 11 · Intel Core Ultra (Lunar Lake) ·
 > Intel Arc 140V iGPU, 16 GB addressable VRAM (shared) · 32 GB system RAM
@@ -60,22 +60,22 @@ No row may be deleted. Status: `TODO` / `WIP` / `DONE` / `N/A`.
 | # | Source | Requirement (verbatim intent) | Satisfied by | Status |
 |---|---|---|---|---|
 | R1 | §2.1 | Dashboard of press appearances per company over the last quarter | `apps/web` — Company grid + drill-down | **DONE** |
-| R2 | §2.1 | Each mention classified positive / negative / neutral | `packages/classifier` | TODO |
+| R2 | §2.1 | Each mention classified positive / negative / neutral | `packages/classifier` | **DONE** — 1,407 mentions labelled in the committed run |
 | R3 | §2.1 | Each mention linked back to source URL | `articles.url` surfaced in the drill-down | **DONE** |
-| R4 | §2.2 | Current "mention status" per company from last-mentioned date | `v_company_status` view + status chip in UI | WIP — logic + 20 boundary tests done, UI pending |
-| R5 | §2.2 | Must handle "no coverage found" | Explicit `NO_COVERAGE` bucket, company still rendered | WIP — bucket implemented and tested, UI pending |
+| R4 | §2.2 | Current "mention status" per company from last-mentioned date | `v_company_status` + `StatusRepository` + status chip in the UI | **DONE** — 20 boundary tests; window parameterised from `QUARTER_WINDOW_DAYS` |
+| R5 | §2.2 | Must handle "no coverage found" | Explicit `NO_COVERAGE` bucket, company still rendered | **DONE** — 131 of 258 companies; dashed-outline chip, present in every export |
 | R6 | §2.3 | Daily job checks for new mentions | `scripts/job-daily.ts` | **DONE** — scheduler wrapper is P7 |
 | R7 | §2.3 | Sends an alert when a new mention is found | `packages/alerting` | **DONE** — console + file, demonstrated on live data |
 | R8 | §3 | Company list is the source of truth | `data/companies.json` — 258 records, 57 human-approved queries | **DONE** |
 | R9 | §3 | Document news-source choice **and its limitations** in README | README §"Data sources and their limitations" | **DONE** — every limitation measured, not assumed |
-| R10 | §4.1 | Sentiment via **local Ollama only**, no cloud LLM | `packages/ollama` — the only LLM code path in the repo | WIP — client done, classifier prompt is P4.2 |
+| R10 | §4.1 | Sentiment via **local Ollama only**, no cloud LLM | `packages/ollama` — the only LLM code path in the repo | **DONE** — no cloud LLM anywhere; enrichment and classification both local |
 | R11 | §4.1 | README states which model and why | README §"The local LLM" | **DONE** — with the bake-off table |
 | R12 | §4.1 | README states how the model is invoked (prompt structure, output format) | README + `prompts/` | **DONE** |
 | R13 | §4.1 | README states how classification quality was validated | `packages/classifier/eval/` + README | **DONE** — gold set, bake-off, and production spot-check |
 | R14 | §4.2 | JavaScript/Node.js for backend **and data collection** | Entire repo (TypeScript → JS, AD-02) | **DONE** |
-| R15 | §4.2 | Data-collection component | `packages/collector` | **DONE** — 2 live providers + fixtures, 141 tests |
-| R16 | §4.2 | Classification step | `packages/classifier` | TODO |
-| R17 | §4.2 | Storage layer | `packages/core/db` (SQLite) | **DONE** — schema, migrations, 6 repositories, 11 tests |
+| R15 | §4.2 | Data-collection component | `packages/collector` | **DONE** — 2 live providers + fixtures, 151 tests |
+| R16 | §4.2 | Classification step | `packages/classifier` | **DONE** — versioned prompt, zod schema, parse-and-repair, eval harness |
+| R17 | §4.2 | Storage layer | `packages/core/db` (SQLite) | **DONE** — schema, migrations, 7 repositories, 48 core tests |
 | R18 | §4.2 | Dashboard/UI layer | `apps/web` + `apps/api` | **DONE** |
 | R19 | §4.2 | Scheduled job that performs the daily check and sends the alert | `apps/scheduler` + `.github/workflows/daily.yml` | **DONE** |
 | R20 | §5.4 | GitHub repo + README: what it does, structure | README | **DONE** |
@@ -84,8 +84,8 @@ No row may be deleted. Status: `TODO` / `WIP` / `DONE` / `N/A`.
 | R23 | §5.4 | README: assumptions, trade-offs, known limitations | README §Assumptions + §Known gaps | **DONE** |
 | R24 | §5.5 | `data/` folder with output of a successful run: mentions, labels, links, last-mentioned status | `data/` committed artifacts | **DONE** — 10 files from a real 123-minute run |
 | R25 | §5.6 | Copy of the full prompt used with AI coding assistants | `ai_prompts.md` | **DONE** — 8 entries plus the standing instruction |
-| R26 | §6 | Reasonable error handling | Typed error hierarchy + fail-fast config; retry/backoff & circuit breaker pending P3 | WIP |
-| R27 | §7 | Document assumptions where the spec is ambiguous | §4 of this file → README | WIP |
+| R26 | §6 | Reasonable error handling | Typed error hierarchy, fail-fast config, jittered retry, per-provider circuit breaker, per-company failure isolation | **DONE** |
+| R27 | §7 | Document assumptions where the spec is ambiguous | §4 of this file → README §Assumptions and §Known gaps | **DONE** |
 
 ---
 
@@ -477,7 +477,7 @@ error handling · the "no coverage" state.
 
 ### 8.4 Phases in detail
 
-#### Phase 0 — Planning & Decision Freeze `WIP`
+#### Phase 0 — Planning & Decision Freeze `DONE`
 
 > **Objective:** Agree the architecture before a line of code exists.
 > **Milestone M0:** Decisions frozen; both living documents committed.
@@ -489,8 +489,8 @@ error handling · the "no coverage" state.
 | P0.3 | Draft architecture, tech stack, pipeline design | — | 1 h | DONE |
 | P0.4 | Create `project_context.md` + `ai_prompts.md` | R25, R27 | 0.5 h | DONE |
 | P0.5 | Right-size the model; define the selection protocol (§6.4) | R10, R11 | 0.5 h | DONE |
-| P0.6 | **Resolve OQ-1, OQ-3, OQ-4, OQ-5, OQ-7 with the owner** | — | — | **TODO** |
-| P0.7 | Promote AD-01…AD-20 from `PROPOSED` to `ACCEPTED` | — | — | TODO |
+| P0.6 | **Resolve OQ-1, OQ-3, OQ-4, OQ-5, OQ-7 with the owner** | — | — | **DONE** — all answered in §10 |
+| P0.7 | Promote AD-01…AD-20 from `PROPOSED` to `ACCEPTED` | — | — | **DONE** — no `PROPOSED` decision remains; AD-01…AD-34 all ACCEPTED or CUT |
 
 > **Exit criteria:** no `PROPOSED` decision remains · no blocking open question remains ·
 > both markdown files committed.
@@ -499,7 +499,7 @@ error handling · the "no coverage" state.
 
 ---
 
-#### Phase 1 — Foundation & Scaffolding `TODO`
+#### Phase 1 — Foundation & Scaffolding `DONE`
 
 > **Objective:** A repo where every subsequent task is cheap to add and impossible to break silently.
 > **Milestone M1:** `npm run verify` passes; the walking skeleton writes one stub row end-to-end.
@@ -523,7 +523,7 @@ error handling · the "no coverage" state.
 
 ---
 
-#### Phase 2 — Company Registry `TODO`
+#### Phase 2 — Company Registry `DONE`
 
 > **Objective:** Turn 258 bare names into a queryable, disambiguation-aware registry.
 > **Milestone M2:** `data/companies.json` committed, all 258 present, high-ambiguity names hand-reviewed.
@@ -573,7 +573,7 @@ error handling · the "no coverage" state.
 
 ---
 
-#### Phase 4 — LLM Classification & Evaluation `TODO`
+#### Phase 4 — LLM Classification & Evaluation `DONE` — bar not met, documented
 
 > **Objective:** Turn an article into a trustworthy, reproducible label — and prove it's trustworthy.
 > **Milestone M4:** Bake-off table produced; model selected by measurement per AD-17; macro-F1 recorded.
@@ -581,14 +581,14 @@ error handling · the "no coverage" state.
 
 | ID | Task | Satisfies | Est. | Status |
 |---|---|---|---|---|
-| P4.0 | **Backend benchmark (AD-19)** — CPU vs Vulkan vs IPEX-LLM on the Arc 140V; record tok/s | R11, A9 | 0.5 h | **TOOL DONE** (`npm run bench`) — awaiting the owner's measurement |
+| P4.0 | **Backend benchmark (AD-19)** — CPU vs Vulkan vs IPEX-LLM on the Arc 140V; record tok/s | R11, A9 | 0.5 h | **DONE — CPU only** (`data/benchmark.json`). Vulkan and IPEX-LLM deliberately unmeasured; see OQ-8. |
 | P4.1 | `ollama-client.ts` — structured output, timeout, retry, `keep_alive`, health check | R10 | 1 h | **DONE** — pulled forward into `packages/ollama` (AD-24), 15 tests |
-| P4.2 | `prompts/classify.v1.md` — rubric §6.2, few-shot examples, edge cases, version hash | R12, R16 | 1.5 h | TODO |
-| P4.3 | zod schema ↔ Ollama JSON schema; parse-and-repair fallback path | R16, R26 | 0.5 h | TODO |
+| P4.2 | `prompts/classify.v1.md` — rubric §6.2, edge cases, version hash | R12, R16 | 1.5 h | **DONE** — plus `classify.v2.md`, evaluated and rejected on evidence (AD-32) |
+| P4.3 | zod schema ↔ Ollama JSON schema; parse-and-repair fallback path | R16, R26 | 0.5 h | **DONE** — 100% JSON validity on both 3B models |
 | P4.4 | Content-hash cache (AD-09) | — | 0.5 h | **DONE** — shipped with AD-24 |
 | P4.5 | Concurrency control, right-sized inference params (AD-18), progress reporting | — | 0.5 h | **DONE** — shipped with AD-24 |
 | P4.6 | **Label a 60-item gold set** — stratified, includes ambiguous-name negatives | R13 | 1.5 h | **DONE** — 60 items labelled (AI-drafted, owner-reviewed 2026-08-02); 39 relevant / 21 decoys; 20 pos / 7 neg / 12 neutral |
-| P4.7 | Eval harness — confusion matrix, macro-F1, per-class P/R, JSON-validity rate | R13 | 1.5 h | TODO |
+| P4.7 | Eval harness — confusion matrix, macro-F1, per-class P/R, JSON-validity rate | R13 | 1.5 h | **DONE** — `npm run eval`; relevance and sentiment scored separately |
 | P4.8 | **Run the §6.4 bake-off** across the ladder; produce the README table; select the model | R11, R13 | 1.5 h | **RUN — BAR NOT MET.** Best combined macro-F1 **0.522** against a 0.80 exit criterion. See 0.9.4. |
 | P4.9 | Decide AD-07: activate the cascade only if the winner misses the bar | — | — | **DECIDED: stays CUT.** The winner does miss the bar, but a cascade routes low-confidence items to a *larger* model and the largest we can run is already too slow (~7 h). The cascade would make the run infeasible without fixing the discrimination problem the per-item diff exposed. |
 
@@ -602,7 +602,7 @@ error handling · the "no coverage" state.
 
 ---
 
-#### Phase 5 — Pipeline, Status & Alerts `TODO`
+#### Phase 5 — Pipeline, Status & Alerts `DONE`
 
 > **Objective:** Compose the stages into one resumable, idempotent, observable run.
 > **Milestone M5:** A single command executes the full pipeline and writes every `data/*.json` artifact.
@@ -625,7 +625,7 @@ error handling · the "no coverage" state.
 
 ---
 
-#### Phase 6 — API & Dashboard `TODO`
+#### Phase 6 — API & Dashboard `DONE`
 
 > **Objective:** Make the three required outputs legible at a glance.
 > **Milestone M6:** Dashboard renders quarterly mentions, sentiment labels with source links, and per-company status — from real data.
@@ -649,7 +649,7 @@ error handling · the "no coverage" state.
 
 ---
 
-#### Phase 7 — Scheduling & Alert Delivery `TODO`
+#### Phase 7 — Scheduling & Alert Delivery `DONE`
 
 > **Objective:** Make the daily check real and visible.
 > **Milestone M7:** The scheduled job fires, detects a genuinely new mention, and emits an alert.
@@ -658,7 +658,7 @@ error handling · the "no coverage" state.
 |---|---|---|---|---|
 | P7.1 | `node-cron` wrapper — explicit `Asia/Jerusalem` TZ, overlap lock, boot catch-up | R19 | 1 h | **DONE** — 5 tests; cross-process lock demonstrated live |
 | P7.2 | Alert payload design — company, headline, sentiment, source URL, timestamp | R7 | 0.5 h | **DONE** (P5.5) — plus rationale and confidence |
-| P7.3 | Slack webhook sink (optional, env-gated, degrades to console when unset) | R7 | 0.5 h | TODO |
+| P7.3 | Slack webhook sink (optional, env-gated, degrades to console when unset) | R7 | 0.5 h | **CUT** (descope rung 3, OQ-4) — the `Alerter` seam makes it a ~20-line addition |
 | P7.4 | `.github/workflows/daily.yml` as a documented alternative (n8n cut) | R19 | 0.5 h | **DONE** — with an honest caveat about Ollama on hosted runners |
 | P7.5 | Demo run + captured alert output committed to `data/alerts.log.json` | R7, R24 | 0.5 h | **DONE** (P5.6) — 55 real alerts |
 
@@ -670,7 +670,7 @@ error handling · the "no coverage" state.
 
 ---
 
-#### Phase 8 — Production Run & Delivery `TODO`
+#### Phase 8 — Production Run & Delivery `DONE`
 
 > **Objective:** Ship something a stranger can run and a reviewer can grade.
 > **Milestone M8:** Submission-ready; fresh-clone rehearsal passed.
@@ -769,7 +769,7 @@ Budget ≈30 focused hours; descope rungs 1–3 already cut (§8.3).
 | OQ-1 | Submission deadline / realistic time budget? | Phase scope | **ANSWERED:** Hard deadline **Tue 4 Aug 2026, 16:00**. Target submission **Mon 3 Aug evening** to land ahead of other candidates. Budget ≈30 h → descope rungs 1–3 pre-cut. See §8.6. |
 | OQ-2 | Ollama host machine — Apple Silicon / NVIDIA GPU / CPU-only, and RAM? | AD-07, model choice | **ANSWERED 2026-07-31:** Windows 11, Intel Arc 140V iGPU (16 GB shared VRAM), 32 GB RAM. RAM is not the constraint; **memory bandwidth is**. Drives AD-17/18/19. |
 | OQ-8 | Which Ollama backend wins on the Arc 140V — CPU, Vulkan, or IPEX-LLM? | AD-19, all timings | **PARTIALLY ANSWERED 2026-08-01 — ship CPU.** Measured: CPU only. `ollama ps` confirms 100% CPU (upstream Ollama has no Intel Arc path). CPU throughput is sufficient (see the 0.8.2 changelog row), so the Vulkan and IPEX-LLM paths were **deliberately not measured** — a schedule decision, not a result. The README must say exactly that rather than implying a three-way bake-off happened. Rationale: the Arc 140V shares LPDDR5X with the CPU, so there is no dedicated-bandwidth win to unlock, and the measured tok/s is flat across concurrency — the signature of a bandwidth ceiling. |
-| OQ-9 | If rung 1 (`qwen2.5:1.5b`) clears the accuracy bar, ship a 1 GB model? | AD-17 | _pending bake-off — but the ship rule says yes_ |
+| OQ-9 | If rung 1 (`qwen2.5:1.5b`) clears the accuracy bar, ship a 1 GB model? | AD-17 | **MOOT — no rung cleared the bar.** `qwen2.5:1.5b` scored 0.498 combined against a 0.80 criterion, and `llama3.2:3b` (0.522) was shipped as the best measured option that also finishes in the available time. See AD-32. |
 | OQ-3 | TypeScript (AD-02) or plain JS + JSDoc, given the literal "JavaScript (Node.js)" wording? | Phase 1 | **ANSWERED: TypeScript.** AD-02 → ACCEPTED. README states the compiles-to-JS rationale explicitly. |
 | OQ-4 | Alert channels to actually implement? | AD-13 | **ANSWERED: console + JSON file only.** Slack cut (descope rung 3). `Alerter` interface still ships so a sink is a 20-line addition. |
 | OQ-5 | Enrich all 258 companies with the LLM, or hand-curate only the high-ambiguity subset? | Phase 2 effort | **ANSWERED: automated enrichment across all 258 + hand-review of every flagged name.** Owner requires the *entire* list triaged, not a ~40 estimate. Delivered as `OurCrowd_Company_Query_Triage.xlsx`. |
@@ -783,6 +783,7 @@ Budget ≈30 focused hours; descope rungs 1–3 already cut (§8.3).
 
 | Date | Version | Change |
 |---|---|---|
+| 2026-08-03 | 0.11.1 | **Documentation audit before submission — both deliverable documents reconciled against the code rather than against memory.** `project_context.md` had drifted in the direction drift always takes: work was finished and the file was not told. Seven requirement rows (R2, R4, R5, R10, R16, R26, R27), eight phase headers and six task rows still read as outstanding for work that shipped days ago; P7.3 was marked open when it had been consciously **CUT**; OQ-9 was still marked open when the GPU question was answered by AD-19's measurement, and is now **MOOT**. Three embedded counts were simply wrong and were corrected against the suite and the source — collector tests 141 → 151, and "6 repositories, 11 tests" → "7 repositories, 48 core tests". **M4 was deliberately left at 🟡**: the classifier was selected by evidence and still missed its own 0.80 bar, and a green square there would be the one edit in this audit that made the document less true. `ai_prompts.md` had a worse problem than staleness — it **claimed to be something it was not**, opening with "complete, verbatim, chronological log" over a file whose last five sessions were compressed into a single summary entry. The claim is now accurate and states plainly what the log does not contain. Entry 008 was replaced by **Entries 008–012**, each with the verbatim prompt and the decision it produced: approving a model that failed its own bar, reversing AD-29 to the soft-pass, specifying the dashboard, the inline-classification fork in the daily job, and writing the README around the failures. Every entry now carries a **Model** field, added to the template and backfilled to Entries 000–007, and the appendix no longer lists two **shipped** runtime prompts as "Planned". **311 tests green**, `docs:check` passing. |
 | 2026-08-03 | 0.11.0 | **M8 REACHED — submission ready.** The third fresh clone of the published repository passes every documented command in order — `npm install` (no native compilation), `npm run verify` (**311 tests**), `npm run collect --providers fixture`, `npm run web:build`, `npm run serve` — and every artifact cross-check: `mentions.json` and `press.sqlite` agree at 1,407, zero fabricated rows, and all three README figures match the data they describe. One apparent discrepancy was **checked rather than explained away**: the API reports 1,391 mentions against the export's 1,407, which is exactly the count within a rolling 90-day window as of today — the export is a snapshot, the API is live, and both are correct. **The rehearsal earned its hour three times over**, finding one stale-export mismatch, six fabricated fixture articles in a committed deliverable, and a WAL that had been silently withholding 4.8 MB of writes from every database commit. None of the three would have failed a test, and all three were invisible on the machine that produced them. P8.7 hygiene: no `TODO`/`FIXME` in shipped source, no secrets, `.env` uncommitted, working tree clean. |
 | 2026-08-03 | 0.10.6 | **The rehearsal's third and deepest finding: the committed database was systematically stale.** After removing the fixture contamination and re-cloning, the fresh copy *still* showed 6 fabricated articles and a different mention count — while locally `git status` was clean and `git hash-object` matched HEAD **exactly**. The cause: SQLite runs in WAL mode, `*.sqlite-wal` is gitignored as a transient sidecar, and **4.8 MB of writes were sitting in the WAL rather than in the committed `.sqlite`**. Every commit of the database since the production run had therefore been shipping an older state than the machine that produced it, invisibly and with no signal from git. **AD-34**: every writing process now calls `PRAGMA wal_checkpoint(TRUNCATE)` before closing, so what ships is what ran. Verified — the WAL is 0 bytes and git finally reports the database as modified. This is the one class of defect that no test, no lint rule and no amount of local checking could have surfaced: it required cloning the published repository and comparing it against the machine that published it. |
 | 2026-08-03 | 0.10.5 | **The rehearsal found a second, worse defect: fabricated data in a committed deliverable.** Chasing a 3-item count mismatch revealed **6 hand-authored fixture articles inside `data/press.sqlite`** — ZutaCore, SpaceX, Hailo and Lemonade headlines invented for the offline corpus — inserted by P7's scheduler test and an earlier smoke test, both run with `--providers fixture` against the production `DB_PATH`. In the dashboard they were indistinguishable from real coverage, and they had been published to GitHub. Removed (cascade also removed their 6 mentions), and **AD-33** now prevents recurrence: when `fixture` is among the providers and `DB_PATH` is not set explicitly, the writing CLIs default to `./data/dev.sqlite`. Proven rather than assumed — a fixture run afterwards left `press.sqlite` untouched at 3,213 articles. Everything re-exported and now agreeing at **1,407 mentions · 131 no-coverage · 716/369/322**, with the README verified against the artifacts by script. Worth recording plainly: nothing was broken, no test failed, and the numbers were internally consistent on the development machine. Only cloning the published repository and comparing two artifacts against each other surfaced it. |

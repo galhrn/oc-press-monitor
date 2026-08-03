@@ -5,20 +5,27 @@
 > **Project:** OurCrowd Press Mentions Monitoring & Dashboard
 > **Author:** Gal Aharon
 > **Assistant:** Claude (Opus) via Claude Cowork, operating under a persistent project instruction set
-> **Last updated:** 2026-07-31
+> **Last updated:** 2026-08-03
 
 ---
 
 ## How to read this document
 
-This is a **complete, verbatim, chronological log** of the prompts used to build this
-project with an AI coding assistant. Nothing has been retro-edited to look better.
-Where a prompt produced a wrong or incomplete result, the follow-up correction is
-logged too — the recovery is as much a part of the working method as the first attempt.
+This is a **chronological log of the prompts that shaped the project**, quoted verbatim.
+Nothing has been retro-edited to look better: where a prompt produced a wrong or incomplete
+result, the follow-up correction is logged too, because the recovery is as much part of the
+working method as the first attempt.
+
+**What this log is not.** It is not every message. Across roughly a dozen working sessions most
+exchanges were short approvals — "yes, proceed", "agreed" — and reproducing them would bury the
+decisions under acknowledgements. Every prompt that **changed a decision, reversed one, or set a
+constraint** is here in full. Entries 008–012 cover the implementation phases, one entry per
+decision point rather than one per message.
 
 Each entry contains:
 
-- **Context** — what stage of the project this was, and what already existed
+- **Date / Stage / Model** — when, which phase, and which assistant answered
+- **Context** — what already existed, and what question was open
 - **The prompt** — verbatim, in a fenced block
 - **Strategy** — the prompt-engineering intent behind it
 - **Outcome** — what came back, and what needed correcting
@@ -79,6 +86,9 @@ every entry below.
 
 ## Entry 000 — Persistent project instructions
 
+**Date:** 2026-07-31, before the first session
+**Stage:** Pre-P0. Standing instruction set, not a session prompt.
+**Model:** Claude Opus — applies to every session below
 **Context:** Configured once, before any conversation, as the standing system-level
 instruction for every session in this project. Source materials attached: CV, job
 description, task PDF, company list.
@@ -152,6 +162,10 @@ needs to restate the role or re-attach the source documents.
 
 **Date:** 2026-07-31
 **Stage:** Phase 0 — Planning. No repository yet, no code written.
+**Model:** Claude Opus
+**Context:** Nothing existed yet — no repository, no code. The four source documents were
+attached so the architecture could be reasoned about against the real task and the real company
+list rather than in the abstract.
 **Attached materials:** `Gal Aharon - CV.pdf`, `Full Stack Developer position at OurCrowd.docx`, `OC FullStack Dev Task 2026.pdf`, `ourcrowd_companies.txt`
 
 **Prompt:**
@@ -229,6 +243,7 @@ writing any code.
 
 **Date:** 2026-07-31
 **Stage:** Phase 0 — Planning (continued). Still no code written.
+**Model:** Claude Opus
 **Context:** Entry 001 produced an architecture that left the Ollama model choice open
 (OQ-2) and proposed a small-model + large-arbiter cascade (AD-07) without evidence that
 a cascade was needed.
@@ -293,6 +308,7 @@ prompts that request a deliverable.
 
 **Date:** 2026-07-31
 **Stage:** Phase 0 — Planning (final). Still no code written.
+**Model:** Claude Opus
 **Context:** `project_context.md` v0.2.0 contained a work plan of nine phases with flat
 checkbox lists. Adequate as a sketch; not adequate as a roadmap.
 
@@ -359,6 +375,7 @@ change they describe. Without that rule, living documents die by the third day.
 
 **Date:** 2026-07-31
 **Stage:** Phase 0 → closing. Decisions frozen. Still no code written.
+**Model:** Claude Opus
 **Context:** Four open questions (OQ-1, OQ-3, OQ-4, OQ-5) were blocking milestone M0.
 
 **Prompt (owner's answers, verbatim — OQ-5 quoted in full as it changed project scope):**
@@ -437,6 +454,7 @@ hypothesis until someone counts.
 
 **Date:** 2026-07-31
 **Stage:** P0 → **M0 reached**. P1 built.
+**Model:** Claude Opus
 **Context:** All open questions resolved; the 57 flagged company queries approved.
 
 **Prompt:**
@@ -484,6 +502,7 @@ the conventions you intend to keep.
 
 **Date:** 2026-07-31 (late)
 **Stage:** P1 remediation, then P2.
+**Model:** Claude Opus
 **Context:** P1 was delivered with `better-sqlite3` and an explicit warning that it is a
 native addon and might fail to install on Windows without C++ build tools.
 
@@ -543,6 +562,7 @@ a checklist item.
 
 **Date:** 2026-08-01
 **Stage:** P2.3 verification, before P3.
+**Model:** Claude Opus
 **Context:** The enrichment script had never been run against a real model. A 10-company
 smoke test on `llama3.2:3b` completed successfully, and the question was whether to
 proceed to the full 258-company run or move on to Phase 3.
@@ -596,41 +616,235 @@ README next to the bake-off table.
 
 ---
 
-## Entry 008 — The prompts that produced the last four phases
+## Entry 008 — Approving a model configuration that failed its own bar
 
-**Date:** 2026-08-01 to 2026-08-03
-**Stage:** P3 (collection) through P8 (delivery).
-**Context:** Twelve working sessions, each opening with the same instruction to read
-`project_context.md` in full before touching code. Rather than reproduce every message, this
-entry records the *shape* the prompts settled into, because the shape is what made the sessions
-productive.
+**Date:** 2026-08-02
+**Stage:** P4.8 → P5. The bake-off had run; the question was what to do about the result.
+**Model:** Claude Opus 5
 
-**The recurring pattern:**
+**Context:** The gold-set bake-off returned 0.522 combined macro-F1 against a 0.80 exit
+criterion. A second prompt (`classify.v2`) had been written and evaluated: it raised
+`qwen2.5:3b` to 0.577 but projected a ~7-hour production run, and the per-item diff showed the
+gain was a threshold slide — 13 items fixed, 11 broken, every fix a genuine article and every
+break a decoy.
+
+**Prompt:**
 
 ```
-<approval or correction of the previous result>
-<one or two numbered tasks, scoped to a phase>
-Please present the plan for X and start implementing.
+I fully agree with your analysis and recommendation. Shifting thresholds via prompt iteration
+won't bridge a fundamental model capacity gap on 10-word headlines, and a 7-hour runtime is
+unfeasible.
+
+Documenting our exact empirical evaluation process and trade-offs in the README will
+demonstrate incredible engineering maturity to the reviewers.
+
+Let's freeze our classification configuration:
+1. Selected Model/Prompt: llama3.2:3b with classify.v1.md.
+2. Move immediately to Phase 5 (Storage & Aggregation) and Phase 6 (Dashboard UI).
 ```
 
 **Strategy:**
 
-| Technique | Why it mattered here |
+| Technique | Why it mattered |
 |---|---|
-| **Plan before code, every time** | "Present the plan and start" surfaced disagreements while they were cheap. The P3.6-before-P3.4 reordering and the AD-31 soft-pass both came out of a plan being questioned rather than a commit being reverted. |
-| **Approval was specific, not blanket** | "Option A is right because X" told the assistant *which* argument had landed, so the reasoning could be reused. A bare "yes" would have transmitted the decision but not the criterion. |
-| **Findings were escalated as decisions, not bugs** | The GDELT rate limit, the missing snippet and the 0.52 macro-F1 were each brought back as "here is the measurement, here is what it changes" — which is why they became ADRs rather than silent workarounds. |
-| **The owner supplied ground truth the assistant could not have** | Which Arrow Global is in the portfolio; whether a registered direct offering is neutral; that vendor PR counts as a mention. These are product decisions, and the assistant was explicitly not allowed to guess them. |
-| **Real UI observations fed back in** | "Paystack Unveils… To Shield Nigerian SMBs" came from the owner reading the live dashboard, and it became the argument for why case-sensitivity cannot fix homonyms. |
+| **Restated the reasoning, not just the verdict** | "Shifting thresholds won't bridge a capacity gap" confirmed *which* argument had landed, so the criterion could be reused without re-deriving it. |
+| **Named the trade-off being accepted** | Naming the 7-hour runtime as the blocking constraint made the decision auditable — a schedule call, not a quality one. |
+| **Treated the failure as a deliverable** | Instructing that the evaluation be documented converted a missed target into the project's strongest artifact. |
+| **Froze, then moved on** | "Freeze" plus an immediate next phase prevented the most expensive option available: a third prompt re-tuning the same knob. |
 
-**Outcome:** Phases 3–8 delivered with 311 tests, a full production run, and — the part worth
-noting — several results that contradicted the plan. The prompts left room for that: none of
-them asked for confirmation that the approach was working.
+**Outcome:** AD-32 recorded the decision and — importantly — why the ship rule was **not**
+applied mechanically: it selects among models that clear the bar, and none did. The README leads
+with the miss rather than burying it.
 
-**Reflection:** The most valuable instruction in the whole log is the standing one at the top of
-`project_context.md` — read this file first, and update it in the same commit. It is what let
-twelve sessions with no shared memory behave like one continuous piece of work, and what makes
-the changelog a record of *why* rather than a list of what.
+---
+
+## Entry 009 — Adopting the soft-pass, reversing an earlier decision
+
+**Date:** 2026-08-02
+**Stage:** P3.6 → P4.1.
+**Model:** Claude Opus 5
+
+**Context:** Measurement showed the deterministic pre-filter rejecting 293 items across the 57
+approved companies on a qualifier rule, leaving 26 companies with nothing at all. The bucket was
+mixed: `Astra` correctly lost 18 articles about OpenAI's model, while `Quantum Machines` lost
+genuine coverage because the approved qualifier said "quantum control" and the headline said
+"Real-Time Control Strategy".
+
+**Prompt:**
+
+```
+I agree with your analysis. Dropping candidate articles solely on qualifier mismatches when we
+only have ~10-word headlines creates severe false negatives (like the Quantum Machines article).
+
+Let's adopt Approach 1 (Full Soft-Pass to LLM):
+Any candidate item matching the company name/alias that fails ONLY on a qualifier should be
+demoted/soft-passed to the Phase 4 LLM Relevance Gate rather than outright rejected. As §6.4
+states, the pre-filter cuts cost, not correctness, and running llama3.2:3b locally on these
+~293 items is completely worth the precision gains.
+```
+
+**Strategy:**
+
+- **Cited the project's own principle back at it.** Quoting §6.4 — "the pre-filter cuts cost,
+  not correctness" — resolved the question from a rule already agreed rather than from
+  preference, which is why it needed no further debate.
+- **Priced the change explicitly.** "~293 items" acknowledged the inference cost being accepted,
+  so the trade was made with a number rather than a feeling.
+- **Overrode a prior decision on new evidence.** AD-29 had deliberately gated qualifier
+  enforcement days earlier; this reversed part of it because the measurement said so.
+
+**Outcome:** AD-31. Zero-coverage companies fell **26 → 14** and kept articles rose **282 →
+572**, recovering twelve companies from a false `NO_COVERAGE` — the worst error this product can
+make, because it is indistinguishable from the true one.
+
+---
+
+## Entry 010 — Specifying the dashboard as architecture, not appearance
+
+**Date:** 2026-08-02
+**Stage:** P6.
+**Model:** Claude Opus 5
+
+**Context:** The API and database existed and the production backfill was running in the
+background. None of the UI had been written.
+
+**Prompt** (abridged — the full brief listed four component groups and two architecture rules):
+
+```
+Let's build a top-tier, production-ready React Dashboard in apps/web that showcases exceptional
+FE architecture and UX.
+
+Tech Stack & Standards:
+- Vite + React + TypeScript (Strict typing with Union Types and Generics).
+- Tailwind CSS + Lucide Icons for crisp, modern styling.
+- TanStack Query (React Query) for smart data fetching, caching, and state management.
+- Recharts (or Tremor) for clean visual data analytics.
+
+Key UI/UX Components to Implement:
+1. Summary Analytics Banner: KPI cards ... alongside a Sentiment Distribution Chart.
+2. Company Grid & Control Bar: Real-time instant search (using useMemo/useDeferredValue) ...
+   Status Chips with explicit visual distinction for NO_COVERAGE zero-states.
+3. Company Mention Drill-Down Modal/Drawer: ... Clickable source links (opening in a new tab
+   safely with rel="noopener noreferrer").
+4. UX Polish: Skeleton loaders during API fetches, clean empty states, responsive layout.
+
+Frontend Architecture Rules:
+- Extract all API calls into dedicated Custom Hooks (useCompanies, useCompanyDetails, useSummary).
+- Ensure strict TypeScript interfaces and Discriminated Unions for state handling.
+```
+
+**Strategy:**
+
+- **Named the mechanism, not just the outcome.** `useDeferredValue` and "Discriminated Unions"
+  are implementation constraints; specifying them removed a class of plausible-but-wrong answers
+  before any code existed.
+- **Encoded a product invariant as a UI requirement.** "Explicit visual distinction for
+  `NO_COVERAGE` zero-states" is the R5 requirement expressed as a design rule — the same
+  decision defended in three earlier phases, now enforced visually.
+- **Specified the security detail inline.** `rel="noopener noreferrer"` was stated rather than
+  assumed, which is how it ended up implemented and explained rather than remembered.
+
+**Outcome:** Delivered. The build then surfaced an architectural leak no typecheck caught:
+`contract.ts` imported the `@oc/core` barrel, dragging `node:crypto` and `node:sqlite` into the
+browser bundle, and the build failed on `createHash is not exported by __vite-browser-external`.
+Fixed by importing `@oc/core/types` — the dashboard ships three string tuples, not the storage
+kernel.
+
+---
+
+## Entry 011 — Alerting specified as ordered tasks, with one fork answered
+
+**Date:** 2026-08-03
+**Stage:** P5.5 → P5.7.
+**Model:** Claude Opus 5
+
+**Context:** The pipeline, dashboard and production run were complete. R6 and R7 — the daily
+check and its alert — were the last unbuilt requirements.
+
+**Prompt:**
+
+```
+Your implementation strategy for P5.6 (scripts/job-daily.ts) is fully approved:
+1. KV overlap lock with TTL.
+2. Narrow Google News RSS collection + inline classification.
+3. Strict A5 lookback filtering (ALERT_LOOKBACK_HOURS) and new-pair verification.
+4. Support for --dry-run, --force, and --lookback-hours flags.
+
+Please proceed directly with implementing P5.6 and then P5.7 (Idempotency Tests)!
+```
+
+Earlier in the same exchange, a design fork that had been raised explicitly was settled:
+
+```
+Yes, classify inline during the daily job. Since a daily delta is small (~tens of items),
+taking 1 minute for LLM inference to ensure every alert arrives with an immediate sentiment
+label and rationale is the right UX decision.
+```
+
+**Strategy:**
+
+- **Answered a fork with a reason, not a preference.** The reply gave both the cost ("~tens of
+  items", "1 minute") and the benefit ("every alert arrives with an immediate sentiment"), which
+  is what made it reusable when the alert payload was designed.
+- **Enumerated the mechanisms separately.** Naming the lock, the lookback and the flags
+  individually meant each could be tested individually.
+- **Ordered the tasks deliberately.** "P5.6 and then P5.7" put the idempotency test *after* the
+  implementation, where it could contradict it.
+
+**Outcome:** It did contradict it. P5.7 showed that selecting new mentions via
+`firstSeenSince(runStart)` cannot distinguish a run's own inserts from a previous run's when
+both share a timestamp. Replaced with `newMentionIds` taken from the upsert's return value — the
+write already knows which rows it created. Demonstrated live: run 1 alerted on 52 mentions; run
+2, eight minutes later, alerted on only the 3 that were genuinely new, with zero duplicates
+across 55 log entries.
+
+---
+
+## Entry 012 — Writing the README around the failures
+
+**Date:** 2026-08-03
+**Stage:** P8.4.
+**Model:** Claude Opus 5
+
+**Context:** Every measurement existed: the bake-off, the gold set, the coverage baseline, and a
+24-item production spot-check showing ~85% weighted precision and a systematic optimism bias.
+
+**Prompt** (abridged — the full brief specified five README sections):
+
+```
+Please structure and write the README.md according to the specifications in Section 2 of the
+problem description, incorporating:
+
+2. Bake-off Results & Model Evaluation: Gold set baseline, model trade-offs, and the measured
+   0.24 irrelevant-recall limitation.
+3. Production Backfill & Spot-Check Findings:
+   - ~85% weighted precision across the portfolio.
+   - Systematic optimism bias in sentiment classification (Positive over Neutral).
+   - Specific homonym findings (Shield, Peak, Astra, Arrow).
+   - Rubric gaps (e.g. xAI lawsuit classification).
+4. Production V2 Roadmap & Homonym Mitigation:
+   - Explain why simple capitalization/case-sensitivity fails on headlines due to news
+     Title-Casing (e.g. "To Shield Nigerian SMBs").
+   - Outline V2 solutions: NER models (spaCy/BERT), sector-conditioned matching for
+     dictionary-word company names, and contextual LLM prompt injection.
+```
+
+**Strategy:**
+
+- **Listed the weaknesses as required content.** Asking for the 0.24 irrelevant-recall, the
+  optimism bias and the rubric gap *by name* made the README's honesty a specification rather
+  than a stylistic choice.
+- **Supplied a real observation from using the product.** "To Shield Nigerian SMBs" came from
+  the owner reading the live dashboard, and it became the argument for why case-sensitivity
+  cannot fix homonyms: news headlines are Title-Cased, so the common word is capitalised too.
+- **Pointed the roadmap at the measured cause.** Requesting NER specifically aimed the V2
+  section at the actual failure mode rather than at "use a bigger model".
+
+**Outcome:** The README leads with the numbers, including the miss. Writing it prompted a manual
+review of *every* published mention for the two worst names, producing the document's sharpest
+finding: **Peak published 13 mentions of which 0 are the company; Shield 15 of which 2 are.**
+One figure was wrong on the first pass — 130 no-coverage companies taken from a log line versus
+131 in the export — and was corrected against the artifact rather than left.
 
 ---
 
@@ -641,6 +855,7 @@ the changelog a record of *why* rather than a list of what.
 
 **Date:**
 **Stage:** <phase from project_context.md §8>
+**Model:** <which assistant answered>
 **Context:** <what already exists; what changed since the last entry>
 
 **Prompt:**
@@ -666,5 +881,28 @@ task §4.1.
 
 | File | Purpose | Status |
 |---|---|---|
-| `prompts/classify.v1.md` | Combined relevance + sentiment classification, structured JSON output | Planned (Phase 4) |
-| `prompts/enrich-company.v1.md` | One-off company registry enrichment (aliases, sector, disambiguation hints) | Planned (Phase 2) |
+| `prompts/classify.v1.md` | Combined relevance + sentiment classification, structured JSON output | **Shipped.** Hash `classify.v1@5717fe76202f` is stored on every classification row |
+| `prompts/classify.v2.md` | Iteration on v1, targeting three measured failures | **Written, evaluated, not shipped** — see below |
+| `prompts/enrich-company.v1.md` | One-off registry enrichment (aliases, sector, disambiguation hints) | **Shipped** — used for the 258-company registry pass |
+
+### The one runtime-prompt iteration, and why it was rejected
+
+`classify.v2.md` was not a stylistic rewrite. Each change targeted a failure identified from
+per-item bake-off output:
+
+| Observed failure | v2 change |
+|---|---|
+| `llama3.2:3b` accepted *"Shield AI: $1.5 Billion Series G"* while holding `Shield AI` as a negative keyword | Exclusions moved from an inline `NOT this company:` line into a labelled `EXCLUDE` block, named as Step 1 and called "a hard rule, not a hint" |
+| `qwen2.5:3b` fell to 0.51 relevant recall, rejecting *"Liquid cooling co ZutaCore raises $100M"* | The doubt clause — "when unclear, answer false" — was inverted: the name is already confirmed present, so Step 3 became "otherwise it IS the company" |
+| All three models called the NBA's Launchpad relevant | Five concrete homonym shapes with worked examples, plus a generalising test: if removing the company still leaves sensible English, it is the ordinary word |
+
+**Result: rejected.** On `qwen2.5:3b` it raised the combined score from 0.497 to 0.577, but the
+per-item diff showed **13 items fixed and 11 broken**, and the split was perfectly clean — every
+fix was genuine coverage it had been rejecting, every break a decoy it now accepted. That is a
+threshold slide, not improved discrimination, and a third prompt would have re-tuned the same
+knob. v1 shipped. Both files are kept so the comparison stays reproducible:
+`npm run eval -- --prompt classify.v1`.
+
+This is the clearest illustration of why the two prompt categories are kept apart. A development
+prompt is judged by whether the resulting code is right. A **runtime** prompt is judged by a
+number on a held-out set — and it can improve on one axis while getting worse overall.
