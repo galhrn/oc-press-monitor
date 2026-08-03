@@ -4,7 +4,7 @@
 > **Owner:** Gal Aharon
 > **Status:** `BUILDING` — M0–M3 reached. Phase 3 complete; next is M4 (LLM classification + eval).
 > **Last updated:** 2026-08-01
-> **Document version:** 0.10.0
+> **Document version:** 0.10.1
 >
 > **Target hardware (dev + demo machine):** Windows 11 · Intel Core Ultra (Lunar Lake) ·
 > Intel Arc 140V iGPU, 16 GB addressable VRAM (shared) · 32 GB system RAM
@@ -68,20 +68,20 @@ No row may be deleted. Status: `TODO` / `WIP` / `DONE` / `N/A`.
 | R8 | §3 | Company list is the source of truth | `data/companies.json` — 258 records, 57 human-approved queries | **DONE** |
 | R9 | §3 | Document news-source choice **and its limitations** in README | README §"Data sources and their limitations" | **DONE** — every limitation measured, not assumed |
 | R10 | §4.1 | Sentiment via **local Ollama only**, no cloud LLM | `packages/ollama` — the only LLM code path in the repo | WIP — client done, classifier prompt is P4.2 |
-| R11 | §4.1 | README states which model and why | README §"LLM" | TODO |
-| R12 | §4.1 | README states how the model is invoked (prompt structure, output format) | README + `prompts/` | TODO |
-| R13 | §4.1 | README states how classification quality was validated | `packages/classifier/eval/` + README table | **WIP** — gold set + disclosure written; confusion matrix pending P4.7 |
+| R11 | §4.1 | README states which model and why | README §"The local LLM" | **DONE** — with the bake-off table |
+| R12 | §4.1 | README states how the model is invoked (prompt structure, output format) | README + `prompts/` | **DONE** |
+| R13 | §4.1 | README states how classification quality was validated | `packages/classifier/eval/` + README | **DONE** — gold set, bake-off, and production spot-check |
 | R14 | §4.2 | JavaScript/Node.js for backend **and data collection** | Entire repo (TypeScript → JS, AD-02) | **DONE** |
 | R15 | §4.2 | Data-collection component | `packages/collector` | **DONE** — 2 live providers + fixtures, 141 tests |
 | R16 | §4.2 | Classification step | `packages/classifier` | TODO |
 | R17 | §4.2 | Storage layer | `packages/core/db` (SQLite) | **DONE** — schema, migrations, 6 repositories, 11 tests |
 | R18 | §4.2 | Dashboard/UI layer | `apps/web` + `apps/api` | **DONE** |
 | R19 | §4.2 | Scheduled job that performs the daily check and sends the alert | `apps/scheduler` | TODO |
-| R20 | §5.4 | GitHub repo + README: what it does, structure | README | TODO |
-| R21 | §5.4 | README: setup, deps, env vars, how to install/run Ollama + which model to pull | README §Setup | TODO |
-| R22 | §5.4 | README: exact commands to run end-to-end locally | README §Quickstart | TODO |
-| R23 | §5.4 | README: assumptions, trade-offs, known limitations | README §Assumptions | TODO |
-| R24 | §5.5 | `data/` folder with output of a successful run: mentions, labels, links, last-mentioned status | `data/` committed artifacts | TODO |
+| R20 | §5.4 | GitHub repo + README: what it does, structure | README | **DONE** |
+| R21 | §5.4 | README: setup, deps, env vars, how to install/run Ollama + which model to pull | README §Setup | **DONE** |
+| R22 | §5.4 | README: exact commands to run end-to-end locally | README §Quickstart | **DONE** |
+| R23 | §5.4 | README: assumptions, trade-offs, known limitations | README §Assumptions + §Known gaps | **DONE** |
+| R24 | §5.5 | `data/` folder with output of a successful run: mentions, labels, links, last-mentioned status | `data/` committed artifacts | **DONE** — 10 files from a real 123-minute run |
 | R25 | §5.6 | Copy of the full prompt used with AI coding assistants | `ai_prompts.md` | WIP |
 | R26 | §6 | Reasonable error handling | Typed error hierarchy + fail-fast config; retry/backoff & circuit breaker pending P3 | WIP |
 | R27 | §7 | Document assumptions where the spec is ambiguous | §4 of this file → README | WIP |
@@ -674,10 +674,10 @@ error handling · the "no coverage" state.
 
 | ID | Task | Satisfies | Est. | Status |
 |---|---|---|---|---|
-| P8.1 | **Full production run across all 258 companies**; capture timings, failure counts, cost | R24 | 1.5 h | TODO |
+| P8.1 | **Full production run across all 258 companies**; capture timings, failure counts, cost | R24 | 1.5 h | **DONE** — 123 min, 0 company failures |
 | P8.2 | Spot-check ~20 classified mentions by hand; record findings honestly | R13 | 0.5 h | **DONE** — 24 sampled, `data/spot-check.json`; 83% relevance precision on a tier-weighted sample, 75% sentiment |
-| P8.3 | Commit every `data/` artifact | R24 | 0.5 h | TODO |
-| P8.4 | Write the README from §2 — every `R#` row becomes a section | R20–R23 | 2 h | TODO |
+| P8.3 | Commit every `data/` artifact | R24 | 0.5 h | **DONE** |
+| P8.4 | Write the README from §2 — every `R#` row becomes a section | R20–R23 | 2 h | **DONE** |
 | P8.5 | Finalise `ai_prompts.md`; write the ADRs in `docs/adr/` | R25 | 0.5 h | TODO |
 | P8.6 | **Fresh-clone rehearsal** — a different directory, follow the README literally, fix every gap | R22 | 1 h | TODO |
 | P8.7 | Demo GIF/screenshots; final repo hygiene pass; push | R20 | 0.5 h | TODO |
@@ -780,6 +780,7 @@ Budget ≈30 focused hours; descope rungs 1–3 already cut (§8.3).
 
 | Date | Version | Change |
 |---|---|---|
+| 2026-08-03 | 0.10.1 | **README written (P8.4) — R9, R11, R12, R13, R20–R24 discharged.** Structured so the *measurements* come first: a reviewer sees the 0.52 macro-F1 miss, the ~85% weighted precision and the optimism bias before they see a feature list. Includes the full bake-off table with the v1/v2 prompt comparison and the reasoning for **not** shipping the higher-scoring configuration, the gold-set disclosure and its 7-item negative-class caveat, and the production spot-check. **The homonym section is the sharpest part**: every published mention for the two worst names was reviewed by hand — **Peak published 13 mentions of which 0 are the company, Shield 15 of which 2 are** — with real headlines quoted from `data/mentions.json`. The V2 roadmap explains why the obvious fix (case-sensitive matching) cannot work, since news headlines are Title-Cased and *"To Shield Nigerian SMBs"*, *"From Peak"* and *"Its Peak"* all capitalise the common word; NER is proposed as the cheap high-value replacement, ahead of sector-conditioning, body extraction, a dedicated encoder and sentiment calibration. **One README claim was wrong and was corrected against the artifact:** the backfill log reported 130 companies with no coverage (zero *collected* articles) while `company_status.json` reports **131** (zero *relevant* mentions). The export is authoritative and the README now matches it. |
 | 2026-08-03 | 0.10.0 | **P8.2 production spot-check — the precision numbers, measured rather than claimed.** 24 mentions drawn deterministically from the 1,352 the pipeline published, stratified to over-weight the critical/high tier where errors concentrate (`npm run spot-check`, `data/spot-check.json`). **Relevance precision 20/24 (83%)** — and the split is the finding: **10/14 (71%) on critical/high names, 10/10 (100%) on medium/low**. Weighting back to the published population, which is 51% ambiguous-tier, gives an estimated **~85% precision, or roughly 198 false positives among 1,352 published mentions**. All four false positives were homonyms: NASA's *Ad Astra* workshop, *Arrow Global* the UK credit manager, *Shield AI* the defence company, and *High Risk Shield* — and Shield AI passed while the prompt held both its sector and the negative keyword `Shield AI`. Three of the four are decoy shapes the gold set already contained, so this is the bake-off's 0.24 irrelevant-recall showing up in production exactly as predicted. **Sentiment accuracy 15/20 (75%) among correctly-identified mentions, and every single error ran the same way: `positive` where `neutral` was right.** A competitive 'battle', a bare list entry, a conference demo, a pre-launch status and a marketing campaign were all read as wins. That is a systematic optimism bias, consistent with the bake-off's neutral recall of 0.50, and it means the published sentiment split (696 positive / 352 neutral / 304 negative) **overstates positive coverage**. Both figures belong in the README beside the bake-off table. |
 | 2026-08-03 | 0.9.9 | **M5 REACHED — P5.5, P5.6 and P5.7 complete; the daily job runs and alerts.** `packages/alerting` ships the `Alerter` seam with console and JSON-file sinks. Two decisions: **delivery is recorded only after a sink succeeds** (at-least-once, chosen deliberately — a repeated alert is recoverable, a silently dropped one is not), and **a broken sink never fails the run**. Idempotency is enforced by the database via `UNIQUE (mention_id, channel)` rather than by remembering to check. Alerts carry the model's `rationale` and `confidence`, because at 0.52 combined macro-F1 some alerts will be about the wrong company and an alert nobody can triage is one they learn to ignore. **P5.7 caught a real design flaw rather than confirming the design.** Alert selection originally used `firstSeenSince(runStart)`, and the test showed a run cannot distinguish its own inserts from a previous run's when both share a timestamp. Replaced with `newMentionIds`, taken from the upsert's own return value — the write already knows which pairs it created, and deriving it afterwards from a clock is fragile. **Demonstrated on live data:** run 1 alerted on 52 new mentions; run 2 minutes later saw 176 articles against 174 and alerted on only the 3 that were genuinely new. `data/alerts.log.json` holds 55 entries and 55 unique `(mention, channel)` pairs — no duplicates. **306 tests passing.** |
 | 2026-08-02 | 0.9.8 | **Dashboard performance and interaction pass.** **Recharts is now code-split** behind `React.lazy` + `Suspense`: the initial bundle drops from **194.5 kB to 93.7 kB gzipped (−52%)** and the charting library moves to a 101 kB chunk fetched only when the card renders. The fallback is a donut-shaped skeleton with the same footprint, so the card does not resize when the chunk lands. **The grid now sorts by activity rather than alphabetically** — companies with coverage first, most recently mentioned at the top, quiet ones settling to the bottom in name order. A press monitor is opened to answer "what happened lately", and A-Z ordering buries that under whichever companies start with an A. `lastMentionedAt` is null exactly when there is no coverage, so those rows sort to the bottom without a special case — demoted, never hidden (R5). **Motion added deliberately and sparingly:** rows fade in staggered by rank so the eye follows the sort order, the drawer slides from the edge it lives on with a slower enter than exit, and the backdrop blurs in. Closing runs the exit animation *before* unmounting — without that the panel vanishes mid-gesture and reads as a glitch. `prefers-reduced-motion` removes all of it rather than shortening it, since every animation here is ornament on a layout that already works. Also added: body scroll lock while the drawer is open, and `focus-visible` outlines on the interactive rows. |
