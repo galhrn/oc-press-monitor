@@ -1,10 +1,80 @@
 {
-  "generatedAt": "2026-08-02T21:15:54.991Z",
+  "generatedAt": "2026-08-03T11:00:42.716Z",
   "windowDays": 90,
   "model": "llama3.2:3b",
   "promptVersion": "classify.v1@5717fe76202f",
-  "count": 1352,
+  "count": 1413,
   "mentions": [
+    {
+      "companyId": "51ea09628499962f920c6da1c91ff6921032c20c589caa91016ce4bfac5f02d3",
+      "company": "Cerebras",
+      "articleId": "7359fb4a62b3ca0970f4e454cfb21cc1a45e36a7dfcb955abf5b6359ccbefdae",
+      "title": "Top Cerebras Systems (CBRS) Competitors 2026",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxORVZncHRzalVRa2p5bFJNM2wxNlFFQzBwU29jeVBjMF94cE9Kcmlxa29JbHdzNDRmTXNNSTF0aWFjbXdMczlBZS1iQTYtNEhoSUg1bkY5TXIzbmtyY2N3S3ZHaHkyaDAwX1VEWWx6dFdMTUh0MUgzalhscmo4M1QyZw?oc=5",
+      "source": "marketbeat.com",
+      "publishedAt": "2026-08-02T16:08:12.000Z",
+      "sentiment": "negative",
+      "confidence": 0.8,
+      "rationale": "Competitors implies a negative comparison, and 'top' suggests a ranking.",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
+      "companyId": "51ea09628499962f920c6da1c91ff6921032c20c589caa91016ce4bfac5f02d3",
+      "company": "Cerebras",
+      "articleId": "de8a42f8e28877fbaedd1828ba73e21e0c6a776885d1eb3b6c9ac4bc0ac9dc52",
+      "title": "Cerebras Systems (CBRS) Earnings Date and Reports 2026",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9QQ0E3LVpBQV8tU1pEMThLaU1iVWJmWnNHdEpPcnNHbUNFcUkxc3lhRUVZaXU1RTlpbXZKekhzcFowcHdQTUNyeGY4d0hPdWVzZ0xITmc1ekVLMGIxXzlYb2tfV3BhZw?oc=5",
+      "source": "marketbeat.com",
+      "publishedAt": "2026-08-02T10:07:12.000Z",
+      "sentiment": "neutral",
+      "confidence": 0.8,
+      "rationale": "Company name match, no sector or product context",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
+      "companyId": "51ea09628499962f920c6da1c91ff6921032c20c589caa91016ce4bfac5f02d3",
+      "company": "Cerebras",
+      "articleId": "99f23efb809e71957991b67d3ff8c036ca04b9bcefa04c9b1ed602f17efb1a0b",
+      "title": "Cerebras Systems IPO 2026: Date, Price, Valuation, and Whether CBRS Is Worth Buying",
+      "url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxOX1AzQ3ZwckpWNk1qdnV5OE1nTlJHUHhVT3ZvbHBZdktYeVZnV1NlaHFmOUJIdE9GM2RMVnlERXppR1dfaFBwSms0SmY0ZS1tZHh1VlBuWm45WFNFR1VlVGxBZEV6Zl9YSlhlbWZLV1FHZ0RPMVh3TW9JLXRwZEtNeDJRaEwyaWRMYTZWZnUtemVmazRkYVdQWFRHQ1RLRTdaNUYwV2JpdjB4eUZpeU8tVktjRHNFQktlMjZXajZSMDVXdUhZMFpBYnZ1QlV2RURpNUlGMzJhUnBEYnJXczV0YUJWYWdRWFpyRGVQVWVJOTlSSWo0UzhPcktGSXI5N0pXN0NR?oc=5",
+      "source": "tradingkey.com",
+      "publishedAt": "2026-08-02T07:25:39.000Z",
+      "sentiment": "neutral",
+      "confidence": 0.8,
+      "rationale": "Company name matches, but no specific news about the company itself.",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
+      "companyId": "2349a6848d029aa2bea30b44d8a63b080aa98fb9b5db2cea5fd875fc9543d789",
+      "company": "Harvey",
+      "articleId": "36455475bc707901752dca15a0ede72b52774fe57b41bf4fa1f77785786d44a4",
+      "title": "How Mid-Sized European Law Firms Redefine Growth With :Harvey:",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNUFdrZDMwcTQ2YmpydVl3ajRzR0Y1X0wyUXVhWnRlTWFqTHZlb2hBN1pMbnZ4dEY5bnJxRm9qM012a0FFMW8tMWRhcG44X2lZRzJMdUU4OGc5WHRNajBIQV9vTXJYSE9zVXljZTc2LUtGVkZneEFLcWN2ZGZiRXY5RHBtcDNObUpK?oc=5",
+      "source": "harvey.ai",
+      "publishedAt": "2026-08-02T04:20:55.000Z",
+      "sentiment": "positive",
+      "confidence": 0.8,
+      "rationale": ":Harvey:",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
+      "companyId": "51ea09628499962f920c6da1c91ff6921032c20c589caa91016ce4bfac5f02d3",
+      "company": "Cerebras",
+      "articleId": "93f2480c7fdf8da46fe8b626800fbae7d11b6411e0143d89e914712653f2d851",
+      "title": "The Story Behind Cerebras: The Startup That Decided GPUs Weren’t Enough",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPay1oNGVsNUJoeXZORzkwSG1oQU9qMFhteC1LdTFXVC02OW9YZVIzTGl6cVlsRklSblFzUGtzM0lIT0hCM0xwWmY2ckpxalNuMGFDQVBSNEJoRE9xN3pxaDNGaE5uTE1HUS1WNGNtOFRKUEtGcUhXZ290LVdfWWVDbmM4RjFISWdoU2xPb1l6OHNCNGlMTkE?oc=5",
+      "source": "techstory.in",
+      "publishedAt": "2026-08-01T19:27:12.000Z",
+      "sentiment": "positive",
+      "confidence": 0.9,
+      "rationale": "Startup success, positive outcome for the company",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
     {
       "companyId": "3aab452a942f16c726a174483d3228a86706e5be72abdfb21db78df1e8fe97c7",
       "company": "Shield",
@@ -48,6 +118,34 @@
       "promptVersion": "classify.v1@5717fe76202f"
     },
     {
+      "companyId": "51ea09628499962f920c6da1c91ff6921032c20c589caa91016ce4bfac5f02d3",
+      "company": "Cerebras",
+      "articleId": "a1e2d3fbcb27abb12029c4252f10407126d60e99a410c70136863c79e5e14d13",
+      "title": "Cerebras Systems (Derivatives) Price Today | Live CBRS Price, Chart & Market Data",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9vWjJ4SGZhTmpNbGdZNlc3QU52S0NwbW1wcVZaWV9BQUU2OGtuYUZTV0hJU2dOUVVESS10amR3RmYxN05OR21GR3VBdWxSanhDLVdTRlI2V09xNkkzVnVWbUhoalNPVzlyUDdROWNB?oc=5",
+      "source": "binance.com",
+      "publishedAt": "2026-08-01T14:49:00.000Z",
+      "sentiment": "neutral",
+      "confidence": 0.8,
+      "rationale": "sector and context terms are AI, but no specific outcome or result mentioned.",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
+      "companyId": "2349a6848d029aa2bea30b44d8a63b080aa98fb9b5db2cea5fd875fc9543d789",
+      "company": "Harvey",
+      "articleId": "31c98e790d0a80b95cbe35bcdbc50e8798606f1ed4f3cf3f351256f118c866c7",
+      "title": "US Open Signs Harvey as its First Official Legal Assistant with New, Multiyear Partnership Beginning in 2026",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOYmVMakV6VnRqc0VzT3d4S3FSdGZfQzVLdlNqU092YTEtZ3Q1S29lOWcwQjRtU2E3dkp1MzQ3YnBpZlV0U3p5ZUJpNnJoYnQzeElvTXdqbHZGOXl3TnpyUGszM05Pek1DdTBpbVg2ZkFKSTUzUWV4MVctMVBEek9zbjEwSkl1WHl4SnFzbGdaYjB5TjlrUmZ4dko3cGhqYXZaZ3I3NzdiRlRSMXpFNmVhLUdmd0ZfMnN1REM0eTF4VVkyLW1RemF0T3BEUUZWOXNkWU41bmZsdw?oc=5",
+      "source": "harvey.ai",
+      "publishedAt": "2026-08-01T14:25:59.000Z",
+      "sentiment": "positive",
+      "confidence": 1,
+      "rationale": "Partnership and new role for the company",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
       "companyId": "8bc131bbace21ba30b54d903b61f859700db00f028991f7c1af5b6b235cd4840",
       "company": "Orchard",
       "articleId": "3fcc7f6b028e60342d69ef3942629a95aa104fcac9fdcb3b1181c9869b7842c2",
@@ -86,6 +184,20 @@
       "sentiment": "positive",
       "confidence": 0.9,
       "rationale": "growth and roadmap mentioned",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
+      "companyId": "01d6e78d4dc7f34ff1190ec006387b934166de8a24535ef96562cd52a09fde1e",
+      "company": "SpaceX",
+      "articleId": "bc105023d209983c4a47c366bc50132806351376b7608304d97398f6a2725698",
+      "title": "SpaceX completes another Starship test flight",
+      "url": "https://www.spacenews.com/spacex-starship-flight-report",
+      "source": "spacenews.com",
+      "publishedAt": "2026-08-01T10:36:16.651Z",
+      "sentiment": "positive",
+      "confidence": 1,
+      "rationale": "test flight implies success and progress towards a goal",
       "model": "llama3.2:3b",
       "promptVersion": "classify.v1@5717fe76202f"
     },
@@ -170,6 +282,34 @@
       "sentiment": "negative",
       "confidence": 0.9,
       "rationale": "Combo trial, early-stop success, down 5.7%",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
+      "companyId": "51ea09628499962f920c6da1c91ff6921032c20c589caa91016ce4bfac5f02d3",
+      "company": "Cerebras",
+      "articleId": "8a5f6b9627bcba7790cc4461895c8aff806cff7438fbd6a1eb634c0665d52b63",
+      "title": "VC-Backed IPOs Reach Record 2026 Pace, Yet Aftermarket Performance Dims as SpaceX, Cerebras Slip - Financial Data",
+      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNUlh3VUVpbDU1b2Nsc1Y5bUU3QkFMQ3hZOXpNbEMxYXRPRUpoNjQzV1VBWnkyNDJqVFNYMHBJSEZ2X2VoMFRPSXdzYzhJMnUzczNZTzNvcFRiR0d0TjdtSnBncU1wY09ybldaRXZDaDVHTXhtNUZoTlpYSHYxbkUydkxqUTlXNHhLWGdBNjBUeWlJVW1Qa3NtdFA0ckVJLVV5WGVfUGtISnluTjVfQXNrb1BxaXpjd0lrTTZaSV9QWDhWWXA4MklqRzdXRkVXNzFJb01Z?oc=5",
+      "source": "dars.gov.et",
+      "publishedAt": "2026-08-01T06:05:55.000Z",
+      "sentiment": "negative",
+      "confidence": 0.8,
+      "rationale": "IPO performance dims, company slips",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
+      "companyId": "51ea09628499962f920c6da1c91ff6921032c20c589caa91016ce4bfac5f02d3",
+      "company": "Cerebras",
+      "articleId": "ad6c46e5bfa05b7252ec6fd25bfd7e4c9fb9ea7e06b0de2283f1119bb8198a5b",
+      "title": "VC-Backed IPOs Reach Record 2026 Pace, Yet Aftermarket Performance Dims as SpaceX, Cerebras Slip - Margin Compression Risk",
+      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPbXh0MjM0dmtRWHY5d1BUNTE3c0VRd3kzLWUxVVpQVURmSUdfQl9oRlhZSE02R29yYUJDak9sbnFGYmxNSllmMVZvMnlHVFdHNENMaHVUTDhLT296UWxOVUczMGZOUHV4SUNTY1hJNWJXOUNkSjVTR0dPRlc1aFJSSk9uY2dISU1lN2V6YWl0QlB5Ni1Jb0VJa19CLV9RbkFvNGxvelJTMTdEZjktaU56VzRtc2VaWmp2TEV6dkVRNGN6N3VJam9yOTY1SlVQc0RD?oc=5",
+      "source": "dars.gov.et",
+      "publishedAt": "2026-08-01T06:05:55.000Z",
+      "sentiment": "negative",
+      "confidence": 0.8,
+      "rationale": "margin compression risk and poor aftermarket performance",
       "model": "llama3.2:3b",
       "promptVersion": "classify.v1@5717fe76202f"
     },
@@ -356,6 +496,20 @@
       "promptVersion": "classify.v1@5717fe76202f"
     },
     {
+      "companyId": "f9f48e7d2a38c906d7222f3aeb08db9f1dc1b62e87a4e6ecb22c70fb9b40972a",
+      "company": "Stripe",
+      "articleId": "3fb869f923e15ecb77e5c9aea623163dd36313350b4d373f745eb928f99f3200",
+      "title": "Stripe vs PayPal for a US Small Business: Fees, Checkout and Refund Costs",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQeHJFel9faExXZW1GYkpaeVRDMWFfRHV2d3RfYkh4Q2tWTWRweGM4NFhoZ09ZV2hqeldRYzJ1MzhQZnZiaXpyRFdrSzY5S3JPMktZQklSTEt6dlVRVDNTX2w5SWotUWo1YTJRVG5VZXBUb1BaX2NBcks1c3Q3Z09xOHVGanlCVnVrYmh1b1NLZW5QSDk4WVJqcU1B?oc=5",
+      "source": "quasa.io",
+      "publishedAt": "2026-07-31T21:00:00.000Z",
+      "sentiment": "neutral",
+      "confidence": 0.8,
+      "rationale": "sector and context terms",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
       "companyId": "f3922ff8fd2ff3e9374ec3f76dc57d59a85e20328399055e04c998d99864d47f",
       "company": "Cyabra",
       "articleId": "e210ed3bc0ca2e29f84ceb1bd71b635cadc6017aa81edaa825fb46da67dec8fe",
@@ -440,6 +594,20 @@
       "promptVersion": "classify.v1@5717fe76202f"
     },
     {
+      "companyId": "51ea09628499962f920c6da1c91ff6921032c20c589caa91016ce4bfac5f02d3",
+      "company": "Cerebras",
+      "articleId": "880f9c9434841f4c5f3deff61f36b6368f726e6352f494374c91b1bd42540ace",
+      "title": "LIVE | Finland Vs. Austria | 2024 #IIHFWorlds Cerebras (qLVHV9lmQ4)",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5tZDdEOXhvVHlyV2xwZVV0UWNwWGxDS1AzWVRGbkV5UmFpeWk0OXUtZ01mNlNoVGVzakVNNGlsdm5VQXc3VktRcm9WelVfLU5hVUdJejloTnlNWFE?oc=5",
+      "source": "mshale.com",
+      "publishedAt": "2026-07-31T19:35:14.000Z",
+      "sentiment": "neutral",
+      "confidence": 0.5,
+      "rationale": "Company name, but unrelated context and content.",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
       "companyId": "9d5b9d1933714e02bc89690d60a662e6f2d9cc8c330a84b83d776ed2be48a817",
       "company": "Together AI",
       "articleId": "46ada975839b00f7accd580e0856832a33e8cd1887b35c42114282e709e2cd23",
@@ -468,6 +636,20 @@
       "promptVersion": "classify.v1@5717fe76202f"
     },
     {
+      "companyId": "f9f48e7d2a38c906d7222f3aeb08db9f1dc1b62e87a4e6ecb22c70fb9b40972a",
+      "company": "Stripe",
+      "articleId": "46d5e7b12271b1af6413abbc39596c3d12a835095d9bba4b05d20bc21aa75af6",
+      "title": "Patrick Collison: 'Never Been a Better Time' to Start a Company as Stripe Data Shows New Businesses Doubling",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE12ZTdNU0ZzRElQdUM5ck5iRVFVQmgyczFKdTRrS2RVWHVNaXIyNkdRMVk5REVMYnRSNDJGSm54UWx4UnlYUzJGZ0tGVm5IRXE4Mlppa2lUSlBuR3c?oc=5",
+      "source": "finance.biggo.com",
+      "publishedAt": "2026-07-31T19:12:00.000Z",
+      "sentiment": "positive",
+      "confidence": 0.9,
+      "rationale": "sector and context terms indicate company involvement, positive tone",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
       "companyId": "01d6e78d4dc7f34ff1190ec006387b934166de8a24535ef96562cd52a09fde1e",
       "company": "SpaceX",
       "articleId": "f9786ff86a1ff59725f24c5332e50fe66a8528963f9434fbfd9354c04de3b8ca",
@@ -482,6 +664,34 @@
       "promptVersion": "classify.v1@5717fe76202f"
     },
     {
+      "companyId": "51ea09628499962f920c6da1c91ff6921032c20c589caa91016ce4bfac5f02d3",
+      "company": "Cerebras",
+      "articleId": "df3dbd544be627c1fad0a87df6e147e70f4f9fa7436d133565af6dd64fd76298",
+      "title": "'Inference Speed Makes Markets Bigger,' Says Cerebras CEO Rod Stewart (Oso2tHaOqm)",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5WREJuamNnMk5EZko1SnBNMXU2WG5vV0YyVEZlQ3JRS05rYXliZ3pEZlVES1FoYVZ5T1U2R1o4WEgxT3pjckQwR0pSVWFkWi1scDJaUUhTZFdJams?oc=5",
+      "source": "mshale.com",
+      "publishedAt": "2026-07-31T18:34:51.000Z",
+      "sentiment": "positive",
+      "confidence": 0.9,
+      "rationale": "CEO mentions a benefit of their product, inference speed.",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
+      "companyId": "9d5b9d1933714e02bc89690d60a662e6f2d9cc8c330a84b83d776ed2be48a817",
+      "company": "Together AI",
+      "articleId": "287dc41d566d3eb3f77c36ec6ea1dfa61ce076992a3ee5d3e65076c8bcbccc1d",
+      "title": "Together AI Expands AI Model Offering With Inkling-Small on NVIDIA Infrastructure",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOQm5qc1RqQkV0eXBsN2Jsclh1YTFHaG9ZUWV2OVJyNmtiazc5Yi1MSEphdW1aVHluaWtnUjJqRnVObDdFS3Yxc180S1MtdTFVMDYyOGphUDhVLXdaZ0RKQl9PWHVKVlU1U1h2RWg1QVJpbGJyRGlEaGcwUDRkWVFhbnlSYWRyQkFGMFFHeW1IOEtNTWVyNks2ckUyVGwtZjFiZWdGRHhPNXhralZNMVFEeTlhWVdwd1hOMFhXMDJXb3JNQUpoNVFPUA?oc=5",
+      "source": "tipranks.com",
+      "publishedAt": "2026-07-31T18:23:51.000Z",
+      "sentiment": "positive",
+      "confidence": 0.9,
+      "rationale": "Expansion of AI model offering, partnership with NVIDIA",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
       "companyId": "a4718c1526f6accda4011db8e7b4ceace570230667f97c53c850047246562b23",
       "company": "Databricks",
       "articleId": "4a6c8476a4ee6a7fed9aeda46f75bf91642e32fabc94341eeb8ad3ff2da5c0c9",
@@ -492,6 +702,20 @@
       "sentiment": "positive",
       "confidence": 1,
       "rationale": "Investor access, large funding round, major partnership",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
+      "companyId": "51ea09628499962f920c6da1c91ff6921032c20c589caa91016ce4bfac5f02d3",
+      "company": "Cerebras",
+      "articleId": "e0a71acfa0f1d4c9da92ba3867d5529d0a4bb990c86a44d6a53291b7b723e283",
+      "title": "FLEX gains over 3% after upbeat results and Cerebras manufacturing deal",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPcWxrTHBSYW9YSUpkUDVDTlViV2lPNkRqVTc3dVlYVk5BbC10cDhtclcybndiQmM0c1YtWkY3QTY5ajNyU1YzbVlxV1ZqYWpyY25VcmtZQUhHbmdkeHNvSm9mTndLZjBVV1k3R3hCVFVQN05vYnhZYVdMdXEzc2xibl9PaVRZek9scGJr?oc=5",
+      "source": "tradersunion.com",
+      "publishedAt": "2026-07-31T18:14:31.000Z",
+      "sentiment": "positive",
+      "confidence": 0.9,
+      "rationale": "Mentions Cerebras Systems in a positive context with an upbeat result.",
       "model": "llama3.2:3b",
       "promptVersion": "classify.v1@5717fe76202f"
     },
@@ -520,6 +744,20 @@
       "sentiment": "negative",
       "confidence": 0.9,
       "rationale": "Mentions a crisis that could doom the entire company.",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
+      "companyId": "f9f48e7d2a38c906d7222f3aeb08db9f1dc1b62e87a4e6ecb22c70fb9b40972a",
+      "company": "Stripe",
+      "articleId": "957cbe116ac81bebce48972b481c429bb997c2be616845d82f88fdc4386afaf2",
+      "title": "Ex-Stripe employee debuts converted community bank",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOdkg2YUNsd2kyMXRHdmNlSEdOOW1tNDNuMk5sSUNvcjlTRHZzY2M3eVRiRTV2UkU3Y2gyNTJHNTJXbm1JdHJZQmZVbms1REpHa0FQc3VsLXR3Q0E4NGdEaWF4YkZsa0NlRDJHX2JmZVFqcVdyUUw2NlA1NFBSNDlsQTMxYkQyaUVkVE1kOS0xVDJCQQ?oc=5",
+      "source": "americanbanker.com",
+      "publishedAt": "2026-07-31T17:50:00.000Z",
+      "sentiment": "negative",
+      "confidence": 0.8,
+      "rationale": "former employee, negative connotation",
       "model": "llama3.2:3b",
       "promptVersion": "classify.v1@5717fe76202f"
     },
@@ -562,6 +800,20 @@
       "sentiment": "neutral",
       "confidence": 0.8,
       "rationale": "share unlock and earnings mentioned, but no positive or negative context",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
+      "companyId": "51ea09628499962f920c6da1c91ff6921032c20c589caa91016ce4bfac5f02d3",
+      "company": "Cerebras",
+      "articleId": "a9d72d719f74b25c775ed48bbdbfbd4f787e1d2accdb867fb47bc5fd2bcc6b70",
+      "title": "NVDA Rival Cerebras Plans To List On Thursday Next Week: Report",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOVGw4azVwYXh5dVJELTc4cWR5dmRwa2J1dkUxaEgzTFJJQ1k0NVpBbXE5cnA5enhKVDdOSWZJT3JyTS1BT1hhZm5kNmVvd2V5TERUZFZ5a2VsNUZRdjlUZ1pBelVYdUZEYkpxNDdOUTdKMXdnQ1ljMVdsWFFsczNUSDB5aXk4aXcyTzRGdS1vNTA0aXowd05xZU5tVWI2elg1eWNZWnhVVXVmdzYtWWhsdHI2WVpMbmZHa2plc1FEMEF0QkJw?oc=5",
+      "source": "stocktwits.com",
+      "publishedAt": "2026-07-31T16:37:27.000Z",
+      "sentiment": "neutral",
+      "confidence": 0.8,
+      "rationale": "Company name match, no industry or product context",
       "model": "llama3.2:3b",
       "promptVersion": "classify.v1@5717fe76202f"
     },
@@ -650,6 +902,20 @@
       "promptVersion": "classify.v1@5717fe76202f"
     },
     {
+      "companyId": "f9f48e7d2a38c906d7222f3aeb08db9f1dc1b62e87a4e6ecb22c70fb9b40972a",
+      "company": "Stripe",
+      "articleId": "1717a01869622c76f74232ca2bf498329a244f3d3a254e35d70d7da63546d191",
+      "title": "Yellow Card’s Chris Maurice named alongside Coinbase, Stripe and BlackRock leaders in stablecoin ranking",
+      "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQa29NZUh3UDM1MkpEaTExZFBiTUgwTHo5UmcyNGJFYlNlcmpxbmxqR0NhYmNiRXZoUnEtbS1PQVRqYnl3cXZGYlU0UmFoanQwdDVrMG5kUGdMWnExOElnNWZwYTZVdm5HRHZvMkJXUXNRWHoxNkZBU1NMcHhVekNMWEp6bXFHVFlibzZyTU40blB6bDE5VXE2VURUdk4tSEdNbURXQmFyN0VIblhDbm02UVdCa3VsWFo0SWVhRWpfSXNwdG9kanVUYkVaM3FQSWNyeVRwU0xTRW82aW9MYW1fVQ?oc=5",
+      "source": "bizcommunity.com",
+      "publishedAt": "2026-07-31T15:35:33.000Z",
+      "sentiment": "neutral",
+      "confidence": 0.8,
+      "rationale": "sector mention, no direct company impact",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
       "companyId": "572c531059ad7c8ca7a25a96de29e18e172caddf31e111211335e94541f2f8a3",
       "company": "Anthropic",
       "articleId": "8112bf7bfe5d2c0ea76565a811f6247454950c1b86967cbe6de41b46bc4554b3",
@@ -674,6 +940,20 @@
       "sentiment": "neutral",
       "confidence": 0.8,
       "rationale": "Company name, but no specific results or funding mentioned.",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
+      "companyId": "f9f48e7d2a38c906d7222f3aeb08db9f1dc1b62e87a4e6ecb22c70fb9b40972a",
+      "company": "Stripe",
+      "articleId": "523c65ef8d58d2c0767e320ed3afcd5163e6c40c1bc0384315ef4cda14bc3bde",
+      "title": "PayPal, Stripe and Adyen: three companies, three futures",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOR3IxQV9hNnVfMWhaUTZUdUVleVU4eTRUYlFsU04xWWVVYi1QUE5OZXpJQkdTNWtUVmdCX0RwME9PNWVFWU8tZE12YnVoUFJ2WlhDOTNRdG9nejRKaU1oUV9FV0tBMXJRQmREdlNjVDNlTWlvRUZfM3FoQlNIVTVQX0M2VjZKdnpOM21tcXNn?oc=5",
+      "source": "thefinanser.com",
+      "publishedAt": "2026-07-31T15:00:54.000Z",
+      "sentiment": "neutral",
+      "confidence": 0.8,
+      "rationale": "sector-specific, no direct mention of company performance or outcome",
       "model": "llama3.2:3b",
       "promptVersion": "classify.v1@5717fe76202f"
     },
@@ -888,6 +1168,20 @@
       "promptVersion": "classify.v1@5717fe76202f"
     },
     {
+      "companyId": "f9f48e7d2a38c906d7222f3aeb08db9f1dc1b62e87a4e6ecb22c70fb9b40972a",
+      "company": "Stripe",
+      "articleId": "00270a39ff5e38be18316c51a869fb791582e387564d4616a5ca4ed5e728cf23",
+      "title": "Fergus Launches Stripe-Backed Financing Product For Australian Trade Businesses",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOc2J1U3BETXJqOHo0b01kNHk4S0RBSHYtNXRpU0REQkx0R0FxRWo2RkxzaHRucWxBQUgxZ1BmNlUwTTN2V3p0Qm5Vb1pLYTNXQWIzNDAtWFNKc2FDcVpXS1d0Y1ViVllnUUJSYkNzeDR6MUpyVXZUZDRNalRzMXQ0MFF1clg3aW5iY1ZiLVpLTnEtY0s5RmFqYXp3ZXVjSTFDeU9KcEYzTQ?oc=5",
+      "source": "smbtech.au",
+      "publishedAt": "2026-07-31T12:16:42.000Z",
+      "sentiment": "positive",
+      "confidence": 0.9,
+      "rationale": "Funding round, partnership with Stripe",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
       "companyId": "2e08832726e2ba4c56ccd4bc8a1c2d0c6cbf75ef31271b4322763f22bf77fc30",
       "company": "Arbe Robotics",
       "articleId": "5089f89bf9480ed9149f3f4b7218006b2050dbb4ab1764821a4be7013564fcc1",
@@ -912,6 +1206,20 @@
       "sentiment": "neutral",
       "confidence": 0.8,
       "rationale": "Autonomous Vehicles, but no direct impact on Arbe's products or services.",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
+      "companyId": "51ea09628499962f920c6da1c91ff6921032c20c589caa91016ce4bfac5f02d3",
+      "company": "Cerebras",
+      "articleId": "7fd49a0231ecd6c72452657cdd9f3adb6aa0e91d8250d3b30f8b5aae2edead80",
+      "title": "Cerebras Stock Extends Tumble Overnight Despite $20B OpenAI Contract — Analyst Says 'Concentration Rotated, It Didn't Go Away'",
+      "url": "https://news.google.com/rss/articles/CBMilAJBVV95cUxOOHdBNF9sTXpBcEx2WmkzTGhmSjRyNjhUcTJMTVEzQUpjNFNmUDY4dmIxRnZLTUliUGhBVi1wSGtoVnp6XzRRbV9nV0dVaGkxR0JYTzFJZnV0OXFDUDZtaXVQc2dLTlNvQUVRR0RPdE5WTE5YMjZGYWo2QXpYNkw0N1VCQnVrRk90Z19lWU1Da1FheWVZUVRLZHlDUFBjUklWNVpXUUNrRnhNZzg2Z0FsSXhGa2F0MjZIdGdIQThOR3NkVFFQb3BiWldlRmd2S3V3OVQyWl82NmROVGlPeFVqVmRKejR5b0U2WW9Wcl9HblFvc2l4ZTIza1NlNG1uM3l2Mm9MSi1ySHhjT01vakxLc2hnSkI?oc=5",
+      "source": "stocktwits.com",
+      "publishedAt": "2026-07-31T11:29:42.000Z",
+      "sentiment": "negative",
+      "confidence": 0.8,
+      "rationale": "bad news about the company's stock and a negative analyst comment",
       "model": "llama3.2:3b",
       "promptVersion": "classify.v1@5717fe76202f"
     },
@@ -972,6 +1280,48 @@
       "promptVersion": "classify.v1@5717fe76202f"
     },
     {
+      "companyId": "01d6e78d4dc7f34ff1190ec006387b934166de8a24535ef96562cd52a09fde1e",
+      "company": "SpaceX",
+      "articleId": "f97f5e996d0a5b7ffaa8d761e7609de7c4862cd798a20353b5e122db2f579ecf",
+      "title": "SpaceX sets a new quarterly launch cadence record",
+      "url": "https://www.spacenews.com/spacex-launch-cadence-record",
+      "source": "spacenews.com",
+      "publishedAt": "2026-07-31T10:36:16.651Z",
+      "sentiment": "positive",
+      "confidence": 1,
+      "rationale": "Launch cadence, positive outcome",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
+      "companyId": "51ea09628499962f920c6da1c91ff6921032c20c589caa91016ce4bfac5f02d3",
+      "company": "Cerebras",
+      "articleId": "195585f4b0b523e4d5598664f42eb481c9c72efc40d574f7cf7c18a9e546fd2a",
+      "title": "Dogecoin Treasury Company CleanCore Signs $800 Million AI Contract With Cerebras",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPMVJzMENQMEo4RGpzYjlEZ3NIa2tobGhhenlRSmRad3FVc290VGtuNHFqeTVpTWcyNWZHYndWTXlpRlVhXzVTWlo4YmpmdDEyS1FPR2YxWXBTLW1HR3d2WTVkZW1GbTRESHAzLTBQS2NvZTc0OTMzS1lqT0IwVTlQOVZFLVRtLUkxLWZwSW52U2h2OGtUQmk1TUJaMWtPN1l3WkczX2pn?oc=5",
+      "source": "blockonomi.com",
+      "publishedAt": "2026-07-31T10:15:49.000Z",
+      "sentiment": "positive",
+      "confidence": 0.9,
+      "rationale": "Contract with major customer, significant funding",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
+      "companyId": "51ea09628499962f920c6da1c91ff6921032c20c589caa91016ce4bfac5f02d3",
+      "company": "Cerebras",
+      "articleId": "586bb693b3e8c149fe277e06a1d4a733eaa2a5f49ada5fbdd2eb231184dd3701",
+      "title": "CleanCore Solutions signs on Cerebras under 10-year colocation agreement",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPUjE4WTNCaDkzRmtpRVNxaVFJSkxlVXYxT1ZXOUJVMG9hZEVCd3NzWXZhbndZUkEwNEM4T0dHdlc0NHZXVWx6WmlzZURaVG1XZktUUVMwd0wzSUd2Z0dvVlBzcENXa2FjS3g1elJlRjliUUdJWDVyMDFjaFBvT2V3WEoyU2xKTnNIUU1jYUlYUFlTS1NveHNZakFKR0tmUWFjcHJTVlpOUG0tQVFSTnFIc1JiTGxQMTg?oc=5",
+      "source": "datacenterdynamics.com",
+      "publishedAt": "2026-07-31T10:00:58.000Z",
+      "sentiment": "neutral",
+      "confidence": 0.8,
+      "rationale": "colocation agreement, no funding or product launch mentioned",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
       "companyId": "7c0fded7fc4ddbb63d04cfc78fd8022545e7d92a09c8b55f3011eecf90098b85",
       "company": "xAI",
       "articleId": "38c71b5e068d2bd4aa80fd348cba282a94ba1831a08a3463892ada9bf1b96967",
@@ -1010,6 +1360,20 @@
       "sentiment": "negative",
       "confidence": 0.8,
       "rationale": "Financial health analysis implies a focus on profitability and balance sheet, which is typically negative…",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
+      "companyId": "f9f48e7d2a38c906d7222f3aeb08db9f1dc1b62e87a4e6ecb22c70fb9b40972a",
+      "company": "Stripe",
+      "articleId": "bad53cd35664c16526e4de823ca30096502f893319945c063d37379833e7d9ed",
+      "title": "Former Stripe executive takes full control of Washington bank",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQNU1UR1BaUlFWVTlZQ0RBSHpNLWRKbG8tLTMxZG40a2pMVHBYWFlraXNTd1J5OExfMmVka3had2RxUVNXZWFDZDRvM2lRLVRvWElHRllwZGQ5VHhtY3c1dVV4UmlXbW9tSnFkVDJERjZ6WHp2bVNRdlk3UklfYXBVRXBUemZfMjRodWNhTURlNFkxZw?oc=5",
+      "source": "retailbankerinternational.com",
+      "publishedAt": "2026-07-31T08:03:05.000Z",
+      "sentiment": "negative",
+      "confidence": 0.8,
+      "rationale": "Executive departure, loss of control",
       "model": "llama3.2:3b",
       "promptVersion": "classify.v1@5717fe76202f"
     },
@@ -1154,6 +1518,20 @@
       "promptVersion": "classify.v1@5717fe76202f"
     },
     {
+      "companyId": "f9f48e7d2a38c906d7222f3aeb08db9f1dc1b62e87a4e6ecb22c70fb9b40972a",
+      "company": "Stripe",
+      "articleId": "89d43566cb74d94aba8109039eb0814b6a838baa8184b4d3df9850ce65642323",
+      "title": "Stripe Enables Merchants To Accept USDC Payments on Ethereum, Solana and Polygon",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOdlRQaVFNWmpHVUFtNTY4UUt1RVpzamZra1N2bkwxR0s2TEk0WmdhbmxOaDd3a2hfd1RoLTdKTXpqNnFoeUthaHlYY08wRDFGNWQ3RjBQN0xYbmJ1NElvLU1abndpVFAtR0lYTy0wSTRfZlZHbTFQVnJhWVBDRUtNNFFzVWdERzlQcWFIZ0V4SHJtR0tPZ0RINUwyQlF1eVNvSzdOLV9qd29pLWRQTDhpWTV5RXY1eENLSmhWd2tn?oc=5",
+      "source": "coinmarketcap.com",
+      "publishedAt": "2026-07-31T02:15:36.000Z",
+      "sentiment": "positive",
+      "confidence": 1,
+      "rationale": "favourable announcement of new payment option",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
       "companyId": "572c531059ad7c8ca7a25a96de29e18e172caddf31e111211335e94541f2f8a3",
       "company": "Anthropic",
       "articleId": "4c8deffc32e1d645f7f70fc4eb92a0470f293f9761af2c5199a0c480dfc8f435",
@@ -1262,6 +1640,20 @@
       "sentiment": "neutral",
       "confidence": 0.8,
       "rationale": "Sector and context terms, but no direct mention of company's AI focus.",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
+      "companyId": "51ea09628499962f920c6da1c91ff6921032c20c589caa91016ce4bfac5f02d3",
+      "company": "Cerebras",
+      "articleId": "812c631a0d738484692cdfdfe273808e209240df07d164e469b2320639f0a770",
+      "title": "AWS Outage: ‘fundamental Infrastructure Problem’ Shows Over-reliance On Amazon Cerebras (k81bf1bjWB)",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1OSzFaMVVXLUhLZmI1UWp2NjdhUXZYQ1ZQLVN0Zl9PNThaTWVSLXpwa0pmdVJJZ2NBNURTZFJpQUtvcEdESlVLbWc3N081QmxZaks4SWFWSU5VMnc?oc=5",
+      "source": "mshale.com",
+      "publishedAt": "2026-07-31T00:43:58.000Z",
+      "sentiment": "negative",
+      "confidence": 0.8,
+      "rationale": "outage, over-reliance, negative tone towards Amazon Cerebras",
       "model": "llama3.2:3b",
       "promptVersion": "classify.v1@5717fe76202f"
     },
@@ -1378,6 +1770,34 @@
       "promptVersion": "classify.v1@5717fe76202f"
     },
     {
+      "companyId": "51ea09628499962f920c6da1c91ff6921032c20c589caa91016ce4bfac5f02d3",
+      "company": "Cerebras",
+      "articleId": "aba84ee037a72b783406e8f95b029987ff2ec4c39f32fbde88e6f563a8fd5c9f",
+      "title": "Nvidia vs Cerebras: Which Is the Better Discount AI Buy Now?",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPUU9tT2VOUHd1YlN4MF9XWnB5V1pBUnN3RDRvaVZSc3JwQW84cTdoVXJoQ0lfcXpwRUVvV1Rwa2NDWEdtN2xwV0FCWlBUVVFZQjVIRTBJX3BvWlNaZGpSWnRQQmVUNV9HMVg3V3pWU0w1eno2UWtyQnk5SUNZYnZtVDk0blQ?oc=5",
+      "source": "aol.com",
+      "publishedAt": "2026-07-30T22:00:00.000Z",
+      "sentiment": "negative",
+      "confidence": 0.8,
+      "rationale": "Comparison to competitor, negative framing of 'buy now'",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
+      "companyId": "2349a6848d029aa2bea30b44d8a63b080aa98fb9b5db2cea5fd875fc9543d789",
+      "company": "Harvey",
+      "articleId": "027abbf5b3ae47e41f5b4b67a59dace7a5885bb4b5c73d0d4f9b4d73522bf74d",
+      "title": "DeepJudge and :Harvey: Partner to Power AI Agents with Institutional Intelligence",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQZVl0NTdoaDJIV3NEQ3UyakdIN1J4MTdhVGVmOUJPbnA1Y3drd1c4ZFhucjdKRS0xVXpoTDFqOFpjMGRfVE05SEpmOHhwdDVBelBPRDBKWTduTUtwZTI0bXEzMjFNaEI2Rkh1c3RzRGh6ZlNhOU1wNkNXLUdBNW9qODFuNkp1TlpXQzNsdjJza25tYjBQeG5MQWpHWnV6czVTOWZGVkpjbEx2OUFVbkRyTzdn?oc=5",
+      "source": "harvey.ai",
+      "publishedAt": "2026-07-30T21:48:05.000Z",
+      "sentiment": "positive",
+      "confidence": 1,
+      "rationale": "Partnership, institutional intelligence, positive outcome",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
       "companyId": "2a4901ee2848d8ba0c7eddb21a892ab8e3c92ba3ebeafb3d40c78f79ada5f57b",
       "company": "Lemonade",
       "articleId": "9ad073423a7675d5c524e787400a120ec8992236bea25b7f7559f1b7c9ea7a9d",
@@ -1416,6 +1836,20 @@
       "sentiment": "negative",
       "confidence": 0.9,
       "rationale": "abandon closed AI models, strong negative outcome for the company",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
+      "companyId": "f9f48e7d2a38c906d7222f3aeb08db9f1dc1b62e87a4e6ecb22c70fb9b40972a",
+      "company": "Stripe",
+      "articleId": "b789cf71899f1b3c3f7e2f1a22725d5e7778c1168230defc081a42d934007f3e",
+      "title": "Stripe enables Dune to accept stablecoin paymen...",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPWjBoN3ZxX014Tmw4ZFVPSVIzRU5ycVU1akdMd1FXVEpmMmFQZm5rcEFjYUl2RlM5ZXVGdHo0Zklja3p5MVFrLUc0Tm43TmtHNWZBSENsQ2pZSTRtZGdPTVlVcnVtWFdtSHVObTcxZUUtZlUwRFRfaGYwc2NWZUxjZ25ZVzRtcDNqWVJ2Q1JQWDJwTVVxM0M3THhn?oc=5",
+      "source": "pluang.com",
+      "publishedAt": "2026-07-30T18:53:49.000Z",
+      "sentiment": "neutral",
+      "confidence": 0.8,
+      "rationale": "sector, but no direct mention of company's product or financials",
       "model": "llama3.2:3b",
       "promptVersion": "classify.v1@5717fe76202f"
     },
@@ -1560,6 +1994,20 @@
       "promptVersion": "classify.v1@5717fe76202f"
     },
     {
+      "companyId": "51ea09628499962f920c6da1c91ff6921032c20c589caa91016ce4bfac5f02d3",
+      "company": "Cerebras",
+      "articleId": "aa4fa7a6a3fc464a10b9312f1f2da22ab5499911c6dbe06b12fd83b98982364b",
+      "title": "Cerebras Systems (NASDAQ:CBRS) Shares Up 14.7% - Still a Buy?",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQZ2thaFZRN3BTMTZONGg4anpLTTRQZHJwM25JSGJUeUplbGxoR19ZRVp4TVBFT0tRUFFxU21OdTFnM25Mc3NFMUdBeURlUTR5UWdjazRXS08xbEFEZ05wUHc5YkYwS2ZRZm9xR3JPYUxBRFVDM0xIZklsa0RtQldOV0RGNnlSZnlQbnlBc29fWnJoYWFxV1EzWU5TaUh5QWxKWUZidnM3blZrOUk?oc=5",
+      "source": "marketbeat.com",
+      "publishedAt": "2026-07-30T16:21:52.000Z",
+      "sentiment": "positive",
+      "confidence": 1,
+      "rationale": "Up 14.7% and still a buy implies strong results or growth.",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
       "companyId": "2b8733b3f6fbf42de852e485207370208f98f1523a0317eaaf33237d416b826a",
       "company": "EquipmentShare",
       "articleId": "ffedd47839becbba12fa77986334442b84430fd51b6c950be6a395f6944be5d7",
@@ -1570,6 +2018,34 @@
       "sentiment": "negative",
       "confidence": 0.8,
       "rationale": "claims, alert implies bad news",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
+      "companyId": "f9f48e7d2a38c906d7222f3aeb08db9f1dc1b62e87a4e6ecb22c70fb9b40972a",
+      "company": "Stripe",
+      "articleId": "ace708f5abdea8da514adef565537ef982ef5746d19bc2b7f559a1b2a6506668",
+      "title": "Stripe Powers Dune’s New Stablecoin Payments Across Europe",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQVFVHQU9kYTdoTW9WcXF3elpmRDZsNVFSbWd5cTVFZDlFWXg1dlo1alBaWGNPUW56RFNjYzE0TzNKZGpuUGxRS29JTjVIQ3dxM3M0ZW5uTkRWYUI1bnpNWlByRDNUZFFMMjd5OXI0WkhLdlZGRWhwOHJZcENWT3U3eHJvdG5TX3NlQXRwYkN4dmpCU2pPR2xnenU2YlI?oc=5",
+      "source": "cryptotimes.io",
+      "publishedAt": "2026-07-30T16:09:26.000Z",
+      "sentiment": "positive",
+      "confidence": 0.9,
+      "rationale": "stablecoin payments, partnership with Dune",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
+      "companyId": "2349a6848d029aa2bea30b44d8a63b080aa98fb9b5db2cea5fd875fc9543d789",
+      "company": "Harvey",
+      "articleId": "faff656d62d145743487aeea74f02c00215cc03c9fcd6db1ffc2f3c0c9e3e0cc",
+      "title": "Goldman Sachs and JP Morgan invest in Harvey",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQTml2NlN5a1duQzU3QU1hemNrbnRCZEhFVGpNUWw4cDE1bC1PU29DUThhUHhjMkJpYlRfaWxseWo4YUY2eTAySEp2Z3M0cml3cUtwQWJjMGVyd294Xy1vbjhMb3ZXaEtEemdXTjFsTG9pN19Mc3lkNjF2bXZCUFI5bnY3S1VaM2hhbzJTQXh1TVRMTU5tclE?oc=5",
+      "source": "globallegalpost.com",
+      "publishedAt": "2026-07-30T15:52:00.000Z",
+      "sentiment": "positive",
+      "confidence": 1,
+      "rationale": "Investment from major banks indicates strong growth potential.",
       "model": "llama3.2:3b",
       "promptVersion": "classify.v1@5717fe76202f"
     },
@@ -1602,6 +2078,20 @@
       "promptVersion": "classify.v1@5717fe76202f"
     },
     {
+      "companyId": "51ea09628499962f920c6da1c91ff6921032c20c589caa91016ce4bfac5f02d3",
+      "company": "Cerebras",
+      "articleId": "d2e8e9b110dbfe70f1934122ad90bf5c6f24cc1d31702cd49e57892bc4bae958",
+      "title": "Cerebras Systems Ord Shs Class A (Proposed)",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE96OVpyd3N1SVJjSWtaYjd0QWpWRXdIQjNVN2tBbUNVelFpTUJqZjNuV1owNEEyMzN0VFUzTEpRdG00UU9pQWNrTkxyS09VNzJocEFPWVJCMmRKLW81TjJkWlJ3b1k5YkU?oc=5",
+      "source": "tradingkey.com",
+      "publishedAt": "2026-07-30T15:27:02.000Z",
+      "sentiment": "neutral",
+      "confidence": 0.8,
+      "rationale": "Company name, but no context about AI or products.",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
       "companyId": "cee64ba995c98bbab9dad11d0d8c5b0ff51a8acd00f3de72c36e9ecf64430465",
       "company": "Scale AI",
       "articleId": "eb7b76eb846c3ac2b7785b106e887e0f645c32918adb8345f60ab05a796f967c",
@@ -1612,6 +2102,34 @@
       "sentiment": "positive",
       "confidence": 0.9,
       "rationale": "CEO change, positive development for the company.",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
+      "companyId": "f9f48e7d2a38c906d7222f3aeb08db9f1dc1b62e87a4e6ecb22c70fb9b40972a",
+      "company": "Stripe",
+      "articleId": "39473fcc5dabff2ac6bbb2371649dbbdb378d65cb1f5083b57f206356dd72459",
+      "title": "Stripe Enables Stablecoin Payments for EU Enterprises, Highlighted by Dune Adoption",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPT3pwQ0ViTzBiUGd1UUZnOHFLeWFTb3ptSjNHMVd2STRGX0lpRmZMTHgyZzN4Q0NIOVFiMlA0NWtiV3otSjcwOWxyTU9IenRJXy1GQTVyN19kZkNwcXVHNWc0bkdOcFIzMmZEVzdXMXdQRXhJNlBkSEJZSVlrSDhNWUlOd29kaGd2OE5wSV9KRDJqQmZkaUE5emJERGtvUkE0T1V3cXJabzI2ZnZFNG1FdEp0XzBFTTd3NkZwN21CVE92bDl4MVV2a05n?oc=5",
+      "source": "tipranks.com",
+      "publishedAt": "2026-07-30T15:17:54.000Z",
+      "sentiment": "positive",
+      "confidence": 0.9,
+      "rationale": "funding round, partnership with Dune",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
+      "companyId": "51ea09628499962f920c6da1c91ff6921032c20c589caa91016ce4bfac5f02d3",
+      "company": "Cerebras",
+      "articleId": "f44c78a4c4c688075310ad1e9f7f9e9b831cb1da52e0e9a07de39e46fabb7afa",
+      "title": "Yankees Will Be Missing Aaron Judge For A WHILE | 1369 Cerebras Stock (yd2KFu5Lqm)",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE90SnloYm1GcHM5WUxRbjJ1OHJoUG9IdWlvcDZKU29JMTBPV05FNGF0NG12cVRTQVVLZWhZN00yMk02a09UQzUtZVFnc1k4TEV1VUJZS25FcDZUUQ?oc=5",
+      "source": "mshale.com",
+      "publishedAt": "2026-07-30T15:00:00.000Z",
+      "sentiment": "negative",
+      "confidence": 0.8,
+      "rationale": "Company name, no industry context",
       "model": "llama3.2:3b",
       "promptVersion": "classify.v1@5717fe76202f"
     },
@@ -1728,6 +2246,20 @@
       "promptVersion": "classify.v1@5717fe76202f"
     },
     {
+      "companyId": "f9f48e7d2a38c906d7222f3aeb08db9f1dc1b62e87a4e6ecb22c70fb9b40972a",
+      "company": "Stripe",
+      "articleId": "f2d4fb5f0deff6bb425b6994d8cbc94e3aa1bcbf9a296df6dc9ed789d46524ff",
+      "title": "Dune Becomes One of the First Companies in the EU to Accept Stablecoin Payments via Stripe",
+      "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxOZHcwZ0tJZjVTOThCU0lmT1YxdVJWOVlPNHRnc0JZRHp5SGFiUzZ3cXZTTzE5VUdQYjMtSFY1aTgwb2FBMUVBbkxkQUFERnhqSGk3TnF0X3oyWlZHcFpLSGVpdnNDcnpfUlNPUUNFdFlnLVJsYm5zTEZNWFZ1b1VDMWtZUkM0QTBKbG1iZzFDWmpTT0wzcXJzY0JKbHNQcEpDTlNSM0hacjIwdUNaV2t2eElqY1pNRjBMYVd4MlM0NW54X0R1MGdUOEpJSDZmZHBEeGRkMk1aNjRhZVh6ZHVCREpyMmVVbE1JUzBaSHBOQlhlbWdKcGtn0gH8AUFVX3lxTE13ZEZiZ1pXZ29idEdLTWtfSzBOS1VpN2o4WS1sMEtnN3llMncxVDA3LUJKSmg4YV92UGhOZFYtaVBkbzdBTnl1UHlaMjl3ZjhlZG8yd1I2cktxSlU2MVJ0djhxTEh1c1ZRZ0sxQkM3amZ0dmFuNHVKMU9mc1EyUXJwTk5OdnRqXzVtOVJfd1lfR2lBeFJvUC1xa3BSS3ZRWGVKZWxwajk4bk92blRQVjJHNnpsTTJjMzlYVm5xMGhrMnFnZmVETjBnQl9VOER5S3o4V1dfS3I2ajd6SXZ5VS03c0JIVTM4emhYRFRoYXpNRDBPdENLN2lDYUNydQ?oc=5",
+      "source": "manilatimes.net",
+      "publishedAt": "2026-07-30T13:06:35.000Z",
+      "sentiment": "positive",
+      "confidence": 1,
+      "rationale": "Mentions funding/acceptance via Stripe, a positive outcome for investors.",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
       "companyId": "4f30fed2cfe86d6b10f3a4c18271947ae2c3abcef2e8aaa42459a71934b7d032",
       "company": "Ukko",
       "articleId": "fa6590df57f94578f852ec543c684e4cd395e9662c021d84a2050650f7f21d66",
@@ -1798,6 +2330,20 @@
       "promptVersion": "classify.v1@5717fe76202f"
     },
     {
+      "companyId": "51ea09628499962f920c6da1c91ff6921032c20c589caa91016ce4bfac5f02d3",
+      "company": "Cerebras",
+      "articleId": "a7efbe5f7cff46f6f267428c681108920d664cdd57c5aeab7aacecd26fccfd2b",
+      "title": "Jim Cramer Just Dumped Tech Stocks. He’s Loading Up on Intel Instead of Cerebras.",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOeF9SR0lJSzg4b2J3UnQ3b2U0RDJlX0s1NmN3cFh2TDBWUXBkcEJXZGJTb1hFV0R1dUM3SlBnV2RVV3dEcmJKUHdmRXJ3RkhKMjlVZkFSSWhESWxtckxYcXI2cllFQkREdTgtZzdrZWhBSFBDZTQ2bWJ0Ymtmelc5cGtwY2FtNERTNE5LcVRGQkVmcmh4NzR3?oc=5",
+      "source": "finance.yahoo.com",
+      "publishedAt": "2026-07-30T12:30:31.000Z",
+      "sentiment": "negative",
+      "confidence": 0.8,
+      "rationale": "Cramer's negative sentiment towards Cerebras outweighs the neutral mention of Intel.",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
       "companyId": "7c0fded7fc4ddbb63d04cfc78fd8022545e7d92a09c8b55f3011eecf90098b85",
       "company": "xAI",
       "articleId": "8e2ecd0f0b4500582b4cf0e18d1bfc4f50b111e4fe690ac94833b8cac44d42b2",
@@ -1850,6 +2396,20 @@
       "sentiment": "positive",
       "confidence": 0.9,
       "rationale": "defense orders, funding",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
+      "companyId": "51ea09628499962f920c6da1c91ff6921032c20c589caa91016ce4bfac5f02d3",
+      "company": "Cerebras",
+      "articleId": "c07c99175ab62af69bfa0ba7f580b0dd37a7c824a5b46efe88c0d2aba28dbfa6",
+      "title": "Ensuring Reliable Data Feeds For DeFi Applications | Bahaa Abdul Hussein Cerebras Stock (MRj16xAV13)",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9lbVhnSURLb25rLVFveXA1QkRjVF83UnNIQWt2OTJOUVhpUkJ6N1Q0NVo4Z1VDWGtkdTRaTmZ2NTBHWlRjeFZkMFJtTFZSN29JcVdOVm9OQnRYRkh1Y1ZxSQ?oc=5",
+      "source": "mshale.com",
+      "publishedAt": "2026-07-30T12:03:28.000Z",
+      "sentiment": "positive",
+      "confidence": 0.9,
+      "rationale": "Cerebras mentioned as a solution for reliable data feeds, implying a positive outcome.",
       "model": "llama3.2:3b",
       "promptVersion": "classify.v1@5717fe76202f"
     },
@@ -1952,6 +2512,34 @@
       "promptVersion": "classify.v1@5717fe76202f"
     },
     {
+      "companyId": "214d4dbc32023232877791593091774db87334789088352e5f33319e7e2f39b1",
+      "company": "Hailo",
+      "articleId": "9208445674a6cbaa796a36a978090aa73c170a27f9b890c04e948fbee8b563ca",
+      "title": "Hailo raises $180M Series D to scale edge AI processors",
+      "url": "https://techcrunch.com/2026/07/28/hailo-series-d",
+      "source": "techcrunch.com",
+      "publishedAt": "2026-07-30T10:37:16.852Z",
+      "sentiment": "positive",
+      "confidence": 1,
+      "rationale": "raises funding, scaling AI processors",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
+      "companyId": "2349a6848d029aa2bea30b44d8a63b080aa98fb9b5db2cea5fd875fc9543d789",
+      "company": "Harvey",
+      "articleId": "fd53eeffcdc4d9e025d2da0a9fe1fa67648b6488afb13be29aa4f54ad8629dcb",
+      "title": "Slaughter and May Adopts :Harvey: Firmwide",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5qUEE1U3MyYVlKYmp1SFl3a2JTWC1GT3RFYVZmUnJ1UmJWNVBMbTVPb2Rrdm9SU0ZMV2F3MGFwWWlxTHNvd3M2VE1LTW9EUjF1OG1HVk56aGVYV0ZKYUVOSEtSOFd0QURlY0Z5VjhJRDhjUWFPU1ZFRUFva1lxdw?oc=5",
+      "source": "harvey.ai",
+      "publishedAt": "2026-07-30T10:29:58.000Z",
+      "sentiment": "positive",
+      "confidence": 1,
+      "rationale": "firm adopts new name, implies positive change",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
       "companyId": "4f30fed2cfe86d6b10f3a4c18271947ae2c3abcef2e8aaa42459a71934b7d032",
       "company": "Ukko",
       "articleId": "96d673db36c1d856d58ee67623138f539cc1df5e5d0d3f78d767786e8cd808c2",
@@ -2018,6 +2606,20 @@
       "sentiment": "negative",
       "confidence": 0.9,
       "rationale": "lawsuit, state ban",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
+      "companyId": "51ea09628499962f920c6da1c91ff6921032c20c589caa91016ce4bfac5f02d3",
+      "company": "Cerebras",
+      "articleId": "a9e72406b1045e6be0348156a471a0fecdc575f596f4a91de9ba9f0ca28a5c16",
+      "title": "Up Close And Personal: Ariane 6 Liftoff From The Launchpad Cerebras Stock (2aGs9plE4u)",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFAzanF1WFhQelVuOXowNGFjV1FocEowbVMxOWdpMFFFQ3lQY1VkSVRmaXl0YWQ4aFVHTzFlTnlqWWtHMHhqbXRFczdjUEZ2ay0yV2lneXh6NUNzaUMxRV90ZA?oc=5",
+      "source": "mshale.com",
+      "publishedAt": "2026-07-30T09:22:38.000Z",
+      "sentiment": "neutral",
+      "confidence": 0.8,
+      "rationale": "Company name, unrelated to AI or launch",
       "model": "llama3.2:3b",
       "promptVersion": "classify.v1@5717fe76202f"
     },
@@ -2106,6 +2708,20 @@
       "promptVersion": "classify.v1@5717fe76202f"
     },
     {
+      "companyId": "51ea09628499962f920c6da1c91ff6921032c20c589caa91016ce4bfac5f02d3",
+      "company": "Cerebras",
+      "articleId": "122435580969b8e7c85488169a4fe6e1554af385f912d9298e2d27e46ace70d9",
+      "title": "Alaska Airlines B737-700 Departure From Seattle-Tacoma (SEA) Cerebras Stock (qyn4xJUdIW)",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1TbXdHQ29EdUNiUUs2aU9EMGgtdjNZS2x0SThPSGFKQXFXZWE4amRzS1BDMnItX0YyMm9OOHVmTHA5eVNPaW41dDJaenhyRktjY2dhNktRNUJhalE?oc=5",
+      "source": "mshale.com",
+      "publishedAt": "2026-07-30T07:44:24.000Z",
+      "sentiment": "neutral",
+      "confidence": 0.5,
+      "rationale": "Company name only, no sector or context terms",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
       "companyId": "6e161b557e5ee4b369a0ce7332bd8d12a4196fe757c3751dff828b6485e5613b",
       "company": "Island",
       "articleId": "aeda766d3c8924359c0addc6f369e98f05606a0642400efe0805eba9504068c2",
@@ -2116,6 +2732,48 @@
       "sentiment": "neutral",
       "confidence": 0.8,
       "rationale": "Company name 'Island' matches, but context is about a task force and AI policy.",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
+      "companyId": "f9f48e7d2a38c906d7222f3aeb08db9f1dc1b62e87a4e6ecb22c70fb9b40972a",
+      "company": "Stripe",
+      "articleId": "5f565073131c9c257f95890dbb2bdfd86218d7c30def9715c09a056c3f7527de",
+      "title": "Meta Is Planning A Revival Of Its Stablecoin Efforts, Stripe Could Be A Likely Candidate For The Pilot: Report",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQck84SjVjRlR6TFZlSjZRU1JVNFRkdW5WTW9Cc2dmTXFkcDFaNWlJMUhGM1d4RUNkcm8wNG80dWxETEJvQlEwajB4S3FVbkZsek5GY1NkZzlPaEgzRjMxcFJUbU1yaE44dEsxY0UxNzFvSGRlLTlPSUZqZ2VqM29VbEtraDNHcHBkU29tQXJPZTJpTzRPWV9NUUZaMmt0TE90M2I0Y3JMYmlVMXBZRnB3R1NmXzJKcGlPRU1KQmJRM0p1ak9GZkI0T1Vham1QUQ?oc=5",
+      "source": "stocktwits.com",
+      "publishedAt": "2026-07-30T07:09:21.000Z",
+      "sentiment": "neutral",
+      "confidence": 0.8,
+      "rationale": "Sector and context terms are relevant, but no direct mention of Stripe's financials or operations.",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
+      "companyId": "9d5b9d1933714e02bc89690d60a662e6f2d9cc8c330a84b83d776ed2be48a817",
+      "company": "Together AI",
+      "articleId": "f4146039df3cb24c7bc5522db9e03f7e210414a72d9f1028403cf2ed55b1a454",
+      "title": "Together AI Highlights Summer Intern Cohort and Talent Development Focus",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPbVZFajMtdjJCYk42VGp0dVhtay1BRGRxYzRQcUlqWGhDUVNtTG4zT1BtWmVTQk8ta0xDTTRJbTVnVjFJbC1VN3BlQVJHejA1RklyQzdtdkdMTTFIb05sc2pLc2RIV09yMFBlTnhkMnFXcXZJQ2FZLUtUUU15R3lLTHVIR2xqNGNJMVhSS2RFTHQ5RjczVmgxOG5EV2xkT2gxYkVfOUZQTm1SV0lFTW9lVU9MN0Zvc3dKZU50UQ?oc=5",
+      "source": "tipranks.com",
+      "publishedAt": "2026-07-30T07:00:00.000Z",
+      "sentiment": "neutral",
+      "confidence": 0.8,
+      "rationale": "Company name matches, but lacks specific details about the company's performance or outcomes.",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
+      "companyId": "9d5b9d1933714e02bc89690d60a662e6f2d9cc8c330a84b83d776ed2be48a817",
+      "company": "Together AI",
+      "articleId": "d15a11e6e5f03906f1cc1c3a3f50f467ec3abd51d8be99829abcba33711f60d9",
+      "title": "Together AI Deepens YC Partnership With GPU Cluster Supporting Open-Source AI Development",
+      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOV1VCY1RZa3NCLWdTWkY5Nk5NRGtOTzN3UWpOcEFLVmotUEVVUHdCTDRKeThiTlU2T0VHTHhaUkw2OFFXWWI4REM2UlllNFJXNlgyX0Zia1VuY3FWQ21oRW1vb25iQ0NpY0hMb0NEWHYweEdPWlp0Y2pmN1RGNEZNYmFzNWg1N2tVWUlSYzd1NEZsZkJleVplV2h0WXd3cjA3TlBIeFZfUVdLdEJsVVFMbEFnTTRiNTE2ajRBMWFwYkQtdW1XRE1zRHhzeVRDMk93ZzFB?oc=5",
+      "source": "tipranks.com",
+      "publishedAt": "2026-07-30T07:00:00.000Z",
+      "sentiment": "positive",
+      "confidence": 0.9,
+      "rationale": "YC partnership, open-source AI development, GPU cluster",
       "model": "llama3.2:3b",
       "promptVersion": "classify.v1@5717fe76202f"
     },
@@ -2204,16 +2862,16 @@
       "promptVersion": "classify.v1@5717fe76202f"
     },
     {
-      "companyId": "9d5b9d1933714e02bc89690d60a662e6f2d9cc8c330a84b83d776ed2be48a817",
-      "company": "Together AI",
-      "articleId": "d15a11e6e5f03906f1cc1c3a3f50f467ec3abd51d8be99829abcba33711f60d9",
-      "title": "Together AI Deepens YC Partnership With GPU Cluster Supporting Open-Source AI Development",
-      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOV1VCY1RZa3NCLWdTWkY5Nk5NRGtOTzN3UWpOcEFLVmotUEVVUHdCTDRKeThiTlU2T0VHTHhaUkw2OFFXWWI4REM2UlllNFJXNlgyX0Zia1VuY3FWQ21oRW1vb25iQ0NpY0hMb0NEWHYweEdPWlp0Y2pmN1RGNEZNYmFzNWg1N2tVWUlSYzd1NEZsZkJleVplV2h0WXd3cjA3TlBIeFZfUVdLdEJsVVFMbEFnTTRiNTE2ajRBMWFwYkQtdW1XRE1zRHhzeVRDMk93ZzFB?oc=5",
-      "source": "tipranks.com",
-      "publishedAt": "2026-07-30T07:00:00.000Z",
+      "companyId": "2349a6848d029aa2bea30b44d8a63b080aa98fb9b5db2cea5fd875fc9543d789",
+      "company": "Harvey",
+      "articleId": "be32a87c13acba68167ba63006d1c91ac3eb8dac9e2c5c1ea68150cff0a5a9ce",
+      "title": ":Harvey:’s Legal Intelligence Now Lives Inside Microsoft 365",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFAxelh5ajNWTWllMWpYbmVrUlZsZ2hoeUliM2k3bHJRLUFtNVN2RENSWkV4QzN5RXllbmV3TC1fYWl3bTF6eHJkVDlBN3M3NzlMN0ZDUXJuaXR4TWMxRXYtNmJuZGV5SEdLVmE2T3Vn?oc=5",
+      "source": "harvey.ai",
+      "publishedAt": "2026-07-30T05:08:01.000Z",
       "sentiment": "positive",
-      "confidence": 0.9,
-      "rationale": "YC partnership, open-source AI development, GPU cluster",
+      "confidence": 1,
+      "rationale": "Company name, positive outcome, partnership with a major player",
       "model": "llama3.2:3b",
       "promptVersion": "classify.v1@5717fe76202f"
     },
@@ -2242,6 +2900,20 @@
       "sentiment": "positive",
       "confidence": 0.9,
       "rationale": "Company name and context",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
+      "companyId": "2349a6848d029aa2bea30b44d8a63b080aa98fb9b5db2cea5fd875fc9543d789",
+      "company": "Harvey",
+      "articleId": "430b914aa76a3730a77050ef2860470df91f23405bad11ebb3c1918754205285",
+      "title": "Gabriel Macht Partners with :Harvey:",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9FUC1xMHRvVjZDRTQ2MFB3dmFfYzJCMGhLc0JwR1Y3eGk0NTVrM01KRWdrNkdnbjIzc0U4WkVpVmh4c1d5RXV2NEsxRU8xQU9lZU1sUXlwNDlFRmZySjBxOXBNSUlvTmhYTkNoQWpuVXhEZ3lVelE?oc=5",
+      "source": "harvey.ai",
+      "publishedAt": "2026-07-30T04:18:43.000Z",
+      "sentiment": "positive",
+      "confidence": 0.9,
+      "rationale": "Partnership announcement with a well-known actor, implying a strong brand association.",
       "model": "llama3.2:3b",
       "promptVersion": "classify.v1@5717fe76202f"
     },
@@ -2326,6 +2998,34 @@
       "sentiment": "negative",
       "confidence": 0.8,
       "rationale": "bank acquisition, negative outcome for investors",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
+      "companyId": "f9f48e7d2a38c906d7222f3aeb08db9f1dc1b62e87a4e6ecb22c70fb9b40972a",
+      "company": "Stripe",
+      "articleId": "4911646df90e96d0b497a59a4ef738c380559c04b650773ff945190c7cf64cdf",
+      "title": "PayPal Rejects 53 Billion Acquisition Bid from Advent and Stripe",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBjNE90TDBLeGE3ZVpiZnF1UWFOSkNfZ2oyXzlxT0JCX1R6b1pVRjB6S0pjRXZzUTg5WHJNV0VDbkJxOFBzSXVnMml6LTlNOTEyTjQwRk9JWS10SXJzOUxGOWozbFdXSTF6UFA1bzJoUThycDFTUDBsa1pB?oc=5",
+      "source": "sekbernews.id",
+      "publishedAt": "2026-07-29T23:50:00.000Z",
+      "sentiment": "negative",
+      "confidence": 0.9,
+      "rationale": "Acquisition bid rejected, negative outcome for investors",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
+      "companyId": "f9f48e7d2a38c906d7222f3aeb08db9f1dc1b62e87a4e6ecb22c70fb9b40972a",
+      "company": "Stripe",
+      "articleId": "a953b879855f109598b44a0a1beb989b030013b34f575cb768c7cf47798436ee",
+      "title": "Ex-Stripe Employee Darragh Buckley Buys Community Bank, Renames It Increase Bank",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPaWNaWW84WGtKZjJTblVqbDh3MUJGWmprSTBEekVhNEdTOV9HY242R21YRHMzZ0tWd0JXbFpoR245QXFER19fNS1ZMVhVNS02TjNJQXFJMHl6Tzd5dUhIZzFVb3JScjRPWkhiWVVBczNxZHdETlJqSjJ5cF9KZHA4NW1ZSjJCU3U5Y2R5dnRiamZsdw?oc=5",
+      "source": "briefs.co",
+      "publishedAt": "2026-07-29T23:47:09.000Z",
+      "sentiment": "negative",
+      "confidence": 0.8,
+      "rationale": "Employee buys bank, changes name",
       "model": "llama3.2:3b",
       "promptVersion": "classify.v1@5717fe76202f"
     },
@@ -2536,6 +3236,20 @@
       "sentiment": "negative",
       "confidence": 0.8,
       "rationale": "earnings approach, new low",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
+      "companyId": "f9f48e7d2a38c906d7222f3aeb08db9f1dc1b62e87a4e6ecb22c70fb9b40972a",
+      "company": "Stripe",
+      "articleId": "2a791af68907ba7bc82bd767d21bbc1167c1a3430a481bd2678695f26659c0ef",
+      "title": "Stripe’s OpenRouter Bid 70 Times Company’s Annual Revenue",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQSklUdHZwVjdESmh4cTdycWg1OVJJb2MxNDBGUFZTWHl6YWU4RnFsZUcta00wbWZnWGRxX1A1YlBEai1XVXdPQWpIYlhoVTQzWEx4anI2Ui1UaFZja1NxcGlQSTF3Mnl6NS0zMVFId2ZPMTJjUWdNVzNDeE1NcmtmeHdLNTNoTnVHaE1WdTc4V3Z4MzVReV9yQlhWZVBxdzAyZER3M0NR?oc=5",
+      "source": "pymnts.com",
+      "publishedAt": "2026-07-29T19:19:54.000Z",
+      "sentiment": "negative",
+      "confidence": 0.9,
+      "rationale": "bid is a negative outcome for the company's revenue growth",
       "model": "llama3.2:3b",
       "promptVersion": "classify.v1@5717fe76202f"
     },
@@ -3058,6 +3772,20 @@
       "promptVersion": "classify.v1@5717fe76202f"
     },
     {
+      "companyId": "b882213838066690ae67958b1c5694a19eff4c90fb9864888cebbf470407d5f9",
+      "company": "Morphisec",
+      "articleId": "ef6bffeccd65a860001b276b874a92037c8ddb388043a491c67f7363103b0c4d",
+      "title": "Morphisec Launches AI Usage Control: Governing Shadow and Sanctioned AI on the Endpoint",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQbHpJUFBUM2ZMWm9wNElRZU1EUTc0YXNkX04zUlR5ZllKSEdhbXdOY2VHS01oRzhQSFIxV2lJSFFuSU45dVZkeGhSY1g3dllDeXlfUVRVeEg2Z1haZS1ZSVJUQzlQdTVFa0dObmF4RlpoZDV1ak9VeTVDbUxfNDJFdElwVjFyX05mZURWb0ZOSE82Y0dISE1pSloyMzlSd1dYZjVjUlNaeGNqaGdRS3BXMFM1Z0Q2YU1qcjFGTklRc3B2a01iMHNR?oc=5",
+      "source": "einnews.com",
+      "publishedAt": "2026-07-29T13:00:00.000Z",
+      "sentiment": "positive",
+      "confidence": 0.9,
+      "rationale": "funding round, product launch, major partnership implied",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
       "companyId": "f50c3622b6952d92efd7428d6ec4400a2db7ade2a3dff92cf7b446f74a1ed3de",
       "company": "Wave",
       "articleId": "bd3a07f6b4f1329da397805b01491dcd9bdc63decc922524a4e5a293811036a3",
@@ -3072,16 +3800,16 @@
       "promptVersion": "classify.v1@5717fe76202f"
     },
     {
-      "companyId": "b882213838066690ae67958b1c5694a19eff4c90fb9864888cebbf470407d5f9",
-      "company": "Morphisec",
-      "articleId": "ef6bffeccd65a860001b276b874a92037c8ddb388043a491c67f7363103b0c4d",
-      "title": "Morphisec Launches AI Usage Control: Governing Shadow and Sanctioned AI on the Endpoint",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQbHpJUFBUM2ZMWm9wNElRZU1EUTc0YXNkX04zUlR5ZllKSEdhbXdOY2VHS01oRzhQSFIxV2lJSFFuSU45dVZkeGhSY1g3dllDeXlfUVRVeEg2Z1haZS1ZSVJUQzlQdTVFa0dObmF4RlpoZDV1ak9VeTVDbUxfNDJFdElwVjFyX05mZURWb0ZOSE82Y0dISE1pSloyMzlSd1dYZjVjUlNaeGNqaGdRS3BXMFM1Z0Q2YU1qcjFGTklRc3B2a01iMHNR?oc=5",
-      "source": "einnews.com",
-      "publishedAt": "2026-07-29T13:00:00.000Z",
-      "sentiment": "positive",
-      "confidence": 0.9,
-      "rationale": "funding round, product launch, major partnership implied",
+      "companyId": "f9f48e7d2a38c906d7222f3aeb08db9f1dc1b62e87a4e6ecb22c70fb9b40972a",
+      "company": "Stripe",
+      "articleId": "8774d8a073105a49ec0ad6b5fef6b977658077c15918d1e9dd732e3c83943eec",
+      "title": "OpenRouter Financials Suggest Steep Price For Possible Acquirer Stripe",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQcjVHSVRDOGVRbkIxWXZQMHRxSWE5dUJPdDYtRHVoUlF6dzlsX0lLTEYxNFAwcnRVc1FtSEgtdEl3TmRuaVZsVE1yQ3ptU0ZOVzhkTG11bmFteGpRRDlqRUs2LU9OLVNxR1p0aEtwWVVQZjRaa2VSUFktd1F2a3BBTVR5YnhHTXJxeHdmY1o4Qmd5Z2I5azF2d2ZNU1FhdEFIbWtYU0VUWjlhdw?oc=5",
+      "source": "theinformation.com",
+      "publishedAt": "2026-07-29T12:59:00.000Z",
+      "sentiment": "negative",
+      "confidence": 0.8,
+      "rationale": "Acquirer, steep price, possible acquisition",
       "model": "llama3.2:3b",
       "promptVersion": "classify.v1@5717fe76202f"
     },
@@ -3208,6 +3936,20 @@
       "sentiment": "positive",
       "confidence": 1,
       "rationale": "Full movie available, no negative context",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
+      "companyId": "01d6e78d4dc7f34ff1190ec006387b934166de8a24535ef96562cd52a09fde1e",
+      "company": "SpaceX",
+      "articleId": "d7a159178d0b6877b362799ec6e29da0af53c818d9b58cf0b10cb252f65fc33b",
+      "title": "SpaceX conducts a static fire test ahead of the next launch",
+      "url": "https://www.spacenews.com/spacex-static-fire-test",
+      "source": "spacenews.com",
+      "publishedAt": "2026-07-29T10:36:16.651Z",
+      "sentiment": "neutral",
+      "confidence": 0.8,
+      "rationale": "Company name, routine activity",
       "model": "llama3.2:3b",
       "promptVersion": "classify.v1@5717fe76202f"
     },
@@ -3464,6 +4206,20 @@
       "promptVersion": "classify.v1@5717fe76202f"
     },
     {
+      "companyId": "f9f48e7d2a38c906d7222f3aeb08db9f1dc1b62e87a4e6ecb22c70fb9b40972a",
+      "company": "Stripe",
+      "articleId": "bf2257711f24aac892855290fa4c8a2495ddf4be097b586e7c566464f7a6375b",
+      "title": "PayPal tops Q2 estimates and raises full-year forecast amid Stripe takeover bid",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQZDdvZ1hYbU8zb0pmU2kxYUtmRF9zSS02TmhtNDk3d1lpWEUxTWw2YUVlVGdZdUM0UHhQYm5NZFBabEhRRzRoUVFmMXk5RnZtMkEtZzVaT0k2ak9hcDJQOVFqZ0xmeFFvdVVLa1BJUWlCWUtrVksxaXBYZ05QeW42c3VZOFZ5MVdwS1Y3TUFaM2ZDRDBwa3BVX0t6VnEzSWV3dFpTdGpSMFQ0V3gwT2FzTWhR?oc=5",
+      "source": "siliconangle.com",
+      "publishedAt": "2026-07-28T22:29:54.000Z",
+      "sentiment": "negative",
+      "confidence": 0.8,
+      "rationale": "takeover bid, not a positive development for investors",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
       "companyId": "b67862ab5a5a4bb6db93801c7be821a4d7ee5114bc82f1da5596618aa157bd50",
       "company": "Skillz",
       "articleId": "3d8d1467ffce0aa447f0a40f91346b5da06be98ffc111d00c65f05ff0ceba5f6",
@@ -3604,6 +4360,20 @@
       "promptVersion": "classify.v1@5717fe76202f"
     },
     {
+      "companyId": "f9f48e7d2a38c906d7222f3aeb08db9f1dc1b62e87a4e6ecb22c70fb9b40972a",
+      "company": "Stripe",
+      "articleId": "f03602a18267aa74054635e63a99c253169738f5639eaaf61a706fb70972d486",
+      "title": "PayPal Just Told Stripe $53 Billion Is Not Enough",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE82M1dXQU82ZnlQaDBMbHZSU2J3TTNjcDRrSUhKX3JrZEVBdXN5VGZLVlVtbnVneVp6VXFzX2VuZGVrWlFpbkZGVFEyc3pmRUt5clhyTmo2cVUtUURKamJLZmNuVE43X1g0ZmwwelNXUWhJZEtfVFBLTg?oc=5",
+      "source": "businessmodelanalyst.com",
+      "publishedAt": "2026-07-28T19:01:05.000Z",
+      "sentiment": "negative",
+      "confidence": 0.9,
+      "rationale": "sector and context terms, missing a major competitor's funding round",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
       "companyId": "d5a14855b0964276b8e6085fdc6ad488c20411f2f0d6a6dffc61513422d7b50f",
       "company": "Innoviz",
       "articleId": "258b97a3f143cab6c9101f2ab46230ec8cbf16e02574f0455146a186f3981f82",
@@ -3656,6 +4426,20 @@
       "sentiment": "negative",
       "confidence": 1,
       "rationale": "litigation outcome, significant financial loss",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
+      "companyId": "f9f48e7d2a38c906d7222f3aeb08db9f1dc1b62e87a4e6ecb22c70fb9b40972a",
+      "company": "Stripe",
+      "articleId": "4ac8d9fa90b83b4c0024d2fb3f197e235ab51cb3228b03a7a6dff2f3677403de",
+      "title": "PayPal Q2 Beat and Raised Outlook Put Stripe’s $60.50 Bid Further Out of Reach",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPNUYzM1VyeW5WYklXY0hGSk5rZkt6dWV5S1drTWdTVlY1Z3Q2RXFCYlVPRWJRZG83OHRPUEd0SGQ4OXIyUXZiYUZqTE04bzUtMzFvanBUX0xGX1RsYmNDWU9GLXo4R2VOUUVhOUdPQjdqREdNN0FobVZjd2xON3Zrb0ZUMGYyQktlY0lLZXBKWmFxV3RpUTBmVGlwcUlBSXZlWGJSeDZJT3QweHhEOGpiUDNQeUljZWs1dUprZ2pzMnU?oc=5",
+      "source": "techtimes.com",
+      "publishedAt": "2026-07-28T17:51:11.000Z",
+      "sentiment": "negative",
+      "confidence": 0.8,
+      "rationale": "outlook raised, bid further out of reach",
       "model": "llama3.2:3b",
       "promptVersion": "classify.v1@5717fe76202f"
     },
@@ -3758,6 +4542,20 @@
       "promptVersion": "classify.v1@5717fe76202f"
     },
     {
+      "companyId": "f9f48e7d2a38c906d7222f3aeb08db9f1dc1b62e87a4e6ecb22c70fb9b40972a",
+      "company": "Stripe",
+      "articleId": "cde6d9e8d9e03d9bded0f017fb6b01d24da769be44113f9d2ef6736fb94fa5c2",
+      "title": "Stripe economist finds AI isn't driving the US productivity boom, and that matters for crypto infrastructure",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1NdzZZNDdaR0cza3V4aGE3Q05HelRVeXVOeWZaa1ZnNnNNdEpsWXNoRFJZNG9ST1FnVHM1ZGI2eDFRS0MxaXZkVXVDNEl4SWlQYUhCZ0JfWDd3czJGSzV2X2tJVm52clE4Y3dhOXRfLVNjTGotRWc?oc=5",
+      "source": "cryptobriefing.com",
+      "publishedAt": "2026-07-28T16:22:10.000Z",
+      "sentiment": "neutral",
+      "confidence": 0.8,
+      "rationale": "sector-specific topic, no direct mention of company performance or funding",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
       "companyId": "b67862ab5a5a4bb6db93801c7be821a4d7ee5114bc82f1da5596618aa157bd50",
       "company": "Skillz",
       "articleId": "1525c4fec0d0b290e3413c508915bea26dc0c0579f70bebb1134cdd528fdfea5",
@@ -3814,6 +4612,20 @@
       "promptVersion": "classify.v1@5717fe76202f"
     },
     {
+      "companyId": "f9f48e7d2a38c906d7222f3aeb08db9f1dc1b62e87a4e6ecb22c70fb9b40972a",
+      "company": "Stripe",
+      "articleId": "83c294b81dc67f63ca49e8f2eab59b93378f9b1c8d546eff4f4fa4dc14d0f3a3",
+      "title": "PayPal Does Not Oppose Stripe Offer But Demands Higher Price",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNYUdfR1VzNVpwdEtWbTZ5bXBVeFVSY254ajJPLXBxa3Axbms4dWtsOEJweWRDR1VtMjZxb0dNSGN3Y0pjT0dGZkV0NGc2OU5NZnBXYlZTeVpJUDRtVVZramgtb181bGFsV3d2X3lxbGlSbGJWZGtHT1VUNVREcWtmSlNoOHZ5MThRQzNxQ19MT01mWnlBNU9mUjJ5c25UV3FXSGctVDdR?oc=5",
+      "source": "zamin.uz",
+      "publishedAt": "2026-07-28T15:29:52.000Z",
+      "sentiment": "neutral",
+      "confidence": 0.8,
+      "rationale": "sector and context terms, no mention of competitors' bad news or industry downturn",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
       "companyId": "2349a6848d029aa2bea30b44d8a63b080aa98fb9b5db2cea5fd875fc9543d789",
       "company": "Harvey",
       "articleId": "333cd4f5a75fdb0aed75062d60ef25ac4bb86768a9f101bfc3e78626c32ca4e1",
@@ -3838,6 +4650,20 @@
       "sentiment": "negative",
       "confidence": 1,
       "rationale": "false advertising, lawsuit",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
+      "companyId": "f9f48e7d2a38c906d7222f3aeb08db9f1dc1b62e87a4e6ecb22c70fb9b40972a",
+      "company": "Stripe",
+      "articleId": "e45050f503c84fa3ef61a899149b810ca6d54347f920bc032f9a526bd556b34c",
+      "title": "Some Improvement for PayPal As a Stripe Takeover Offer Looms",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQX3QzdjViMHdvSW15d1NVNFQycmllazg4dFdFaHFZREdnbmFKRDVjNkVHOWk0bUdOeHd1dW5wMk5NOGFuZENTRFExejB3MkIxY0lER1JXU3NmLWk5dzdwSjg1Wi1aVkNfajlrTEdvNFktdVhSR2NmSUZGeDU4OFM3WlBqNEU3MW43UWxUOFlSMk1qakk5S2dZOEFEMjZkZw?oc=5",
+      "source": "digitaltransactions.net",
+      "publishedAt": "2026-07-28T14:56:22.000Z",
+      "sentiment": "negative",
+      "confidence": 0.8,
+      "rationale": "takeover offer, negative impact on PayPal",
       "model": "llama3.2:3b",
       "promptVersion": "classify.v1@5717fe76202f"
     },
@@ -4024,20 +4850,6 @@
       "promptVersion": "classify.v1@5717fe76202f"
     },
     {
-      "companyId": "f3922ff8fd2ff3e9374ec3f76dc57d59a85e20328399055e04c998d99864d47f",
-      "company": "Cyabra",
-      "articleId": "73a4f4116da975358441009c907191948bdf317b1c45bcb1a21b150edc1a59c9",
-      "title": "Online Activity Gets One of Four AI Verdicts From Cyabra",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQNVFhOTB2OHJhUEZPYWczWDkxUmZla0VRdzhDRnhkS3M4TkJYUjZRZmRVcHpTTExEZGRBdFpPSkdsMFhxMkVreU9Pb0QzTl9zSzN4bElDbXo3aVE1akN3MDZELWZuTUhudnZPYUVDMWU0Z3QybGUtTUhOZl9Ea04xTWxwdWNKaUF5ZTdtb0dCYVQwSjEzYjZ2VFJzMElsRDZtZkU2YXEyclRPdUJMbjU5UExGYV91OEIzZ3E1dVFkM24?oc=5",
-      "source": "stocktitan.net",
-      "publishedAt": "2026-07-28T13:00:00.000Z",
-      "sentiment": "neutral",
-      "confidence": 0.8,
-      "rationale": "sector context, no direct mention of company performance or outcome",
-      "model": "llama3.2:3b",
-      "promptVersion": "classify.v1@5717fe76202f"
-    },
-    {
       "companyId": "fec757d2baccc812123b03d53a417bbdb49acc5e9c50a536db3a8406061448ac",
       "company": "OpenEvidence",
       "articleId": "91ca890ed4ef8616b002a33c3f8b980f3dd5e6129793140f5652504823fe94d6",
@@ -4048,6 +4860,20 @@
       "sentiment": "positive",
       "confidence": 1,
       "rationale": "sector, company name match, positive outcome",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
+      "companyId": "f3922ff8fd2ff3e9374ec3f76dc57d59a85e20328399055e04c998d99864d47f",
+      "company": "Cyabra",
+      "articleId": "73a4f4116da975358441009c907191948bdf317b1c45bcb1a21b150edc1a59c9",
+      "title": "Online Activity Gets One of Four AI Verdicts From Cyabra",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQNVFhOTB2OHJhUEZPYWczWDkxUmZla0VRdzhDRnhkS3M4TkJYUjZRZmRVcHpTTExEZGRBdFpPSkdsMFhxMkVreU9Pb0QzTl9zSzN4bElDbXo3aVE1akN3MDZELWZuTUhudnZPYUVDMWU0Z3QybGUtTUhOZl9Ea04xTWxwdWNKaUF5ZTdtb0dCYVQwSjEzYjZ2VFJzMElsRDZtZkU2YXEyclRPdUJMbjU5UExGYV91OEIzZ3E1dVFkM24?oc=5",
+      "source": "stocktitan.net",
+      "publishedAt": "2026-07-28T13:00:00.000Z",
+      "sentiment": "neutral",
+      "confidence": 0.8,
+      "rationale": "sector context, no direct mention of company performance or outcome",
       "model": "llama3.2:3b",
       "promptVersion": "classify.v1@5717fe76202f"
     },
@@ -4244,6 +5070,20 @@
       "sentiment": "positive",
       "confidence": 0.9,
       "rationale": "sector, company name, and positive outcome",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
+      "companyId": "1a615ce7b2a5a2cb2e9dbdd7825e3e6d305f75edb69d97230d94ef45153c161d",
+      "company": "ZutaCore",
+      "articleId": "0b994675cea1e49e1fe96996df7cfbd32e1ca908f5e24cc6d4eab9e2e1265f68",
+      "title": "ZutaCore two-phase liquid cooling deployed in a 40MW AI campus",
+      "url": "https://www.datacenterdynamics.com/en/news/zutacore-two-phase-cooling-deployment",
+      "source": "datacenterdynamics.com",
+      "publishedAt": "2026-07-28T10:36:16.613Z",
+      "sentiment": "positive",
+      "confidence": 0.9,
+      "rationale": "AI campus deployment, positive context",
       "model": "llama3.2:3b",
       "promptVersion": "classify.v1@5717fe76202f"
     },
@@ -5032,6 +5872,20 @@
       "promptVersion": "classify.v1@5717fe76202f"
     },
     {
+      "companyId": "2a4901ee2848d8ba0c7eddb21a892ab8e3c92ba3ebeafb3d40c78f79ada5f57b",
+      "company": "Lemonade",
+      "articleId": "8848ed2024ea4c2716859117dcf853ab270a1c4dc28009ecc91aa6365a088ba8",
+      "title": "Lemonade beats expectations as in-force premium grows 29%",
+      "url": "https://www.reuters.com/business/lemonade-q2-results",
+      "source": "reuters.com",
+      "publishedAt": "2026-07-27T10:37:02.476Z",
+      "sentiment": "positive",
+      "confidence": 1,
+      "rationale": "growth, positive outcome",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
       "companyId": "fec757d2baccc812123b03d53a417bbdb49acc5e9c50a536db3a8406061448ac",
       "company": "OpenEvidence",
       "articleId": "6fd627d7bb0b006c44cfd90218a4ac869f3dc1efb36f6cc4ca85842bb678f857",
@@ -5102,20 +5956,6 @@
       "promptVersion": "classify.v1@5717fe76202f"
     },
     {
-      "companyId": "c3064d2480bb73cbfa103811bb6b072c2d39243f58e03805badfe894524c66d0",
-      "company": "Kando",
-      "articleId": "1b27a9a891554d567be9376ab5d7e7aebd40f7aaee46a09117fa4399e11f08cf",
-      "title": "AvA Yachts delivers first 26m Kando 85 explorer model V",
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPbTFMenY4TWlzTEtTSkpWaExQNVpiWDNHOVhadTgxaWFIdWVfWGU1Y2FaLW1aaTBzWlJvdGVFN0pEanc4X2tZVy1qNjhmR1FSdEFtakZBckp4OGRMbVNhNXFDRDBKOTh6M2plUmk4TmpFNWhqNEh1QXRGV09ENjA0X3NiMlE5clgzaGRHQVNfMmY4Z0liTWc?oc=5",
-      "source": "boatinternational.com",
-      "publishedAt": "2026-07-27T07:00:00.000Z",
-      "sentiment": "positive",
-      "confidence": 1,
-      "rationale": "Model launch, new product, positive outcome for the company",
-      "model": "llama3.2:3b",
-      "promptVersion": "classify.v1@5717fe76202f"
-    },
-    {
       "companyId": "9d5b9d1933714e02bc89690d60a662e6f2d9cc8c330a84b83d776ed2be48a817",
       "company": "Together AI",
       "articleId": "e1b6185f18b5cd662a5f506ed099cbe699b239bc79144cc4ad131594a1183404",
@@ -5140,6 +5980,20 @@
       "sentiment": "positive",
       "confidence": 0.9,
       "rationale": "Company name, sector, and positive language",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f"
+    },
+    {
+      "companyId": "c3064d2480bb73cbfa103811bb6b072c2d39243f58e03805badfe894524c66d0",
+      "company": "Kando",
+      "articleId": "1b27a9a891554d567be9376ab5d7e7aebd40f7aaee46a09117fa4399e11f08cf",
+      "title": "AvA Yachts delivers first 26m Kando 85 explorer model V",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPbTFMenY4TWlzTEtTSkpWaExQNVpiWDNHOVhadTgxaWFIdWVfWGU1Y2FaLW1aaTBzWlJvdGVFN0pEanc4X2tZVy1qNjhmR1FSdEFtakZBckp4OGRMbVNhNXFDRDBKOTh6M2plUmk4TmpFNWhqNEh1QXRGV09ENjA0X3NiMlE5clgzaGRHQVNfMmY4Z0liTWc?oc=5",
+      "source": "boatinternational.com",
+      "publishedAt": "2026-07-27T07:00:00.000Z",
+      "sentiment": "positive",
+      "confidence": 1,
+      "rationale": "Model launch, new product, positive outcome for the company",
       "model": "llama3.2:3b",
       "promptVersion": "classify.v1@5717fe76202f"
     },

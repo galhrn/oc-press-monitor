@@ -16,7 +16,7 @@ sitting under a feature list.
 | Measurement | Result |
 |---|---|
 | Companies monitored | 258 |
-| Production run | 123 min · 3,533 articles seen · **1,352 mentions published** |
+| Production run | 123 min · 3,533 articles seen · **1,413 mentions published** |
 | Companies with no coverage | **131 of 258** — an answer, not a gap |
 | Deterministic pre-filter | removes **42%** of candidates for zero inference cost |
 | Model selection | **0.52 combined macro-F1 — below the 0.80 bar this project set** |
@@ -85,10 +85,8 @@ correct answer rather than a gap.
 The sentiment bar on each row is the positive/neutral/negative split at a glance; the count
 beside it is mentions in the window.
 
-> Screenshot taken from a live session after several daily runs, so its totals (1,397 mentions)
-> are slightly ahead of the committed backfill export in `data/` (1,352). The `data/` files are
-> the artifact of one reproducible run; the dashboard shows whatever is currently in the
-> database.
+> Screenshot taken mid-session, so its totals (1,397 mentions) sit between two exports. The
+> committed `data/` files and the database now agree at 1,413.
 
 ![Company drill-down for IQM](docs/images/company-drawer.png)
 
@@ -296,7 +294,7 @@ confidently.
 
 ### 2. The production spot-check — `data/spot-check.json`
 
-24 mentions drawn deterministically from the 1,352 published, stratified to over-weight the
+24 mentions drawn deterministically from the published set, stratified to over-weight the
 critical/high ambiguity tier where errors concentrate. A uniform sample would be dominated by
 distinctive names like ZutaCore and would report a flattering number that said nothing about
 Shield or Astra.
@@ -307,7 +305,7 @@ Shield or Astra.
 | — critical/high tier | **10/14 (71%)** |
 | — medium/low tier | **10/10 (100%)** |
 | Sentiment accuracy | **15/20 (75%)** of correctly-identified mentions |
-| Weighted to the population (51% ambiguous-tier) | **~85% precision · ≈198 false positives of 1,352** |
+| Weighted to the population (51% ambiguous-tier) | **~85% precision · ≈212 false positives of 1,413** |
 
 This measures **precision only**. Articles the pipeline never found are invisible here;
 `data/coverage-baseline.json` is the closest thing to the other half.
@@ -369,7 +367,7 @@ correct.** Five for five.
 ```
 
 This is consistent with the bake-off, where the shipped model's neutral recall was 0.50 against
-positive recall of 0.70. **The published split of 696 positive / 352 neutral / 304 negative
+positive recall of 0.70. **The published split of 721 positive / 370 neutral / 322 negative
 overstates positive coverage**, and the dashboard should be read with that in mind.
 
 One rationale is worth quoting, because it shows what a 3B model does when a headline gives it
@@ -538,12 +536,15 @@ trace.
 
 ## The `data/` folder
 
-Committed output of a real run (2026-08-02 · 258 companies · 123 minutes).
+Committed output of the production backfill (2026-08-02 · 258 companies · 123 minutes) plus the
+daily runs that followed. Every file is exported from the same database, so `npm run serve` and
+these files always agree — a fresh-clone rehearsal caught them drifting apart once, when the
+JSON was written at the end of the backfill and the database kept accumulating.
 
 | File | Contents |
 |---|---|
 | `companies.json` | The enriched registry — 258 records, 57 human-approved queries |
-| `mentions.json` | 1,352 published mentions with sentiment, rationale and source URL |
+| `mentions.json` | 1,413 published mentions with sentiment, rationale and source URL |
 | `company_status.json` | **All 258 companies**, including the 131 with no coverage |
 | `quarterly_summary.json` | Aggregates powering the dashboard |
 | `alerts.log.json` | Real alerts from the daily job |

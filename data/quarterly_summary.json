@@ -1,26 +1,57 @@
 {
-  "generatedAt": "2026-08-02T21:15:54.991Z",
+  "generatedAt": "2026-08-03T11:00:42.716Z",
   "windowDays": 90,
   "totals": {
     "companies": 258,
-    "mentions": 1352,
-    "positive": 696,
-    "negative": 304,
-    "neutral": 352
+    "mentions": 1413,
+    "positive": 721,
+    "negative": 322,
+    "neutral": 370
   },
   "companiesByStatus": {
     "NO_COVERAGE": 131,
-    "STALE": 32,
-    "FRESH": 61,
-    "RECENT": 34
+    "STALE": 29,
+    "FRESH": 62,
+    "RECENT": 34,
+    "DORMANT": 2
   },
   "mentionsByMonth": {
-    "2026-08": 15,
-    "2026-07": 804,
+    "2026-08": 25,
+    "2026-07": 855,
     "2026-06": 386,
     "2026-05": 147
   },
   "topCompanies": [
+    {
+      "name": "Cerebras",
+      "mentions": 48,
+      "status": "FRESH"
+    },
+    {
+      "name": "Stripe",
+      "mentions": 48,
+      "status": "FRESH"
+    },
+    {
+      "name": "Harvey",
+      "mentions": 32,
+      "status": "FRESH"
+    },
+    {
+      "name": "SpaceX",
+      "mentions": 28,
+      "status": "FRESH"
+    },
+    {
+      "name": "Hailo",
+      "mentions": 26,
+      "status": "FRESH"
+    },
+    {
+      "name": "Lemonade",
+      "mentions": 26,
+      "status": "FRESH"
+    },
     {
       "name": "Alpha Tau",
       "mentions": 25,
@@ -42,11 +73,6 @@
       "status": "FRESH"
     },
     {
-      "name": "Cerebras",
-      "mentions": 25,
-      "status": "FRESH"
-    },
-    {
       "name": "Classiq",
       "mentions": 25,
       "status": "RECENT"
@@ -58,16 +84,6 @@
     },
     {
       "name": "Freightos",
-      "mentions": 25,
-      "status": "FRESH"
-    },
-    {
-      "name": "Hailo",
-      "mentions": 25,
-      "status": "FRESH"
-    },
-    {
-      "name": "Harvey",
       "mentions": 25,
       "status": "FRESH"
     },
@@ -87,22 +103,7 @@
       "status": "FRESH"
     },
     {
-      "name": "Lemonade",
-      "mentions": 25,
-      "status": "FRESH"
-    },
-    {
       "name": "SSI (Safe Superintelligence)",
-      "mentions": 25,
-      "status": "FRESH"
-    },
-    {
-      "name": "SpaceX",
-      "mentions": 25,
-      "status": "FRESH"
-    },
-    {
-      "name": "Stripe",
       "mentions": 25,
       "status": "FRESH"
     },
