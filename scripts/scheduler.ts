@@ -30,7 +30,20 @@ const here = (p: string): string => fileURLToPath(new URL(p, import.meta.url));
 const companies = JSON.parse(
   readFileSync(here('../data/companies.json'), 'utf8'),
 ) as PipelineCompany[];
-const db = initDatabase(cfg.DB_PATH);
+/**
+ * Fixture runs must never write into the production database.
+ *
+ * The fixture corpus is hand-authored: realistic headlines invented for testing. A fixture run
+ * against `data/press.sqlite` silently inserts fabricated articles into a committed
+ * deliverable, where the dashboard cannot distinguish them from real coverage. That happened
+ * during P7 and was caught by the fresh-clone rehearsal rather than by a test, so the guard
+ * lives in code. An explicit `DB_PATH` still wins; this only changes the default.
+ */
+const usingFixtures = cfg.NEWS_PROVIDERS.includes('fixture');
+const dbPath =
+  usingFixtures && process.env['DB_PATH'] === undefined ? './data/dev.sqlite' : cfg.DB_PATH;
+
+const db = initDatabase(dbPath);
 const repositories = createRepositories(db);
 
 const providers: NewsProvider[] = [];

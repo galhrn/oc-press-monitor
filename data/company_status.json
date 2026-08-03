@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-03T11:00:42.716Z",
+  "generatedAt": "2026-08-03T11:04:19.679Z",
   "windowDays": 90,
   "note": "Every company in the registry appears here, including those with no coverage (R5).",
   "companies": [
@@ -1406,9 +1406,9 @@
       "statusText": "last mentioned 3 days ago",
       "lastMentionedAt": "2026-07-31T00:49:01.000Z",
       "daysSinceLastMention": 3,
-      "mentionsInWindow": 26,
+      "mentionsInWindow": 25,
       "sentiment": {
-        "positive": 14,
+        "positive": 13,
         "negative": 10,
         "neutral": 2
       }
@@ -1856,9 +1856,9 @@
       "statusText": "last mentioned 2 days ago",
       "lastMentionedAt": "2026-07-31T17:45:01.000Z",
       "daysSinceLastMention": 2,
-      "mentionsInWindow": 26,
+      "mentionsInWindow": 25,
       "sentiment": {
-        "positive": 12,
+        "positive": 11,
         "negative": 6,
         "neutral": 8
       }
@@ -3056,11 +3056,11 @@
       "statusText": "last mentioned yesterday",
       "lastMentionedAt": "2026-08-01T11:28:00.000Z",
       "daysSinceLastMention": 1,
-      "mentionsInWindow": 28,
+      "mentionsInWindow": 25,
       "sentiment": {
-        "positive": 12,
+        "positive": 10,
         "negative": 13,
-        "neutral": 3
+        "neutral": 2
       }
     },
     {
@@ -3787,13 +3787,13 @@
       "companyId": "1a615ce7b2a5a2cb2e9dbdd7825e3e6d305f75edb69d97230d94ef45153c161d",
       "name": "ZutaCore",
       "slug": "zutacore",
-      "status": "FRESH",
-      "statusText": "last mentioned 6 days ago",
-      "lastMentionedAt": "2026-07-28T10:36:16.613Z",
-      "daysSinceLastMention": 6,
-      "mentionsInWindow": 13,
+      "status": "STALE",
+      "statusText": "last mentioned 57 days ago",
+      "lastMentionedAt": "2026-06-07T07:00:00.000Z",
+      "daysSinceLastMention": 57,
+      "mentionsInWindow": 12,
       "sentiment": {
-        "positive": 13,
+        "positive": 12,
         "negative": 0,
         "neutral": 0
       }

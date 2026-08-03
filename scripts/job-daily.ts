@@ -53,12 +53,27 @@ const registry = JSON.parse(
 const limit = num('--limit');
 const companies = limit === undefined ? registry : registry.slice(0, limit);
 
-const db = initDatabase(cfg.DB_PATH);
-const repositories = createRepositories(db);
-
 const providerNames = (at('--providers') ?? cfg.NEWS_PROVIDERS.join(','))
   .split(',')
   .map((s) => s.trim());
+
+/**
+ * Fixture runs must never write into the production database.
+ *
+ * The fixture corpus is hand-authored: realistic headlines invented for testing. A
+ * `--providers fixture` run against `data/press.sqlite` silently inserts fabricated articles
+ * into a committed deliverable, where they are indistinguishable from real coverage in the
+ * dashboard. That happened during P7 and was caught by the fresh-clone rehearsal, not by a
+ * test - so the guard lives here rather than in a comment.
+ *
+ * An explicit `DB_PATH` still wins: this only changes the default.
+ */
+const usingFixtures = providerNames.includes('fixture');
+const dbPath =
+  usingFixtures && process.env['DB_PATH'] === undefined ? './data/dev.sqlite' : cfg.DB_PATH;
+
+const db = initDatabase(dbPath);
+const repositories = createRepositories(db);
 const providers: NewsProvider[] = [];
 for (const name of providerNames) {
   if (name === 'fixture') providers.push(FixtureProvider.fromFile(DEFAULT_CORPUS_PATH));

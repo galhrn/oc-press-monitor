@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-03T11:00:42.716Z",
+  "generatedAt": "2026-08-03T11:04:19.679Z",
   "windowDays": 90,
   "model": "llama3.2:3b",
   "promptVersion": "classify.v1@5717fe76202f",
-  "count": 1413,
+  "count": 1407,
   "mentions": [
     {
       "companyId": "51ea09628499962f920c6da1c91ff6921032c20c589caa91016ce4bfac5f02d3",
@@ -184,20 +184,6 @@
       "sentiment": "positive",
       "confidence": 0.9,
       "rationale": "growth and roadmap mentioned",
-      "model": "llama3.2:3b",
-      "promptVersion": "classify.v1@5717fe76202f"
-    },
-    {
-      "companyId": "01d6e78d4dc7f34ff1190ec006387b934166de8a24535ef96562cd52a09fde1e",
-      "company": "SpaceX",
-      "articleId": "bc105023d209983c4a47c366bc50132806351376b7608304d97398f6a2725698",
-      "title": "SpaceX completes another Starship test flight",
-      "url": "https://www.spacenews.com/spacex-starship-flight-report",
-      "source": "spacenews.com",
-      "publishedAt": "2026-08-01T10:36:16.651Z",
-      "sentiment": "positive",
-      "confidence": 1,
-      "rationale": "test flight implies success and progress towards a goal",
       "model": "llama3.2:3b",
       "promptVersion": "classify.v1@5717fe76202f"
     },
@@ -1276,20 +1262,6 @@
       "sentiment": "negative",
       "confidence": 0.8,
       "rationale": "sector and company name match, negative words",
-      "model": "llama3.2:3b",
-      "promptVersion": "classify.v1@5717fe76202f"
-    },
-    {
-      "companyId": "01d6e78d4dc7f34ff1190ec006387b934166de8a24535ef96562cd52a09fde1e",
-      "company": "SpaceX",
-      "articleId": "f97f5e996d0a5b7ffaa8d761e7609de7c4862cd798a20353b5e122db2f579ecf",
-      "title": "SpaceX sets a new quarterly launch cadence record",
-      "url": "https://www.spacenews.com/spacex-launch-cadence-record",
-      "source": "spacenews.com",
-      "publishedAt": "2026-07-31T10:36:16.651Z",
-      "sentiment": "positive",
-      "confidence": 1,
-      "rationale": "Launch cadence, positive outcome",
       "model": "llama3.2:3b",
       "promptVersion": "classify.v1@5717fe76202f"
     },
@@ -2508,20 +2480,6 @@
       "sentiment": "positive",
       "confidence": 0.9,
       "rationale": "Company name matches, sector is decision intelligence",
-      "model": "llama3.2:3b",
-      "promptVersion": "classify.v1@5717fe76202f"
-    },
-    {
-      "companyId": "214d4dbc32023232877791593091774db87334789088352e5f33319e7e2f39b1",
-      "company": "Hailo",
-      "articleId": "9208445674a6cbaa796a36a978090aa73c170a27f9b890c04e948fbee8b563ca",
-      "title": "Hailo raises $180M Series D to scale edge AI processors",
-      "url": "https://techcrunch.com/2026/07/28/hailo-series-d",
-      "source": "techcrunch.com",
-      "publishedAt": "2026-07-30T10:37:16.852Z",
-      "sentiment": "positive",
-      "confidence": 1,
-      "rationale": "raises funding, scaling AI processors",
       "model": "llama3.2:3b",
       "promptVersion": "classify.v1@5717fe76202f"
     },
@@ -3940,20 +3898,6 @@
       "promptVersion": "classify.v1@5717fe76202f"
     },
     {
-      "companyId": "01d6e78d4dc7f34ff1190ec006387b934166de8a24535ef96562cd52a09fde1e",
-      "company": "SpaceX",
-      "articleId": "d7a159178d0b6877b362799ec6e29da0af53c818d9b58cf0b10cb252f65fc33b",
-      "title": "SpaceX conducts a static fire test ahead of the next launch",
-      "url": "https://www.spacenews.com/spacex-static-fire-test",
-      "source": "spacenews.com",
-      "publishedAt": "2026-07-29T10:36:16.651Z",
-      "sentiment": "neutral",
-      "confidence": 0.8,
-      "rationale": "Company name, routine activity",
-      "model": "llama3.2:3b",
-      "promptVersion": "classify.v1@5717fe76202f"
-    },
-    {
       "companyId": "214d4dbc32023232877791593091774db87334789088352e5f33319e7e2f39b1",
       "company": "Hailo",
       "articleId": "30eb38cfdb9bd81614b751278780e1601a9c143306d98b8d924e98dead2f3179",
@@ -5074,20 +5018,6 @@
       "promptVersion": "classify.v1@5717fe76202f"
     },
     {
-      "companyId": "1a615ce7b2a5a2cb2e9dbdd7825e3e6d305f75edb69d97230d94ef45153c161d",
-      "company": "ZutaCore",
-      "articleId": "0b994675cea1e49e1fe96996df7cfbd32e1ca908f5e24cc6d4eab9e2e1265f68",
-      "title": "ZutaCore two-phase liquid cooling deployed in a 40MW AI campus",
-      "url": "https://www.datacenterdynamics.com/en/news/zutacore-two-phase-cooling-deployment",
-      "source": "datacenterdynamics.com",
-      "publishedAt": "2026-07-28T10:36:16.613Z",
-      "sentiment": "positive",
-      "confidence": 0.9,
-      "rationale": "AI campus deployment, positive context",
-      "model": "llama3.2:3b",
-      "promptVersion": "classify.v1@5717fe76202f"
-    },
-    {
       "companyId": "01d6e78d4dc7f34ff1190ec006387b934166de8a24535ef96562cd52a09fde1e",
       "company": "SpaceX",
       "articleId": "e6fd1bd26952a14c65a75fe0a0a1e2955273ee33fb547bc1ae1d511e947bd1a5",
@@ -5868,20 +5798,6 @@
       "sentiment": "neutral",
       "confidence": 0.8,
       "rationale": "sector, company name match, but no specific outcome mentioned",
-      "model": "llama3.2:3b",
-      "promptVersion": "classify.v1@5717fe76202f"
-    },
-    {
-      "companyId": "2a4901ee2848d8ba0c7eddb21a892ab8e3c92ba3ebeafb3d40c78f79ada5f57b",
-      "company": "Lemonade",
-      "articleId": "8848ed2024ea4c2716859117dcf853ab270a1c4dc28009ecc91aa6365a088ba8",
-      "title": "Lemonade beats expectations as in-force premium grows 29%",
-      "url": "https://www.reuters.com/business/lemonade-q2-results",
-      "source": "reuters.com",
-      "publishedAt": "2026-07-27T10:37:02.476Z",
-      "sentiment": "positive",
-      "confidence": 1,
-      "rationale": "growth, positive outcome",
       "model": "llama3.2:3b",
       "promptVersion": "classify.v1@5717fe76202f"
     },

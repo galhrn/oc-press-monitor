@@ -16,7 +16,7 @@ sitting under a feature list.
 | Measurement | Result |
 |---|---|
 | Companies monitored | 258 |
-| Production run | 123 min · 3,533 articles seen · **1,413 mentions published** |
+| Production run | 123 min · 3,533 articles seen · **1,407 mentions published** |
 | Companies with no coverage | **131 of 258** — an answer, not a gap |
 | Deterministic pre-filter | removes **42%** of candidates for zero inference cost |
 | Model selection | **0.52 combined macro-F1 — below the 0.80 bar this project set** |
@@ -86,7 +86,7 @@ The sentiment bar on each row is the positive/neutral/negative split at a glance
 beside it is mentions in the window.
 
 > Screenshot taken mid-session, so its totals (1,397 mentions) sit between two exports. The
-> committed `data/` files and the database now agree at 1,413.
+> committed `data/` files and the database now agree at 1,407.
 
 ![Company drill-down for IQM](docs/images/company-drawer.png)
 
@@ -305,7 +305,7 @@ Shield or Astra.
 | — critical/high tier | **10/14 (71%)** |
 | — medium/low tier | **10/10 (100%)** |
 | Sentiment accuracy | **15/20 (75%)** of correctly-identified mentions |
-| Weighted to the population (51% ambiguous-tier) | **~85% precision · ≈212 false positives of 1,413** |
+| Weighted to the population (51% ambiguous-tier) | **~85% precision · ≈211 false positives of 1,407** |
 
 This measures **precision only**. Articles the pipeline never found are invisible here;
 `data/coverage-baseline.json` is the closest thing to the other half.
@@ -367,7 +367,7 @@ correct.** Five for five.
 ```
 
 This is consistent with the bake-off, where the shipped model's neutral recall was 0.50 against
-positive recall of 0.70. **The published split of 721 positive / 370 neutral / 322 negative
+positive recall of 0.70. **The published split of 716 positive / 369 neutral / 322 negative
 overstates positive coverage**, and the dashboard should be read with that in mind.
 
 One rationale is worth quoting, because it shows what a 3B model does when a headline gives it
@@ -544,7 +544,7 @@ JSON was written at the end of the backfill and the database kept accumulating.
 | File | Contents |
 |---|---|
 | `companies.json` | The enriched registry — 258 records, 57 human-approved queries |
-| `mentions.json` | 1,413 published mentions with sentiment, rationale and source URL |
+| `mentions.json` | 1,407 published mentions with sentiment, rationale and source URL |
 | `company_status.json` | **All 258 companies**, including the 131 with no coverage |
 | `quarterly_summary.json` | Aggregates powering the dashboard |
 | `alerts.log.json` | Real alerts from the daily job |

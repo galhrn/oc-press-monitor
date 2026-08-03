@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-08-03T11:00:42.716Z",
+  "generatedAt": "2026-08-03T11:04:19.679Z",
   "windowDays": 90,
   "totals": {
     "companies": 258,
-    "mentions": 1413,
-    "positive": 721,
+    "mentions": 1407,
+    "positive": 716,
     "negative": 322,
-    "neutral": 370
+    "neutral": 369
   },
   "companiesByStatus": {
     "NO_COVERAGE": 131,
-    "STALE": 29,
-    "FRESH": 62,
+    "STALE": 30,
+    "FRESH": 61,
     "RECENT": 34,
     "DORMANT": 2
   },
   "mentionsByMonth": {
-    "2026-08": 25,
-    "2026-07": 855,
+    "2026-08": 24,
+    "2026-07": 850,
     "2026-06": 386,
     "2026-05": 147
   },
@@ -35,21 +35,6 @@
     {
       "name": "Harvey",
       "mentions": 32,
-      "status": "FRESH"
-    },
-    {
-      "name": "SpaceX",
-      "mentions": 28,
-      "status": "FRESH"
-    },
-    {
-      "name": "Hailo",
-      "mentions": 26,
-      "status": "FRESH"
-    },
-    {
-      "name": "Lemonade",
-      "mentions": 26,
       "status": "FRESH"
     },
     {
@@ -88,6 +73,11 @@
       "status": "FRESH"
     },
     {
+      "name": "Hailo",
+      "mentions": 25,
+      "status": "FRESH"
+    },
+    {
       "name": "IQM",
       "mentions": 25,
       "status": "FRESH"
@@ -103,7 +93,17 @@
       "status": "FRESH"
     },
     {
+      "name": "Lemonade",
+      "mentions": 25,
+      "status": "FRESH"
+    },
+    {
       "name": "SSI (Safe Superintelligence)",
+      "mentions": 25,
+      "status": "FRESH"
+    },
+    {
+      "name": "SpaceX",
       "mentions": 25,
       "status": "FRESH"
     },

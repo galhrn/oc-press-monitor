@@ -30,7 +30,9 @@ if (header && changelog && header[1] !== changelog[1]) {
   );
 }
 
-const proposed = [...text.matchAll(/\|\s*(AD-\d+)\s*\|[^|]*\|\s*\**PROPOSED\**\s*\|/g)].map((m) => m[1]);
+const proposed = [...text.matchAll(/\|\s*(AD-\d+)\s*\|[^|]*\|\s*\**PROPOSED\**\s*\|/g)].map(
+  (m) => m[1],
+);
 if (proposed.length > 0) {
   problems.push(`decisions still PROPOSED after freeze: ${proposed.join(', ')}`);
 }
