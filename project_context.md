@@ -2,9 +2,10 @@
 
 > **Project:** OurCrowd Press Mentions Monitoring & Dashboard
 > **Owner:** Gal Aharon
-> **Status:** `BUILDING` — M0–M3 reached. Phase 3 complete; next is M4 (LLM classification + eval).
+> **Status:** `SUBMISSION READY` — M0–M8 reached. All 27 requirements discharged; the model
+> missed its own accuracy bar and that is documented rather than hidden.
 > **Last updated:** 2026-08-01
-> **Document version:** 0.10.6
+> **Document version:** 0.11.0
 >
 > **Target hardware (dev + demo machine):** Windows 11 · Intel Core Ultra (Lunar Lake) ·
 > Intel Arc 140V iGPU, 16 GB addressable VRAM (shared) · 32 GB system RAM
@@ -682,7 +683,7 @@ error handling · the "no coverage" state.
 | P8.4 | Write the README from §2 — every `R#` row becomes a section | R20–R23 | 2 h | **DONE** |
 | P8.5 | Finalise `ai_prompts.md`; write the ADRs in `docs/adr/` | R25 | 0.5 h | **DONE** — 6 long-form ADRs + index; prompt log closed with Entry 008 |
 | P8.6 | **Fresh-clone rehearsal** — a different directory, follow the README literally, fix every gap | R22 | 1 h | **DONE** — cloned from GitHub, install→verify→collect→build→serve all clean; found and fixed one artifact inconsistency |
-| P8.7 | Demo GIF/screenshots; final repo hygiene pass; push | R20 | 0.5 h | TODO |
+| P8.7 | Screenshots; final repo hygiene pass; push | R20 | 0.5 h | **DONE** — no TODO/FIXME in shipped source, no secrets, `.env` uncommitted, tree clean |
 
 > **Exit criteria:** every row in §2 reads `DONE` or `CUT` with a documented reason ·
 > the fresh-clone rehearsal succeeded from the README **alone** · `data/` is populated
@@ -733,7 +734,7 @@ Budget ≈30 focused hours; descope rungs 1–3 already cut (§8.3).
 | M5 Pipeline end-to-end | P5 | ✅ **DONE** — backfill + daily job, both idempotent and asserted |
 | M6 Dashboard complete | P6 | ✅ **DONE** — built, verified against live data, screenshots in the README |
 | M7 Daily job live | P7 | ✅ **DONE** — scheduler fires, lock holds across processes, alerts committed |
-| M8 Submission ready | P8 | ⚪ TODO |
+| M8 Submission ready | P8 | ✅ **DONE** — third fresh clone passes every documented command and every artifact cross-check |
 
 ---
 
@@ -782,6 +783,7 @@ Budget ≈30 focused hours; descope rungs 1–3 already cut (§8.3).
 
 | Date | Version | Change |
 |---|---|---|
+| 2026-08-03 | 0.11.0 | **M8 REACHED — submission ready.** The third fresh clone of the published repository passes every documented command in order — `npm install` (no native compilation), `npm run verify` (**311 tests**), `npm run collect --providers fixture`, `npm run web:build`, `npm run serve` — and every artifact cross-check: `mentions.json` and `press.sqlite` agree at 1,407, zero fabricated rows, and all three README figures match the data they describe. One apparent discrepancy was **checked rather than explained away**: the API reports 1,391 mentions against the export's 1,407, which is exactly the count within a rolling 90-day window as of today — the export is a snapshot, the API is live, and both are correct. **The rehearsal earned its hour three times over**, finding one stale-export mismatch, six fabricated fixture articles in a committed deliverable, and a WAL that had been silently withholding 4.8 MB of writes from every database commit. None of the three would have failed a test, and all three were invisible on the machine that produced them. P8.7 hygiene: no `TODO`/`FIXME` in shipped source, no secrets, `.env` uncommitted, working tree clean. |
 | 2026-08-03 | 0.10.6 | **The rehearsal's third and deepest finding: the committed database was systematically stale.** After removing the fixture contamination and re-cloning, the fresh copy *still* showed 6 fabricated articles and a different mention count — while locally `git status` was clean and `git hash-object` matched HEAD **exactly**. The cause: SQLite runs in WAL mode, `*.sqlite-wal` is gitignored as a transient sidecar, and **4.8 MB of writes were sitting in the WAL rather than in the committed `.sqlite`**. Every commit of the database since the production run had therefore been shipping an older state than the machine that produced it, invisibly and with no signal from git. **AD-34**: every writing process now calls `PRAGMA wal_checkpoint(TRUNCATE)` before closing, so what ships is what ran. Verified — the WAL is 0 bytes and git finally reports the database as modified. This is the one class of defect that no test, no lint rule and no amount of local checking could have surfaced: it required cloning the published repository and comparing it against the machine that published it. |
 | 2026-08-03 | 0.10.5 | **The rehearsal found a second, worse defect: fabricated data in a committed deliverable.** Chasing a 3-item count mismatch revealed **6 hand-authored fixture articles inside `data/press.sqlite`** — ZutaCore, SpaceX, Hailo and Lemonade headlines invented for the offline corpus — inserted by P7's scheduler test and an earlier smoke test, both run with `--providers fixture` against the production `DB_PATH`. In the dashboard they were indistinguishable from real coverage, and they had been published to GitHub. Removed (cascade also removed their 6 mentions), and **AD-33** now prevents recurrence: when `fixture` is among the providers and `DB_PATH` is not set explicitly, the writing CLIs default to `./data/dev.sqlite`. Proven rather than assumed — a fixture run afterwards left `press.sqlite` untouched at 3,213 articles. Everything re-exported and now agreeing at **1,407 mentions · 131 no-coverage · 716/369/322**, with the README verified against the artifacts by script. Worth recording plainly: nothing was broken, no test failed, and the numbers were internally consistent on the development machine. Only cloning the published repository and comparing two artifacts against each other surfaced it. |
 | 2026-08-03 | 0.10.4 | **P8.6 fresh-clone rehearsal passed, and found the defect it exists to find.** Cloned from GitHub into a clean directory and followed the README literally: `npm install` (no native compilation), `npm run verify` (**311 tests green on first try**), `npm run collect -- --providers fixture` (offline pipeline, real output), `npm run web:build`, `npm run serve` (SPA served, API returning committed data, drill-down working). **The defect:** the committed `press.sqlite` served **1,394** mentions while `data/mentions.json` said **1,352** — the JSON exports were written at the end of the backfill and the database kept accumulating through the daily runs, so a reviewer running `npm run serve` would have seen different numbers from the committed files and the README. Every artifact is now re-exported from the same database and agrees at **1,413 mentions · 131 no-coverage · 721/370/322**, and the README figures were updated to match, verified by a scripted cross-check rather than by eye. This is exactly the class of error only a fresh clone surfaces: nothing was broken, everything was internally consistent on the development machine, and the published numbers still disagreed with the published data. |
