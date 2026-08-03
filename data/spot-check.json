@@ -1,0 +1,517 @@
+{
+  "drawnFrom": 1352,
+  "method": "Deterministic hash order, stratified by ambiguity tier, max 2 per company. Measures precision only - articles the pipeline never found are invisible here.",
+  "targets": {
+    "ambiguous": 14,
+    "distinctive": 10
+  },
+  "items": [
+    {
+      "companyId": "a4718c1526f6accda4011db8e7b4ceace570230667f97c53c850047246562b23",
+      "company": "Databricks",
+      "articleId": "0318f035d02cda1e2bc458c20202363ad5ae975adc6eea86079c6616aa8b4fb3",
+      "title": "From experiment to insight: how Dotmatics Luma and Databricks make AI-ready science a reality",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNaElmOThWbkZPdEN1WXc2UUUxNmlHajFkUnBOQVB2Q2RPWkhKMHo1QjFaRUlLUHQ1U1pjcGMwcVpyNnQ0UllfMXROTHJ4N3RKZGVnM2dFTktqeDBoVXV0YkY0OS1OSmtpVzJJNjBQdHdaR244bktGMkZfT0NZNmFud0ZGNDZWNGZISWItYjU5YWhCU1YwcndjeG5wbEtlOHZlUWFaamJSMkp3bVZvNmZIUVREZXA?oc=5",
+      "source": "databricks.com",
+      "publishedAt": "2026-07-16T07:00:00.000Z",
+      "sentiment": "neutral",
+      "confidence": 0.8,
+      "rationale": "Company name, but no direct mention of product or financials.",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f",
+      "id": "00bf332dfa43",
+      "ambiguity": "high",
+      "verdict": {
+        "relevantActually": true,
+        "sentimentActually": "neutral",
+        "note": "Databricks' own content marketing. Relevant; no result attached, so neutral is right."
+      }
+    },
+    {
+      "companyId": "2a4901ee2848d8ba0c7eddb21a892ab8e3c92ba3ebeafb3d40c78f79ada5f57b",
+      "company": "Lemonade",
+      "articleId": "6ecc8872d7c694bd3146108927c46dfb85c9b75542bc8832c610f2047414239a",
+      "title": "Lemonade (NYSE:LMND) Beats Q2 CY2026 Sales Expectations But Stock Drops 15.1%",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPRHVITml6M1JLRHBtYXVwMUdEYlhZQzdxVURiLXQ0WXhkWjc1OW5JcmVDRHN0OENmLUN4Q2VvcGlPdVZjVTZQUzQ1NkF5TjNNV0hOZDdOcmlEa3oxYXRsNk5IY2RMU1AwVWxJeFNjNU9oMUZfeDlBU1hoajNrcVdnSzNqQXJrdUIwaVVnUXByTllaOUhLSjVz?oc=5",
+      "source": "finance.yahoo.com",
+      "publishedAt": "2026-07-29T12:33:46.000Z",
+      "sentiment": "negative",
+      "confidence": 0.9,
+      "rationale": "beats expectations but stock drops",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f",
+      "id": "010cf2b35b8c",
+      "ambiguity": "critical",
+      "verdict": {
+        "relevantActually": true,
+        "sentimentActually": "negative",
+        "note": "Correct, and matches the gold set's precedent: the investor outcome is the 15% fall."
+      }
+    },
+    {
+      "companyId": "a4718c1526f6accda4011db8e7b4ceace570230667f97c53c850047246562b23",
+      "company": "Databricks",
+      "articleId": "2721456ca4b4806b3239408b4c084a2b599170bf34ea3c88c2b7bf1122e1a1b3",
+      "title": "Clearlake Capital Announces Partnership with Databricks to Advance AI-Enabled Investing and Portfolio Value Creation",
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxOa3NoV2VxbThEX3ZaTkRnY2NRU3RMRWZIVGU2LW5CRnRsQWkxNzNwM2tlMndFSFIyWHlwV0dscTJ3S3FfY0cxT1c0bkRTaGJtRS1ncjRNLUktMXZMTS0zTF8zLW1JcjM3Z2xJSEVULW1mZE9kRENpMTNWQlRyUWFGckVVQm0tNGp6ek1Cc2ZrNE9sd2N0ZlY3VXFLeEpkSjA4blp0akVTX0lNQjdCVXUzUkRWWjZvTTFzcjV2LWtuVUZ5V3Z2dm5xYTd2cXpmRm1tWGowRnNoa3dRZE5z?oc=5",
+      "source": "clearlake.com",
+      "publishedAt": "2026-07-14T07:00:00.000Z",
+      "sentiment": "positive",
+      "confidence": 1,
+      "rationale": "Partnership, AI-enabled investing, portfolio value creation",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f",
+      "id": "018d6eb813a9",
+      "ambiguity": "high",
+      "verdict": {
+        "relevantActually": true,
+        "sentimentActually": "positive",
+        "note": "Genuine partnership announcement."
+      }
+    },
+    {
+      "companyId": "8872094304f140434f7999f76c7d39f5b73506c52c6550000bc597eeef5790e3",
+      "company": "IQM",
+      "articleId": "802cbe076c64db86b336f6eeb542853f99ec37eab8437fd018c057a894e758e4",
+      "title": "IQM Joins Nasdaq as Public Quantum Computing Company",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE81WDZvU0FjdzlOT2Jwam1JVDNVcUZFaEhLZWlISWhBM3NTZHExR1V5V0phcmVvOHV5RVJ2ZG9YZ0NieGw1emVnWW9tQWM1d2F5Nk9GdGFPQm56MWpVSnB0czh6MEQzSHZoR0gyNWZ5VnRXbHAtYk8tLVh3?oc=5",
+      "source": "thequantuminsider.com",
+      "publishedAt": "2026-07-03T07:00:00.000Z",
+      "sentiment": "positive",
+      "confidence": 1,
+      "rationale": "public listing, major milestone",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f",
+      "id": "026045b6d15f",
+      "ambiguity": "high",
+      "verdict": {
+        "relevantActually": true,
+        "sentimentActually": "positive",
+        "note": "Public listing is a major milestone."
+      }
+    },
+    {
+      "companyId": "7c0fded7fc4ddbb63d04cfc78fd8022545e7d92a09c8b55f3011eecf90098b85",
+      "company": "xAI",
+      "articleId": "93b7f21886dc06fa49f058eeab5dce5ee896693816a490ad94456a7cf8584320",
+      "title": "Elon Musk’s xAI sues to stop Minnesota nudification law from taking effect",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5pbGhZRC14Zk1YNnpHejFFd2ZpYVROcGdRZVFBdUM1c2k2V09tZkttQml6STUxT3Y1NDhyTzUxLVZfT0wxVjd6Y1hMSG1OdlFnSXJV?oc=5",
+      "source": "knoxradio.com",
+      "publishedAt": "2026-07-29T14:39:59.000Z",
+      "sentiment": "negative",
+      "confidence": 0.8,
+      "rationale": "lawsuit, regulatory issue",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f",
+      "id": "032adc397dcb",
+      "ambiguity": "high",
+      "verdict": {
+        "relevantActually": true,
+        "sentimentActually": "negative",
+        "note": "JUDGEMENT CALL: xAI is the plaintiff, not the defendant. The rubric lists 'lawsuit' without distinguishing the two, which is a genuine rubric gap. Accepted as negative on reputational grounds."
+      }
+    },
+    {
+      "companyId": "b901582b142856c5b009ef6ff8c3161130bb5ed70b0df43a24b0a09c128e1128",
+      "company": "Quantum Machines",
+      "articleId": "4ab6b42eb0fb32117a9ac76a33705d786b88e614472508d537df7ad9eb069634",
+      "title": "Qubic Secures Commercial Milestone with Quantum Machines Agreement for Cryogenic Amplifiers",
+      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxONlRHWGhqa2ZWejdCV3Y3NXlqaDdkU1g4YlF0U3VQZElxY29NOE5oeHdSdlJHSmFmdGc1Vk01TURBeEdEMWVLVzMxM0hMVGxoZUtBTV90UXFNSHE5TWRwVDh0OVMxcHd1ZnFwaklMcHNnWHdRX2lGQldZaDBTVzBTZHM0WEFmQm1mMlFNZUJnR1pWb2RwVXdqQUZLWm9kUVlZdlNqZkQtVUFlRlhiOWwtblNraDlYLUQ1TmJKQl9xaEdZdXFlU2fSAcsBQVVfeXFMTXdQcmpZMEJGY3V6U3JSV040V3NieW9JOEt0ZHQ0eW5RMmNmcHBSY0ZvdkxHRW1ZeVhZejNDbTNud1VkODRnS1lrLUtncjhoV3plX2h0cVJEb2JlMy1NSjRxaWk4VndZREcwLWtZX0hWSlB5V29XZWozVlZwVDBPcnRGdUttTHhUTkFWbFNmSW41MmVYN2hWUi1na1UwM0ttdWtTNEphZmNfMjZBdW52ajdaUUhqMXA2cW5tRjZlLVcwUkJjZnBJMXJPTEU?oc=5",
+      "source": "quantumcomputingreport.com",
+      "publishedAt": "2026-05-26T07:00:00.000Z",
+      "sentiment": "positive",
+      "confidence": 1,
+      "rationale": "Company name and sector match, commercial milestone mentioned",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f",
+      "id": "03f699c4dd7b",
+      "ambiguity": "high",
+      "verdict": {
+        "relevantActually": true,
+        "sentimentActually": "positive",
+        "note": "Customer win for Quantum Machines, though the headline's subject is Qubic."
+      }
+    },
+    {
+      "companyId": "2e0d94f87a5474e3c7fd441cd481345cbb775551b15808612ba3c2c18eed735d",
+      "company": "Astra",
+      "articleId": "45ec78d735b3c994d45e2d1e855b653a98d1caeb8ef06ddcc73b309806bada8d",
+      "title": "Ad ASTRA Community Workshop: Detailed Schedule Available",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNR0gyc1B5LXJGVVA4aWU5ei1PUmhGT3ZSWDhxUGlIbDFPWEZENWk4LXVkVWVDY2ZucFU5MXFIcEtsMExzR3lLbDlTUlRESXV5clgtQmQ3czI4a3psQzd4YmdZcVJNakJ3NmU0ZGo3WXhxejlQZmp1d1VfODhPMTltcXVmcnhoVU45MDE5T2I4UkVXaTNjN0pSM3plZXZBMDREQ3BjMW5kS3dRbEQyd1ptdXdYZWUya3NTTXZ0TUdRLWtPYmM3UWN3?oc=5",
+      "source": "science.nasa.gov",
+      "publishedAt": "2026-07-27T21:40:01.000Z",
+      "sentiment": "neutral",
+      "confidence": 0.8,
+      "rationale": "Community event, no company-specific news",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f",
+      "id": "04059aee896d",
+      "ambiguity": "critical",
+      "verdict": {
+        "relevantActually": false,
+        "sentimentActually": null,
+        "note": "FALSE POSITIVE. NASA's 'Ad Astra' workshop, from science.nasa.gov. Not the portfolio company - the same decoy the gold set flagged."
+      }
+    },
+    {
+      "companyId": "2349a6848d029aa2bea30b44d8a63b080aa98fb9b5db2cea5fd875fc9543d789",
+      "company": "Harvey",
+      "articleId": "0b7004c9cf1908cef8fcb2cc50b6db09c3aa358967a29aef0a4ab8c537ecd64e",
+      "title": "Harvey and Legora ramp up battle for legal AI dominance",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPbjhpcF94aEUxSF9BYkt6Tk1ocVJLMVlKRFFieWczdlRIT2NLMlFCb1drM1Z1eDBxTW1FeXBWbGY5dnhwcVp2OWg5a0I1empDZ21JQlotclhGUkF3T25PQ1UteG1neFZsQTI3OWw0QzBJbzJ2Z2kyeVJfUVVHMXNBWnkzaWM3NUExQWd5cEEwOA?oc=5",
+      "source": "nonbillable.co.uk",
+      "publishedAt": "2026-05-28T07:00:00.000Z",
+      "sentiment": "positive",
+      "confidence": 0.8,
+      "rationale": "dominance, battle, suggests a competitive advantage",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f",
+      "id": "043f18081ba7",
+      "ambiguity": "critical",
+      "verdict": {
+        "relevantActually": true,
+        "sentimentActually": "neutral",
+        "note": "Sentiment wrong. A competitive 'battle' for market share is two-sided reporting, not a win. The model's rationale - 'dominance, battle, suggests a competitive advantage' - is reasoning backwards from a word."
+      }
+    },
+    {
+      "companyId": "90943955bee5a4fab9db9420290f46f75508238d01b2e32b0e0c703bba4a3d73",
+      "company": "Arrow Global",
+      "articleId": "4b7a219164719b24d13b097bbbe6a2be511d01a5ef7c63dcd62f8b9a93d3fb2d",
+      "title": "Deal Roundup: CD&R agrees Indicor units sale for $5bn, CPPIB exits loan portfolio to Arrow Global, Fortress",
+      "url": "https://news.google.com/rss/articles/CBMijAJBVV95cUxNbnBRT3pWTGVyTmhKQU8xd0g4bFpiZVVyRFBLQ1pNMHFneHhDVFBOZ3Y2Njg1UUhydDVYQTBaUTF2YU5Oemg1SkdGTHEyS3c5Z1JVUW0tdFhWQVJQNEk2V0VjLUQ1NEFiYktEbDZ0X0JsNkVRS3lkMHNBVUV1Yi1pRVJjdjYwMDFXeENVRmY5cVVBUF93bGlreVNXbE5ieXJvVlVpRExNeGVCYzNkZnRRR0trajJQT1BNaXNLZC10YnFVeE90Nk5VTHZLWUJtd2FWSmlhYkM1TFdZWFdKY2RGRHJwY1ZQTm5FbjhZQTEyWXQ1NGEzNDRCS3lGSm9rOWNDVzJ4UnBFMzF2YjJh?oc=5",
+      "source": "altassets.net",
+      "publishedAt": "2026-05-07T07:00:00.000Z",
+      "sentiment": "positive",
+      "confidence": 0.9,
+      "rationale": "Funding round and exit from loan portfolio",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f",
+      "id": "045baa6e7e07",
+      "ambiguity": "high",
+      "verdict": {
+        "relevantActually": false,
+        "sentimentActually": null,
+        "note": "FALSE POSITIVE. Arrow Global the UK credit manager, confirmed during gold-set review as not the portfolio company."
+      }
+    },
+    {
+      "companyId": "3aab452a942f16c726a174483d3228a86706e5be72abdfb21db78df1e8fe97c7",
+      "company": "Shield",
+      "articleId": "422b51d966960c9629491f6f86354782094cd026f3c52659b3125f0f60d06fe5",
+      "title": "Shield AI: Innovation X Advisors Participating In $1.5 Billion Series G At $12.7 Billion Valuation",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNZnBseUpsT00xTmg2UkJQUWJGSEE1NHRoZ2VpTUdfZTlaVjNJbkxMa3BtQ2cwOG5HMzJKbzhzR21INnBSVFBqbzJuUThhU0ZhTjBCbXhJMEhQUGZBakFyWFlXeFp6UVBleUw1THJoVk9LeGdnVW1JYnR5LXVVaHJzT29XZ0VRekk3SGV1di1xSHZBVHpFWWRQTjR3cjhqT0lJQmVNMk1SOFJUakhacmtNV0FhYWxOZ9IBuwFBVV95cUxPaHViR3p3R2ZqUTJrZFFyaDJmOFMtci1ERlZ2T3ZCZjgxbnZKRTlKQUNpSlVfX3EzQTJmZXRqUGRhaHFTNV9yOEJaNW15X2x4WWRackYzQTdtaGlPU1VqOHdYZGRNQ05Eb21KWFUyWVFXcm0wR1Y3YU51LVhMbFZWQnJMY0J2akdFYXY4V21WdVAwR0Z0Q2pJMzNaWDJHSm5UVkVCWDFlcHg4WW5rbHJNLTg0VWJnSmFGREpv?oc=5",
+      "source": "pulse2.com",
+      "publishedAt": "2026-07-30T02:35:59.000Z",
+      "sentiment": "positive",
+      "confidence": 0.9,
+      "rationale": "sector, valuation, funding round",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f",
+      "id": "046baf72df3b",
+      "ambiguity": "critical",
+      "verdict": {
+        "relevantActually": false,
+        "sentimentActually": null,
+        "note": "FALSE POSITIVE. Shield AI, the US defence autonomy company, not our communications-compliance Shield. Held both the sector and the negative keyword 'Shield AI' and passed anyway."
+      }
+    },
+    {
+      "companyId": "17b7dc0f4f6575c9fe8175efe8ca28c0fa945398ab8162fa16515f131e74e3dd",
+      "company": "Clinch",
+      "articleId": "940363dd8dae0f39234ce4784963b05bb17659478239b5922a7052afef2a3e9e",
+      "title": "Clinch Expands Collaboration with Amazon Ads, Announcing Support for Automated Creative Trafficking with Amazon DSP",
+      "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxPemRVWS1Sbkwxc0tfWURla2MwbFliVlFjaTFTTmNtU3ZvbXBKLXpUN0FkakFZWkF3b04wb3BhZDJnZzBhZFhGSTJ2YTNwekItMVczdXM3aDNocmpjY3EyUFNzdUljU1JHM01uNGVOaDdxWWF2QTBrSWFISEJpamFFUU9zbWljb2g2bVJmSklaaklNc05HTnN5SXJUb0ZLZ0dqYjlsNWhSQ2d6T0VndC1tZk5rZmJvUXEtOUlzS0JkLXQ2ZUFuU2NnbTREVmVGSm00SDF2YTVEelVlbjRCZWtCcHY3Q3NqcGxqYzh3djBUQ1Fqem5NVFlyWFVOUDRzaWM?oc=5",
+      "source": "prnewswire.com",
+      "publishedAt": "2026-06-04T07:00:00.000Z",
+      "sentiment": "positive",
+      "confidence": 0.9,
+      "rationale": "Amazon partnership and new feature support",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f",
+      "id": "04968c289121",
+      "ambiguity": "high",
+      "verdict": {
+        "relevantActually": true,
+        "sentimentActually": "positive",
+        "note": "Expanded Amazon Ads collaboration is a real customer win."
+      }
+    },
+    {
+      "companyId": "6e161b557e5ee4b369a0ce7332bd8d12a4196fe757c3751dff828b6485e5613b",
+      "company": "Island",
+      "articleId": "da0338de08ee2d23f284228587d9737d153c9410da6c794ce54125fb0ea14a28",
+      "title": "28. Island",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1ZOTVnajR3eTNUUFFPd0VXWjFHZkotUjgwTWQzNDNEcUZBbFdmczlLc2pwbGN2dTVTQU1nM01nOHE2eXZZTXBCVEFDc3N4WGJucUV3RURtNlJyTFUyRTd3YTNIbEs3VHdOME8yWTlkNHdtQnNKbWtmUNIBfkFVX3lxTE9sME8tTHJaSGw0aXVjSWJmMmtVdnlyc2dVYU0yR05kQk5Yd0VNb01SMWtWQ0RxOTB6UzhSTmQtYzJhX0EzRktYU21NbTNSSUxSVHZhQzZOM3g3bkcwQjU4OWlPUDFnaEtVdnIzUHRFbWd4bWFMY3NFSy1HRWJIZw?oc=5",
+      "source": "cnbc.com",
+      "publishedAt": "2026-05-19T07:00:00.000Z",
+      "sentiment": "positive",
+      "confidence": 1,
+      "rationale": "Number '28' implies a specific, positive outcome.",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f",
+      "id": "04ec78ced77e",
+      "ambiguity": "critical",
+      "verdict": {
+        "relevantActually": true,
+        "sentimentActually": "neutral",
+        "note": "Sentiment wrong. '28. Island' is a bare list entry; nothing in nine characters describes an outcome. The model's rationale - \"Number '28' implies a specific, positive outcome\" - is invented. Relevance is right but unverifiable from the headline alone."
+      }
+    },
+    {
+      "companyId": "280fbc6bd96afde52c45d2d7d4f8a417953d288828023ed23ef7219d6005985b",
+      "company": "Beyond Meat",
+      "articleId": "3515c3c8f5bb966161bcfd98e0f24aa5336e17866b435e32c17fc60f52f1a9da",
+      "title": "Beyond Meat Inc. stock falls Monday, underperforms market",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQQ28wVXJ0LWFkdHR6NFluWDdqQXBIR1FlZTVwMUtJMVQ5dVdZaE83dnlLVm93eF9JSGd3MGl6VmpTQ0dwTWhYV3pLeFA0REw0dUVRaENEb0poMUJRSkkxb2hGNHFiNFNVOFdGUHZaclJ3M1RSa3NzQzZFN3IzSURfOUkycmI4OElnTjVVdUppNEVtLTFqdXRoeDVBTS1aTXl3TzBqSjZZSndZVmtTd3M0X01OWi1ydw?oc=5",
+      "source": "marketwatch.com",
+      "publishedAt": "2026-07-27T21:19:00.000Z",
+      "sentiment": "negative",
+      "confidence": 0.8,
+      "rationale": "underperforms market, negative stock fall",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f",
+      "id": "058e118e06d1",
+      "ambiguity": "high",
+      "verdict": {
+        "relevantActually": true,
+        "sentimentActually": "negative",
+        "note": "Share-price fall, correctly read."
+      }
+    },
+    {
+      "companyId": "3aab452a942f16c726a174483d3228a86706e5be72abdfb21db78df1e8fe97c7",
+      "company": "Shield",
+      "articleId": "c89d62c16fa7fab1850f45fa6cf8bd477bac0d5a2c972f295c7c569fcc5e02d1",
+      "title": "FintechWerx Completes Milestone to Acquire High Risk Shield",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPN09HRDJsLWdhWlJpa040eWYwSHBacGtHSm5fU3ZFRzB6UGNKdTlDeXBXUXlXc1lTWWVVdzFhMVIzWUNUM2ttamozaFZqWUlTeEowbXg3cHpkM3N1eDdYWlhmdHpLbGp0dk83c0MtWEg3V29EOWlvb0tzNFhRbFZYTVRkWHJVY0w4a21uNTN2aUNiY09qRTVMWGI1czFJTHhRUTNJRGRtN0FvREtpRTBEUVhHX2Y1UGRs?oc=5",
+      "source": "thenewswire.com",
+      "publishedAt": "2026-05-26T20:31:48.000Z",
+      "sentiment": "negative",
+      "confidence": 0.8,
+      "rationale": "Acquisition of a high-risk company, implying potential financial strain.",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f",
+      "id": "05fc2f7f7b8b",
+      "ambiguity": "critical",
+      "verdict": {
+        "relevantActually": false,
+        "sentimentActually": null,
+        "note": "FALSE POSITIVE. 'High Risk Shield' is the asset FintechWerx is acquiring, not our Shield."
+      }
+    },
+    {
+      "companyId": "f1c4eb9f9ea19976e967b592b56731a84fa277a6f0aec525795bf5731e49c1cd",
+      "company": "Autobrains",
+      "articleId": "5b3b2b67b4812249f71cc3f4b5e710e615b1452625a5511253e994a9fd8a485a",
+      "title": "Autonomous driving firm Autobrains eyes robotaxi growth in Europe, CEO says",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNUGRqYVVTVVppVmVvRUg4MkQyRE1COURDSXUxbmFDQnVuUGU3anJoeEZsSl9fbFZEcWdZT1AxR1N5WUI1aEFKZHRzbmZKSWpzTi1UZU1BMFhldEdqSTNWZWF1di1SRmlPZTdRUGFHay1zXzB6NVhQYkNjQTdHNmNOOFljYlo3STA3QkV5QnpvLTUyOTlPV0F3eEdwdVJrN1FvUkVMcW5GaUMyeWtLOVV1V2dLcjZucWM?oc=5",
+      "source": "reuters.com",
+      "publishedAt": "2026-06-30T07:00:00.000Z",
+      "sentiment": "positive",
+      "confidence": 0.8,
+      "rationale": "growth, robotaxi, Europe",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f",
+      "id": "00321be42dfd",
+      "ambiguity": "low",
+      "verdict": {
+        "relevantActually": true,
+        "sentimentActually": "positive",
+        "note": "Growth story from Reuters."
+      }
+    },
+    {
+      "companyId": "f1c4eb9f9ea19976e967b592b56731a84fa277a6f0aec525795bf5731e49c1cd",
+      "company": "Autobrains",
+      "articleId": "fccfafe6da867835cecd9724107664ff9020a6fd8ae11fd7ab0916f05a70874a",
+      "title": "Uber and Autobrains to Launch Robotaxi Program in Munich with Nvidia",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNNlNLcGxPZzY4WG5fRTUwR21hV3Q1MFE5UmhBU2FmNWpIenZvQVdPTFBtVjJtc1U2TzdqMXlLYV95MWhkb0YyTXdONy1XOTVRZkNCYWhNbzVEb2dSbkp4aTUtV2JQaTRRTWxHMVNIZlB2LVlOTEhXSlJmV2trcEdkUEV6SDltTlVuUE1ydDJsLTI?oc=5",
+      "source": "globalbankingandfinance.com",
+      "publishedAt": "2026-06-01T07:00:00.000Z",
+      "sentiment": "positive",
+      "confidence": 0.9,
+      "rationale": "Mention of launch, partnership, and robotaxi program",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f",
+      "id": "005681997071",
+      "ambiguity": "low",
+      "verdict": {
+        "relevantActually": true,
+        "sentimentActually": "positive",
+        "note": "Major partnership with Uber and Nvidia."
+      }
+    },
+    {
+      "companyId": "223314a00d25507f7bfe7f4de44b35c1d01739bf00728edc9f4f96836f8a3307",
+      "company": "Klook",
+      "articleId": "6f64c90b7ce1a7ffa4c49b6ecbdf3a471ca7178eac065560690457c88e4679fa",
+      "title": "TASTE THE THRILL | Klook and Mountain Dew team up for Filipino ‘Foodvenchas’ in Pampanga, Cebu, and Cagayan de Oro",
+      "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxORkN2S1hiR0RPS0FKSERSd2lncFM0OGlHanRqUXFBNzVaa2l2WDYwdU5nTU5qSWxEU01iQ0pxaHhOX1NDOHdvSmVvWDJaZFZDRWdwY3lNaEpNaVNGQlRORlpMRVJ1YTJIc0Y3NElsQUV0WlVJcktPVHNPcGI2enlOU0FwVmxtZEFjb01XU0ZtRmZGRmtCNWxzYmVrSTV6djFSMlJaYk9vNXVxYkg4b0ZmeDUyYkp1Rk9JVG02MGhybGRqdU5UVTJZaXBseVh2NFotcGlYeU0tUTRMZldXYXp5aXEwOUY?oc=5",
+      "source": "businessmirror.com.ph",
+      "publishedAt": "2026-07-17T07:00:00.000Z",
+      "sentiment": "positive",
+      "confidence": 1,
+      "rationale": "Partnership with a major brand, event promotion",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f",
+      "id": "009af42c9244",
+      "ambiguity": "low",
+      "verdict": {
+        "relevantActually": true,
+        "sentimentActually": "positive",
+        "note": "Brand partnership with commercial substance."
+      }
+    },
+    {
+      "companyId": "bf5789c82aef96cb6d4c3e7441824058c0b7a144d8ad37fa88144fe88782d635",
+      "company": "Stellar Cyber",
+      "articleId": "1ca5bd4c78810a41b7ff53cc6512b535ba92f0dae24064a75aa5d063a61f1b2c",
+      "title": "Stellar Cyber and M-Theory to Demo Proof-Based AI SOC at Black Hat USA 2026",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOUUZGd2xCRzN3SUNySjF0T1VwOXVGUEtFNnpIQWxENUlJVjgzWjVmQ1l2Vzk0UXZuc2dGU3RMWHMxZTV4R3RKUUlqSkdQNW9DMmR4LXJGaGxWYnNNYzZpMHV0RTRFOWlLS2wzX016UTN5ZVF4TTdDeXRGemdTQjZrR0dBWTFyRDdwcnBibG51TGpqLW5wcWc?oc=5",
+      "source": "finance.yahoo.com",
+      "publishedAt": "2026-07-28T12:00:00.000Z",
+      "sentiment": "positive",
+      "confidence": 1,
+      "rationale": "Partnership, demo, and conference attendance indicate a positive development.",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f",
+      "id": "00b07e7bd621",
+      "ambiguity": "medium",
+      "verdict": {
+        "relevantActually": true,
+        "sentimentActually": "neutral",
+        "note": "Sentiment wrong. A conference demo announcement is vendor PR with no result attached, which the rubric names explicitly as neutral."
+      }
+    },
+    {
+      "companyId": "821bc2079c10c166910f0acf58d4d1766cc9dc7ce8abc80fef62805f3f8b49a6",
+      "company": "Stoke Space",
+      "articleId": "ff9c523cdaae31fd583302871e8dfe2a20c970368fad20f2159a41220c27f287",
+      "title": "Stoke Space's Nova rocket prepares for flight",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQdjVyNXdjdkl2Ykd4NldGSFdoN1liNEJFellIVFlFSXBJSVN3NzhLWUhpd3pJRGs1enVPQmZJUkJrZVhUbjR6N2FZakxEWS1UU0VfQnE3bWJoQ0ZqbFFFV3c1YTViaXBEbVJ1YWhKRURvNkNFZHdtckJ0VHhEbGJxSDJ2SlZYMWdlRXFHTDB0bGdjUQ?oc=5",
+      "source": "zamin.uz",
+      "publishedAt": "2026-05-18T07:00:00.000Z",
+      "sentiment": "positive",
+      "confidence": 1,
+      "rationale": "Prepares for flight indicates a launch is imminent, likely a positive development.",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f",
+      "id": "0157ff3c9ebf",
+      "ambiguity": "low",
+      "verdict": {
+        "relevantActually": true,
+        "sentimentActually": "neutral",
+        "note": "Sentiment wrong. 'Prepares for flight' is routine pre-launch status, not an outcome - the same shape as the gold set's static-fire item."
+      }
+    },
+    {
+      "companyId": "10039910ec58424d4222d35dfe16bce14711d906feeca23b3dfe8029129cdc74",
+      "company": "Liquid Instruments",
+      "articleId": "d8465d2261cf0b504e63f1a11f5b4601d164e937dcab8c77f4785ba62016b695",
+      "title": "Liquid Instruments secures $70m in Series C funding",
+      "url": "https://news.google.com/rss/articles/CBMiyANBVV95cUxPMV9jTFl3dUZNV2RIT3dEX3ZvQUlWSWRjeUgyVGtWamlmMnhNOC1XOHRtQmh6alNJUDkwbXYySmlBVXhOc1dTOW1PTl9hZTl2dmgwT3ZURjFNc05DTmkwV19wQkY2U1REdEtjOFJsTWhzWHlJemY5OVkwWHYtWE5zMDYzWUR2ZFhnYVpqZzdYMUF4eUtCSEtkclpBSG8zQWxuS2NxY2pTQ3VudmF6Y05XTGJhdTk4ZlZRS1hySlZuS0ZSU0Q3dHFEX2p1eWNzU0pIbm1OVjVrS0FEWTdSNXhMOGZadFN3d1dHQmN4aU9VNFFxSkRVS0kybER3R1F4b2tPV1Utc1dNNTZlS05xRVl0OFJxT29NYmZxcWRFeWJuZXh6M3RvUkE4WDVxdHZwS1o4YUQ3WmlIbnBleHhyU2RhdjEtQ29oUmtlUnRuVXlBOWFmLWhBR3VYaU9JNVFMQnFmaVNpbk16SWVDWUhUREU5b3hGWi1LQVAtNVgwcGlvVHJIZW1CWHhGbFR5aEFXemx3aFRLVTNwd3NKMXpaQXZ3TEFFVnJtVFl3WXd1R0JkX1VxX3NjQXdzU25hdnVQN0Y0aGpwTjBwQnM?oc=5",
+      "source": "spaceconnectonline.com.au",
+      "publishedAt": "2026-05-06T07:00:00.000Z",
+      "sentiment": "positive",
+      "confidence": 1,
+      "rationale": "sector and context terms",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f",
+      "id": "015fd4050cee",
+      "ambiguity": "medium",
+      "verdict": {
+        "relevantActually": true,
+        "sentimentActually": "positive",
+        "note": "Funding round."
+      }
+    },
+    {
+      "companyId": "f3922ff8fd2ff3e9374ec3f76dc57d59a85e20328399055e04c998d99864d47f",
+      "company": "Cyabra",
+      "articleId": "b775d94766c9289d61f019abdca97c18e2cad329a77613b800488d5445d32157",
+      "title": "Cyabra Ord Shs (CYAB) Balance Sheet",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE00Z0llZ3R5Zng3ampUaTVtSUlvRlMwd0tRX1VyZFN1MUFfUV9zbHVtUXBRdHlDX2JTLU12cm1VMmdHYXBTTnRYdUp4emY1UzVGRTNLX0VDV0VmNlNGa3J3NjJmc0JQNkxtMW1XWg?oc=5",
+      "source": "tradingkey.com",
+      "publishedAt": "2026-07-25T11:53:41.000Z",
+      "sentiment": "neutral",
+      "confidence": 0.8,
+      "rationale": "sector-specific financial reporting, no direct mention of company performance",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f",
+      "id": "019c4b565e8d",
+      "ambiguity": "low",
+      "verdict": {
+        "relevantActually": true,
+        "sentimentActually": "neutral",
+        "note": "Directory/financial listing. Correct."
+      }
+    },
+    {
+      "companyId": "214d4dbc32023232877791593091774db87334789088352e5f33319e7e2f39b1",
+      "company": "Hailo",
+      "articleId": "7efb87a0989c1fac2dcb8bb47a402a8dfc5574a13c678124dbb701fc400843ab",
+      "title": "ICYMI Ep70: Northern.tech, Atlas Data Storage, imec, Microchip, Hailo",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNVnU1NzFQdnlHOG9Ea2pqSWhSazZ3eUhpRWtXYmRzWHJ3Y1dXZFhkTUhrd0w0OV85SUJtVThHcHpTRlhPcFI1NW84LXZyUkN2MFFFWTE0VS1TaWNBUENON0k3MzB6QWJMSm0yVVN3ODBnQXd4WS0teXpyTEtBck81dVUzem5adGQ1VmhvYThadi1TR20wRldVN3U3azFGN0tYM19wMFNqcVlIbnc3Qk40S1N5OC04YzdVRjY1UlpkSkg?oc=5",
+      "source": "embeddedcomputing.com",
+      "publishedAt": "2026-07-31T00:49:01.000Z",
+      "sentiment": "neutral",
+      "confidence": 0.8,
+      "rationale": "Sector and context terms, but no direct mention of company's AI focus.",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f",
+      "id": "01d2226065c9",
+      "ambiguity": "medium",
+      "verdict": {
+        "relevantActually": true,
+        "sentimentActually": "neutral",
+        "note": "Passing mention in a multi-company round-up. Correct."
+      }
+    },
+    {
+      "companyId": "223314a00d25507f7bfe7f4de44b35c1d01739bf00728edc9f4f96836f8a3307",
+      "company": "Klook",
+      "articleId": "e466575d6ee9818189b2afdd8233eaf1636f567b0521e1d3ad00036e8e6a0e48",
+      "title": "Klook India launches campaign with Farah Khan",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE4zTDcyX2pMZzZIZjh5aTNsZnRNMjRxVm9ONVNjVVIwUlZ0Y2N6Q1dNNHJ1d3pQbWtuSTRTVjlIVzBSenN6RGx0anlGQ29rUXg1blR1RXBIQnhQSzR3R0V5YmZSUjhobFRhdEhqdUxpT2Q3RlFac0ozaU1wYno?oc=5",
+      "source": "travtalkindia.com",
+      "publishedAt": "2026-06-30T07:00:00.000Z",
+      "sentiment": "positive",
+      "confidence": 0.9,
+      "rationale": "Partnership with a well-known celebrity, likely promoting the company's services.",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f",
+      "id": "01e63354177f",
+      "ambiguity": "low",
+      "verdict": {
+        "relevantActually": true,
+        "sentimentActually": "neutral",
+        "note": "Sentiment wrong, borderline. A celebrity marketing campaign is promotional activity rather than a partnership with business substance. The rubric is thin here."
+      }
+    },
+    {
+      "companyId": "ce8048b9fa939000d208cbe66803e13541a235c68970090203a87c80839b44bf",
+      "company": "TubiTV",
+      "articleId": "7137e183751851bea5972ff9ebdd99d06bb884fe4424bf4bc8600f18a65e82a5",
+      "title": "Video: Tubi's New Original Thriller Film \"Stepfather\" Reveals Official Trailer and First Look Images",
+      "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxNT3dUaWE0Mkp0NTJRa2ZDeE80bXJOTFAyeUJHcU9xSWExMWRDbDRpRTVqM2ZDYjJ2aVlIemdpX0JfaHMtTWxjUzJScFh0NDk3cjcyVXRPemJMekYtRlpQSDlhckFVZXdtdVZMYzBMYS1VTXNpbGVXZDdHeHphZlMweEVCMVBPbHJTZ3d0d0dIODg4UGFJb09LMWVJb2ZKbHNXdmk4UDgtNkFNMGJsU1FvS0FfME93ek9vTVVLOXRRbVdhODBGc1Y0Q2t6bUlKNnBfSW5ObkJUUl9JemJyNUtkMnZCNUhGa3NoUnltUm0teDY5bjFCdXg2Rmtn?oc=5",
+      "source": "thefutoncritic.com",
+      "publishedAt": "2026-05-28T07:00:00.000Z",
+      "sentiment": "positive",
+      "confidence": 0.9,
+      "rationale": "Original film, trailer, first look images",
+      "model": "llama3.2:3b",
+      "promptVersion": "classify.v1@5717fe76202f",
+      "id": "0210356136ed",
+      "ambiguity": "low",
+      "verdict": {
+        "relevantActually": true,
+        "sentimentActually": "positive",
+        "note": "Original content launch is a product launch for a streaming service."
+      }
+    }
+  ],
+  "reviewedBy": "Claude Opus 5 (draft) - pending review by the project owner",
+  "reviewedAt": "2026-08-03T06:53:46.012Z",
+  "disclosure": "Verdicts drafted by an AI assistant and reviewed by the project owner, the same arrangement as the gold set. The assistant is not the model under evaluation (llama3.2:3b)."
+}
