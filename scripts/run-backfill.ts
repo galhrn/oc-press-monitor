@@ -14,9 +14,10 @@
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import {
-  getConfig,
+  checkpoint,
   childLogger,
   createRepositories,
+  getConfig,
   initDatabase,
   newRunId,
   toError,
@@ -172,5 +173,7 @@ try {
   log.error({ err: toError(thrown).message }, 'backfill failed');
   process.exitCode = 1;
 } finally {
+  // The database is a committed artifact; fold the WAL in so what ships is what ran.
+  checkpoint(db);
   db.close();
 }

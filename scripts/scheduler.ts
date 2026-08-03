@@ -10,7 +10,14 @@
  */
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { childLogger, createRepositories, getConfig, initDatabase, newRunId } from '@oc/core';
+import {
+  checkpoint,
+  childLogger,
+  createRepositories,
+  getConfig,
+  initDatabase,
+  newRunId,
+} from '@oc/core';
 import { OllamaClient, createFileCache } from '@oc/ollama';
 import {
   DEFAULT_CORPUS_PATH,
@@ -94,6 +101,7 @@ console.error(
 for (const signal of ['SIGINT', 'SIGTERM'] as const) {
   process.on(signal, () => {
     handle.stop();
+    checkpoint(db);
     db.close();
     process.exit(0);
   });

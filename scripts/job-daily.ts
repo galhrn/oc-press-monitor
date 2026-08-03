@@ -14,6 +14,7 @@ import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import {
   childLogger,
+  checkpoint,
   createRepositories,
   getConfig,
   initDatabase,
@@ -137,5 +138,7 @@ try {
   log.error({ err: toError(thrown).message }, 'daily job failed');
   process.exitCode = 1;
 } finally {
+  // The database is a committed artifact; fold the WAL in so what ships is what ran.
+  checkpoint(db);
   db.close();
 }

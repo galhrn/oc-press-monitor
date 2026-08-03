@@ -99,6 +99,22 @@ export function withTransaction<T>(db: Db, fn: () => T): T {
  * These two helpers are the single, documented place that assertion happens - the
  * row interfaces next to each query are the contract, and the schema enforces it.
  */
+/**
+ * Folds the write-ahead log back into the main database file.
+ *
+ * `data/press.sqlite` is a **committed deliverable** (R24), and SQLite in WAL mode keeps recent
+ * writes in a `-wal` sidecar that is gitignored as a transient file. Without an explicit
+ * checkpoint the committed `.sqlite` is silently stale: `git status` reports nothing to commit,
+ * `git hash-object` matches HEAD, and a fresh clone reads different data from the machine that
+ * produced it. That happened - it was caught by the fresh-clone rehearsal, after 4.8 MB of
+ * writes had accumulated outside the committed file.
+ *
+ * Every process that writes calls this before closing.
+ */
+export function checkpoint(db: Db): void {
+  db.exec('PRAGMA wal_checkpoint(TRUNCATE)');
+}
+
 export const rowsAs = <T>(rows: readonly unknown[]): T[] => rows as T[];
 export const rowAs = <T>(row: unknown): T | undefined => (row ?? undefined) as T | undefined;
 

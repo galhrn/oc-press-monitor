@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-03T11:04:19.679Z",
+  "generatedAt": "2026-08-03T11:08:18.496Z",
   "windowDays": 90,
   "model": "llama3.2:3b",
   "promptVersion": "classify.v1@5717fe76202f",
